@@ -1,0 +1,280 @@
+MSGA_economic_development = {
+ MSGA_belgrade_business = {
+ icon = generic_industry
+ allowed = { tag = SER }
+ visible = { has_completed_focus = MSGA_upgrade_belgrade_services NOT = { has_country_flag = MSGA_done_belgrade_business }  }
+ available = { MSGA_major_project_free = yes 107 = { is_owned_by = ROOT is_controlled_by = ROOT free_building_slots = { building = office_park size > 0 include_locked = no } } check_variable = { var = income_var value = MSGA_quote_belgrade_business compare = greater_than_or_equals } }
+ cost = 50
+ days_remove = 90
+ ai_will_do = { factor = 3 modifier = { factor = 0 has_war = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.25 }
+add_income_with_inflation = yes MSGA_begin_project = yes }
+ cancel_trigger = { NOT = { 107 = { is_owned_by = ROOT is_controlled_by = ROOT free_building_slots = { building = office_park size > 0 include_locked = no } } } }
+ cancel_effect = { set_temp_variable = { var = income_var_temp value = 0.25 }
+add_income_with_inflation = yes add_political_power = 50 MSGA_finish_project = yes custom_effect_tooltip = MSGA_refund_tt }
+ remove_effect = {
+  if = {
+   limit = { 107 = { is_owned_by = ROOT is_controlled_by = ROOT free_building_slots = { building = office_park size > 0 include_locked = no } } }
+   107 = { add_building_construction = { type = office_park level = 1 instant_build = yes } }
+add_to_variable = { MSGA_business_bonus = 0.01 }
+MSGA_refresh_recovery = yes
+add_power_balance_value = { id = MSGA_SER_streets_presidency value = 0.02 }
+   set_country_flag = MSGA_done_belgrade_business
+   country_event = { id = MSGA.10 }
+  }
+  else = { set_temp_variable = { var = income_var_temp value = 0.25 }
+add_income_with_inflation = yes add_political_power = 50 custom_effect_tooltip = MSGA_refund_tt }
+  MSGA_finish_project = yes
+ }
+ }
+ MSGA_morava_works = {
+ icon = generic_industry
+ allowed = { tag = SER }
+ visible = { has_completed_focus = MSGA_develop_the_morava_corridor NOT = { has_country_flag = MSGA_done_morava_works }  }
+ available = { MSGA_major_project_free = yes 1296 = { is_owned_by = ROOT is_controlled_by = ROOT free_building_slots = { building = infrastructure size > 0 include_locked = no } } check_variable = { var = income_var value = MSGA_quote_morava_works compare = greater_than_or_equals } }
+ cost = 50
+ days_remove = 120
+ ai_will_do = { factor = 1 modifier = { factor = 0 has_war = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.20 }
+add_income_with_inflation = yes MSGA_begin_project = yes }
+ cancel_trigger = { NOT = { 1296 = { is_owned_by = ROOT is_controlled_by = ROOT free_building_slots = { building = infrastructure size > 0 include_locked = no } } } }
+ cancel_effect = { set_temp_variable = { var = income_var_temp value = 0.20 }
+add_income_with_inflation = yes add_political_power = 50 MSGA_finish_project = yes custom_effect_tooltip = MSGA_refund_tt }
+ remove_effect = {
+  if = {
+   limit = { 1296 = { is_owned_by = ROOT is_controlled_by = ROOT free_building_slots = { building = infrastructure size > 0 include_locked = no } } }
+   1296 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+add_power_balance_value = { id = MSGA_SER_streets_presidency value = 0.02 }
+   set_country_flag = MSGA_done_morava_works
+   country_event = { id = MSGA.10 }
+  }
+  else = { set_temp_variable = { var = income_var_temp value = 0.20 }
+add_income_with_inflation = yes add_political_power = 50 custom_effect_tooltip = MSGA_refund_tt }
+  MSGA_finish_project = yes
+ }
+ }
+ MSGA_bor_modernisation = {
+ icon = generic_industry
+ allowed = { tag = SER }
+ visible = { has_completed_focus = MSGA_independent_resource_policy NOT = { has_country_flag = MSGA_done_bor_modernisation }  }
+ available = { MSGA_major_project_free = yes 108 = { is_owned_by = ROOT is_controlled_by = ROOT  } check_variable = { var = income_var value = MSGA_quote_bor_modernisation compare = greater_than_or_equals } }
+ cost = 45
+ days_remove = 120
+ ai_will_do = { factor = 1 modifier = { factor = 0 has_war = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.15 }
+add_income_with_inflation = yes MSGA_begin_project = yes }
+ cancel_trigger = { NOT = { 108 = { is_owned_by = ROOT is_controlled_by = ROOT  } } }
+ cancel_effect = { set_temp_variable = { var = income_var_temp value = 0.15 }
+add_income_with_inflation = yes add_political_power = 45 MSGA_finish_project = yes custom_effect_tooltip = MSGA_refund_tt }
+ remove_effect = {
+  if = {
+   limit = { 108 = { is_owned_by = ROOT is_controlled_by = ROOT  } }
+   add_to_variable = { MSGA_business_bonus = 0.01 }
+MSGA_refresh_recovery = yes
+if = { limit = { 108 = { free_building_slots = { building = infrastructure size > 0 } } } 108 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
+else = { add_political_power = 15 }
+   set_country_flag = MSGA_done_bor_modernisation
+   country_event = { id = MSGA.10 }
+  }
+  else = { set_temp_variable = { var = income_var_temp value = 0.15 }
+add_income_with_inflation = yes add_political_power = 45 custom_effect_tooltip = MSGA_refund_tt }
+  MSGA_finish_project = yes
+ }
+ }
+ MSGA_lignite_modernisation = {
+ icon = generic_industry
+ allowed = { tag = SER }
+ visible = { has_completed_focus = MSGA_independent_resource_policy NOT = { has_country_flag = MSGA_done_lignite_modernisation }  }
+ available = { MSGA_major_project_free = yes 1296 = { is_owned_by = ROOT is_controlled_by = ROOT  } check_variable = { var = income_var value = MSGA_quote_lignite_modernisation compare = greater_than_or_equals } }
+ cost = 40
+ days_remove = 90
+ ai_will_do = { factor = 1 modifier = { factor = 0 has_war = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.10 }
+add_income_with_inflation = yes MSGA_begin_project = yes }
+ cancel_trigger = { NOT = { 1296 = { is_owned_by = ROOT is_controlled_by = ROOT  } } }
+ cancel_effect = { set_temp_variable = { var = income_var_temp value = 0.10 }
+add_income_with_inflation = yes add_political_power = 40 MSGA_finish_project = yes custom_effect_tooltip = MSGA_refund_tt }
+ remove_effect = {
+  if = {
+   limit = { 1296 = { is_owned_by = ROOT is_controlled_by = ROOT  } }
+   1296 = { add_resource = { type = coal amount = 4 } }
+   set_country_flag = MSGA_done_lignite_modernisation
+   country_event = { id = MSGA.10 }
+  }
+  else = { set_temp_variable = { var = income_var_temp value = 0.10 }
+add_income_with_inflation = yes add_political_power = 40 custom_effect_tooltip = MSGA_refund_tt }
+  MSGA_finish_project = yes
+ }
+ }
+ MSGA_jadar_survey = {
+ icon = generic_industry
+ allowed = { tag = SER }
+ visible = { has_completed_focus = MSGA_independent_resource_policy NOT = { has_country_flag = MSGA_done_jadar_survey }  }
+ available = { MSGA_major_project_free = yes 1296 = { is_owned_by = ROOT is_controlled_by = ROOT  } check_variable = { var = income_var value = MSGA_quote_jadar_survey compare = greater_than_or_equals } }
+ cost = 35
+ days_remove = 180
+ ai_will_do = { factor = 1 modifier = { factor = 0 has_war = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.05 }
+add_income_with_inflation = yes MSGA_begin_project = yes }
+ cancel_trigger = { NOT = { 1296 = { is_owned_by = ROOT is_controlled_by = ROOT  } } }
+ cancel_effect = { set_temp_variable = { var = income_var_temp value = 0.05 }
+add_income_with_inflation = yes add_political_power = 35 MSGA_finish_project = yes custom_effect_tooltip = MSGA_refund_tt }
+ remove_effect = {
+  if = {
+   limit = { 1296 = { is_owned_by = ROOT is_controlled_by = ROOT  } }
+   add_political_power = 15
+custom_effect_tooltip = MSGA_jadar_survey_tt
+   set_country_flag = MSGA_done_jadar_survey
+   country_event = { id = MSGA.10 }
+  }
+  else = { set_temp_variable = { var = income_var_temp value = 0.05 }
+add_income_with_inflation = yes add_political_power = 35 custom_effect_tooltip = MSGA_refund_tt }
+  MSGA_finish_project = yes
+ }
+ }
+ MSGA_jadar_feasibility = {
+ icon = generic_industry
+ allowed = { tag = SER }
+ visible = { has_completed_focus = MSGA_independent_resource_policy NOT = { has_country_flag = MSGA_done_jadar_feasibility } has_country_flag = MSGA_done_jadar_survey }
+ available = { MSGA_major_project_free = yes 1296 = { is_owned_by = ROOT is_controlled_by = ROOT  } check_variable = { var = income_var value = MSGA_quote_jadar_feasibility compare = greater_than_or_equals } }
+ cost = 40
+ days_remove = 180
+ ai_will_do = { factor = 1 modifier = { factor = 0 has_war = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.20 }
+add_income_with_inflation = yes MSGA_begin_project = yes }
+ cancel_trigger = { NOT = { 1296 = { is_owned_by = ROOT is_controlled_by = ROOT  } } }
+ cancel_effect = { set_temp_variable = { var = income_var_temp value = 0.20 }
+add_income_with_inflation = yes add_political_power = 40 MSGA_finish_project = yes custom_effect_tooltip = MSGA_refund_tt }
+ remove_effect = {
+  if = {
+   limit = { 1296 = { is_owned_by = ROOT is_controlled_by = ROOT  } }
+   add_to_variable = { MSGA_business_bonus = 0.01 }
+MSGA_refresh_recovery = yes
+set_country_flag = MSGA_jadar_dossier_ready
+custom_effect_tooltip = MSGA_jadar_feasibility_tt
+   set_country_flag = MSGA_done_jadar_feasibility
+   country_event = { id = MSGA.10 }
+  }
+  else = { set_temp_variable = { var = income_var_temp value = 0.20 }
+add_income_with_inflation = yes add_political_power = 40 custom_effect_tooltip = MSGA_refund_tt }
+  MSGA_finish_project = yes
+ }
+ }
+ MSGA_support_enterprise = {
+ icon = generic_industry
+ allowed = { tag = SER }
+ visible = { has_completed_focus = MSGA_serbian_recovery NOT = { has_country_flag = MSGA_done_enterprise } }
+ available = { has_completed_focus = MSGA_presidential_mandate check_variable = { var = income_var value = MSGA_quote_enterprise compare = greater_than_or_equals } }
+ cost = 40
+ ai_will_do = { factor = 2 }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.10 }
+add_income_with_inflation = yes set_country_flag = MSGA_done_enterprise add_to_variable = { MSGA_business_bonus = 0.01 } MSGA_refresh_recovery = yes }
+ }
+ MSGA_foreign_priority = {
+ icon = generic_industry
+ allowed = { tag = SER }
+ visible = { has_completed_focus = MSGA_attract_productive_capital NOT = { has_country_flag = MSGA_foreign_partner_selected } NOT = { has_country_flag = MSGA_foreign_talks_started } }
+ available = { check_variable = { var = income_var value = MSGA_quote_foreign compare = greater_than_or_equals } }
+ cost = 25
+ ai_will_do = { factor = 2 }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.10 }
+add_income_with_inflation = yes set_country_flag = MSGA_foreign_talks_started country_event = { id = MSGA.6 } }
+ }
+}
+MSGA_rearmament = {
+ MSGA_expand_defence = {
+ icon = generic_industry
+ allowed = { tag = SER }
+ visible = { has_completed_focus = MSGA_restore_defence_production NOT = { has_country_flag = MSGA_done_expand_defence }  }
+ available = { MSGA_major_project_free = yes 1296 = { is_owned_by = ROOT is_controlled_by = ROOT free_building_slots = { building = arms_factory size > 0 include_locked = no } } check_variable = { var = income_var value = MSGA_quote_expand_defence compare = greater_than_or_equals } }
+ cost = 75
+ days_remove = 120
+ ai_will_do = { factor = 2 modifier = { factor = 0 has_war = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.35 }
+add_income_with_inflation = yes MSGA_begin_project = yes }
+ cancel_trigger = { NOT = { 1296 = { is_owned_by = ROOT is_controlled_by = ROOT free_building_slots = { building = arms_factory size > 0 include_locked = no } } } }
+ cancel_effect = { set_temp_variable = { var = income_var_temp value = 0.35 }
+add_income_with_inflation = yes add_political_power = 75 MSGA_finish_project = yes custom_effect_tooltip = MSGA_refund_tt }
+ remove_effect = {
+  if = {
+   limit = { 1296 = { is_owned_by = ROOT is_controlled_by = ROOT free_building_slots = { building = arms_factory size > 0 include_locked = no } } }
+   1296 = { add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+   set_country_flag = MSGA_done_expand_defence
+   country_event = { id = MSGA.10 }
+  }
+  else = { set_temp_variable = { var = income_var_temp value = 0.35 }
+add_income_with_inflation = yes add_political_power = 75 custom_effect_tooltip = MSGA_refund_tt }
+  MSGA_finish_project = yes
+ }
+ }
+ MSGA_procure_equipment = {
+ icon = generic_army_support
+ allowed = { tag = SER }
+ visible = { has_completed_focus = MSGA_arms_for_an_uncertain_world NOT = { has_country_flag = MSGA_done_procurement } }
+ available = { check_variable = { var = income_var value = MSGA_quote_procurement compare = greater_than_or_equals } }
+ cost = 35
+ days_remove = 30
+ ai_will_do = { factor = 2 }
+ complete_effect = {
+  if = { limit = { has_country_flag = MSGA_partner_russia } set_temp_variable = { var = income_var_temp value = -0.07 }
+add_income_with_inflation = yes }
+  else = { set_temp_variable = { var = income_var_temp value = -0.10 }
+add_income_with_inflation = yes }
+  set_country_flag = MSGA_done_procurement
+ }
+ remove_effect = {
+  add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 500 producer = SER }
+  add_equipment_to_stockpile = { type = support_equipment amount = 50 producer = SER }
+  army_experience = 3
+ }
+ }
+}
+MSGA_public_health = {
+ MSGA_targeted_testing = {
+ icon = generic_propaganda_campaigns
+ allowed = { tag = SER }
+ visible = { has_country_flag = MSGA_covid_active NOT = { has_country_flag = MSGA_health_targeted_testing } }
+ available = { check_variable = { var = income_var value = MSGA_quote_targeted_testing compare = greater_than_or_equals } }
+ cost = 25
+ days_remove = 14
+ ai_will_do = { factor = 10 }
+ complete_effect = { set_country_flag = MSGA_health_targeted_testing set_temp_variable = { var = income_var_temp value = -0.01 }
+add_income_with_inflation = yes }
+ remove_effect = { if = { limit = { has_country_flag = MSGA_covid_active } MSGA_health_progress = yes add_political_power = 5 } else = { add_political_power = 10 } }
+ }
+ MSGA_essential_workers = {
+ icon = generic_propaganda_campaigns
+ allowed = { tag = SER }
+ visible = { has_country_flag = MSGA_covid_active NOT = { has_country_flag = MSGA_health_essential_workers } }
+ available = { check_variable = { var = income_var value = MSGA_quote_essential_workers compare = greater_than_or_equals } }
+ cost = 35
+ days_remove = 21
+ ai_will_do = { factor = 5 }
+ complete_effect = { set_country_flag = MSGA_health_essential_workers set_temp_variable = { var = income_var_temp value = -0.03 }
+add_income_with_inflation = yes }
+ remove_effect = { if = { limit = { has_country_flag = MSGA_covid_active } MSGA_health_progress = yes add_stability = 0.01 } else = { add_political_power = 10 } }
+ }
+ MSGA_hospital_funding = {
+ icon = generic_propaganda_campaigns
+ allowed = { tag = SER }
+ visible = { has_country_flag = MSGA_covid_active NOT = { has_country_flag = MSGA_health_hospital_funding } }
+ available = { check_variable = { var = income_var value = MSGA_quote_hospital_funding compare = greater_than_or_equals } }
+ cost = 35
+ days_remove = 14
+ ai_will_do = { factor = 5 }
+ complete_effect = { set_country_flag = MSGA_health_hospital_funding set_temp_variable = { var = income_var_temp value = -0.05 }
+add_income_with_inflation = yes }
+ remove_effect = { if = { limit = { has_country_flag = MSGA_covid_active } MSGA_health_progress = yes add_stability = 0.01 } else = { add_political_power = 10 } }
+ }
+ MSGA_medical_assistance = {
+ icon = generic_propaganda_campaigns
+ allowed = { tag = SER }
+ visible = { has_country_flag = MSGA_covid_active NOT = { has_country_flag = MSGA_health_medical_assistance } }
+ available = { always = yes }
+ cost = 25
+ days_remove = 14
+ ai_will_do = { factor = 10 }
+ complete_effect = { set_country_flag = MSGA_health_medical_assistance  }
+ remove_effect = { if = { limit = { has_country_flag = MSGA_covid_active } MSGA_health_progress = yes add_political_power = 5 } else = { add_political_power = 10 } }
+ }
+}

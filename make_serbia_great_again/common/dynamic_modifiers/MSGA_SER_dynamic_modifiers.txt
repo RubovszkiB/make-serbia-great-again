@@ -1,0 +1,13 @@
+MSGA_recovery_programme = {
+ icon = GFX_idea_SER_Emerging_Economy
+ enable = { tag = SER }
+ business_value_factor = MSGA_business_bonus
+}
+MSGA_defence_reorientation = {
+ icon = GFX_idea_generic_red_army
+ enable = { tag = SER }
+ industrial_capacity_factory = MSGA_defence_output
+ production_factory_efficiency_gain_factor = MSGA_defence_efficiency
+ supply_consumption_factor = MSGA_defence_supply
+ planning_speed = MSGA_defence_planning
+}

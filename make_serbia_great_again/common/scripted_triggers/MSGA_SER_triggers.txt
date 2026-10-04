@@ -1,0 +1,11 @@
+MSGA_US_fracture_signal = {
+ OR = {
+  has_global_flag = USA_shattered_union_global
+  has_global_flag = USA_american_civil_war_global
+  has_global_flag = USA_american_civil_war_over_global
+ }
+}
+MSGA_major_project_free = {
+ NOT = { has_country_flag = MSGA_major_project_active }
+ has_completed_focus = MSGA_reopen_on_serbian_terms
+}

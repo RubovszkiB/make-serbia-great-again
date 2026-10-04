@@ -1,0 +1,14 @@
+# Local game output and development files
+logs/
+save games/
+*.hoi4
+*.log
+*.tmp
+*.bak
+__pycache__/
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+

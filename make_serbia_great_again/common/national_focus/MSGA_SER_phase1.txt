@@ -1,0 +1,299 @@
+focus_tree = {
+ id = MSGA_SER_phase1
+ country = { factor = 0 modifier = { add = 100 tag = SER } }
+ default = no
+ reset_on_civilwar = no
+ initial_show_position = { focus = MSGA_serbia_in_the_new_decade }
+ focus = {
+ id = MSGA_serbia_in_the_new_decade
+ icon = GFX_goal_generic_national_unity
+ x = 8
+ y = 0
+ cost = 4
+ 
+ 
+ ai_will_do = { factor = 10 }
+ completion_reward = {
+ add_political_power = 35
+add_stability = 0.01
+country_event = { id = MSGA.1 }
+ set_country_flag = MSGA_completed_serbia_in_the_new_decade
+ }
+ }
+ focus = {
+ id = MSGA_contain_the_outbreak
+ icon = GFX_focus_generic_prepare_the_vaccine
+ x = 8
+ y = 1
+ cost = 4
+ prerequisite = { focus = MSGA_serbia_in_the_new_decade }
+ 
+ ai_will_do = { factor = 10 }
+ completion_reward = {
+ set_country_flag = MSGA_covid_active
+add_ideas = MSGA_pandemic_disruption
+country_event = { id = MSGA.2 }
+custom_effect_tooltip = MSGA_unlock_health_tt
+ set_country_flag = MSGA_completed_contain_the_outbreak
+ }
+ }
+ focus = {
+ id = MSGA_reopen_on_serbian_terms
+ icon = GFX_focus_generic_end_lockdowns
+ x = 8
+ y = 2
+ cost = 4
+ prerequisite = { focus = MSGA_contain_the_outbreak }
+ 
+ ai_will_do = { factor = 10 }
+ completion_reward = {
+ country_event = { id = MSGA.3 }
+custom_effect_tooltip = MSGA_reopening_tt
+ set_country_flag = MSGA_completed_reopen_on_serbian_terms
+ }
+ }
+ focus = {
+ id = MSGA_attract_productive_capital
+ icon = GFX_focus_generic_foriegn_investment
+ x = 2
+ y = 3
+ cost = 5
+ prerequisite = { focus = MSGA_reopen_on_serbian_terms }
+ 
+ ai_will_do = { factor = 6 }
+ completion_reward = {
+ MSGA_start_recovery = yes
+country_event = { id = MSGA.5 }
+custom_effect_tooltip = MSGA_unlock_capital_tt
+ set_country_flag = MSGA_completed_attract_productive_capital
+ }
+ }
+ focus = {
+ id = MSGA_upgrade_belgrade_services
+ icon = GFX_focus_generic_promote_managerial_thought
+ x = 0
+ y = 4
+ cost = 5
+ prerequisite = { focus = MSGA_attract_productive_capital }
+ 
+ ai_will_do = { factor = 6 }
+ completion_reward = {
+ add_political_power = 15
+custom_effect_tooltip = MSGA_unlock_belgrade_tt
+ set_country_flag = MSGA_completed_upgrade_belgrade_services
+ }
+ }
+ focus = {
+ id = MSGA_develop_the_morava_corridor
+ icon = GFX_focus_USB_bipartisan_infrastructure_law
+ x = 4
+ y = 4
+ cost = 5
+ prerequisite = { focus = MSGA_attract_productive_capital }
+ 
+ ai_will_do = { factor = 6 }
+ completion_reward = {
+ add_political_power = 15
+custom_effect_tooltip = MSGA_unlock_morava_tt
+ set_country_flag = MSGA_completed_develop_the_morava_corridor
+ }
+ }
+ focus = {
+ id = MSGA_independent_resource_policy
+ icon = GFX_goal_generic_construction
+ x = 2
+ y = 5
+ cost = 5
+ prerequisite = { focus = MSGA_upgrade_belgrade_services }
+ prerequisite = { focus = MSGA_develop_the_morava_corridor }
+ 
+ ai_will_do = { factor = 6 }
+ completion_reward = {
+ custom_effect_tooltip = MSGA_unlock_resources_tt
+add_political_power = 20
+ set_country_flag = MSGA_completed_independent_resource_policy
+ }
+ }
+ focus = {
+ id = MSGA_serbian_recovery
+ icon = GFX_focus_generic_bank
+ x = 2
+ y = 6
+ cost = 6
+ prerequisite = { focus = MSGA_independent_resource_policy }
+ 
+ ai_will_do = { factor = 6 }
+ completion_reward = {
+ add_stability = 0.02
+add_power_balance_value = { id = MSGA_SER_streets_presidency value = 0.03 }
+custom_effect_tooltip = MSGA_recovery_capstone_tt
+ set_country_flag = MSGA_completed_serbian_recovery
+ }
+ }
+ focus = {
+ id = MSGA_consolidate_the_state
+ icon = GFX_goal_generic_political_pressure
+ x = 8
+ y = 3
+ cost = 5
+ prerequisite = { focus = MSGA_reopen_on_serbian_terms }
+ 
+ ai_will_do = { factor = 10 }
+ completion_reward = {
+ add_political_power = 25
+add_power_balance_value = { id = MSGA_SER_streets_presidency value = 0.03 }
+custom_effect_tooltip = MSGA_unlock_government_tt
+ set_country_flag = MSGA_completed_consolidate_the_state
+ }
+ }
+ focus = {
+ id = MSGA_manage_the_streets
+ icon = GFX_goal_support_democracy
+ x = 8
+ y = 4
+ cost = 5
+ prerequisite = { focus = MSGA_consolidate_the_state }
+ 
+ ai_will_do = { factor = 10 }
+ completion_reward = {
+ country_event = { id = MSGA.4 }
+ set_country_flag = MSGA_completed_manage_the_streets
+ }
+ }
+ focus = {
+ id = MSGA_presidential_mandate
+ icon = GFX_focus_generic_media_control
+ x = 8
+ y = 5
+ cost = 5
+ prerequisite = { focus = MSGA_manage_the_streets }
+ 
+ ai_will_do = { factor = 10 }
+ completion_reward = {
+ add_stability = 0.02
+add_power_balance_value = { id = MSGA_SER_streets_presidency value = 0.04 }
+add_political_power = 20
+custom_effect_tooltip = MSGA_mandate_tt
+ set_country_flag = MSGA_completed_presidential_mandate
+ }
+ }
+ focus = {
+ id = MSGA_restore_defence_production
+ icon = GFX_focus_generic_military_industry
+ x = 14
+ y = 3
+ cost = 6
+ prerequisite = { focus = MSGA_reopen_on_serbian_terms }
+ 
+ ai_will_do = { factor = 5 }
+ completion_reward = {
+ MSGA_restore_defence = yes
+country_event = { id = MSGA.7 }
+custom_effect_tooltip = MSGA_unlock_defence_tt
+ set_country_flag = MSGA_completed_restore_defence_production
+ }
+ }
+ focus = {
+ id = MSGA_modernise_the_army
+ icon = GFX_focus_generic_issue_ballistic_vests
+ x = 12
+ y = 4
+ cost = 5
+ prerequisite = { focus = MSGA_restore_defence_production }
+ 
+ ai_will_do = { factor = 5 }
+ completion_reward = {
+ army_experience = 10
+set_variable = { MSGA_defence_planning = 0.05 }
+MSGA_refresh_defence = yes
+custom_effect_tooltip = MSGA_army_tt
+ set_country_flag = MSGA_completed_modernise_the_army
+ }
+ }
+ focus = {
+ id = MSGA_arms_for_an_uncertain_world
+ icon = GFX_focus_generic_factory_conversion
+ x = 16
+ y = 4
+ cost = 5
+ prerequisite = { focus = MSGA_restore_defence_production }
+ 
+ ai_will_do = { factor = 5 }
+ completion_reward = {
+ set_variable = { MSGA_defence_efficiency = 0.05 }
+MSGA_refresh_defence = yes
+custom_effect_tooltip = MSGA_unlock_procurement_tt
+ set_country_flag = MSGA_completed_arms_for_an_uncertain_world
+ }
+ }
+ focus = {
+ id = MSGA_secure_supply_lines
+ icon = GFX_focus_generic_extend_the_supply_network
+ x = 14
+ y = 5
+ cost = 5
+ prerequisite = { focus = MSGA_modernise_the_army }
+ prerequisite = { focus = MSGA_arms_for_an_uncertain_world }
+ 
+ ai_will_do = { factor = 5 }
+ completion_reward = {
+ MSGA_supply_preparation = yes
+set_variable = { MSGA_defence_supply = -0.05 }
+MSGA_refresh_defence = yes
+custom_effect_tooltip = MSGA_supply_tt
+ set_country_flag = MSGA_completed_secure_supply_lines
+ }
+ }
+ focus = {
+ id = MSGA_ready_for_the_uncertain
+ icon = GFX_focus_generic_cautious_warfare
+ x = 14
+ y = 6
+ cost = 5
+ prerequisite = { focus = MSGA_secure_supply_lines }
+ 
+ ai_will_do = { factor = 5 }
+ completion_reward = {
+ army_experience = 5
+set_variable = { MSGA_defence_planning = 0.10 }
+MSGA_refresh_defence = yes
+custom_effect_tooltip = MSGA_readiness_tt
+ set_country_flag = MSGA_completed_ready_for_the_uncertain
+ }
+ }
+ focus = {
+ id = MSGA_watch_the_western_shield
+ icon = GFX_focus_generic_uphold_nato_doctrine
+ x = 8
+ y = 7
+ cost = 5
+ prerequisite = { focus = MSGA_serbian_recovery }
+ prerequisite = { focus = MSGA_presidential_mandate }
+ prerequisite = { focus = MSGA_ready_for_the_uncertain }
+ available = { has_country_flag = MSGA_US_ORDER_COLLAPSED }
+ cancel_if_invalid = no
+ ai_will_do = { factor = 10 }
+ completion_reward = {
+ add_war_support = 0.03
+army_experience = 5
+custom_effect_tooltip = MSGA_shield_tt
+ set_country_flag = MSGA_completed_watch_the_western_shield
+ }
+ }
+ focus = {
+ id = MSGA_the_kosovo_question
+ icon = GFX_goal_generic_forceful_treaty
+ x = 8
+ y = 8
+ cost = 6
+ prerequisite = { focus = MSGA_watch_the_western_shield }
+ 
+ ai_will_do = { factor = 10 }
+ completion_reward = {
+ set_country_flag = MSGA_kosovo_phase_unlocked
+country_event = { id = MSGA.9 }
+custom_effect_tooltip = MSGA_phase2_tt
+ set_country_flag = MSGA_completed_the_kosovo_question
+ }
+ }
+}

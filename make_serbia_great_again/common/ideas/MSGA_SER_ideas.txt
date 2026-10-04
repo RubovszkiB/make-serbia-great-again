@@ -1,0 +1,22 @@
+ideas = {
+ country = {
+  MSGA_pandemic_disruption = {
+   picture = generic_covid
+   allowed = { tag = SER }
+   removal_cost = -1
+   modifier = { industrial_capacity_factory = -0.05 production_speed_buildings_factor = -0.05 business_value_factor = -0.03 stability_factor = -0.02 }
+  }
+  MSGA_pandemic_easing = {
+   picture = generic_covid
+   allowed = { tag = SER }
+   removal_cost = -1
+   modifier = { industrial_capacity_factory = -0.02 production_speed_buildings_factor = -0.02 business_value_factor = -0.01 }
+  }
+  MSGA_capital_commitment = {
+   picture = SER_Emerging_Economy
+   allowed = { tag = SER }
+   removal_cost = -1
+   modifier = { production_speed_buildings_factor = -0.05 }
+  }
+ }
+}

@@ -1,0 +1,69 @@
+MSGA_SER_streets_presidency = {
+	initial_value = 0
+	left_side = MSGA_SER_the_streets
+	right_side = MSGA_SER_the_presidency
+	decision_category = MSGA_SER_streets_presidency_category
+
+	range = {
+		id = MSGA_SER_contested
+		min = -0.25
+		max = 0.25
+		modifier = { }
+		on_activate = { }
+		on_deactivate = { }
+	}
+	side = {
+		id = MSGA_SER_the_streets
+		icon = GFX_bop_SER_milosevic_side
+		range = {
+			id = MSGA_SER_streets_crisis
+			min = -1.00
+			max = -0.60
+			modifier = {
+				stability_factor = -0.08
+				industrial_capacity_factory = -0.05
+				war_support_factor = -0.05
+			}
+			on_activate = { }
+			on_deactivate = { }
+		}
+		range = {
+			id = MSGA_SER_streets_dominant
+			min = -0.60
+			max = -0.25
+			modifier = {
+				stability_factor = -0.03
+				production_speed_buildings_factor = -0.03
+			}
+			on_activate = { }
+			on_deactivate = { }
+		}
+	}
+	side = {
+		id = MSGA_SER_the_presidency
+		icon = GFX_bop_SER_titoist_side
+		range = {
+			id = MSGA_SER_presidency_dominant
+			min = 0.25
+			max = 0.60
+			modifier = {
+				stability_factor = 0.03
+				political_power_factor = 0.03
+			}
+			on_activate = { }
+			on_deactivate = { }
+		}
+		range = {
+			id = MSGA_SER_presidential_control
+			min = 0.60
+			max = 1.00
+			modifier = {
+				stability_factor = 0.05
+				industrial_capacity_factory = 0.03
+				political_power_factor = -0.02
+			}
+			on_activate = { }
+			on_deactivate = { }
+		}
+	}
+}
