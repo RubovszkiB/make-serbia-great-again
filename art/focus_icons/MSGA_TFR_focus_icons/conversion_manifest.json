@@ -1,0 +1,200 @@
+[
+  {
+    "sprite": "GFX_goal_MSGA_arms_for_an_uncertain_world",
+    "dimensions": [
+      95,
+      95
+    ],
+    "format": "uncompressed RGBA8, explicit opaque alpha",
+    "pixels_preserved": true,
+    "source_sha256": "dc2a00cd291fb8c82c8173d742125e486410897d4b90e66a6c16a60525d2d377",
+    "runtime_sha256": "a1c290a561adc1547e3019804f8e5ba553b2bb2cad5d9418fb121012b5ee2f31"
+  },
+  {
+    "sprite": "GFX_goal_MSGA_attract_productive_capital",
+    "dimensions": [
+      95,
+      95
+    ],
+    "format": "uncompressed RGBA8, explicit opaque alpha",
+    "pixels_preserved": true,
+    "source_sha256": "b1050024c49d8ddc620dce8ef95d79c73759e1b69897667292fd186bcd8d1128",
+    "runtime_sha256": "6061e088b3a9c59e41a0e627f7cede5c38bc577ff487e7e314c2bc46f9bff403"
+  },
+  {
+    "sprite": "GFX_goal_MSGA_consolidate_the_state",
+    "dimensions": [
+      95,
+      95
+    ],
+    "format": "uncompressed RGBA8, explicit opaque alpha",
+    "pixels_preserved": true,
+    "source_sha256": "ad857fb8f52ff08dff2b871e988ecb2538287b3213a2caf96e604cb824b06288",
+    "runtime_sha256": "db84949d5b16b728ba5a3a6319809724262fc53b121db4e7bd6fe2add2df7bd6"
+  },
+  {
+    "sprite": "GFX_goal_MSGA_contain_the_outbreak",
+    "dimensions": [
+      95,
+      95
+    ],
+    "format": "uncompressed RGBA8, explicit opaque alpha",
+    "pixels_preserved": true,
+    "source_sha256": "ccc17cc2190ddcd8141ef238515dff4cfec35fca181f5900c21ab062936907d6",
+    "runtime_sha256": "cc13d79411b48ec638c5f43d24fb38b04a05cd86aa48ba24d4b1947ba107548a"
+  },
+  {
+    "sprite": "GFX_goal_MSGA_develop_the_morava_corridor",
+    "dimensions": [
+      95,
+      95
+    ],
+    "format": "uncompressed RGBA8, explicit opaque alpha",
+    "pixels_preserved": true,
+    "source_sha256": "5e59d8dee315dbad4f193efa4c0cb7cdc73a433084677e6c28f6afc6601bac76",
+    "runtime_sha256": "1981d095860ab04438a99d68ea4a5f51b1f495dba994a20d183c8eb7bf86efb2"
+  },
+  {
+    "sprite": "GFX_goal_MSGA_independent_resource_policy",
+    "dimensions": [
+      95,
+      95
+    ],
+    "format": "uncompressed RGBA8, explicit opaque alpha",
+    "pixels_preserved": true,
+    "source_sha256": "d8a4fa8f1014e5a8c311b8e0b076d457110844b810744ab2db6a6be52bfeaf55",
+    "runtime_sha256": "09067be6d9f905b7dbcb3bf3d3343c5c2b455dc4ec5387d05aba2fdfb5d25a4e"
+  },
+  {
+    "sprite": "GFX_goal_MSGA_manage_the_streets",
+    "dimensions": [
+      95,
+      95
+    ],
+    "format": "uncompressed RGBA8, explicit opaque alpha",
+    "pixels_preserved": true,
+    "source_sha256": "ab88d75af08f50f840f11e21580ee769e393244527bc3d0d98a81e694da4e178",
+    "runtime_sha256": "94e278ea0b0b5a2194c5b1763fb09421000c3709a369fe8b38fea22c2abc9cd9"
+  },
+  {
+    "sprite": "GFX_goal_MSGA_modernise_the_army",
+    "dimensions": [
+      95,
+      95
+    ],
+    "format": "uncompressed RGBA8, explicit opaque alpha",
+    "pixels_preserved": true,
+    "source_sha256": "4d6a477a8ffb210ee0ebe15c49a496df71415c5a9586fc133f76986c2c7ed8a4",
+    "runtime_sha256": "7cb51f99914629a4859efe51561e4d372cd3a37cf49173f8fad25e84d19cd972"
+  },
+  {
+    "sprite": "GFX_goal_MSGA_presidential_mandate",
+    "dimensions": [
+      95,
+      95
+    ],
+    "format": "uncompressed RGBA8, explicit opaque alpha",
+    "pixels_preserved": true,
+    "source_sha256": "c4d58b3b548079297ca62b6ba803d3b191a020d3fb0e779d1f66578e44279136",
+    "runtime_sha256": "f467ffff45a0a517459fe1d4fe2942df4297e44c9973f68143e6565fba77d4da"
+  },
+  {
+    "sprite": "GFX_goal_MSGA_ready_for_the_uncertain",
+    "dimensions": [
+      95,
+      95
+    ],
+    "format": "uncompressed RGBA8, explicit opaque alpha",
+    "pixels_preserved": true,
+    "source_sha256": "e6968555d0ada17ed979682146ab22ecb8077a7663f799107948f651009bc9c3",
+    "runtime_sha256": "4b9105aeae1f61742d0a99449210daccf4c9412cf949d3b883ee79e0e8b4e62f"
+  },
+  {
+    "sprite": "GFX_goal_MSGA_reopen_on_serbian_terms",
+    "dimensions": [
+      95,
+      95
+    ],
+    "format": "uncompressed RGBA8, explicit opaque alpha",
+    "pixels_preserved": true,
+    "source_sha256": "69ecab1271b3da7ea39de4ec735ac7a7cb88d9df9fdee1fbf461eff92bf93e60",
+    "runtime_sha256": "f51d07dc453783a66a318f75763012d84b352e13f0e7212dea69302cbe9d59cd"
+  },
+  {
+    "sprite": "GFX_goal_MSGA_restore_defence_production",
+    "dimensions": [
+      95,
+      95
+    ],
+    "format": "uncompressed RGBA8, explicit opaque alpha",
+    "pixels_preserved": true,
+    "source_sha256": "129582e094bb237fbcf6d29b8f71288f1443684cfa968c3aaa1465c410c0d4cc",
+    "runtime_sha256": "e78258500cf2b09746b6214dff335b8151de550c93633583464530edffb0dce0"
+  },
+  {
+    "sprite": "GFX_goal_MSGA_secure_supply_lines",
+    "dimensions": [
+      95,
+      95
+    ],
+    "format": "uncompressed RGBA8, explicit opaque alpha",
+    "pixels_preserved": true,
+    "source_sha256": "c2880abd06c30fb2cca7dcdc5c89b4ba042648f5b6791d55a513975789fa859d",
+    "runtime_sha256": "296756e8783f281eb8f27a8d2c0f2eaf3fa6e3772fc529347a38b85a6cecae0f"
+  },
+  {
+    "sprite": "GFX_goal_MSGA_serbia_in_the_new_decade",
+    "dimensions": [
+      95,
+      95
+    ],
+    "format": "uncompressed RGBA8, explicit opaque alpha",
+    "pixels_preserved": true,
+    "source_sha256": "035b7d0783136c0369d01005959c3a35ade309962540df352de23663f91f2df4",
+    "runtime_sha256": "b92ea0a812544d871ec3722dcfa1e172adb4c1f9daf376561eb0ba14e9b3ce74"
+  },
+  {
+    "sprite": "GFX_goal_MSGA_serbian_recovery",
+    "dimensions": [
+      95,
+      95
+    ],
+    "format": "uncompressed RGBA8, explicit opaque alpha",
+    "pixels_preserved": true,
+    "source_sha256": "83c82ff1bb9b1c4aa269aaa9e6ebdfbcd4af17d39f4ac2b15c41e367e36b0655",
+    "runtime_sha256": "ac95959e51a0de645650409d0b9c780818a9ea14a9f4979c7cc8154337f09c99"
+  },
+  {
+    "sprite": "GFX_goal_MSGA_the_kosovo_question",
+    "dimensions": [
+      95,
+      95
+    ],
+    "format": "uncompressed RGBA8, explicit opaque alpha",
+    "pixels_preserved": true,
+    "source_sha256": "f78ee5b3e7fcc9ef41196bcaa88297ed939e97f1cacf1e2d20689319eec42fc2",
+    "runtime_sha256": "dd6ccd3f464341e8504f9a17990a8fe87b40cbda2fedb29b94478dadfa676870"
+  },
+  {
+    "sprite": "GFX_goal_MSGA_upgrade_belgrade_services",
+    "dimensions": [
+      95,
+      95
+    ],
+    "format": "uncompressed RGBA8, explicit opaque alpha",
+    "pixels_preserved": true,
+    "source_sha256": "c67fc8d212ba85bd64aa3298efb0ffceeb3fa20abd4f34a5a9eddd5922c96c2a",
+    "runtime_sha256": "873e000bfb5976153b25b4faca97ee268ae2a982854028b4c1a97a6bcea24b60"
+  },
+  {
+    "sprite": "GFX_goal_MSGA_watch_the_western_shield",
+    "dimensions": [
+      95,
+      95
+    ],
+    "format": "uncompressed RGBA8, explicit opaque alpha",
+    "pixels_preserved": true,
+    "source_sha256": "a6868e4a8d89f87fe3ac1b1c64d322b984cf73edb2f12ad2aacbd9c85fec3302",
+    "runtime_sha256": "d599019492395cd5de80d4b44e8b6ac7be301c0d5624d2056f3835bf7533d36e"
+  }
+]

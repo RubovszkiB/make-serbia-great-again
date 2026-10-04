@@ -1,127 +1,443 @@
 # Uses only TFR's established treasury API; no derived GDP/debt writes.
 MSGA_initialize = {
- if = {
-  limit = { NOT = { has_country_flag = MSGA_bop_initialized } }
-  add_power_balance_value = { id = MSGA_SER_streets_presidency value = -0.10 }
-  set_country_flag = MSGA_bop_initialized
- }
- if = {
-  limit = { NOT = { has_country_flag = MSGA_phase1_initialized } }
-  set_variable = { MSGA_health_response = 0 }
-  set_variable = { MSGA_authority_uses = 0 }
-  set_variable = { MSGA_concession_uses = 0 }
-  set_variable = { MSGA_order_uses = 0 }
-  set_variable = { MSGA_business_bonus = 0 }
-  set_variable = { MSGA_defence_output = 0 }
-  set_variable = { MSGA_defence_efficiency = 0 }
-  set_variable = { MSGA_defence_supply = 0 }
-  set_variable = { MSGA_defence_planning = 0 }
-  set_country_flag = MSGA_phase1_initialized
- }
- set_country_flag = MSGA_campaign_active
- if = {
-  limit = { NOT = { has_country_flag = MSGA_elections_locked } }
-  set_politics = { ruling_party = conservative elections_allowed = no }
-  set_country_flag = MSGA_elections_locked
- }
- MSGA_update_quotes = yes
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = MSGA_bop_initialized
+			}
+		}
+		set_power_balance = {
+			id = MSGA_SER_streets_presidency
+			left_side = MSGA_SER_the_streets
+			right_side = MSGA_SER_the_presidency
+			set_value = -0.10
+		}
+		set_country_flag = MSGA_bop_initialized
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = MSGA_phase1_initialized
+			}
+		}
+		set_variable = {
+			MSGA_health_response = 0
+		}
+		set_variable = {
+			MSGA_authority_uses = 0
+		}
+		set_variable = {
+			MSGA_concession_uses = 0
+		}
+		set_variable = {
+			MSGA_order_uses = 0
+		}
+		set_variable = {
+			MSGA_business_bonus = 0
+		}
+		set_variable = {
+			MSGA_defence_output = 0
+		}
+		set_variable = {
+			MSGA_defence_efficiency = 0
+		}
+		set_variable = {
+			MSGA_defence_supply = 0
+		}
+		set_variable = {
+			MSGA_defence_planning = 0
+		}
+		set_country_flag = MSGA_phase1_initialized
+	}
+	set_country_flag = MSGA_campaign_active
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = MSGA_elections_locked
+			}
+		}
+		set_politics = {
+			ruling_party = conservative
+			elections_allowed = no
+		}
+		set_country_flag = MSGA_elections_locked
+	}
+	MSGA_update_quotes = yes
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = MSGA_reward_revision_initialized
+			}
+		}
+		set_variable = {
+			MSGA_defence_recovery = 0
+		}
+		set_variable = {
+			MSGA_kosovo_review_progress = 0
+		}
+		set_variable = {
+			MSGA_strategic_review_progress = 0
+		}
+		set_variable = {
+			MSGA_project_paid = 0
+		}
+		if = {
+			limit = {
+				has_completed_focus = MSGA_modernise_the_army
+			}
+			set_variable = {
+				MSGA_defence_recovery = 0.05
+			}
+		}
+		if = {
+			limit = {
+				has_completed_focus = MSGA_serbia_in_the_new_decade
+			}
+			set_country_flag = MSGA_domestic_affairs_open
+		}
+		set_country_flag = MSGA_reward_revision_initialized
+	}
 }
 MSGA_start_recovery = {
- set_variable = { MSGA_business_bonus = 0.05 }
- add_dynamic_modifier = { modifier = MSGA_recovery_programme days = 365 }
+	set_variable = {
+		MSGA_business_bonus = 0.05
+	}
+	add_dynamic_modifier = {
+		modifier = MSGA_recovery_programme
+		days = 365
+	}
 }
 MSGA_refresh_recovery = {
- clamp_variable = { var = MSGA_business_bonus min = 0.05 max = 0.10 }
- add_dynamic_modifier = { modifier = MSGA_recovery_programme days = 365 }
+	clamp_variable = {
+		var = MSGA_business_bonus
+		min = 0.05
+		max = 0.10
+	}
+	hidden_effect = {
+		if = {
+			limit = {
+				has_dynamic_modifier = {
+					modifier = MSGA_recovery_programme
+				}
+			}
+			remove_dynamic_modifier = {
+				modifier = MSGA_recovery_programme
+			}
+		}
+	}
+	add_dynamic_modifier = {
+		modifier = MSGA_recovery_programme
+		days = 365
+	}
 }
 MSGA_health_progress = {
- add_to_variable = { MSGA_health_response = 1 }
- if = {
-  limit = { has_country_flag = MSGA_covid_active check_variable = { MSGA_health_response > 1 } }
-  remove_ideas = MSGA_pandemic_disruption
-  add_ideas = MSGA_pandemic_easing
- }
- add_power_balance_value = { id = MSGA_SER_streets_presidency value = 0.02 }
+	add_to_variable = {
+		MSGA_health_response = 1
+	}
+	clamp_variable = {
+		var = MSGA_health_response
+		min = 0
+		max = 4
+	}
+	if = {
+		limit = {
+			has_country_flag = MSGA_covid_active
+			check_variable = {
+				MSGA_health_response > 1
+			}
+			has_idea = MSGA_pandemic_disruption
+		}
+		swap_ideas = {
+			remove_idea = MSGA_pandemic_disruption
+			add_idea = MSGA_pandemic_easing
+		}
+	}
+	add_power_balance_value = {
+		id = MSGA_SER_streets_presidency
+		value = 0.02
+	}
 }
 MSGA_end_covid = {
- remove_ideas = MSGA_pandemic_disruption
- remove_ideas = MSGA_pandemic_easing
- clr_country_flag = MSGA_covid_active
- set_country_flag = MSGA_covid_resolved
+	remove_ideas = MSGA_pandemic_disruption
+	remove_ideas = MSGA_pandemic_easing
+	clr_country_flag = MSGA_covid_active
+	set_country_flag = MSGA_covid_resolved
 }
 MSGA_refresh_defence = {
- add_dynamic_modifier = { modifier = MSGA_defence_reorientation days = 365 }
+	hidden_effect = {
+		if = {
+			limit = {
+				has_dynamic_modifier = {
+					modifier = MSGA_defence_reorientation
+				}
+			}
+			remove_dynamic_modifier = {
+				modifier = MSGA_defence_reorientation
+			}
+		}
+	}
+	add_dynamic_modifier = {
+		modifier = MSGA_defence_reorientation
+		days = 365
+	}
 }
 MSGA_restore_defence = {
- if = {
-  limit = { 1296 = { is_owned_by = ROOT is_controlled_by = ROOT } }
-  1296 = {
-   add_extra_state_shared_building_slots = 1
-   add_building_construction = { type = arms_factory level = 1 instant_build = yes }
-  }
- }
- else = {
-  random_owned_state = {
-   limit = { is_core_of = ROOT is_fully_controlled_by = ROOT }
-   add_extra_state_shared_building_slots = 1
-   add_building_construction = { type = arms_factory level = 1 instant_build = yes }
-  }
- }
- set_variable = { MSGA_defence_output = 0.05 }
- MSGA_refresh_defence = yes
+	if = {
+		limit = {
+			1296 = {
+				is_owned_by = ROOT
+				is_fully_controlled_by = ROOT
+			}
+		}
+		1296 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	else = {
+		random_owned_state = {
+			limit = {
+				is_core_of = ROOT
+				is_fully_controlled_by = ROOT
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	set_variable = {
+		MSGA_defence_output = 0.05
+	}
+	MSGA_refresh_defence = yes
 }
 MSGA_supply_preparation = {
- if = {
-  limit = { 108 = { is_owned_by = ROOT is_controlled_by = ROOT free_building_slots = { building = infrastructure size > 0 } } }
-  108 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
- }
- else = { army_experience = 5 }
+	if = {
+		limit = {
+			108 = {
+				is_owned_by = ROOT
+				is_fully_controlled_by = ROOT
+				free_building_slots = {
+					building = infrastructure
+					size > 0
+				}
+			}
+		}
+		108 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	else = {
+		army_experience = 5
+	}
 }
 MSGA_begin_project = {
- set_country_flag = MSGA_major_project_active
- add_ideas = MSGA_capital_commitment
+	set_country_flag = MSGA_major_project_active
+	add_ideas = MSGA_capital_commitment
 }
 MSGA_finish_project = {
- clr_country_flag = MSGA_major_project_active
- remove_ideas = MSGA_capital_commitment
+	clr_country_flag = MSGA_major_project_active
+	remove_ideas = MSGA_capital_commitment
+	set_variable = {
+		MSGA_project_paid = 0
+	}
 }
 MSGA_check_world = {
- if = {
-  limit = { MSGA_US_fracture_signal = yes NOT = { has_country_flag = MSGA_US_ORDER_COLLAPSED } }
-  set_country_flag = MSGA_US_ORDER_COLLAPSED
-  country_event = { id = MSGA.8 }
- }
+	if = {
+		limit = {
+			MSGA_US_fracture_signal = yes
+			NOT = {
+				has_country_flag = MSGA_US_ORDER_COLLAPSED
+			}
+		}
+		set_country_flag = MSGA_US_ORDER_COLLAPSED
+		country_event = {
+			id = MSGA.8
+		}
+	}
 }
 MSGA_update_quotes = {
- set_variable = { MSGA_cost_factor = inflation_var }
- add_to_variable = { MSGA_cost_factor = 1 }
- set_variable = { MSGA_quote_belgrade_business = 0.25 }
- multiply_variable = { var = MSGA_quote_belgrade_business value = MSGA_cost_factor }
- set_variable = { MSGA_quote_morava_works = 0.2 }
- multiply_variable = { var = MSGA_quote_morava_works value = MSGA_cost_factor }
- set_variable = { MSGA_quote_expand_defence = 0.35 }
- multiply_variable = { var = MSGA_quote_expand_defence value = MSGA_cost_factor }
- set_variable = { MSGA_quote_bor_modernisation = 0.15 }
- multiply_variable = { var = MSGA_quote_bor_modernisation value = MSGA_cost_factor }
- set_variable = { MSGA_quote_lignite_modernisation = 0.1 }
- multiply_variable = { var = MSGA_quote_lignite_modernisation value = MSGA_cost_factor }
- set_variable = { MSGA_quote_jadar_survey = 0.05 }
- multiply_variable = { var = MSGA_quote_jadar_survey value = MSGA_cost_factor }
- set_variable = { MSGA_quote_jadar_feasibility = 0.2 }
- multiply_variable = { var = MSGA_quote_jadar_feasibility value = MSGA_cost_factor }
- set_variable = { MSGA_quote_targeted_testing = 0.01 }
- multiply_variable = { var = MSGA_quote_targeted_testing value = MSGA_cost_factor }
- set_variable = { MSGA_quote_essential_workers = 0.03 }
- multiply_variable = { var = MSGA_quote_essential_workers value = MSGA_cost_factor }
- set_variable = { MSGA_quote_hospital_funding = 0.05 }
- multiply_variable = { var = MSGA_quote_hospital_funding value = MSGA_cost_factor }
- set_variable = { MSGA_quote_enterprise = 0.1 }
- multiply_variable = { var = MSGA_quote_enterprise value = MSGA_cost_factor }
- set_variable = { MSGA_quote_foreign = 0.1 }
- multiply_variable = { var = MSGA_quote_foreign value = MSGA_cost_factor }
- set_variable = { MSGA_quote_procurement = 0.1 }
- multiply_variable = { var = MSGA_quote_procurement value = MSGA_cost_factor }
- set_variable = { MSGA_quote_concessions = 0.05 }
- multiply_variable = { var = MSGA_quote_concessions value = MSGA_cost_factor }
- if = { limit = { has_country_flag = MSGA_partner_russia } multiply_variable = { MSGA_quote_procurement = 0.75 } }
+	set_variable = {
+		MSGA_cost_factor = inflation_var
+	}
+	add_to_variable = {
+		MSGA_cost_factor = 1
+	}
+	set_variable = {
+		MSGA_quote_belgrade_business = 0.25
+	}
+	multiply_variable = {
+		var = MSGA_quote_belgrade_business
+		value = MSGA_cost_factor
+	}
+	set_variable = {
+		MSGA_quote_morava_works = 0.2
+	}
+	multiply_variable = {
+		var = MSGA_quote_morava_works
+		value = MSGA_cost_factor
+	}
+	set_variable = {
+		MSGA_quote_expand_defence = 0.35
+	}
+	multiply_variable = {
+		var = MSGA_quote_expand_defence
+		value = MSGA_cost_factor
+	}
+	set_variable = {
+		MSGA_quote_bor_modernisation = 0.15
+	}
+	multiply_variable = {
+		var = MSGA_quote_bor_modernisation
+		value = MSGA_cost_factor
+	}
+	set_variable = {
+		MSGA_quote_lignite_modernisation = 0.1
+	}
+	multiply_variable = {
+		var = MSGA_quote_lignite_modernisation
+		value = MSGA_cost_factor
+	}
+	set_variable = {
+		MSGA_quote_jadar_survey = 0.05
+	}
+	multiply_variable = {
+		var = MSGA_quote_jadar_survey
+		value = MSGA_cost_factor
+	}
+	set_variable = {
+		MSGA_quote_jadar_feasibility = 0.2
+	}
+	multiply_variable = {
+		var = MSGA_quote_jadar_feasibility
+		value = MSGA_cost_factor
+	}
+	set_variable = {
+		MSGA_quote_targeted_testing = 0.01
+	}
+	multiply_variable = {
+		var = MSGA_quote_targeted_testing
+		value = MSGA_cost_factor
+	}
+	set_variable = {
+		MSGA_quote_essential_workers = 0.03
+	}
+	multiply_variable = {
+		var = MSGA_quote_essential_workers
+		value = MSGA_cost_factor
+	}
+	set_variable = {
+		MSGA_quote_hospital_funding = 0.05
+	}
+	multiply_variable = {
+		var = MSGA_quote_hospital_funding
+		value = MSGA_cost_factor
+	}
+	set_variable = {
+		MSGA_quote_enterprise = 0.1
+	}
+	multiply_variable = {
+		var = MSGA_quote_enterprise
+		value = MSGA_cost_factor
+	}
+	set_variable = {
+		MSGA_quote_foreign = 0.1
+	}
+	multiply_variable = {
+		var = MSGA_quote_foreign
+		value = MSGA_cost_factor
+	}
+	set_variable = {
+		MSGA_quote_procurement = 0.1
+	}
+	multiply_variable = {
+		var = MSGA_quote_procurement
+		value = MSGA_cost_factor
+	}
+	set_variable = {
+		MSGA_quote_concessions = 0.05
+	}
+	multiply_variable = {
+		var = MSGA_quote_concessions
+		value = MSGA_cost_factor
+	}
+	if = {
+		limit = {
+			has_country_flag = MSGA_partner_russia
+		}
+		multiply_variable = {
+			MSGA_quote_procurement = 0.75
+		}
+	}
+	set_variable = {
+		MSGA_quote_border_intelligence = 0.03
+	}
+	multiply_variable = {
+		var = MSGA_quote_border_intelligence
+		value = MSGA_cost_factor
+	}
+}
+MSGA_morava_preparation = {
+	if = {
+		limit = {
+			1296 = {
+				is_owned_by = ROOT
+				is_fully_controlled_by = ROOT
+				free_building_slots = {
+					building = infrastructure
+					size > 0
+				}
+			}
+		}
+		1296 = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	else = {
+		add_to_variable = {
+			MSGA_business_bonus = 0.01
+		}
+		MSGA_refresh_recovery = yes
+		custom_effect_tooltip = MSGA_morava_fallback_tt
+	}
+}
+MSGA_open_kosovo_review = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = MSGA_kosovo_phase_unlocked
+			}
+		}
+		set_variable = {
+			MSGA_kosovo_review_progress = 0
+		}
+		set_country_flag = MSGA_kosovo_phase_unlocked
+	}
+}
+MSGA_refund_project = {
+	MSGA_update_quotes = yes
+	set_temp_variable = {
+		var = income_var_temp
+		value = MSGA_project_paid
+	}
+	divide_temp_variable = {
+		var = income_var_temp
+		value = MSGA_cost_factor
+	}
+	add_income_with_inflation = yes
+	custom_effect_tooltip = MSGA_refund_tt
 }

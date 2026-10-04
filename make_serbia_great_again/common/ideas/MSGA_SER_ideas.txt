@@ -1,22 +1,82 @@
 ideas = {
- country = {
-  MSGA_pandemic_disruption = {
-   picture = generic_covid
-   allowed = { tag = SER }
-   removal_cost = -1
-   modifier = { industrial_capacity_factory = -0.05 production_speed_buildings_factor = -0.05 business_value_factor = -0.03 stability_factor = -0.02 }
-  }
-  MSGA_pandemic_easing = {
-   picture = generic_covid
-   allowed = { tag = SER }
-   removal_cost = -1
-   modifier = { industrial_capacity_factory = -0.02 production_speed_buildings_factor = -0.02 business_value_factor = -0.01 }
-  }
-  MSGA_capital_commitment = {
-   picture = SER_Emerging_Economy
-   allowed = { tag = SER }
-   removal_cost = -1
-   modifier = { production_speed_buildings_factor = -0.05 }
-  }
- }
+	country = {
+		MSGA_pandemic_disruption = {
+			picture = generic_covid
+			allowed = {
+				tag = SER
+			}
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = -0.05
+				production_speed_buildings_factor = -0.05
+				business_value_factor = -0.03
+				stability_factor = -0.02
+			}
+		}
+		MSGA_pandemic_easing = {
+			picture = generic_covid
+			allowed = {
+				tag = SER
+			}
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = -0.02
+				production_speed_buildings_factor = -0.02
+				business_value_factor = -0.01
+			}
+		}
+		MSGA_capital_commitment = {
+			picture = SER_Emerging_Economy
+			allowed = {
+				tag = SER
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = -0.05
+			}
+		}
+		MSGA_coordinated_government = {
+			picture = cabinet_crisis
+			allowed = {
+				tag = SER
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.05
+			}
+		}
+		MSGA_presidential_administration = {
+			picture = cabinet_crisis
+			allowed = {
+				tag = SER
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.05
+				stability_factor = 0.03
+			}
+		}
+		MSGA_reopening_strain = {
+			picture = generic_covid
+			allowed = {
+				tag = SER
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.02
+				business_value_factor = -0.01
+			}
+		}
+		MSGA_strategic_vigilance = {
+			picture = generic_red_army
+			allowed = {
+				tag = SER
+			}
+			removal_cost = -1
+			modifier = {
+				planning_speed = 0.05
+				army_intel_factor = 0.05
+			}
+		}
+	}
 }

@@ -1,53 +1,126 @@
 MSGA_SER_streets_presidency_category = {
- MSGA_SER_reaffirm_presidential_authority = {
-  icon = generic_propaganda_campaigns
-  allowed = { tag = SER }
-  visible = { has_completed_focus = MSGA_consolidate_the_state }
-  available = { check_variable = { MSGA_authority_uses < 3 } }
-  cost = 35
-  days_re_enable = 120
-  ai_will_do = { factor = 2 }
-  complete_effect = { add_to_variable = { MSGA_authority_uses = 1 } add_power_balance_value = { id = MSGA_SER_streets_presidency value = 0.04 } }
- }
- MSGA_SER_address_public_grievances = {
-  icon = generic_propaganda_campaigns
-  allowed = { tag = SER }
-  visible = { has_completed_focus = MSGA_manage_the_streets }
-  available = { check_variable = { MSGA_concession_uses < 2 } check_variable = { var = income_var value = MSGA_quote_concessions compare = greater_than_or_equals } }
-  cost = 40
-  days_re_enable = 120
-  ai_will_do = { factor = 1 }
-  complete_effect = {
-   add_to_variable = { MSGA_concession_uses = 1 }
-   set_temp_variable = { var = income_var_temp value = -0.05 }
-   add_income_with_inflation = yes
-   add_power_balance_value = { id = MSGA_SER_streets_presidency value = -0.02 }
-   add_stability = 0.01
-  }
- }
- MSGA_public_order = {
-  icon = generic_propaganda_campaigns
-  allowed = { tag = SER }
-  visible = { has_completed_focus = MSGA_presidential_mandate }
-  available = { check_variable = { MSGA_order_uses < 2 } NOT = { has_country_flag = MSGA_public_order_backlash } }
-  cost = 25
-  days_re_enable = 180
-  ai_will_do = { factor = 0.5 }
-  complete_effect = {
-   add_to_variable = { MSGA_order_uses = 1 }
-   add_power_balance_value = { id = MSGA_SER_streets_presidency value = 0.06 }
-   add_stability = -0.01
-   set_country_flag = MSGA_public_order_backlash
-   country_event = { id = MSGA.11 days = 30 }
-   custom_effect_tooltip = MSGA_backlash_tt
-  }
- }
- MSGA_assess_world = {
-  icon = generic_propaganda_campaigns
-  allowed = { tag = SER }
-  visible = { MSGA_US_fracture_signal = yes NOT = { has_country_flag = MSGA_US_ORDER_COLLAPSED } }
-  cost = 0
-  ai_will_do = { factor = 10 }
-  complete_effect = { MSGA_check_world = yes }
- }
+	MSGA_SER_reaffirm_presidential_authority = {
+		icon = generic_propaganda_campaigns
+		allowed = {
+			tag = SER
+		}
+		visible = {
+			has_completed_focus = MSGA_consolidate_the_state
+		}
+		available = {
+			check_variable = {
+				MSGA_authority_uses < 3
+			}
+		}
+		cost = 35
+		days_re_enable = 120
+		ai_will_do = {
+			factor = 2
+		}
+		complete_effect = {
+			add_to_variable = {
+				MSGA_authority_uses = 1
+			}
+			add_power_balance_value = {
+				id = MSGA_SER_streets_presidency
+				value = 0.04
+			}
+		}
+	}
+	MSGA_SER_address_public_grievances = {
+		icon = generic_propaganda_campaigns
+		allowed = {
+			tag = SER
+		}
+		visible = {
+			has_completed_focus = MSGA_manage_the_streets
+		}
+		available = {
+			check_variable = {
+				MSGA_concession_uses < 2
+			}
+			check_variable = {
+				var = income_var
+				value = MSGA_quote_concessions
+				compare = greater_than_or_equals
+			}
+		}
+		cost = 40
+		days_re_enable = 120
+		ai_will_do = {
+			factor = 1
+		}
+		complete_effect = {
+			add_to_variable = {
+				MSGA_concession_uses = 1
+			}
+			set_temp_variable = {
+				var = income_var_temp
+				value = -0.05
+			}
+			add_income_with_inflation = yes
+			add_power_balance_value = {
+				id = MSGA_SER_streets_presidency
+				value = -0.02
+			}
+			add_stability = 0.01
+		}
+	}
+	MSGA_public_order = {
+		icon = generic_propaganda_campaigns
+		allowed = {
+			tag = SER
+		}
+		visible = {
+			has_completed_focus = MSGA_presidential_mandate
+		}
+		available = {
+			check_variable = {
+				MSGA_order_uses < 2
+			}
+			NOT = {
+				has_country_flag = MSGA_public_order_backlash
+			}
+		}
+		cost = 25
+		days_re_enable = 180
+		ai_will_do = {
+			factor = 0.5
+		}
+		complete_effect = {
+			add_to_variable = {
+				MSGA_order_uses = 1
+			}
+			add_power_balance_value = {
+				id = MSGA_SER_streets_presidency
+				value = 0.06
+			}
+			add_stability = -0.01
+			set_country_flag = MSGA_public_order_backlash
+			country_event = {
+				id = MSGA.11
+				days = 30
+			}
+			custom_effect_tooltip = MSGA_order_backlash_tt
+		}
+	}
+	MSGA_assess_world = {
+		icon = generic_propaganda_campaigns
+		allowed = {
+			tag = SER
+		}
+		visible = {
+			MSGA_US_fracture_signal = yes
+			NOT = {
+				has_country_flag = MSGA_US_ORDER_COLLAPSED
+			}
+		}
+		cost = 0
+		ai_will_do = {
+			factor = 10
+		}
+		complete_effect = {
+			MSGA_check_world = yes
+		}
+	}
 }

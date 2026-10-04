@@ -1,0 +1,256 @@
+# Phase 1 briefings only. Completion flags are contracts for later Phase 2 content.
+MSGA_strategic_review = {
+	MSGA_assess_nato_readiness = {
+		icon = generic_army_support
+		allowed = {
+			tag = SER
+		}
+		visible = {
+			has_completed_focus = MSGA_watch_the_western_shield
+			NOT = {
+				has_country_flag = MSGA_started_assess_nato_readiness
+			}
+		}
+		available = {
+			always = yes
+		}
+		cost = 25
+		days_remove = 14
+		ai_will_do = {
+			factor = 2
+		}
+		complete_effect = {
+			set_country_flag = MSGA_started_assess_nato_readiness
+		}
+		remove_effect = {
+			set_country_flag = MSGA_done_assess_nato_readiness
+			army_experience = 5
+			add_to_variable = {
+				MSGA_strategic_review_progress = 1
+			}
+			custom_effect_tooltip = MSGA_nato_assessment_tt
+		}
+	}
+	MSGA_strengthen_border_intelligence = {
+		icon = generic_army_support
+		allowed = {
+			tag = SER
+		}
+		visible = {
+			has_completed_focus = MSGA_watch_the_western_shield
+			NOT = {
+				has_country_flag = MSGA_started_strengthen_border_intelligence
+			}
+		}
+		available = {
+			check_variable = {
+				var = income_var
+				value = MSGA_quote_border_intelligence
+				compare = greater_than_or_equals
+			}
+		}
+		cost = 35
+		days_remove = 30
+		ai_will_do = {
+			factor = 2
+		}
+		complete_effect = {
+			set_country_flag = MSGA_started_strengthen_border_intelligence
+			set_temp_variable = {
+				var = income_var_temp
+				value = -0.03
+			}
+			add_income_with_inflation = yes
+		}
+		remove_effect = {
+			set_country_flag = MSGA_done_strengthen_border_intelligence
+			add_timed_idea = {
+				idea = MSGA_strategic_vigilance
+				days = 180
+			}
+			add_to_variable = {
+				MSGA_strategic_review_progress = 1
+			}
+			custom_effect_tooltip = MSGA_border_review_tt
+		}
+	}
+}
+MSGA_kosovo_crisis = {
+	MSGA_commission_kosovo_dossier = {
+		icon = generic_army_support
+		allowed = {
+			tag = SER
+		}
+		visible = {
+			has_country_flag = MSGA_kosovo_phase_unlocked
+			NOT = {
+				has_country_flag = MSGA_started_commission_kosovo_dossier
+			}
+		}
+		available = {
+			always = yes
+		}
+		cost = 30
+		days_remove = 21
+		ai_will_do = {
+			factor = 2
+		}
+		complete_effect = {
+			set_country_flag = MSGA_started_commission_kosovo_dossier
+		}
+		remove_effect = {
+			set_country_flag = MSGA_done_commission_kosovo_dossier
+			add_to_variable = {
+				MSGA_kosovo_review_progress = 1
+			}
+			clamp_variable = {
+				var = MSGA_kosovo_review_progress
+				min = 0
+				max = 5
+			}
+			custom_effect_tooltip = MSGA_dossier_ready_tt
+		}
+	}
+	MSGA_assess_kfor = {
+		icon = generic_army_support
+		allowed = {
+			tag = SER
+		}
+		visible = {
+			has_country_flag = MSGA_kosovo_phase_unlocked
+			NOT = {
+				has_country_flag = MSGA_started_assess_kfor
+			}
+		}
+		available = {
+			always = yes
+		}
+		cost = 25
+		days_remove = 14
+		ai_will_do = {
+			factor = 2
+		}
+		complete_effect = {
+			set_country_flag = MSGA_started_assess_kfor
+		}
+		remove_effect = {
+			set_country_flag = MSGA_done_assess_kfor
+			add_to_variable = {
+				MSGA_kosovo_review_progress = 1
+			}
+			clamp_variable = {
+				var = MSGA_kosovo_review_progress
+				min = 0
+				max = 5
+			}
+			custom_effect_tooltip = MSGA_kfor_review_tt
+		}
+	}
+	MSGA_consult_general_staff = {
+		icon = generic_army_support
+		allowed = {
+			tag = SER
+		}
+		visible = {
+			has_country_flag = MSGA_kosovo_phase_unlocked
+			NOT = {
+				has_country_flag = MSGA_started_consult_general_staff
+			}
+		}
+		available = {
+			always = yes
+		}
+		cost = 25
+		days_remove = 14
+		ai_will_do = {
+			factor = 2
+		}
+		complete_effect = {
+			set_country_flag = MSGA_started_consult_general_staff
+		}
+		remove_effect = {
+			set_country_flag = MSGA_done_consult_general_staff
+			add_to_variable = {
+				MSGA_kosovo_review_progress = 1
+			}
+			clamp_variable = {
+				var = MSGA_kosovo_review_progress
+				min = 0
+				max = 5
+			}
+			army_experience = 5
+		}
+	}
+	MSGA_contact_regional_partners = {
+		icon = generic_army_support
+		allowed = {
+			tag = SER
+		}
+		visible = {
+			has_country_flag = MSGA_kosovo_phase_unlocked
+			NOT = {
+				has_country_flag = MSGA_started_contact_regional_partners
+			}
+		}
+		available = {
+			always = yes
+		}
+		cost = 25
+		days_remove = 21
+		ai_will_do = {
+			factor = 2
+		}
+		complete_effect = {
+			set_country_flag = MSGA_started_contact_regional_partners
+		}
+		remove_effect = {
+			set_country_flag = MSGA_done_contact_regional_partners
+			add_to_variable = {
+				MSGA_kosovo_review_progress = 1
+			}
+			clamp_variable = {
+				var = MSGA_kosovo_review_progress
+				min = 0
+				max = 5
+			}
+			add_political_power = 10
+			custom_effect_tooltip = MSGA_regional_review_tt
+		}
+	}
+	MSGA_map_northern_contingencies = {
+		icon = generic_army_support
+		allowed = {
+			tag = SER
+		}
+		visible = {
+			has_country_flag = MSGA_kosovo_phase_unlocked
+			NOT = {
+				has_country_flag = MSGA_started_map_northern_contingencies
+			}
+		}
+		available = {
+			always = yes
+		}
+		cost = 30
+		days_remove = 21
+		ai_will_do = {
+			factor = 2
+		}
+		complete_effect = {
+			set_country_flag = MSGA_started_map_northern_contingencies
+		}
+		remove_effect = {
+			set_country_flag = MSGA_done_map_northern_contingencies
+			add_to_variable = {
+				MSGA_kosovo_review_progress = 1
+			}
+			clamp_variable = {
+				var = MSGA_kosovo_review_progress
+				min = 0
+				max = 5
+			}
+			army_experience = 3
+			custom_effect_tooltip = MSGA_contingency_review_tt
+		}
+	}
+}

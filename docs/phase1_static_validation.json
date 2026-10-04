@@ -1,0 +1,21 @@
+{
+  "static_validation": "passed",
+  "script_files": 13,
+  "focuses": 18,
+  "custom_sprites": 36,
+  "pixel_identical_icons": 18,
+  "events": 12,
+  "decisions": 25,
+  "categories": 6,
+  "idea_definitions": 7,
+  "dynamic_modifiers": 2,
+  "localisation_keys": 195,
+  "original_topology_and_titles": "unchanged",
+  "sole_terminal_focus": "MSGA_the_kosovo_question",
+  "business_value_cap": 0.1,
+  "military_final_planning": 0.1,
+  "paid_one_time_review_decisions": 7,
+  "guarded_refundable_major_projects": 7,
+  "phase2_war_effects": 0,
+  "campaign_acceptance": "not certified by static checks"
+}

@@ -1,12 +1,10 @@
 # MSGA development notes
 
-## Current Phase 1 expansion status
+## Current build: Phase 1 0.3.0
 
-The source now contains 18 meaningful focuses, 11 events, COVID decisions, funded economic and military investments, a capped Business Value programme, Office Park development, resource programmes and a global American-fracture observer. The initial expansion build was installed and its tree was displayed in a new Serbia campaign.
+The original 18-focus topology and names are preserved. All focuses now use the supplied custom DDS artwork, including completion-shine variants. Reward upgrades and seven strategic/crisis decisions are documented in `docs/Phase1-0.3-Implementation.md` at repository root. Static checks pass; see `docs/phase1_static_validation.json`. The previously unsynced election fix is now installed with the current build.
 
-The game reported that the election `set_politics` call lacked a ruling party. The source now includes `ruling_party = conservative` and a one-time `MSGA_elections_locked` guard. Health/protest art was also revised. These last source corrections were not synced into the installed mod before Computer Use was stopped with Escape.
-
-Gameplay acceptance is incomplete: economic before/after values, project completion, resource changes, save/load, US progression and the final error-log pass remain to be tested. The sections below document the earlier P1.0–P1.3 skeleton and its historical validation; they do not certify the expanded build.
+The sections below are historical P1.0–P1.3 notes and do not certify current gameplay acceptance. Consult the current report for runtime validation and limitations.
 
 ## Earlier P1.0–P1.3 audit
 

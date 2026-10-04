@@ -1,177 +1,325 @@
 add_namespace = MSGA
 country_event = {
- id = MSGA.1
- title = MSGA.1.t
- desc = MSGA.1.d
- picture = GFX_report_event_generic_parliament
- is_triggered_only = yes
- trigger = { tag = SER  }
- option = { name = MSGA.1.a
- ai_chance = { factor = 100 }
-add_political_power = 10
- }
+	id = MSGA.1
+	title = MSGA.1.t
+	desc = MSGA.1.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	trigger = {
+		tag = SER
+	}
+	option = {
+		name = MSGA.1.a
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = 10
+	}
 }
 country_event = {
- id = MSGA.2
- title = MSGA.2.t
- desc = MSGA.2.d
- picture = GFX_report_event_generic_parliament
- is_triggered_only = yes
- trigger = { tag = SER  }
- option = { name = MSGA.2.a
- ai_chance = { factor = 100 }
-custom_effect_tooltip = MSGA_unlock_health_tt
- }
+	id = MSGA.2
+	title = MSGA.2.t
+	desc = MSGA.2.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	trigger = {
+		tag = SER
+	}
+	option = {
+		name = MSGA.2.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_effect_tooltip = MSGA_unlock_health_tt
+	}
 }
 country_event = {
- id = MSGA.3
- title = MSGA.3.t
- desc = MSGA.3.d
- picture = GFX_report_event_generic_parliament
- is_triggered_only = yes
- trigger = { tag = SER  }
- option = { name = MSGA.3.a
- ai_chance = { factor = 90 }
-if = { limit = { check_variable = { MSGA_health_response > 1 } } MSGA_end_covid = yes add_stability = 0.02 add_power_balance_value = { id = MSGA_SER_streets_presidency value = 0.04 } }
-else = { MSGA_end_covid = yes add_timed_idea = { idea = MSGA_pandemic_easing days = 60 } add_power_balance_value = { id = MSGA_SER_streets_presidency value = -0.02 } }
-custom_effect_tooltip = MSGA_managed_reopening_tt
- }
- option = { name = MSGA.3.b
- ai_chance = { factor = 10 }
-MSGA_end_covid = yes
-add_political_power = 15
-add_stability = -0.03
-add_power_balance_value = { id = MSGA_SER_streets_presidency value = -0.05 }
- }
+	id = MSGA.3
+	title = MSGA.3.t
+	desc = MSGA.3.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	trigger = {
+		tag = SER
+	}
+	option = {
+		name = MSGA.3.a
+		ai_chance = {
+			factor = 90
+		}
+		if = {
+			limit = {
+				check_variable = {
+					MSGA_health_response > 1
+				}
+			}
+			MSGA_end_covid = yes
+			add_stability = 0.02
+			add_power_balance_value = {
+				id = MSGA_SER_streets_presidency
+				value = 0.04
+			}
+		}
+		else = {
+			MSGA_end_covid = yes
+			add_timed_idea = {
+				idea = MSGA_pandemic_easing
+				days = 60
+			}
+			add_power_balance_value = {
+				id = MSGA_SER_streets_presidency
+				value = -0.02
+			}
+		}
+		custom_effect_tooltip = MSGA_managed_reopening_tt
+	}
+	option = {
+		name = MSGA.3.b
+		ai_chance = {
+			factor = 10
+		}
+		MSGA_end_covid = yes
+		add_political_power = 15
+		add_stability = -0.03
+		add_power_balance_value = {
+			id = MSGA_SER_streets_presidency
+			value = -0.05
+		}
+		add_timed_idea = {
+			idea = MSGA_reopening_strain
+			days = 30
+		}
+	}
 }
 country_event = {
- id = MSGA.4
- title = MSGA.4.t
- desc = MSGA.4.d
- picture = GFX_report_event_worker_protests
- is_triggered_only = yes
- trigger = { tag = SER  }
- option = { name = MSGA.4.a
- ai_chance = { factor = 35 }
-add_power_balance_value = { id = MSGA_SER_streets_presidency value = 0.06 }
-add_stability = -0.01
-set_country_flag = MSGA_public_order_backlash
-country_event = { id = MSGA.11 days = 30 }
-custom_effect_tooltip = MSGA_backlash_tt
- }
- option = { name = MSGA.4.b
- ai_chance = { factor = 65 }
-add_political_power = -25
-set_temp_variable = { var = income_var_temp value = -0.05 }
-add_income_with_inflation = yes
-add_stability = 0.02
-add_power_balance_value = { id = MSGA_SER_streets_presidency value = -0.02 }
- }
+	id = MSGA.4
+	title = MSGA.4.t
+	desc = MSGA.4.d
+	picture = GFX_report_event_worker_protests
+	is_triggered_only = yes
+	trigger = {
+		tag = SER
+	}
+	option = {
+		name = MSGA.4.a
+		ai_chance = {
+			factor = 35
+		}
+		add_power_balance_value = {
+			id = MSGA_SER_streets_presidency
+			value = 0.06
+		}
+		add_stability = -0.01
+		set_country_flag = MSGA_public_order_backlash
+		country_event = {
+			id = MSGA.11
+			days = 30
+		}
+		custom_effect_tooltip = MSGA_backlash_tt
+	}
+	option = {
+		name = MSGA.4.b
+		ai_chance = {
+			factor = 65
+		}
+		add_political_power = -25
+		add_stability = 0.02
+		add_power_balance_value = {
+			id = MSGA_SER_streets_presidency
+			value = -0.02
+		}
+		set_country_flag = MSGA_national_dialogue
+	}
 }
 country_event = {
- id = MSGA.5
- title = MSGA.5.t
- desc = MSGA.5.d
- picture = GFX_report_event_generic_parliament
- is_triggered_only = yes
- trigger = { tag = SER  }
- option = { name = MSGA.5.a
- ai_chance = { factor = 100 }
-custom_effect_tooltip = MSGA_unlock_capital_tt
- }
+	id = MSGA.5
+	title = MSGA.5.t
+	desc = MSGA.5.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	trigger = {
+		tag = SER
+	}
+	option = {
+		name = MSGA.5.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_effect_tooltip = MSGA_unlock_capital_tt
+	}
 }
 country_event = {
- id = MSGA.6
- title = MSGA.6.t
- desc = MSGA.6.d
- picture = GFX_report_event_generic_parliament
- is_triggered_only = yes
- trigger = { tag = SER  }
- option = { name = MSGA.6.a
- ai_chance = { factor = 45 }
-set_country_flag = MSGA_partner_europe
-set_country_flag = MSGA_foreign_partner_selected
-add_to_variable = { MSGA_business_bonus = 0.02 }
-MSGA_refresh_recovery = yes
- }
- option = { name = MSGA.6.b
- ai_chance = { factor = 35 }
-set_country_flag = MSGA_partner_china
-set_country_flag = MSGA_foreign_partner_selected
-set_temp_variable = { var = income_var_temp value = 0.20 }
-add_income_with_inflation = yes
-set_temp_variable = { var = debt_var_temp value = 0.20 }
-add_debt_with_inflation = yes
-custom_effect_tooltip = MSGA_china_tt
- }
- option = { name = MSGA.6.c
- ai_chance = { factor = 20 }
-set_country_flag = MSGA_partner_russia
-set_country_flag = MSGA_foreign_partner_selected
-army_experience = 10
-custom_effect_tooltip = MSGA_russia_tt
- }
+	id = MSGA.6
+	title = MSGA.6.t
+	desc = MSGA.6.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	trigger = {
+		tag = SER
+	}
+	option = {
+		name = MSGA.6.a
+		ai_chance = {
+			factor = 45
+		}
+		set_country_flag = MSGA_partner_europe
+		set_country_flag = MSGA_foreign_partner_selected
+		add_to_variable = {
+			MSGA_business_bonus = 0.02
+		}
+		MSGA_refresh_recovery = yes
+	}
+	option = {
+		name = MSGA.6.b
+		ai_chance = {
+			factor = 35
+		}
+		set_country_flag = MSGA_partner_china
+		set_country_flag = MSGA_foreign_partner_selected
+		set_temp_variable = {
+			var = income_var_temp
+			value = 0.20
+		}
+		add_income_with_inflation = yes
+		set_temp_variable = {
+			var = debt_var_temp
+			value = 0.20
+		}
+		add_debt_with_inflation = yes
+		custom_effect_tooltip = MSGA_china_tt
+	}
+	option = {
+		name = MSGA.6.c
+		ai_chance = {
+			factor = 20
+		}
+		set_country_flag = MSGA_partner_russia
+		set_country_flag = MSGA_foreign_partner_selected
+		army_experience = 10
+		custom_effect_tooltip = MSGA_russia_tt
+	}
 }
 country_event = {
- id = MSGA.7
- title = MSGA.7.t
- desc = MSGA.7.d
- picture = GFX_report_event_generic_parliament
- is_triggered_only = yes
- trigger = { tag = SER  }
- option = { name = MSGA.7.a
- ai_chance = { factor = 100 }
-custom_effect_tooltip = MSGA_unlock_defence_tt
- }
+	id = MSGA.7
+	title = MSGA.7.t
+	desc = MSGA.7.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	trigger = {
+		tag = SER
+	}
+	option = {
+		name = MSGA.7.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_effect_tooltip = MSGA_unlock_defence_tt
+	}
 }
 country_event = {
- id = MSGA.8
- title = MSGA.8.t
- desc = MSGA.8.d
- picture = GFX_report_event_generic_parliament
- is_triggered_only = yes
- trigger = { tag = SER  }
- option = { name = MSGA.8.a
- ai_chance = { factor = 100 }
-add_war_support = 0.03
-add_power_balance_value = { id = MSGA_SER_streets_presidency value = 0.02 }
-custom_effect_tooltip = MSGA_shield_unlock_tt
- }
+	id = MSGA.8
+	title = MSGA.8.t
+	desc = MSGA.8.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	trigger = {
+		tag = SER
+	}
+	option = {
+		name = MSGA.8.a
+		ai_chance = {
+			factor = 100
+		}
+		add_war_support = 0.03
+		add_power_balance_value = {
+			id = MSGA_SER_streets_presidency
+			value = 0.02
+		}
+		custom_effect_tooltip = MSGA_shield_unlock_tt
+	}
 }
 country_event = {
- id = MSGA.9
- title = MSGA.9.t
- desc = MSGA.9.d
- picture = GFX_report_event_generic_parliament
- is_triggered_only = yes
- trigger = { tag = SER  }
- option = { name = MSGA.9.a
- ai_chance = { factor = 100 }
-custom_effect_tooltip = MSGA_phase2_tt
- }
+	id = MSGA.9
+	title = MSGA.9.t
+	desc = MSGA.9.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	trigger = {
+		tag = SER
+	}
+	option = {
+		name = MSGA.9.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_effect_tooltip = MSGA_phase2_tt
+	}
 }
 country_event = {
- id = MSGA.10
- title = MSGA.10.t
- desc = MSGA.10.d
- picture = GFX_report_event_generic_parliament
- is_triggered_only = yes
- trigger = { tag = SER  }
- option = { name = MSGA.10.a
- ai_chance = { factor = 100 }
- }
+	id = MSGA.10
+	title = MSGA.10.t
+	desc = MSGA.10.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	trigger = {
+		tag = SER
+	}
+	option = {
+		name = MSGA.10.a
+		ai_chance = {
+			factor = 100
+		}
+	}
 }
 country_event = {
- id = MSGA.11
- title = MSGA.11.t
- desc = MSGA.11.d
- picture = GFX_report_event_worker_protests
- is_triggered_only = yes
- trigger = { tag = SER has_country_flag = MSGA_public_order_backlash }
- option = { name = MSGA.11.a
- ai_chance = { factor = 100 }
-clr_country_flag = MSGA_public_order_backlash
-add_stability = -0.02
-add_power_balance_value = { id = MSGA_SER_streets_presidency value = -0.04 }
- }
+	id = MSGA.11
+	title = MSGA.11.t
+	desc = MSGA.11.d
+	picture = GFX_report_event_worker_protests
+	is_triggered_only = yes
+	trigger = {
+		tag = SER
+		has_country_flag = MSGA_public_order_backlash
+	}
+	option = {
+		name = MSGA.11.a
+		ai_chance = {
+			factor = 100
+		}
+		clr_country_flag = MSGA_public_order_backlash
+		if = {
+			limit = {
+				has_country_flag = MSGA_national_dialogue
+			}
+			add_stability = -0.01
+			add_power_balance_value = {
+				id = MSGA_SER_streets_presidency
+				value = -0.02
+			}
+		}
+		else = {
+			add_stability = -0.02
+			add_power_balance_value = {
+				id = MSGA_SER_streets_presidency
+				value = -0.04
+			}
+		}
+	}
+}
+country_event = {
+	id = MSGA.12
+	title = MSGA.12.t
+	desc = MSGA.12.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	trigger = {
+		tag = SER
+	}
+	option = {
+		name = MSGA.12.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_effect_tooltip = MSGA_shield_tt
+	}
 }

@@ -1,28 +1,33 @@
 # Make Serbia Great Again
 
-Serbia content submod for **Hearts of Iron IV / The Fire Rises**. Script prefix: `MSGA_`.
+Serbia Phase 1 submod for **Hearts of Iron IV / The Fire Rises**. Version **0.3.0**, script prefix `MSGA_`.
 
-## Current development state
+## Current build
 
-Phase 1 covers the January 2020 opening through the Kosovo crisis dossier. The current source contains 18 focuses, 11 events, a Streets–Presidency Balance of Power, short COVID decisions, TFR-funded development projects, Business Value, Office Park development, military preparation, resource programmes, and an American-fracture observer.
+18 focuses with supplied custom artwork, the original tree layout and story progression, evolving recovery and defence programmes, Streets–Presidency politics, health measures, funded development, and preparatory Kosovo crisis decisions. Phase 1 ends at **The Kosovo Question**. No Phase 2 war operations are included.
 
-This is a development build. A Serbia campaign displayed the redesigned tree, but the gameplay acceptance checks are incomplete. The in-game review found that `set_politics` needs `ruling_party` alongside the election setting. That fix and revised health/protest icons are in this repository's source; they had not been synced to the installed mod when testing was interrupted. Economic results, project completion, save/load, and final global progression still require verification.
+- 18 custom 95×95 DDS icons with base and completion-shine sprites.
+- Recovery starts at +5% Business Value; the economic capstone adds +3 points; project upgrades are capped at +10%.
+- Belgrade gains a building slot; Morava gains immediate infrastructure; paid projects add Office Park, infrastructure, coal and a second military factory.
+- Government progresses from Coordinated Government to Presidential Administration.
+- Defence progresses through output, efficiency, planning, organisation recovery and lower supply consumption.
+- Two strategic and five Kosovo studies record one-time findings for later crisis policy.
 
-Phase 2 military operations and war goals are not implemented.
+See [implementation report](docs/Phase1-0.3-Implementation.md) and [static validation](docs/phase1_static_validation.json). Runtime validation status is recorded separately in the report; static checks do not certify a full campaign.
 
 ## Requirements and installation
 
-- HOI4 1.19.x; inspected game version: 1.19.3.
-- The Fire Rises; inspected Workshop version: 1.0.9.1c, Workshop ID `3350890356`.
+- HOI4 1.19.x; inspected version 1.19.3.
+- The Fire Rises 1.0.9.1c, Workshop ID `3350890356`.
 - Copy `make_serbia_great_again/` into the HOI4 user `mod/` directory.
-- Put `make_serbia_great_again.mod` beside the mod directory and update its `path` for your machine. The source copy currently records the development machine's path.
-- Enable TFR and MSGA in the launcher. Yugoslavia Reborn is not required; its folder replacements conflict with an additive co-load.
+- Place `make_serbia_great_again.mod` beside that directory and edit its `path` for your machine. The source descriptor records the development installation path.
+- Enable TFR and MSGA. Yugoslavia Reborn is not a dependency and its replacements conflict with an additive co-load.
+- Start a new Serbia campaign to receive every revised focus reward. Already completed focuses do not rerun their rewards in an old save.
 
-## Project files
+## Artwork and development
 
-- `make_serbia_great_again/`: mod source and development notes.
-- `Phase1-Design.md`: original design and installed-file research; historical proposals can differ from the current implementation.
-- `AGENTS.md`: project workflow and ongoing GitHub upload instruction.
+Runtime artwork is in `make_serbia_great_again/gfx/interface/goals/`. Original user-supplied DDS/PNG assets, atlas and mapping are retained in `art/focus_icons/MSGA_TFR_focus_icons/`. The RGB24 source images are packaged as uncompressed RGBA8 DDS without cropping or changing a decoded pixel. Existing TFR/vanilla spirit and event art is referenced by ID and is not redistributed.
 
-Existing TFR and vanilla artwork is referenced by GFX ID. Their assets are not distributed here.
+`tools/prepare_focus_icons.py` reproduces the lossless conversion; `tools/validate_phase1.py` checks the scripts, IDs, topology, localisation, sprites, textures and progression guards. Both use Python and Pillow.
 
+`Phase1-Design.md` is the historical design/research proposal. `AGENTS.md` records the ongoing commit/push workflow.

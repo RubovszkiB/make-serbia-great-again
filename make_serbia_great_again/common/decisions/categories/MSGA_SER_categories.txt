@@ -1,25 +1,63 @@
 MSGA_SER_streets_presidency_category = {
- icon = GFX_decision_category_SER_belgrade_blues
- allowed = { tag = SER }
- visible = { has_country_flag = MSGA_bop_initialized }
- visible_when_empty = yes
- priority = 20
+	icon = GFX_decision_category_SER_belgrade_blues
+	allowed = {
+		tag = SER
+	}
+	visible = {
+		has_country_flag = MSGA_domestic_affairs_open
+	}
+	visible_when_empty = yes
+	priority = 20
 }
 MSGA_public_health = {
- icon = GFX_decision_category_generic_prospect_for_resources
- allowed = { tag = SER }
- visible = { has_country_flag = MSGA_covid_active }
- priority = 30
+	icon = GFX_decision_category_generic_prospect_for_resources
+	allowed = {
+		tag = SER
+	}
+	visible = {
+		has_country_flag = MSGA_covid_active
+	}
+	priority = 30
 }
 MSGA_economic_development = {
- icon = GFX_decision_category_generic_industry
- allowed = { tag = SER }
- visible = { has_completed_focus = MSGA_attract_productive_capital }
- priority = 15
+	icon = GFX_decision_category_generic_industry
+	allowed = {
+		tag = SER
+	}
+	visible = {
+		has_completed_focus = MSGA_attract_productive_capital
+	}
+	priority = 15
 }
 MSGA_rearmament = {
- icon = GFX_decision_category_generic_political_actions
- allowed = { tag = SER }
- visible = { has_completed_focus = MSGA_restore_defence_production }
- priority = 10
+	icon = GFX_decision_category_generic_political_actions
+	allowed = {
+		tag = SER
+	}
+	visible = {
+		has_completed_focus = MSGA_restore_defence_production
+	}
+	priority = 10
+}
+MSGA_strategic_review = {
+	icon = GFX_decision_category_generic_political_actions
+	allowed = {
+		tag = SER
+	}
+	visible = {
+		has_completed_focus = MSGA_watch_the_western_shield
+	}
+	visible_when_empty = yes
+	priority = 9
+}
+MSGA_kosovo_crisis = {
+	icon = GFX_decision_category_generic_political_actions
+	allowed = {
+		tag = SER
+	}
+	visible = {
+		has_country_flag = MSGA_kosovo_phase_unlocked
+	}
+	visible_when_empty = yes
+	priority = 8
 }
