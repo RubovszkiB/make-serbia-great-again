@@ -1,10 +1,10 @@
 # Make Serbia Great Again
 
-Serbia Phase 1 submod for **Hearts of Iron IV / The Fire Rises**. Version **0.5.0**, script prefix `MSGA_`.
+Serbia campaign submod for **Hearts of Iron IV / The Fire Rises**. Version **0.6.0**, script prefix `MSGA_`.
 
 ## Current build
 
-24 focuses with supplied custom artwork, TFR rewards, focus events, COVID decisions, Streets–Presidency politics, funded development and a recurring Serbian Chronicle. Phase 1 ends at **The Kosovo Question** and its crisis-category unlock. Continuous progression finishes Watch the Western Shield after 756 focus-days; Kosovo availability still depends on the actual TFR collapse signal.
+24 early focuses, four Kosovo campaign focuses and one intentionally unavailable post-war shell focus. The Kosovo Question immediately replaces the early tree with the campaign chapter; confirmed ownership of both Kosovo states completes the victory focus and leads to the post-war tree. Continuous early progression finishes Watch the Western Shield after 756 focus-days; Kosovo availability still depends on the actual TFR collapse signal.
 
 - 24 custom 95×95 DDS focus icons with base and completion-shine sprites; four supplied 60×68 spirit icons.
 - Permanent Productive Capital uses TFR Business Value and income growth; recovery removes TFR's Scars of Bombings spirit.
@@ -16,8 +16,12 @@ Serbia Phase 1 submod for **Hearts of Iron IV / The Fire Rises**. Version **0.5.
 - Government and army spirits upgrade through their existing branches; defence adds factories, equipment and strategic reserves.
 - Chronicle stories use a 120–210-day delayed dispatcher with quiet weight and cooldowns; Western monitoring uses a 30-day observer that stops after reporting collapse.
 - Two strategic and five Kosovo studies record one-time findings for later crisis policy.
+- Three 7-day campaign preparations lead through the General Staff, southern mobilisation and Operation Return events. Both Kosovo states start with a -30% attacker penalty and -10% movement; separate 25 CP, 14-day decisions remove each state's penalty.
+- Actual control of Pristina triggers independent Albanian intervention after Albania leaves NATO. Kosovo capitulation immediately annexes Kosovo, transfers states 785 and 1305 to Serbia, white-peaces the campaign's Albanian opponent and removes temporary mechanics. No conquest of Albania is required.
+- The three volunteer recruitment decisions cost exactly $2B each from TFR's treasury; the equipment reserve package costs $3B. These four decisions cost zero political power. Existing equipment quantities and recruitment durations are preserved.
+- Twelve supplied event pictures, four campaign focus icons and three mechanic icons are integrated through additive sprite definitions.
 
-The current build is deployed to `C:/Users/Balazs/Documents/Paradox Interactive/Hearts of Iron IV/mod/make_serbia_great_again`. All 57 project mod files and the sibling launcher descriptor match the installed copy. See [deployment inventory](docs/local_deployment.json), [installed-version validation](docs/local_runtime_validation.json) and [expansion report](docs/Phase1-0.5-Expansion.md). No game was launched during deployment. Runtime tooltips, decision delivery, division equipment, template caps and save/load remain unverified.
+The primary runtime is `C:/Users/Balazs/Documents/Paradox Interactive/Hearts of Iron IV/mod/make_serbia_great_again`. See [deployment inventory](docs/local_deployment.json), [exact changed runtime paths](docs/kosovo_files_deployed.json), [installed early validation](docs/local_runtime_validation.json), [installed campaign validation](docs/local_kosovo_validation.json), [fresh engine load](docs/local_engine_validation.json) and [Kosovo implementation report](docs/Kosovo-Campaign-0.6.md). Static and script-flow tests do not certify gameplay or save/load.
 
 ## Requirements and installation
 
@@ -28,7 +32,7 @@ The current build is deployed to `C:/Users/Balazs/Documents/Paradox Interactive/
 - Enable TFR and MSGA. Yugoslavia Reborn is not a dependency and its replacements conflict with an additive co-load.
 - Start a new Serbia campaign to receive every revised focus reward. Already completed focuses do not rerun their rewards in an old save.
 
-For development, deploy with `tools/deploy_local.py`, then validate with `tools/validate_phase1.py --mod-root "C:/Users/Balazs/Documents/Paradox Interactive/Hearts of Iron IV/mod/make_serbia_great_again" --report docs/local_runtime_validation.json`. Local deployment and validation precede GitHub commits and pushes. The deployment script preserves the existing Workshop identity, checks the descriptor path and verifies source/runtime SHA-256 hashes.
+For development, deploy with `tools/deploy_local.py`, then run both `tools/validate_phase1.py` and `tools/validate_kosovo.py` with `--mod-root "C:/Users/Balazs/Documents/Paradox Interactive/Hearts of Iron IV/mod/make_serbia_great_again"`. Local deployment and validation precede GitHub commits and pushes. The deployment script preserves the existing Workshop identity, checks the descriptor path and verifies source/runtime SHA-256 hashes.
 
 ## Artwork and development
 

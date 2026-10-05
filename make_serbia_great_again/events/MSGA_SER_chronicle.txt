@@ -22,7 +22,7 @@ country_event = {
 						factor = 0
 						NOT = {
 							AND = {
-								has_completed_focus = MSGA_upgrade_belgrade_services
+								OR = { has_completed_focus = MSGA_upgrade_belgrade_services has_country_flag = MSGA_completed_upgrade_belgrade_services }
 								owns_state = 107
 								controls_state = 107
 								NOT = {
@@ -66,7 +66,7 @@ country_event = {
 						factor = 0
 						NOT = {
 							AND = {
-								has_completed_focus = MSGA_develop_the_morava_corridor
+								OR = { has_completed_focus = MSGA_develop_the_morava_corridor has_country_flag = MSGA_completed_develop_the_morava_corridor }
 								owns_state = 1296
 								controls_state = 1296
 								NOT = {
@@ -89,7 +89,7 @@ country_event = {
 						factor = 0
 						NOT = {
 							AND = {
-								has_completed_focus = MSGA_restore_defence_production
+								OR = { has_completed_focus = MSGA_restore_defence_production has_country_flag = MSGA_completed_restore_defence_production }
 								owns_state = 1296
 								controls_state = 1296
 								NOT = {
@@ -112,7 +112,7 @@ country_event = {
 						factor = 0
 						NOT = {
 							AND = {
-								has_completed_focus = MSGA_consolidate_the_state
+								OR = { has_completed_focus = MSGA_consolidate_the_state has_country_flag = MSGA_completed_consolidate_the_state }
 								NOT = {
 									has_country_flag = MSGA_chronicle_6_cooldown
 								}
@@ -182,7 +182,7 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		tag = SER
-		has_completed_focus = MSGA_upgrade_belgrade_services
+		OR = { has_completed_focus = MSGA_upgrade_belgrade_services has_country_flag = MSGA_completed_upgrade_belgrade_services }
 		owns_state = 107
 		controls_state = 107
 	}
@@ -237,7 +237,7 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		tag = SER
-		has_completed_focus = MSGA_develop_the_morava_corridor
+		OR = { has_completed_focus = MSGA_develop_the_morava_corridor has_country_flag = MSGA_completed_develop_the_morava_corridor }
 		owns_state = 1296
 		controls_state = 1296
 	}
@@ -261,7 +261,7 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		tag = SER
-		has_completed_focus = MSGA_restore_defence_production
+		OR = { has_completed_focus = MSGA_restore_defence_production has_country_flag = MSGA_completed_restore_defence_production }
 		owns_state = 1296
 		controls_state = 1296
 	}
@@ -286,7 +286,7 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		tag = SER
-		has_completed_focus = MSGA_consolidate_the_state
+		OR = { has_completed_focus = MSGA_consolidate_the_state has_country_flag = MSGA_completed_consolidate_the_state }
 	}
 	option = {
 		name = MSGA_chronicle.6.a

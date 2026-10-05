@@ -1,0 +1,17 @@
+ideas = { country = {
+ MSGA_southern_command_mobilised = {
+  picture = MSGA_prepare_offensive removal_cost = -1
+  allowed = { tag = SER }
+  modifier = { planning_speed = 0.05 army_org_factor = 0.03 supply_consumption_factor = -0.03 }
+ }
+ MSGA_kosovo_emergency_mobilisation = {
+  picture = MSGA_unprepared_sector removal_cost = -1
+  allowed = { tag = KOS }
+  modifier = { mobilization_speed = 0.05 army_defence_factor = 0.03 }
+ }
+ MSGA_campaign_isolation = {
+  picture = MSGA_unprepared_sector removal_cost = -1
+  rule = { can_join_factions = no }
+  modifier = { }
+ }
+} }

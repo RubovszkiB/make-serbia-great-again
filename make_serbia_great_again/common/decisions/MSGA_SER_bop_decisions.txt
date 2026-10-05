@@ -5,7 +5,7 @@ MSGA_SER_streets_presidency_category = {
 			tag = SER
 		}
 		visible = {
-			has_completed_focus = MSGA_consolidate_the_state
+			OR = { has_completed_focus = MSGA_consolidate_the_state has_country_flag = MSGA_completed_consolidate_the_state }
 		}
 		available = {
 			check_variable = {
@@ -33,7 +33,7 @@ MSGA_SER_streets_presidency_category = {
 			tag = SER
 		}
 		visible = {
-			has_completed_focus = MSGA_manage_the_streets
+			OR = { has_completed_focus = MSGA_manage_the_streets has_country_flag = MSGA_completed_manage_the_streets }
 		}
 		available = {
 			check_variable = {
@@ -72,7 +72,7 @@ MSGA_SER_streets_presidency_category = {
 			tag = SER
 		}
 		visible = {
-			has_completed_focus = MSGA_presidential_mandate
+			OR = { has_completed_focus = MSGA_presidential_mandate has_country_flag = MSGA_completed_presidential_mandate }
 		}
 		available = {
 			check_variable = {

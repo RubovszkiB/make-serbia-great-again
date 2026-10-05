@@ -11,7 +11,7 @@ on_actions = {
 					MSGA_end_covid = yes
 				}
 				if = {
-					limit = { has_completed_focus = MSGA_consolidate_the_state }
+					limit = { OR = { has_completed_focus = MSGA_consolidate_the_state has_country_flag = MSGA_completed_consolidate_the_state } }
 					# TFR startup can re-add the SPS modifier after this file runs.
 					country_event = { id = MSGA_cleanup.1 days = 1 }
 				}

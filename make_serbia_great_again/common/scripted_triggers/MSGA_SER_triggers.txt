@@ -7,5 +7,5 @@ MSGA_US_fracture_signal = {
 }
 MSGA_major_project_free = {
  NOT = { has_country_flag = MSGA_major_project_active }
- has_completed_focus = MSGA_reopen_on_serbian_terms
+ OR = { has_completed_focus = MSGA_reopen_on_serbian_terms has_country_flag = MSGA_completed_reopen_on_serbian_terms }
 }

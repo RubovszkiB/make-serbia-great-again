@@ -6,7 +6,7 @@ MSGA_strategic_review = {
 			tag = SER
 		}
 		visible = {
-			has_completed_focus = MSGA_watch_the_western_shield
+			OR = { has_completed_focus = MSGA_watch_the_western_shield has_country_flag = MSGA_completed_watch_the_western_shield }
 			NOT = {
 				has_country_flag = MSGA_started_assess_nato_readiness
 			}
@@ -37,7 +37,7 @@ MSGA_strategic_review = {
 			tag = SER
 		}
 		visible = {
-			has_completed_focus = MSGA_watch_the_western_shield
+			OR = { has_completed_focus = MSGA_watch_the_western_shield has_country_flag = MSGA_completed_watch_the_western_shield }
 			NOT = {
 				has_country_flag = MSGA_started_strengthen_border_intelligence
 			}

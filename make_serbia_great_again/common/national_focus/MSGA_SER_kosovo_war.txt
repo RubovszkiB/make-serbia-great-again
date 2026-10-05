@@ -1,0 +1,39 @@
+focus_tree = {
+ id = MSGA_SER_kosovo_war
+ country = { factor = 0 modifier = { add = 200 tag = SER has_country_flag = MSGA_kosovo_chapter_active } }
+ default = no
+ reset_on_civilwar = no
+ focus = {
+  id = MSGA_plan_the_attack
+  icon = GFX_goal_MSGA_plan_the_attack
+  x = 0 y = 0 cost = 1
+    ai_will_do = { factor = 10 }
+  completion_reward = { country_event = { id = MSGA_kosovo.1 } }
+ }
+ focus = {
+  id = MSGA_prepare_southern_command
+  icon = GFX_goal_MSGA_prepare_southern_command
+  x = 0 y = 1 cost = 1
+  prerequisite = { focus = MSGA_plan_the_attack }
+  ai_will_do = { factor = 10 }
+  completion_reward = { country_event = { id = MSGA_kosovo.2 } }
+ }
+ focus = {
+  id = MSGA_operation_return
+  icon = GFX_goal_MSGA_operation_return
+  x = 0 y = 2 cost = 1
+  prerequisite = { focus = MSGA_prepare_southern_command }
+  available = { country_exists = KOS KOS = { has_capitulated = no } NOT = { has_war_with = KOS } }
+  cancel_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { country_event = { id = MSGA_kosovo.3 } }
+ }
+ focus = {
+  id = MSGA_kosovo_has_been_retaken
+  icon = GFX_goal_MSGA_kosovo_has_been_retaken
+  x = 0 y = 3 cost = 1
+  prerequisite = { focus = MSGA_operation_return }
+  available = { always = no }
+  completion_reward = { set_country_flag = MSGA_kosovo_retaken_focus_complete }
+ }
+}

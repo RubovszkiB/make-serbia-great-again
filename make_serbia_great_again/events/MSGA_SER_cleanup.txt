@@ -6,6 +6,6 @@ country_event = {
 	id = MSGA_cleanup.1
 	hidden = yes
 	is_triggered_only = yes
-	trigger = { tag = SER has_completed_focus = MSGA_consolidate_the_state }
+	trigger = { tag = SER OR = { has_completed_focus = MSGA_consolidate_the_state has_country_flag = MSGA_completed_consolidate_the_state } }
 	immediate = { MSGA_end_belgrade_blues = yes }
 }

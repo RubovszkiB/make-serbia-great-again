@@ -1,0 +1,19 @@
+{
+  "validated_mod_root": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
+  "debug_launch_local_time": "2026-10-05 13:10:07",
+  "error_log_local_last_write": "2026-10-05T13:11:33.103874",
+  "error_log_sha256": "a4a5b907c322f246cae7e2059e672b04835d7927878b2e58a8757eaccad09848",
+  "error_log_line_count": 2941,
+  "MSGA_error_entries": [],
+  "MSGA_parser_load": "passed: no MSGA references in fresh error.log after history loaded",
+  "history_loaded": true,
+  "frontend_singleplayer_launch_recorded": true,
+  "enabled_mods": [
+    "mod/ugc_3350890356.mod",
+    "mod/ugc_3350892196.mod",
+    "mod/make_serbia_great_again.mod"
+  ],
+  "base_game_and_TFR_errors_present": true,
+  "manual_combat_peace_conference_rendering_and_save_load": "not tested; native UI automation is unavailable",
+  "initial_load_fix": "Changed invalid exists = TAG guards to documented country_exists = TAG; final reload has no MSGA log entries."
+}

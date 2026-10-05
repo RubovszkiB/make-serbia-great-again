@@ -500,6 +500,7 @@ focus_tree = {
 			unlock_decision_tooltip = MSGA_map_northern_contingencies
 			custom_effect_tooltip = MSGA_phase2_tt
 			set_country_flag = MSGA_completed_the_kosovo_question
+            MSGA_enter_kosovo_chapter = yes
 		}
 		available = {
 			has_country_flag = MSGA_western_shield_cracked

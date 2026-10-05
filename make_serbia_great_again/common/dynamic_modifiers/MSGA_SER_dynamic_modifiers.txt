@@ -16,3 +16,12 @@ MSGA_defence_reorientation = {
 	planning_speed = MSGA_defence_planning
 	army_org_regain = MSGA_defence_recovery
 }
+
+# TFR/Spanish unplanned_offensive architecture: affects attackers in this state.
+MSGA_unprepared_sector = {
+ icon = GFX_modifiers_MSGA_unprepared_sector
+ attacker_modifier = yes
+ enable = { always = yes }
+ army_attack_factor = -0.30
+ army_speed_factor = -0.10
+}

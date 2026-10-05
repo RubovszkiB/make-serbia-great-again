@@ -1,0 +1,32 @@
+on_actions = {
+ on_capitulation_immediate = {
+  effect = {
+   if = {
+    limit = { ROOT = { tag = KOS } SER = { has_country_flag = MSGA_kosovo_war_active } }
+    # Root is the capitulating country; resolve before the ordinary peace conference.
+    SER = { MSGA_resolve_kosovo_war = yes }
+   }
+   if = {
+    limit = {
+     ROOT = { tag = ALB }
+     SER = { has_country_flag = MSGA_kosovo_war_active has_country_flag = MSGA_albania_intervened has_war_with = ALB }
+    }
+    # An early Albanian surrender must not become an annexation or a land-taking peace conference.
+    SER = { white_peace = ALB set_country_flag = MSGA_albania_early_ceasefire }
+   }
+  }
+ }
+ on_state_control_changed = { effect = { SER = { MSGA_check_pristina = yes } } }
+ on_startup = {
+  effect = {
+   SER = {
+    if = {
+     limit = { OR = { has_completed_focus = MSGA_the_kosovo_question has_country_flag = MSGA_completed_the_kosovo_question } NOT = { has_country_flag = MSGA_kosovo_chapter_started } }
+     MSGA_enter_kosovo_chapter = yes
+    }
+    MSGA_schedule_kosovo_observer = yes
+    MSGA_validate_kosovo_victory = yes
+   }
+  }
+ }
+}

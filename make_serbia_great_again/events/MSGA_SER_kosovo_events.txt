@@ -1,0 +1,182 @@
+add_namespace = MSGA_kosovo
+country_event = {
+ id = MSGA_kosovo.1
+ title = MSGA_kosovo.1.t
+ desc = MSGA_kosovo.1.d
+ picture = GFX_report_event_MSGA_kosovo_event_01_general_staff_presents_plan
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = { army_experience = 5 add_command_power = 10 set_country_flag = MSGA_attack_planned }
+ option = { name = MSGA_kosovo.1.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_kosovo.2
+ title = MSGA_kosovo.2.t
+ desc = MSGA_kosovo.2.d
+ picture = GFX_report_event_MSGA_kosovo_event_02_troops_move_south
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = { add_ideas = MSGA_southern_command_mobilised }
+ option = { name = MSGA_kosovo.2.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_kosovo.3
+ title = MSGA_kosovo.3.t
+ desc = MSGA_kosovo.3.d
+ picture = GFX_report_event_MSGA_kosovo_event_03_operation_return_begins
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = { MSGA_start_kosovo_war = yes }
+ option = { name = MSGA_kosovo.3.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_kosovo.4
+ title = MSGA_kosovo.4.t
+ desc = MSGA_kosovo.4.d
+ picture = GFX_report_event_MSGA_kosovo_event_04_emergency_address
+ is_triggered_only = yes
+ fire_only_once = yes
+ trigger = { tag = SER has_country_flag = MSGA_kosovo_war_active }
+ immediate = { add_stability = 0.01 add_war_support = 0.02 }
+ option = { name = MSGA_kosovo.4.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_kosovo.5
+ title = MSGA_kosovo.5.t
+ desc = MSGA_kosovo.5.d
+ picture = GFX_report_event_MSGA_kosovo_event_05_pristina_mobilisation
+ is_triggered_only = yes
+ fire_only_once = yes
+ trigger = { tag = SER has_country_flag = MSGA_kosovo_war_active }
+ immediate = { KOS = { add_ideas = MSGA_kosovo_emergency_mobilisation } }
+ option = { name = MSGA_kosovo.5.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_kosovo.6
+ title = MSGA_kosovo.6.t
+ desc = MSGA_kosovo.6.d
+ picture = GFX_report_event_MSGA_kosovo_event_06_nato_calls_for_restraint
+ is_triggered_only = yes
+ fire_only_once = yes
+ trigger = { tag = SER has_country_flag = MSGA_kosovo_war_active }
+ immediate = {  }
+ option = { name = MSGA_kosovo.6.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_kosovo.7
+ title = MSGA_kosovo.7.t
+ desc = MSGA_kosovo.7.d
+ picture = GFX_report_event_MSGA_kosovo_event_07_pristina_has_fallen
+ is_triggered_only = yes
+ fire_only_once = yes
+ trigger = { tag = SER has_country_flag = MSGA_kosovo_war_active }
+ immediate = {  }
+ option = { name = MSGA_kosovo.7.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_kosovo.8
+ title = MSGA_kosovo.8.t
+ desc = MSGA_kosovo.8.d
+ picture = GFX_report_event_MSGA_kosovo_event_08_albania_enters_war
+ is_triggered_only = yes
+ fire_only_once = yes
+ trigger = { tag = SER has_country_flag = MSGA_kosovo_war_active }
+ immediate = { add_war_support = 0.01 }
+ option = { name = MSGA_kosovo.8.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_kosovo.9
+ title = MSGA_kosovo.9.t
+ desc = MSGA_kosovo.9.d
+ picture = GFX_report_event_MSGA_kosovo_event_09_nato_distances_tirana
+ is_triggered_only = yes
+ fire_only_once = yes
+ trigger = { tag = SER has_country_flag = MSGA_kosovo_war_active }
+ immediate = {  }
+ option = { name = MSGA_kosovo.9.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_kosovo.10
+ title = MSGA_kosovo.10.t
+ desc = MSGA_kosovo.10.d
+ picture = GFX_report_event_MSGA_kosovo_event_10_kosovo_capitulated
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = {  }
+ option = { name = MSGA_kosovo.10.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_kosovo.11
+ title = MSGA_kosovo.11.t
+ desc = MSGA_kosovo.11.d
+ picture = GFX_report_event_MSGA_kosovo_event_11_tirana_requests_ceasefire
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = {  }
+ option = { name = MSGA_kosovo.11.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_kosovo.12
+ title = MSGA_kosovo.12.t
+ desc = MSGA_kosovo.12.d
+ picture = GFX_report_event_MSGA_kosovo_event_12_kosovo_returns_to_serbian_control
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = { MSGA_enter_post_kosovo_chapter = yes }
+ option = { name = MSGA_kosovo.12.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_kosovo.20
+ title = MSGA_kosovo.20.t
+ desc = MSGA_kosovo.20.d
+ picture = GFX_report_event_MSGA_kosovo_event_08_albania_enters_war
+ is_triggered_only = yes
+ fire_only_once = yes
+ trigger = { tag = ALB country_exists = KOS SER = { has_country_flag = MSGA_kosovo_war_active } }
+ immediate = { if = {
+ limit = { SER = { has_country_flag = MSGA_kosovo_war_active } country_exists = KOS KOS = { has_capitulated = no } NOT = { has_war_with = SER } NOT = { has_country_flag = MSGA_albania_intervention_sent } }
+ SER = { MSGA_detach_albania_faction = yes MSGA_suspend_campaign_guarantees = yes }
+ if = {
+  limit = { is_in_faction = no }
+  set_country_flag = MSGA_albania_intervention_sent
+  add_ideas = MSGA_campaign_isolation
+  declare_war_on = { target = SER type = annex_everything }
+  SER = { set_country_flag = MSGA_albania_intervened country_event = { id = MSGA_kosovo.8 } country_event = { id = MSGA_kosovo.9 days = 1 } }
+ }
+} }
+ option = { name = MSGA_kosovo.20.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_kosovo.21
+ title = MSGA_kosovo.21.t
+ desc = MSGA_kosovo.21.d
+ picture = GFX_report_event_MSGA_kosovo_event_01_general_staff_presents_plan
+ is_triggered_only = yes
+  immediate = {  }
+ option = { name = MSGA_kosovo.21.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_kosovo.99
+ hidden = yes
+ is_triggered_only = yes
+ immediate = {
+  clr_country_flag = MSGA_kosovo_observer_pending
+  if = {
+   limit = { has_country_flag = MSGA_kosovo_war_active }
+   if = {
+    limit = { KOS = { has_capitulated = yes } }
+    MSGA_resolve_kosovo_war = yes
+   }
+   else_if = {
+    limit = { NOT = { country_exists = KOS } 785 = { is_owned_by = SER } 1305 = { is_owned_by = SER } }
+    MSGA_resolve_kosovo_war = yes
+   }
+   else_if = {
+    limit = { has_war_with = KOS }
+    MSGA_check_pristina = yes
+    MSGA_schedule_kosovo_observer = yes
+   }
+   else = { MSGA_cleanup_kosovo_campaign = yes }
+  }
+ }
+}

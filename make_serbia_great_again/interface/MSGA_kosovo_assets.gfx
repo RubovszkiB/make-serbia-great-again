@@ -1,0 +1,196 @@
+spriteTypes = {
+ SpriteType = { name = "GFX_goal_MSGA_plan_the_attack" texturefile = "gfx/interface/goals/MSGA_plan_the_attack.dds" }
+SpriteType = {
+		name = "GFX_goal_MSGA_plan_the_attack_shine"
+		texturefile = "gfx/interface/goals/MSGA_plan_the_attack.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MSGA_plan_the_attack.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = {
+				x = 0.0
+				y = 0.0
+			}
+			animationtexturescale = {
+				x = 1.0
+				y = 1.0
+			}
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MSGA_plan_the_attack.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = {
+				x = 0.0
+				y = 0.0
+			}
+			animationtexturescale = {
+				x = 1.0
+				y = 1.0
+			}
+		}
+		legacy_lazy_load = no
+	}
+ SpriteType = { name = "GFX_goal_MSGA_prepare_southern_command" texturefile = "gfx/interface/goals/MSGA_prepare_southern_command.dds" }
+SpriteType = {
+		name = "GFX_goal_MSGA_prepare_southern_command_shine"
+		texturefile = "gfx/interface/goals/MSGA_prepare_southern_command.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MSGA_prepare_southern_command.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = {
+				x = 0.0
+				y = 0.0
+			}
+			animationtexturescale = {
+				x = 1.0
+				y = 1.0
+			}
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MSGA_prepare_southern_command.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = {
+				x = 0.0
+				y = 0.0
+			}
+			animationtexturescale = {
+				x = 1.0
+				y = 1.0
+			}
+		}
+		legacy_lazy_load = no
+	}
+ SpriteType = { name = "GFX_goal_MSGA_operation_return" texturefile = "gfx/interface/goals/MSGA_operation_return.dds" }
+SpriteType = {
+		name = "GFX_goal_MSGA_operation_return_shine"
+		texturefile = "gfx/interface/goals/MSGA_operation_return.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MSGA_operation_return.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = {
+				x = 0.0
+				y = 0.0
+			}
+			animationtexturescale = {
+				x = 1.0
+				y = 1.0
+			}
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MSGA_operation_return.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = {
+				x = 0.0
+				y = 0.0
+			}
+			animationtexturescale = {
+				x = 1.0
+				y = 1.0
+			}
+		}
+		legacy_lazy_load = no
+	}
+ SpriteType = { name = "GFX_goal_MSGA_kosovo_has_been_retaken" texturefile = "gfx/interface/goals/MSGA_kosovo_has_been_retaken.dds" }
+SpriteType = {
+		name = "GFX_goal_MSGA_kosovo_has_been_retaken_shine"
+		texturefile = "gfx/interface/goals/MSGA_kosovo_has_been_retaken.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MSGA_kosovo_has_been_retaken.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = {
+				x = 0.0
+				y = 0.0
+			}
+			animationtexturescale = {
+				x = 1.0
+				y = 1.0
+			}
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MSGA_kosovo_has_been_retaken.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = {
+				x = 0.0
+				y = 0.0
+			}
+			animationtexturescale = {
+				x = 1.0
+				y = 1.0
+			}
+		}
+		legacy_lazy_load = no
+	}
+ SpriteType = { name = "GFX_report_event_MSGA_kosovo_event_01_general_staff_presents_plan" texturefile = "gfx/interface/events/MSGA_kosovo_event_01_general_staff_presents_plan.dds" }
+ SpriteType = { name = "GFX_report_event_MSGA_kosovo_event_02_troops_move_south" texturefile = "gfx/interface/events/MSGA_kosovo_event_02_troops_move_south.dds" }
+ SpriteType = { name = "GFX_report_event_MSGA_kosovo_event_03_operation_return_begins" texturefile = "gfx/interface/events/MSGA_kosovo_event_03_operation_return_begins.dds" }
+ SpriteType = { name = "GFX_report_event_MSGA_kosovo_event_04_emergency_address" texturefile = "gfx/interface/events/MSGA_kosovo_event_04_emergency_address.dds" }
+ SpriteType = { name = "GFX_report_event_MSGA_kosovo_event_05_pristina_mobilisation" texturefile = "gfx/interface/events/MSGA_kosovo_event_05_pristina_mobilisation.dds" }
+ SpriteType = { name = "GFX_report_event_MSGA_kosovo_event_06_nato_calls_for_restraint" texturefile = "gfx/interface/events/MSGA_kosovo_event_06_nato_calls_for_restraint.dds" }
+ SpriteType = { name = "GFX_report_event_MSGA_kosovo_event_07_pristina_has_fallen" texturefile = "gfx/interface/events/MSGA_kosovo_event_07_pristina_has_fallen.dds" }
+ SpriteType = { name = "GFX_report_event_MSGA_kosovo_event_08_albania_enters_war" texturefile = "gfx/interface/events/MSGA_kosovo_event_08_albania_enters_war.dds" }
+ SpriteType = { name = "GFX_report_event_MSGA_kosovo_event_09_nato_distances_tirana" texturefile = "gfx/interface/events/MSGA_kosovo_event_09_nato_distances_tirana.dds" }
+ SpriteType = { name = "GFX_report_event_MSGA_kosovo_event_10_kosovo_capitulated" texturefile = "gfx/interface/events/MSGA_kosovo_event_10_kosovo_capitulated.dds" }
+ SpriteType = { name = "GFX_report_event_MSGA_kosovo_event_11_tirana_requests_ceasefire" texturefile = "gfx/interface/events/MSGA_kosovo_event_11_tirana_requests_ceasefire.dds" }
+ SpriteType = { name = "GFX_report_event_MSGA_kosovo_event_12_kosovo_returns_to_serbian_control" texturefile = "gfx/interface/events/MSGA_kosovo_event_12_kosovo_returns_to_serbian_control.dds" }
+ SpriteType = { name = "GFX_modifiers_MSGA_unprepared_sector" texturefile = "gfx/interface/mechanics/MSGA_unprepared_sector.dds" }
+ SpriteType = { name = "GFX_decision_MSGA_unprepared_sector" texturefile = "gfx/interface/mechanics/MSGA_unprepared_sector.dds" }
+ SpriteType = { name = "GFX_idea_MSGA_unprepared_sector" texturefile = "gfx/interface/mechanics/MSGA_unprepared_sector.dds" }
+ SpriteType = { name = "GFX_modifiers_MSGA_prepare_offensive" texturefile = "gfx/interface/mechanics/MSGA_prepare_offensive.dds" }
+ SpriteType = { name = "GFX_decision_MSGA_prepare_offensive" texturefile = "gfx/interface/mechanics/MSGA_prepare_offensive.dds" }
+ SpriteType = { name = "GFX_idea_MSGA_prepare_offensive" texturefile = "gfx/interface/mechanics/MSGA_prepare_offensive.dds" }
+ SpriteType = { name = "GFX_decision_category_MSGA_kosovo_operations" texturefile = "gfx/interface/mechanics/MSGA_prepare_offensive.dds" }
+ SpriteType = { name = "GFX_modifiers_MSGA_offensive_ready" texturefile = "gfx/interface/mechanics/MSGA_offensive_ready.dds" }
+ SpriteType = { name = "GFX_decision_MSGA_offensive_ready" texturefile = "gfx/interface/mechanics/MSGA_offensive_ready.dds" }
+ SpriteType = { name = "GFX_idea_MSGA_offensive_ready" texturefile = "gfx/interface/mechanics/MSGA_offensive_ready.dds" }
+}

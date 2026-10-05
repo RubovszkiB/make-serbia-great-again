@@ -1,0 +1,14 @@
+focus_tree = {
+ id = MSGA_SER_post_kosovo
+ country = { factor = 0 modifier = { add = 200 tag = SER has_country_flag = MSGA_post_kosovo_active } }
+ default = no
+ reset_on_civilwar = no
+
+ focus = {
+  id = MSGA_post_kosovo_settlement
+  icon = GFX_goal_MSGA_kosovo_has_been_retaken
+  x = 0 y = 0 cost = 1
+  available = { always = no }
+  completion_reward = { custom_effect_tooltip = MSGA_post_kosovo_shell_tt }
+ }
+}

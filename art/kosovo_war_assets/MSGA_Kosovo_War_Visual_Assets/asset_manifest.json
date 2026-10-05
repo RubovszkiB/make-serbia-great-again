@@ -1,0 +1,150 @@
+{
+  "source_preview": "preview/kosovo_war_full_preview.png",
+  "notes": [
+    "All assets are extracted from the approved Kosovo War visual preview.",
+    "Use the latest gameplay balance: Unprepared Sector = -30% division attack. The numeric value is NOT baked into these cropped icons.",
+    "Focus DDS files are prepared at 95x95.",
+    "Event DDS files are prepared at 474x156.",
+    "Mechanics DDS files are prepared at 64x64.",
+    "Codex should inspect the current TFR project and place/reference these files according to the mod's existing GFX conventions."
+  ],
+  "focus": [
+    {
+      "id": "SER_plan_the_attack",
+      "title": "Plan the Attack",
+      "source_png": "source_png/focus/SER_plan_the_attack.png",
+      "dds": "dds_ready/focus_95x95/SER_plan_the_attack.dds",
+      "size": "95x95"
+    },
+    {
+      "id": "SER_prepare_southern_command",
+      "title": "Prepare the Southern Command",
+      "source_png": "source_png/focus/SER_prepare_southern_command.png",
+      "dds": "dds_ready/focus_95x95/SER_prepare_southern_command.dds",
+      "size": "95x95"
+    },
+    {
+      "id": "SER_operation_return",
+      "title": "Operation Return",
+      "source_png": "source_png/focus/SER_operation_return.png",
+      "dds": "dds_ready/focus_95x95/SER_operation_return.dds",
+      "size": "95x95"
+    },
+    {
+      "id": "SER_kosovo_has_been_retaken",
+      "title": "Kosovo Has Been Retaken",
+      "source_png": "source_png/focus/SER_kosovo_has_been_retaken.png",
+      "dds": "dds_ready/focus_95x95/SER_kosovo_has_been_retaken.dds",
+      "size": "95x95"
+    }
+  ],
+  "events": [
+    {
+      "id": "SER_kosovo_event_01_general_staff_presents_plan",
+      "title": "The General Staff Presents Its Plan",
+      "source_png": "source_png/events/SER_kosovo_event_01_general_staff_presents_plan.png",
+      "dds": "dds_ready/events_474x156/SER_kosovo_event_01_general_staff_presents_plan.dds",
+      "size": "474x156"
+    },
+    {
+      "id": "SER_kosovo_event_02_troops_move_south",
+      "title": "Troops Move South",
+      "source_png": "source_png/events/SER_kosovo_event_02_troops_move_south.png",
+      "dds": "dds_ready/events_474x156/SER_kosovo_event_02_troops_move_south.dds",
+      "size": "474x156"
+    },
+    {
+      "id": "SER_kosovo_event_03_operation_return_begins",
+      "title": "Operation Return Begins",
+      "source_png": "source_png/events/SER_kosovo_event_03_operation_return_begins.png",
+      "dds": "dds_ready/events_474x156/SER_kosovo_event_03_operation_return_begins.dds",
+      "size": "474x156"
+    },
+    {
+      "id": "SER_kosovo_event_04_emergency_address",
+      "title": "Emergency Address to the Nation",
+      "source_png": "source_png/events/SER_kosovo_event_04_emergency_address.png",
+      "dds": "dds_ready/events_474x156/SER_kosovo_event_04_emergency_address.dds",
+      "size": "474x156"
+    },
+    {
+      "id": "SER_kosovo_event_05_pristina_mobilisation",
+      "title": "Pristina Declares General Mobilisation",
+      "source_png": "source_png/events/SER_kosovo_event_05_pristina_mobilisation.png",
+      "dds": "dds_ready/events_474x156/SER_kosovo_event_05_pristina_mobilisation.dds",
+      "size": "474x156"
+    },
+    {
+      "id": "SER_kosovo_event_06_nato_calls_for_restraint",
+      "title": "NATO Calls for Restraint",
+      "source_png": "source_png/events/SER_kosovo_event_06_nato_calls_for_restraint.png",
+      "dds": "dds_ready/events_474x156/SER_kosovo_event_06_nato_calls_for_restraint.dds",
+      "size": "474x156"
+    },
+    {
+      "id": "SER_kosovo_event_07_pristina_has_fallen",
+      "title": "Pristina Has Fallen",
+      "source_png": "source_png/events/SER_kosovo_event_07_pristina_has_fallen.png",
+      "dds": "dds_ready/events_474x156/SER_kosovo_event_07_pristina_has_fallen.dds",
+      "size": "474x156"
+    },
+    {
+      "id": "SER_kosovo_event_08_albania_enters_war",
+      "title": "Albania Enters the War",
+      "source_png": "source_png/events/SER_kosovo_event_08_albania_enters_war.png",
+      "dds": "dds_ready/events_474x156/SER_kosovo_event_08_albania_enters_war.dds",
+      "size": "474x156"
+    },
+    {
+      "id": "SER_kosovo_event_09_nato_distances_tirana",
+      "title": "NATO Distances Itself from Tirana",
+      "source_png": "source_png/events/SER_kosovo_event_09_nato_distances_tirana.png",
+      "dds": "dds_ready/events_474x156/SER_kosovo_event_09_nato_distances_tirana.dds",
+      "size": "474x156"
+    },
+    {
+      "id": "SER_kosovo_event_10_kosovo_capitulated",
+      "title": "Kosovo Has Capitulated",
+      "source_png": "source_png/events/SER_kosovo_event_10_kosovo_capitulated.png",
+      "dds": "dds_ready/events_474x156/SER_kosovo_event_10_kosovo_capitulated.dds",
+      "size": "474x156"
+    },
+    {
+      "id": "SER_kosovo_event_11_tirana_requests_ceasefire",
+      "title": "Tirana Requests a Ceasefire",
+      "source_png": "source_png/events/SER_kosovo_event_11_tirana_requests_ceasefire.png",
+      "dds": "dds_ready/events_474x156/SER_kosovo_event_11_tirana_requests_ceasefire.dds",
+      "size": "474x156"
+    },
+    {
+      "id": "SER_kosovo_event_12_kosovo_returns_to_serbian_control",
+      "title": "Kosovo Returns to Serbian Control",
+      "source_png": "source_png/events/SER_kosovo_event_12_kosovo_returns_to_serbian_control.png",
+      "dds": "dds_ready/events_474x156/SER_kosovo_event_12_kosovo_returns_to_serbian_control.dds",
+      "size": "474x156"
+    }
+  ],
+  "mechanics": [
+    {
+      "id": "SER_unprepared_sector",
+      "title": "Unprepared Sector modifier",
+      "source_png": "source_png/mechanics/SER_unprepared_sector.png",
+      "dds": "dds_ready/mechanics_64x64/SER_unprepared_sector.dds",
+      "size": "64x64"
+    },
+    {
+      "id": "SER_prepare_offensive",
+      "title": "Prepare Offensive decision",
+      "source_png": "source_png/mechanics/SER_prepare_offensive.png",
+      "dds": "dds_ready/mechanics_64x64/SER_prepare_offensive.dds",
+      "size": "64x64"
+    },
+    {
+      "id": "SER_offensive_ready",
+      "title": "Offensive Ready status",
+      "source_png": "source_png/mechanics/SER_offensive_ready.png",
+      "dds": "dds_ready/mechanics_64x64/SER_offensive_ready.dds",
+      "size": "64x64"
+    }
+  ]
+}

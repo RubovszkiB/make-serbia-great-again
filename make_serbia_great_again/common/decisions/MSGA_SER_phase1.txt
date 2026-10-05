@@ -5,7 +5,7 @@ MSGA_economic_development = {
 			tag = SER
 		}
 		visible = {
-			has_completed_focus = MSGA_upgrade_belgrade_services
+			OR = { has_completed_focus = MSGA_upgrade_belgrade_services has_country_flag = MSGA_completed_upgrade_belgrade_services }
 			NOT = {
 				has_country_flag = MSGA_done_belgrade_business
 			}
@@ -115,7 +115,7 @@ MSGA_economic_development = {
 			tag = SER
 		}
 		visible = {
-			has_completed_focus = MSGA_develop_the_morava_corridor
+			OR = { has_completed_focus = MSGA_develop_the_morava_corridor has_country_flag = MSGA_completed_develop_the_morava_corridor }
 			NOT = {
 				has_country_flag = MSGA_done_morava_works
 			}
@@ -225,7 +225,7 @@ MSGA_economic_development = {
 			tag = SER
 		}
 		visible = {
-			has_completed_focus = MSGA_independent_resource_policy
+			OR = { has_completed_focus = MSGA_independent_resource_policy has_country_flag = MSGA_completed_independent_resource_policy }
 			NOT = {
 				has_country_flag = MSGA_done_bor_modernisation
 			}
@@ -329,7 +329,7 @@ MSGA_economic_development = {
 			tag = SER
 		}
 		visible = {
-			has_completed_focus = MSGA_independent_resource_policy
+			OR = { has_completed_focus = MSGA_independent_resource_policy has_country_flag = MSGA_completed_independent_resource_policy }
 			NOT = {
 				has_country_flag = MSGA_done_lignite_modernisation
 			}
@@ -415,7 +415,7 @@ MSGA_economic_development = {
 			tag = SER
 		}
 		visible = {
-			has_completed_focus = MSGA_independent_resource_policy
+			OR = { has_completed_focus = MSGA_independent_resource_policy has_country_flag = MSGA_completed_independent_resource_policy }
 			NOT = {
 				has_country_flag = MSGA_done_jadar_survey
 			}
@@ -497,7 +497,7 @@ MSGA_economic_development = {
 			tag = SER
 		}
 		visible = {
-			has_completed_focus = MSGA_independent_resource_policy
+			OR = { has_completed_focus = MSGA_independent_resource_policy has_country_flag = MSGA_completed_independent_resource_policy }
 			NOT = {
 				has_country_flag = MSGA_done_jadar_feasibility
 			}
@@ -584,13 +584,13 @@ MSGA_economic_development = {
 			tag = SER
 		}
 		visible = {
-			has_completed_focus = MSGA_serbian_recovery
+			OR = { has_completed_focus = MSGA_serbian_recovery has_country_flag = MSGA_completed_serbian_recovery }
 			NOT = {
 				has_country_flag = MSGA_done_enterprise
 			}
 		}
 		available = {
-			has_completed_focus = MSGA_presidential_mandate
+			OR = { has_completed_focus = MSGA_presidential_mandate has_country_flag = MSGA_completed_presidential_mandate }
 			check_variable = {
 				var = income_var
 				value = MSGA_quote_enterprise
@@ -620,7 +620,7 @@ MSGA_economic_development = {
 			tag = SER
 		}
 		visible = {
-			has_completed_focus = MSGA_attract_productive_capital
+			OR = { has_completed_focus = MSGA_attract_productive_capital has_country_flag = MSGA_completed_attract_productive_capital }
 			NOT = {
 				has_country_flag = MSGA_foreign_partner_selected
 			}
@@ -659,7 +659,7 @@ MSGA_rearmament = {
 			tag = SER
 		}
 		visible = {
-			has_completed_focus = MSGA_restore_defence_production
+			OR = { has_completed_focus = MSGA_restore_defence_production has_country_flag = MSGA_completed_restore_defence_production }
 			NOT = {
 				has_country_flag = MSGA_done_expand_defence
 			}
@@ -761,43 +761,24 @@ MSGA_rearmament = {
 			tag = SER
 		}
 		visible = {
-			has_completed_focus = MSGA_arms_for_an_uncertain_world
+			OR = { has_completed_focus = MSGA_arms_for_an_uncertain_world has_country_flag = MSGA_completed_arms_for_an_uncertain_world }
 			NOT = {
 				has_country_flag = MSGA_done_procurement
 			}
 		}
-		available = {
-			check_variable = {
-				var = income_var
-				value = MSGA_quote_procurement
-				compare = greater_than_or_equals
-			}
-		}
-		cost = 35
+        available = { check_variable = { var = income_var value = 3 compare = greater_than_or_equals } }
+        cost = 0
+        custom_cost_text = MSGA_cost_3B
+        custom_cost_trigger = { check_variable = { var = income_var value = 3 compare = greater_than_or_equals } }
 		days_remove = 30
 		ai_will_do = {
 			factor = 2
 		}
-		complete_effect = {
-			if = {
-				limit = {
-					has_country_flag = MSGA_partner_russia
-				}
-				set_temp_variable = {
-					var = income_var_temp
-					value = -0.075
-				}
-				add_income_with_inflation = yes
-			}
-			else = {
-				set_temp_variable = {
-					var = income_var_temp
-					value = -0.10
-				}
-				add_income_with_inflation = yes
-			}
-			set_country_flag = MSGA_done_procurement
-		}
+        complete_effect = {
+            set_temp_variable = { var = income_var_temp value = -3 }
+            add_income = yes
+            set_country_flag = MSGA_done_procurement
+        }
 		remove_effect = {
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_1

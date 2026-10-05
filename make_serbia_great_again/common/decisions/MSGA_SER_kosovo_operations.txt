@@ -1,0 +1,46 @@
+MSGA_kosovo_operations = {
+ MSGA_prepare_offensive_785 = {
+  icon = MSGA_prepare_offensive
+  allowed = { tag = SER }
+  cost = 0
+  custom_cost_text = MSGA_cost_25CP
+  custom_cost_trigger = { command_power > 24.99 }
+  days_remove = 14
+  fire_only_once = yes
+  cancel_if_not_visible = yes
+  on_map_mode = map_and_decisions_view
+  highlight_states = { highlight_state_targets = { state = 785 } highlight_color_before_active = 3 highlight_color_while_active = 2 }
+  visible = { has_country_flag = MSGA_kosovo_war_active 785 = { has_dynamic_modifier = { modifier = MSGA_unprepared_sector } } }
+  available = { has_war_with = KOS }
+  complete_effect = { add_command_power = -25 }
+  remove_effect = {
+   if = {
+    limit = { has_country_flag = MSGA_kosovo_war_active }
+    785 = { remove_dynamic_modifier = { modifier = MSGA_unprepared_sector } }
+    country_event = { id = MSGA_kosovo.21 }
+   }
+  }
+ }
+ MSGA_prepare_offensive_1305 = {
+  icon = MSGA_prepare_offensive
+  allowed = { tag = SER }
+  cost = 0
+  custom_cost_text = MSGA_cost_25CP
+  custom_cost_trigger = { command_power > 24.99 }
+  days_remove = 14
+  fire_only_once = yes
+  cancel_if_not_visible = yes
+  on_map_mode = map_and_decisions_view
+  highlight_states = { highlight_state_targets = { state = 1305 } highlight_color_before_active = 3 highlight_color_while_active = 2 }
+  visible = { has_country_flag = MSGA_kosovo_war_active 1305 = { has_dynamic_modifier = { modifier = MSGA_unprepared_sector } } }
+  available = { has_war_with = KOS }
+  complete_effect = { add_command_power = -25 }
+  remove_effect = {
+   if = {
+    limit = { has_country_flag = MSGA_kosovo_war_active }
+    1305 = { remove_dynamic_modifier = { modifier = MSGA_unprepared_sector } }
+    country_event = { id = MSGA_kosovo.21 }
+   }
+  }
+ }
+}

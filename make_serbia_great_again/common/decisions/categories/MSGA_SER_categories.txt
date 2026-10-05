@@ -26,7 +26,7 @@ MSGA_economic_development = {
 		tag = SER
 	}
 	visible = {
-		has_completed_focus = MSGA_attract_productive_capital
+		OR = { has_completed_focus = MSGA_attract_productive_capital has_country_flag = MSGA_completed_attract_productive_capital }
 	}
 	priority = 15
 }
@@ -36,7 +36,7 @@ MSGA_rearmament = {
 		tag = SER
 	}
 	visible = {
-		has_completed_focus = MSGA_restore_defence_production
+		OR = { has_completed_focus = MSGA_restore_defence_production has_country_flag = MSGA_completed_restore_defence_production }
 	}
 	priority = 10
 }
@@ -46,7 +46,7 @@ MSGA_strategic_review = {
 		tag = SER
 	}
 	visible = {
-		has_completed_focus = MSGA_watch_the_western_shield
+		OR = { has_completed_focus = MSGA_watch_the_western_shield has_country_flag = MSGA_completed_watch_the_western_shield }
 	}
 	visible_when_empty = yes
 	priority = 9
@@ -61,4 +61,11 @@ MSGA_kosovo_crisis = {
 	}
 	visible_when_empty = yes
 	priority = 8
+}
+
+MSGA_kosovo_operations = {
+ icon = GFX_decision_category_MSGA_kosovo_operations
+ allowed = { tag = SER }
+ visible = { has_country_flag = MSGA_kosovo_war_active }
+ visible_when_empty = yes
 }

@@ -59,6 +59,18 @@ def unique(values, label):
     assert not duplicates, f'{label} duplicates: {duplicates}'
 
 
+def early_unlocks(ast):
+    """Normalize the completion-flag fallback added for chapter transitions."""
+    result = []
+    for k, op, v in ast:
+        if k == 'OR' and isinstance(v, list) and len(v) == 2 and v[0][0] == 'has_completed_focus' and v[1][0] == 'has_country_flag':
+            if v[1][2] == v[0][2].replace('MSGA_', 'MSGA_completed_', 1):
+                result.append(v[0])
+                continue
+        result.append((k, op, early_unlocks(v) if isinstance(v, list) else v))
+    return result
+
+
 def validate_cleanup(scripts, tfr):
     """Targeted reward/compatibility checks plus preservation of the 0.4 build."""
     def baseline(path):
@@ -70,11 +82,13 @@ def validate_cleanup(scripts, tfr):
     for id, b in before.items():
         # The expansion changes topology and removes the reopening gate, not old rewards.
         assert get(after[id], 'cost') == get(b, 'cost')
-        if id != 'MSGA_contain_the_outbreak':
+        if id not in ('MSGA_contain_the_outbreak', 'MSGA_the_kosovo_question'):
             assert get(after[id], 'completion_reward') == get(b, 'completion_reward'), id
     contain = get(after['MSGA_contain_the_outbreak'], 'completion_reward')
     strip_unlocks = lambda body: [item for item in body if item[0] != 'unlock_decision_tooltip']
     assert strip_unlocks(contain) == strip_unlocks(get(before['MSGA_contain_the_outbreak'], 'completion_reward'))
+    final = get(after['MSGA_the_kosovo_question'], 'completion_reward')
+    assert [item for item in final if item[0] != 'MSGA_enter_kosovo_chapter'] == get(before['MSGA_the_kosovo_question'], 'completion_reward')
     recovery = get(after['MSGA_serbian_recovery'], 'completion_reward')
     assert [v for k, _, v in recovery if k == 'remove_ideas'] == ['SER_scars_of_bombings_idea']
 
@@ -84,13 +98,14 @@ def validate_cleanup(scripts, tfr):
     assert factories == ['2', '2']  # Intended state and mutually exclusive fallback.
     for p in ['events/MSGA_SER_early_rewards.txt',
               'events/MSGA_SER_events.txt', 'events/MSGA_SER_chronicle.txt']:
-        assert scripts[p] == baseline(p), f'Unrelated system changed: {p}'
+        assert early_unlocks(scripts[p]) == baseline(p), f'Unrelated system changed: {p}'
     assert get(scripts['common/ideas/MSGA_SER_ideas.txt'][0][2], 'country') == get(baseline('common/ideas/MSGA_SER_ideas.txt')[0][2], 'country')
 
     path = 'common/decisions/MSGA_SER_phase1.txt'
     procurement = get(get(scripts[path], 'MSGA_rearmament'), 'MSGA_procure_equipment')
     old = get(get(baseline(path), 'MSGA_rearmament'), 'MSGA_procure_equipment')
-    assert [x for x in procurement if x[0] != 'remove_effect'] == [x for x in old if x[0] != 'remove_effect']
+    assert get(procurement, 'cost') == '0' and get(procurement, 'days_remove') == '30'
+    assert get(procurement, 'complete_effect') == parse('set_temp_variable = { var = income_var_temp value = -3 } add_income = yes set_country_flag = MSGA_done_procurement')
     delivered = get(procurement, 'remove_effect')
     package = {get(v, 'type'): int(get(v, 'amount')) for k, _, v in delivered if k == 'add_equipment_to_stockpile'}
     assert package == {'infantry_equipment_1': 3500, 'support_equipment': 100, 'artillery_equipment_1': 50, 'motorized_equipment': 150}
@@ -217,7 +232,9 @@ def validate_expansion(scripts, tfr, graph, focuses):
         assert 'start_equipment_factor = 1' in get(spawn, 'division') and 'start_manpower_factor = 1' in get(spawn, 'division')
         if name != 'tigers':
             decision = get(get(decisions, 'MSGA_rearmament'), 'MSGA_raise_' + name)
-            assert get(decision, 'cost') == '25' and get(decision, 'days_remove') == '20'
+            assert get(decision, 'cost') == '0' and get(decision, 'days_remove') == '20'
+            assert ('add_income', '=', 'yes') in get(decision, 'complete_effect')
+            assert get(get(decision, 'complete_effect'), 'set_temp_variable') == parse('var = income_var_temp value = -2')
             assert get(decision, 'fire_only_once') == 'yes'
             assert get(decision, 'remove_effect') == parse('MSGA_raise_' + name + ' = yes')
     assert not any(p.startswith('common/characters/') for p in scripts)
@@ -284,8 +301,16 @@ def main():
         old = ROOT / 'art/focus_icons/MSGA_TFR_focus_icons/png_95' / (texture.stem + '.png')
         pack = ROOT / 'art/new_early_assets/MSGA_new_assets_pack'
         source = old if old.is_file() else pack / ('source/idea_png_60x68' if 'GFX_idea_' in texture.stem else 'source/focus_png_95') / (texture.stem + '.png')
+        if not source.is_file():
+            war_pack = ROOT / 'art/kosovo_war_assets/MSGA_Kosovo_War_Visual_Assets/source_png'
+            folder = 'focus' if texture.parent.name == 'goals' else texture.parent.name
+            source = war_pack / folder / (texture.stem.replace('MSGA_', 'SER_', 1) + '.png')
+            assert source.is_file()
+            # The pack's source crops are larger; runtime copies preserve its DDS-ready assets.
+            size_folder = {'focus': 'focus_95x95', 'events': 'events_474x156', 'mechanics': 'mechanics_64x64'}[folder]
+            source = war_pack.parent / 'dds_ready' / size_folder / (texture.stem.replace('MSGA_', 'SER_', 1) + '.dds')
         reference = Image.open(source).convert('RGBA')
-        assert image.size == ((60, 68) if 'GFX_idea_' in texture.stem else (95, 95))
+        assert image.size == reference.size
         assert image.tobytes() == reference.tobytes()
     categories = [k for k, _, _ in scripts['common/decisions/categories/MSGA_SER_categories.txt']]
     unique(categories, 'Category')
@@ -361,7 +386,7 @@ def main():
         assert get(b, 'is_triggered_only') == 'yes'
         if id.startswith('MSGA_chronicle.'):
             assert not any(k == 'fire_only_once' for k, _, _ in b)
-        elif get(b, 'id') not in ('MSGA.10', 'MSGA.11', 'MSGA_geopolitics.2', 'MSGA_cleanup.1'):
+        elif get(b, 'id') not in ('MSGA.10', 'MSGA.11', 'MSGA_geopolitics.2', 'MSGA_cleanup.1', 'MSGA_kosovo.21', 'MSGA_kosovo.99'):
             assert get(b, 'fire_only_once') == 'yes'
     major_ids = {'MSGA_belgrade_business', 'MSGA_morava_works', 'MSGA_bor_modernisation',
                  'MSGA_lignite_modernisation', 'MSGA_jadar_survey', 'MSGA_jadar_feasibility', 'MSGA_expand_defence'}
@@ -386,7 +411,7 @@ def main():
     unique(locale_keys, 'Localisation')
     required = focus_ids + [f + '_desc' for f in focus_ids] + ideas + dynamic + categories + decisions
     required += [k + '_desc' for k in ideas + categories + decisions]
-    required += [v for k, _, v in all_pairs if k in ('custom_effect_tooltip', 'title', 'desc', 'name') and isinstance(v, str) and v.startswith('MSGA')]
+    required += [v for k, _, v in all_pairs if k in ('custom_effect_tooltip', 'custom_cost_text', 'title', 'desc', 'name') and isinstance(v, str) and v.startswith('MSGA')]
     assert not set(required) - set(locale_keys), f'Missing localisation {set(required) - set(locale_keys)}'
     for key in re.findall(r'\$([^$\s]+)\$', locale):
         assert key in locale_keys, f'Unresolved localisation substitution {key}'
@@ -394,7 +419,7 @@ def main():
     for focus in [get(f, 'id') for f in baseline]:
         pattern = rf'^\s*{focus}:\d\s+"(.*)"\s*$'
         assert re.search(pattern, locale, re.M)[1] == re.search(pattern, baseline_locale, re.M)[1]
-    forbidden = {'declare_war_on', 'create_wargoal', 'annex_country', 'transfer_state', 'add_state_core', 'set_state_owner'}
+    forbidden = {'create_wargoal', 'add_state_core', 'set_state_owner'}
     assert not {k for k, _, _ in all_pairs} & forbidden
     variable_writes = set()
     variable_reads = set()
@@ -429,7 +454,7 @@ def main():
             assert re.search(r'\b'+re.escape(get(v, 'modifier'))+r'\s*=\s*\{', source('common/dynamic_modifiers'))
         if k in ('add_ideas', 'remove_ideas', 'has_idea') and isinstance(v, str) and not v.startswith('MSGA_'):
             assert re.search(r'\b'+re.escape(v)+r'\s*=\s*\{', external_ideas), f'Unknown TFR idea {v}'
-        if k in ('add_income_with_inflation', 'add_debt_with_inflation', 'add_debt'):
+        if k in ('add_income_with_inflation', 'add_debt_with_inflation', 'add_debt', 'add_income'):
             assert re.search(r'\b'+k+r'\s*=\s*\{', external_effects)
         if k in ('generic_not_has_corona',):
             assert re.search(r'\b'+k+r'\s*=\s*\{', external_triggers)
@@ -458,7 +483,7 @@ def main():
               'paid_one_time_review_decisions': 7, 'guarded_refundable_major_projects': 7,
               'volunteer_scripted_grants': 4, 'volunteer_engine_template_cap': 4,
               'screenshot_template_widths': [12, 24], 'northern_infrastructure_effective_gain_at_start': 2,
-              'phase2_war_effects': 0, 'campaign_acceptance': 'not certified by static checks'}
+              'phase2_enabled': True, 'campaign_acceptance': 'not certified by static checks'}
     output = args.report.resolve()
     output.parent.mkdir(exist_ok=True)
     output.write_text(json.dumps(report, indent=2) + '\n')
