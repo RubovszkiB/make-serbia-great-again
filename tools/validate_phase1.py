@@ -249,6 +249,12 @@ def main():
     MOD = args.mod_root.resolve(strict=True)
     scripts = {p.relative_to(MOD).as_posix(): parse(p.read_text(encoding='utf-8-sig'))
                for p in MOD.rglob('*') if p.suffix in ('.txt', '.gfx')}
+    # Guard-only native overrides are compared to installed TFR by validate_bosnia.
+    # This validator's prefix/localisation/API rules apply to custom MSGA objects.
+    scripts = {p: ast for p, ast in scripts.items() if p not in {
+        'events/TFR_events_SER.txt', 'common/decisions/TFR_decisions_SER.txt',
+        'common/on_actions/TFR_on_actions_ZZZ_peace.txt',
+        'history/countries/SRP - Republika Srpska.txt'}}
     all_pairs = [item for ast in scripts.values() for item in descend(ast)]
     focus_path = 'common/national_focus/MSGA_SER_phase1.txt'
     tree = scripts[focus_path][0][2]
@@ -302,6 +308,12 @@ def main():
         old = ROOT / 'art/focus_icons/MSGA_TFR_focus_icons/png_95' / (texture.stem + '.png')
         pack = ROOT / 'art/new_early_assets/MSGA_new_assets_pack'
         source = old if old.is_file() else pack / ('source/idea_png_60x68' if 'GFX_idea_' in texture.stem else 'source/focus_png_95') / (texture.stem + '.png')
+        if not source.is_file():
+            supplied_bosnia = ROOT / 'docs/bosnia_sources.json'
+            assets = json.loads(supplied_bosnia.read_text())['assets'] if supplied_bosnia.exists() else {}
+            relative = texture.relative_to(MOD).as_posix()
+            if relative in assets:
+                source = ROOT / assets[relative]
         if not source.is_file():
             candidates = [ROOT/'art/kosovo_war_assets/MSGA_Kosovo_War_Visual_Assets', ROOT/'art/post_kosovo_assets/MSGA_Post_Kosovo_Visual_Assets']
             folder = 'focus' if texture.parent.name == 'goals' else texture.parent.name
@@ -385,7 +397,7 @@ def main():
         assert get(b, 'is_triggered_only') == 'yes'
         if id.startswith('MSGA_chronicle.'):
             assert not any(k == 'fire_only_once' for k, _, _ in b)
-        elif get(b, 'id') not in ('MSGA.10', 'MSGA.11', 'MSGA_geopolitics.2', 'MSGA_cleanup.1', 'MSGA_kosovo.21', 'MSGA_kosovo.99'):
+        elif get(b, 'id') not in ('MSGA.10', 'MSGA.11', 'MSGA_geopolitics.2', 'MSGA_cleanup.1', 'MSGA_kosovo.21', 'MSGA_kosovo.99', 'MSGA_bosnia.5', 'MSGA_bosnia.99'):
             assert get(b, 'fire_only_once') == 'yes'
     major_ids = {'MSGA_belgrade_business', 'MSGA_morava_works', 'MSGA_bor_modernisation',
                  'MSGA_lignite_modernisation', 'MSGA_jadar_survey', 'MSGA_jadar_feasibility', 'MSGA_expand_defence'}
@@ -441,24 +453,38 @@ def main():
     external_effects = source('common/scripted_effects')
     external_triggers = source('common/scripted_triggers')
     external_events = source('events')
-    equipment = source('common/units/equipment')
+    game = Path(r'C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV')
+    equipment_files = {p.relative_to(game/'common/units/equipment').as_posix(): p
+                       for p in (game/'common/units/equipment').rglob('*.txt')}
+    equipment_files.update({p.relative_to(tfr/'common/units/equipment').as_posix(): p
+                            for p in (tfr/'common/units/equipment').rglob('*.txt')})
+    equipment = '\n'.join(p.read_text(encoding='utf-8-sig', errors='replace') for p in equipment_files.values())
     buildings = source('common/buildings')
     external_modifier_source = external_ideas + source('common/dynamic_modifiers')
     local_modifier_keys = {k for p, ast in scripts.items() if p.startswith('common/ideas/')
                            for key, _, value in descend(ast) if key == 'modifier' for k, _, _ in value}
+    game_modifier_docs = (Path(r'C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV') /
+                          'documentation/modifiers_documentation.md').read_text()
     for key in local_modifier_keys:
-        assert re.search(r'\b' + re.escape(key) + r'\s*=', external_modifier_source), f'Unverified modifier {key}'
+        assert re.search(r'\b' + re.escape(key) + r'\s*=', external_modifier_source) or '\n## '+key+'\n' in game_modifier_docs, f'Unverified modifier {key}'
     for k, _, v in all_pairs:
         if k in ('add_dynamic_modifier', 'remove_dynamic_modifier', 'has_dynamic_modifier') and not get(v, 'modifier').startswith('MSGA_'):
             assert re.search(r'\b'+re.escape(get(v, 'modifier'))+r'\s*=\s*\{', source('common/dynamic_modifiers'))
         if k in ('add_ideas', 'remove_ideas', 'has_idea') and isinstance(v, str) and not v.startswith('MSGA_'):
             assert re.search(r'\b'+re.escape(v)+r'\s*=\s*\{', external_ideas), f'Unknown TFR idea {v}'
-        if k in ('add_income_with_inflation', 'add_debt_with_inflation', 'add_debt', 'add_income'):
+        if k in ('add_income_with_inflation', 'add_debt_with_inflation', 'add_debt', 'add_income', 'add_military_development'):
             assert re.search(r'\b'+k+r'\s*=\s*\{', external_effects)
         if k in ('generic_not_has_corona',):
             assert re.search(r'\b'+k+r'\s*=\s*\{', external_triggers)
         if k == 'add_equipment_to_stockpile':
-            assert re.search(r'\b'+get(v, 'type')+r'\s*=\s*\{', equipment)
+            kind = get(v, 'type')
+            # Designer role variants are generated by the engine, rather than
+            # appearing as separate equipment definitions (native TFR uses them).
+            derived = re.fullmatch(r'(small|medium|large)_plane_(cas|naval_bomber)_airframe_(\d+)', kind)
+            native_history = source('history/countries') if derived else ''
+            valid_derived = derived and re.search(r'\b'+kind+r'\b', native_history) and re.search(
+                r'\b'+derived[1]+'_plane_airframe_'+derived[3]+r'\s*=\s*\{', equipment)
+            assert re.search(r'\b'+kind+r'\s*=\s*\{', equipment) or valid_derived, f'Unknown equipment {kind}'
         if k == 'add_building_construction':
             assert re.search(r'\b'+get(v, 'type')+r'\s*=\s*\{', buildings)
         if k == 'has_global_flag':

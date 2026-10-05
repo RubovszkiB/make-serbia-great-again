@@ -1,20 +1,38 @@
 {
-  "version": "0.7.0",
+  "version": "0.8.0",
   "validated_mod_root": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
-  "debug_launch_local_time": "2026-10-05 14:02:47",
-  "error_log_local_last_write": "2026-10-05T14:06:17.432986",
-  "error_log_sha256": "735d24725acdebaaa71b4de588e4c87b4fc8df32832041cbc979e8b9a16bcf6e",
-  "error_log_line_count": 2965,
-  "MSGA_or_new_variant_error_entries": [],
-  "parser_and_2020_startup_check": "passed: no MSGA or new variant references in fresh error.log",
+  "debug_process_id": 4788,
+  "debug_launch_local_time": "2026-10-05 16:22:11",
+  "error_log_local_last_write": "2026-10-05T16:34:49.661292",
+  "error_log_sha256": "1f4c2479646926f2772376cb371ad010b466778b2dafadcebc3dca4ad977b3cc",
+  "error_log_line_count": 3134,
+  "new_Bosnia_parser_errors": [],
+  "parser_and_2020_startup_check": "passed for new chapter after correcting redundant tank archetype entry",
+  "existing_native_TFR_errors_in_guard_copies": [
+    "[16:22:44][no_game_date][trigger.cpp:700]: Invalid trigger 'transfer_state_to' in common/on_actions/TFR_on_actions_ZZZ_peace.txt line : 16066",
+    "[16:22:44][no_game_date][trigger.cpp:568]: Error: \"Unknown trigger-type: transfer_state_to, near line: 16066\" in file: \"common/on_actions/TFR_on_actions_ZZZ_peace.txt\" near line: 16066",
+    "[16:22:44][no_game_date][triggerimplementation.cpp:9823]: events/TFR_events_SER.txt:1178: has_game_rule: game rule option CRO_demo is not valid for the rule SER_election",
+    "[16:22:44][no_game_date][trigger.cpp:117]: Trigger failed to validate: events/TFR_events_SER.txt:1178: has_game_rule",
+    "[16:22:44][no_game_date][effectimplementation.cpp:481]: common/on_actions/TFR_on_actions_ZZZ_peace.txt:23788: create_country_leader: No ideology specified for leader"
+  ],
+  "native_overrides_verified_against_upstream": "guard-only AST equality passed; original invalid trigger/game-rule/leader entries retained",
+  "later_live_Kosovo_runtime_errors": [
+    "[16:26:03][2020.01.08.07][effectimplementation.cpp:16366]: Invalid index to remove: common/scripted_effects/MSGA_SER_effects.txt:771: remove_from_array",
+    "[16:30:11][2020.02.19.01][effectimplementation.cpp:19490]: common/scripted_effects/MSGA_SER_effects.txt:824: remove_dynamic_modifier modifier does not exist: MSGA_unprepared_sector",
+    "[16:30:11][2020.02.19.01][effectimplementation.cpp:19490]: common/scripted_effects/MSGA_SER_effects.txt:825: remove_dynamic_modifier modifier does not exist: MSGA_unprepared_sector"
+  ],
+  "Kosovo_runtime_repairs": "Added is_in_array membership and has_dynamic_modifier cleanup guards; deployed and all four installed validators passed. Not reloaded into the active campaign.",
   "enabled_mods": [
     "mod/ugc_3350890356.mod",
     "mod/ugc_3350892196.mod",
     "mod/make_serbia_great_again.mod"
   ],
-  "base_game_and_TFR_errors_present": true,
-  "actual_playthrough_and_engine_save_load": "not tested; native UI automation unavailable",
-  "visual_rendering_production_UI_and_spawn_assignment": "not manually verified",
-  "first_load_repair": "Replaced incorrect state-scoped add_state_core with documented add_core_of; redeployed and reloaded.",
-  "subsequent_change": "Only focus x coordinates moved into positive columns 2/4/6 after engine check; installed static/model validation rerun."
+  "live_campaign_observation": "game.log records SER declaring on KOS, ALB declaring on SER, and KOS capitulation to SER. No complete Bosnia playthrough certified.",
+  "game_left_running": true,
+  "reason_not_restarted": "User explicitly requested keeping the active campaign running.",
+  "actual_full_playthrough_combat_pacing_capitulation_UI_and_engine_save_load": "not certified",
+  "first_load_repair": "Removed invalid modern_tank_equipment bonus: native legacy tank type uses modern_tank_chassis, already included.",
+  "informational_debug_hot_reloads": [
+    "[16:34:49][2020.03.10.02][eventmanager.cpp:172]: Reloading Events: events/MSGA_bosnia_events.txt"
+  ]
 }

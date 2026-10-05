@@ -1,0 +1,1191 @@
+add_namespace = serbia
+#Rising Serb Nationalism
+country_event = {
+	id = serbia.3
+	title = serbia.3.t
+	desc = serbia.3.d
+	picture = GFX_report_event_kosovo_independence
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		MSGA_native_balkan_story_allowed = yes
+
+		tag = BOS
+	}
+	option = {
+		name = serbia.3.a
+		hidden_effect = {
+			country_event = {
+				id = serbia.4
+				days = 20
+			}
+		}
+	}
+}
+
+#Serbian Protests Become Violent
+country_event = {
+	id = serbia.4
+	title = serbia.4.t
+	desc = serbia.4.d
+	picture = GFX_report_event_kosovo_independence
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		MSGA_native_balkan_story_allowed = yes
+
+		tag = BOS
+	}
+	option = {
+		name = serbia.4.a
+		hidden_effect = {
+			country_event = {
+				id = serbia.5
+				days = 90
+			}
+		}
+	}
+}
+
+#Serb Independence Referendum
+country_event = {
+	id = serbia.5
+	title = serbia.5.t
+	desc = serbia.5.d
+	picture = GFX_report_event_kosovo_independence
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		MSGA_native_balkan_story_allowed = yes
+
+		tag = BOS
+	}
+	option = {
+		name = serbia.5.a
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.05
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					SER = {
+						OR = {
+							has_government = conservative
+							has_government = authoritarian_democrat
+						}
+					}
+				}
+				SRP = {
+					transfer_state = 850
+					declare_war_on = {
+						target = BOS
+						type = annex_everything
+					}
+					load_oob = "SRP_2020"
+					delete_unit_template_and_units = {
+						division_template = "Pješadijska Divizija (A)"
+					}
+					delete_unit_template_and_units = {
+						division_template = "Pješadijska Divizija (SPA)"
+					}
+				}
+				BOS = {
+					retire_character = BOS_milorad_dodik_char
+				}
+			}
+			if = {
+				limit = {
+					SER = {
+						OR = {
+							has_government = communist
+							has_government = fascist
+						}
+					}
+				}
+				SER = {
+					declare_war_on = {
+						target = BOS
+						type = annex_everything
+					}
+				}
+			}
+		}
+	}
+}
+
+#Army Stockpile Seized
+country_event = {
+	id = serbia.6
+	title = serbia.6.t
+	desc = serbia.6.d
+	picture = GFX_report_event_kosovo_independence
+	is_triggered_only = no
+	fire_only_once = yes
+	trigger = {
+		MSGA_native_balkan_story_allowed = yes
+
+		tag = SRP
+	}
+	option = {
+		name = serbia.6.a
+		hidden_effect = {
+			load_oob = "SRP_stockpile"
+			BOS = {
+				country_event = {
+					id = serbia.7
+					days = 7
+				}
+			}
+		}
+	}
+}
+
+#Volunteers Enlist
+country_event = {
+	id = serbia.7
+	title = serbia.7.t
+	desc = serbia.7.d
+	picture = GFX_report_event_kosovo_independence
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		MSGA_native_balkan_story_allowed = yes
+
+		tag = BOS
+	}
+	option = {
+		name = serbia.7.a
+		hidden_effect = {
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = 0.1
+			}
+			load_oob = "BOS_Volunteers"
+			SRP = {
+				country_event = {
+					id = serbia.8
+					days = 3
+				}
+			}
+		}
+	}
+}
+
+#Volunteers Enlist
+country_event = {
+	id = serbia.8
+	title = serbia.8.t
+	desc = serbia.8.d
+	picture = GFX_report_event_kosovo_independence
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		MSGA_native_balkan_story_allowed = yes
+
+		tag = SRP
+	}
+	option = {
+		name = serbia.8.a
+		add_manpower = 7000
+		hidden_effect = {
+			load_oob = "SRP_Volunteers"
+			country_event = {
+				id = serbia.9
+				days = 3
+			}
+		}
+	}
+}
+
+#Volunteers Enlist
+country_event = {
+	id = serbia.9
+	title = serbia.9.t
+	desc = serbia.9.d
+	picture = GFX_report_event_kosovo_independence
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		MSGA_native_balkan_story_allowed = yes
+
+		tag = SRP
+	}
+	option = {
+		name = serbia.9.a
+		add_manpower = 1000
+		hidden_effect = {
+			850 = {
+				create_unit = {
+					division = "name = \"2. Pešadijska Brigada\" division_template = \"Pešadijska Brigada\"  start_experience_factor = 0.1"
+					allow_spawning_on_enemy_provs = yes
+					owner = SRP
+				}
+			}
+		}
+	}
+}
+
+#Russia war started, let us prepare too
+country_event = {
+	id = serbia.10
+	title = serbia.10.t
+	desc = serbia.10.d
+	picture = GFX_report_event_kosovo_independence
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		MSGA_native_balkan_story_allowed = yes
+
+		tag = SER
+	}
+	option = {
+		name = serbia.10.a
+		country_event = {
+			id = serbia.11
+			days = 45
+		}
+		add_war_support = 0.05
+		hidden_effect = {
+			BOS = {
+				country_event = {
+					id = serbia.5
+					days = 40
+				}
+			}
+		}
+	}
+}
+
+#fuck kosovo
+country_event = {
+	id = serbia.11
+	title = serbia.11.t
+	desc = serbia.11.d
+	picture = GFX_Operation_Dusan
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		MSGA_native_balkan_story_allowed = yes
+
+		tag = SER
+	}
+	option = {
+		name = serbia.11.a
+		declare_war_on = {
+			target = KOS
+			type = annex_everything
+		}
+		news_event = {
+			id = news.198
+			hours = 4
+		}
+		activate_mission = SER_take_kosovo_mission
+		ALB = {
+			add_ideas = ALB_kosovo_intervention
+		}
+		KOS = {
+			load_oob = "KOS_millitia"
+		}
+	}
+}
+
+#Srpska joins us, reform yugoslavia
+country_event = {
+	id = serbia.12
+	title = serbia.12.t
+	desc = serbia.12.d
+	picture = GFX_report_event_kosovo_independence
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		MSGA_native_balkan_story_allowed = yes
+
+		tag = SER
+	}
+	option = {
+		name = serbia.12.a
+		if = {
+			limit = {
+				has_government = communist
+			}
+			set_cosmetic_tag = SER_yug
+		}
+		annex_country = {
+			target = SRP
+			transfer_troops = yes
+		}
+		hidden_effect = {
+			country_event = {
+				id = serbia.24
+				days = 25
+			}
+			add_state_core = 105
+			add_state_core = 849
+			add_state_core = 850
+			add_state_core = 848
+			CRO = {
+				leave_faction = yes
+			}
+			BOS = {
+				load_oob = "BOS_2020"
+				load_oob = "BOS_Volunteers"
+			}
+			CRO = {
+				if = {
+					limit = {
+						NOT = {
+							has_government = fascist
+						}
+					}
+					load_oob = "CRO_volunteers"
+					109 = {
+						create_unit = {
+							division = "name = \"3. Gardijska Motorizirana Brigada\" division_template = \"Gardijska Motorizirana Brigada\"  start_experience_factor = 0.1"
+							allow_spawning_on_enemy_provs = yes
+							owner = CRO
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = serbia.13
+	title = serbia.13.t
+	desc = serbia.13.d
+	picture = GFX_Serbia_in_the_21st_Century
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = serbia.13.a
+		add_political_power = 50
+	}
+}
+
+country_event = {
+	id = serbia.14
+	title = serbia.14.t
+	desc = serbia.14.d
+	picture = GFX_Serbia_in_the_21st_Century
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = serbia.14.a
+		add_political_power = -30
+		add_popularity = {
+			ideology = communist
+			popularity = 0.08
+		}
+		#complete_national_focus = SER_give_in_to_protestor_demands
+	}
+	option = {
+		name = serbia.14.b
+		add_political_power = -30
+		add_popularity = {
+			ideology = fascist
+			popularity = 0.08
+		}
+		#complete_national_focus = SER_a_deal_is_a_deal
+	}
+}
+
+#Integrate With Montenegro
+country_event = {
+ trigger = { MSGA_native_balkan_story_allowed = yes }
+
+	id = serbia.15
+	title = serbia.15.t
+	desc = serbia.15.d
+	picture = GFX_Serbia_in_the_21st_Century
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = serbia.15.a
+		annex_country = {
+			target = MNT
+			transfer_troops = yes
+		}
+		hidden_effect = {
+			country_event = {
+				id = serbia.24
+				days = 100
+			}
+		}
+	}
+}
+
+#LOOSER YOU FUCKED UP - Military Coup
+country_event = {
+ trigger = { MSGA_native_balkan_story_allowed = yes }
+
+	id = serbia.16
+	title = serbia.16.t
+	desc = serbia.16.d
+	picture = GFX_Serbia_in_the_21st_Century
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = serbia.16.a
+		promote_character = {
+			character = SER_milan_mojsilovic_char
+			ideology = nationalist
+		}
+		set_party_name = {
+			ideology = nationalist
+			long_name = SER_serbian_army
+			name = SER_serbian_army
+		}
+		set_politics = {
+			ruling_party = nationalist
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = nationalist
+			popularity = 0.25
+		}
+		add_ideas = SER_Enforced_Isolation_idea
+		remove_ideas = {
+			SER_scars_of_bombings_idea
+			SER_policy_of_pragmatism
+			SER_rebellion_of_kosovo
+			SER_between_two_spheres_idea
+		}
+	}
+}
+
+#YUGO-BROS TAKE OVER - Socialists
+country_event = {
+ trigger = { MSGA_native_balkan_story_allowed = yes }
+
+	id = serbia.17
+	title = serbia.17.t
+	desc = serbia.17.d
+	picture = GFX_Serbia_in_the_21st_Century
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = serbia.17.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SER_election
+					option = Broz_VICTORY
+					}
+			}
+		}
+		set_country_flag = SER_belgrade_blues_off_flag
+		set_politics = {
+			ruling_party = communist
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = communist
+			popularity = 0.15
+		}
+		remove_ideas = {
+			SER_Reformed_UCK_Terrorism_idea
+			SER_policy_of_pragmatism
+			SER_between_two_spheres_idea
+		}
+		add_ideas = SER_reconstructing_yugoslavia_idea
+		set_party_name = {
+			ideology = nationalist
+			long_name = SER_serbian_army
+			name = SER_serbian_army
+		}
+		news_event = {
+			id = news.287
+		}
+		set_global_flag = SER_destroy_albanian_n
+		hidden_effect = {
+			CRO = {
+				country_event = {
+					id = serbia.23
+					days = 115
+				}
+			}
+		}
+	}
+	option = {
+		name = serbia.17.b
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SER_election
+					option = Vulin_VICTORY
+					}
+			}
+		}
+		set_country_flag = SER_belgrade_blues_off_flag
+		promote_character = {
+			character = SER_joska_broz
+			ideology = market_socialism
+		}
+		set_politics = {
+			ruling_party = communist
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = communist
+			popularity = 0.15
+		}
+		remove_ideas = {
+			SER_Reformed_UCK_Terrorism_idea
+			SER_policy_of_pragmatism
+			SER_between_two_spheres_idea
+		}
+		add_ideas = SER_reconstructing_yugoslavia_idea
+		set_party_name = {
+			ideology = nationalist
+			long_name = SER_serbian_army
+			name = SER_serbian_army
+		}
+		set_party_name = {
+			ideology = communist
+			long_name = SER_league_communist_long
+			name = SER_league_communist_short
+		}
+		news_event = {
+			id = news.287
+		}
+		set_global_flag = SER_destroy_albanian_n
+		hidden_effect = {
+			CRO = {
+				country_event = {
+					id = serbia.23
+					days = 115
+				}
+			}
+		}
+	}
+}
+
+#UCK terrorism reassumes
+country_event = {
+ trigger = { MSGA_native_balkan_story_allowed = yes }
+
+	id = serbia.18
+	title = serbia.18.t
+	desc = serbia.18.d
+	picture = GFX_UCK_Terrorists
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = serbia.18.a
+		add_ideas = SER_Reformed_UCK_Terrorism_idea
+		1305 = {
+			add_dynamic_modifier = {
+				modifier = SER_UCK_terrorism
+			}
+		}
+		785 = {
+			add_dynamic_modifier = {
+				modifier = SER_UCK_terrorism
+			}
+		}
+		hidden_effect = {
+			random_list = {
+				35 = {
+				modifier = {
+				    factor = 0
+				    OR = {
+				        has_game_rule = {
+					        rule = SER_election
+				  	        option = vucic_con
+				    	}
+				        has_game_rule = {
+					        rule = SER_election
+					        option = vucic_auth
+					    }
+				        has_game_rule = {
+				            rule = SER_election
+				            option = SER_RIGHT_woman
+					    }
+				        has_game_rule = {
+				            rule = SER_election
+				            option = SER_RIGHT_man
+					    }
+					}
+				}
+					country_event = {
+						id = serbia.17
+						days = 90
+					}
+				}
+				60 = {
+				modifier = {
+				    factor = 0
+				    OR = {
+				        has_game_rule = {
+				            rule = SER_election
+				            option = Vulin_VICTORY
+					    }
+				        has_game_rule = {
+				            rule = SER_election
+				            option = Broz_VICTORY
+					    }
+				        has_game_rule = {
+				            rule = SER_election
+				            option = SER_RIGHT_woman
+					    }
+				        has_game_rule = {
+				            rule = SER_election
+				            option = SER_RIGHT_man
+					    }
+					}
+				}
+					country_event = {
+						id = serbia.19
+						days = 90
+					}
+				}
+				30 = {
+				modifier = {
+				    factor = 0
+					OR = {
+				        has_game_rule = {
+				            rule = SER_election
+				            option = Vulin_VICTORY
+					    }
+				        has_game_rule = {
+				            rule = SER_election
+				            option = Broz_VICTORY
+					    }
+				        has_game_rule = {
+				            rule = SER_election
+				            option = vucic_con
+					    }
+				        has_game_rule = {
+				            rule = SER_election
+				            option = vucic_auth
+					    }
+					}
+				}
+					country_event = {
+						id = serbia.20
+						days = 90
+					}
+				}
+			}
+		}
+	}
+}
+
+#Vucic Bros - Pragmatism supreme
+country_event = {
+ trigger = { MSGA_native_balkan_story_allowed = yes }
+
+	id = serbia.19
+	title = serbia.19.t
+	desc = serbia.19.d
+	picture = GFX_Serbia_in_the_21st_Century
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = serbia.19.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SER_election
+					option = vucic_auth
+					}
+			}
+		}
+		set_country_flag = SER_belgrade_blues_off_flag
+		add_popularity = {
+			add_popularity = {
+				ideology = conservative
+				popularity = 0.05
+			}
+		}
+		news_event = {
+			id = news.288
+		}
+		remove_ideas = {
+			SER_Reformed_UCK_Terrorism_idea
+		}
+		add_ideas = SER_leader_of_balkans_idea
+		set_global_flag = SER_destroy_albanian_n
+	}
+	option = {
+		name = serbia.19.b
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SER_election
+					option = vucic_con
+					}
+			}
+		}
+		set_country_flag = SER_belgrade_blues_off_flag
+		set_politics = {
+			ruling_party = authoritarian_democrat
+			elections_allowed = no
+		}
+		add_country_leader_role = {
+			character = SER_aleksandar_vucic
+			promote_leader = yes
+			country_leader = {
+				ideology = hybrid_regime
+				expire = "2999.1.1.1"
+			}
+		}
+		set_party_name = {
+			ideology = authoritarian_democrat
+			long_name = SER_conservative_party_long
+			name = SER_conservative_party
+		}
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.15
+		}
+		news_event = {
+			id = news.288
+		}
+		remove_ideas = {
+			SER_Reformed_UCK_Terrorism_idea
+		}
+		add_ideas = SER_leader_of_balkans_idea
+		set_global_flag = SER_destroy_albanian_n
+	}
+}
+
+#Greater Serbia Bros
+country_event = {
+ trigger = { MSGA_native_balkan_story_allowed = yes }
+
+	id = serbia.20
+	title = serbia.20.t
+	desc = serbia.20.d
+	picture = GFX_Serbia_in_the_21st_Century
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = serbia.20.a
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SER_election
+					option = SER_RIGHT_man
+					}
+			}
+		}
+		set_country_flag = SER_belgrade_blues_off_flag
+		set_politics = {
+			ruling_party = fascist
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = fascist
+			popularity = 0.25
+		}
+		news_event = {
+			id = news.289
+			hours = 2
+		}
+		remove_ideas = {
+			SER_Reformed_UCK_Terrorism_idea
+			SER_policy_of_pragmatism
+			SER_between_two_spheres_idea
+		}
+		add_ideas = SER_serbian_rejuvenation_idea
+		set_global_flag = SER_destroy_albanian_n
+		hidden_effect = {
+			CRO = {
+				country_event = {
+					id = serbia.23
+					days = 115
+				}
+			}
+		}
+	}
+	option = {
+		name = serbia.20.b
+		ai_chance = {
+			factor = 15
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SER_election
+					option = SER_RIGHT_woman
+					}
+			}
+		}
+		promote_character = {
+			character = SER_vojislav_seselj
+			ideology = clerical_fascism
+		}
+		set_country_flag = SER_belgrade_blues_off_flag
+		set_party_name = {
+			ideology = fascist
+			long_name = SER_fascist_2_party_long
+			name = SER_fascist_2_party
+		}
+		set_politics = {
+			ruling_party = fascist
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = fascist
+			popularity = 0.25
+		}
+		news_event = {
+			id = news.289
+			hours = 2
+		}
+		remove_ideas = {
+			SER_Reformed_UCK_Terrorism_idea
+			SER_policy_of_pragmatism
+			SER_between_two_spheres_idea
+		}
+		add_ideas = SER_serbian_rejuvenation_idea
+		set_global_flag = SER_destroy_albanian_n
+		hidden_effect = {
+			CRO = {
+				country_event = {
+					id = serbia.23
+					days = 100
+					random_days = 15
+				}
+			}
+		}
+	}
+}
+
+#SPS Influence Event
+country_event = {
+	id = serbia.21
+	title = serbia.21.t
+	desc = serbia.21.d
+	picture = GFX_SPS_event
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = serbia.21.a
+		ai_chance = {
+			factor = 3
+		}
+		activate_mission = SER_sps_influence_mission
+	}
+}
+
+#2020 parliamentary election
+country_event = {
+	id = serbia.22
+	title = serbia.22.t
+	desc = serbia.22.d
+	picture = GFX_Serbia_National_Assembly
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = serbia.22.a
+		ai_chance = {
+			factor = 3
+		}
+	}
+}
+
+#Far Right Coup In Croatia - Event For CRO
+country_event = {
+	id = serbia.23
+	title = serbia.23.t
+	desc = serbia.23.d
+	picture = GFX_Serbia_National_Assembly
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		MSGA_native_balkan_story_allowed = yes
+
+		tag = CRO
+	}
+	option = {
+		name = serbia.23.a
+		CRO = {
+			set_politics = {
+				ruling_party = fascist
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = fascist
+				popularity = 0.29
+			}
+			add_popularity = {
+				ideology = nationalist
+				popularity = 0.17
+			}
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = 0.10
+			}
+			remove_ideas = {
+				CRO_fading_grudges
+				CRO_european_reliance
+			}
+			add_ideas = CRO_fascist_resurgence
+			load_oob = "CRO_mobilization"
+			news_event = {
+				id = news.293
+			}
+			puppet = SLV
+			leave_faction = yes
+			clr_country_flag = global_ass_lol
+			EU_leave_effect = yes
+			SLV = {
+				set_politics = {
+					ruling_party = nationalist
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = fascist
+					popularity = -0.1
+				}
+				add_popularity = {
+					ideology = nationalist
+					popularity = 0.45
+				}	
+				add_popularity = {
+					ideology = authoritarian_democrat
+					popularity = 0.15
+				}
+				clr_country_flag = global_ass_lol
+				leave_faction = yes
+				EU_leave_effect = yes
+			}
+		}
+	}
+}
+
+#Serbia Annexes Macedonia
+country_event = {
+	id = serbia.24
+	title = serbia.24.t
+	desc = serbia.24.d
+	picture = GFX_Serbia_National_Assembly
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		MSGA_native_balkan_story_allowed = yes
+
+		tag = SER
+	}
+	option = {
+		name = serbia.24.a
+		set_portraits = {
+			character = SER_aleksandar_vucic
+			civilian = {
+				large = "GFX_portrait_SER_Aleksandar_Vucic_cool"
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_government = conservative
+					has_government = authoritarian_democrat
+				}
+			}
+			puppet = MAC
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_government = communist
+					has_government = fascist
+				}
+			}
+			annex_country = {
+				target = MAC
+				transfer_troops = yes
+			}
+			country_event = {
+				id = serbia.25
+				days = 90
+			}
+		}
+	}
+}
+
+country_event = {
+	id = serbia.25
+	title = serbia.25.t
+	desc = serbia.25.d
+	picture = GFX_Serbia_National_Assembly
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		MSGA_native_balkan_story_allowed = yes
+
+		tag = SER
+	}
+	option = {
+		name = serbia.25.a
+		declare_war_on = {
+			target = CRO
+			type = annex_everything
+		}
+	}
+}
+
+#Croat Uprising
+country_event = {
+	id = serbia.26
+	title = serbia.26.t
+	desc = serbia.26.d
+	picture = GFX_Serbia_National_Assembly
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		MSGA_native_balkan_story_allowed = yes
+
+		tag = SER
+	}
+	option = {
+		name = serbia.26.a
+		CRO = {
+			transfer_state = 103
+			declare_war_on = {
+				target = CRO
+				type = annex_everything
+			}
+			load_oob = "CRO_uprising"
+		}
+	}
+}
+
+#Croat Identitarian Uprising
+country_event = {
+ trigger = { MSGA_native_balkan_story_allowed = yes }
+
+	id = serbia.27
+	title = serbia.27.t
+	desc = serbia.27.d
+	picture = GFX_Serbia_National_Assembly
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = serbia.27.a
+		DMT = {
+			transfer_state = 103
+			if = {
+				limit = {
+					country_exists = CRO
+					not = {
+						CRO = {
+							is_puppet = yes
+						}
+					}
+				}
+				declare_war_on = {
+					target = CRO
+					type = annex_everything
+				}
+			}
+			else_if = {
+				limit = {
+					country_exists = CRO
+					CRO = {
+						is_puppet_of = SER
+					}
+				}
+				declare_war_on = {
+					target = CRO
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = SER
+					type = annex_everything
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						country_exists = CRO
+					}
+				}
+				declare_war_on = {
+					target = SER
+					type = annex_everything
+				}
+				load_oob = "DMT_uprising"
+				set_cosmetic_tag = DMT_Croatia
+				transfer_state = 109
+			}
+			load_oob = "DMT_uprising"
+			set_politics = {
+				ruling_party = national_socialist
+				last_election = "2015.2.1"
+				election_frequency = 60
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = national_socialist
+				popularity = 0.33
+			}
+		}
+	}
+}
+
+#Croatia 2020
+country_event = {
+	id = serbia.28
+	title = serbia.28.t
+	desc = serbia.28.d
+	picture = GFX_Serbia_National_Assembly
+	is_triggered_only = yes
+	trigger = {
+	}
+	option = {
+		name = serbia.28.a
+		ai_chance = {
+			factor = 53
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = CRO_election
+					option = CRO_con
+					}
+			}
+		}
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.05
+		}
+		set_politics = {
+			ruling_party = social_democrat
+			elections_allowed = yes
+			last_election = "2020.1.5"
+			election_frequency = 60
+		}
+	}
+	option = {
+		name = serbia.28.b
+		ai_chance = {
+			factor = 47
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SER_election
+					option = CRO_demo
+					}
+			}
+		}
+		set_politics = {
+			ruling_party = conservative
+			elections_allowed = yes
+			last_election = "2020.1.5"
+			election_frequency = 60
+		}
+	}
+}

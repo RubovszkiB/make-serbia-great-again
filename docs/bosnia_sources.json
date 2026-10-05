@@ -1,0 +1,96 @@
+{
+  "assets": {
+    "gfx/event_pictures/MSGA_event_air_force_supplier_choice.dds": "art/bosnia_assets/MSGA_TFR_Bosnia_Visuals_v1/gfx/event_pictures/SER_event_air_force_supplier_choice.dds",
+    "gfx/event_pictures/MSGA_event_answer_the_call.dds": "art/bosnia_assets/MSGA_TFR_Bosnia_Visuals_v1/gfx/event_pictures/SER_event_answer_the_call.dds",
+    "gfx/event_pictures/MSGA_event_bosnia_declares_war.dds": "art/bosnia_assets/MSGA_TFR_Bosnia_Visuals_v1/gfx/event_pictures/SER_event_bosnia_declares_war.dds",
+    "gfx/event_pictures/MSGA_event_republika_srpska_proclaimed.dds": "art/bosnia_assets/MSGA_TFR_Bosnia_Visuals_v1/gfx/event_pictures/SER_event_republika_srpska_proclaimed.dds",
+    "gfx/event_pictures/MSGA_event_start_make_serbia_great_again.dds": "art/bosnia_assets/MSGA_TFR_Bosnia_Visuals_v1/gfx/event_pictures/SER_event_start_make_serbia_great_again.dds",
+    "gfx/interface/decisions/MSGA_territorial_defence.dds": "art/bosnia_assets/MSGA_TFR_Bosnia_Visuals_v1/gfx/interface/decisions/decision_category_SER_territorial_defence.dds",
+    "gfx/interface/decisions/MSGA_form_territorial_defence.dds": "art/bosnia_assets/MSGA_TFR_Bosnia_Visuals_v1/gfx/interface/decisions/decision_SER_form_territorial_defence.dds",
+    "gfx/interface/goals/MSGA_buy_equipment_serbian_air_force.dds": "art/bosnia_assets/MSGA_TFR_Bosnia_Visuals_v1/gfx/interface/goals/focus_SER_buy_equipment_serbian_air_force.dds",
+    "gfx/interface/goals/MSGA_establish_territorial_defence.dds": "art/bosnia_assets/MSGA_TFR_Bosnia_Visuals_v1/gfx/interface/goals/focus_SER_establish_territorial_defence.dds",
+    "gfx/interface/goals/MSGA_one_people_across_the_drina.dds": "art/bosnia_assets/MSGA_TFR_Bosnia_Visuals_v1/gfx/interface/goals/focus_SER_one_people_across_the_drina.dds",
+    "gfx/interface/goals/MSGA_prepare_for_the_unthinkable.dds": "art/bosnia_assets/MSGA_TFR_Bosnia_Visuals_v1/gfx/interface/goals/focus_SER_prepare_for_the_unthinkable.dds",
+    "gfx/interface/goals/MSGA_prepare_logistics_network.dds": "art/bosnia_assets/MSGA_TFR_Bosnia_Visuals_v1/gfx/interface/goals/focus_SER_prepare_logistics_network.dds",
+    "gfx/interface/goals/MSGA_prepare_the_nation_for_war.dds": "art/bosnia_assets/MSGA_TFR_Bosnia_Visuals_v1/gfx/interface/goals/focus_SER_prepare_the_nation_for_war.dds",
+    "gfx/interface/goals/MSGA_seed_the_rebellion_in_bosnia.dds": "art/bosnia_assets/MSGA_TFR_Bosnia_Visuals_v1/gfx/interface/goals/focus_SER_seed_the_rebellion_in_bosnia.dds",
+    "gfx/interface/goals/MSGA_spend_money_command_structure.dds": "art/bosnia_assets/MSGA_TFR_Bosnia_Visuals_v1/gfx/interface/goals/focus_SER_spend_money_command_structure.dds",
+    "gfx/interface/goals/MSGA_start_make_serbia_great_again.dds": "art/bosnia_assets/MSGA_TFR_Bosnia_Visuals_v1/gfx/interface/goals/focus_SER_start_make_serbia_great_again.dds",
+    "gfx/interface/goals/MSGA_start_mobilising_our_people.dds": "art/bosnia_assets/MSGA_TFR_Bosnia_Visuals_v1/gfx/interface/goals/focus_SER_start_mobilising_our_people.dds",
+    "gfx/interface/goals/MSGA_start_the_army_buildup.dds": "art/bosnia_assets/MSGA_TFR_Bosnia_Visuals_v1/gfx/interface/goals/focus_SER_start_the_army_buildup.dds",
+    "gfx/interface/goals/MSGA_strengthen_national_narrative.dds": "art/bosnia_assets/MSGA_TFR_Bosnia_Visuals_v1/gfx/interface/goals/focus_SER_strengthen_national_narrative.dds",
+    "gfx/interface/goals/MSGA_watch_the_conflict.dds": "art/bosnia_assets/MSGA_TFR_Bosnia_Visuals_v1/gfx/interface/goals/focus_SER_watch_the_conflict.dds",
+    "gfx/interface/ideas/MSGA_KOS_last_stand.dds": "art/bosnia_assets/MSGA_TFR_Bosnia_Visuals_v1/gfx/interface/ideas/idea_KOS_last_stand.dds",
+    "gfx/interface/ideas/MSGA_prepared_for_war.dds": "art/bosnia_assets/MSGA_TFR_Bosnia_Visuals_v1/gfx/interface/ideas/idea_SER_prepared_for_war.dds",
+    "gfx/interface/ideas/MSGA_serbian_rearmament_program.dds": "art/bosnia_assets/MSGA_TFR_Bosnia_Visuals_v1/gfx/interface/ideas/idea_SER_serbian_rearmament_program.dds",
+    "gfx/interface/ideas/MSGA_SRP_last_stand.dds": "art/bosnia_assets/MSGA_TFR_Bosnia_Visuals_v1/gfx/interface/ideas/idea_SRP_last_stand.dds"
+  },
+  "native_guard_overrides": {
+    "events/TFR_events_SER.txt": {
+      "upstream_sha256": "bc2f9684d8d07472903b9016b22568629eb2b0619e7197f0a8678dc792f66cf7",
+      "insertions": 21,
+      "extra": {
+        "gated_events": [
+          "serbia.3",
+          "serbia.4",
+          "serbia.5",
+          "serbia.6",
+          "serbia.7",
+          "serbia.8",
+          "serbia.9",
+          "serbia.10",
+          "serbia.11",
+          "serbia.12",
+          "serbia.15",
+          "serbia.16",
+          "serbia.17",
+          "serbia.18",
+          "serbia.19",
+          "serbia.20",
+          "serbia.23",
+          "serbia.24",
+          "serbia.25",
+          "serbia.26",
+          "serbia.27"
+        ]
+      }
+    },
+    "common/decisions/TFR_decisions_SER.txt": {
+      "upstream_sha256": "aeb6a5c0fbe5ccf011a9c5248792626141d1d6be04da83984fd2efcbb0ed025c",
+      "insertions": 13,
+      "extra": {
+        "gated_category": "SER_second_kosovo_war"
+      }
+    },
+    "common/on_actions/TFR_on_actions_ZZZ_peace.txt": {
+      "upstream_sha256": "81dbb654285bb216debbeac8eb584992255ea2c68620e7da180dad5874cb2ea6",
+      "insertions": 3,
+      "extra": {
+        "gated_winner_loser_pairs": [
+          [
+            "SRP",
+            "BOS"
+          ],
+          [
+            "SER",
+            "BOS"
+          ],
+          [
+            "BOS",
+            "SER"
+          ]
+        ]
+      }
+    },
+    "history/countries/SRP - Republika Srpska.txt": {
+      "upstream_sha256": "2381f3e883a3cbd5000cdae4cb8127a4a7b8c27394319034d69371b4ab30f268",
+      "oob_only": true
+    }
+  },
+  "reference_project": "https://github.com/RubovszkiB/HOI4-TFR-Austria-Hungary-reborn",
+  "reference_files": [
+    "common/scripted_effects/AHR_scripted_effects.txt",
+    "common/on_actions/AHR_on_actions.txt",
+    "events/AHR_european_war_events.txt"
+  ]
+}

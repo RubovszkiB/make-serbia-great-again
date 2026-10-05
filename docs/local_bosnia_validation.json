@@ -1,0 +1,72 @@
+{
+  "static_validation": "passed",
+  "validated_mod_root": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
+  "version": "0.8.0",
+  "bosnia_focuses": 13,
+  "total_focuses": 48,
+  "seed_days": 42,
+  "watch_days": 70,
+  "release_to_BOS_declaration_days": 15,
+  "Srpska_native_states": [
+    848,
+    849,
+    850
+  ],
+  "native_leader": "SRP_milorad_dodik_char",
+  "Srpska_starting_divisions": 3,
+  "militia_battalions_per_template": 3,
+  "territorial_decision_states": [
+    45,
+    108,
+    1296,
+    785,
+    1305
+  ],
+  "Belgrade_province": 11586,
+  "territorial_cost_B": 0.5,
+  "territorial_days": 14,
+  "military_development_total": 60,
+  "rearmament_days": 200,
+  "Russian_package": {
+    "cost_B": 15,
+    "Su30": 50,
+    "Su24": 25,
+    "Mi24": 50
+  },
+  "Chinese_package": {
+    "cost_B": 10,
+    "J16": 40,
+    "Z10": 30
+  },
+  "logistics": {
+    "trains": 15,
+    "utility_vehicles": 150
+  },
+  "modeled_surrender_threshold_at_war_support_0_to_100_percent": [
+    0.99,
+    0.99,
+    0.99,
+    0.99,
+    0.99,
+    0.99,
+    0.99,
+    0.99,
+    0.99,
+    0.99
+  ],
+  "base_war_stability_penalty_before_after": [
+    -0.2,
+    -0.14
+  ],
+  "supplied_DDS_assets": 24,
+  "native_guard_only_overrides_verified": [
+    "events/TFR_events_SER.txt",
+    "common/decisions/TFR_decisions_SER.txt",
+    "common/on_actions/TFR_on_actions_ZZZ_peace.txt",
+    "history/countries/SRP - Republika Srpska.txt"
+  ],
+  "BOS_original_regular_divisions": 4,
+  "script_flow_model": "passed: payments, DLC packages, exact template/spawn counts, ownership/refund guards, 15-day war declaration, nonzero loss threshold, once-only join, cleanup",
+  "actual_combat_UI_and_engine_save_load": "not certified by static/model checks",
+  "postwar_peace_implemented": false
+}

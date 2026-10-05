@@ -1,0 +1,27 @@
+MSGA / TFR — DIVISION TEMPLATE SPEC
+
+1) Territorial Defence Militia
+- Editable by the player.
+- Template composition: 3 x Militia battalions ONLY.
+- No support companies.
+- No artillery.
+- No motorized.
+- No APC / IFV.
+- No tank battalion.
+- The focus spawns 1 Territorial Defence Militia division in Belgrade.
+- Regional Territorial Defence decisions each cost $0.5B, are one-time per eligible Serbian state, and spawn 1 division using this same template.
+- Intended decision duration: 14 days.
+
+2) Republika Srpska Militia / Srpska Guard
+- Template composition: 3 x Militia battalions ONLY.
+- No support companies.
+- No artillery.
+- No motorized.
+- No APC / IFV.
+- No tank battalion.
+- When Republika Srpska is released, spawn 3 divisions using this template.
+- Keep it as a normal editable division template unless an existing TFR mechanic explicitly requires otherwise.
+
+IMPORTANT:
+Do not preload either template with tanks, APCs, IFVs, artillery, engineers, recon, or other support.
+The whole starting template is only three plain militia battalions.

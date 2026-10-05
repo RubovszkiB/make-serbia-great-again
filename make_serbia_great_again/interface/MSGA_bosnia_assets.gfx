@@ -1,0 +1,104 @@
+spriteTypes = {
+ SpriteType = { name = "GFX_report_event_MSGA_air_force_supplier_choice" texturefile = "gfx/event_pictures/MSGA_event_air_force_supplier_choice.dds" }
+ SpriteType = { name = "GFX_report_event_MSGA_answer_the_call" texturefile = "gfx/event_pictures/MSGA_event_answer_the_call.dds" }
+ SpriteType = { name = "GFX_report_event_MSGA_bosnia_declares_war" texturefile = "gfx/event_pictures/MSGA_event_bosnia_declares_war.dds" }
+ SpriteType = { name = "GFX_report_event_MSGA_republika_srpska_proclaimed" texturefile = "gfx/event_pictures/MSGA_event_republika_srpska_proclaimed.dds" }
+ SpriteType = { name = "GFX_report_event_MSGA_start_make_serbia_great_again" texturefile = "gfx/event_pictures/MSGA_event_start_make_serbia_great_again.dds" }
+ SpriteType = { name = "GFX_decision_category_MSGA_territorial_defence" texturefile = "gfx/interface/decisions/MSGA_territorial_defence.dds" }
+ SpriteType = { name = "GFX_decision_MSGA_form_territorial_defence" texturefile = "gfx/interface/decisions/MSGA_form_territorial_defence.dds" }
+ SpriteType = { name = "GFX_goal_MSGA_buy_equipment_serbian_air_force" texturefile = "gfx/interface/goals/MSGA_buy_equipment_serbian_air_force.dds" }
+ SpriteType = {
+  name = "GFX_goal_MSGA_buy_equipment_serbian_air_force_shine" texturefile = "gfx/interface/goals/MSGA_buy_equipment_serbian_air_force.dds" effectFile = "gfx/FX/buttonstate.lua"
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_buy_equipment_serbian_air_force.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = -90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_buy_equipment_serbian_air_force.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = 90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  legacy_lazy_load = no
+ }
+ SpriteType = { name = "GFX_goal_MSGA_establish_territorial_defence" texturefile = "gfx/interface/goals/MSGA_establish_territorial_defence.dds" }
+ SpriteType = {
+  name = "GFX_goal_MSGA_establish_territorial_defence_shine" texturefile = "gfx/interface/goals/MSGA_establish_territorial_defence.dds" effectFile = "gfx/FX/buttonstate.lua"
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_establish_territorial_defence.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = -90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_establish_territorial_defence.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = 90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  legacy_lazy_load = no
+ }
+ SpriteType = { name = "GFX_goal_MSGA_one_people_across_the_drina" texturefile = "gfx/interface/goals/MSGA_one_people_across_the_drina.dds" }
+ SpriteType = {
+  name = "GFX_goal_MSGA_one_people_across_the_drina_shine" texturefile = "gfx/interface/goals/MSGA_one_people_across_the_drina.dds" effectFile = "gfx/FX/buttonstate.lua"
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_one_people_across_the_drina.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = -90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_one_people_across_the_drina.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = 90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  legacy_lazy_load = no
+ }
+ SpriteType = { name = "GFX_goal_MSGA_prepare_for_the_unthinkable" texturefile = "gfx/interface/goals/MSGA_prepare_for_the_unthinkable.dds" }
+ SpriteType = {
+  name = "GFX_goal_MSGA_prepare_for_the_unthinkable_shine" texturefile = "gfx/interface/goals/MSGA_prepare_for_the_unthinkable.dds" effectFile = "gfx/FX/buttonstate.lua"
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_prepare_for_the_unthinkable.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = -90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_prepare_for_the_unthinkable.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = 90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  legacy_lazy_load = no
+ }
+ SpriteType = { name = "GFX_goal_MSGA_prepare_logistics_network" texturefile = "gfx/interface/goals/MSGA_prepare_logistics_network.dds" }
+ SpriteType = {
+  name = "GFX_goal_MSGA_prepare_logistics_network_shine" texturefile = "gfx/interface/goals/MSGA_prepare_logistics_network.dds" effectFile = "gfx/FX/buttonstate.lua"
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_prepare_logistics_network.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = -90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_prepare_logistics_network.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = 90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  legacy_lazy_load = no
+ }
+ SpriteType = { name = "GFX_goal_MSGA_prepare_the_nation_for_war" texturefile = "gfx/interface/goals/MSGA_prepare_the_nation_for_war.dds" }
+ SpriteType = {
+  name = "GFX_goal_MSGA_prepare_the_nation_for_war_shine" texturefile = "gfx/interface/goals/MSGA_prepare_the_nation_for_war.dds" effectFile = "gfx/FX/buttonstate.lua"
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_prepare_the_nation_for_war.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = -90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_prepare_the_nation_for_war.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = 90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  legacy_lazy_load = no
+ }
+ SpriteType = { name = "GFX_goal_MSGA_seed_the_rebellion_in_bosnia" texturefile = "gfx/interface/goals/MSGA_seed_the_rebellion_in_bosnia.dds" }
+ SpriteType = {
+  name = "GFX_goal_MSGA_seed_the_rebellion_in_bosnia_shine" texturefile = "gfx/interface/goals/MSGA_seed_the_rebellion_in_bosnia.dds" effectFile = "gfx/FX/buttonstate.lua"
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_seed_the_rebellion_in_bosnia.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = -90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_seed_the_rebellion_in_bosnia.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = 90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  legacy_lazy_load = no
+ }
+ SpriteType = { name = "GFX_goal_MSGA_spend_money_command_structure" texturefile = "gfx/interface/goals/MSGA_spend_money_command_structure.dds" }
+ SpriteType = {
+  name = "GFX_goal_MSGA_spend_money_command_structure_shine" texturefile = "gfx/interface/goals/MSGA_spend_money_command_structure.dds" effectFile = "gfx/FX/buttonstate.lua"
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_spend_money_command_structure.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = -90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_spend_money_command_structure.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = 90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  legacy_lazy_load = no
+ }
+ SpriteType = { name = "GFX_goal_MSGA_start_make_serbia_great_again" texturefile = "gfx/interface/goals/MSGA_start_make_serbia_great_again.dds" }
+ SpriteType = {
+  name = "GFX_goal_MSGA_start_make_serbia_great_again_shine" texturefile = "gfx/interface/goals/MSGA_start_make_serbia_great_again.dds" effectFile = "gfx/FX/buttonstate.lua"
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_start_make_serbia_great_again.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = -90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_start_make_serbia_great_again.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = 90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  legacy_lazy_load = no
+ }
+ SpriteType = { name = "GFX_goal_MSGA_start_mobilising_our_people" texturefile = "gfx/interface/goals/MSGA_start_mobilising_our_people.dds" }
+ SpriteType = {
+  name = "GFX_goal_MSGA_start_mobilising_our_people_shine" texturefile = "gfx/interface/goals/MSGA_start_mobilising_our_people.dds" effectFile = "gfx/FX/buttonstate.lua"
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_start_mobilising_our_people.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = -90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_start_mobilising_our_people.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = 90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  legacy_lazy_load = no
+ }
+ SpriteType = { name = "GFX_goal_MSGA_start_the_army_buildup" texturefile = "gfx/interface/goals/MSGA_start_the_army_buildup.dds" }
+ SpriteType = {
+  name = "GFX_goal_MSGA_start_the_army_buildup_shine" texturefile = "gfx/interface/goals/MSGA_start_the_army_buildup.dds" effectFile = "gfx/FX/buttonstate.lua"
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_start_the_army_buildup.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = -90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_start_the_army_buildup.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = 90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  legacy_lazy_load = no
+ }
+ SpriteType = { name = "GFX_goal_MSGA_strengthen_national_narrative" texturefile = "gfx/interface/goals/MSGA_strengthen_national_narrative.dds" }
+ SpriteType = {
+  name = "GFX_goal_MSGA_strengthen_national_narrative_shine" texturefile = "gfx/interface/goals/MSGA_strengthen_national_narrative.dds" effectFile = "gfx/FX/buttonstate.lua"
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_strengthen_national_narrative.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = -90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_strengthen_national_narrative.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = 90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  legacy_lazy_load = no
+ }
+ SpriteType = { name = "GFX_goal_MSGA_watch_the_conflict" texturefile = "gfx/interface/goals/MSGA_watch_the_conflict.dds" }
+ SpriteType = {
+  name = "GFX_goal_MSGA_watch_the_conflict_shine" texturefile = "gfx/interface/goals/MSGA_watch_the_conflict.dds" effectFile = "gfx/FX/buttonstate.lua"
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_watch_the_conflict.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = -90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  animation = { animationmaskfile = "gfx/interface/goals/MSGA_watch_the_conflict.dds" animationtexturefile = "gfx/interface/goals/shine_overlay.dds" animationrotation = 90 animationlooping = no animationtime = 0.75 animationdelay = 0 animationblendmode = "add" animationtype = "scrolling" animationrotationoffset = { x = 0 y = 0 } animationtexturescale = { x = 1 y = 1 } }
+  legacy_lazy_load = no
+ }
+ SpriteType = { name = "GFX_idea_MSGA_KOS_last_stand" texturefile = "gfx/interface/ideas/MSGA_KOS_last_stand.dds" }
+ SpriteType = { name = "GFX_idea_MSGA_prepared_for_war" texturefile = "gfx/interface/ideas/MSGA_prepared_for_war.dds" }
+ SpriteType = { name = "GFX_idea_MSGA_serbian_rearmament_program" texturefile = "gfx/interface/ideas/MSGA_serbian_rearmament_program.dds" }
+ SpriteType = { name = "GFX_idea_MSGA_SRP_last_stand" texturefile = "gfx/interface/ideas/MSGA_SRP_last_stand.dds" }
+}

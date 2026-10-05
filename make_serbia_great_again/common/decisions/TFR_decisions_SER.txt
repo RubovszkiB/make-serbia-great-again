@@ -1,0 +1,126 @@
+SER_second_kosovo_war = {
+
+        SER_take_kosovo_mission = {
+
+            icon = GFX_decision_border_war
+
+            visible = {
+		MSGA_native_balkan_story_allowed = yes
+
+                tag = SER
+            }
+
+            available = {
+		MSGA_native_balkan_story_allowed = yes
+ 
+			   has_global_flag = kosovo_fail
+            }
+
+            cancel_trigger = {
+                SER = {
+					owns_state = 785
+			   }
+            }
+
+            activation = { 
+                always = no 
+            }
+            visible = {
+		MSGA_native_balkan_story_allowed = yes
+
+
+            }
+            cancel_if_not_visible = yes 
+            is_good = yes 
+            fire_only_once = yes
+            selectable_mission = no
+            days_mission_timeout = 150 # temporarily raised from 30 to 150 for the french update, will be changed later pinky promise
+
+            cancel_effect = {
+ if = { limit = { MSGA_native_balkan_story_allowed = yes }
+
+				hidden_effect = {
+					BOS = {
+						country_event = { id = serbia.3 days = 200 }
+					}
+					country_event = { id = serbia.15 days = 360 }
+					country_event = { id = serbia.18 days = 30 }
+					SER = {
+					   remove_ideas = {
+					    SER_scars_of_bombings_idea
+					    SER_rebellion_of_kosovo
+					    }
+					}
+				}
+            
+ }
+}
+
+            timeout_effect = {
+ if = { limit = { MSGA_native_balkan_story_allowed = yes }
+
+				white_peace = KOS
+				set_global_flag = kosovo_fail
+				hidden_effect = {
+				    country_event = { id = serbia.16 days = 10 }
+				}
+            
+ }
+}
+        }
+		
+		SER_remember_kosare = {
+
+            icon = generic_propaganda_campaigns
+
+            allowed = {
+                original_tag = SER
+            }
+
+            visible = {
+		MSGA_native_balkan_story_allowed = yes
+
+                hidden_trigger = {
+                    has_war_with = KOS
+                }
+            }
+
+            available = {
+		MSGA_native_balkan_story_allowed = yes
+
+                
+            }
+
+            ai_will_do = {
+                factor = 5
+            }
+
+            cost = 15
+            days_remove = 7
+            fire_only_once = yes
+            cancel_if_not_visible = yes
+
+            modifier = {
+                war_support_weekly = 0.001
+            }
+
+            complete_effect = {
+ if = { limit = { MSGA_native_balkan_story_allowed = yes }
+
+                add_stability = -0.03
+            
+ }
+}
+
+            remove_effect = {
+ if = { limit = { MSGA_native_balkan_story_allowed = yes }
+
+                add_days_mission_timeout = {
+                    mission = SER_take_kosovo_mission
+                    days = 15
+                }
+            
+ }
+}
+        }
+    }

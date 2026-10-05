@@ -1,0 +1,1 @@
+units = { division = { name = "Vojvodina Territorial Defence" location = 3617 division_template = "Territorial Defence Militia" start_equipment_factor = 1 start_manpower_factor = 1 start_experience_factor = 0.05 } }

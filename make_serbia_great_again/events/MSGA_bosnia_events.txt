@@ -1,0 +1,92 @@
+add_namespace = MSGA_bosnia
+country_event = {
+ id = MSGA_bosnia.1
+ title = MSGA_bosnia.1.t
+ desc = MSGA_bosnia.1.d
+ picture = GFX_report_event_MSGA_start_make_serbia_great_again
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = { add_political_power = 10 }
+ option = { name = MSGA_bosnia.1.a ai_chance = { factor = 100 }  }
+}
+country_event = {
+ id = MSGA_bosnia.2
+ title = MSGA_bosnia.2.t
+ desc = MSGA_bosnia.2.d
+ picture = GFX_report_event_MSGA_start_make_serbia_great_again
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = { add_war_support = 0.05 }
+ option = { name = MSGA_bosnia.2.a ai_chance = { factor = 100 }  }
+}
+country_event = {
+ id = MSGA_bosnia.3
+ title = MSGA_bosnia.3.t
+ desc = MSGA_bosnia.3.d
+ picture = GFX_report_event_MSGA_start_make_serbia_great_again
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = {  }
+ option = { name = MSGA_bosnia.3.a ai_chance = { factor = 100 }  }
+}
+country_event = {
+ id = MSGA_bosnia.4
+ title = MSGA_bosnia.4.t
+ desc = MSGA_bosnia.4.d
+ picture = GFX_report_event_MSGA_air_force_supplier_choice
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = {  }
+ option = { name = MSGA_bosnia.4.a ai_chance = { factor = 50 } trigger = { check_variable = { var = income_var value = 15 compare = greater_than_or_equals } } MSGA_buy_russian_air_package = yes }
+ option = { name = MSGA_bosnia.4.b ai_chance = { factor = 50 } trigger = { check_variable = { var = income_var value = 10 compare = greater_than_or_equals } } MSGA_buy_chinese_air_package = yes }
+ option = { name = MSGA_bosnia.4.c ai_chance = { factor = 1 } set_country_flag = MSGA_air_procurement_deferred }
+}
+country_event = {
+ id = MSGA_bosnia.5
+ title = MSGA_bosnia.5.t
+ desc = MSGA_bosnia.5.d
+ picture = GFX_report_event_MSGA_air_force_supplier_choice
+ is_triggered_only = yes
+ immediate = {  }
+ option = { name = MSGA_bosnia.5.a ai_chance = { factor = 50 } trigger = { check_variable = { var = income_var value = 15 compare = greater_than_or_equals } } MSGA_buy_russian_air_package = yes }
+ option = { name = MSGA_bosnia.5.b ai_chance = { factor = 50 } trigger = { check_variable = { var = income_var value = 10 compare = greater_than_or_equals } } MSGA_buy_chinese_air_package = yes }
+ option = { name = MSGA_bosnia.5.c ai_chance = { factor = 1 } set_country_flag = MSGA_air_procurement_deferred }
+}
+country_event = {
+ id = MSGA_bosnia.6
+ title = MSGA_bosnia.6.t
+ desc = MSGA_bosnia.6.d
+ picture = GFX_report_event_MSGA_republika_srpska_proclaimed
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = { MSGA_release_srpska = yes }
+ option = { name = MSGA_bosnia.6.a ai_chance = { factor = 100 }  }
+}
+country_event = {
+ id = MSGA_bosnia.7 hidden = yes is_triggered_only = yes fire_only_once = yes
+ immediate = { SER = { MSGA_begin_bosnian_war = yes } }
+}
+country_event = {
+ id = MSGA_bosnia.8
+ title = MSGA_bosnia.8.t
+ desc = MSGA_bosnia.8.d
+ picture = GFX_report_event_MSGA_bosnia_declares_war
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = {  }
+ option = { name = MSGA_bosnia.8.a ai_chance = { factor = 100 }  }
+}
+country_event = {
+ id = MSGA_bosnia.9
+ title = MSGA_bosnia.9.t
+ desc = MSGA_bosnia.9.d
+ picture = GFX_report_event_MSGA_answer_the_call
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = {  }
+ option = { name = MSGA_bosnia.9.a ai_chance = { factor = 100 } MSGA_join_srpska_war = yes }
+}
+country_event = {
+ id = MSGA_bosnia.99 hidden = yes is_triggered_only = yes
+ immediate = { clr_country_flag = MSGA_bosnia_observer_pending MSGA_cleanup_bosnia_war_modifiers = yes MSGA_check_bosnian_intervention = yes MSGA_schedule_bosnia_observer = yes }
+}

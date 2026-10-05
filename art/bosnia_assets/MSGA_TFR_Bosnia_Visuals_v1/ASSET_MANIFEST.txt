@@ -1,0 +1,35 @@
+MSGA / TFR — VISUAL ASSET MANIFEST
+
+Generated as TFR-compatible HOI4 visual assets.
+
+FOCUS ICONS
+- Native size used: 95x85
+- Folder: gfx/interface/goals/
+- Both PNG preview and DDS game asset included.
+
+NATIONAL SPIRITS
+- Native size used: 60x68
+- Folder: gfx/interface/ideas/
+- Both PNG preview and DDS game asset included.
+
+DECISIONS
+- Decision category icon: 52x40
+- Standard decision icon: 36x36
+- Folder: gfx/interface/decisions/
+- Same Territorial Defence decision icon can be reused for every regional formation decision.
+
+EVENT PICTURES
+- Native size used: 474x156
+- Folder: gfx/event_pictures/
+- Both PNG preview and DDS game asset included.
+
+REFERENCE-ONLY UNIT ART
+- 320x320 PNGs in reference_only/
+- These are visual references for the two militia templates, not mandatory HOI4 template sprites.
+
+MAP NOTE
+- No generated strategic map asset is included in this pack.
+- This intentionally avoids introducing inaccurate borders. Serbia must use the actual TFR map/state setup; no Serbian territory should overlap Hungary.
+
+TEMPLATE NOTE
+See TEMPLATE_SPEC.txt. Both starting templates are intentionally minimal: exactly 3 plain Militia battalions, no supports.

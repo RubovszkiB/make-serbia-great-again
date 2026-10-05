@@ -9,3 +9,6 @@ MSGA_major_project_free = {
  NOT = { has_country_flag = MSGA_major_project_active }
  OR = { has_completed_focus = MSGA_reopen_on_serbian_terms has_country_flag = MSGA_completed_reopen_on_serbian_terms }
 }
+
+# This campaign owns the Serbia/Bosnia chain; unrelated TFR countries/events stay active.
+MSGA_native_balkan_story_allowed = { SER = { NOT = { has_country_flag = MSGA_campaign_active } } }

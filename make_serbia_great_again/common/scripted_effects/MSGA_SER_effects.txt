@@ -768,7 +768,11 @@ MSGA_detach_albania_faction = {
   limit = { is_faction_leader = yes is_in_faction_with = ALB }
   remove_from_faction = ALB
  }
- USA = { remove_from_array = { array = USA_nato_members value = ALB } }
+ USA = {
+  if = { limit = { is_in_array = { array = USA_nato_members value = ALB } }
+   remove_from_array = { array = USA_nato_members value = ALB }
+  }
+ }
  ALB = { clr_country_flag = has_joined_NATO_by_event }
 }
 MSGA_start_kosovo_war = {
@@ -778,7 +782,7 @@ MSGA_start_kosovo_war = {
   set_country_flag = MSGA_kosovo_war_active
   MSGA_suspend_campaign_guarantees = yes
   MSGA_detach_kosovo_faction = yes
-  KOS = { add_ideas = MSGA_campaign_isolation }
+  KOS = { add_ideas = MSGA_campaign_isolation add_ideas = MSGA_KOS_last_stand }
   declare_war_on = { target = KOS type = annex_everything }
   785 = { add_dynamic_modifier = { modifier = MSGA_unprepared_sector } }
   1305 = { add_dynamic_modifier = { modifier = MSGA_unprepared_sector } }
@@ -817,9 +821,9 @@ MSGA_check_pristina = {
 MSGA_cleanup_kosovo_campaign = {
  clr_country_flag = MSGA_kosovo_war_active
  remove_ideas = MSGA_southern_command_mobilised
- 785 = { remove_dynamic_modifier = { modifier = MSGA_unprepared_sector } }
- 1305 = { remove_dynamic_modifier = { modifier = MSGA_unprepared_sector } }
- KOS = { remove_ideas = MSGA_kosovo_emergency_mobilisation remove_ideas = MSGA_campaign_isolation }
+ 785 = { if = { limit = { has_dynamic_modifier = { modifier = MSGA_unprepared_sector } } remove_dynamic_modifier = { modifier = MSGA_unprepared_sector } } }
+ 1305 = { if = { limit = { has_dynamic_modifier = { modifier = MSGA_unprepared_sector } } remove_dynamic_modifier = { modifier = MSGA_unprepared_sector } } }
+ KOS = { remove_ideas = MSGA_kosovo_emergency_mobilisation remove_ideas = MSGA_campaign_isolation remove_ideas = MSGA_KOS_last_stand }
  ALB = { remove_ideas = MSGA_campaign_isolation }
  every_other_country = {
   if = {

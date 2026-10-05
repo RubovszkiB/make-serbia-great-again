@@ -1,0 +1,25 @@
+ideas = { country = {
+ MSGA_drina_mobilisation = { picture = MSGA_prepared_for_war allowed = { tag = SER } removal_cost = -1 modifier = { conscription = 0.01 } }
+ MSGA_home_defence = { picture = MSGA_prepared_for_war allowed = { tag = SER } removal_cost = -1 modifier = { army_core_defence_factor = 0.10 } }
+ MSGA_command_structure = { picture = MSGA_prepared_for_war allowed = { tag = SER } removal_cost = -1 modifier = { command_power_gain_mult = 0.10 } }
+ MSGA_serbian_rearmament_program = {
+  picture = MSGA_serbian_rearmament_program allowed = { tag = SER } removal_cost = -1
+  modifier = { expense_growth_factor = 0.15 military_factory_upkeep_factor = 0.05 }
+  equipment_bonus = {
+   infantry_equipment = { build_cost_ic = -0.25 instant = yes }
+   light_mechanized_equipment = { build_cost_ic = -0.25 instant = yes }
+   mechanized_equipment = { build_cost_ic = -0.25 instant = yes }
+   modern_tank_chassis = { build_cost_ic = -0.25 instant = yes }
+  }
+ }
+ MSGA_prepared_for_war = {
+  picture = MSGA_prepared_for_war allowed = { tag = SER } removal_cost = -1
+  # Installed BASE_STABILITY_WAR_FACTOR is -0.20; +0.06 reduces that base penalty by 30%.
+  # TFR's separate war-support-scaled stability modifier remains intact.
+  modifier = { war_stability_factor = 0.06 max_planning = 0.05 army_attack_factor = 0.05 breakthrough_factor = 0.05 }
+ }
+ # Base surrender limit 0.80 + 0.24 - TFR's maximum low-war-support malus 0.05 = 0.99.
+ # The maximum is capped at 1 - 0.01, so this never requires more than 99% occupation.
+ MSGA_SRP_last_stand = { picture = MSGA_SRP_last_stand allowed = { tag = SRP } removal_cost = -1 modifier = { surrender_limit = 0.24 max_surrender_limit_offset = 0.01 } }
+ MSGA_KOS_last_stand = { picture = MSGA_KOS_last_stand allowed = { tag = KOS } removal_cost = -1 modifier = { surrender_limit = 0.24 max_surrender_limit_offset = 0.01 } }
+} }

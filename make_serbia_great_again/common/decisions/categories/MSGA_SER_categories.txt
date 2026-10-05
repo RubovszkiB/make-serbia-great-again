@@ -75,3 +75,8 @@ MSGA_kosovo_integration = {
  allowed = { tag = SER }
  visible = { has_country_flag = MSGA_kosovo_fully_integrated }
 }
+MSGA_territorial_defence_forces = {
+ icon = GFX_decision_category_MSGA_territorial_defence allowed = { tag = SER }
+ visible = { has_country_flag = MSGA_territorial_defence_unlocked }
+ visible_when_empty = yes priority = 15
+}

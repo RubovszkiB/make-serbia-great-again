@@ -1,10 +1,10 @@
 # Make Serbia Great Again
 
-Serbia campaign submod for **Hearts of Iron IV / The Fire Rises**. Version **0.7.0**, script prefix `MSGA_`.
+Serbia campaign submod for **Hearts of Iron IV / The Fire Rises**. Version **0.8.0**, script prefix `MSGA_`.
 
 ## Current build
 
-24 early focuses, four Kosovo campaign focuses, seven post-Kosovo focuses and one intentionally unavailable Bosnian Crisis shell focus. The Kosovo Question immediately replaces the early tree with the campaign chapter; confirmed ownership of both Kosovo states completes the victory focus and leads to postwar integration and reconstruction. The Serbian Question closes that chapter with three narrative events before loading the Bosnian shell. Continuous early progression finishes Watch the Western Shield after 756 focus-days; Kosovo availability still depends on the actual TFR collapse signal.
+24 early focuses, four Kosovo campaign focuses, seven post-Kosovo focuses and thirteen pre-Bosnia/Bosnian war focuses. The Kosovo Question replaces the early tree with the campaign chapter; confirmed ownership of both Kosovo states leads to integration and reconstruction. The Serbian Question closes that chapter with three narrative events before loading the compact Bosnia preparation tree. Continuous early progression finishes Watch the Western Shield after 756 focus-days; Kosovo availability still depends on the actual TFR collapse signal.
 
 - 24 custom 95×95 DDS focus icons with base and completion-shine sprites; four supplied 60×68 spirit icons.
 - Permanent Productive Capital uses TFR Business Value and income growth; recovery removes TFR's Scars of Bombings spirit.
@@ -24,7 +24,12 @@ Serbia campaign submod for **Hearts of Iron IV / The Fire Rises**. Version **0.7
 - Reconstruction adds one infrastructure level up to TFR's cap and one civilian factory in state 785. Pristina investment adds one civilian factory and one native Office Park. Both branches are required for A Lasting Peace.
 - One $2B, zero-PP decision creates the 16-width Kosovska Mehanizovana Brigada with native equipment requirements, including 14 reserve T-55A tanks; equipment is supplied directly to the formation without a duplicate stockpile package.
 - Serbia starts with a saved, producible M-84A using legal starting modules (base cost 8.51), plus BVP M-80A and BTR-80A variants. Country-specific localisation names later IFV/APC models BVP M-80AB1 and Lazar 3.
-- Seven supplied postwar focus icons, fourteen event pictures and one decision icon accompany the new chapter. Bosnia remains a narrative transition and unavailable shell only.
+- Seven supplied postwar focus icons, fourteen event pictures and one decision icon accompany reconstruction.
+- Bosnia preparation branches join after public mobilisation and six native +10 Military Development grants. Rearmament lasts 200 days; both aircraft procurement offers charge TFR's treasury and final preparations require actual delivery.
+- Territorial Defence and Srpska Guard are editable templates with exactly three plain militia battalions. Belgrade receives one formation; five paid regional decisions cost $0.5B and deliver one formation after 14 days.
+- Srpska uses native tag `SRP`, Milorad Dodik and native core states 848/849/850. Its three militia divisions face Bosnia's unchanged four regular divisions. Bosnia declares war 15 days after release; Watch the Conflict lasts 70 days. After Srpska loses more than 2% surrender progress, Serbia receives one intervention event and joins the existing war with `add_to_war`.
+- Dedicated Kosovo/Srpska Last Stand spirits target a capped 99% surrender threshold. The new branch stops at Serbian intervention; no custom peace or integration is implemented.
+- 24 supplied Bosnia DDS textures are used directly. Four local copies of native TFR scripts/history gate conflicting chains or replace only the obsolete Srpska OOB; validation compares them to their installed upstream source. Workshop TFR files remain untouched.
 
 The primary runtime is `C:/Users/Balazs/Documents/Paradox Interactive/Hearts of Iron IV/mod/make_serbia_great_again`. See [deployment inventory](docs/local_deployment.json), [exact changed runtime paths](docs/post_kosovo_files_deployed.json), [installed early validation](docs/local_runtime_validation.json), [installed campaign validation](docs/local_kosovo_validation.json), [installed postwar validation](docs/local_post_kosovo_validation.json), [fresh engine load](docs/local_engine_validation.json) and [post-Kosovo implementation report](docs/Post-Kosovo-0.7.md). Static and script-flow tests do not certify gameplay or save/load.
 
@@ -37,7 +42,7 @@ The primary runtime is `C:/Users/Balazs/Documents/Paradox Interactive/Hearts of 
 - Enable TFR and MSGA. Yugoslavia Reborn is not a dependency and its replacements conflict with an additive co-load.
 - Start a new Serbia campaign to receive every revised focus reward. Already completed focuses do not rerun their rewards in an old save.
 
-For development, deploy with `tools/deploy_local.py`, then run `tools/validate_phase1.py`, `tools/validate_kosovo.py` and `tools/validate_post_kosovo.py` with `--mod-root "C:/Users/Balazs/Documents/Paradox Interactive/Hearts of Iron IV/mod/make_serbia_great_again"`. Local deployment and validation precede GitHub commits and pushes. The deployment script preserves the existing Workshop identity, checks the descriptor path and verifies source/runtime SHA-256 hashes.
+For development, deploy with `tools/deploy_local.py`, then run `tools/validate_phase1.py`, `tools/validate_kosovo.py`, `tools/validate_post_kosovo.py` and `tools/validate_bosnia.py` with `--mod-root "C:/Users/Balazs/Documents/Paradox Interactive/Hearts of Iron IV/mod/make_serbia_great_again"`. Local deployment and validation precede GitHub commits and pushes. The deployment script preserves the existing Workshop identity, checks the descriptor path and verifies source/runtime SHA-256 hashes. See [Bosnia implementation notes](docs/Bosnia-0.8.md), [installed Bosnia validation](docs/local_bosnia_validation.json) and [native source/asset mapping](docs/bosnia_sources.json).
 
 ## Artwork and development
 

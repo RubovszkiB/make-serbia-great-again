@@ -4,10 +4,113 @@ focus_tree = {
  default = no
  reset_on_civilwar = no
  focus = {
-  id = MSGA_bosnian_crisis
-  icon = GFX_goal_MSGA_the_serbian_question
-  x = 0 y = 0 cost = 1
-  available = { always = no }
-  completion_reward = { custom_effect_tooltip = MSGA_bosnian_crisis_tt }
+  id = MSGA_start_make_serbia_great_again
+  icon = GFX_goal_MSGA_start_make_serbia_great_again
+  x = 4 y = 0 cost = 5
+  cancel_if_invalid = yes
+  completion_reward = { country_event = { id = MSGA_bosnia.1 } }
+ }
+ focus = {
+  id = MSGA_start_mobilising_our_people
+  icon = GFX_goal_MSGA_start_mobilising_our_people
+  x = 4 y = 1 cost = 5
+  prerequisite = { focus = MSGA_start_make_serbia_great_again }
+  cancel_if_invalid = yes
+  completion_reward = { add_political_power = 50 add_stability = 0.05 country_event = { id = MSGA_bosnia.2 } }
+ }
+ focus = {
+  id = MSGA_strengthen_national_narrative
+  icon = GFX_goal_MSGA_strengthen_national_narrative
+  x = 0 y = 2 cost = 5
+  prerequisite = { focus = MSGA_start_mobilising_our_people }
+  cancel_if_invalid = yes
+  completion_reward = { add_political_power = 50 add_stability = 0.05 country_event = { id = MSGA_bosnia.3 } }
+ }
+ focus = {
+  id = MSGA_one_people_across_the_drina
+  icon = GFX_goal_MSGA_one_people_across_the_drina
+  x = 0 y = 3 cost = 5
+  prerequisite = { focus = MSGA_strengthen_national_narrative }
+  cancel_if_invalid = yes
+  completion_reward = { add_war_support = 0.05 add_ideas = MSGA_drina_mobilisation }
+ }
+ focus = {
+  id = MSGA_prepare_the_nation_for_war
+  icon = GFX_goal_MSGA_prepare_the_nation_for_war
+  x = 0 y = 4 cost = 5
+  prerequisite = { focus = MSGA_one_people_across_the_drina }
+  cancel_if_invalid = yes
+  completion_reward = { add_war_support = 0.05 add_ideas = MSGA_home_defence set_country_flag = MSGA_bosnia_propaganda_prepared }
+ }
+ focus = {
+  id = MSGA_establish_territorial_defence
+  icon = GFX_goal_MSGA_establish_territorial_defence
+  x = 6 y = 2 cost = 5
+  prerequisite = { focus = MSGA_start_mobilising_our_people }
+  available = { 107 = { is_owned_by = SER is_core_of = SER is_fully_controlled_by = SER } SER = { controls_province = 11586 } }
+  cancel_if_invalid = yes
+  completion_reward = { set_temp_variable = { var = military_development_var_temp value = 10 } add_military_development = yes MSGA_establish_territorial_defence = yes }
+ }
+ focus = {
+  id = MSGA_start_the_army_buildup
+  icon = GFX_goal_MSGA_start_the_army_buildup
+  x = 6 y = 3 cost = 5
+  prerequisite = { focus = MSGA_establish_territorial_defence }
+  cancel_if_invalid = yes
+  completion_reward = { set_temp_variable = { var = military_development_var_temp value = 10 } add_military_development = yes add_timed_idea = { idea = MSGA_serbian_rearmament_program days = 200 } }
+ }
+ focus = {
+  id = MSGA_buy_equipment_serbian_air_force
+  icon = GFX_goal_MSGA_buy_equipment_serbian_air_force
+  x = 4 y = 4 cost = 5
+  prerequisite = { focus = MSGA_start_the_army_buildup }
+  cancel_if_invalid = yes
+  completion_reward = { set_temp_variable = { var = military_development_var_temp value = 10 } add_military_development = yes set_country_flag = MSGA_air_procurement_open country_event = { id = MSGA_bosnia.4 } }
+ }
+ focus = {
+  id = MSGA_spend_money_command_structure
+  icon = GFX_goal_MSGA_spend_money_command_structure
+  x = 6 y = 4 cost = 5
+  prerequisite = { focus = MSGA_start_the_army_buildup }
+  cancel_if_invalid = yes
+  completion_reward = { set_temp_variable = { var = military_development_var_temp value = 10 } add_military_development = yes add_ideas = MSGA_command_structure }
+ }
+ focus = {
+  id = MSGA_prepare_logistics_network
+  icon = GFX_goal_MSGA_prepare_logistics_network
+  x = 8 y = 4 cost = 5
+  prerequisite = { focus = MSGA_start_the_army_buildup }
+  cancel_if_invalid = yes
+  completion_reward = { set_temp_variable = { var = military_development_var_temp value = 10 } add_military_development = yes add_equipment_to_stockpile = { type = train_equipment_1 amount = 15 producer = SER } add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 150 producer = SER } }
+ }
+ focus = {
+  id = MSGA_prepare_for_the_unthinkable
+  icon = GFX_goal_MSGA_prepare_for_the_unthinkable
+  x = 6 y = 5 cost = 5
+  prerequisite = { focus = MSGA_buy_equipment_serbian_air_force }
+  prerequisite = { focus = MSGA_spend_money_command_structure }
+  prerequisite = { focus = MSGA_prepare_logistics_network }
+  available = { has_country_flag = MSGA_air_procurement_done }
+  cancel_if_invalid = yes
+  completion_reward = { set_temp_variable = { var = military_development_var_temp value = 10 } add_military_development = yes add_war_support = 0.10 add_ideas = MSGA_prepared_for_war set_country_flag = MSGA_bosnia_military_prepared }
+ }
+ focus = {
+  id = MSGA_seed_the_rebellion_in_bosnia
+  icon = GFX_goal_MSGA_seed_the_rebellion_in_bosnia
+  x = 4 y = 6 cost = 6
+  prerequisite = { focus = MSGA_prepare_the_nation_for_war }
+  prerequisite = { focus = MSGA_prepare_for_the_unthinkable }
+  available = { has_country_flag = MSGA_bosnia_propaganda_prepared has_country_flag = MSGA_bosnia_military_prepared country_exists = BOS NOT = { country_exists = SRP } BOS = { has_war = no is_subject = no } 848 = { is_owned_by = BOS is_fully_controlled_by = BOS } 849 = { is_owned_by = BOS is_fully_controlled_by = BOS } 850 = { is_owned_by = BOS is_fully_controlled_by = BOS } }
+  cancel_if_invalid = yes
+  completion_reward = { country_event = { id = MSGA_bosnia.6 } }
+ }
+ focus = {
+  id = MSGA_watch_the_conflict
+  icon = GFX_goal_MSGA_watch_the_conflict
+  x = 4 y = 7 cost = 10
+  prerequisite = { focus = MSGA_seed_the_rebellion_in_bosnia }
+  available = { country_exists = SRP country_exists = BOS SRP = { has_war_with = BOS has_capitulated = no } }
+  cancel_if_invalid = yes
+  completion_reward = { set_country_flag = MSGA_watched_bosnian_conflict MSGA_check_bosnian_intervention = yes MSGA_schedule_bosnia_observer = yes }
  }
 }

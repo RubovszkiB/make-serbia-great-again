@@ -1,0 +1,165 @@
+MSGA_establish_territorial_defence = {
+ if = { limit = { tag = SER NOT = { has_country_flag = MSGA_territorial_defence_unlocked } 107 = { is_owned_by = SER is_core_of = SER is_fully_controlled_by = SER } }
+  load_oob = "MSGA_SER_territorial_template"
+  load_oob = "MSGA_SER_territorial_107"
+  set_country_flag = MSGA_territorial_defence_unlocked
+  set_country_flag = MSGA_territorial_107_done
+  custom_effect_tooltip = MSGA_territorial_defence_tt
+ }
+}
+
+MSGA_finish_territorial_45 = {
+ if = { limit = { has_country_flag = MSGA_territorial_45_pending NOT = { has_country_flag = MSGA_territorial_45_done } }
+  if = { limit = { 45 = { is_owned_by = SER is_core_of = SER is_fully_controlled_by = SER } }
+   load_oob = "MSGA_SER_territorial_45"
+   set_country_flag = MSGA_territorial_45_done
+  }
+  else = { set_temp_variable = { var = income_var_temp value = 0.5 } add_income = yes }
+  clr_country_flag = MSGA_territorial_45_pending
+ }
+}
+
+MSGA_finish_territorial_108 = {
+ if = { limit = { has_country_flag = MSGA_territorial_108_pending NOT = { has_country_flag = MSGA_territorial_108_done } }
+  if = { limit = { 108 = { is_owned_by = SER is_core_of = SER is_fully_controlled_by = SER } }
+   load_oob = "MSGA_SER_territorial_108"
+   set_country_flag = MSGA_territorial_108_done
+  }
+  else = { set_temp_variable = { var = income_var_temp value = 0.5 } add_income = yes }
+  clr_country_flag = MSGA_territorial_108_pending
+ }
+}
+
+MSGA_finish_territorial_1296 = {
+ if = { limit = { has_country_flag = MSGA_territorial_1296_pending NOT = { has_country_flag = MSGA_territorial_1296_done } }
+  if = { limit = { 1296 = { is_owned_by = SER is_core_of = SER is_fully_controlled_by = SER } }
+   load_oob = "MSGA_SER_territorial_1296"
+   set_country_flag = MSGA_territorial_1296_done
+  }
+  else = { set_temp_variable = { var = income_var_temp value = 0.5 } add_income = yes }
+  clr_country_flag = MSGA_territorial_1296_pending
+ }
+}
+
+MSGA_finish_territorial_785 = {
+ if = { limit = { has_country_flag = MSGA_territorial_785_pending NOT = { has_country_flag = MSGA_territorial_785_done } }
+  if = { limit = { 785 = { is_owned_by = SER is_core_of = SER is_fully_controlled_by = SER } }
+   load_oob = "MSGA_SER_territorial_785"
+   set_country_flag = MSGA_territorial_785_done
+  }
+  else = { set_temp_variable = { var = income_var_temp value = 0.5 } add_income = yes }
+  clr_country_flag = MSGA_territorial_785_pending
+ }
+}
+
+MSGA_finish_territorial_1305 = {
+ if = { limit = { has_country_flag = MSGA_territorial_1305_pending NOT = { has_country_flag = MSGA_territorial_1305_done } }
+  if = { limit = { 1305 = { is_owned_by = SER is_core_of = SER is_fully_controlled_by = SER } }
+   load_oob = "MSGA_SER_territorial_1305"
+   set_country_flag = MSGA_territorial_1305_done
+  }
+  else = { set_temp_variable = { var = income_var_temp value = 0.5 } add_income = yes }
+  clr_country_flag = MSGA_territorial_1305_pending
+ }
+}
+
+MSGA_buy_russian_air_package = {
+ if = { limit = { tag = SER has_country_flag = MSGA_air_procurement_open NOT = { has_country_flag = MSGA_air_procurement_done } check_variable = { var = income_var value = 15 compare = greater_than_or_equals } }
+  set_temp_variable = { var = income_var_temp value = -15 } add_income = yes
+  if = { limit = { has_dlc = "By Blood Alone" }
+   # Russia exports the existing TFR Su-30 design stored in Armenia's country history.
+   add_equipment_to_stockpile = { type = small_plane_airframe_1 amount = 50 producer = ARM variant_name = "Su-30" }
+   add_equipment_to_stockpile = { type = small_plane_cas_airframe_0 amount = 25 producer = SOV variant_name = "Su-24" }
+  }
+  else = {
+   create_equipment_variant = { name = "Su-30" type = fighter_equipment_3 }
+   add_equipment_to_stockpile = { type = fighter_equipment_3 amount = 50 producer = SER variant_name = "Su-30" }
+   add_equipment_to_stockpile = { type = CAS_equipment_1 amount = 25 producer = SOV }
+  }
+  add_equipment_to_stockpile = { type = attack_helicopter_equipment_1 amount = 50 producer = SOV }
+  set_country_flag = MSGA_air_procurement_done
+  set_country_flag = MSGA_russian_air_package
+ }
+}
+MSGA_buy_chinese_air_package = {
+ if = { limit = { tag = SER has_country_flag = MSGA_air_procurement_open NOT = { has_country_flag = MSGA_air_procurement_done } check_variable = { var = income_var value = 10 compare = greater_than_or_equals } }
+  set_temp_variable = { var = income_var_temp value = -10 } add_income = yes
+  if = { limit = { has_dlc = "By Blood Alone" }
+   add_equipment_to_stockpile = { type = small_plane_airframe_1 amount = 40 producer = PRC variant_name = "Shenyang J-16" }
+  }
+  else = {
+   create_equipment_variant = { name = "Shenyang J-16" type = fighter_equipment_3 }
+   add_equipment_to_stockpile = { type = fighter_equipment_3 amount = 40 producer = SER variant_name = "Shenyang J-16" }
+  }
+  add_equipment_to_stockpile = { type = attack_helicopter_equipment_1 amount = 30 producer = PRC }
+  set_country_flag = MSGA_air_procurement_done
+  set_country_flag = MSGA_chinese_air_package
+ }
+}
+
+MSGA_release_srpska = {
+ if = { limit = { tag = SER has_country_flag = MSGA_bosnia_propaganda_prepared has_country_flag = MSGA_bosnia_military_prepared country_exists = BOS NOT = { country_exists = SRP } NOT = { has_country_flag = MSGA_srpska_released } BOS = { has_war = no is_subject = no } 848 = { is_owned_by = BOS is_fully_controlled_by = BOS } 849 = { is_owned_by = BOS is_fully_controlled_by = BOS } 850 = { is_owned_by = BOS is_fully_controlled_by = BOS } }
+  set_country_flag = MSGA_bosnia_story_active
+  set_country_flag = MSGA_srpska_released
+  BOS = { release = SRP }
+  SRP = {
+   # No country-history OOB or native uprising reinforcement may enlarge this army.
+   delete_unit = { disband = no }
+   set_politics = { ruling_party = social_democrat elections_allowed = no }
+   promote_character = SRP_milorad_dodik_char
+   load_oob = "MSGA_SRP_guard"
+   add_ideas = MSGA_SRP_last_stand
+   add_ideas = MSGA_campaign_isolation
+   set_country_flag = MSGA_bosnia_custom_release
+  }
+  BOS = { country_event = { id = MSGA_bosnia.7 days = 15 } }
+ }
+}
+MSGA_begin_bosnian_war = {
+ if = { limit = { tag = SER has_country_flag = MSGA_srpska_released NOT = { has_country_flag = MSGA_bosnian_war_started } country_exists = BOS country_exists = SRP BOS = { NOT = { has_war_with = SRP } } }
+  set_country_flag = MSGA_bosnian_war_started
+  # Keep this local war outside automatic faction and guarantee escalation.
+  every_other_country = {
+   if = { limit = { has_guaranteed = SRP } set_country_flag = MSGA_restore_SRP_guarantee diplomatic_relation = { country = SRP relation = guarantee active = no } }
+  }
+  if = { limit = { SRP = { is_in_faction = yes } } SRP = { if = { limit = { is_faction_leader = no } every_other_country = { limit = { is_in_faction_with = SRP is_faction_leader = yes } remove_from_faction = SRP } } } }
+  BOS = { declare_war_on = { target = SRP type = annex_everything } }
+  country_event = { id = MSGA_bosnia.8 }
+ }
+}
+MSGA_check_bosnian_intervention = {
+ if = { limit = { has_country_flag = MSGA_watched_bosnian_conflict has_country_flag = MSGA_bosnia_story_active country_exists = SRP country_exists = BOS SRP = { has_war_with = BOS has_capitulated = no surrender_progress > 0.02 } NOT = { has_war_with = BOS } NOT = { has_country_flag = MSGA_bosnia_intervention_fired } }
+  set_country_flag = MSGA_bosnia_intervention_fired
+  country_event = { id = MSGA_bosnia.9 }
+ }
+}
+MSGA_join_srpska_war = {
+ if = { limit = { tag = SER has_country_flag = MSGA_bosnia_intervention_fired NOT = { has_country_flag = MSGA_bosnia_intervened } country_exists = SRP country_exists = BOS SRP = { has_war_with = BOS has_capitulated = no } NOT = { has_war_with = BOS } }
+  add_to_war = { targeted_alliance = SRP enemy = BOS hostility_reason = asked_to_join single_target_only = yes }
+  set_country_flag = MSGA_bosnia_intervened
+  add_war_support = 0.03
+ }
+}
+MSGA_schedule_bosnia_observer = {
+ if = { limit = { has_country_flag = MSGA_watched_bosnian_conflict has_country_flag = MSGA_bosnia_story_active NOT = { has_country_flag = MSGA_bosnia_intervention_fired } NOT = { has_country_flag = MSGA_bosnia_observer_pending } country_exists = SRP SRP = { has_war_with = BOS has_capitulated = no } }
+  set_country_flag = MSGA_bosnia_observer_pending
+  country_event = { id = MSGA_bosnia.99 days = 1 }
+ }
+}
+MSGA_cleanup_bosnia_war_modifiers = {
+ if = { limit = { has_country_flag = MSGA_bosnian_war_started NOT = { SRP = { exists = yes has_war_with = BOS } } NOT = { has_war_with = BOS } }
+  SRP = { remove_ideas = MSGA_SRP_last_stand remove_ideas = MSGA_campaign_isolation }
+  clr_country_flag = MSGA_bosnia_observer_pending
+  every_other_country = {
+   if = { limit = { has_country_flag = MSGA_restore_SRP_guarantee country_exists = SRP } diplomatic_relation = { country = SRP relation = guarantee active = yes } clr_country_flag = MSGA_restore_SRP_guarantee }
+  }
+ }
+}
+MSGA_resume_bosnia_systems = {
+ if = { limit = { tag = SER has_country_flag = MSGA_campaign_active }
+  # Cancel the native Kosovo deadline without executing its incompatible rewards.
+  remove_mission = SER_take_kosovo_mission
+  if = { limit = { has_country_flag = MSGA_kosovo_war_active country_exists = KOS } KOS = { add_ideas = MSGA_KOS_last_stand } }
+  if = { limit = { has_country_flag = MSGA_bosnia_story_active } MSGA_cleanup_bosnia_war_modifiers = yes MSGA_check_bosnian_intervention = yes MSGA_schedule_bosnia_observer = yes }
+ }
+}

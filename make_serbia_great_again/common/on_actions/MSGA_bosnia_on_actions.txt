@@ -1,0 +1,6 @@
+on_actions = {
+ on_startup = { effect = { SER = { MSGA_resume_bosnia_systems = yes } } }
+ on_weekly = { effect = { if = { limit = { tag = SER has_country_flag = MSGA_bosnia_story_active } MSGA_cleanup_bosnia_war_modifiers = yes } } }
+ on_peace = { effect = { SER = { MSGA_cleanup_bosnia_war_modifiers = yes } } }
+ on_peaceconference_ended = { effect = { SER = { MSGA_cleanup_bosnia_war_modifiers = yes } } }
+}

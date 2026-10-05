@@ -1,0 +1,72 @@
+MSGA_territorial_defence_forces = {
+ MSGA_form_territorial_45 = {
+  icon = MSGA_form_territorial_defence
+  allowed = { tag = SER }
+  visible = { has_country_flag = MSGA_territorial_defence_unlocked NOT = { has_country_flag = MSGA_territorial_45_done } NOT = { has_country_flag = MSGA_territorial_45_pending } }
+  available = { 45 = { is_owned_by = SER is_core_of = SER is_fully_controlled_by = SER } }
+  cost = 0 custom_cost_text = MSGA_cost_half_B
+  custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
+  days_remove = 14 fire_only_once = yes cancel_if_not_visible = no
+  complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = MSGA_territorial_45_pending }
+  remove_effect = { MSGA_finish_territorial_45 = yes }
+  ai_will_do = { factor = 5 }
+ }
+ MSGA_form_territorial_108 = {
+  icon = MSGA_form_territorial_defence
+  allowed = { tag = SER }
+  visible = { has_country_flag = MSGA_territorial_defence_unlocked NOT = { has_country_flag = MSGA_territorial_108_done } NOT = { has_country_flag = MSGA_territorial_108_pending } }
+  available = { 108 = { is_owned_by = SER is_core_of = SER is_fully_controlled_by = SER } }
+  cost = 0 custom_cost_text = MSGA_cost_half_B
+  custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
+  days_remove = 14 fire_only_once = yes cancel_if_not_visible = no
+  complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = MSGA_territorial_108_pending }
+  remove_effect = { MSGA_finish_territorial_108 = yes }
+  ai_will_do = { factor = 5 }
+ }
+ MSGA_form_territorial_1296 = {
+  icon = MSGA_form_territorial_defence
+  allowed = { tag = SER }
+  visible = { has_country_flag = MSGA_territorial_defence_unlocked NOT = { has_country_flag = MSGA_territorial_1296_done } NOT = { has_country_flag = MSGA_territorial_1296_pending } }
+  available = { 1296 = { is_owned_by = SER is_core_of = SER is_fully_controlled_by = SER } }
+  cost = 0 custom_cost_text = MSGA_cost_half_B
+  custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
+  days_remove = 14 fire_only_once = yes cancel_if_not_visible = no
+  complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = MSGA_territorial_1296_pending }
+  remove_effect = { MSGA_finish_territorial_1296 = yes }
+  ai_will_do = { factor = 5 }
+ }
+ MSGA_form_territorial_785 = {
+  icon = MSGA_form_territorial_defence
+  allowed = { tag = SER }
+  visible = { has_country_flag = MSGA_territorial_defence_unlocked NOT = { has_country_flag = MSGA_territorial_785_done } NOT = { has_country_flag = MSGA_territorial_785_pending } }
+  available = { 785 = { is_owned_by = SER is_core_of = SER is_fully_controlled_by = SER } }
+  cost = 0 custom_cost_text = MSGA_cost_half_B
+  custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
+  days_remove = 14 fire_only_once = yes cancel_if_not_visible = no
+  complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = MSGA_territorial_785_pending }
+  remove_effect = { MSGA_finish_territorial_785 = yes }
+  ai_will_do = { factor = 5 }
+ }
+ MSGA_form_territorial_1305 = {
+  icon = MSGA_form_territorial_defence
+  allowed = { tag = SER }
+  visible = { has_country_flag = MSGA_territorial_defence_unlocked NOT = { has_country_flag = MSGA_territorial_1305_done } NOT = { has_country_flag = MSGA_territorial_1305_pending } }
+  available = { 1305 = { is_owned_by = SER is_core_of = SER is_fully_controlled_by = SER } }
+  cost = 0 custom_cost_text = MSGA_cost_half_B
+  custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
+  days_remove = 14 fire_only_once = yes cancel_if_not_visible = no
+  complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = MSGA_territorial_1305_pending }
+  remove_effect = { MSGA_finish_territorial_1305 = yes }
+  ai_will_do = { factor = 5 }
+ }
+}
+MSGA_territorial_defence_forces = {
+ MSGA_reopen_air_procurement = {
+  icon = MSGA_form_territorial_defence allowed = { tag = SER }
+  visible = { has_country_flag = MSGA_air_procurement_deferred NOT = { has_country_flag = MSGA_air_procurement_done } }
+  available = { check_variable = { var = income_var value = 10 compare = greater_than_or_equals } }
+  cost = 0 days_re_enable = 1
+  complete_effect = { clr_country_flag = MSGA_air_procurement_deferred country_event = { id = MSGA_bosnia.5 } }
+  ai_will_do = { factor = 5 }
+ }
+}

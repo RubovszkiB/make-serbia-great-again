@@ -37,6 +37,7 @@ class CampaignModel:
         self.dlc = True
         self.variants = []
         self.loaded_oobs = []
+        self.nato_members = {'GER', 'ALB'}
 
     def condition(self, ast, scope='SER'):
         def item(k, op, v):
@@ -62,6 +63,9 @@ class CampaignModel:
             if k == 'is_owned_by': return self.states[scope] == v
             if k == 'is_fully_controlled_by': return self.controllers[scope] == v
             if k == 'has_guaranteed': return (scope, v) in self.guarantees
+            if k == 'is_in_array':
+                assert scope == 'USA' and get(v, 'array') == 'USA_nato_members'
+                return get(v, 'value') in self.nato_members
             if k == 'is_in_faction': return bool(self.factions[scope]) == (v == 'yes')
             if k == 'is_faction_leader': return scope == 'USA'
             if k == 'is_in_faction_with': return self.factions[scope] is not None and self.factions[scope] == self.factions[v]
@@ -132,7 +136,10 @@ class CampaignModel:
                 self.buildings[scope][name] = self.buildings[scope].get(name, 0) + int(get(v, 'level'))
             elif k == 'create_equipment_variant': self.variants.append(get(v, 'name').strip('"'))
             elif k == 'load_oob': self.loaded_oobs.append(v)
-            elif k in ('remove_from_array', 'add_war_support', 'add_stability', 'army_experience', 'add_political_power'): pass
+            elif k == 'remove_from_array':
+                assert scope == 'USA' and get(v, 'value') in self.nato_members
+                self.nato_members.remove(get(v, 'value'))
+            elif k in ('add_war_support', 'add_stability', 'army_experience', 'add_political_power'): pass
             else: raise AssertionError('Unmodelled campaign effect: ' + k)
 
 
@@ -146,7 +153,7 @@ def main():
     assert set(trees) == {'MSGA_SER_phase1', 'MSGA_SER_kosovo_war', 'MSGA_SER_post_kosovo', 'MSGA_SER_bosnian_crisis'}
     focuses = {get(v, 'id'): v for tree in trees.values() for k, _, v in tree if k == 'focus'}
     all_focus_ids = [get(v, 'id') for tree in trees.values() for k, _, v in tree if k == 'focus']
-    unique(all_focus_ids, 'All chapter focus IDs'); assert len(all_focus_ids) == 36
+    unique(all_focus_ids, 'All chapter focus IDs'); assert len(all_focus_ids) == 48
     war = [get(v, 'id') for k, _, v in trees['MSGA_SER_kosovo_war'] if k == 'focus']
     assert war == ['MSGA_plan_the_attack', 'MSGA_prepare_southern_command', 'MSGA_operation_return', 'MSGA_kosovo_has_been_retaken']
     for i, id in enumerate(war):
@@ -176,11 +183,14 @@ def main():
         if any(k == 'picture' for k, _, _ in body): assert get(body, 'picture') in names
     locale = '\n'.join(p.read_text(encoding='utf-8-sig') for p in (mod/'localisation/english').glob('*.yml'))
     for id in all_focus_ids: assert re.search(r'^ '+id+r'_desc:0 ', locale, re.M)
-    declarations = [v for ast in scripts.values() for k, _, v in descend(ast) if k == 'declare_war_on']
+    # Kosovo territorial/war scope stays fixed even as a separately validated
+    # Bosnia chapter adds its own native release and war operations.
+    kosovo_scope = [scripts[p] for p in ['common/scripted_effects/MSGA_SER_effects.txt', 'events/MSGA_SER_kosovo_events.txt']]
+    declarations = [v for ast in kosovo_scope for k, _, v in descend(ast) if k == 'declare_war_on']
     assert sorted(get(v, 'target') for v in declarations) == ['KOS', 'SER']
-    annexations = [v for ast in scripts.values() for k, _, v in descend(ast) if k == 'annex_country']
+    annexations = [v for ast in kosovo_scope for k, _, v in descend(ast) if k == 'annex_country']
     assert len(annexations) == 1 and get(annexations[0], 'target') == 'KOS'
-    transfers = [v for ast in scripts.values() for k, _, v in descend(ast) if k == 'transfer_state']
+    transfers = [v for ast in kosovo_scope for k, _, v in descend(ast) if k == 'transfer_state']
     assert sorted(transfers) == ['1305', '785']
     tfr = Path(r'C:\Program Files (x86)\Steam\steamapps\workshop\content\394360\3350890356')
     for state, province in [(785,14402),(1305,14400)]:
@@ -214,11 +224,18 @@ def main():
     assert model.factions['ALB'] is None and ('ALB', 'MSGA_kosovo.20') in model.events
     model.execute(get(event_bodies['MSGA_kosovo.20'], 'immediate'), 'ALB')
     assert model.trace.index(('leave_faction','ALB')) < model.trace.index(('declare','ALB','SER'))
+    assert 'ALB' not in model.nato_members and 'GER' in model.nato_members
+    absent = CampaignModel(scripts); absent.nato_members.discard('ALB')
+    absent.execute(parse('MSGA_detach_albania_faction = yes'))
+    absent.execute(parse('MSGA_detach_albania_faction = yes'))
+    assert absent.nato_members == {'GER'}
     model.wars.add(frozenset(('SER','GER')))  # Unrelated war must survive peace.
     model.capitulated.add('KOS'); model.execute(parse('MSGA_resolve_kosovo_war = yes'))
     assert model.states == {785:'SER',1305:'SER'} and model.controllers == model.states
     assert frozenset(('SER','ALB')) not in model.wars and frozenset(('SER','GER')) in model.wars
     assert all(not x for x in model.modifiers.values()) and 'MSGA_kosovo_war_active' not in model.flags['SER']
+    model.execute(parse('MSGA_cleanup_kosovo_campaign = yes'))
+    assert all(not x for x in model.modifiers.values())
     assert war[-1] in model.focuses
     before = (len(model.trace),len(model.events)); model.execute(parse('MSGA_resolve_kosovo_war = yes MSGA_check_pristina = yes'))
     assert before == (len(model.trace),len(model.events))
