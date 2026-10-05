@@ -1,0 +1,8 @@
+division_template = { name = "MSGA SLV Territorial Militia" regiments = { militia = { x = 0 y = 0 } militia = { x = 0 y = 1 } militia = { x = 0 y = 2 } } }
+division_template = { name = "MSGA SLV Emergency Motorized" regiments = { motorized = { x = 0 y = 0 } motorized = { x = 0 y = 1 } motorized = { x = 0 y = 2 } motorized = { x = 0 y = 3 } } }
+units = {
+ division = { name = "1. SLV Territorial Militia" location = 9627 division_template = "MSGA SLV Territorial Militia" start_equipment_factor = 1 start_manpower_factor = 1 start_experience_factor = 0.1 }
+ division = { name = "2. SLV Territorial Militia" location = 9627 division_template = "MSGA SLV Territorial Militia" start_equipment_factor = 1 start_manpower_factor = 1 start_experience_factor = 0.1 }
+ division = { name = "3. SLV Territorial Militia" location = 9627 division_template = "MSGA SLV Territorial Militia" start_equipment_factor = 1 start_manpower_factor = 1 start_experience_factor = 0.1 }
+ division = { name = "1. SLV Emergency Motorized" location = 9627 division_template = "MSGA SLV Emergency Motorized" start_equipment_factor = 1 start_manpower_factor = 1 start_experience_factor = 0.1 }
+}

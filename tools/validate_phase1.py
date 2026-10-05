@@ -256,7 +256,7 @@ def main():
     # Guard-only native overrides are compared to installed TFR by validate_bosnia.
     # This validator's prefix/localisation/API rules apply to custom MSGA objects.
     scripts = {p: ast for p, ast in scripts.items() if p not in {
-        'events/TFR_events_SER.txt', 'common/decisions/TFR_decisions_SER.txt',
+        'events/TFR_events_SER.txt', 'events/TFR_events_ZZZ_NATO.txt', 'common/decisions/TFR_decisions_SER.txt',
         'common/on_actions/TFR_on_actions_ZZZ_peace.txt',
         'history/countries/SRP - Republika Srpska.txt'}}
     all_pairs = [item for ast in scripts.values() for item in descend(ast)]
@@ -314,6 +314,13 @@ def main():
         new_sources = ROOT / 'docs/post_bosnia_sources.json'
         supplied_new = json.loads(new_sources.read_text())['assets'] if new_sources.exists() else {}
         relative = texture.relative_to(MOD).as_posix()
+        encirclement_sources = ROOT / 'docs/encirclement_sources.json'
+        supplied_encirclement = json.loads(encirclement_sources.read_text())['assets'] if encirclement_sources.exists() else {}
+        if relative in supplied_encirclement:
+            import hashlib
+            assert hashlib.sha256(texture.read_bytes()).hexdigest() == supplied_encirclement[relative]['sha256']
+            assert image.size == ((474, 178) if '/event_pictures/' in relative else (95, 85) if '/goals/' in relative else (60, 68))
+            continue
         if relative in supplied_new:
             import hashlib
             assert hashlib.sha256(texture.read_bytes()).hexdigest() == supplied_new[relative]['sha256']
@@ -359,7 +366,7 @@ def main():
              for _, _, categories_ast in ast for _, _, entries in categories_ast for k, _, _ in entries]
     dynamic = [k for k, _, _ in scripts['common/dynamic_modifiers/MSGA_SER_dynamic_modifiers.txt']]
     effects = [k for p,ast in scripts.items() if p.startswith('common/scripted_effects/') for k,_,_ in ast]
-    triggers = [k for k, _, _ in scripts['common/scripted_triggers/MSGA_SER_triggers.txt']]
+    triggers = [k for p, ast in scripts.items() if p.startswith('common/scripted_triggers/') for k, _, _ in ast]
     for label, values in [('Idea', ideas), ('Dynamic modifier', dynamic), ('Effect', effects), ('Trigger', triggers)]:
         unique(values, label)
     event_bodies = [v for p, ast in scripts.items() if p.startswith('events/') for k, _, v in ast if k == 'country_event']

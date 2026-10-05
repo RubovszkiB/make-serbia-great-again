@@ -1,0 +1,56 @@
+focus_tree = {
+ id = MSGA_SER_pact_war_planning
+ country = { factor = 0 modifier = { add = 300 tag = SER has_country_flag = MSGA_pact_planning_active } }
+ default = no reset_on_civilwar = no
+ focus = { id = MSGA_balkans_close_ranks icon = GFX_MSGA_focus_balkans_close_ranks x = 4 y = 0 cost = 1
+  available = { has_country_flag = MSGA_pact_planning_active } ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_balkans_close_ranks add_political_power = 25 army_experience = 10 }
+ }
+ focus = { id = MSGA_prepare_western_front icon = GFX_MSGA_focus_prepare_western_front x = 0 y = 1 cost = 1
+  prerequisite = { focus = MSGA_balkans_close_ranks }
+  available = { has_country_flag = MSGA_pact_planning_active } ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_prepare_western_front army_experience = 10 add_timed_idea = { idea = MSGA_western_preparation days = 120 } }
+ }
+ focus = { id = MSGA_secure_drina_corridor icon = GFX_MSGA_focus_secure_drina_corridor x = 0 y = 2 cost = 1
+  prerequisite = { focus = MSGA_prepare_western_front }
+  available = { has_country_flag = MSGA_pact_planning_active } ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_secure_drina_corridor MSGA_secure_drina_supply = yes country_event = { id = MSGA_encirclement.8 } }
+ }
+ focus = { id = MSGA_prepare_southern_front icon = GFX_MSGA_focus_prepare_southern_front x = 4 y = 1 cost = 1
+  prerequisite = { focus = MSGA_balkans_close_ranks }
+  available = { has_country_flag = MSGA_pact_planning_active } ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_prepare_southern_front army_experience = 10 add_timed_idea = { idea = MSGA_southern_preparation days = 120 } }
+ }
+ focus = { id = MSGA_fortify_kosovo icon = GFX_MSGA_focus_fortify_kosovo x = 4 y = 2 cost = 1
+  prerequisite = { focus = MSGA_prepare_southern_front }
+  available = { has_country_flag = MSGA_pact_planning_active } ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_fortify_kosovo MSGA_fortify_kosovo_front = yes country_event = { id = MSGA_encirclement.9 } }
+ }
+ focus = { id = MSGA_call_up_reserves icon = GFX_MSGA_focus_call_up_reserves x = 8 y = 1 cost = 1
+  prerequisite = { focus = MSGA_balkans_close_ranks }
+  available = { has_country_flag = MSGA_pact_planning_active } ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_call_up_reserves add_war_support = 0.05 add_timed_idea = { idea = MSGA_encirclement_reserves days = 120 } country_event = { id = MSGA_encirclement.10 } }
+ }
+ focus = { id = MSGA_stockpile_continental_war icon = GFX_MSGA_focus_stockpile_continental_war x = 8 y = 2 cost = 1
+  prerequisite = { focus = MSGA_call_up_reserves }
+  available = { has_country_flag = MSGA_pact_planning_active } ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_stockpile_continental_war add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 5000 producer = SER } add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 300 producer = SER } add_equipment_to_stockpile = { type = support_equipment_1 amount = 150 producer = SER } add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 100 producer = SER } add_fuel = 10000 }
+ }
+ focus = { id = MSGA_coordinate_protectorates icon = GFX_MSGA_focus_coordinate_protectorates x = 4 y = 3 cost = 1
+  prerequisite = { focus = MSGA_secure_drina_corridor }
+  prerequisite = { focus = MSGA_fortify_kosovo }
+  prerequisite = { focus = MSGA_stockpile_continental_war }
+  available = { has_country_flag = MSGA_pact_planning_active } ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_coordinate_protectorates army_experience = 10 MSGA_coordinate_existing_protectorates = yes country_event = { id = MSGA_encirclement.11 } }
+ }
+ focus = { id = MSGA_serbian_war_plan icon = GFX_MSGA_focus_serbian_war_plan x = 4 y = 4 cost = 2
+  prerequisite = { focus = MSGA_coordinate_protectorates }
+  available = { has_country_flag = MSGA_pact_planning_active } ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_serbian_war_plan add_timed_idea = { idea = MSGA_operation_thunder days = 120 } }
+ }
+ focus = { id = MSGA_break_the_ring icon = GFX_MSGA_focus_break_the_ring x = 4 y = 5 cost = 1
+  prerequisite = { focus = MSGA_serbian_war_plan }
+  available = { MSGA_pact_ready_for_war = yes } ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_break_the_ring MSGA_open_pact_war = yes }
+ }
+}

@@ -1,0 +1,21 @@
+MSGA_recover_pact_mobilisation = {
+ if = { limit = { tag = SER has_country_flag = { flag = MSGA_zagreb_tirana_pact_formed days > 0 } NOT = { has_country_flag = MSGA_pact_mobilised } MSGA_pact_safe_mobilisation = yes } MSGA_mobilise_pact = yes country_event = { id = MSGA_encirclement.6 } }
+ if = { limit = { tag = SER has_country_flag = MSGA_pact_mobilised NOT = { has_country_flag = MSGA_belgrade_emergency_done } 107 = { is_owned_by = SER is_fully_controlled_by = SER is_core_of = SER } controls_province = 11586 } MSGA_belgrade_emergency = yes country_event = { id = MSGA_encirclement.7 } }
+}
+MSGA_mobilise_pact = {
+ if = { limit = { tag = SER has_country_flag = MSGA_zagreb_tirana_pact_formed NOT = { has_country_flag = MSGA_pact_mobilised } MSGA_pact_safe_mobilisation = yes }
+  CRO = { if = { limit = { has_manpower < 24600 } add_manpower = 24600 } load_oob = MSGA_CRO_pact_emergency }
+  ALB = { if = { limit = { has_manpower < 18600 } add_manpower = 18600 } load_oob = MSGA_ALB_pact_emergency }
+  SLV = { if = { limit = { has_manpower < 13800 } add_manpower = 13800 } load_oob = MSGA_SLV_pact_emergency }
+  MAC = { if = { limit = { has_manpower < 9000 } add_manpower = 9000 } load_oob = MSGA_MAC_pact_emergency }
+  MNT = { if = { limit = { has_manpower < 9000 } add_manpower = 9000 } load_oob = MSGA_MNT_pact_emergency }
+  set_country_flag = MSGA_pact_mobilised country_event = { id = MSGA_encirclement.7 }
+ }
+}
+MSGA_belgrade_emergency = {
+ if = { limit = { tag = SER has_country_flag = MSGA_pact_mobilised NOT = { has_country_flag = MSGA_belgrade_emergency_done } 107 = { is_owned_by = SER is_fully_controlled_by = SER is_core_of = SER } controls_province = 11586 }
+  107 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+  if = { limit = { has_manpower < 6000 } add_manpower = 6000 } load_oob = MSGA_SER_pact_emergency
+  set_country_flag = MSGA_belgrade_emergency_done MSGA_open_pact_planning = yes
+ }
+}

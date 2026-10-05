@@ -1,6 +1,6 @@
 # Make Serbia Great Again
 
-Serbia campaign submod for **Hearts of Iron IV / The Fire Rises**. Version **0.10.0**, script prefix `MSGA_`.
+Serbia campaign submod for **Hearts of Iron IV / The Fire Rises**. Version **0.11.0**, script prefix `MSGA_`.
 
 ## Current build
 
@@ -37,7 +37,9 @@ Serbia campaign submod for **Hearts of Iron IV / The Fire Rises**. Version **0.1
 - Postwar rewards include bounded $0.5B debt relief, two civilian factories, an office park, capped western infrastructure, native development progress, the existing presidency BOP shift and fractional political/economic spirits. Subject cooperation skips annexed Srpska safely.
 - Twelve supplied focus icons, sixteen event pictures and three decision icons are integrated byte-for-byte from the 100-day package; the shared Srpska question sprite has one definition.
 
-The primary runtime is `C:/Users/Balazs/Documents/Paradox Interactive/Hearts of Iron IV/mod/make_serbia_great_again`. The [current sync inventory](docs/post_bosnia_sync.json) verifies 218 identical project/runtime files and the launcher descriptor. All six installed validators passed; the [post-Bosnia report](docs/post_bosnia_validation.json) covers 24 branch-order/annexation/DLC scenarios and the earlier validators have [fresh regression reports](docs/Post-Bosnia-0.10.md). The user reserved in-game testing for later. No fresh engine playthrough, clean engine log, combat settlement, event rendering or save/load is certified for 0.10.
+The Regional Power milestone opens the two-focus Southern Question tree. Both rejections lead, after three days, to the Calculation Failed and an independent Croatia-led Zagreb–Tirana Pact (CRO/ALB/SLV/MAC/MNT). One day later, the Pact receives 22 emergency formations and Belgrade receives two militia and a military factory. Only then does the ten-focus planning tree appear. Its western, southern and reserve branches merge into Operation Thunder and Break the Ring. Serbia opens one shared war against all five members, with a ten-day Surprise Attack. There are no later-war mechanics in this increment; existing Kosovo, Bosnia and post-Bosnia content remains intact.
+
+The primary runtime is `C:/Users/Balazs/Documents/Paradox Interactive/Hearts of Iron IV/mod/make_serbia_great_again`. The [current sync inventory](docs/encirclement_sync.json) verifies 261 identical project/runtime files and the launcher descriptor. All seven installed validators passed. The [pre-war report](docs/encirclement_validation.json) covers 96 scenarios, and six [regression reports](docs/Balkan-Encirclement-0.11.md) preserve the earlier campaign, including the 100-day Srpska question. [Native map adjacency](docs/encirclement_map_validation.json) verifies the Kosovo border-fort locations. The user reserved in-game testing for later. No fresh engine playthrough, clean engine log, event rendering or engine save/load is certified for 0.11.
 
 ## Requirements and installation
 
@@ -48,7 +50,7 @@ The primary runtime is `C:/Users/Balazs/Documents/Paradox Interactive/Hearts of 
 - Enable TFR and MSGA. Yugoslavia Reborn is not a dependency and its replacements conflict with an additive co-load.
 - Start a new Serbia campaign to receive every revised focus reward. Already completed focuses do not rerun their rewards in an old save.
 
-For development, deploy with `tools/deploy_local.py`, then run `tools/validate_phase1.py`, `tools/validate_kosovo.py`, `tools/validate_post_kosovo.py`, `tools/validate_bosnia.py`, `tools/validate_transition.py` and `tools/validate_post_bosnia.py` with `--mod-root "C:/Users/Balazs/Documents/Paradox Interactive/Hearts of Iron IV/mod/make_serbia_great_again"`. Local deployment and validation precede GitHub commits and pushes. The deployment script preserves the existing Workshop identity, checks the descriptor path and verifies source/runtime SHA-256 hashes. See [0.10 implementation notes](docs/Post-Bosnia-0.10.md), [transition diagnosis](docs/Kosovo-Bosnia-Transition.md) and [native source/asset mapping](docs/bosnia_sources.json).
+For development, deploy with `tools/deploy_local.py`, then run `tools/validate_phase1.py`, `tools/validate_kosovo.py`, `tools/validate_post_kosovo.py`, `tools/validate_bosnia.py`, `tools/validate_transition.py`, `tools/validate_post_bosnia.py` and `tools/validate_encirclement.py` with `--mod-root "C:/Users/Balazs/Documents/Paradox Interactive/Hearts of Iron IV/mod/make_serbia_great_again"`. Local deployment and validation precede GitHub commits and pushes. The deployment script preserves the existing Workshop identity, checks the descriptor path and verifies source/runtime SHA-256 hashes. See [0.11 technical report](docs/Balkan-Encirclement-0.11.md), [0.10 implementation notes](docs/Post-Bosnia-0.10.md), [transition diagnosis](docs/Kosovo-Bosnia-Transition.md) and [native source/asset mapping](docs/bosnia_sources.json).
 
 ## Artwork and development
 

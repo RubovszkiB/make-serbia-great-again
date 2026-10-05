@@ -1,0 +1,6 @@
+division_template = { name = "MSGA MAC Territorial Militia" regiments = { militia = { x = 0 y = 0 } militia = { x = 0 y = 1 } militia = { x = 0 y = 2 } } }
+units = {
+ division = { name = "1. MAC Territorial Militia" location = 3882 division_template = "MSGA MAC Territorial Militia" start_equipment_factor = 1 start_manpower_factor = 1 start_experience_factor = 0.1 }
+ division = { name = "2. MAC Territorial Militia" location = 3882 division_template = "MSGA MAC Territorial Militia" start_equipment_factor = 1 start_manpower_factor = 1 start_experience_factor = 0.1 }
+ division = { name = "3. MAC Territorial Militia" location = 3882 division_template = "MSGA MAC Territorial Militia" start_equipment_factor = 1 start_manpower_factor = 1 start_experience_factor = 0.1 }
+}

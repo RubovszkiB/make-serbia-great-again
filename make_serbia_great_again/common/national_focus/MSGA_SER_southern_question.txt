@@ -1,0 +1,13 @@
+focus_tree = {
+ id = MSGA_SER_southern_question
+ country = { factor = 0 modifier = { add = 300 tag = SER has_country_flag = MSGA_southern_question_active } }
+ default = no reset_on_civilwar = no
+ focus = { id = MSGA_pressure_podgorica icon = GFX_MSGA_focus_pressure_podgorica x = 2 y = 0 cost = 2
+  available = { has_country_flag = MSGA_southern_question_active } ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_pressure_podgorica country_event = { id = MSGA_encirclement.1 } }
+ }
+ focus = { id = MSGA_pressure_skopje icon = GFX_MSGA_focus_pressure_skopje x = 6 y = 0 cost = 2
+  available = { has_country_flag = MSGA_southern_question_active } ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_pressure_skopje country_event = { id = MSGA_encirclement.2 } }
+ }
+}

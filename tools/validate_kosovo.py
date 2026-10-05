@@ -159,10 +159,10 @@ def main():
     args = cli.parse_args(); mod = args.mod_root.resolve()
     scripts = {p.relative_to(mod).as_posix(): parse(p.read_text(encoding='utf-8-sig')) for p in mod.rglob('*') if p.suffix in ('.txt', '.gfx')}
     trees = {get(v, 'id'): v for p, ast in scripts.items() if p.startswith('common/national_focus/') for k, _, v in ast if k == 'focus_tree'}
-    assert set(trees) == {'MSGA_SER_phase1', 'MSGA_SER_kosovo_war', 'MSGA_SER_post_kosovo', 'MSGA_SER_bosnian_crisis', 'MSGA_SER_post_bosnia'}
+    assert set(trees) == {'MSGA_SER_phase1', 'MSGA_SER_kosovo_war', 'MSGA_SER_post_kosovo', 'MSGA_SER_bosnian_crisis', 'MSGA_SER_post_bosnia', 'MSGA_SER_southern_question', 'MSGA_SER_pact_war_planning'}
     focuses = {get(v, 'id'): v for tree in trees.values() for k, _, v in tree if k == 'focus'}
     all_focus_ids = [get(v, 'id') for tree in trees.values() for k, _, v in tree if k == 'focus']
-    unique(all_focus_ids, 'All chapter focus IDs'); assert len(all_focus_ids) == 60
+    unique(all_focus_ids, 'All chapter focus IDs'); assert len(all_focus_ids) == 72
     war = [get(v, 'id') for k, _, v in trees['MSGA_SER_kosovo_war'] if k == 'focus']
     assert war == ['MSGA_plan_the_attack', 'MSGA_prepare_southern_command', 'MSGA_operation_return', 'MSGA_kosovo_has_been_retaken']
     for i, id in enumerate(war):

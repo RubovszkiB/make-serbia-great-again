@@ -1,0 +1,9 @@
+ideas = { country = {
+ MSGA_pact_diplomatic_independence = { picture = MSGA_prepared_for_war removal_cost = -1 rule = { can_join_factions = no } modifier = {  } }
+ MSGA_western_preparation = { picture = MSGA_prepared_for_war removal_cost = -1  modifier = { planning_speed = 0.03 } }
+ MSGA_southern_preparation = { picture = MSGA_prepared_for_war removal_cost = -1  modifier = { planning_speed = 0.03 } }
+ MSGA_encirclement_reserves = { picture = MSGA_prepared_for_war removal_cost = -1  modifier = { mobilization_speed = 0.05 training_time_army_factor = -0.05 } }
+ MSGA_pact_logistics_cooperation = { picture = MSGA_prepared_for_war removal_cost = -1  modifier = { supply_consumption_factor = -0.03 } }
+ MSGA_operation_thunder = { picture = MSGA_prepared_for_war removal_cost = -1  modifier = { planning_speed = 0.10 max_planning = 0.05 supply_consumption_factor = -0.05 } }
+ MSGA_surprise_attack = { picture = MSGA_surprise_attack removal_cost = -1  modifier = { army_attack_factor = 0.05 army_speed_factor = 0.05 breakthrough_factor = 0.05 } }
+} }

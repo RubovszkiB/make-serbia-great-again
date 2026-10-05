@@ -272,6 +272,7 @@ def main():
     assert sum(b.get('industrial_complex',0) for b in m.buildings.values())==2
     m=settled();m.flags['SER'].add('MSGA_completed_serbian_sphere');m.execute(parse('MSGA_check_regional_power = yes'));assert 'MSGA_regional_power_achieved' not in m.flags['SER']
     report={'static_and_model_validation':'passed','validated_mod_root':str(mod),'version':'0.10.0','focus_ids':list(focuses),'focus_days':14,'total_focus_days':168,'scenarios':tested,'puppets':{'BOS':[104],'HRZ':[851],'SRP':[848,849,850]},'militia_battalions':3,'Serbian_control':'all five new auxiliary divisions spawn as Serbian-owned, regionally named formations','Srpska_TD':'exact Kosovo brigade template and equipment package; both DLC modes','militia_cost_per_pair':{'PP':25,'treasury_B':.25},'Srpska_TD_cost':{'PP':0,'treasury_B':.5},'Srpska_question_days':100,'legacy_70_day_migration':'passed','annexation_debt_B':1,'annexation_treasury_cost':0,'unit_and_template_preservation':'passed in model; actual engine not tested','debt_floor_and_control_funding_guards':'passed','prior_focus_trees_and_BOP':'unchanged','DDS_assets':31,'GFX_definitions':'all supplied assets used, no duplicate sprite keys','actual_game_validation':'pending user test; no engine playthrough or fresh engine log claimed'}
+    report['version']=re.search(r'^version="([^"]+)"',(mod/'descriptor.mod').read_text(),re.M)[1]
     args.report.write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({k:v for k,v in report.items() if k!='scenarios'},indent=2))
 
 if __name__=='__main__':main()

@@ -1,0 +1,1411 @@
+add_namespace = nato
+country_event = {
+	#We receive an invitation to NATO
+	id = nato.1
+	trigger = { NOT = { has_country_flag = MSGA_independent_pact_member } }
+	title = nato.1.t
+	desc = nato.1.d
+	picture = GFX_report_event_nato
+	is_triggered_only = yes
+	option = {
+		#We accept!
+		name = nato.1.o1
+		set_country_flag = has_joined_NATO_by_event
+		USA = {
+			add_to_faction = FROM
+		}
+		hidden_effect = {
+			USA = {
+				country_event = {
+					id = nato.2
+				}
+			}
+		}
+		hidden_effect = {
+			news_event = {
+				id = nato_news.1
+				hours = 3
+			}
+		}
+		ai_chance = {
+			factor = 90
+			modifier = {
+				add = 70
+				has_democratic_form_of_government = yes
+			}
+			modifier = {
+				add = 70
+				original_tag = VIN
+				country_exists = PRC
+			}
+		}
+	}
+	option = {
+		#We refuse
+		name = nato.1.o2
+		add_political_power = 50
+		USA = {
+			add_opinion_modifier = {
+				target = FROM
+				modifier = recent_actions_negative
+			}
+			country_event = {
+				id = nato.3
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				add = 70
+				has_democratic_form_of_government = no
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					is_historical_focus_on = yes
+					OR = {
+						tag = EST
+						tag = LAT
+						tag = LIT
+						tag = SLO
+						tag = SLV
+						tag = ROM
+						tag = BUL
+						tag = ALB
+						tag = CRO
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	#They accept!
+	id = nato.2
+	trigger = { NOT = { FROM = { has_country_flag = MSGA_independent_pact_member } } }
+	title = nato.2.t
+	desc = nato.2.d
+	picture = GFX_report_event_nato
+	is_triggered_only = yes
+	option = {
+		name = nato.2.o1
+		add_to_faction = FROM
+	}
+}
+
+country_event = {
+	#They refuse!
+	id = nato.3
+	title = nato.3.t
+	desc = nato.3.d
+	picture = GFX_report_event_nato
+	is_triggered_only = yes
+	option = {
+		name = nato.3.o1
+		effect_tooltip = {
+			add_opinion_modifier = {
+				target = FROM
+				modifier = recent_actions_negative
+			}
+		}
+	}
+}
+
+country_event = {
+	#FROM seeks to join NATO
+	id = nato.4
+	trigger = { NOT = { FROM = { has_country_flag = MSGA_independent_pact_member } } }
+	title = nato.4.t
+	desc = nato.4.desc
+	picture = GFX_Generic_NATO
+	is_triggered_only = yes
+	option = {
+		name = nato.4.a
+		ai_chance = {
+			base = 100
+		}
+		add_to_faction = FROM
+		hidden_effect = {
+			FROM = {
+				USA_add_to_nato = yes
+				news_event = {
+					id = nato.34
+					hours = 6
+				}
+			}
+		}
+	}
+	option = {
+		name = nato.4.b
+		ai_chance = {
+			base = 0
+		}
+		country_event = nato.5
+	}
+}
+
+#NATO Denies Us Entry!
+country_event = {
+	id = nato.5
+	title = nato.5.t
+	desc = nato.5.desc
+	picture = GFX_Generic_NATO
+	is_triggered_only = yes
+	option = {
+		name = nato.5.a
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+#Unmarked Civilian Airliners
+country_event = {
+	id = nato.6
+	title = nato.6.t
+	desc = nato.6.d
+	picture = GFX_Civilian_Airliners
+	is_triggered_only = yes
+	option = {
+		name = nato.6.a
+	}
+}
+
+#KSK failing to Respond
+country_event = {
+	id = nato.7
+	title = nato.7.t
+	desc = nato.7.d
+	picture = GFX_KSK_Acting
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			add_stability = -0.05
+			add_popularity = {
+				ideology = fascist
+				popularity = 0.1
+			}
+		}
+	}
+	option = {
+		name = nato.7.a
+		effect_tooltip = {
+			add_stability = -0.05
+			add_popularity = {
+				ideology = fascist
+				popularity = 0.1
+			}
+		}
+	}
+}
+
+#Day X UNUSED
+country_event = {
+	id = nato.8
+	title = nato.8.t
+	desc = nato.8.d
+	picture = GFX_Bundeswehr_Acting
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			set_cosmetic_tag = GER_day_x
+			add_stability = -0.15
+			add_popularity = {
+				ideology = fascist
+				popularity = 0.15
+			}
+			news_event = {
+				id = news.187
+			}
+			set_politics = {
+				ruling_party = fascist
+				elections_allowed = no
+				last_election = "1945.6.8"
+				election_frequency = 48
+			}
+		}
+	}
+	option = {
+		name = nato.8.a
+		effect_tooltip = {
+			add_stability = -0.15
+			add_popularity = {
+				ideology = fascist
+				popularity = 0.15
+			}
+			set_politics = {
+				ruling_party = fascist
+				elections_allowed = no
+				last_election = "1945.6.8"
+				election_frequency = 48
+			}
+		}
+	}
+}
+
+#Debug Baltics declare war on Russia
+country_event = {
+	id = nato.9
+	title = nato.9.t
+	desc = nato.9.d
+	picture = GFX_Civilian_Airliners
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			SOV = {
+				declare_war_on = {
+					target = ROOT
+					type = annex_everything
+				}
+			}
+		}
+	}
+	option = {
+		name = nato.9.a
+		effect_tooltip = {
+		}
+	}
+}
+
+#fuck europe
+country_event = {
+	id = nato.10
+	title = nato.9.t
+	desc = nato.9.d
+	picture = GFX_Civilian_Airliners
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		sound_effect = siren_sound_effect
+		every_country = {
+			goto_province = 6521
+		}
+		launch_nuke = {
+			province = 6521
+			controller = GER
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 9347
+			controller = GER
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 6377
+			controller = GER
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 9517
+			controller = GER
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 692
+			controller = GER
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 587
+			controller = GER
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 6488
+			controller = GER
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 3535
+			controller = GER
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 516
+			controller = BEL
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 391
+			controller = HOL
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 9503
+			controller = FRA
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 11506
+			controller = FRA
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 9737
+			controller = FRA
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 512
+			controller = FRA
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 11834
+			controller = FRA
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 9907
+			controller = ITA
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 9904
+			controller = ITA
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 819
+			controller = ITA
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 11584
+			controller = ITA
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 3780
+			controller = ITA
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 10074
+			controller = ITA
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 11542
+			controller = CZE
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 3544
+			controller = POL
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 9427
+			controller = POL
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 362
+			controller = POL
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 6332
+			controller = SOV
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 11479
+			controller = UKR
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 525
+			controller = UKR
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 11405
+			controller = UKR
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 11670
+			controller = UKR
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 3686
+			controller = SOV
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 9417
+			controller = SOV
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 3529
+			controller = SOV
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 6262
+			controller = SOV
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 6380
+			controller = SOV
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 306
+			controller = SOV
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 11370
+			controller = BLR
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 117
+			controller = SOV
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 3151
+			controller = SOV
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 3134
+			controller = SOV
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 3338
+			controller = SOV
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 3734
+			controller = SOV
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 9617
+			controller = ROM
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 9660
+			controller = HUN
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 6115
+			controller = NOR
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 6103
+			controller = ENG
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 6384
+			controller = ENG
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 9297
+			controller = ENG
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 9392
+			controller = ENG
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 13723
+			controller = ENG
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 6318
+			controller = ENG
+			use_nuke = yes
+		}
+		launch_nuke = {
+			province = 587
+			controller = GER
+			use_nuke = yes
+		}
+		news_event = {
+			id = news.227
+		}
+	}
+	option = {
+		name = nato.9.a
+	}
+}
+
+#Fuck it we out of here lmaooooo rip bozo
+country_event = {
+	id = nato.11
+	title = nato.11.t
+	desc = nato.11.d
+	picture = GFX_Civilian_Airliners
+	is_triggered_only = yes
+	option = {
+		name = nato.11.a
+		ENG = {
+			remove_from_faction = MNT
+			remove_from_faction = MAC
+		}
+		news_event = {
+			id = news.231
+		}
+	}
+}
+
+#Looming Gas Shortage
+country_event = {
+	id = nato.12
+	title = nato.12.t
+	desc = nato.12.d
+	picture = GFX_Civilian_Airliners
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			add_ideas = GER_looming_winter_gas_shortage
+			country_event = {
+				id = nato.13
+				days = 121
+			}
+		}
+	}
+	option = {
+		name = nato.12.a
+		effect_tooltip = {
+			add_ideas = GER_looming_winter_gas_shortage
+		}
+	}
+}
+
+#Gas Shortage
+country_event = {
+	id = nato.13
+	title = nato.13.t
+	desc = nato.13.d
+	picture = GFX_Civilian_Airliners
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			remove_ideas = GER_looming_winter_gas_shortage
+			add_timed_idea = {
+				idea = GER_winter_gas_shortage
+				days = 180
+			}
+		}
+	}
+	option = {
+		name = nato.13.a
+		effect_tooltip = {
+			remove_ideas = GER_looming_winter_gas_shortage
+			add_timed_idea = {
+				idea = GER_winter_gas_shortage
+				days = 180
+			}
+		}
+	}
+}
+
+#NATO intervenes
+country_event = {
+	id = nato.14
+	title = nato.14.t
+	desc = nato.14.d
+	picture = GFX_Nato_Intervention
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			focus_unlock = yes
+			mark_focus_tree_layout_dirty = yes
+			SOV = {
+				remove_ideas = {
+					SOV_special_military_operation_1
+					SOV_special_military_operation
+					SOV_fratricidal_war
+					SOV_heavy_sanctions
+					SOV_heavy_sanctions2
+					SOV_heavy_sanctions3
+					SOV_heavy_sanctions4
+				}
+			}
+		}
+	}
+	option = {
+		name = nato.14.a
+		effect_tooltip = {
+			focus_unlock = yes
+			if = {
+				limit = {
+					has_idea = SOV_special_military_operation
+				}
+				swap_ideas = {
+					remove_idea = SOV_special_military_operation
+					add_idea = SOV_european_war_idea
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = SOV_special_military_operation_1
+				}
+				swap_ideas = {
+					remove_idea = SOV_special_military_operation_1
+					add_idea = SOV_european_war_idea
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					SOV = {
+						has_government = fascist
+					}
+				}
+				country_event = {
+					id = russia.362
+					days = 35
+					random_days = 10
+				}
+			}
+		}
+	}
+}
+
+#NATO building up on border
+country_event = {
+	id = nato.15
+	title = nato.15.t
+	desc = nato.15.d
+	picture = GFX_NATO_Build_up
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			activate_mission = NATO_intervention_timer
+		}
+	}
+	trigger = {
+		NOT = {
+			has_global_flag = SOV_nato_war_begins_global
+		}
+	}
+	option = {
+		name = nato.15.a
+		effect_tooltip = {
+			activate_mission = NATO_intervention_timer
+		}
+		hidden_effect = {
+		}
+	}
+}
+
+#Dismantle NATO
+country_event = {
+	id = nato.18
+	title = nato.18.t
+	desc = nato.18.d
+	picture = GFX_NATO_speech
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			dismantle_faction = yes
+			FRA = {
+				dismantle_faction = yes
+			}
+			ENG = {
+				dismantle_faction = yes
+			}
+			GER = {
+			}
+			every_country = {
+				limit = {
+					has_country_flag = global_ass_lol
+				}
+				clr_country_flag = global_ass_lol
+			}
+		}
+	}
+	option = {
+		name = nato.18.a
+		news_event = {
+			id = news.249
+		}
+		effect_tooltip = {
+			dismantle_faction = yes
+		}
+	}
+}
+
+#Formation of the European Union
+country_event = {
+	id = nato.19
+	title = nato.19.t
+	desc = nato.19.d
+	picture = GFX_Join_Axis
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = nato.19.a
+		set_cosmetic_tag = GER_EUU
+		remove_ideas = belgian_political_system
+		create_country_leader = {
+			name = GER_european_commission_char
+			picture = "European Commission.dds"
+			ideology = neoliberalism
+			traits = {
+			}
+		}
+		add_popularity = {
+			ideology = social_liberal
+			popularity = 0.35
+		}
+		country_event = {
+			id = nato.20
+			days = 30
+		}
+	}
+}
+
+#Expansion of the EU
+country_event = {
+	id = nato.20
+	title = nato.20.t
+	desc = nato.20.d
+	picture = GFX_Join_Axis
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = nato.20.a
+		BEL = {
+			every_controlled_state = {
+				add_core_of = BEL
+			}
+		}
+		annex_country = {
+			target = HOL
+			transfer_troops = yes
+		}
+		annex_country = {
+			target = LUX
+			transfer_troops = yes
+		}
+		if = {
+			limit = {
+				GER = {
+					is_ai = no
+				}
+			}
+			GER = {
+				country_event = {
+					id = nato.21
+					days = 40
+				}
+			}
+		}
+	}
+}
+
+#Expansion of the EU
+country_event = {
+	id = nato.21
+	title = nato.21.t
+	desc = nato.21.d
+	picture = GFX_Join_Axis
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = nato.21.a
+		BEL = {
+			every_controlled_state = {
+				add_core_of = BEL
+			}
+			change_tag_from = ROOT
+		}
+		BEL = {
+			annex_country = {
+				target = ROOT
+				transfer_troops = yes
+			}
+		}
+	}
+}
+
+#NATO intervenes
+country_event = {
+	id = nato.22
+	title = nato.22.t
+	desc = nato.22.d
+	picture = GFX_Nato_Intervention
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	option = {
+		name = nato.22.a
+		trigger = {
+			NOT = {
+				tag = FRA
+			}
+		}
+		effect_tooltip = {
+			add_ideas = NATO_european_war
+			focus_unlock = yes
+		}
+	}
+	option = {
+		name = nato.22.a
+		trigger = {
+			tag = FRA
+		}
+		effect_tooltip = {
+			add_ideas = NATO_european_war
+			focus_unlock = yes
+		}
+		set_country_flag = FRA_NATO_war_start
+		complete_national_focus = FRA_Operation_Saint_Arnaud
+		hidden_effect = {
+			focus_unlock = yes
+			if = {
+				limit = {
+					AG1 = {
+						is_subject_of = FRA
+					}
+				}
+				FRA = {
+					country_event = {
+						id = france.143
+						days = 15
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_government = libertarian_socialist
+					has_global_flag = SOV_ldpr_won
+				}
+				FRA = {
+					country_event = {
+						id = france.253
+						days = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+#Russian build-up on border
+country_event = {
+	id = nato.23
+	title = nato.23.t
+	desc = nato.23.d
+	picture = GFX_Russian_Convoy
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			NATO_unity_increase = yes
+			every_country = {
+				limit = {
+					is_in_faction_with = GER
+					is_ai = yes
+					NOT = {
+						OR = {
+							tag = GER
+							tag = FRA
+						}
+					}
+				}
+				NATO_back_to_the_future_part_II = yes
+			}
+		}
+	}
+	option = {
+		name = nato.23.a
+		effect_tooltip = {
+			NATO_unity_increase = yes
+		}
+	}
+}
+
+#Germany proposes offensive
+country_event = {
+	id = nato.24
+	title = nato.24.t
+	desc = nato.24.d
+	picture = GFX_Generic_Bundeswehr
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			GER = {
+				country_event = {
+					id = nato.25
+					days = 5
+				}
+			}
+		}
+	}
+	option = {
+		#Agree
+		name = nato.24.a
+		if = {
+			limit = {
+				tag = ENG
+			}
+			GER = {
+				set_country_flag = ENG_agreed_offensive
+			}
+		}
+		if = {
+			limit = {
+				tag = FRA
+			}
+			GER = {
+				set_country_flag = FRA_agreed_offensive
+			}
+		}
+	}
+	option = {
+		#Deny
+		name = nato.24.b
+		GER = {
+			set_country_flag = NATO_offensive_denied
+		}
+	}
+}
+
+#Offensive Results
+country_event = {
+	id = nato.25
+	title = {
+		text = nato.25.t1
+		trigger = {
+			GER = {
+				has_country_flag = ENG_agreed_offensive
+				has_country_flag = FRA_agreed_offensive
+			}
+		}
+	}
+	title = {
+		text = nato.25.t2
+		trigger = {
+			GER = {
+				has_country_flag = NATO_offensive_denied
+			}
+		}
+	}
+	desc = {
+		text = nato.25.d1
+		trigger = {
+			GER = {
+				has_country_flag = ENG_agreed_offensive
+				has_country_flag = FRA_agreed_offensive
+			}
+		}
+	}
+	desc = {
+		text = nato.25.d2
+		trigger = {
+			GER = {
+				has_country_flag = NATO_offensive_denied
+			}
+		}
+	}
+	picture = GFX_Generic_Bundeswehr
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					GER = {
+						has_country_flag = ENG_agreed_offensive
+						has_country_flag = FRA_agreed_offensive
+					}
+				}
+			}
+			GER = {
+				add_timed_idea = {
+					idea = NATO_offensive
+					days = 60
+				}
+			}
+			FRA = {
+				add_timed_idea = {
+					idea = NATO_offensive
+					days = 60
+				}
+			}
+			ENG = {
+				add_timed_idea = {
+					idea = NATO_offensive
+					days = 60
+				}
+			}
+		}
+	}
+	option = {
+		name = nato.25.a
+		trigger = {
+			NOT = {
+				has_country_flag = NATO_offensive_denied
+			}
+		}
+		effect_tooltip = {
+			GER = {
+				add_timed_idea = {
+					idea = NATO_offensive
+					days = 60
+				}
+			}
+			FRA = {
+				add_timed_idea = {
+					idea = NATO_offensive
+					days = 60
+				}
+			}
+			ENG = {
+				add_timed_idea = {
+					idea = NATO_offensive
+					days = 60
+				}
+			}
+		}
+		NATO_escalate_the_war_effect = yes
+	}
+	option = {
+		name = nato.25.b
+		trigger = {
+			NOT = {
+				GER = {
+					OR = {
+						has_country_flag = ENG_agreed_offensive
+						has_country_flag = FRA_agreed_offensive
+					}
+				}
+			}
+			GER = {
+				has_country_flag = NATO_offensive_denied
+			}
+		}
+	}
+}
+
+#Future of NATO
+country_event = {
+	id = nato.26
+	title = nato.26.t
+	desc = nato.26.d
+	picture = GFX_Generic_NATO
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			set_global_flag = NATO_elections_begin
+		}
+	}
+	option = {
+		name = nato.26.a
+		effect_tooltip = {
+			unlock_decision_category_tooltip = NATO_leadership_category
+		}
+	}
+}
+
+#Election Begins
+country_event = {
+	id = nato.27
+	title = nato.27.t
+	desc = nato.27.d
+	picture = GFX_Generic_NATO
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			activate_mission = NATO_leadership_vote_countdown
+		}
+	}
+	option = {
+		name = nato.27.a
+		effect_tooltip = {
+			activate_mission = NATO_leadership_vote_countdown
+		}
+	}
+}
+
+#New NATO Leader
+country_event = {
+	id = nato.28
+	title = nato.28.t
+	desc = nato.28.d
+	picture = GFX_Generic_NATO
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			ROOT = {
+				set_country_flag = NATO_current_leader
+				set_faction_leader = yes
+			}
+			if = {
+				limit = {
+					has_global_flag = GER_won_leadership_global
+				}
+				news_event = {
+					id = news.265
+					hours = 6
+				}
+			}
+			else_if = {
+				limit = {
+					has_global_flag = FRA_won_leadership_global
+				}
+				news_event = {
+					id = news.264
+					hours = 6
+				}
+			}
+			else_if = {
+				limit = {
+					has_global_flag = ENG_won_leadership_global
+				}
+				news_event = {
+					id = news.266
+					hours = 6
+				}
+			}
+		}
+	}
+	option = {
+		name = nato.28.a
+		custom_effect_tooltip = NATO_alliance_actions_tt
+	}
+}
+
+#ROOT Requests more Aggressive Doctrine
+country_event = {
+	id = nato.29
+	title = nato.29.t
+	desc = nato.29.d
+	picture = GFX_Generic_NATO
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = nato.29.a
+		#SIR YES SIR YES SIR OORAH MARINE CORPS
+	}
+}
+
+#Montenegro Pro Serbian Coup
+country_event = {
+	id = nato.30
+	title = nato.30.t
+	desc = nato.30.d
+	picture = GFX_Generic_NATO
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = nato.30.a
+		MNT = {
+			set_politics = {
+				ruling_party = conservative
+				elections_allowed = yes
+				last_election = "2020.01.01"
+				election_frequency = 48
+			}
+			add_popularity = {
+				ideology = nationalist
+				popularity = 0.07
+			}
+		}
+		news_event = {
+			id = news.281
+		}
+		MAC = {
+			country_event = {
+				id = nato.31
+				days = 30
+			}
+		}
+	}
+}
+
+#Macedonia Anti-NATO Election
+country_event = {
+	id = nato.31
+	title = nato.31.t
+	desc = nato.31.d
+	picture = GFX_Generic_NATO
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = nato.31.a
+		MAC = {
+			set_politics = {
+				ruling_party = conservative
+				elections_allowed = yes
+				last_election = "2020.01.01"
+				election_frequency = 48
+			}
+			remove_ideas = MAC_fading_antiquisation
+			add_ideas = MAC_rising_antiquisation
+		}
+		news_event = {
+			id = news.282
+		}
+		ENG = {
+			country_event = {
+				id = nato.11
+				days = 7
+			}
+		}
+	}
+}
+
+#Fate of Kaliningrad
+country_event = {
+	id = nato.32
+	title = nato.32.t
+	desc = nato.32.d
+	picture = GFX_Generic_Ursula
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = nato.32.a
+	}
+}
+
+#Kaliningrad Election Results
+country_event = {
+	id = nato.33
+	title = {
+		text = nato.33.t1
+		trigger = {
+			has_global_flag = GER_won_kaliningrad
+		}
+	}
+	desc = {
+		text = nato.33.d1
+		trigger = {
+			has_global_flag = GER_won_kaliningrad
+		}
+	}
+	title = {
+		text = nato.33.t2
+		trigger = {
+			has_global_flag = PLD_won_kaliningrad
+		}
+	}
+	desc = {
+		text = nato.33.d2
+		trigger = {
+			has_global_flag = PLD_won_kaliningrad
+		}
+	}
+	title = {
+		text = nato.33.t3
+		trigger = {
+			has_global_flag = LIT_won_kaliningrad
+		}
+	}
+	desc = {
+		text = nato.33.d3
+		trigger = {
+			has_global_flag = LIT_won_kaliningrad
+		}
+	}
+	title = {
+		text = nato.33.t4
+		trigger = {
+			has_global_flag = UNN_won_kaliningrad
+		}
+	}
+	desc = {
+		text = nato.33.d4
+		trigger = {
+			has_global_flag = UNN_won_kaliningrad
+		}
+	}
+	picture = GFX_Generic_Ursula
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+		}
+	}
+	option = {
+		name = nato.33.a
+		trigger = {
+			has_global_flag = GER_won_kaliningrad
+		}
+		GER = {
+			puppet = UNN
+		}
+		UNN = {
+			set_cosmetic_tag = UNN_germany
+		}
+	}
+	option = {
+		name = nato.33.b
+		trigger = {
+			has_global_flag = PLD_won_kaliningrad
+		}
+		PLD = {
+			puppet = UNN
+		}
+		UNN = {
+			set_cosmetic_tag = UNN_poland
+		}
+	}
+	option = {
+		name = nato.33.c
+		LIT = {
+			puppet = UNN
+		}
+		UNN = {
+			set_cosmetic_tag = UNN_lithuania
+		}
+	}
+	option = {
+		name = nato.33.d
+		trigger = {
+			has_global_flag = UNN_won_kaliningrad
+		}
+	}
+}
+news_event = {
+	id = nato.34
+	title = nato.34.t
+	desc = nato.34.desc
+	picture = GFX_France_leaves_NATO
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = nato.34.a
+
+	}
+}

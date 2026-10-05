@@ -1,0 +1,38 @@
+# Only the five approved Pact candidates are realigned. No other diplomacy is changed.
+MSGA_detach_pact_candidates = {
+ every_other_country = { limit = { is_faction_leader = yes is_in_faction_with = CRO } remove_from_faction = CRO }
+ USA = { if = { limit = { is_in_array = { array = USA_nato_members value = CRO } } remove_from_array = { array = USA_nato_members value = CRO } } }
+ CRO = { set_country_flag = left_NATO clr_country_flag = has_joined_NATO_by_event clr_country_flag = NATO_current_leader set_country_flag = MSGA_independent_pact_member add_ideas = MSGA_pact_diplomatic_independence
+  remove_ideas = NATO_unity_1 remove_ideas = NATO_unity_2 remove_ideas = NATO_unity_3 remove_ideas = NATO_unity_4 remove_ideas = NATO_unity_5
+ }
+ every_other_country = { limit = { is_faction_leader = yes is_in_faction_with = ALB } remove_from_faction = ALB }
+ USA = { if = { limit = { is_in_array = { array = USA_nato_members value = ALB } } remove_from_array = { array = USA_nato_members value = ALB } } }
+ ALB = { set_country_flag = left_NATO clr_country_flag = has_joined_NATO_by_event clr_country_flag = NATO_current_leader set_country_flag = MSGA_independent_pact_member add_ideas = MSGA_pact_diplomatic_independence
+  remove_ideas = NATO_unity_1 remove_ideas = NATO_unity_2 remove_ideas = NATO_unity_3 remove_ideas = NATO_unity_4 remove_ideas = NATO_unity_5
+ }
+ every_other_country = { limit = { is_faction_leader = yes is_in_faction_with = SLV } remove_from_faction = SLV }
+ USA = { if = { limit = { is_in_array = { array = USA_nato_members value = SLV } } remove_from_array = { array = USA_nato_members value = SLV } } }
+ SLV = { set_country_flag = left_NATO clr_country_flag = has_joined_NATO_by_event clr_country_flag = NATO_current_leader set_country_flag = MSGA_independent_pact_member add_ideas = MSGA_pact_diplomatic_independence
+  remove_ideas = NATO_unity_1 remove_ideas = NATO_unity_2 remove_ideas = NATO_unity_3 remove_ideas = NATO_unity_4 remove_ideas = NATO_unity_5
+ }
+ every_other_country = { limit = { is_faction_leader = yes is_in_faction_with = MAC } remove_from_faction = MAC }
+ USA = { if = { limit = { is_in_array = { array = USA_nato_members value = MAC } } remove_from_array = { array = USA_nato_members value = MAC } } }
+ MAC = { set_country_flag = left_NATO clr_country_flag = has_joined_NATO_by_event clr_country_flag = NATO_current_leader set_country_flag = MSGA_independent_pact_member add_ideas = MSGA_pact_diplomatic_independence
+  remove_ideas = NATO_unity_1 remove_ideas = NATO_unity_2 remove_ideas = NATO_unity_3 remove_ideas = NATO_unity_4 remove_ideas = NATO_unity_5
+ }
+ every_other_country = { limit = { is_faction_leader = yes is_in_faction_with = MNT } remove_from_faction = MNT }
+ USA = { if = { limit = { is_in_array = { array = USA_nato_members value = MNT } } remove_from_array = { array = USA_nato_members value = MNT } } }
+ MNT = { set_country_flag = left_NATO clr_country_flag = has_joined_NATO_by_event clr_country_flag = NATO_current_leader set_country_flag = MSGA_independent_pact_member add_ideas = MSGA_pact_diplomatic_independence
+  remove_ideas = NATO_unity_1 remove_ideas = NATO_unity_2 remove_ideas = NATO_unity_3 remove_ideas = NATO_unity_4 remove_ideas = NATO_unity_5
+ }
+ MSGA_remove_external_pact_guarantees = yes
+}
+MSGA_remove_external_pact_guarantees = {
+ every_other_country = { limit = { NOT = { OR = { tag = CRO tag = ALB tag = SLV tag = MAC tag = MNT } } }
+  if = { limit = { has_guaranteed = CRO } diplomatic_relation = { country = CRO relation = guarantee active = no } }
+  if = { limit = { has_guaranteed = ALB } diplomatic_relation = { country = ALB relation = guarantee active = no } }
+  if = { limit = { has_guaranteed = SLV } diplomatic_relation = { country = SLV relation = guarantee active = no } }
+  if = { limit = { has_guaranteed = MAC } diplomatic_relation = { country = MAC relation = guarantee active = no } }
+  if = { limit = { has_guaranteed = MNT } diplomatic_relation = { country = MNT relation = guarantee active = no } }
+ }
+}

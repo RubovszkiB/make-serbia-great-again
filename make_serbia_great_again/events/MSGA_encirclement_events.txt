@@ -1,0 +1,61 @@
+add_namespace = MSGA_encirclement
+country_event = { id = MSGA_encirclement.1 title = MSGA_encirclement.1.t desc = MSGA_encirclement.1.d picture = GFX_MSGA_event_podgorica_rejects_belgrade
+ is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_completed_pressure_podgorica NOT = { has_country_flag = MSGA_montenegro_rejected } }
+ immediate = { add_political_power = -10 add_war_support = 0.02 set_country_flag = MSGA_montenegro_rejected MSGA_schedule_calculation_failed = yes }
+ option = { name = MSGA_encirclement.1.a }
+}
+country_event = { id = MSGA_encirclement.2 title = MSGA_encirclement.2.t desc = MSGA_encirclement.2.d picture = GFX_MSGA_event_skopje_refuses_serbian_demands
+ is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_completed_pressure_skopje NOT = { has_country_flag = MSGA_macedonia_rejected } }
+ immediate = { add_political_power = -10 add_war_support = 0.02 set_country_flag = MSGA_macedonia_rejected MSGA_schedule_calculation_failed = yes }
+ option = { name = MSGA_encirclement.2.a }
+}
+country_event = { id = MSGA_encirclement.3 title = MSGA_encirclement.3.t desc = MSGA_encirclement.3.d picture = GFX_MSGA_event_calculation_failed
+ is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_montenegro_rejected has_country_flag = MSGA_macedonia_rejected NOT = { has_country_flag = MSGA_calculation_failed } }
+ immediate = { add_stability = -0.05 add_war_support = 0.05 set_country_flag = MSGA_calculation_failed MSGA_try_pact_realignment = yes }
+ option = { name = MSGA_encirclement.3.a }
+}
+country_event = { id = MSGA_encirclement.4 title = MSGA_encirclement.4.t desc = MSGA_encirclement.4.d picture = GFX_MSGA_event_balkan_states_break_with_brussels
+ is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_encirclement_started }
+ immediate = {  }
+ option = { name = MSGA_encirclement.4.a }
+}
+country_event = { id = MSGA_encirclement.5 title = MSGA_encirclement.5.t desc = MSGA_encirclement.5.d picture = GFX_MSGA_event_zagreb_tirana_pact
+ is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_encirclement_started }
+ immediate = {  }
+ option = { name = MSGA_encirclement.5.a }
+}
+country_event = { id = MSGA_encirclement.6 title = MSGA_encirclement.6.t desc = MSGA_encirclement.6.d picture = GFX_MSGA_event_pact_mobilises
+ is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_zagreb_tirana_pact_formed MSGA_pact_safe_mobilisation = yes }
+ immediate = { MSGA_mobilise_pact = yes }
+ option = { name = MSGA_encirclement.6.a }
+}
+country_event = { id = MSGA_encirclement.7 title = MSGA_encirclement.7.t desc = MSGA_encirclement.7.d picture = GFX_MSGA_event_emergency_measures_belgrade
+ is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_pact_mobilised 107 = { is_owned_by = SER is_fully_controlled_by = SER is_core_of = SER } controls_province = 11586 }
+ immediate = { MSGA_belgrade_emergency = yes }
+ option = { name = MSGA_encirclement.7.a }
+}
+country_event = { id = MSGA_encirclement.8 title = MSGA_encirclement.8.t desc = MSGA_encirclement.8.d picture = GFX_MSGA_event_western_shield
+ is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_encirclement_started }
+ immediate = {  }
+ option = { name = MSGA_encirclement.8.a }
+}
+country_event = { id = MSGA_encirclement.9 title = MSGA_encirclement.9.t desc = MSGA_encirclement.9.d picture = GFX_MSGA_event_kosovo_front_line
+ is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_encirclement_started }
+ immediate = {  }
+ option = { name = MSGA_encirclement.9.a }
+}
+country_event = { id = MSGA_encirclement.10 title = MSGA_encirclement.10.t desc = MSGA_encirclement.10.d picture = GFX_MSGA_event_serbia_mobilises
+ is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_encirclement_started }
+ immediate = {  }
+ option = { name = MSGA_encirclement.10.a }
+}
+country_event = { id = MSGA_encirclement.11 title = MSGA_encirclement.11.t desc = MSGA_encirclement.11.d picture = GFX_MSGA_event_allies_take_positions
+ is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_encirclement_started }
+ immediate = {  }
+ option = { name = MSGA_encirclement.11.a }
+}
+country_event = { id = MSGA_encirclement.12 title = MSGA_encirclement.12.t desc = MSGA_encirclement.12.d picture = GFX_MSGA_event_first_blow
+ is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_encirclement_started }
+ immediate = {  }
+ option = { name = MSGA_encirclement.12.a }
+}

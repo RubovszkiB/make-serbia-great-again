@@ -1,0 +1,250 @@
+{
+  "version": "0.11.0",
+  "runtime": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
+  "package": "C:\\Users\\Balazs\\Downloads\\MSGA_Balkan_Encirclement_TFR_Assets.zip",
+  "package_sha256": "799da6892e02e3fa5ba03c806330fada5716f5e4e5a504dd5ae66202c4ab7a9e",
+  "assets": {
+    "gfx/interface/goals/MSGA_focus_pressure_podgorica.dds": {
+      "zip_member": "gfx/interface/goals/MSGA_focus_pressure_podgorica.dds",
+      "sha256": "421912caac242b0fb9fd6e8c38cbc6e5607b44ce919ecf9927b91f9733b68ed9"
+    },
+    "gfx/interface/goals/MSGA_focus_pressure_skopje.dds": {
+      "zip_member": "gfx/interface/goals/MSGA_focus_pressure_skopje.dds",
+      "sha256": "2077634037a4eb7db7fa57898e31456df8811a094c8ba9212c823846b0602161"
+    },
+    "gfx/interface/goals/MSGA_focus_balkans_close_ranks.dds": {
+      "zip_member": "gfx/interface/goals/MSGA_focus_balkans_close_ranks.dds",
+      "sha256": "8df1f60efbd61d7a9fba2275a74233dbf5ce8219af67fec31d7cc0b3ce7c4e09"
+    },
+    "gfx/interface/goals/MSGA_focus_prepare_western_front.dds": {
+      "zip_member": "gfx/interface/goals/MSGA_focus_prepare_western_front.dds",
+      "sha256": "46641165eb8ee12f4e696a7cf14c7188ed411fa6a856c0b7c8d7827a9d678450"
+    },
+    "gfx/interface/goals/MSGA_focus_secure_drina_corridor.dds": {
+      "zip_member": "gfx/interface/goals/MSGA_focus_secure_drina_corridor.dds",
+      "sha256": "86711fd5cedab00bf8ba69b3be913bae051d055f6b5a2e10991424ea8dec5caa"
+    },
+    "gfx/interface/goals/MSGA_focus_prepare_southern_front.dds": {
+      "zip_member": "gfx/interface/goals/MSGA_focus_prepare_southern_front.dds",
+      "sha256": "fdb6bb38be099486d573974e2ac4df874c004860680efbd774b08f2f26e56120"
+    },
+    "gfx/interface/goals/MSGA_focus_fortify_kosovo.dds": {
+      "zip_member": "gfx/interface/goals/MSGA_focus_fortify_kosovo.dds",
+      "sha256": "d761ce3a449260b8eaeb30a894ea074c7132eda010138cabe93d48a1004520ce"
+    },
+    "gfx/interface/goals/MSGA_focus_call_up_reserves.dds": {
+      "zip_member": "gfx/interface/goals/MSGA_focus_call_up_reserves.dds",
+      "sha256": "ee06b9894bbc8228974a195c22d7bb590db76384a4ebea7a2784e9d74effa2a5"
+    },
+    "gfx/interface/goals/MSGA_focus_stockpile_continental_war.dds": {
+      "zip_member": "gfx/interface/goals/MSGA_focus_stockpile_continental_war.dds",
+      "sha256": "a145623ec29896acd6689e0eb7f71cfe25d32237e723007613634000f272a96e"
+    },
+    "gfx/interface/goals/MSGA_focus_coordinate_protectorates.dds": {
+      "zip_member": "gfx/interface/goals/MSGA_focus_coordinate_protectorates.dds",
+      "sha256": "2878275a88da5bd7eb1a78d8d8430c554e30517bd8e839328d92944e2e3c2225"
+    },
+    "gfx/interface/goals/MSGA_focus_serbian_war_plan.dds": {
+      "zip_member": "gfx/interface/goals/MSGA_focus_serbian_war_plan.dds",
+      "sha256": "f1ce6ab3a481e8c8e109023af2b1a29211c97b03c039848bd11c43a47798aea8"
+    },
+    "gfx/interface/goals/MSGA_focus_break_the_ring.dds": {
+      "zip_member": "gfx/interface/goals/MSGA_focus_break_the_ring.dds",
+      "sha256": "e57ef3ea51e4f81273da43168c62ca20ac29a61b1c09995842f0868d8bd59ad3"
+    },
+    "gfx/event_pictures/MSGA_event_podgorica_rejects_belgrade.dds": {
+      "zip_member": "gfx/event_pictures/MSGA_event_podgorica_rejects_belgrade.dds",
+      "sha256": "45a616bb3de21f978a95d1fe85e268a007a4c246266455dadff2a3dc54489b49"
+    },
+    "gfx/event_pictures/MSGA_event_skopje_refuses_serbian_demands.dds": {
+      "zip_member": "gfx/event_pictures/MSGA_event_skopje_refuses_serbian_demands.dds",
+      "sha256": "b3ee08f76a6daca904279425aaf58f9c5b831f00368022a0b81368642db050b1"
+    },
+    "gfx/event_pictures/MSGA_event_calculation_failed.dds": {
+      "zip_member": "gfx/event_pictures/MSGA_event_calculation_failed.dds",
+      "sha256": "8c45194605e75c3807ad995ae6067093ee9ce8b1e9cb470976842c4df694fd42"
+    },
+    "gfx/event_pictures/MSGA_event_balkan_states_break_with_brussels.dds": {
+      "zip_member": "gfx/event_pictures/MSGA_event_balkan_states_break_with_brussels.dds",
+      "sha256": "c4d777afe216d441d119978ea893d59a2cc333271727e1bbb9a70726b47bbbf4"
+    },
+    "gfx/event_pictures/MSGA_event_zagreb_tirana_pact.dds": {
+      "zip_member": "gfx/event_pictures/MSGA_event_zagreb_tirana_pact.dds",
+      "sha256": "034062d7e1b8ad3f7bb6a930a2a2d89d528ddbdd4f0708dd4ea25396da4f5adf"
+    },
+    "gfx/event_pictures/MSGA_event_pact_mobilises.dds": {
+      "zip_member": "gfx/event_pictures/MSGA_event_pact_mobilises.dds",
+      "sha256": "9cbdf9bbddf1feb56970ccc78ebc68ff89f352215aabd81ce7a1474c7c0237e6"
+    },
+    "gfx/event_pictures/MSGA_event_emergency_measures_belgrade.dds": {
+      "zip_member": "gfx/event_pictures/MSGA_event_emergency_measures_belgrade.dds",
+      "sha256": "849c1e7067252ea208c3157526760dd7a6482e08b39c8be90a21c968a15b2184"
+    },
+    "gfx/event_pictures/MSGA_event_western_shield.dds": {
+      "zip_member": "gfx/event_pictures/MSGA_event_western_shield.dds",
+      "sha256": "16f038a8581b13691023073a3920a635e115af9e2be42980552a6a53b01414c2"
+    },
+    "gfx/event_pictures/MSGA_event_kosovo_front_line.dds": {
+      "zip_member": "gfx/event_pictures/MSGA_event_kosovo_front_line.dds",
+      "sha256": "45b6e67aba7181573a0cb4ff52325e30b262f0a3e639b5940b23f63a0b6d4f85"
+    },
+    "gfx/event_pictures/MSGA_event_serbia_mobilises.dds": {
+      "zip_member": "gfx/event_pictures/MSGA_event_serbia_mobilises.dds",
+      "sha256": "b42025209930da2c84a0a000eb6612cbc0ff5576f8f04595f31f867e9c620ed6"
+    },
+    "gfx/event_pictures/MSGA_event_allies_take_positions.dds": {
+      "zip_member": "gfx/event_pictures/MSGA_event_allies_take_positions.dds",
+      "sha256": "f40833dca3d37a8f762ab207cda7ef74f88ff3c8aaee36359f06f8397bb38755"
+    },
+    "gfx/event_pictures/MSGA_event_first_blow.dds": {
+      "zip_member": "gfx/event_pictures/MSGA_event_first_blow.dds",
+      "sha256": "49bf968d6872f4b72e731776a3d046962673acae9307982ce90bf055075712a6"
+    },
+    "gfx/interface/ideas/MSGA_spirit_surprise_attack.dds": {
+      "zip_member": "gfx/interface/ideas/MSGA_spirit_surprise_attack.dds",
+      "sha256": "be4a351d854db46fb1de798404a7aeb57cf4e3348f56f9c20a50a963fba2f09d"
+    }
+  },
+  "native_guard_overrides": {
+    "events/TFR_events_ZZZ_NATO.txt": {
+      "upstream_sha256": "67f8dd3b16492a45d72e13f2fc125523ea010aac65db80b7ec69f03830afaf5f",
+      "guards": [
+        "nato.1",
+        "nato.2",
+        "nato.4"
+      ],
+      "purpose": "Cancel pending NATO invitations/applications for approved Pact members only"
+    }
+  },
+  "changed_relative_paths": [
+    "common/ideas/MSGA_encirclement_ideas.txt",
+    "common/national_focus/MSGA_SER_pact_war_planning.txt",
+    "common/national_focus/MSGA_SER_southern_question.txt",
+    "common/on_actions/MSGA_encirclement_on_actions.txt",
+    "common/scripted_effects/MSGA_encirclement_effects.txt",
+    "common/scripted_effects/MSGA_pact_diplomacy.txt",
+    "common/scripted_effects/MSGA_pact_mobilisation.txt",
+    "common/scripted_effects/MSGA_post_bosnia_effects.txt",
+    "common/scripted_triggers/MSGA_encirclement_triggers.txt",
+    "descriptor.mod",
+    "events/MSGA_encirclement_events.txt",
+    "events/TFR_events_ZZZ_NATO.txt",
+    "gfx/event_pictures/MSGA_event_allies_take_positions.dds",
+    "gfx/event_pictures/MSGA_event_balkan_states_break_with_brussels.dds",
+    "gfx/event_pictures/MSGA_event_calculation_failed.dds",
+    "gfx/event_pictures/MSGA_event_emergency_measures_belgrade.dds",
+    "gfx/event_pictures/MSGA_event_first_blow.dds",
+    "gfx/event_pictures/MSGA_event_kosovo_front_line.dds",
+    "gfx/event_pictures/MSGA_event_pact_mobilises.dds",
+    "gfx/event_pictures/MSGA_event_podgorica_rejects_belgrade.dds",
+    "gfx/event_pictures/MSGA_event_serbia_mobilises.dds",
+    "gfx/event_pictures/MSGA_event_skopje_refuses_serbian_demands.dds",
+    "gfx/event_pictures/MSGA_event_western_shield.dds",
+    "gfx/event_pictures/MSGA_event_zagreb_tirana_pact.dds",
+    "gfx/interface/goals/MSGA_focus_balkans_close_ranks.dds",
+    "gfx/interface/goals/MSGA_focus_break_the_ring.dds",
+    "gfx/interface/goals/MSGA_focus_call_up_reserves.dds",
+    "gfx/interface/goals/MSGA_focus_coordinate_protectorates.dds",
+    "gfx/interface/goals/MSGA_focus_fortify_kosovo.dds",
+    "gfx/interface/goals/MSGA_focus_prepare_southern_front.dds",
+    "gfx/interface/goals/MSGA_focus_prepare_western_front.dds",
+    "gfx/interface/goals/MSGA_focus_pressure_podgorica.dds",
+    "gfx/interface/goals/MSGA_focus_pressure_skopje.dds",
+    "gfx/interface/goals/MSGA_focus_secure_drina_corridor.dds",
+    "gfx/interface/goals/MSGA_focus_serbian_war_plan.dds",
+    "gfx/interface/goals/MSGA_focus_stockpile_continental_war.dds",
+    "gfx/interface/ideas/MSGA_spirit_surprise_attack.dds",
+    "history/units/MSGA_ALB_pact_emergency.txt",
+    "history/units/MSGA_CRO_pact_emergency.txt",
+    "history/units/MSGA_MAC_pact_emergency.txt",
+    "history/units/MSGA_MNT_pact_emergency.txt",
+    "history/units/MSGA_SER_pact_emergency.txt",
+    "history/units/MSGA_SLV_pact_emergency.txt",
+    "interface/MSGA_balkan_encirclement_assets.gfx",
+    "localisation/english/MSGA_encirclement_l_english.yml",
+    "make_serbia_great_again.mod"
+  ],
+  "deployed_absolute_paths": [
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\ideas\\MSGA_encirclement_ideas.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\national_focus\\MSGA_SER_pact_war_planning.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\national_focus\\MSGA_SER_southern_question.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\on_actions\\MSGA_encirclement_on_actions.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\scripted_effects\\MSGA_encirclement_effects.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\scripted_effects\\MSGA_pact_diplomacy.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\scripted_effects\\MSGA_pact_mobilisation.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\scripted_effects\\MSGA_post_bosnia_effects.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\scripted_triggers\\MSGA_encirclement_triggers.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\descriptor.mod",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\events\\MSGA_encirclement_events.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\events\\TFR_events_ZZZ_NATO.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_allies_take_positions.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_balkan_states_break_with_brussels.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_calculation_failed.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_emergency_measures_belgrade.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_first_blow.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_kosovo_front_line.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_pact_mobilises.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_podgorica_rejects_belgrade.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_serbia_mobilises.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_skopje_refuses_serbian_demands.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_western_shield.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_zagreb_tirana_pact.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_focus_balkans_close_ranks.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_focus_break_the_ring.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_focus_call_up_reserves.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_focus_coordinate_protectorates.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_focus_fortify_kosovo.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_focus_prepare_southern_front.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_focus_prepare_western_front.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_focus_pressure_podgorica.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_focus_pressure_skopje.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_focus_secure_drina_corridor.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_focus_serbian_war_plan.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_focus_stockpile_continental_war.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\ideas\\MSGA_spirit_surprise_attack.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\history\\units\\MSGA_ALB_pact_emergency.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\history\\units\\MSGA_CRO_pact_emergency.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\history\\units\\MSGA_MAC_pact_emergency.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\history\\units\\MSGA_MNT_pact_emergency.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\history\\units\\MSGA_SER_pact_emergency.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\history\\units\\MSGA_SLV_pact_emergency.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\interface\\MSGA_balkan_encirclement_assets.gfx",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\localisation\\english\\MSGA_encirclement_l_english.yml",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\make_serbia_great_again.mod",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again.mod"
+  ],
+  "spawn_locations": {
+    "CRO": {
+      "state": 109,
+      "province": 11581,
+      "militia": 5,
+      "motorized": 2
+    },
+    "ALB": {
+      "state": 44,
+      "province": 9914,
+      "militia": 3,
+      "motorized": 2
+    },
+    "SLV": {
+      "state": 102,
+      "province": 9627,
+      "militia": 3,
+      "motorized": 1
+    },
+    "MAC": {
+      "state": 106,
+      "province": 3882,
+      "militia": 3,
+      "motorized": 0
+    },
+    "MNT": {
+      "state": 105,
+      "province": 9809,
+      "militia": 3,
+      "motorized": 0
+    }
+  },
+  "backup": "C:\\Users\\Balazs\\Documents\\ChatGPT\\MSGA\\logs\\encirclement_011_backup",
+  "gameplay_test": "reserved by user; no game window accessed"
+}

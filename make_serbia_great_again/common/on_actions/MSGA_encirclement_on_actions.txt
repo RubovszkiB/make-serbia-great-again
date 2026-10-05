@@ -1,0 +1,4 @@
+on_actions = {
+ on_startup = { effect = { SER = { MSGA_open_southern_question = yes MSGA_schedule_calculation_failed = yes MSGA_try_pact_realignment = yes MSGA_recover_pact_mobilisation = yes MSGA_open_pact_planning = yes } } }
+ on_weekly = { effect = { if = { limit = { tag = SER } MSGA_open_southern_question = yes if = { limit = { has_country_flag = MSGA_encirclement_started NOT = { has_country_flag = MSGA_pact_war_opened } } MSGA_schedule_calculation_failed = yes MSGA_try_pact_realignment = yes MSGA_recover_pact_mobilisation = yes MSGA_open_pact_planning = yes } } } }
+}

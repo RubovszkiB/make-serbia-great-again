@@ -1,0 +1,88 @@
+{
+  "static_validation": "passed",
+  "validated_mod_root": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
+  "focus_days": [
+    14,
+    7,
+    14,
+    21,
+    21,
+    14,
+    7
+  ],
+  "north_state": 1305,
+  "remaining_state": 785,
+  "integration_debt_B": 1,
+  "integration_treasury_debit": 0,
+  "removed_native_spirit": "SER_rebellion_of_kosovo",
+  "militia_treasury_B": 2,
+  "militia_PP": 0,
+  "brigade_width": 16,
+  "brigade_equipment_required": {
+    "infantry_equipment": 925,
+    "motorized_equipment": 110,
+    "support_equipment": 115,
+    "mechanized_equipment": 50,
+    "light_mechanized_equipment": 45,
+    "modern_tank_chassis": 14
+  },
+  "variant_stats_before_country_tech_modifiers": {
+    "M-84A": {
+      "build_cost_ic": 8.51,
+      "reliability": 0.7499999999999999,
+      "armor_value": 30.0,
+      "hardness": 0.95,
+      "maximum_speed": 7.935,
+      "breakthrough": 26.0,
+      "soft_attack": 11.0,
+      "hard_attack": 20.0,
+      "ap_attack": 85.0,
+      "defense": 5.0,
+      "fuel_consumption": 2.0,
+      "recon": 0.5
+    },
+    "T-55A": {
+      "build_cost_ic": 5.920000000000001,
+      "reliability": 0.7499999999999999,
+      "armor_value": 18.0,
+      "hardness": 0.95,
+      "maximum_speed": 7.935,
+      "breakthrough": 24.0,
+      "soft_attack": 11.0,
+      "hard_attack": 20.0,
+      "ap_attack": 85.0,
+      "defense": 3.0,
+      "fuel_consumption": 2.0,
+      "recon": 0.5
+    }
+  },
+  "legal_starting_modules": true,
+  "supplied_DDS_assets": 22,
+  "visible_events": 15,
+  "postwar_rewards_in_either_order": "passed",
+  "debt_and_spawn_idempotence": "passed",
+  "Bosnian_transition_without_war": "passed",
+  "save_load": "model flag checkpoint passed; actual engine save/load not tested",
+  "gameplay_rendering_and_production_UI": "not certified by these checks",
+  "version": "0.11.0",
+  "reconstruction_model": "passed: both choices, insufficient treasury, one-time payments, fractional development, infrastructure cap, final decision gating and cleanup",
+  "new_supplied_DDS_hashes": {
+    "gfx/event_pictures/MSGA_event_srpska_uprising.dds": "3edd804eae52899e0373af52092748d343296f7b4986cf6ad403011bacd06c50",
+    "gfx/event_pictures/MSGA_event_serbia_enters_bosnian_war.dds": "975f0136fec633710dab5dc945b885244ac86744b0b588c75f19dfe8256c3c5f",
+    "gfx/event_pictures/MSGA_event_bosnia_capitulation.dds": "f0a50872d7bcb565438e25b4721909919f37ac70d8851d5e47ec90ee9ed73dd7",
+    "gfx/event_pictures/MSGA_event_question_of_republika_srpska.dds": "e232042bf4b033d10dede4f87ddc177638be5cd8d705999b108064da18a76059",
+    "gfx/event_pictures/MSGA_event_kosovo_reconstruction_begins.dds": "3c0da852457272329bcae788ade9bc836214a3d6ca14b3c72ad5dfb501fb00a0",
+    "gfx/event_pictures/MSGA_event_future_of_pristina.dds": "c1cf68e555ebc5037c7ae2ed539d9ca20e9042ef139c9495499c49efb171a8ac",
+    "gfx/event_pictures/MSGA_event_kosovo_rebuilt.dds": "55530ecbcc740f9590251f0e9f9dd2346e6bed252dd562025255ab5ec27724db"
+  },
+  "supplied_event_image_dimensions": [
+    474,
+    178
+  ],
+  "state_repair_bonus": 0.2,
+  "state_construction_bonus": 0.1,
+  "temporary_development_monthly": 0.005,
+  "private_capital_business_value": 0.05,
+  "private_capital_monthly_income_growth": 0.02,
+  "removed_filler_decisions": 5
+}

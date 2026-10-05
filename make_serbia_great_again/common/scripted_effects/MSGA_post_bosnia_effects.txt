@@ -59,5 +59,6 @@ MSGA_check_regional_power = {
   add_ideas = MSGA_regional_power_prestige remove_ideas = MSGA_postwar_income_recovery
   every_state = { limit = { has_dynamic_modifier = { modifier = MSGA_western_reconstruction } } remove_dynamic_modifier = { modifier = MSGA_western_reconstruction } }
   country_event = { id = MSGA_postbosnia.16 }
+  MSGA_open_southern_question = yes
  }
 }
