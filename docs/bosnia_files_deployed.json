@@ -284,7 +284,9 @@
     "MSGA_serbia_stands_united",
     "MSGA_reconstitute_serbian_volunteer_guard"
   ],
-  "game_launched": false,
+  "game_launched": true,
+  "engine_validation_report": "docs/local_engine_validation.json",
+  "active_campaign_kept_running_at_user_request": true,
   "unique_deployed_paths": 51,
   "subsequent_repairs": [
     "Removed redundant invalid modern_tank_equipment bonus; modern_tank_chassis covers both native tank modes.",
