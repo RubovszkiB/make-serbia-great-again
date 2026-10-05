@@ -4,6 +4,12 @@ on_actions = {
 			SER = {
 				MSGA_initialize = yes
 				MSGA_resume_early_systems = yes
+				MSGA_install_defence_minister = yes
+				if = {
+					limit = { has_completed_focus = MSGA_consolidate_the_state }
+					# TFR startup can re-add the SPS modifier after this file runs.
+					country_event = { id = MSGA_cleanup.1 days = 1 }
+				}
 			}
 		}
 	}

@@ -801,12 +801,22 @@ MSGA_rearmament = {
 		remove_effect = {
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_1
-				amount = 500
+				amount = 3500
 				producer = SER
 			}
 			add_equipment_to_stockpile = {
 				type = support_equipment
+				amount = 100
+				producer = SER
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment_1
 				amount = 50
+				producer = SER
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 150
 				producer = SER
 			}
 			army_experience = 3

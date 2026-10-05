@@ -1,0 +1,11 @@
+add_namespace = MSGA_cleanup
+
+# Startup repair only. Reapplying the native shutdown is idempotent and does
+# not replay consolidation's popularity reward or reinstall a replaced minister.
+country_event = {
+	id = MSGA_cleanup.1
+	hidden = yes
+	is_triggered_only = yes
+	trigger = { tag = SER has_completed_focus = MSGA_consolidate_the_state }
+	immediate = { MSGA_end_belgrade_blues = yes }
+}

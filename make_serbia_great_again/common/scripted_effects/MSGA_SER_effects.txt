@@ -1,5 +1,24 @@
 # Treasury changes use TFR add_income_with_inflation; never write derived GDP/debt.
 # States: 107 Belgrade; 1296 Sumadija/Western Serbia (Cacak/Krusevac).
+MSGA_install_defence_minister = {
+	if = {
+		limit = {
+			tag = SER
+			has_character = SER_aleksandar_vulin
+			NOT = { has_country_flag = MSGA_defence_minister_initialized }
+		}
+		add_ideas = MSGA_aleksandar_vulin_DM
+		set_country_flag = MSGA_defence_minister_initialized
+	}
+}
+MSGA_end_belgrade_blues = {
+	# Native TFR category visibility gate; no decision/category override.
+	set_country_flag = SER_belgrade_blues_off_flag
+	if = {
+		limit = { has_dynamic_modifier = { modifier = SER_sps_opposition_dynamic } }
+		remove_dynamic_modifier = { modifier = SER_sps_opposition_dynamic }
+	}
+}
 MSGA_initialize = {
 	if = {
 		limit = {

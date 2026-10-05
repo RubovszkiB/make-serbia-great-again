@@ -250,6 +250,12 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = MSGA_coordinated_government
 			set_country_flag = MSGA_state_consolidated
+			add_popularity = {
+				ideology = conservative
+				popularity = 0.20
+			}
+			MSGA_end_belgrade_blues = yes
+			custom_effect_tooltip = MSGA_end_belgrade_blues_tt
 			unlock_decision_tooltip = MSGA_SER_reaffirm_presidential_authority
 			set_country_flag = MSGA_completed_consolidate_the_state
 		}

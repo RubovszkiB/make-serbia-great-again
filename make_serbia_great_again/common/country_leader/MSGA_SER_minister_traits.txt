@@ -1,0 +1,9 @@
+# Daily XP token/scale from TFR_traits_military_minister.txt.
+leader_traits = {
+	MSGA_defence_moderniser = {
+		random = no
+		sprite = 14
+		experience_gain_army = 0.10
+		ai_will_do = { factor = 1 }
+	}
+}

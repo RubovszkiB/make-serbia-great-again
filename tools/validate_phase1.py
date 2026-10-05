@@ -58,6 +58,74 @@ def unique(values, label):
     assert not duplicates, f'{label} duplicates: {duplicates}'
 
 
+def validate_cleanup(scripts, tfr):
+    """Targeted reward/compatibility checks plus preservation of the 0.4 build."""
+    def baseline(path):
+        return parse(subprocess.check_output(['git', 'show', '51bc3c4:make_serbia_great_again/' + path], cwd=ROOT).decode('utf-8-sig'))
+
+    path = 'common/national_focus/MSGA_SER_phase1.txt'
+    before = {get(v, 'id'): v for k, _, v in baseline(path)[0][2] if k == 'focus'}
+    after = {get(v, 'id'): v for k, _, v in scripts[path][0][2] if k == 'focus'}
+    for id, b in before.items():
+        if id != 'MSGA_consolidate_the_state':
+            assert after[id] == b, f'Unrelated focus changed: {id}'
+    added = parse('add_popularity = { ideology = conservative popularity = 0.20 } MSGA_end_belgrade_blues = yes custom_effect_tooltip = MSGA_end_belgrade_blues_tt')
+    reward = get(after['MSGA_consolidate_the_state'], 'completion_reward')
+    assert [x for x in reward if x not in added] == get(before['MSGA_consolidate_the_state'], 'completion_reward')
+    assert all(x in reward for x in added)
+    recovery = get(after['MSGA_serbian_recovery'], 'completion_reward')
+    assert [v for k, _, v in recovery if k == 'remove_ideas'] == ['SER_scars_of_bombings_idea']
+
+    path = 'common/scripted_effects/MSGA_SER_effects.txt'
+    assert get(scripts[path], 'MSGA_restore_defence') == get(baseline(path), 'MSGA_restore_defence')
+    factories = [get(v, 'level') for k, _, v in descend(get(scripts[path], 'MSGA_restore_defence')) if k == 'add_building_construction']
+    assert factories == ['2', '2']  # Intended state and mutually exclusive fallback.
+    for p in ['common/decisions/MSGA_SER_covid.txt', 'events/MSGA_SER_early_rewards.txt',
+              'events/MSGA_SER_events.txt', 'events/MSGA_SER_chronicle.txt']:
+        assert scripts[p] == baseline(p), f'Unrelated system changed: {p}'
+    assert get(scripts['common/ideas/MSGA_SER_ideas.txt'][0][2], 'country') == get(baseline('common/ideas/MSGA_SER_ideas.txt')[0][2], 'country')
+
+    path = 'common/decisions/MSGA_SER_phase1.txt'
+    procurement = get(get(scripts[path], 'MSGA_rearmament'), 'MSGA_procure_equipment')
+    old = get(get(baseline(path), 'MSGA_rearmament'), 'MSGA_procure_equipment')
+    assert [x for x in procurement if x[0] != 'remove_effect'] == [x for x in old if x[0] != 'remove_effect']
+    delivered = get(procurement, 'remove_effect')
+    package = {get(v, 'type'): int(get(v, 'amount')) for k, _, v in delivered if k == 'add_equipment_to_stockpile'}
+    assert package == {'infantry_equipment_1': 3500, 'support_equipment': 100, 'artillery_equipment_1': 50, 'motorized_equipment': 150}
+    assert len([k for k, _, _ in delivered if k == 'add_equipment_to_stockpile']) == 4
+    assert ('army_experience', '=', '3') in delivered
+    assert all(get(v, 'producer') == 'SER' for k, _, v in delivered if k == 'add_equipment_to_stockpile')
+
+    minister = get(get(scripts['common/ideas/MSGA_SER_ideas.txt'][0][2], 'theorist_minister'), 'MSGA_aleksandar_vulin_DM')
+    assert get(minister, 'name') == 'SER_aleksandar_vulin'
+    assert get(minister, 'traits') == parse('MSGA_defence_moderniser')
+    assert not any(k == 'modifier' for k, _, _ in minister)
+    trait = get(scripts['common/country_leader/MSGA_SER_minister_traits.txt'][0][2], 'MSGA_defence_moderniser')
+    assert get(trait, 'experience_gain_army') == '0.10'
+    assert {k for k, _, _ in trait} == {'random', 'sprite', 'experience_gain_army', 'ai_will_do'}
+    installer = get(scripts['common/scripted_effects/MSGA_SER_effects.txt'], 'MSGA_install_defence_minister')
+    assert ('has_country_flag', '=', 'MSGA_defence_minister_initialized') in descend(installer)
+    assert ('set_country_flag', '=', 'MSGA_defence_minister_initialized') in descend(installer)
+    assert not any(p.startswith('common/characters/') for p in scripts), 'Do not duplicate base characters'
+
+    history = (tfr/'history/countries/SER - Serbia.txt').read_text(encoding='utf-8-sig')
+    assert 'SER_scars_of_bombings_idea' in history and 'recruit_character = SER_aleksandar_vulin' in history
+    assert 'ruling_party = conservative' in history
+    base_idea = get(get(parse((tfr/'common/ideas/TFR_ideas_SER.txt').read_text(encoding='utf-8-sig'))[0][2], 'country'), 'SER_scars_of_bombings_idea')
+    assert get(base_idea, 'modifier') == parse('war_support_factor = -0.1 industrial_capacity_factory = -0.15')
+    category = get(parse((tfr/'common/decisions/categories/TFR_decision_categories_SER.txt').read_text(encoding='utf-8-sig')), 'SER_belgrade_blues')
+    assert get(category, 'visible') == parse('NOT = { has_country_flag = SER_belgrade_blues_off_flag }')
+    cabinet_slots = (tfr/'common/idea_tags/TFR_idea_tags.txt').read_text(encoding='utf-8-sig')
+    assert 'slot = theorist_minister' in cabinet_slots
+    portrait = (tfr/'interface/TFR_game_rules_flags.gfx').read_text(encoding='utf-8-sig')
+    assert get(minister, 'picture') == 'GFX_Aleksandar_Vulin' and 'name = "GFX_Aleksandar_Vulin"' in portrait
+    assert (tfr/'gfx/leaders/SER/Aleksandar_Vulin.png').is_file()
+    trait_source = (tfr/'common/country_leader/TFR_traits_military_minister.txt').read_text(encoding='utf-8-sig')
+    assert 'experience_gain_army = 0.1' in trait_source
+    ideologies = (tfr/'common/ideologies/TFR_ideologies.txt').read_text(encoding='utf-8-sig')
+    assert re.search(r'\bconservative\s*=\s*\{', ideologies)
+
+
 def main():
     scripts = {p.relative_to(MOD).as_posix(): parse(p.read_text(encoding='utf-8-sig'))
                for p in MOD.rglob('*') if p.suffix in ('.txt', '.gfx')}
@@ -124,7 +192,8 @@ def main():
                 assert category in categories
                 decisions.extend(k for k, _, _ in entries)
     unique(decisions, 'Decision')
-    ideas = [k for k, _, _ in scripts['common/ideas/MSGA_SER_ideas.txt'][0][2][0][2]]
+    ideas = [k for p, ast in scripts.items() if p.startswith('common/ideas/')
+             for _, _, categories_ast in ast for _, _, entries in categories_ast for k, _, _ in entries]
     dynamic = [k for k, _, _ in scripts['common/dynamic_modifiers/MSGA_SER_dynamic_modifiers.txt']]
     effects = [k for k, _, _ in scripts['common/scripted_effects/MSGA_SER_effects.txt']]
     triggers = [k for k, _, _ in scripts['common/scripted_triggers/MSGA_SER_triggers.txt']]
@@ -139,7 +208,8 @@ def main():
         if k in ('add_ideas', 'remove_ideas', 'has_idea', 'remove_idea', 'add_idea', 'idea') and isinstance(v, str) and v.startswith('MSGA_'):
             assert v in ideas, (k, v)
         if k in ('add_dynamic_modifier', 'remove_dynamic_modifier', 'has_dynamic_modifier'):
-            assert get(v, 'modifier') in dynamic
+            if get(v, 'modifier').startswith('MSGA_'):
+                assert get(v, 'modifier') in dynamic
         if k == 'country_event':
             assert get(v, 'id') in events
         if k == 'unlock_decision_tooltip':
@@ -178,7 +248,7 @@ def main():
         assert get(b, 'is_triggered_only') == 'yes'
         if id.startswith('MSGA_chronicle.'):
             assert not any(k == 'fire_only_once' for k, _, _ in b)
-        elif get(b, 'id') not in ('MSGA.10', 'MSGA.11', 'MSGA_geopolitics.2'):
+        elif get(b, 'id') not in ('MSGA.10', 'MSGA.11', 'MSGA_geopolitics.2', 'MSGA_cleanup.1'):
             assert get(b, 'fire_only_once') == 'yes'
     major_ids = {'MSGA_belgrade_business', 'MSGA_morava_works', 'MSGA_bor_modernisation',
                  'MSGA_lignite_modernisation', 'MSGA_jadar_survey', 'MSGA_jadar_feasibility', 'MSGA_expand_defence'}
@@ -242,6 +312,8 @@ def main():
     for key in local_modifier_keys:
         assert re.search(r'\b' + re.escape(key) + r'\s*=', external_modifier_source), f'Unverified modifier {key}'
     for k, _, v in all_pairs:
+        if k in ('add_dynamic_modifier', 'remove_dynamic_modifier', 'has_dynamic_modifier') and not get(v, 'modifier').startswith('MSGA_'):
+            assert re.search(r'\b'+re.escape(get(v, 'modifier'))+r'\s*=\s*\{', source('common/dynamic_modifiers'))
         if k in ('add_ideas', 'remove_ideas', 'has_idea') and isinstance(v, str) and not v.startswith('MSGA_'):
             assert re.search(r'\b'+re.escape(v)+r'\s*=\s*\{', external_ideas), f'Unknown TFR idea {v}'
         if k in ('add_income_with_inflation', 'add_debt_with_inflation'):
@@ -258,6 +330,7 @@ def main():
         matches = [p for p in (tfr/'history/states').glob('*.txt') if re.search(r'\bid\s*=\s*'+str(state)+r'\b', p.read_text(encoding='utf-8-sig', errors='replace'))]
         assert len(matches) == 1 and 'owner = SER' in matches[0].read_text(encoding='utf-8-sig')
     assert 'category = cat_old_land_doctrine' in source('common/national_focus')
+    validate_cleanup(scripts, tfr)
     report = {'static_validation': 'passed', 'script_files': len(scripts), 'focuses': len(focuses),
               'custom_sprites': len(sprites), 'pixel_identical_icons': len(focuses), 'events': len(events),
               'decisions': len(decisions), 'categories': len(categories), 'idea_definitions': len(ideas),
@@ -267,6 +340,7 @@ def main():
               'auxiliary_business_value_cap': 0.10, 'verified_idea_modifiers': sorted(local_modifier_keys),
               'chronicle_visible_events': 7, 'chronicle_interval_days': [120, 210], 'chronicle_cooldown_days': 360,
               'covid_decisions': 2, 'daily_polling': False, 'tfr_external_references': 'checked against installed scripts',
+              'targeted_cleanup_validation': 'passed; unrelated focus/event/COVID rewards preserved',
               'paid_one_time_review_decisions': 7, 'guarded_refundable_major_projects': 7,
               'phase2_war_effects': 0, 'campaign_acceptance': 'not certified by static checks'}
     output = ROOT / 'docs/phase1_static_validation.json'

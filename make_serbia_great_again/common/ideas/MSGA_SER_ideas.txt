@@ -1,4 +1,16 @@
 ideas = {
+	# TFR cabinet category: the existing character remains the identity/availability
+	# source. This minister idea does not define or recruit another Vulin character.
+	theorist_minister = {
+		MSGA_aleksandar_vulin_DM = {
+			name = SER_aleksandar_vulin
+			picture = GFX_Aleksandar_Vulin
+			allowed = { original_tag = SER }
+			visible = { has_character = SER_aleksandar_vulin }
+			available = { has_character = SER_aleksandar_vulin }
+			traits = { MSGA_defence_moderniser }
+		}
+	}
 	country = {
 		MSGA_pandemic_disruption = {
 			picture = generic_covid
