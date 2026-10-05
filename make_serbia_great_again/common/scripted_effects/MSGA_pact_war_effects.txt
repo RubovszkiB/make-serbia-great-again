@@ -233,5 +233,6 @@ MSGA_finish_pact_campaign = {
   CRO = { remove_ideas = MSGA_pact_postwar_neutrality clear_rule = { can_decline_call_to_war = yes } }
   if = { limit = { has_war = no is_in_faction = yes } every_country = { limit = { is_faction_leader = yes is_in_faction_with = SER } add_to_faction = CRO } }
   country_event = { id = MSGA_pactwar.11 }
+  MSGA_schedule_new_order_victory = yes
  }
 }

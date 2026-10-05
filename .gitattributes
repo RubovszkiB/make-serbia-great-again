@@ -1,5 +1,5 @@
 *.txt text eol=lf
 *.yml text eol=lf
 *.mod text eol=lf
+*.gfx text eol=lf
 *.md text eol=lf
-

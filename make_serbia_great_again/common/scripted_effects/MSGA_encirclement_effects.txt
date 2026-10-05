@@ -21,7 +21,7 @@ MSGA_try_pact_realignment = {
  }
 }
 MSGA_open_pact_planning = {
- if = { limit = { tag = SER has_country_flag = MSGA_zagreb_tirana_pact_formed has_country_flag = MSGA_pact_mobilised has_country_flag = MSGA_belgrade_emergency_done NOT = { has_country_flag = MSGA_pact_planning_active } }
+ if = { limit = { tag = SER has_country_flag = MSGA_zagreb_tirana_pact_formed has_country_flag = MSGA_pact_mobilised has_country_flag = MSGA_belgrade_emergency_done NOT = { has_country_flag = MSGA_pact_planning_active } NOT = { has_country_flag = MSGA_balkan_war_victory } }
   clr_country_flag = MSGA_southern_question_active set_country_flag = MSGA_pact_planning_active
   load_focus_tree = { tree = MSGA_SER_pact_war_planning keep_completed = yes }
  }

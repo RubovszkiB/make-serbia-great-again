@@ -56,6 +56,8 @@ class WarModel(EncirclementModel):
    elif k in ('add_stability','add_war_support','army_experience'):
     field={'add_stability':'stability','add_war_support':'support','army_experience':'xp'}[k]
     self.metrics[scope][field]+=float(v)
+   elif k=='set_country_flag' and isinstance(v,list):
+    name=get(v,'flag');self.flags[scope].add(name);self.flag_dates[(scope,name)]=self.day
    elif k=='set_faction_leader':
     assert v=='yes' and self.factions[scope];self.faction_leader[self.factions[scope]]=scope
    elif k=='leave_faction':
@@ -122,11 +124,14 @@ def main():
  # All pre-existing files except the two documented script hooks and descriptors are byte-identical.
  allowed=set(sources['changed_relative_paths'])
  for path,digest in sources['baseline_sha256'].items():
-  if path not in allowed:assert hashlib.sha256((mod/path).read_bytes()).hexdigest()==digest,path
+  if path=='common/decisions/categories/MSGA_SER_categories.txt' and 'common/scripted_triggers/MSGA_new_order_triggers.txt' in scripts:
+   old=parse(subprocess.check_output(['git','show','26a1e41:make_serbia_great_again/'+path],cwd=ROOT).decode('utf-8-sig'))
+   assert scripts[path][:-1]==old and scripts[path][-1][0]=='MSGA_consolidate_the_serbian_sphere'
+  elif path not in allowed:assert hashlib.sha256((mod/path).read_bytes()).hexdigest()==digest,path
  before_effect=parse(subprocess.check_output(['git','show','d87f5c9:make_serbia_great_again/common/scripted_effects/MSGA_encirclement_effects.txt'],cwd=ROOT).decode('utf-8-sig'))
  new_effect=copy.deepcopy(scripts['common/scripted_effects/MSGA_encirclement_effects.txt'])
  def remove_calls(body):
-  return [(k,o,remove_calls(v) if isinstance(v,list) else v) for k,o,v in body if k not in ('MSGA_prepare_pact_campaign','MSGA_start_pact_observer')]
+  return [(k,o,remove_calls(v) if isinstance(v,list) else v) for k,o,v in body if k not in ('MSGA_prepare_pact_campaign','MSGA_start_pact_observer') and (k,o,v)!=('NOT','=',parse('has_country_flag = MSGA_balkan_war_victory'))]
  assert remove_calls(new_effect)==before_effect
  # Native country capitals, state owner/core, province membership AND VP record.
  WarModel.native_state_cores={}

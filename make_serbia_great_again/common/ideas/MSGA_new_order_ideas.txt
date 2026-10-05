@@ -1,0 +1,10 @@
+ideas = { country = {
+ MSGA_cost_of_victory_i = { picture = MSGA_the_cost_of_victory allowed = { tag = SER } removal_cost = -1 modifier = { consumer_goods_factor = 0.30 production_speed_buildings_factor = -0.20 industrial_capacity_factory = -0.05 income_growth_factor = -0.05 industry_repair_factor = 0.10 } }
+ MSGA_cost_of_victory_ii = { picture = MSGA_the_cost_of_victory_ii allowed = { tag = SER } removal_cost = -1 modifier = { consumer_goods_factor = 0.20 production_speed_buildings_factor = -0.15 industrial_capacity_factory = -0.03 income_growth_factor = -0.03 industry_repair_factor = 0.15 } }
+ MSGA_cost_of_victory_iii = { picture = MSGA_the_cost_of_victory_iii allowed = { tag = SER } removal_cost = -1 modifier = { consumer_goods_factor = 0.10 production_speed_buildings_factor = -0.10 industrial_capacity_factory = 0.00 income_growth_factor = -0.02 industry_repair_factor = 0.10 } }
+ MSGA_cost_of_victory_iv = { picture = MSGA_the_cost_of_victory_iv allowed = { tag = SER } removal_cost = -1 modifier = { consumer_goods_factor = 0.05 production_speed_buildings_factor = -0.05 industrial_capacity_factory = 0.00 income_growth_factor = 0.00 industry_repair_factor = 0.05 } }
+ MSGA_a_stabilised_balkan_order = { picture = MSGA_a_stabilised_balkan_order allowed = { tag = SER } removal_cost = -1 modifier = { stability_factor = 0.05 political_power_factor = 0.05 income_growth_factor = 0.02 custom_modifier_tooltip = MSGA_stabilised_subjects_tt } }
+ MSGA_serbian_commerce_restored = { picture = MSGA_a_stabilised_balkan_order allowed = { tag = SER } removal_cost = -1 modifier = { business_value_factor = 0.05 income_growth_factor = 0.03 } }
+ MSGA_reconstruction_authority = { picture = MSGA_the_cost_of_victory_ii allowed = { tag = SER } removal_cost = -1 modifier = { industry_repair_factor = 0.10 } }
+ MSGA_stabilised_client_order = { picture = MSGA_a_stabilised_balkan_order allowed = { is_subject_of = SER } cancel = { NOT = { is_subject_of = SER } } removal_cost = -1 modifier = { autonomy_gain_global_factor = -0.10 } }
+} }

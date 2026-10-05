@@ -314,6 +314,13 @@ def main():
         new_sources = ROOT / 'docs/post_bosnia_sources.json'
         supplied_new = json.loads(new_sources.read_text())['assets'] if new_sources.exists() else {}
         relative = texture.relative_to(MOD).as_posix()
+        order_sources = ROOT / 'docs/new_order_sources.json'
+        supplied_order = json.loads(order_sources.read_text())['assets'] if order_sources.exists() else {}
+        if relative in supplied_order:
+            import hashlib
+            assert hashlib.sha256(texture.read_bytes()).hexdigest() == supplied_order[relative]['sha256']
+            assert list(image.size) == supplied_order[relative]['size']
+            continue
         pact_sources = ROOT / 'docs/pact_war_sources.json'
         supplied_pact = json.loads(pact_sources.read_text())['assets'] if pact_sources.exists() else {}
         if relative in supplied_pact:
@@ -434,7 +441,7 @@ def main():
         assert get(b, 'is_triggered_only') == 'yes'
         if id.startswith('MSGA_chronicle.'):
             assert not any(k == 'fire_only_once' for k, _, _ in b)
-        elif get(b, 'id') not in ('MSGA.10', 'MSGA.11', 'MSGA_geopolitics.2', 'MSGA_cleanup.1', 'MSGA_kosovo.21', 'MSGA_kosovo.99', 'MSGA_bosnia.5', 'MSGA_bosnia.6', 'MSGA_bosnia.9', 'MSGA_bosnia.99', 'MSGA_pactwar.90'):
+        elif get(b, 'id') not in ('MSGA.10', 'MSGA.11', 'MSGA_geopolitics.2', 'MSGA_cleanup.1', 'MSGA_kosovo.21', 'MSGA_kosovo.99', 'MSGA_bosnia.5', 'MSGA_bosnia.6', 'MSGA_bosnia.9', 'MSGA_bosnia.99', 'MSGA_pactwar.90', 'MSGA_neworder.90', 'MSGA_neworder.91'):
             assert get(b, 'fire_only_once') == 'yes'
     major_ids = {'MSGA_belgrade_business', 'MSGA_morava_works', 'MSGA_bor_modernisation',
                  'MSGA_lignite_modernisation', 'MSGA_jadar_survey', 'MSGA_jadar_feasibility', 'MSGA_expand_defence'}

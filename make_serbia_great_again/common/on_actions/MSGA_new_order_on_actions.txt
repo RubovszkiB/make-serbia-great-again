@@ -1,0 +1,6 @@
+on_actions = {
+ on_startup = { effect = { SER = { MSGA_resume_new_order = yes } } }
+ on_weekly = { effect = { if = { limit = { tag = SER } MSGA_resume_new_order = yes } } }
+ on_peace = { effect = { SER = { MSGA_schedule_new_order_victory = yes MSGA_schedule_belgrade_conference = yes } } }
+ on_war = { effect = { if = { limit = { OR = { ROOT = { tag = SER } FROM = { tag = SER } } } SER = { clr_country_flag = MSGA_new_order_peace_ready } } } }
+}

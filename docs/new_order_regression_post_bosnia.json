@@ -1,0 +1,345 @@
+{
+  "static_and_model_validation": "passed",
+  "validated_mod_root": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
+  "version": "0.13.0",
+  "focus_ids": [
+    "MSGA_victory_in_bosnia",
+    "MSGA_rebuild_the_west",
+    "MSGA_new_serbian_era",
+    "MSGA_lessons_bosnian_war",
+    "MSGA_arm_new_serbian_sphere",
+    "MSGA_serbian_defence_network",
+    "MSGA_consolidate_victory",
+    "MSGA_bind_new_protectorates",
+    "MSGA_serbian_sphere",
+    "MSGA_repair_war_economy",
+    "MSGA_serbian_industrial_consolidation",
+    "MSGA_economic_heart_balkans"
+  ],
+  "focus_days": 14,
+  "total_focus_days": 168,
+  "scenarios": [
+    {
+      "branches": [
+        0,
+        1,
+        2
+      ],
+      "annex": false,
+      "NSB": false,
+      "days": 168,
+      "Serbian_auxiliaries": 5,
+      "treasury_cost_B": 1
+    },
+    {
+      "branches": [
+        0,
+        1,
+        2
+      ],
+      "annex": false,
+      "NSB": true,
+      "days": 168,
+      "Serbian_auxiliaries": 5,
+      "treasury_cost_B": 1
+    },
+    {
+      "branches": [
+        0,
+        1,
+        2
+      ],
+      "annex": true,
+      "NSB": false,
+      "days": 168,
+      "Serbian_auxiliaries": 5,
+      "treasury_cost_B": 1
+    },
+    {
+      "branches": [
+        0,
+        1,
+        2
+      ],
+      "annex": true,
+      "NSB": true,
+      "days": 168,
+      "Serbian_auxiliaries": 5,
+      "treasury_cost_B": 1
+    },
+    {
+      "branches": [
+        0,
+        2,
+        1
+      ],
+      "annex": false,
+      "NSB": false,
+      "days": 168,
+      "Serbian_auxiliaries": 5,
+      "treasury_cost_B": 1
+    },
+    {
+      "branches": [
+        0,
+        2,
+        1
+      ],
+      "annex": false,
+      "NSB": true,
+      "days": 168,
+      "Serbian_auxiliaries": 5,
+      "treasury_cost_B": 1
+    },
+    {
+      "branches": [
+        0,
+        2,
+        1
+      ],
+      "annex": true,
+      "NSB": false,
+      "days": 168,
+      "Serbian_auxiliaries": 5,
+      "treasury_cost_B": 1
+    },
+    {
+      "branches": [
+        0,
+        2,
+        1
+      ],
+      "annex": true,
+      "NSB": true,
+      "days": 168,
+      "Serbian_auxiliaries": 5,
+      "treasury_cost_B": 1
+    },
+    {
+      "branches": [
+        1,
+        0,
+        2
+      ],
+      "annex": false,
+      "NSB": false,
+      "days": 168,
+      "Serbian_auxiliaries": 5,
+      "treasury_cost_B": 1
+    },
+    {
+      "branches": [
+        1,
+        0,
+        2
+      ],
+      "annex": false,
+      "NSB": true,
+      "days": 168,
+      "Serbian_auxiliaries": 5,
+      "treasury_cost_B": 1
+    },
+    {
+      "branches": [
+        1,
+        0,
+        2
+      ],
+      "annex": true,
+      "NSB": false,
+      "days": 168,
+      "Serbian_auxiliaries": 5,
+      "treasury_cost_B": 1
+    },
+    {
+      "branches": [
+        1,
+        0,
+        2
+      ],
+      "annex": true,
+      "NSB": true,
+      "days": 168,
+      "Serbian_auxiliaries": 5,
+      "treasury_cost_B": 1
+    },
+    {
+      "branches": [
+        1,
+        2,
+        0
+      ],
+      "annex": false,
+      "NSB": false,
+      "days": 168,
+      "Serbian_auxiliaries": 5,
+      "treasury_cost_B": 1
+    },
+    {
+      "branches": [
+        1,
+        2,
+        0
+      ],
+      "annex": false,
+      "NSB": true,
+      "days": 168,
+      "Serbian_auxiliaries": 5,
+      "treasury_cost_B": 1
+    },
+    {
+      "branches": [
+        1,
+        2,
+        0
+      ],
+      "annex": true,
+      "NSB": false,
+      "days": 168,
+      "Serbian_auxiliaries": 5,
+      "treasury_cost_B": 1
+    },
+    {
+      "branches": [
+        1,
+        2,
+        0
+      ],
+      "annex": true,
+      "NSB": true,
+      "days": 168,
+      "Serbian_auxiliaries": 5,
+      "treasury_cost_B": 1
+    },
+    {
+      "branches": [
+        2,
+        0,
+        1
+      ],
+      "annex": false,
+      "NSB": false,
+      "days": 168,
+      "Serbian_auxiliaries": 5,
+      "treasury_cost_B": 1
+    },
+    {
+      "branches": [
+        2,
+        0,
+        1
+      ],
+      "annex": false,
+      "NSB": true,
+      "days": 168,
+      "Serbian_auxiliaries": 5,
+      "treasury_cost_B": 1
+    },
+    {
+      "branches": [
+        2,
+        0,
+        1
+      ],
+      "annex": true,
+      "NSB": false,
+      "days": 168,
+      "Serbian_auxiliaries": 5,
+      "treasury_cost_B": 1
+    },
+    {
+      "branches": [
+        2,
+        0,
+        1
+      ],
+      "annex": true,
+      "NSB": true,
+      "days": 168,
+      "Serbian_auxiliaries": 5,
+      "treasury_cost_B": 1
+    },
+    {
+      "branches": [
+        2,
+        1,
+        0
+      ],
+      "annex": false,
+      "NSB": false,
+      "days": 168,
+      "Serbian_auxiliaries": 5,
+      "treasury_cost_B": 1
+    },
+    {
+      "branches": [
+        2,
+        1,
+        0
+      ],
+      "annex": false,
+      "NSB": true,
+      "days": 168,
+      "Serbian_auxiliaries": 5,
+      "treasury_cost_B": 1
+    },
+    {
+      "branches": [
+        2,
+        1,
+        0
+      ],
+      "annex": true,
+      "NSB": false,
+      "days": 168,
+      "Serbian_auxiliaries": 5,
+      "treasury_cost_B": 1
+    },
+    {
+      "branches": [
+        2,
+        1,
+        0
+      ],
+      "annex": true,
+      "NSB": true,
+      "days": 168,
+      "Serbian_auxiliaries": 5,
+      "treasury_cost_B": 1
+    }
+  ],
+  "puppets": {
+    "BOS": [
+      104
+    ],
+    "HRZ": [
+      851
+    ],
+    "SRP": [
+      848,
+      849,
+      850
+    ]
+  },
+  "militia_battalions": 3,
+  "Serbian_control": "all five new auxiliary divisions spawn as Serbian-owned, regionally named formations",
+  "Srpska_TD": "exact Kosovo brigade template and equipment package; both DLC modes",
+  "militia_cost_per_pair": {
+    "PP": 25,
+    "treasury_B": 0.25
+  },
+  "Srpska_TD_cost": {
+    "PP": 0,
+    "treasury_B": 0.5
+  },
+  "Srpska_question_days": 100,
+  "legacy_70_day_migration": "passed",
+  "annexation_debt_B": 1,
+  "annexation_treasury_cost": 0,
+  "unit_and_template_preservation": "passed in model; actual engine not tested",
+  "debt_floor_and_control_funding_guards": "passed",
+  "prior_focus_trees_and_BOP": "unchanged",
+  "DDS_assets": 31,
+  "GFX_definitions": "all supplied assets used, no duplicate sprite keys",
+  "actual_game_validation": "pending user test; no engine playthrough or fresh engine log claimed"
+}

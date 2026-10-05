@@ -1,0 +1,1 @@
+opinion_modifiers = { MSGA_new_order_cooperation = { value = 25 } }

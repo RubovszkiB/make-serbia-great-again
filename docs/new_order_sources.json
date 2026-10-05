@@ -1,18 +1,353 @@
 {
-  "runtime_target": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
-  "launcher_descriptor": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again.mod",
   "version": "0.13.0",
-  "before_missing_files": [],
-  "before_changed_files": [],
-  "copied_absolute_paths": [],
-  "verified_source_file_count": 320,
-  "verified_sha256_by_relative_path": {
-    "descriptor.mod": "259964fa35007983fe0c592db8190eee8e2cbb69a6ffe6d693c25c4b9e246ffd",
-    "make_serbia_great_again.mod": "6b595b40d4442b91fa33f877d0b41547590533ae78a759664e308bbcc64fd794",
+  "runtime": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
+  "package": "C:\\Users\\Balazs\\Downloads\\MSGA_New_Balkan_Order_TFR_Assets (1).zip",
+  "package_sha256": "effdbb74e56ccc28c9f971dbbe80d8b1f5cf6049eb3e3fe3654c3916f761069f",
+  "assets": {
+    "gfx/event_pictures/MSGA_event_the_tirana_arrangement.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/event_pictures/MSGA_event_the_tirana_arrangement.dds",
+      "sha256": "63e2cdff9e2da5f525eb985043d0a9d6267c361a3f6b8305f2936e0c9edb3f1e",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_the_bill_comes_due.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/event_pictures/MSGA_event_the_bill_comes_due.dds",
+      "sha256": "dae69984200fb71489effaa82407ec0e0ee0164a5c78951dd8ee4b6eb4d1d52b",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_the_balkans_stabilise.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/event_pictures/MSGA_event_the_balkans_stabilise.dds",
+      "sha256": "55935eee70c7f283ad9448e30b9df6f6f766316f3abe0873d7e2ef6c3c2c4f96",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_the_arteries_of_serbia.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/event_pictures/MSGA_event_the_arteries_of_serbia.dds",
+      "sha256": "f5edd0d0d99f2bbf735e3059ab922f0f0c1d1c6d3db34339c83419edaeede4fe",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_the_sarajevo_framework.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/event_pictures/MSGA_event_the_sarajevo_framework.dds",
+      "sha256": "7573dadd63a0e48a340039924ae268452dff8be2d0b49844c2f43b6b6d8f5e38",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_the_furnaces_burn_again.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/event_pictures/MSGA_event_the_furnaces_burn_again.dds",
+      "sha256": "f734a9fc4679a9649e9e0eaa2e98fd58a52bd59b824d0f5082f8b028f771b800",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_belgrade_opens_for_business.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/event_pictures/MSGA_event_belgrade_opens_for_business.dds",
+      "sha256": "96214ed31ca6ac25b3f339b454880c847d31240da77012a454f54d7d841d8329",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_the_skopje_agreement.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/event_pictures/MSGA_event_the_skopje_agreement.dds",
+      "sha256": "0e2b67ebb866e3c8eb222acb7faf8c5718903ac520af395a718f5cb621ba8fee",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_the_south_slavic_question_returns.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/event_pictures/MSGA_event_the_south_slavic_question_returns.dds",
+      "sha256": "cd37636865ed96f419e900684a2e600ee1437fbeeae67fb98a0b54e05cfd8923",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_the_reconstruction_authority.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/event_pictures/MSGA_event_the_reconstruction_authority.dds",
+      "sha256": "10db68c3841b5c0dbbcca9812f3cd07a2b1f4994709db2de98d2d8daa94e144a",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_the_conference_of_belgrade.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/event_pictures/MSGA_event_the_conference_of_belgrade.dds",
+      "sha256": "8fb5943506d019f60331d5db48aa671736b3dd0d3b3355e2dac949c68d8fc5ed",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_victory_in_the_balkan_war.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/event_pictures/MSGA_event_victory_in_the_balkan_war.dds",
+      "sha256": "8125d53a80a6d64c4966faeeefe1230d44fb5678cea84e116cc3aeea9c93c8d9",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_the_ljubljana_protocol.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/event_pictures/MSGA_event_the_ljubljana_protocol.dds",
+      "sha256": "adc6ecef9c27d39b639ce106d46540e39b69ed38216d51d2389781d24fe0f0e5",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_the_zagreb_accords.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/event_pictures/MSGA_event_the_zagreb_accords.dds",
+      "sha256": "8a612d872bc8e2c36215665ba192fa4c06cd8b1cf182bde1d9a933a158ad9929",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_the_podgorica_settlement.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/event_pictures/MSGA_event_the_podgorica_settlement.dds",
+      "sha256": "df230b2da022e41e3de99f1363576c60678036d35d4f19b02bfd2330c382006a",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_the_new_balkan_order.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/event_pictures/MSGA_event_the_new_balkan_order.dds",
+      "sha256": "5274bc8501484b3b113baf0072d1c2e0c6a8b1241d5e4fafb593cfc7d8eeeab5",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/interface/ideas/MSGA_idea_the_cost_of_victory_iii.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/interface/ideas/MSGA_idea_the_cost_of_victory_iii.dds",
+      "sha256": "4fb21e70a72f2788ac76c46ae506e9bad7774ba102e9a27bc9f7ed210d8c7f1d",
+      "size": [
+        64,
+        64
+      ]
+    },
+    "gfx/interface/ideas/MSGA_decision_consolidate_the_serbian_sphere.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/interface/ideas/MSGA_decision_consolidate_the_serbian_sphere.dds",
+      "sha256": "d1b1af9baebe2a0ac581869dffa7eff1fa56828fdc3b4152c422ed2508e15039",
+      "size": [
+        64,
+        64
+      ]
+    },
+    "gfx/interface/ideas/MSGA_idea_the_cost_of_victory_ii.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/interface/ideas/MSGA_idea_the_cost_of_victory_ii.dds",
+      "sha256": "7ed5e67fd0c39a6ca9cb0f591c4f5dc8819fdbc8863d3f7dd61e54e7ac8dff0b",
+      "size": [
+        64,
+        64
+      ]
+    },
+    "gfx/interface/ideas/MSGA_idea_the_cost_of_victory.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/interface/ideas/MSGA_idea_the_cost_of_victory.dds",
+      "sha256": "c261747e5d165a9d5f57dac43e11a5ca5c1dec4573233a4c6539572e7ae42724",
+      "size": [
+        64,
+        64
+      ]
+    },
+    "gfx/interface/ideas/MSGA_idea_the_cost_of_victory_iv.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/interface/ideas/MSGA_idea_the_cost_of_victory_iv.dds",
+      "sha256": "82ee15235cb6669921887034c74aeda4c386d5baea38d533fa89aacabc7324e9",
+      "size": [
+        64,
+        64
+      ]
+    },
+    "gfx/interface/ideas/MSGA_idea_a_stabilised_balkan_order.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/interface/ideas/MSGA_idea_a_stabilised_balkan_order.dds",
+      "sha256": "002e44edbe29991103489c03d3935bb3b2471bfeb609e27667bf054aa21753f0",
+      "size": [
+        64,
+        64
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_restart_serbian_commerce.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/interface/goals/MSGA_focus_restart_serbian_commerce.dds",
+      "sha256": "1b892ab5632f3147f139b2c989d4a7e1594f018dc9f96bb159216df76e78de8a",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_repair_the_roads_and_railways.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/interface/goals/MSGA_focus_repair_the_roads_and_railways.dds",
+      "sha256": "6afd11efbb138b2f79f1e82277cf0a041a86984fa252f0531190b6f7b453c049",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_south_slavic_unity.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/interface/goals/MSGA_focus_south_slavic_unity.dds",
+      "sha256": "b51ab6eca2f31727ef972666196634f2cc095d151b82622da0e938c53dce9a58",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_the_south_slavic_question.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/interface/goals/MSGA_focus_the_south_slavic_question.dds",
+      "sha256": "45ba37238aa6dff25805a241ea338ce628e26d7fcb533190bbef1cdaefc6561f",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_begin_reconstruction.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/interface/goals/MSGA_focus_begin_reconstruction.dds",
+      "sha256": "4955ca17bdcde77469d1acf0d514442d6f82fcabd4761f23c6f95e209c76e81e",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_stabilise_the_new_order.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/interface/goals/MSGA_focus_stabilise_the_new_order.dds",
+      "sha256": "4d1b32df3dde319875a1c3425b2ac5c692382db16f768aaf8cd116c19f1d4209",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_count_the_cost.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/interface/goals/MSGA_focus_count_the_cost.dds",
+      "sha256": "95d67914a7e6ef00a6d75988426d79d7bdac5084a4c61e5160fcb53064fecb57",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_restore_serbian_industry.dds": {
+      "zip_member": "MSGA_New_Balkan_Order_TFR_Assets/gfx/interface/goals/MSGA_focus_restore_serbian_industry.dds",
+      "sha256": "d98cdf466a91d43b713d2ac50fdca3583a1fac46873438e6fd55c4afe551b3f6",
+      "size": [
+        95,
+        85
+      ]
+    }
+  },
+  "changed_relative_paths": [
+    "common/decisions/MSGA_new_order_decisions.txt",
+    "common/decisions/categories/MSGA_SER_categories.txt",
+    "common/ideas/MSGA_new_order_ideas.txt",
+    "common/national_focus/MSGA_SER_new_balkan_order.txt",
+    "common/on_actions/MSGA_new_order_on_actions.txt",
+    "common/opinion_modifiers/MSGA_new_order_opinions.txt",
+    "common/scripted_effects/MSGA_encirclement_effects.txt",
+    "common/scripted_effects/MSGA_new_order_effects.txt",
+    "common/scripted_effects/MSGA_pact_war_effects.txt",
+    "common/scripted_triggers/MSGA_new_order_triggers.txt",
+    "descriptor.mod",
+    "events/MSGA_new_order_events.txt",
+    "gfx/event_pictures/MSGA_event_belgrade_opens_for_business.dds",
+    "gfx/event_pictures/MSGA_event_the_arteries_of_serbia.dds",
+    "gfx/event_pictures/MSGA_event_the_balkans_stabilise.dds",
+    "gfx/event_pictures/MSGA_event_the_bill_comes_due.dds",
+    "gfx/event_pictures/MSGA_event_the_conference_of_belgrade.dds",
+    "gfx/event_pictures/MSGA_event_the_furnaces_burn_again.dds",
+    "gfx/event_pictures/MSGA_event_the_ljubljana_protocol.dds",
+    "gfx/event_pictures/MSGA_event_the_new_balkan_order.dds",
+    "gfx/event_pictures/MSGA_event_the_podgorica_settlement.dds",
+    "gfx/event_pictures/MSGA_event_the_reconstruction_authority.dds",
+    "gfx/event_pictures/MSGA_event_the_sarajevo_framework.dds",
+    "gfx/event_pictures/MSGA_event_the_skopje_agreement.dds",
+    "gfx/event_pictures/MSGA_event_the_south_slavic_question_returns.dds",
+    "gfx/event_pictures/MSGA_event_the_tirana_arrangement.dds",
+    "gfx/event_pictures/MSGA_event_the_zagreb_accords.dds",
+    "gfx/event_pictures/MSGA_event_victory_in_the_balkan_war.dds",
+    "gfx/interface/goals/MSGA_focus_begin_reconstruction.dds",
+    "gfx/interface/goals/MSGA_focus_count_the_cost.dds",
+    "gfx/interface/goals/MSGA_focus_repair_the_roads_and_railways.dds",
+    "gfx/interface/goals/MSGA_focus_restart_serbian_commerce.dds",
+    "gfx/interface/goals/MSGA_focus_restore_serbian_industry.dds",
+    "gfx/interface/goals/MSGA_focus_south_slavic_unity.dds",
+    "gfx/interface/goals/MSGA_focus_stabilise_the_new_order.dds",
+    "gfx/interface/goals/MSGA_focus_the_south_slavic_question.dds",
+    "gfx/interface/ideas/MSGA_decision_consolidate_the_serbian_sphere.dds",
+    "gfx/interface/ideas/MSGA_idea_a_stabilised_balkan_order.dds",
+    "gfx/interface/ideas/MSGA_idea_the_cost_of_victory.dds",
+    "gfx/interface/ideas/MSGA_idea_the_cost_of_victory_ii.dds",
+    "gfx/interface/ideas/MSGA_idea_the_cost_of_victory_iii.dds",
+    "gfx/interface/ideas/MSGA_idea_the_cost_of_victory_iv.dds",
+    "interface/MSGA_new_balkan_order_assets.gfx",
+    "interface/MSGA_new_order_engine_aliases.gfx",
+    "localisation/english/MSGA_new_order_l_english.yml",
+    "make_serbia_great_again.mod"
+  ],
+  "deployed_absolute_paths": [
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again.mod",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\decisions\\MSGA_new_order_decisions.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\decisions\\categories\\MSGA_SER_categories.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\ideas\\MSGA_new_order_ideas.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\national_focus\\MSGA_SER_new_balkan_order.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\on_actions\\MSGA_new_order_on_actions.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\opinion_modifiers\\MSGA_new_order_opinions.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\scripted_effects\\MSGA_encirclement_effects.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\scripted_effects\\MSGA_new_order_effects.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\scripted_effects\\MSGA_pact_war_effects.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\scripted_triggers\\MSGA_new_order_triggers.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\descriptor.mod",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\events\\MSGA_new_order_events.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_belgrade_opens_for_business.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_the_arteries_of_serbia.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_the_balkans_stabilise.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_the_bill_comes_due.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_the_conference_of_belgrade.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_the_furnaces_burn_again.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_the_ljubljana_protocol.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_the_new_balkan_order.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_the_podgorica_settlement.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_the_reconstruction_authority.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_the_sarajevo_framework.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_the_skopje_agreement.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_the_south_slavic_question_returns.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_the_tirana_arrangement.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_the_zagreb_accords.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_victory_in_the_balkan_war.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_focus_begin_reconstruction.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_focus_count_the_cost.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_focus_repair_the_roads_and_railways.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_focus_restart_serbian_commerce.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_focus_restore_serbian_industry.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_focus_south_slavic_unity.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_focus_stabilise_the_new_order.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_focus_the_south_slavic_question.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\ideas\\MSGA_decision_consolidate_the_serbian_sphere.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\ideas\\MSGA_idea_a_stabilised_balkan_order.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\ideas\\MSGA_idea_the_cost_of_victory.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\ideas\\MSGA_idea_the_cost_of_victory_ii.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\ideas\\MSGA_idea_the_cost_of_victory_iii.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\ideas\\MSGA_idea_the_cost_of_victory_iv.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\interface\\MSGA_new_balkan_order_assets.gfx",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\interface\\MSGA_new_order_engine_aliases.gfx",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\localisation\\english\\MSGA_new_order_l_english.yml",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\make_serbia_great_again.mod"
+  ],
+  "baseline_sha256": {
+    "descriptor.mod": "df4c8a6e1ea9a13a4ad2a037ae26056ab10bd99fc55ee5c764d73129fb0c6cac",
+    "make_serbia_great_again.mod": "0c1fac79c7be05fa7f9b23ea114f6aaa7d353558f233178b825e1c7285a93afd",
     "MSGA_DEV_NOTES.md": "a3c62a2f3ccffaddd9596d464d2b641eb821e31b0fb7915e5e079b155fcae64c",
     "events/MSGA_bosnia_events.txt": "bc643fc5d989a01e75ef70b821eca8095cba51d2483cbae7aa442df6aaf000c6",
     "events/MSGA_encirclement_events.txt": "083ede025a3510e04c29686eb7c007a9946769fcef101c3f99b9c57b3c0a7a89",
-    "events/MSGA_new_order_events.txt": "ecb8f02ec3c9a8f14f2dd4e90751254d66e08929a6c926a09625bb0446d973d2",
     "events/MSGA_pact_war_events.txt": "f25ea2f19e37e564ffa9df103f1afc44c918c1315fac8d3fb198926bb2056fa5",
     "events/MSGA_post_bosnia_events.txt": "acdd6410dea4572c1388d80e94fca4509723c994cc04c5eb8f42b4d7dd1a5ff4",
     "events/MSGA_SER_chronicle.txt": "ceae34d1277d6b914b91e7d2b8661603616e61e32abb37deeeba145aa7c3a98a",
@@ -30,10 +365,8 @@
     "interface/MSGA_eventpictures.gfx": "3279a0bda133b1c7a4ac350a78a7cea8fe9ae1a174a050ca0faef92b9419fd70",
     "interface/MSGA_focus_icons.gfx": "83224b02bb3e4e20bc7b67181f5d81114761d2f2951c5fc3084dad0faa30d16f",
     "interface/MSGA_kosovo_assets.gfx": "7b32761c69f79353c9a31013db1d66264ea08b1812b9cc9e1fb0344e4a1b9c7b",
-    "interface/MSGA_new_balkan_order_assets.gfx": "11b1a1902e9757a236688b1ed6ced54e4b78de788a2c6164ca08e6a2d486a0fc",
     "interface/MSGA_new_focus_icons.gfx": "1bda26d70dbbe57d1d6cfa4b8c49b523ba3495cf0fa70c27ebe1b31236166e99",
     "interface/MSGA_new_ideas.gfx": "36c743e8fbf8b9010b26e1c906bb6f94c6994d8590696a887fa66671b20b05ed",
-    "interface/MSGA_new_order_engine_aliases.gfx": "3789c9157edc98d9ab1e3eed7b6555271e9d8302c8076e888fd6cc25e2767042",
     "interface/MSGA_post_bosnia_assets.gfx": "1d47b7529a98d4d89714214ce5a4bf056deddc9752f9ed2d84937d3afaf8714d",
     "interface/MSGA_post_bosnia_focus_shine.gfx": "ee13758cb73aa062b814bab89696e12b5eeb880f9058247020ed0fd793ede1e6",
     "interface/MSGA_post_kosovo_assets.gfx": "d6d79ea01e811d9d07a8a870e3b4c10c2891a158c827dfa990ca499c38849748",
@@ -41,7 +374,6 @@
     "common/characters/MSGA_bosnia_characters.txt": "c2b490a75b86a8c4e89b8aa9653f1a2ae8df470ded81e09a68369f7576f591ca",
     "common/country_leader/MSGA_SER_minister_traits.txt": "7c799771bcee832418746cf7786f8f931ca935e1187233b2af185bcee07c4764",
     "common/decisions/MSGA_bosnia_decisions.txt": "bb6c3e00a4f3fc3920101907ce4e88bc40f981facdb9b251462b95472bd05013",
-    "common/decisions/MSGA_new_order_decisions.txt": "049a00eacb688d9ccf7e43546328ac3990980941547dd1f8c8d5d1534363b3b8",
     "common/decisions/MSGA_post_bosnia_decisions.txt": "b2f6d7013f7a601f4675ae1e18688a1b75e60ef38dc7e5236a6ed99ac58558a2",
     "common/decisions/MSGA_SER_bop_decisions.txt": "1ff895b97add7ee873710f01efe06fb7b93e4f2e3cda220979c1009359e989ee",
     "common/decisions/MSGA_SER_covid.txt": "50cf9b6401c2fbc7ebcbfe066ff8f200409c750fc151775539a484ffa383bea5",
@@ -54,7 +386,6 @@
     "common/dynamic_modifiers/MSGA_SER_dynamic_modifiers.txt": "18478562f79b1c8e1c6cb481176739ea4c8afe488c6b3fd1cc20b6a58e52d8d7",
     "common/ideas/MSGA_bosnia_ideas.txt": "0281dc7c91163f648807693a8b5c9ae3f1dd2249f56bd0ba43dd83d0f0886e33",
     "common/ideas/MSGA_encirclement_ideas.txt": "9fd8e61bd85d230a06ccb99162918842821610870988d4a31b8fd50f5f36583f",
-    "common/ideas/MSGA_new_order_ideas.txt": "65ea6bb9956d6d0885d2c628cdcb5732d536256c8fdf9ade8e82b5b65bb4db50",
     "common/ideas/MSGA_pact_war_ideas.txt": "264c1c65c361a3074f9567c30af947902b45b6c5c1ccbbb87cb396205320f453",
     "common/ideas/MSGA_post_bosnia_ideas.txt": "ef9dfc37a9b7099426bae0108e2f840bb42d214d8b809f514800e89a98a4b84d",
     "common/ideas/MSGA_reconstruction_ideas.txt": "7533f72deffd12ca2499d1895a0140dbb83196a4355d5589047f9b9a7329a44e",
@@ -63,7 +394,6 @@
     "common/ideas/MSGA_SER_kosovo_ideas.txt": "0206c4f72b9acf8530c95e22cb206e4ed4cbda848319f58608b99f2d7a124f9c",
     "common/national_focus/MSGA_SER_bosnian_crisis.txt": "6214cba9fc7f0fe452fccfa32697ef9bb83ce25d576caab600d2f2e30f681f4f",
     "common/national_focus/MSGA_SER_kosovo_war.txt": "688032e88d1e3a9e4d96e69a6b28b5fac6154b0a1826586afd786c7ef1b12f2c",
-    "common/national_focus/MSGA_SER_new_balkan_order.txt": "f158e44bb626e908b623505894d9abe548b65611c96fe53f67d765402459274a",
     "common/national_focus/MSGA_SER_pact_war_planning.txt": "d8530140a38be36e05dd5739cfda4d12decef1c371c16a5ae60ba8a8fac752f2",
     "common/national_focus/MSGA_SER_phase1.txt": "2dfeac7d43a82539cf94b633526b806f5354b5b41655a14365f7ec28910c692d",
     "common/national_focus/MSGA_SER_post_bosnia.txt": "c5e6067239cdf9c9b18aeac10b12e2e7352a2e6310afee953d6662fa1ce8f2a9",
@@ -71,37 +401,32 @@
     "common/national_focus/MSGA_SER_southern_question.txt": "4f656999b0e8acdbb28f14c133c99b8542a9be824b927cf23f1700a56d989477",
     "common/on_actions/MSGA_bosnia_on_actions.txt": "38a516b92663dd2af81cd135b42705148cb0fdad449de43796b306fc88926ab4",
     "common/on_actions/MSGA_encirclement_on_actions.txt": "4555564f229177026f85d9fc7886f42b45a0c1139feb509ecd8e1debeac2d489",
-    "common/on_actions/MSGA_new_order_on_actions.txt": "27685fb653535275d917d35d7a4815168604050859573dc763b743484e591d09",
     "common/on_actions/MSGA_pact_war_on_actions.txt": "61a2ffe489fe90f824bdc2ba2a53e76e8f9bbc6c51e4b80a29e630b5084e1137",
     "common/on_actions/MSGA_post_bosnia_on_actions.txt": "3ac349e1b7de1afa76151d004946aeb8ba67a986b678379ccbbe05b78b37a48d",
     "common/on_actions/MSGA_SER_kosovo_on_actions.txt": "a3031bd1d3b37d3d94d2af01bcac2ab09d02224a6823558b6e95c220a33e3df8",
     "common/on_actions/MSGA_SER_on_actions.txt": "3fc69a91f1e98df253d0f6d176cb5c5adf84dedbe4713c0ac3193c43b961f3f0",
     "common/on_actions/MSGA_SER_post_kosovo_on_actions.txt": "276053aa3d8743de64f55631036037cc374f58b0a0b079af3d026d8eddfd16b2",
     "common/on_actions/TFR_on_actions_ZZZ_peace.txt": "a66d3fc66be10b27ad0ae6ccc53c4e076a39aed8ec3fdcc8fab8d4fb9ce09140",
-    "common/opinion_modifiers/MSGA_new_order_opinions.txt": "901af816f43b60d07f62d2de2cbf2367c1b8719f6a123ad8d82dede3905f8680",
     "common/opinion_modifiers/MSGA_post_bosnia_opinion.txt": "44dfd59f8e5104a5b215fb6a00334c98c1ea9512ef6a3be4e144f60b7448a9a6",
     "common/scripted_effects/MSGA_bosnia_effects.txt": "c360ec8d231890e22ecca9a5402e239e72445b5e9b2465607724403f11371d2a",
-    "common/scripted_effects/MSGA_encirclement_effects.txt": "e36b8efc1b15317c9b381781890c6be15f15c1c1ddb25e9b2e984541c8509b61",
-    "common/scripted_effects/MSGA_new_order_effects.txt": "3a9a5b825566583b5374f8f1fa3d0d5b473ced5a6f26eaeee29daadd32178baf",
+    "common/scripted_effects/MSGA_encirclement_effects.txt": "a8759b5ef815c4e947c40b9f9c2adaabacb6bbe2f7dea72f37c5a0683b30a611",
     "common/scripted_effects/MSGA_pact_diplomacy.txt": "a8159c6e2047c85f3bb9bd3c185ae66cfa92b0edc7c58d8a15f25edd49f1da84",
     "common/scripted_effects/MSGA_pact_mobilisation.txt": "f9d715a59a71a073fea6a51d322e47ddc0dc1b3c6a989685e332cebd116bd1dd",
-    "common/scripted_effects/MSGA_pact_war_effects.txt": "8fe860e1c84388f671aac19a8c95f2dc5d13c0381582a100d336aa3e143446fb",
+    "common/scripted_effects/MSGA_pact_war_effects.txt": "bdd416602ccc6779c5f8dffd060aafa6b4d47ed0d7525e3a67898795d4719366",
     "common/scripted_effects/MSGA_post_bosnia_auxiliaries.txt": "d994725609c280740e3fc8f08a946cd76307cd729e20503b30a4bb81cb7321cf",
     "common/scripted_effects/MSGA_post_bosnia_effects.txt": "f67ebaa7cddfc9141bc7e6f0e346c89669129787858313376c6dbf09751ec6b0",
     "common/scripted_effects/MSGA_SER_effects.txt": "6931929c526881917b102ac3c3618b3d6cc09b3880a04299f061aebf88712b2d",
     "common/scripted_effects/MSGA_SER_post_kosovo_effects.txt": "900dfa7fa08cc6c73136aba06be56aa16f1f69b26bc3a14bfd19a4fcaef8fd21",
     "common/scripted_effects/MSGA_SER_vehicle_effects.txt": "1032ce4e8befe5e033361a67a05a0201b2bdec798a879a3214d1ed89c7848867",
     "common/scripted_triggers/MSGA_encirclement_triggers.txt": "fde8b30cdb82f5c55beb557721a97b661ca959c01b30d8b3d0b82751913bb574",
-    "common/scripted_triggers/MSGA_new_order_triggers.txt": "82a53d3a8e0c0a0f79fa75a7d88e8dfae65215b62df802d612fab4c47ca22254",
     "common/scripted_triggers/MSGA_pact_war_triggers.txt": "6508e0c6aaec372e88259a936301d04ad20b93862df027e6c4386be14496eb2f",
     "common/scripted_triggers/MSGA_SER_triggers.txt": "d26b1a77bb846fa0d4f0a8071db8c5a4db660f7416f5027e979471fc6eb2e421",
     "common/technologies/MSGA_pact_war_technologies.txt": "019fcc8db08f48a3e471407cef4be84fd233a8d6bec9c50c8d8bc4fc019c428c",
-    "common/decisions/categories/MSGA_SER_categories.txt": "0b9f4b3669083f28039dd76710f69845a5a5c65fd816358a12e76508f8bc2101",
+    "common/decisions/categories/MSGA_SER_categories.txt": "4c30397a49185c8c4325836ea125a9d8f25c8a77a33b9f8cc9c2dc6c802a6ce1",
     "gfx/event_pictures/MSGA_event_air_force_supplier_choice.dds": "afcb7eae0b8aa6603709ad1941ce2631b2eb3ecf42360539f45784d804fda49a",
     "gfx/event_pictures/MSGA_event_allies_take_positions.dds": "f40833dca3d37a8f762ab207cda7ef74f88ff3c8aaee36359f06f8397bb38755",
     "gfx/event_pictures/MSGA_event_answer_the_call.dds": "8a5a4003141bc61b262f7767e485a00685a54eda10a0d65ed7dd82d425ed5d81",
     "gfx/event_pictures/MSGA_event_balkan_states_break_with_brussels.dds": "c4d777afe216d441d119978ea893d59a2cc333271727e1bbb9a70726b47bbbf4",
-    "gfx/event_pictures/MSGA_event_belgrade_opens_for_business.dds": "96214ed31ca6ac25b3f339b454880c847d31240da77012a454f54d7d841d8329",
     "gfx/event_pictures/MSGA_event_bind_new_protectorates.dds": "4f3c4f9952db5d6ea007447dd51c7fecde30b7b90ae34951fcc6cee81b87c4f3",
     "gfx/event_pictures/MSGA_event_bosnian_territorial_militias.dds": "620df806e95f3e988be4d752cbc1795c4a07d1d261ab824382ccf39406ab2ec7",
     "gfx/event_pictures/MSGA_event_bosnia_capitulation.dds": "f0a50872d7bcb565438e25b4721909919f37ac70d8851d5e47ec90ee9ed73dd7",
@@ -140,24 +465,9 @@
     "gfx/event_pictures/MSGA_event_srpska_territorial_defence.dds": "32f4b04785ab0a4f4c1f0bb07bc8c540f2aadc01044985e42e73f7bdcd1ec6df",
     "gfx/event_pictures/MSGA_event_srpska_uprising.dds": "3edd804eae52899e0373af52092748d343296f7b4986cf6ad403011bacd06c50",
     "gfx/event_pictures/MSGA_event_start_make_serbia_great_again.dds": "6fdc0a1b5ea26c2281865821f7990ad95a657c46d5df3369ffab8c5f7b8acdcf",
-    "gfx/event_pictures/MSGA_event_the_arteries_of_serbia.dds": "f5edd0d0d99f2bbf735e3059ab922f0f0c1d1c6d3db34339c83419edaeede4fe",
-    "gfx/event_pictures/MSGA_event_the_balkans_stabilise.dds": "55935eee70c7f283ad9448e30b9df6f6f766316f3abe0873d7e2ef6c3c2c4f96",
-    "gfx/event_pictures/MSGA_event_the_bill_comes_due.dds": "dae69984200fb71489effaa82407ec0e0ee0164a5c78951dd8ee4b6eb4d1d52b",
-    "gfx/event_pictures/MSGA_event_the_conference_of_belgrade.dds": "8fb5943506d019f60331d5db48aa671736b3dd0d3b3355e2dac949c68d8fc5ed",
-    "gfx/event_pictures/MSGA_event_the_furnaces_burn_again.dds": "f734a9fc4679a9649e9e0eaa2e98fd58a52bd59b824d0f5082f8b028f771b800",
-    "gfx/event_pictures/MSGA_event_the_ljubljana_protocol.dds": "adc6ecef9c27d39b639ce106d46540e39b69ed38216d51d2389781d24fe0f0e5",
-    "gfx/event_pictures/MSGA_event_the_new_balkan_order.dds": "5274bc8501484b3b113baf0072d1c2e0c6a8b1241d5e4fafb593cfc7d8eeeab5",
-    "gfx/event_pictures/MSGA_event_the_podgorica_settlement.dds": "df230b2da022e41e3de99f1363576c60678036d35d4f19b02bfd2330c382006a",
-    "gfx/event_pictures/MSGA_event_the_reconstruction_authority.dds": "10db68c3841b5c0dbbcca9812f3cd07a2b1f4994709db2de98d2d8daa94e144a",
-    "gfx/event_pictures/MSGA_event_the_sarajevo_framework.dds": "7573dadd63a0e48a340039924ae268452dff8be2d0b49844c2f43b6b6d8f5e38",
-    "gfx/event_pictures/MSGA_event_the_skopje_agreement.dds": "0e2b67ebb866e3c8eb222acb7faf8c5718903ac520af395a718f5cb621ba8fee",
-    "gfx/event_pictures/MSGA_event_the_south_slavic_question_returns.dds": "cd37636865ed96f419e900684a2e600ee1437fbeeae67fb98a0b54e05cfd8923",
-    "gfx/event_pictures/MSGA_event_the_tirana_arrangement.dds": "63e2cdff9e2da5f525eb985043d0a9d6267c361a3f6b8305f2936e0c9edb3f1e",
-    "gfx/event_pictures/MSGA_event_the_zagreb_accords.dds": "8a612d872bc8e2c36215665ba192fa4c06cd8b1cf182bde1d9a933a158ad9929",
     "gfx/event_pictures/MSGA_event_tirana_accepts_new_order.dds": "8e98fd21a2386f5951b3fe3865499ce3ddf88e073c206c62bc701a0ef0964f7e",
     "gfx/event_pictures/MSGA_event_tirana_has_fallen.dds": "0c74bfeefe2127e79c77b7cb4527d116aaa405ee8d8e47119cb7d09e4e7adf4c",
     "gfx/event_pictures/MSGA_event_victory_in_bosnia.dds": "757822110da3df99df2b829839103dc76532b1f8a2012f9e155a677876a7f6e1",
-    "gfx/event_pictures/MSGA_event_victory_in_the_balkan_war.dds": "8125d53a80a6d64c4966faeeefe1230d44fb5678cea84e116cc3aeea9c93c8d9",
     "gfx/event_pictures/MSGA_event_victory_strengthens_belgrade.dds": "aec34c683f9b0476d45be4ab42846ddf4e8cbda21ee7a49757bc794d339bc9ba",
     "gfx/event_pictures/MSGA_event_western_shield.dds": "16f038a8581b13691023073a3920a635e115af9e2be42980552a6a53b01414c2",
     "gfx/event_pictures/MSGA_event_zagreb_has_fallen.dds": "d5cdbd0d6a196c852152b4b1e79821f7c953c7234f88f583dce44decd4653627",
@@ -224,13 +534,11 @@
     "gfx/interface/goals/MSGA_establish_territorial_defence.dds": "bdf67bf32c3182c7aaf32611e54fde6ae1394d411c4ae9e686a763e7aa89ff71",
     "gfx/interface/goals/MSGA_focus_arm_new_serbian_sphere.dds": "78bf89b95b97a6528bc6aed5b6224b91c3f960c1fb9e81285a786c0d298c5bfc",
     "gfx/interface/goals/MSGA_focus_balkans_close_ranks.dds": "8df1f60efbd61d7a9fba2275a74233dbf5ce8219af67fec31d7cc0b3ce7c4e09",
-    "gfx/interface/goals/MSGA_focus_begin_reconstruction.dds": "4955ca17bdcde77469d1acf0d514442d6f82fcabd4761f23c6f95e209c76e81e",
     "gfx/interface/goals/MSGA_focus_bind_new_protectorates.dds": "23474fa919d376c24deeb97b7a4c1056a8e023260b98f1ae1ccd96d4ffa9719d",
     "gfx/interface/goals/MSGA_focus_break_the_ring.dds": "e57ef3ea51e4f81273da43168c62ca20ac29a61b1c09995842f0868d8bd59ad3",
     "gfx/interface/goals/MSGA_focus_call_up_reserves.dds": "ee06b9894bbc8228974a195c22d7bb590db76384a4ebea7a2784e9d74effa2a5",
     "gfx/interface/goals/MSGA_focus_consolidate_victory.dds": "e7e10f35638a0b8123e830da1f1b668000ef7eaaeff4074297df64d2da65e9cb",
     "gfx/interface/goals/MSGA_focus_coordinate_protectorates.dds": "2878275a88da5bd7eb1a78d8d8430c554e30517bd8e839328d92944e2e3c2225",
-    "gfx/interface/goals/MSGA_focus_count_the_cost.dds": "95d67914a7e6ef00a6d75988426d79d7bdac5084a4c61e5160fcb53064fecb57",
     "gfx/interface/goals/MSGA_focus_economic_heart_balkans.dds": "7c15ff4555f663b1a393bf9211fa5671f2c0931766783907ed865150369fe292",
     "gfx/interface/goals/MSGA_focus_fortify_kosovo.dds": "d761ce3a449260b8eaeb30a894ea074c7132eda010138cabe93d48a1004520ce",
     "gfx/interface/goals/MSGA_focus_lessons_bosnian_war.dds": "6a913dcf3a51994e82ad62fe4040a99ba1cf1b09229e86020763feab7a325c8f",
@@ -240,19 +548,13 @@
     "gfx/interface/goals/MSGA_focus_pressure_podgorica.dds": "421912caac242b0fb9fd6e8c38cbc6e5607b44ce919ecf9927b91f9733b68ed9",
     "gfx/interface/goals/MSGA_focus_pressure_skopje.dds": "2077634037a4eb7db7fa57898e31456df8811a094c8ba9212c823846b0602161",
     "gfx/interface/goals/MSGA_focus_rebuild_the_west.dds": "c6b4ffa87e42004765ad607f9f353a1299622ebe44e730064c54e116fc774901",
-    "gfx/interface/goals/MSGA_focus_repair_the_roads_and_railways.dds": "6afd11efbb138b2f79f1e82277cf0a041a86984fa252f0531190b6f7b453c049",
     "gfx/interface/goals/MSGA_focus_repair_war_economy.dds": "8d3072115ce065668d02fe1eead693ead72140aad92300ea78388567e0e0a720",
-    "gfx/interface/goals/MSGA_focus_restart_serbian_commerce.dds": "1b892ab5632f3147f139b2c989d4a7e1594f018dc9f96bb159216df76e78de8a",
-    "gfx/interface/goals/MSGA_focus_restore_serbian_industry.dds": "d98cdf466a91d43b713d2ac50fdca3583a1fac46873438e6fd55c4afe551b3f6",
     "gfx/interface/goals/MSGA_focus_secure_drina_corridor.dds": "86711fd5cedab00bf8ba69b3be913bae051d055f6b5a2e10991424ea8dec5caa",
     "gfx/interface/goals/MSGA_focus_serbian_defence_network.dds": "f7ea2e12be370b340b71992880c674e854e1254b4e15248b4c0be3098a99d96f",
     "gfx/interface/goals/MSGA_focus_serbian_industrial_consolidation.dds": "7261345cec8994cf979747879ea089c07f6522fdde75db1a05a41754c1503b8d",
     "gfx/interface/goals/MSGA_focus_serbian_sphere.dds": "87531184840eb4a0d3eb62f07b5925997f00ccf289fd81162614659804da240b",
     "gfx/interface/goals/MSGA_focus_serbian_war_plan.dds": "f1ce6ab3a481e8c8e109023af2b1a29211c97b03c039848bd11c43a47798aea8",
-    "gfx/interface/goals/MSGA_focus_south_slavic_unity.dds": "b51ab6eca2f31727ef972666196634f2cc095d151b82622da0e938c53dce9a58",
-    "gfx/interface/goals/MSGA_focus_stabilise_the_new_order.dds": "4d1b32df3dde319875a1c3425b2ac5c692382db16f768aaf8cd116c19f1d4209",
     "gfx/interface/goals/MSGA_focus_stockpile_continental_war.dds": "a145623ec29896acd6689e0eb7f71cfe25d32237e723007613634000f272a96e",
-    "gfx/interface/goals/MSGA_focus_the_south_slavic_question.dds": "45ba37238aa6dff25805a241ea338ce628e26d7fcb533190bbef1cdaefc6561f",
     "gfx/interface/goals/MSGA_focus_victory_in_bosnia.dds": "8298b5edc2f504abd3c4d4b041f77eb01bcf124c0aed33e6809a3ada3c0cfe19",
     "gfx/interface/goals/MSGA_invest_in_pristina.dds": "973c95b2678d18623d139f4be61b206fbf37aefc80759eb5a393ed19ed992abb",
     "gfx/interface/goals/MSGA_kosovo_has_been_retaken.dds": "0d4fb6cdf622d53bf061c4e24c9e4be706413f89338d8547a0fe2ab80b87fed3",
@@ -278,12 +580,6 @@
     "gfx/interface/ideas/GFX_idea_MSGA_massive_emigration_easing.dds": "3f7844efee0b83619b2d205837614908ed2617daa543b17b3068f6e47233b585",
     "gfx/interface/ideas/GFX_idea_MSGA_national_consensus.dds": "a0cdf599a8f16087a14e2b231692a8673c80764756851a9f71d1116849bf76f3",
     "gfx/interface/ideas/GFX_idea_MSGA_repatriation_disruption.dds": "c9584fc2a3f7e11f2df4de37b98dacda36b270b85f5934e80f2d510ecdfa1d7f",
-    "gfx/interface/ideas/MSGA_decision_consolidate_the_serbian_sphere.dds": "d1b1af9baebe2a0ac581869dffa7eff1fa56828fdc3b4152c422ed2508e15039",
-    "gfx/interface/ideas/MSGA_idea_a_stabilised_balkan_order.dds": "002e44edbe29991103489c03d3935bb3b2471bfeb609e27667bf054aa21753f0",
-    "gfx/interface/ideas/MSGA_idea_the_cost_of_victory.dds": "c261747e5d165a9d5f57dac43e11a5ca5c1dec4573233a4c6539572e7ae42724",
-    "gfx/interface/ideas/MSGA_idea_the_cost_of_victory_ii.dds": "7ed5e67fd0c39a6ca9cb0f591c4f5dc8819fdbc8863d3f7dd61e54e7ac8dff0b",
-    "gfx/interface/ideas/MSGA_idea_the_cost_of_victory_iii.dds": "4fb21e70a72f2788ac76c46ae506e9bad7774ba102e9a27bc9f7ed210d8c7f1d",
-    "gfx/interface/ideas/MSGA_idea_the_cost_of_victory_iv.dds": "82ee15235cb6669921887034c74aeda4c386d5baea38d533fa89aacabc7324e9",
     "gfx/interface/ideas/MSGA_KOS_last_stand.dds": "61cb9737c24996b179d2df0ef35c95a325d3ff6953f486e935216a743fb9e2f2",
     "gfx/interface/ideas/MSGA_prepared_for_war.dds": "691f97a58400f0b31d899b55b5b62dbb3bdde4d85f9deb0e4543b47292c95544",
     "gfx/interface/ideas/MSGA_serbian_rearmament_program.dds": "fcd06092a70da92e223332ef626343def722aea4ea51b5d6dae2e2a4bad288fe",
@@ -322,23 +618,36 @@
     "localisation/english/MSGA_bosnia_l_english.yml": "2963d5c3a1975aad75fafbb28200f34f67c67a82cc8459ee695609162eff0b2f",
     "localisation/english/MSGA_encirclement_l_english.yml": "7e7491a03a192f2422494cf13f61f8fda1ca6eda1c11b6dc08ed5db4134c0c7c",
     "localisation/english/MSGA_l_english.yml": "7c1f1fc37bc7210da2a91d456a82a837bf0455a3c7a424a4b5ab019c9521c14e",
-    "localisation/english/MSGA_new_order_l_english.yml": "f875ac1ec5b15fb3669f413d0af19122f3ddbdac4c7d64dde33f32cccd65e783",
     "localisation/english/MSGA_pact_war_l_english.yml": "b42e926be1b02db9e18079689e0d7d56a9d791d64dff572204bfd705c41f48f8",
     "localisation/english/MSGA_post_bosnia_l_english.yml": "300f77975e3894411418386ed9a0473dc6ab2652a40ea2384e69885595b51a75",
     "localisation/english/MSGA_post_kosovo_l_english.yml": "05ec1a3f1245fda6beec27c208a99d1bd8ec6bde94ecf817ea6ca98e2bbfc677",
     "localisation/english/MSGA_settlement_l_english.yml": "e36858ef3b35e3e419685743f9105e4f973918f52c7f1ed8c6ad560c4f21d139"
   },
-  "runtime_only_files": [],
-  "all_project_files_match_runtime": true,
-  "launcher_descriptor_matches_project": true,
-  "descriptor_path_verified": "C:/Users/Balazs/Documents/Paradox Interactive/Hearts of Iron IV/mod/make_serbia_great_again",
-  "required_new_focuses_present": [
-    "MSGA_internal_investment_drive",
-    "MSGA_settle_old_political_accounts",
-    "MSGA_secure_the_national_assembly",
-    "MSGA_send_the_migrants_back",
-    "MSGA_serbia_stands_united",
-    "MSGA_reconstitute_serbian_volunteer_guard"
+  "native_sources_sha256": {
+    "common/scripted_effects/00_TFR_scripted_effects_ZZZ_generic.txt": "e6b6273e47d65523585638830aa36f458de4ae52b1f19d115c7444f354f10e84",
+    "common/modifier_definitions/00_TFR_economic_modifiers_definition.txt": "7c93341f9e316c0f6cb9d72ef1b26e19d12d4a3a86d4d78d13986622961648c1",
+    "common/autonomous_states/puppet.txt": "7f086af8d78eb7ea14ab71cd72e09e23cb40c9d26f46a9a2f1abe3d62365b4ae",
+    "map/railways.txt": "9edc139d07471199153d1841eda25977377c8af0507c4839a9ac2e17cddd134e"
+  },
+  "infrastructure_states": {
+    "45": "Vojvodina",
+    "107": "Belgrade",
+    "1296": "Sumadija"
+  },
+  "railway_paths": [
+    [
+      619,
+      3617,
+      11580,
+      11586
+    ],
+    [
+      9602,
+      6634,
+      11583,
+      11586
+    ]
   ],
-  "game_launched": false
+  "backup": "C:\\Users\\Balazs\\Documents\\ChatGPT\\MSGA\\logs\\new_order_013_backup",
+  "engine_test": "Reserved by user; game window untouched"
 }

@@ -1,0 +1,35 @@
+focus_tree = { id = MSGA_SER_new_balkan_order country = { factor = 0 modifier = { add = 300 tag = SER has_country_flag = MSGA_new_balkan_order_active } } default = no reset_on_civilwar = no
+ focus = { id = MSGA_count_the_cost icon = GFX_MSGA_focus_count_the_cost x = 4 y = 0 cost = 1
+  available = { has_country_flag = MSGA_balkan_war_victory } completion_reward = { MSGA_new_order_count_the_cost = yes } ai_will_do = { factor = 10 }
+ }
+ focus = { id = MSGA_begin_reconstruction icon = GFX_MSGA_focus_begin_reconstruction x = 4 y = 1 cost = 1
+  prerequisite = { focus = MSGA_count_the_cost }
+  available = { has_country_flag = MSGA_balkan_war_victory } completion_reward = { MSGA_new_order_begin_reconstruction = yes } ai_will_do = { factor = 10 }
+ }
+ focus = { id = MSGA_repair_the_roads_and_railways icon = GFX_MSGA_focus_repair_the_roads_and_railways x = 0 y = 2 cost = 2
+  prerequisite = { focus = MSGA_begin_reconstruction }
+  available = { has_country_flag = MSGA_balkan_war_victory } completion_reward = { MSGA_new_order_repair_the_roads_and_railways = yes } ai_will_do = { factor = 10 }
+ }
+ focus = { id = MSGA_restore_serbian_industry icon = GFX_MSGA_focus_restore_serbian_industry x = 4 y = 2 cost = 2
+  prerequisite = { focus = MSGA_begin_reconstruction }
+  available = { has_country_flag = MSGA_balkan_war_victory } completion_reward = { MSGA_new_order_restore_serbian_industry = yes } ai_will_do = { factor = 10 }
+ }
+ focus = { id = MSGA_restart_serbian_commerce icon = GFX_MSGA_focus_restart_serbian_commerce x = 8 y = 2 cost = 2
+  prerequisite = { focus = MSGA_begin_reconstruction }
+  available = { has_country_flag = MSGA_balkan_war_victory } completion_reward = { MSGA_new_order_restart_serbian_commerce = yes } ai_will_do = { factor = 10 }
+ }
+ focus = { id = MSGA_stabilise_the_new_order icon = GFX_MSGA_focus_stabilise_the_new_order x = 4 y = 3 cost = 2
+  prerequisite = { focus = MSGA_repair_the_roads_and_railways }
+  prerequisite = { focus = MSGA_restore_serbian_industry }
+  prerequisite = { focus = MSGA_restart_serbian_commerce }
+  available = { MSGA_new_order_stabilisation_ready = yes } completion_reward = { MSGA_new_order_stabilise_the_new_order = yes } ai_will_do = { factor = 10 }
+ }
+ focus = { id = MSGA_the_south_slavic_question icon = GFX_MSGA_focus_the_south_slavic_question x = 4 y = 4 cost = 3
+  prerequisite = { focus = MSGA_stabilise_the_new_order }
+  available = { has_country_flag = MSGA_new_balkan_order_stabilised } completion_reward = { MSGA_new_order_the_south_slavic_question = yes } ai_will_do = { factor = 10 }
+ }
+ focus = { id = MSGA_south_slavic_unity icon = GFX_MSGA_focus_south_slavic_unity x = 4 y = 5 cost = 2
+  prerequisite = { focus = MSGA_the_south_slavic_question }
+  available = { has_country_flag = MSGA_south_slavic_question_opened } completion_reward = { MSGA_new_order_south_slavic_unity = yes } ai_will_do = { factor = 10 }
+ }
+}
