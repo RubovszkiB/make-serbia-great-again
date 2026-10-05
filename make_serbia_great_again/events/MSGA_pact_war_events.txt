@@ -1,0 +1,51 @@
+add_namespace = MSGA_pactwar
+country_event = { id = MSGA_pactwar.1 title = MSGA_pactwar.1.t desc = MSGA_pactwar.1.d picture = GFX_MSGA_event_podgorica_has_fallen
+ is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_podgorica_fallen }
+ option = { name = MSGA_pactwar.1.a }
+}
+country_event = { id = MSGA_pactwar.2 title = MSGA_pactwar.2.t desc = MSGA_pactwar.2.d picture = GFX_MSGA_event_podgorica_submits
+ is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_montenegro_defeated }
+ option = { name = MSGA_pactwar.2.a }
+}
+country_event = { id = MSGA_pactwar.3 title = MSGA_pactwar.3.t desc = MSGA_pactwar.3.d picture = GFX_MSGA_event_skopje_has_fallen
+ is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_skopje_fallen }
+ option = { name = MSGA_pactwar.3.a }
+}
+country_event = { id = MSGA_pactwar.4 title = MSGA_pactwar.4.t desc = MSGA_pactwar.4.d picture = GFX_MSGA_event_skopje_accepts_terms
+ is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_macedonia_defeated }
+ option = { name = MSGA_pactwar.4.a }
+}
+country_event = { id = MSGA_pactwar.5 title = MSGA_pactwar.5.t desc = MSGA_pactwar.5.d picture = GFX_MSGA_event_tirana_has_fallen
+ is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_tirana_fallen }
+ option = { name = MSGA_pactwar.5.a }
+}
+country_event = { id = MSGA_pactwar.6 title = MSGA_pactwar.6.t desc = MSGA_pactwar.6.d picture = GFX_MSGA_event_tirana_accepts_new_order
+ is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_albania_defeated }
+ option = { name = MSGA_pactwar.6.a }
+}
+country_event = { id = MSGA_pactwar.7 title = MSGA_pactwar.7.t desc = MSGA_pactwar.7.d picture = GFX_MSGA_event_ljubljana_has_fallen
+ is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_ljubljana_fallen }
+ option = { name = MSGA_pactwar.7.a }
+}
+country_event = { id = MSGA_pactwar.8 title = MSGA_pactwar.8.t desc = MSGA_pactwar.8.d picture = GFX_MSGA_event_ljubljana_seeks_terms
+ is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_slovenia_defeated }
+ option = { name = MSGA_pactwar.8.a }
+}
+country_event = { id = MSGA_pactwar.9 title = MSGA_pactwar.9.t desc = MSGA_pactwar.9.d picture = GFX_MSGA_event_zagreb_has_fallen
+ is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_zagreb_fallen }
+ option = { name = MSGA_pactwar.9.a }
+}
+country_event = { id = MSGA_pactwar.10 title = MSGA_pactwar.10.t desc = MSGA_pactwar.10.d picture = GFX_MSGA_event_croatia_capitulates
+ is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_croatia_defeated }
+ option = { name = MSGA_pactwar.10.a }
+}
+country_event = { id = MSGA_pactwar.11 title = MSGA_pactwar.11.t desc = MSGA_pactwar.11.d picture = GFX_MSGA_event_croatia_capitulates
+ is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_balkan_coalition_defeated }
+ option = { name = MSGA_pactwar.11.a }
+}
+# Active-war observer only. State control hooks alone can miss VP captures.
+country_event = { id = MSGA_pactwar.90 hidden = yes is_triggered_only = yes
+ immediate = { clr_country_flag = MSGA_pact_observer_pending if = { limit = { tag = SER has_country_flag = MSGA_pact_war_opened NOT = { has_country_flag = MSGA_balkan_coalition_defeated } }
+  MSGA_scan_pact_capitals = yes MSGA_retry_pact_settlements = yes MSGA_start_pact_observer = yes
+ } }
+}

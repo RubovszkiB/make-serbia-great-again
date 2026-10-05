@@ -15,6 +15,7 @@ class EncirclementModel(PostBosniaModel):
  def __init__(self,scripts,mod,leader='GER',mixed=False,low_manpower=True):
   super().__init__(scripts,mod)
   self.manpower={};self.manpower_added=Counter();self.fuel=0;self.direct_equipment=Counter();self.direct_manpower=Counter()
+  self.majors={'CRO'}
   for tag in list(MEMBERS)+['ENG','FRA']:
    self.flags.setdefault(tag,set());self.ideas.setdefault(tag,set());self.factions.setdefault(tag,None);self.exists.add(tag)
   self.factions.update({'USA':'NATO','GER':'NATO','ENG':'NATO','FRA':'NATO'});self.faction_leader['NATO']=leader
@@ -36,6 +37,7 @@ class EncirclementModel(PostBosniaModel):
    if k=='has_manpower':ok=self.manpower[scope]<float(v) if o=='<' else self.manpower[scope]>=float(v)
    elif k=='is_faction_leader':ok=(self.factions[scope] is not None and self.faction_leader.get(self.factions[scope])==scope)==(v=='yes')
    elif k=='any_other_country':ok=any(self.condition(v,c) for c in self.flags if c!=scope)
+   elif k=='is_major':ok=(scope in self.majors)==(v=='yes')
    else:ok=super().condition([(k,o,v)],scope)
    if not ok:return False
   return True
@@ -49,6 +51,9 @@ class EncirclementModel(PostBosniaModel):
      self.execute([x for x in v if x[0]!='limit'],scope);branch=True
     continue
    if k=='add_manpower':self.manpower[scope]+=int(v);self.manpower_added[scope]+=int(v)
+   elif k=='set_major':
+    if v=='yes':self.majors.add(scope)
+    else:self.majors.discard(scope)
    elif k=='declare_war_on':
     assert scope=='SER' and get(v,'target')=='CRO' and get(v,'type')=='annex_everything'
     assert self.faction_leader[self.factions['CRO']]=='CRO' and not any(t in MEMBERS for g,t in self.guarantees)
@@ -236,5 +241,8 @@ def main():
  for s in [785,1305]:m.buildings[s]['infrastructure']=5
  effect(m,'MSGA_fortify_kosovo_front');assert all(m.buildings[s]['infrastructure']==5 for s in [785,1305])
  report={'static_and_model_validation':'passed','validated_mod_root':str(mod),'version':'0.11.0','trees':['MSGA_SER_southern_question','MSGA_SER_pact_war_planning'],'focus_count':12,'pressure_focus_days':14,'planning_focus_days':[7,7,7,7,7,7,7,7,14,7],'scenarios':tested,'additional_negative_and_recovery_cases':7,'NATO_cleanup':'actual faction leader, USA metadata, left_NATO, event guards, five unity spirits, only external guarantees of the five targets','spawns':sources['spawn_locations'],'total_Pact_units':22,'Serbian_emergency_units':2,'native_battalions':{'militia':3,'motorized':4},'native_widths':{'militia':9,'motorized':12},'full_OOB_equipment':{'Pact_infantry':15200,'Pact_motorized':800,'Pact_support':655,'Serbia_infantry':1200,'Serbia_support':30},'full_OOB_manpower':{'Pact':75000,'Serbia':6000},'free_stockpile_for_spawned_units':0,'safe_core_ownership_and_control_guards':'passed with blocked spawn and recovery','first_blow':True,'surprise_attack_days':10,'surprise_attack_modifiers':{'army_attack_factor':.05,'army_speed_factor':.05,'breakthrough_factor':.05},'later_war_or_postwar_content':False,'assets':25,'prior_auxiliary_units':'already Serbian owned; no duplicates in the model','gameplay_validation':'pending user; no engine test or fresh clean engine log certified'}
+ report['version']=get(parse((mod/'descriptor.mod').read_text()),'version').strip('"')
+ report['validation_scope']='0.11 pre-war chapter regression; later wartime content has its own validator'
+ report['later_war_or_postwar_content_in_prewar_chapter']=report.pop('later_war_or_postwar_content')
  args.report.write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({k:v for k,v in report.items() if k!='scenarios'},indent=2));print(f'{len(tested)} full pre-war models passed; report: {args.report}')
 if __name__=='__main__':main()

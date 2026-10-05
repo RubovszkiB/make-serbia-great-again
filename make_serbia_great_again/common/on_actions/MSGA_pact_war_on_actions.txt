@@ -1,0 +1,5 @@
+on_actions = {
+ on_startup = { effect = { SER = { MSGA_prepare_pact_campaign = yes MSGA_retry_pact_settlements = yes MSGA_start_pact_observer = yes } } }
+ on_weekly = { effect = { SER = { MSGA_prepare_pact_campaign = yes MSGA_retry_pact_settlements = yes MSGA_start_pact_observer = yes } } }
+ on_state_control_changed = { effect = { SER = { MSGA_scan_pact_capitals = yes } } }
+}

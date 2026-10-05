@@ -50,6 +50,7 @@ MSGA_open_pact_war = {
  if = { limit = { tag = SER has_country_flag = MSGA_pact_planning_active NOT = { has_country_flag = MSGA_pact_war_opened } MSGA_pact_ready_for_war = yes }
   MSGA_remove_external_pact_guarantees = yes
   set_country_flag = MSGA_pact_war_opened
+  MSGA_prepare_pact_campaign = yes
   declare_war_on = { target = CRO type = annex_everything }
   ALB = { add_to_war = { targeted_alliance = CRO enemy = SER hostility_reason = asked_to_join single_target_only = yes } }
   SLV = { add_to_war = { targeted_alliance = CRO enemy = SER hostility_reason = asked_to_join single_target_only = yes } }
@@ -57,5 +58,6 @@ MSGA_open_pact_war = {
   MNT = { add_to_war = { targeted_alliance = CRO enemy = SER hostility_reason = asked_to_join single_target_only = yes } }
   add_timed_idea = { idea = MSGA_surprise_attack days = 10 }
   country_event = { id = MSGA_encirclement.12 }
+  MSGA_start_pact_observer = yes
  }
 }

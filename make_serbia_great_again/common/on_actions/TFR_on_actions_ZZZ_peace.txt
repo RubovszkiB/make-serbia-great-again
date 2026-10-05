@@ -18,6 +18,9 @@ on_actions = {
 	# Nothing better than a glass of #RedWine... Except maybe #Bubblebowls #Yep #ImFreaky - Warposting
 	on_capitulation = {
 		effect = {
+			# MSGA: only real capitulations in the approved five-country war.
+			if = { limit = { MSGA_pact_capitulation_context = yes } MSGA_handle_pact_capitulation = yes }
+			else = {
 			log = "[GetDateText]: FROM: [From.GetName] ROOT: [Root.GetName] on_capitulation"
 			set_global_flag = show_peace_popup_alert
 			FROM = {
@@ -27198,6 +27201,7 @@ on_actions = {
 				#some other wars are supposed to be here, I don't fucking understand it. this is literally TNO black magic bullshit. if these wars are placed with the rest then they suddenly do not work. do not ask me why
 			}
 			clr_global_flag = skip_default_capitulation
+			}
 		}
 	}
 	#Armchair historian of wars

@@ -1,0 +1,42 @@
+spriteTypes = {
+    spriteType = {
+        name = "GFX_MSGA_event_podgorica_has_fallen"
+        texturefile = "gfx/event_pictures/MSGA_event_podgorica_has_fallen.dds"
+    }
+    spriteType = {
+        name = "GFX_MSGA_event_podgorica_submits"
+        texturefile = "gfx/event_pictures/MSGA_event_podgorica_submits.dds"
+    }
+    spriteType = {
+        name = "GFX_MSGA_event_skopje_has_fallen"
+        texturefile = "gfx/event_pictures/MSGA_event_skopje_has_fallen.dds"
+    }
+    spriteType = {
+        name = "GFX_MSGA_event_skopje_accepts_terms"
+        texturefile = "gfx/event_pictures/MSGA_event_skopje_accepts_terms.dds"
+    }
+    spriteType = {
+        name = "GFX_MSGA_event_tirana_has_fallen"
+        texturefile = "gfx/event_pictures/MSGA_event_tirana_has_fallen.dds"
+    }
+    spriteType = {
+        name = "GFX_MSGA_event_tirana_accepts_new_order"
+        texturefile = "gfx/event_pictures/MSGA_event_tirana_accepts_new_order.dds"
+    }
+    spriteType = {
+        name = "GFX_MSGA_event_ljubljana_has_fallen"
+        texturefile = "gfx/event_pictures/MSGA_event_ljubljana_has_fallen.dds"
+    }
+    spriteType = {
+        name = "GFX_MSGA_event_ljubljana_seeks_terms"
+        texturefile = "gfx/event_pictures/MSGA_event_ljubljana_seeks_terms.dds"
+    }
+    spriteType = {
+        name = "GFX_MSGA_event_zagreb_has_fallen"
+        texturefile = "gfx/event_pictures/MSGA_event_zagreb_has_fallen.dds"
+    }
+    spriteType = {
+        name = "GFX_MSGA_event_croatia_capitulates"
+        texturefile = "gfx/event_pictures/MSGA_event_croatia_capitulates.dds"
+    }
+}

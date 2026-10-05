@@ -1,0 +1,237 @@
+# Capital loss does not execute capitulation or settlement effects.
+MSGA_prepare_pact_campaign = {
+ if = { limit = { tag = SER has_country_flag = MSGA_pact_war_opened NOT = { has_country_flag = MSGA_balkan_coalition_defeated } }
+  MNT = { if = { limit = { exists = yes NOT = { is_subject_of = SER } } set_country_flag = MSGA_pact_campaign_participant
+   if = { limit = { is_major = no } set_major = yes set_country_flag = MSGA_pact_temporary_major }
+  } }
+  MAC = { if = { limit = { exists = yes NOT = { is_subject_of = SER } } set_country_flag = MSGA_pact_campaign_participant
+   if = { limit = { is_major = no } set_major = yes set_country_flag = MSGA_pact_temporary_major }
+  } }
+  ALB = { if = { limit = { exists = yes NOT = { is_subject_of = SER } } set_country_flag = MSGA_pact_campaign_participant
+   if = { limit = { is_major = no } set_major = yes set_country_flag = MSGA_pact_temporary_major }
+  } }
+  SLV = { if = { limit = { exists = yes NOT = { is_subject_of = SER } } set_country_flag = MSGA_pact_campaign_participant
+   if = { limit = { is_major = no } set_major = yes set_country_flag = MSGA_pact_temporary_major }
+  } }
+  CRO = { if = { limit = { exists = yes NOT = { is_subject_of = SER } } set_country_flag = MSGA_pact_campaign_participant
+   if = { limit = { is_major = no } set_major = yes set_country_flag = MSGA_pact_temporary_major }
+  } }
+ }
+}
+MSGA_start_pact_observer = {
+ if = { limit = { tag = SER has_country_flag = MSGA_pact_war_opened NOT = { has_country_flag = MSGA_balkan_coalition_defeated } NOT = { has_country_flag = MSGA_pact_observer_pending } MSGA_pact_has_unresolved_enemies = yes }
+  set_country_flag = MSGA_pact_observer_pending country_event = { id = MSGA_pactwar.90 days = 1 }
+ }
+}
+MSGA_scan_pact_capitals = {
+ if = { limit = { tag = SER has_country_flag = MSGA_pact_war_opened NOT = { has_country_flag = MSGA_balkan_coalition_defeated } }
+  if = { limit = { MSGA_podgorica_capital_eligible = yes } set_country_flag = MSGA_podgorica_fallen
+   add_war_support = 0.05 army_experience = 10
+   MNT = { add_stability = -0.10 add_war_support = -0.10 add_timed_idea = { idea = MSGA_montenegro_capital_resistance days = 30 } set_technology = { MSGA_highland_resistance_tech = 1 popup = no } }
+   country_event = { id = MSGA_pactwar.1 }
+  }
+  if = { limit = { MSGA_skopje_capital_eligible = yes } set_country_flag = MSGA_skopje_fallen
+   add_war_support = 0.05 army_experience = 10
+   MAC = { add_stability = -0.10 add_war_support = -0.10 add_timed_idea = { idea = MSGA_macedonia_capital_resistance days = 30 } }
+   country_event = { id = MSGA_pactwar.3 }
+  }
+  if = { limit = { MSGA_tirana_capital_eligible = yes } set_country_flag = MSGA_tirana_fallen
+   add_war_support = 0.05 army_experience = 15 add_stability = 0.05
+   ALB = { add_stability = -0.10 add_war_support = -0.15 add_timed_idea = { idea = MSGA_albania_capital_resistance days = 45 } set_technology = { MSGA_highland_resistance_tech = 1 popup = no } }
+   country_event = { id = MSGA_pactwar.5 }
+  }
+  if = { limit = { MSGA_ljubljana_capital_eligible = yes } set_country_flag = MSGA_ljubljana_fallen
+   add_war_support = 0.03 army_experience = 10
+   SLV = { add_stability = -0.10 add_war_support = -0.10 add_timed_idea = { idea = MSGA_slovenia_capital_resistance days = 30 } set_technology = { MSGA_highland_resistance_tech = 1 popup = no } }
+   country_event = { id = MSGA_pactwar.7 }
+  }
+  if = { limit = { MSGA_zagreb_capital_eligible = yes } set_country_flag = MSGA_zagreb_fallen
+   add_war_support = 0.10 army_experience = 20 add_stability = 0.05
+   CRO = { add_stability = -0.15 add_war_support = -0.15 add_timed_idea = { idea = MSGA_croatia_capital_resistance days = 45 } }
+   country_event = { id = MSGA_pactwar.9 }
+  }
+ }
+}
+# ROOT = actual capitulated country; FROM = victorious country in on_capitulation.
+MSGA_handle_pact_capitulation = {
+ if = { limit = { NOT = { has_country_flag = MSGA_pact_real_capitulation } } set_country_flag = MSGA_pact_real_capitulation }
+ if = { limit = { tag = MNT } SER = { MSGA_settle_pact_montenegro = yes } }
+ if = { limit = { tag = MAC } SER = { MSGA_settle_pact_macedonia = yes } }
+ if = { limit = { tag = ALB } SER = { MSGA_settle_pact_albania = yes } }
+ if = { limit = { tag = SLV } SER = { MSGA_settle_pact_slovenia = yes } }
+ if = { limit = { tag = CRO } SER = { MSGA_settle_pact_croatia = yes } }
+}
+MSGA_retry_pact_settlements = {
+ MSGA_settle_pact_montenegro = yes
+ MSGA_settle_pact_macedonia = yes
+ MSGA_settle_pact_albania = yes
+ MSGA_settle_pact_slovenia = yes
+ MSGA_settle_pact_croatia = yes
+ MSGA_finish_pact_campaign = yes
+}
+MSGA_settle_pact_montenegro = {
+ if = { limit = { tag = SER has_country_flag = MSGA_pact_war_opened NOT = { has_country_flag = MSGA_montenegro_defeated } MNT = { exists = yes has_country_flag = MSGA_pact_campaign_participant has_country_flag = MSGA_pact_real_capitulation } }
+  MNT = {
+   # Transfer faction leadership before leaving; the remaining members keep fighting.
+   if = { limit = { is_faction_leader = yes }
+    if = { limit = { MAC = { exists = yes is_in_faction_with = MNT has_capitulated = no has_war_with = SER NOT = { is_subject_of = SER } } } MAC = { set_faction_leader = yes } }
+    else_if = { limit = { ALB = { exists = yes is_in_faction_with = MNT has_capitulated = no has_war_with = SER NOT = { is_subject_of = SER } } } ALB = { set_faction_leader = yes } }
+    else_if = { limit = { SLV = { exists = yes is_in_faction_with = MNT has_capitulated = no has_war_with = SER NOT = { is_subject_of = SER } } } SLV = { set_faction_leader = yes } }
+    else_if = { limit = { CRO = { exists = yes is_in_faction_with = MNT has_capitulated = no has_war_with = SER NOT = { is_subject_of = SER } } } CRO = { set_faction_leader = yes } }
+   }
+   if = { limit = { is_in_faction = yes } leave_faction = yes }
+   remove_ideas = MSGA_montenegro_capital_resistance
+  }
+  # Documented API: ends ONLY this target's non-civil war relations.
+  set_autonomy = { target = MNT autonomy_state = autonomy_puppet freedom_level = 0.5 end_wars = yes end_civil_wars = no }
+  if = { limit = { MNT = { is_subject_of = SER NOT = { has_war_with = SER } } }
+   MNT = {
+    # Do not share Serbia's wartime faction: no automatic former-ally calls.
+    if = { limit = { is_in_faction = yes } leave_faction = yes }
+    set_rule = { can_decline_call_to_war = yes desc = MSGA_pact_decline_calls }
+    add_ideas = MSGA_pact_postwar_neutrality add_timed_idea = { idea = MSGA_montenegro_postwar_recovery days = 90 }
+    if = { limit = { has_country_flag = MSGA_pact_temporary_major } set_major = no clr_country_flag = MSGA_pact_temporary_major }
+   }
+   # Restore occupied HOME states, never ownership, cores or Kosovo.
+   every_state = { limit = { is_owned_by = MNT controller = { OR = { tag = SER is_subject_of = SER AND = { is_in_faction_with = SER has_war_together_with = SER } } } } set_state_controller_to = MNT }
+   set_country_flag = MSGA_montenegro_defeated
+   country_event = { id = MSGA_pactwar.2 }
+  }
+ }
+}
+MSGA_settle_pact_macedonia = {
+ if = { limit = { tag = SER has_country_flag = MSGA_pact_war_opened NOT = { has_country_flag = MSGA_macedonia_defeated } MAC = { exists = yes has_country_flag = MSGA_pact_campaign_participant has_country_flag = MSGA_pact_real_capitulation } }
+  MAC = {
+   # Transfer faction leadership before leaving; the remaining members keep fighting.
+   if = { limit = { is_faction_leader = yes }
+    if = { limit = { MNT = { exists = yes is_in_faction_with = MAC has_capitulated = no has_war_with = SER NOT = { is_subject_of = SER } } } MNT = { set_faction_leader = yes } }
+    else_if = { limit = { ALB = { exists = yes is_in_faction_with = MAC has_capitulated = no has_war_with = SER NOT = { is_subject_of = SER } } } ALB = { set_faction_leader = yes } }
+    else_if = { limit = { SLV = { exists = yes is_in_faction_with = MAC has_capitulated = no has_war_with = SER NOT = { is_subject_of = SER } } } SLV = { set_faction_leader = yes } }
+    else_if = { limit = { CRO = { exists = yes is_in_faction_with = MAC has_capitulated = no has_war_with = SER NOT = { is_subject_of = SER } } } CRO = { set_faction_leader = yes } }
+   }
+   if = { limit = { is_in_faction = yes } leave_faction = yes }
+   remove_ideas = MSGA_macedonia_capital_resistance
+  }
+  # Documented API: ends ONLY this target's non-civil war relations.
+  set_autonomy = { target = MAC autonomy_state = autonomy_puppet freedom_level = 0.5 end_wars = yes end_civil_wars = no }
+  if = { limit = { MAC = { is_subject_of = SER NOT = { has_war_with = SER } } }
+   MAC = {
+    # Do not share Serbia's wartime faction: no automatic former-ally calls.
+    if = { limit = { is_in_faction = yes } leave_faction = yes }
+    set_rule = { can_decline_call_to_war = yes desc = MSGA_pact_decline_calls }
+    add_ideas = MSGA_pact_postwar_neutrality add_timed_idea = { idea = MSGA_macedonia_postwar_recovery days = 90 }
+    if = { limit = { has_country_flag = MSGA_pact_temporary_major } set_major = no clr_country_flag = MSGA_pact_temporary_major }
+   }
+   # Restore occupied HOME states, never ownership, cores or Kosovo.
+   every_state = { limit = { is_owned_by = MAC controller = { OR = { tag = SER is_subject_of = SER AND = { is_in_faction_with = SER has_war_together_with = SER } } } } set_state_controller_to = MAC }
+   set_country_flag = MSGA_macedonia_defeated
+   country_event = { id = MSGA_pactwar.4 }
+  }
+ }
+}
+MSGA_settle_pact_albania = {
+ if = { limit = { tag = SER has_country_flag = MSGA_pact_war_opened NOT = { has_country_flag = MSGA_albania_defeated } ALB = { exists = yes has_country_flag = MSGA_pact_campaign_participant has_country_flag = MSGA_pact_real_capitulation } }
+  ALB = {
+   # Transfer faction leadership before leaving; the remaining members keep fighting.
+   if = { limit = { is_faction_leader = yes }
+    if = { limit = { MNT = { exists = yes is_in_faction_with = ALB has_capitulated = no has_war_with = SER NOT = { is_subject_of = SER } } } MNT = { set_faction_leader = yes } }
+    else_if = { limit = { MAC = { exists = yes is_in_faction_with = ALB has_capitulated = no has_war_with = SER NOT = { is_subject_of = SER } } } MAC = { set_faction_leader = yes } }
+    else_if = { limit = { SLV = { exists = yes is_in_faction_with = ALB has_capitulated = no has_war_with = SER NOT = { is_subject_of = SER } } } SLV = { set_faction_leader = yes } }
+    else_if = { limit = { CRO = { exists = yes is_in_faction_with = ALB has_capitulated = no has_war_with = SER NOT = { is_subject_of = SER } } } CRO = { set_faction_leader = yes } }
+   }
+   if = { limit = { is_in_faction = yes } leave_faction = yes }
+   remove_ideas = MSGA_albania_capital_resistance
+  }
+  # Documented API: ends ONLY this target's non-civil war relations.
+  set_autonomy = { target = ALB autonomy_state = autonomy_puppet freedom_level = 0.5 end_wars = yes end_civil_wars = no }
+  if = { limit = { ALB = { is_subject_of = SER NOT = { has_war_with = SER } } }
+   ALB = {
+    # Do not share Serbia's wartime faction: no automatic former-ally calls.
+    if = { limit = { is_in_faction = yes } leave_faction = yes }
+    set_rule = { can_decline_call_to_war = yes desc = MSGA_pact_decline_calls }
+    add_ideas = MSGA_pact_postwar_neutrality add_timed_idea = { idea = MSGA_albania_postwar_recovery days = 120 }
+    if = { limit = { has_country_flag = MSGA_pact_temporary_major } set_major = no clr_country_flag = MSGA_pact_temporary_major }
+   }
+   # Restore occupied HOME states, never ownership, cores or Kosovo.
+   every_state = { limit = { is_owned_by = ALB controller = { OR = { tag = SER is_subject_of = SER AND = { is_in_faction_with = SER has_war_together_with = SER } } } } set_state_controller_to = ALB }
+   set_country_flag = MSGA_albania_defeated
+   country_event = { id = MSGA_pactwar.6 }
+  }
+ }
+}
+MSGA_settle_pact_slovenia = {
+ if = { limit = { tag = SER has_country_flag = MSGA_pact_war_opened NOT = { has_country_flag = MSGA_slovenia_defeated } SLV = { exists = yes has_country_flag = MSGA_pact_campaign_participant has_country_flag = MSGA_pact_real_capitulation } }
+  SLV = {
+   # Transfer faction leadership before leaving; the remaining members keep fighting.
+   if = { limit = { is_faction_leader = yes }
+    if = { limit = { MNT = { exists = yes is_in_faction_with = SLV has_capitulated = no has_war_with = SER NOT = { is_subject_of = SER } } } MNT = { set_faction_leader = yes } }
+    else_if = { limit = { MAC = { exists = yes is_in_faction_with = SLV has_capitulated = no has_war_with = SER NOT = { is_subject_of = SER } } } MAC = { set_faction_leader = yes } }
+    else_if = { limit = { ALB = { exists = yes is_in_faction_with = SLV has_capitulated = no has_war_with = SER NOT = { is_subject_of = SER } } } ALB = { set_faction_leader = yes } }
+    else_if = { limit = { CRO = { exists = yes is_in_faction_with = SLV has_capitulated = no has_war_with = SER NOT = { is_subject_of = SER } } } CRO = { set_faction_leader = yes } }
+   }
+   if = { limit = { is_in_faction = yes } leave_faction = yes }
+   remove_ideas = MSGA_slovenia_capital_resistance
+  }
+  # Documented API: ends ONLY this target's non-civil war relations.
+  set_autonomy = { target = SLV autonomy_state = autonomy_puppet freedom_level = 0.5 end_wars = yes end_civil_wars = no }
+  if = { limit = { SLV = { is_subject_of = SER NOT = { has_war_with = SER } } }
+   SLV = {
+    # Do not share Serbia's wartime faction: no automatic former-ally calls.
+    if = { limit = { is_in_faction = yes } leave_faction = yes }
+    set_rule = { can_decline_call_to_war = yes desc = MSGA_pact_decline_calls }
+    add_ideas = MSGA_pact_postwar_neutrality add_timed_idea = { idea = MSGA_slovenia_postwar_recovery days = 90 }
+    if = { limit = { has_country_flag = MSGA_pact_temporary_major } set_major = no clr_country_flag = MSGA_pact_temporary_major }
+   }
+   # Restore occupied HOME states, never ownership, cores or Kosovo.
+   every_state = { limit = { is_owned_by = SLV controller = { OR = { tag = SER is_subject_of = SER AND = { is_in_faction_with = SER has_war_together_with = SER } } } } set_state_controller_to = SLV }
+   set_country_flag = MSGA_slovenia_defeated
+   country_event = { id = MSGA_pactwar.8 }
+  }
+ }
+}
+MSGA_settle_pact_croatia = {
+ if = { limit = { tag = SER has_country_flag = MSGA_pact_war_opened NOT = { has_country_flag = MSGA_croatia_defeated } CRO = { exists = yes has_country_flag = MSGA_pact_campaign_participant has_country_flag = MSGA_pact_real_capitulation } }
+  CRO = {
+   # Transfer faction leadership before leaving; the remaining members keep fighting.
+   if = { limit = { is_faction_leader = yes }
+    if = { limit = { MNT = { exists = yes is_in_faction_with = CRO has_capitulated = no has_war_with = SER NOT = { is_subject_of = SER } } } MNT = { set_faction_leader = yes } }
+    else_if = { limit = { MAC = { exists = yes is_in_faction_with = CRO has_capitulated = no has_war_with = SER NOT = { is_subject_of = SER } } } MAC = { set_faction_leader = yes } }
+    else_if = { limit = { ALB = { exists = yes is_in_faction_with = CRO has_capitulated = no has_war_with = SER NOT = { is_subject_of = SER } } } ALB = { set_faction_leader = yes } }
+    else_if = { limit = { SLV = { exists = yes is_in_faction_with = CRO has_capitulated = no has_war_with = SER NOT = { is_subject_of = SER } } } SLV = { set_faction_leader = yes } }
+   }
+   if = { limit = { is_in_faction = yes } leave_faction = yes }
+   remove_ideas = MSGA_croatia_capital_resistance
+  }
+  # Documented API: ends ONLY this target's non-civil war relations.
+  set_autonomy = { target = CRO autonomy_state = autonomy_puppet freedom_level = 0.5 end_wars = yes end_civil_wars = no }
+  if = { limit = { CRO = { is_subject_of = SER NOT = { has_war_with = SER } } }
+   CRO = {
+    # Do not share Serbia's wartime faction: no automatic former-ally calls.
+    if = { limit = { is_in_faction = yes } leave_faction = yes }
+    set_rule = { can_decline_call_to_war = yes desc = MSGA_pact_decline_calls }
+    add_ideas = MSGA_pact_postwar_neutrality add_timed_idea = { idea = MSGA_croatia_postwar_recovery days = 120 }
+    if = { limit = { has_country_flag = MSGA_pact_temporary_major } set_major = no clr_country_flag = MSGA_pact_temporary_major }
+   }
+   # Restore occupied HOME states, never ownership, cores or Kosovo.
+   every_state = { limit = { is_owned_by = CRO controller = { OR = { tag = SER is_subject_of = SER AND = { is_in_faction_with = SER has_war_together_with = SER } } } } set_state_controller_to = CRO }
+   set_country_flag = MSGA_croatia_defeated
+   country_event = { id = MSGA_pactwar.10 }
+  }
+ }
+}
+MSGA_finish_pact_campaign = {
+ if = { limit = { tag = SER has_country_flag = MSGA_pact_war_opened NOT = { has_country_flag = MSGA_balkan_coalition_defeated } MSGA_pact_all_five_subjects = yes }
+  set_country_flag = MSGA_balkan_coalition_defeated clr_country_flag = MSGA_pact_observer_pending
+  MNT = { remove_ideas = MSGA_pact_postwar_neutrality clear_rule = { can_decline_call_to_war = yes } }
+  if = { limit = { has_war = no is_in_faction = yes } every_country = { limit = { is_faction_leader = yes is_in_faction_with = SER } add_to_faction = MNT } }
+  MAC = { remove_ideas = MSGA_pact_postwar_neutrality clear_rule = { can_decline_call_to_war = yes } }
+  if = { limit = { has_war = no is_in_faction = yes } every_country = { limit = { is_faction_leader = yes is_in_faction_with = SER } add_to_faction = MAC } }
+  ALB = { remove_ideas = MSGA_pact_postwar_neutrality clear_rule = { can_decline_call_to_war = yes } }
+  if = { limit = { has_war = no is_in_faction = yes } every_country = { limit = { is_faction_leader = yes is_in_faction_with = SER } add_to_faction = ALB } }
+  SLV = { remove_ideas = MSGA_pact_postwar_neutrality clear_rule = { can_decline_call_to_war = yes } }
+  if = { limit = { has_war = no is_in_faction = yes } every_country = { limit = { is_faction_leader = yes is_in_faction_with = SER } add_to_faction = SLV } }
+  CRO = { remove_ideas = MSGA_pact_postwar_neutrality clear_rule = { can_decline_call_to_war = yes } }
+  if = { limit = { has_war = no is_in_faction = yes } every_country = { limit = { is_faction_leader = yes is_in_faction_with = SER } add_to_faction = CRO } }
+  country_event = { id = MSGA_pactwar.11 }
+ }
+}

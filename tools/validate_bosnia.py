@@ -11,7 +11,15 @@ GAME=Path(r'C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV')
 
 def strip_guards(ast):
     result=[]
-    for key,op,value in ast:
+    skip_next=False
+    for index,(key,op,value) in enumerate(ast):
+        if skip_next:
+            skip_next=False
+            continue
+        if key=='if' and isinstance(value,list) and next((v for k,_,v in value if k=='limit'),None)==parse('MSGA_pact_capitulation_context = yes'):
+            assert value==parse('limit = { MSGA_pact_capitulation_context = yes } MSGA_handle_pact_capitulation = yes')
+            assert index+1<len(ast) and ast[index+1][:2]==('else','=')
+            result.extend(strip_guards(ast[index+1][2]));skip_next=True;continue
         if key=='MSGA_native_balkan_story_allowed':continue
         if key=='if' and isinstance(value,list) and next((v for k,_,v in value if k=='limit'),None)==parse('MSGA_native_balkan_story_allowed = yes'):
             result.extend(strip_guards([x for x in value if x[0]!='limit']));continue

@@ -1,0 +1,13 @@
+ideas = { country = {
+ MSGA_montenegro_capital_resistance = { picture = MSGA_prepared_for_war removal_cost = -1 on_remove = { hidden_effect = { set_technology = { MSGA_highland_resistance_tech = 0 popup = no } } } modifier = { army_defence_factor = 0.05 max_dig_in_factor = 0.05 custom_modifier_tooltip = MSGA_highland_defence_tt } }
+ MSGA_montenegro_postwar_recovery = { picture = MSGA_prepared_for_war removal_cost = -1 modifier = { stability_factor = 0.10 training_time_army_factor = 0.20 recruitable_population_factor = -0.20 army_attack_factor = -0.10 } }
+ MSGA_macedonia_capital_resistance = { picture = MSGA_prepared_for_war removal_cost = -1 modifier = { army_defence_factor = 0.05 army_org_factor = 0.05 army_org_regain = 0.05 } }
+ MSGA_macedonia_postwar_recovery = { picture = MSGA_prepared_for_war removal_cost = -1 modifier = { stability_factor = 0.10 war_support_factor = -0.10 training_time_army_factor = 0.15 army_attack_factor = -0.10 } }
+ MSGA_albania_capital_resistance = { picture = MSGA_prepared_for_war removal_cost = -1 on_remove = { hidden_effect = { set_technology = { MSGA_highland_resistance_tech = 0 popup = no } } } modifier = { max_dig_in_factor = 0.05 supply_consumption_factor = -0.05 custom_modifier_tooltip = MSGA_highland_defence_tt } }
+ MSGA_albania_postwar_recovery = { picture = MSGA_prepared_for_war removal_cost = -1 modifier = { stability_factor = 0.10 war_support_factor = -0.20 recruitable_population_factor = -0.15 army_attack_factor = -0.10 army_defence_factor = -0.05 } }
+ MSGA_slovenia_capital_resistance = { picture = MSGA_prepared_for_war removal_cost = -1 on_remove = { hidden_effect = { set_technology = { MSGA_highland_resistance_tech = 0 popup = no } } } modifier = { army_org_factor = 0.05 supply_consumption_factor = -0.05 custom_modifier_tooltip = MSGA_highland_defence_tt } }
+ MSGA_slovenia_postwar_recovery = { picture = MSGA_prepared_for_war removal_cost = -1 modifier = { stability_factor = 0.10 production_speed_buildings_factor = 0.05 army_attack_factor = -0.10 mobilization_speed = -0.15 } }
+ MSGA_croatia_capital_resistance = { picture = MSGA_prepared_for_war removal_cost = -1 modifier = { army_defence_factor = 0.075 army_org_factor = 0.05 army_org_regain = 0.05 } }
+ MSGA_croatia_postwar_recovery = { picture = MSGA_prepared_for_war removal_cost = -1 modifier = { stability_factor = 0.15 war_support_factor = -0.20 army_attack_factor = -0.10 army_org_factor = -0.05 mobilization_speed = -0.20 } }
+ MSGA_pact_postwar_neutrality = { picture = MSGA_prepared_for_war removal_cost = -1 modifier = { ai_join_ally_desire_factor = -1 ai_call_ally_desire_factor = -1 } }
+} }
