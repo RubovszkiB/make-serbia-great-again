@@ -1,0 +1,168 @@
+# Additive Serbia rewards. The western observer stops permanently once its report has been queued.
+add_namespace = MSGA_covid
+add_namespace = MSGA_economy
+add_namespace = MSGA_politics
+add_namespace = MSGA_military
+add_namespace = MSGA_geopolitics
+country_event = {
+	id = MSGA_covid.2
+	title = MSGA_covid.2.t
+	desc = MSGA_covid.2.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		tag = SER
+	}
+	option = {
+		name = MSGA_covid.2.a
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+country_event = {
+	id = MSGA_covid.3
+	title = MSGA_covid.3.t
+	desc = MSGA_covid.3.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		tag = SER
+	}
+	option = {
+		name = MSGA_covid.3.a
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+country_event = {
+	id = MSGA_economy.2
+	title = MSGA_economy.2.t
+	desc = MSGA_economy.2.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		tag = SER
+	}
+	option = {
+		name = MSGA_economy.2.a
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+country_event = {
+	id = MSGA_economy.3
+	title = MSGA_economy.3.t
+	desc = MSGA_economy.3.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		tag = SER
+	}
+	option = {
+		name = MSGA_economy.3.a
+		ai_chance = {
+			factor = 50
+		}
+		set_temp_variable = {
+			var = income_var_temp
+			value = 12
+		}
+		add_income_with_inflation = yes
+	}
+}
+country_event = {
+	id = MSGA_economy.4
+	title = MSGA_economy.4.t
+	desc = MSGA_economy.4.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		tag = SER
+	}
+	option = {
+		name = MSGA_economy.4.a
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+country_event = {
+	id = MSGA_politics.2
+	title = MSGA_politics.2.t
+	desc = MSGA_politics.2.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		tag = SER
+	}
+	option = {
+		name = MSGA_politics.2.a
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+country_event = {
+	id = MSGA_military.2
+	title = MSGA_military.2.t
+	desc = MSGA_military.2.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		tag = SER
+	}
+	option = {
+		name = MSGA_military.2.a
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+country_event = {
+	id = MSGA_military.3
+	title = MSGA_military.3.t
+	desc = MSGA_military.3.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		tag = SER
+	}
+	option = {
+		name = MSGA_military.3.a
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+country_event = {
+	id = MSGA_geopolitics.2
+	hidden = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = SER
+	}
+	immediate = {
+		clr_country_flag = MSGA_west_monitor_pending
+		if = {
+			limit = {
+				has_country_flag = MSGA_watching_west
+				NOT = {
+					has_country_flag = MSGA_west_event_fired
+				}
+			}
+			MSGA_check_world = yes
+			MSGA_schedule_west_monitor = yes
+		}
+	}
+}

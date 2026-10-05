@@ -110,9 +110,10 @@ MSGA_SER_streets_presidency_category = {
 			tag = SER
 		}
 		visible = {
+			has_country_flag = MSGA_watching_west
 			MSGA_US_fracture_signal = yes
 			NOT = {
-				has_country_flag = MSGA_US_ORDER_COLLAPSED
+				has_country_flag = MSGA_west_event_fired
 			}
 		}
 		cost = 0

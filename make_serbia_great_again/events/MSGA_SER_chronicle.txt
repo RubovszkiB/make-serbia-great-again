@@ -1,0 +1,356 @@
+# Adapted from AHR_chronicle.1: one locked dispatcher, eligible weighted stories, quiet weight and cooldowns.
+# Reserve cooldowns before the delayed report; saved event queues and locks survive reloads.
+add_namespace = MSGA_chronicle
+country_event = {
+	id = MSGA_chronicle.1
+	hidden = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = SER
+	}
+	immediate = {
+		clr_country_flag = MSGA_chronicle_timer_active
+		if = {
+			limit = {
+				has_country_flag = MSGA_serbian_chronicle_active
+			}
+			random_list = {
+				35 = {
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						NOT = {
+							AND = {
+								has_completed_focus = MSGA_upgrade_belgrade_services
+								owns_state = 107
+								controls_state = 107
+								NOT = {
+									has_country_flag = MSGA_chronicle_2_cooldown
+								}
+							}
+						}
+					}
+					set_country_flag = {
+						flag = MSGA_chronicle_2_cooldown
+						days = 360
+					}
+					country_event = {
+						id = MSGA_chronicle.2
+						days = 1
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						NOT = {
+							AND = {
+								has_idea = MSGA_productive_capital
+								NOT = {
+									has_country_flag = MSGA_chronicle_3_cooldown
+								}
+							}
+						}
+					}
+					set_country_flag = {
+						flag = MSGA_chronicle_3_cooldown
+						days = 360
+					}
+					country_event = {
+						id = MSGA_chronicle.3
+						days = 1
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						NOT = {
+							AND = {
+								has_completed_focus = MSGA_develop_the_morava_corridor
+								owns_state = 1296
+								controls_state = 1296
+								NOT = {
+									has_country_flag = MSGA_chronicle_4_cooldown
+								}
+							}
+						}
+					}
+					set_country_flag = {
+						flag = MSGA_chronicle_4_cooldown
+						days = 360
+					}
+					country_event = {
+						id = MSGA_chronicle.4
+						days = 1
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						NOT = {
+							AND = {
+								has_completed_focus = MSGA_restore_defence_production
+								owns_state = 1296
+								controls_state = 1296
+								NOT = {
+									has_country_flag = MSGA_chronicle_5_cooldown
+								}
+							}
+						}
+					}
+					set_country_flag = {
+						flag = MSGA_chronicle_5_cooldown
+						days = 360
+					}
+					country_event = {
+						id = MSGA_chronicle.5
+						days = 1
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						NOT = {
+							AND = {
+								has_completed_focus = MSGA_consolidate_the_state
+								NOT = {
+									has_country_flag = MSGA_chronicle_6_cooldown
+								}
+							}
+						}
+					}
+					set_country_flag = {
+						flag = MSGA_chronicle_6_cooldown
+						days = 360
+					}
+					country_event = {
+						id = MSGA_chronicle.6
+						days = 1
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						NOT = {
+							AND = {
+								NOT = {
+									has_country_flag = MSGA_chronicle_7_cooldown
+								}
+							}
+						}
+					}
+					set_country_flag = {
+						flag = MSGA_chronicle_7_cooldown
+						days = 360
+					}
+					country_event = {
+						id = MSGA_chronicle.7
+						days = 1
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						NOT = {
+							AND = {
+								has_country_flag = MSGA_kosovo_crisis_unlocked
+								NOT = {
+									has_country_flag = MSGA_chronicle_8_cooldown
+								}
+							}
+						}
+					}
+					set_country_flag = {
+						flag = MSGA_chronicle_8_cooldown
+						days = 360
+					}
+					country_event = {
+						id = MSGA_chronicle.8
+						days = 1
+					}
+				}
+			}
+			MSGA_start_chronicle = yes
+		}
+	}
+}
+country_event = {
+	id = MSGA_chronicle.2
+	title = MSGA_chronicle.2.t
+	desc = MSGA_chronicle.2.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	trigger = {
+		tag = SER
+		has_completed_focus = MSGA_upgrade_belgrade_services
+		owns_state = 107
+		controls_state = 107
+	}
+	option = {
+		name = MSGA_chronicle.2.a
+		ai_chance = {
+			factor = 50
+		}
+		add_timed_idea = {
+			idea = MSGA_construction_boom
+			days = 180
+		}
+	}
+}
+country_event = {
+	id = MSGA_chronicle.3
+	title = MSGA_chronicle.3.t
+	desc = MSGA_chronicle.3.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	trigger = {
+		tag = SER
+		has_idea = MSGA_productive_capital
+	}
+	option = {
+		name = MSGA_chronicle.3.a
+		ai_chance = {
+			factor = 50
+		}
+		set_temp_variable = {
+			var = income_var_temp
+			value = 8
+		}
+		add_income_with_inflation = yes
+	}
+	option = {
+		name = MSGA_chronicle.3.b
+		ai_chance = {
+			factor = 50
+		}
+		add_timed_idea = {
+			idea = MSGA_investor_interest
+			days = 180
+		}
+	}
+}
+country_event = {
+	id = MSGA_chronicle.4
+	title = MSGA_chronicle.4.t
+	desc = MSGA_chronicle.4.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	trigger = {
+		tag = SER
+		has_completed_focus = MSGA_develop_the_morava_corridor
+		owns_state = 1296
+		controls_state = 1296
+	}
+	option = {
+		name = MSGA_chronicle.4.a
+		ai_chance = {
+			factor = 50
+		}
+		set_temp_variable = {
+			var = income_var_temp
+			value = 6
+		}
+		add_income_with_inflation = yes
+	}
+}
+country_event = {
+	id = MSGA_chronicle.5
+	title = MSGA_chronicle.5.t
+	desc = MSGA_chronicle.5.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	trigger = {
+		tag = SER
+		has_completed_focus = MSGA_restore_defence_production
+		owns_state = 1296
+		controls_state = 1296
+	}
+	option = {
+		name = MSGA_chronicle.5.a
+		ai_chance = {
+			factor = 50
+		}
+		set_temp_variable = {
+			var = income_var_temp
+			value = 5
+		}
+		add_income_with_inflation = yes
+		army_experience = 5
+	}
+}
+country_event = {
+	id = MSGA_chronicle.6
+	title = MSGA_chronicle.6.t
+	desc = MSGA_chronicle.6.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	trigger = {
+		tag = SER
+		has_completed_focus = MSGA_consolidate_the_state
+	}
+	option = {
+		name = MSGA_chronicle.6.a
+		ai_chance = {
+			factor = 50
+		}
+		add_political_power = -10
+		add_stability = 0.01
+	}
+	option = {
+		name = MSGA_chronicle.6.b
+		ai_chance = {
+			factor = 50
+		}
+		add_political_power = 10
+		add_stability = -0.01
+	}
+}
+country_event = {
+	id = MSGA_chronicle.7
+	title = MSGA_chronicle.7.t
+	desc = MSGA_chronicle.7.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	trigger = {
+		tag = SER
+	}
+	option = {
+		name = MSGA_chronicle.7.a
+		ai_chance = {
+			factor = 50
+		}
+		set_temp_variable = {
+			var = income_var_temp
+			value = -5
+		}
+		add_income_with_inflation = yes
+	}
+	option = {
+		name = MSGA_chronicle.7.b
+		ai_chance = {
+			factor = 50
+		}
+		add_timed_idea = {
+			idea = MSGA_energy_pressure
+			days = 90
+		}
+	}
+}
+country_event = {
+	id = MSGA_chronicle.8
+	title = MSGA_chronicle.8.t
+	desc = MSGA_chronicle.8.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	trigger = {
+		tag = SER
+		has_country_flag = MSGA_kosovo_crisis_unlocked
+	}
+	option = {
+		name = MSGA_chronicle.8.a
+		ai_chance = {
+			factor = 50
+		}
+		add_war_support = 0.015
+	}
+}

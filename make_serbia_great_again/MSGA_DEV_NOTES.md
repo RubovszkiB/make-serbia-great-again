@@ -1,8 +1,8 @@
 # MSGA development notes
 
-## Current build: Phase 1 0.3.0
+## Current build: Phase 1 0.4.0
 
-The original 18-focus topology and names are preserved. All focuses now use the supplied custom DDS artwork, including completion-shine variants. Reward upgrades and seven strategic/crisis decisions are documented in `docs/Phase1-0.3-Implementation.md` at repository root. Static checks pass; see `docs/phase1_static_validation.json`. The previously unsynced election fix is now installed with the current build.
+The original 18-focus layout, prerequisites, costs, names and custom artwork are preserved. Vaccination now gates reopening, the Western monitoring focus can precede collapse, and the resulting report gates Kosovo. Updated rewards, two COVID decisions, seven Chronicle stories and source evidence are documented in `docs/Phase1-0.4-Implementation.md`. Static checks pass; see `docs/phase1_static_validation.json`. This increment has not been installed or tested in a running game.
 
 The sections below are historical P1.0–P1.3 notes and do not certify current gameplay acceptance. Consult the current report for runtime validation and limitations.
 

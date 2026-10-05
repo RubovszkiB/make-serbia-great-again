@@ -1,19 +1,20 @@
 # Make Serbia Great Again
 
-Serbia Phase 1 submod for **Hearts of Iron IV / The Fire Rises**. Version **0.3.0**, script prefix `MSGA_`.
+Serbia Phase 1 submod for **Hearts of Iron IV / The Fire Rises**. Version **0.4.0**, script prefix `MSGA_`.
 
 ## Current build
 
-18 focuses with supplied custom artwork, the original tree layout and story progression, evolving recovery and defence programmes, Streets–Presidency politics, health measures, funded development, and preparatory Kosovo crisis decisions. Phase 1 ends at **The Kosovo Question**. No Phase 2 war operations are included.
+18 focuses with supplied custom artwork and the original layout, meaningful TFR rewards, focus events, two timed COVID decisions, Streets–Presidency politics, funded development and a recurring Serbian Chronicle. Phase 1 ends at **The Kosovo Question** and its crisis-category unlock.
 
 - 18 custom 95×95 DDS icons with base and completion-shine sprites.
-- Recovery starts at +5% Business Value; the economic capstone adds +3 points; project upgrades are capped at +10%.
-- Belgrade gains a building slot; Morava gains immediate infrastructure; paid projects add Office Park, infrastructure, coal and a second military factory.
-- Government progresses from Coordinated Government to Presidential Administration.
-- Defence progresses through output, efficiency, planning, organisation recovery and lower supply consumption.
+- Permanent Productive Capital uses TFR Business Value and income growth; recovery removes TFR's Scars of Bombings spirit.
+- Belgrade gains five slots, two civilian factories and an Office Park; Morava gains two infrastructure levels where capacity allows.
+- Hospital support and mass vaccination each take 35 days; reopening follows vaccination.
+- Government and army spirits upgrade through their existing branches; defence adds factories, equipment and strategic reserves.
+- Chronicle stories use a 120–210-day delayed dispatcher with quiet weight and cooldowns; Western monitoring uses a 30-day observer that stops after reporting collapse.
 - Two strategic and five Kosovo studies record one-time findings for later crisis policy.
 
-See [implementation report](docs/Phase1-0.3-Implementation.md) and [static validation](docs/phase1_static_validation.json). Runtime validation status is recorded separately in the report; static checks do not certify a full campaign.
+See [implementation report](docs/Phase1-0.4-Implementation.md) and [static validation](docs/phase1_static_validation.json). No game was launched or local installation updated for this increment. Runtime tooltips, decision delivery, doctrine discount and save/load remain unverified.
 
 ## Requirements and installation
 

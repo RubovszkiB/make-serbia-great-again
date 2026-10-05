@@ -24,8 +24,9 @@ focus_tree = {
 		completion_reward = {
 			MSGA_initialize = yes
 			set_country_flag = MSGA_domestic_affairs_open
-			add_political_power = 35
-			add_stability = 0.01
+			set_country_flag = MSGA_early_game_started
+			add_political_power = 25
+			add_stability = 0.02
 			country_event = {
 				id = MSGA.1
 			}
@@ -46,15 +47,12 @@ focus_tree = {
 			factor = 10
 		}
 		completion_reward = {
-			set_country_flag = MSGA_covid_active
-			add_ideas = MSGA_pandemic_disruption
+			MSGA_start_covid = yes
 			country_event = {
 				id = MSGA.2
 			}
-			unlock_decision_tooltip = MSGA_targeted_testing
-			unlock_decision_tooltip = MSGA_essential_workers
 			unlock_decision_tooltip = MSGA_hospital_funding
-			unlock_decision_tooltip = MSGA_medical_assistance
+			unlock_decision_tooltip = MSGA_mass_vaccination
 			custom_effect_tooltip = MSGA_unlock_health_tt
 			set_country_flag = MSGA_completed_contain_the_outbreak
 		}
@@ -72,11 +70,25 @@ focus_tree = {
 			factor = 10
 		}
 		completion_reward = {
+			add_stability = 0.03
+			set_temp_variable = {
+				var = income_var_temp
+				value = 30
+			}
+			add_income_with_inflation = yes
+			add_timed_idea = {
+				idea = MSGA_reopening_surge
+				days = 180
+			}
+			MSGA_start_chronicle = yes
 			country_event = {
 				id = MSGA.3
 			}
 			custom_effect_tooltip = MSGA_reopening_tt
 			set_country_flag = MSGA_completed_reopen_on_serbian_terms
+		}
+		available = {
+			has_country_flag = MSGA_mass_vaccination_complete
 		}
 	}
 	focus = {
@@ -92,7 +104,7 @@ focus_tree = {
 			factor = 6
 		}
 		completion_reward = {
-			MSGA_start_recovery = yes
+			add_ideas = MSGA_productive_capital
 			country_event = {
 				id = MSGA.5
 			}
@@ -114,24 +126,10 @@ focus_tree = {
 			factor = 6
 		}
 		completion_reward = {
-			if = {
-				limit = {
-					107 = {
-						is_owned_by = ROOT
-						is_fully_controlled_by = ROOT
-					}
-				}
-				107 = {
-					add_extra_state_shared_building_slots = 1
-				}
+			MSGA_belgrade_development = yes
+			country_event = {
+				id = MSGA_economy.2
 			}
-			else = {
-				add_to_variable = {
-					MSGA_business_bonus = 0.01
-				}
-				MSGA_refresh_recovery = yes
-			}
-			add_political_power = 10
 			unlock_decision_tooltip = MSGA_belgrade_business
 			custom_effect_tooltip = MSGA_unlock_belgrade_tt
 			set_country_flag = MSGA_completed_upgrade_belgrade_services
@@ -151,6 +149,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			MSGA_morava_preparation = yes
+			country_event = {
+				id = MSGA_economy.3
+			}
 			unlock_decision_tooltip = MSGA_morava_works
 			custom_effect_tooltip = MSGA_unlock_morava_tt
 			set_country_flag = MSGA_completed_develop_the_morava_corridor
@@ -172,6 +173,37 @@ focus_tree = {
 			factor = 6
 		}
 		completion_reward = {
+			if = {
+				limit = {
+					107 = {
+						is_owned_by = ROOT
+						is_fully_controlled_by = ROOT
+					}
+				}
+				add_resource = {
+					state = 107
+					type = steel
+					amount = 10
+				}
+				add_resource = {
+					state = 107
+					type = tungsten
+					amount = 5
+				}
+				add_resource = {
+					state = 107
+					type = chromium
+					amount = 6
+				}
+			}
+			else = {
+				set_temp_variable = {
+					var = income_var_temp
+					value = 10
+				}
+				add_income_with_inflation = yes
+			}
+			set_country_flag = MSGA_resource_independence
 			unlock_decision_tooltip = MSGA_bor_modernisation
 			unlock_decision_tooltip = MSGA_lignite_modernisation
 			unlock_decision_tooltip = MSGA_jadar_survey
@@ -192,16 +224,11 @@ focus_tree = {
 			factor = 6
 		}
 		completion_reward = {
-			MSGA_end_covid = yes
-			remove_ideas = MSGA_reopening_strain
-			add_to_variable = {
-				MSGA_business_bonus = 0.03
-			}
-			MSGA_refresh_recovery = yes
-			add_stability = 0.02
-			add_power_balance_value = {
-				id = MSGA_SER_streets_presidency
-				value = 0.03
+			remove_ideas = SER_scars_of_bombings_idea
+			set_country_flag = MSGA_recovery_complete
+			add_stability = 0.03
+			country_event = {
+				id = MSGA_economy.4
 			}
 			unlock_decision_tooltip = MSGA_support_enterprise
 			custom_effect_tooltip = MSGA_recovery_capstone_tt
@@ -222,11 +249,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = MSGA_coordinated_government
-			add_political_power = 20
-			add_power_balance_value = {
-				id = MSGA_SER_streets_presidency
-				value = 0.03
-			}
+			set_country_flag = MSGA_state_consolidated
 			unlock_decision_tooltip = MSGA_SER_reaffirm_presidential_authority
 			set_country_flag = MSGA_completed_consolidate_the_state
 		}
@@ -248,6 +271,7 @@ focus_tree = {
 				id = MSGA.4
 			}
 			unlock_decision_tooltip = MSGA_SER_address_public_grievances
+			custom_effect_tooltip = MSGA_protest_choice_tt
 			set_country_flag = MSGA_completed_manage_the_streets
 		}
 	}
@@ -268,12 +292,11 @@ focus_tree = {
 				remove_idea = MSGA_coordinated_government
 				add_idea = MSGA_presidential_administration
 			}
-			add_stability = 0.02
-			add_power_balance_value = {
-				id = MSGA_SER_streets_presidency
-				value = 0.04
+			add_political_power = 50
+			set_country_flag = MSGA_presidential_mandate_secured
+			country_event = {
+				id = MSGA_politics.2
 			}
-			add_political_power = 15
 			unlock_decision_tooltip = MSGA_public_order
 			custom_effect_tooltip = MSGA_mandate_tt
 			set_country_flag = MSGA_completed_presidential_mandate
@@ -314,14 +337,14 @@ focus_tree = {
 			factor = 5
 		}
 		completion_reward = {
-			army_experience = 10
-			set_variable = {
-				MSGA_defence_planning = 0.05
+			army_experience = 25
+			add_doctrine_cost_reduction = {
+				name = MSGA_army_doctrine_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = cat_old_land_doctrine
 			}
-			set_variable = {
-				MSGA_defence_recovery = 0.05
-			}
-			MSGA_refresh_defence = yes
+			add_ideas = MSGA_army_modernisation
 			custom_effect_tooltip = MSGA_army_tt
 			set_country_flag = MSGA_completed_modernise_the_army
 		}
@@ -339,10 +362,25 @@ focus_tree = {
 			factor = 5
 		}
 		completion_reward = {
-			set_variable = {
-				MSGA_defence_efficiency = 0.05
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_2
+				amount = 3000
+				producer = SER
 			}
-			MSGA_refresh_defence = yes
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 400
+				producer = SER
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 250
+				producer = SER
+			}
+			army_experience = 10
+			country_event = {
+				id = MSGA_military.2
+			}
 			unlock_decision_tooltip = MSGA_procure_equipment
 			custom_effect_tooltip = MSGA_unlock_procurement_tt
 			set_country_flag = MSGA_completed_arms_for_an_uncertain_world
@@ -365,10 +403,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			MSGA_supply_preparation = yes
-			set_variable = {
-				MSGA_defence_supply = -0.05
+			add_fuel = 15000
+			add_timed_idea = {
+				idea = MSGA_strategic_reserves
+				days = 180
 			}
-			MSGA_refresh_defence = yes
 			custom_effect_tooltip = MSGA_supply_tt
 			set_country_flag = MSGA_completed_secure_supply_lines
 		}
@@ -386,11 +425,15 @@ focus_tree = {
 			factor = 5
 		}
 		completion_reward = {
-			army_experience = 5
-			set_variable = {
-				MSGA_defence_planning = 0.10
+			swap_ideas = {
+				remove_idea = MSGA_army_modernisation
+				add_idea = MSGA_army_ready
 			}
-			MSGA_refresh_defence = yes
+			add_war_support = 0.05
+			set_country_flag = MSGA_military_ready
+			country_event = {
+				id = MSGA_military.3
+			}
 			custom_effect_tooltip = MSGA_readiness_tt
 			set_country_flag = MSGA_completed_ready_for_the_uncertain
 		}
@@ -410,22 +453,14 @@ focus_tree = {
 		prerequisite = {
 			focus = MSGA_ready_for_the_uncertain
 		}
-		available = {
-			has_country_flag = MSGA_US_ORDER_COLLAPSED
-		}
 		cancel_if_invalid = no
 		ai_will_do = {
 			factor = 10
 		}
 		completion_reward = {
-			add_timed_idea = {
-				idea = MSGA_strategic_vigilance
-				days = 180
-			}
-			country_event = {
-				id = MSGA.12
-			}
-			add_war_support = 0.03
+			set_country_flag = MSGA_watching_west
+			MSGA_check_world = yes
+			MSGA_schedule_west_monitor = yes
 			unlock_decision_tooltip = MSGA_assess_nato_readiness
 			unlock_decision_tooltip = MSGA_strengthen_border_intelligence
 			custom_effect_tooltip = MSGA_shield_tt
@@ -446,6 +481,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			MSGA_open_kosovo_review = yes
+			set_country_flag = MSGA_kosovo_crisis_unlocked
 			country_event = {
 				id = MSGA.9
 			}
@@ -456,6 +492,9 @@ focus_tree = {
 			unlock_decision_tooltip = MSGA_map_northern_contingencies
 			custom_effect_tooltip = MSGA_phase2_tt
 			set_country_flag = MSGA_completed_the_kosovo_question
+		}
+		available = {
+			has_country_flag = MSGA_western_shield_cracked
 		}
 	}
 }

@@ -1,4 +1,5 @@
-# Uses only TFR's established treasury API; no derived GDP/debt writes.
+# Treasury changes use TFR add_income_with_inflation; never write derived GDP/debt.
+# States: 107 Belgrade; 1296 Sumadija/Western Serbia (Cacak/Krusevac).
 MSGA_initialize = {
 	if = {
 		limit = {
@@ -157,12 +158,6 @@ MSGA_health_progress = {
 		value = 0.02
 	}
 }
-MSGA_end_covid = {
-	remove_ideas = MSGA_pandemic_disruption
-	remove_ideas = MSGA_pandemic_easing
-	clr_country_flag = MSGA_covid_active
-	set_country_flag = MSGA_covid_resolved
-}
 MSGA_refresh_defence = {
 	hidden_effect = {
 		if = {
@@ -181,66 +176,6 @@ MSGA_refresh_defence = {
 		days = 365
 	}
 }
-MSGA_restore_defence = {
-	if = {
-		limit = {
-			1296 = {
-				is_owned_by = ROOT
-				is_fully_controlled_by = ROOT
-			}
-		}
-		1296 = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = arms_factory
-				level = 1
-				instant_build = yes
-			}
-		}
-	}
-	else = {
-		random_owned_state = {
-			limit = {
-				is_core_of = ROOT
-				is_fully_controlled_by = ROOT
-			}
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = arms_factory
-				level = 1
-				instant_build = yes
-			}
-		}
-	}
-	set_variable = {
-		MSGA_defence_output = 0.05
-	}
-	MSGA_refresh_defence = yes
-}
-MSGA_supply_preparation = {
-	if = {
-		limit = {
-			108 = {
-				is_owned_by = ROOT
-				is_fully_controlled_by = ROOT
-				free_building_slots = {
-					building = infrastructure
-					size > 0
-				}
-			}
-		}
-		108 = {
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}
-		}
-	}
-	else = {
-		army_experience = 5
-	}
-}
 MSGA_begin_project = {
 	set_country_flag = MSGA_major_project_active
 	add_ideas = MSGA_capital_commitment
@@ -250,20 +185,6 @@ MSGA_finish_project = {
 	remove_ideas = MSGA_capital_commitment
 	set_variable = {
 		MSGA_project_paid = 0
-	}
-}
-MSGA_check_world = {
-	if = {
-		limit = {
-			MSGA_US_fracture_signal = yes
-			NOT = {
-				has_country_flag = MSGA_US_ORDER_COLLAPSED
-			}
-		}
-		set_country_flag = MSGA_US_ORDER_COLLAPSED
-		country_event = {
-			id = MSGA.8
-		}
 	}
 }
 MSGA_update_quotes = {
@@ -387,34 +308,6 @@ MSGA_update_quotes = {
 		value = MSGA_cost_factor
 	}
 }
-MSGA_morava_preparation = {
-	if = {
-		limit = {
-			1296 = {
-				is_owned_by = ROOT
-				is_fully_controlled_by = ROOT
-				free_building_slots = {
-					building = infrastructure
-					size > 0
-				}
-			}
-		}
-		1296 = {
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}
-		}
-	}
-	else = {
-		add_to_variable = {
-			MSGA_business_bonus = 0.01
-		}
-		MSGA_refresh_recovery = yes
-		custom_effect_tooltip = MSGA_morava_fallback_tt
-	}
-}
 MSGA_open_kosovo_review = {
 	if = {
 		limit = {
@@ -440,4 +333,272 @@ MSGA_refund_project = {
 	}
 	add_income_with_inflation = yes
 	custom_effect_tooltip = MSGA_refund_tt
+}
+MSGA_check_world = {
+	if = {
+		limit = {
+			MSGA_US_fracture_signal = yes
+		}
+		set_country_flag = MSGA_US_ORDER_COLLAPSED
+	}
+	if = {
+		limit = {
+			has_country_flag = MSGA_watching_west
+			has_country_flag = MSGA_US_ORDER_COLLAPSED
+			NOT = {
+				has_country_flag = MSGA_west_event_fired
+			}
+		}
+		set_country_flag = MSGA_west_event_fired
+		country_event = {
+			id = MSGA.8
+		}
+	}
+}
+MSGA_restore_defence = {
+	if = {
+		limit = {
+			1296 = {
+				is_owned_by = ROOT
+				is_fully_controlled_by = ROOT
+			}
+		}
+		1296 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+	else = {
+		random_owned_state = {
+			limit = {
+				is_core_of = ROOT
+				is_fully_controlled_by = ROOT
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+	add_timed_idea = {
+		idea = MSGA_defence_production_drive
+		days = 365
+	}
+}
+MSGA_supply_preparation = {
+	if = {
+		limit = {
+			1296 = {
+				is_owned_by = ROOT
+				is_fully_controlled_by = ROOT
+			}
+		}
+		1296 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = fuel_silo
+				level = 1
+				instant_build = yes
+			}
+			if = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	else = {
+		army_experience = 5
+	}
+}
+MSGA_morava_preparation = {
+	if = {
+		limit = {
+			1296 = {
+				is_owned_by = ROOT
+				is_fully_controlled_by = ROOT
+			}
+		}
+		1296 = {
+			if = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			else_if = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	else = {
+		set_temp_variable = {
+			var = income_var_temp
+			value = 10
+		}
+		add_income_with_inflation = yes
+		custom_effect_tooltip = MSGA_morava_fallback_tt
+	}
+}
+MSGA_belgrade_development = {
+	if = {
+		limit = {
+			107 = {
+				is_owned_by = ROOT
+				is_fully_controlled_by = ROOT
+			}
+		}
+		107 = {
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = office_park
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	else = {
+		set_temp_variable = {
+			var = income_var_temp
+			value = 15
+		}
+		add_income_with_inflation = yes
+		custom_effect_tooltip = MSGA_belgrade_fallback_tt
+	}
+}
+MSGA_start_covid = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = MSGA_mass_vaccination_complete
+			}
+		}
+		set_country_flag = MSGA_covid_response_started
+		set_country_flag = MSGA_covid_active
+		remove_ideas = MSGA_pandemic_disruption
+		remove_ideas = MSGA_pandemic_easing
+		if = {
+			limit = {
+				generic_not_has_corona = yes
+				date < 2023.1.1
+			}
+			add_ideas = low_covid_cases
+		}
+	}
+}
+MSGA_end_covid = {
+	remove_ideas = lower_covid_cases
+	remove_ideas = low_covid_cases
+	remove_ideas = medium_covid_cases
+	remove_ideas = high_covid_cases
+	remove_ideas = higher_covid_cases
+	remove_ideas = MSGA_pandemic_disruption
+	remove_ideas = MSGA_pandemic_easing
+	remove_ideas = MSGA_hospital_mitigation
+	clr_country_flag = MSGA_covid_active
+	set_country_flag = MSGA_covid_resolved
+}
+MSGA_start_chronicle = {
+	set_country_flag = MSGA_serbian_chronicle_active
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = MSGA_chronicle_timer_active
+			}
+		}
+		set_country_flag = MSGA_chronicle_timer_active
+		country_event = {
+			id = MSGA_chronicle.1
+			days = 120
+			random_days = 90
+		}
+	}
+}
+MSGA_schedule_west_monitor = {
+	if = {
+		limit = {
+			has_country_flag = MSGA_watching_west
+			NOT = {
+				has_country_flag = MSGA_west_event_fired
+			}
+			NOT = {
+				has_country_flag = MSGA_west_monitor_pending
+			}
+		}
+		set_country_flag = MSGA_west_monitor_pending
+		country_event = {
+			id = MSGA_geopolitics.2
+			days = 30
+		}
+	}
+}
+MSGA_resume_early_systems = {
+	if = {
+		limit = {
+			has_completed_focus = MSGA_reopen_on_serbian_terms
+		}
+		MSGA_start_chronicle = yes
+	}
+	if = {
+		limit = {
+			has_completed_focus = MSGA_watch_the_western_shield
+		}
+		set_country_flag = MSGA_watching_west
+		MSGA_check_world = yes
+		MSGA_schedule_west_monitor = yes
+	}
+	if = {
+		limit = {
+			has_completed_focus = MSGA_contain_the_outbreak
+			NOT = {
+				has_completed_focus = MSGA_reopen_on_serbian_terms
+			}
+			NOT = {
+				has_country_flag = MSGA_covid_response_started
+			}
+		}
+		MSGA_start_covid = yes
+	}
+	if = {
+		limit = {
+			has_country_flag = MSGA_kosovo_phase_unlocked
+		}
+		set_country_flag = MSGA_kosovo_crisis_unlocked
+	}
 }

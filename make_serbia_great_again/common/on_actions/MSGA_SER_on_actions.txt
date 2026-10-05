@@ -1,16 +1,21 @@
 on_actions = {
- on_startup = {
-  effect = { every_country = { limit = { tag = SER } MSGA_initialize = yes MSGA_check_world = yes } }
- }
- on_daily = {
-  effect = { if = { limit = { tag = SER has_country_flag = MSGA_campaign_active } MSGA_update_quotes = yes } }
- }
- on_weekly = {
-  effect = {
-   if = { limit = { tag = SER has_country_flag = MSGA_campaign_active }
-    MSGA_initialize = yes
-    MSGA_check_world = yes
-   }
-  }
- }
+	on_startup = {
+		effect = {
+			SER = {
+				MSGA_initialize = yes
+				MSGA_resume_early_systems = yes
+			}
+		}
+	}
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					tag = SER
+					has_country_flag = MSGA_campaign_active
+				}
+				MSGA_update_quotes = yes
+			}
+		}
+	}
 }
