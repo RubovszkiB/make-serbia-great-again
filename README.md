@@ -1,20 +1,23 @@
 # Make Serbia Great Again
 
-Serbia Phase 1 submod for **Hearts of Iron IV / The Fire Rises**. Version **0.4.0**, script prefix `MSGA_`.
+Serbia Phase 1 submod for **Hearts of Iron IV / The Fire Rises**. Version **0.5.0**, script prefix `MSGA_`.
 
 ## Current build
 
-18 focuses with supplied custom artwork and the original layout, meaningful TFR rewards, focus events, two timed COVID decisions, Streets–Presidency politics, funded development and a recurring Serbian Chronicle. Phase 1 ends at **The Kosovo Question** and its crisis-category unlock.
+24 focuses with supplied custom artwork, TFR rewards, focus events, COVID decisions, Streets–Presidency politics, funded development and a recurring Serbian Chronicle. Phase 1 ends at **The Kosovo Question** and its crisis-category unlock. Continuous progression finishes Watch the Western Shield after 756 focus-days; Kosovo availability still depends on the actual TFR collapse signal.
 
-- 18 custom 95×95 DDS icons with base and completion-shine sprites.
+- 24 custom 95×95 DDS focus icons with base and completion-shine sprites; four supplied 60×68 spirit icons.
 - Permanent Productive Capital uses TFR Business Value and income growth; recovery removes TFR's Scars of Bombings spirit.
 - Belgrade gains five slots, two civilian factories and an Office Park; Morava gains two infrastructure levels where capacity allows.
-- Hospital support and mass vaccination each take 35 days; reopening follows vaccination.
+- Three one-time COVID decisions delay a pending outbreak by 120, 130 and 150 days. Vaccination becomes available on 1 January 2021, takes 20 days and permanently cancels a pending outbreak. Reopening proceeds independently.
+- Internal Investment adds exactly $2B nominal debt, two civilian factories in Vojvodina and the native monthly development modifier. Infrastructure respects TFR's level-five cap: the 2020 starting level of three can gain two effective levels. A 30-day southern investment adds $1B debt, two slots and one civilian factory in the Niš state.
+- New political focuses halve the emigration penalties, add a 75-day organisation penalty and conclude with National Consensus.
+- The exact volunteer screenshot template supplies four one-time formations through a focus and three 20-day decisions. The exact armoured-mechanised screenshot template is available at startup without a free division or equipment.
 - Government and army spirits upgrade through their existing branches; defence adds factories, equipment and strategic reserves.
 - Chronicle stories use a 120–210-day delayed dispatcher with quiet weight and cooldowns; Western monitoring uses a 30-day observer that stops after reporting collapse.
 - Two strategic and five Kosovo studies record one-time findings for later crisis policy.
 
-See [implementation report](docs/Phase1-0.4-Implementation.md) and [static validation](docs/phase1_static_validation.json). No game was launched or local installation updated for this increment. Runtime tooltips, decision delivery, doctrine discount and save/load remain unverified.
+See [expansion report](docs/Phase1-0.5-Expansion.md) and [static validation](docs/phase1_static_validation.json). No game was launched or local installation updated for this increment. Runtime tooltips, decision delivery, division equipment, template caps and save/load remain unverified.
 
 ## Requirements and installation
 
@@ -27,7 +30,7 @@ See [implementation report](docs/Phase1-0.4-Implementation.md) and [static valid
 
 ## Artwork and development
 
-Runtime artwork is in `make_serbia_great_again/gfx/interface/goals/`. Original user-supplied DDS/PNG assets, atlas and mapping are retained in `art/focus_icons/MSGA_TFR_focus_icons/`. The RGB24 source images are packaged as uncompressed RGBA8 DDS without cropping or changing a decoded pixel. Existing TFR/vanilla spirit and event art is referenced by ID and is not redistributed.
+Runtime artwork is in `make_serbia_great_again/gfx/interface/`. Original user-supplied assets are retained in `art/focus_icons/MSGA_TFR_focus_icons/` and `art/new_early_assets/MSGA_new_assets_pack/`, including both authoritative division screenshots. Runtime DDS pixels match the supplied PNGs. Existing TFR/vanilla art is referenced by ID and is not redistributed.
 
 `tools/prepare_focus_icons.py` reproduces the lossless conversion; `tools/validate_phase1.py` checks the scripts, IDs, topology, localisation, sprites, textures and progression guards. Both use Python and Pillow.
 

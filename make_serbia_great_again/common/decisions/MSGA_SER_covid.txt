@@ -1,71 +1,101 @@
-# TFR generic case spirits are authoritative. Hospital support mitigates; vaccination resolves.
-# days_remove delivers effects after 35 days; activation records commitment, not completion.
+# German mission architecture, with a one-shot outbreak and permanent vaccination guard.
 MSGA_public_health = {
-	MSGA_hospital_funding = {
-		icon = generic_propaganda_campaigns
-		allowed = {
-			tag = SER
-		}
+	MSGA_pending_outbreak = {
+		icon = generic_coronavirus
+		allowed = { tag = SER }
+		is_good = no
+		cancel_if_not_visible = yes
+		days_mission_timeout = 104
+		activation = { always = no }
+		available = { always = no }
 		visible = {
-			has_country_flag = MSGA_covid_active
-			NOT = {
-				has_country_flag = MSGA_hospital_started
+			has_country_flag = MSGA_covid_pending
+			NOT = { has_country_flag = MSGA_covid_resolved }
+		}
+		timeout_effect = {
+			clr_country_flag = MSGA_covid_pending
+			if = {
+				limit = {
+					NOT = { has_country_flag = MSGA_covid_resolved }
+					NOT = { has_country_flag = MSGA_mass_vaccination_complete }
+				}
+				set_country_flag = MSGA_covid_active
+				if = { limit = { generic_not_has_corona = yes date < 2023.1.1 } add_ideas = low_covid_cases }
+				country_event = { id = MSGA_expansion.1 }
 			}
 		}
-		available = {
-			has_country_flag = MSGA_covid_response_started
+	}
+	MSGA_restrict_border_traffic = {
+		icon = generic_propaganda_campaigns
+		allowed = { tag = SER }
+		visible = {
+			has_country_flag = MSGA_covid_pending
+			NOT = { has_country_flag = MSGA_covid_resolved }
+			NOT = { has_country_flag = MSGA_restrict_border_traffic_used }
 		}
-		cost = 50
-		days_remove = 35
-		ai_will_do = {
-			factor = 10
-		}
+		available = { has_active_mission = MSGA_pending_outbreak }
+		cost = 10
+		fire_only_once = yes
+		ai_will_do = { factor = 10 }
 		complete_effect = {
-			set_country_flag = MSGA_hospital_started
+			set_country_flag = MSGA_restrict_border_traffic_used
+			add_days_mission_timeout = { mission = MSGA_pending_outbreak days = 120 }
 		}
-		remove_effect = {
-			set_country_flag = MSGA_hospitals_supported
-			set_country_flag = MSGA_health_hospital_funding
-			add_stability = 0.01
-			add_timed_idea = {
-				idea = MSGA_hospital_mitigation
-				days = 100
-			}
-			country_event = {
-				id = MSGA_covid.2
-			}
+	}
+	MSGA_emergency_screening = {
+		icon = generic_propaganda_campaigns
+		allowed = { tag = SER }
+		visible = {
+			has_country_flag = MSGA_covid_pending
+			NOT = { has_country_flag = MSGA_covid_resolved }
+			NOT = { has_country_flag = MSGA_emergency_screening_used }
+		}
+		available = { has_active_mission = MSGA_pending_outbreak }
+		cost = 15
+		fire_only_once = yes
+		ai_will_do = { factor = 10 }
+		complete_effect = {
+			set_country_flag = MSGA_emergency_screening_used
+			add_days_mission_timeout = { mission = MSGA_pending_outbreak days = 130 }
+		}
+	}
+	MSGA_public_health_controls = {
+		icon = generic_propaganda_campaigns
+		allowed = { tag = SER }
+		visible = {
+			has_country_flag = MSGA_covid_pending
+			NOT = { has_country_flag = MSGA_covid_resolved }
+			NOT = { has_country_flag = MSGA_public_health_controls_used }
+		}
+		available = { has_active_mission = MSGA_pending_outbreak }
+		cost = 20
+		fire_only_once = yes
+		ai_will_do = { factor = 10 }
+		complete_effect = {
+			set_country_flag = MSGA_public_health_controls_used
+			add_days_mission_timeout = { mission = MSGA_pending_outbreak days = 150 }
 		}
 	}
 	MSGA_mass_vaccination = {
 		icon = generic_propaganda_campaigns
-		allowed = {
-			tag = SER
-		}
+		allowed = { tag = SER }
 		visible = {
-			has_country_flag = MSGA_covid_active
-			NOT = {
-				has_country_flag = MSGA_vaccination_started
-			}
+			has_country_flag = MSGA_covid_response_started
+			NOT = { has_country_flag = MSGA_covid_resolved }
+			NOT = { has_country_flag = MSGA_mass_vaccination_complete }
+			NOT = { has_country_flag = MSGA_vaccination_started }
 		}
-		available = {
-			has_country_flag = MSGA_hospitals_supported
-			date > 2020.12.1
-		}
+		available = { date > 2020.12.31 }
 		cost = 75
-		days_remove = 35
-		ai_will_do = {
-			factor = 10
-		}
-		complete_effect = {
-			set_country_flag = MSGA_vaccination_started
-		}
+		days_remove = 20
+		fire_only_once = yes
+		ai_will_do = { factor = 10 }
+		complete_effect = { set_country_flag = MSGA_vaccination_started }
 		remove_effect = {
 			MSGA_end_covid = yes
 			set_country_flag = MSGA_mass_vaccination_complete
 			add_stability = 0.02
-			country_event = {
-				id = MSGA_covid.3
-			}
+			country_event = { id = MSGA_covid.3 }
 		}
 	}
 }

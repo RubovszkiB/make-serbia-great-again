@@ -1,0 +1,12 @@
+# Exact screenshot: first column, three infantry above one artillery; no support.
+# The locked regimental-support UI row is not an additional battalion.
+division_template = {
+	name = "Srpska dobrovoljačka garda"
+	is_locked = yes
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		artillery_brigade = { x = 0 y = 3 }
+	}
+}

@@ -61,18 +61,19 @@ def unique(values, label):
 def validate_cleanup(scripts, tfr):
     """Targeted reward/compatibility checks plus preservation of the 0.4 build."""
     def baseline(path):
-        return parse(subprocess.check_output(['git', 'show', '51bc3c4:make_serbia_great_again/' + path], cwd=ROOT).decode('utf-8-sig'))
+        return parse(subprocess.check_output(['git', 'show', '4ed0744:make_serbia_great_again/' + path], cwd=ROOT).decode('utf-8-sig'))
 
     path = 'common/national_focus/MSGA_SER_phase1.txt'
     before = {get(v, 'id'): v for k, _, v in baseline(path)[0][2] if k == 'focus'}
     after = {get(v, 'id'): v for k, _, v in scripts[path][0][2] if k == 'focus'}
     for id, b in before.items():
-        if id != 'MSGA_consolidate_the_state':
-            assert after[id] == b, f'Unrelated focus changed: {id}'
-    added = parse('add_popularity = { ideology = conservative popularity = 0.20 } MSGA_end_belgrade_blues = yes custom_effect_tooltip = MSGA_end_belgrade_blues_tt')
-    reward = get(after['MSGA_consolidate_the_state'], 'completion_reward')
-    assert [x for x in reward if x not in added] == get(before['MSGA_consolidate_the_state'], 'completion_reward')
-    assert all(x in reward for x in added)
+        # The expansion changes topology and removes the reopening gate, not old rewards.
+        assert get(after[id], 'cost') == get(b, 'cost')
+        if id != 'MSGA_contain_the_outbreak':
+            assert get(after[id], 'completion_reward') == get(b, 'completion_reward'), id
+    contain = get(after['MSGA_contain_the_outbreak'], 'completion_reward')
+    strip_unlocks = lambda body: [item for item in body if item[0] != 'unlock_decision_tooltip']
+    assert strip_unlocks(contain) == strip_unlocks(get(before['MSGA_contain_the_outbreak'], 'completion_reward'))
     recovery = get(after['MSGA_serbian_recovery'], 'completion_reward')
     assert [v for k, _, v in recovery if k == 'remove_ideas'] == ['SER_scars_of_bombings_idea']
 
@@ -80,7 +81,7 @@ def validate_cleanup(scripts, tfr):
     assert get(scripts[path], 'MSGA_restore_defence') == get(baseline(path), 'MSGA_restore_defence')
     factories = [get(v, 'level') for k, _, v in descend(get(scripts[path], 'MSGA_restore_defence')) if k == 'add_building_construction']
     assert factories == ['2', '2']  # Intended state and mutually exclusive fallback.
-    for p in ['common/decisions/MSGA_SER_covid.txt', 'events/MSGA_SER_early_rewards.txt',
+    for p in ['events/MSGA_SER_early_rewards.txt',
               'events/MSGA_SER_events.txt', 'events/MSGA_SER_chronicle.txt']:
         assert scripts[p] == baseline(p), f'Unrelated system changed: {p}'
     assert get(scripts['common/ideas/MSGA_SER_ideas.txt'][0][2], 'country') == get(baseline('common/ideas/MSGA_SER_ideas.txt')[0][2], 'country')
@@ -126,6 +127,101 @@ def validate_cleanup(scripts, tfr):
     assert re.search(r'\bconservative\s*=\s*\{', ideologies)
 
 
+def validate_expansion(scripts, tfr, graph, focuses):
+    expected_costs = {'internal_investment_drive': 4, 'settle_old_political_accounts': 2,
+                      'secure_the_national_assembly': 2, 'send_the_migrants_back': 3,
+                      'serbia_stands_united': 3, 'reconstitute_serbian_volunteer_guard': 10}
+    assert sum(expected_costs.values()) * 7 == 168
+    for name, cost in expected_costs.items():
+        assert int(get(focuses['MSGA_' + name], 'cost')) == cost
+    def requires(name, parents):
+        assert set(graph['MSGA_' + name]) == {'MSGA_' + p for p in parents}
+    requires('independent_resource_policy', ['upgrade_belgrade_services', 'internal_investment_drive', 'develop_the_morava_corridor'])
+    requires('presidential_mandate', ['secure_the_national_assembly', 'send_the_migrants_back'])
+    requires('secure_supply_lines', ['modernise_the_army', 'arms_for_an_uncertain_world', 'reconstitute_serbian_volunteer_guard'])
+    requires('watch_the_western_shield', ['serbian_recovery', 'serbia_stands_united', 'ready_for_the_uncertain'])
+    ancestors = set()
+    def collect(node):
+        if node in ancestors: return
+        ancestors.add(node)
+        for parent in graph[node]: collect(parent)
+    collect('MSGA_watch_the_western_shield')
+    assert sum(int(get(focuses[n], 'cost')) * 7 for n in ancestors) == 756
+    assert sum(int(get(focuses[n], 'cost')) * 7 for n in ancestors if n != 'MSGA_watch_the_western_shield') == 721
+    unique([(get(f, 'x'), get(f, 'y')) for f in focuses.values()], 'Focus position')
+    for name in ['upgrade_belgrade_services', 'internal_investment_drive', 'develop_the_morava_corridor']:
+        assert get(focuses['MSGA_' + name], 'y') == '4'
+    for name in ['modernise_the_army', 'arms_for_an_uncertain_world', 'reconstitute_serbian_volunteer_guard']:
+        assert get(focuses['MSGA_' + name], 'y') == '4'
+
+    effects = scripts['common/scripted_effects/MSGA_SER_effects.txt']
+    investment = get(effects, 'MSGA_internal_investment')
+    assert get(investment, 'set_temp_variable') == parse('var = debt_var_temp value = 2.0')
+    assert get(investment, 'add_debt') == 'yes'
+    assert not any(k == 'set_variable' and 'debt_var' in str(v) for k, _, v in descend(investment))
+    north = get(get(investment, 'if'), '45')
+    assert ('add_building_construction', '=', parse('type = industrial_complex level = 2 instant_build = yes')) in north
+    infrastructure = [get(v, 'level') for k, _, v in descend(north) if k == 'add_building_construction' and get(v, 'type') == 'infrastructure']
+    assert infrastructure == ['3', '2', '1']
+    cap = get(get(parse((tfr/'common/buildings/TFR_buildings.txt').read_text(encoding='utf-8-sig'))[0][2], 'infrastructure'), 'level_cap')
+    assert get(cap, 'state_max') == '5'
+    native_economy = (tfr/'common/scripted_effects/00_TFR_scripted_effects_ZZZ_generic.txt').read_text(encoding='utf-8-sig')
+    assert 'value = modifier@industrial_development_monthly' in native_economy
+    definitions = parse((tfr/'common/modifier_definitions/00_TFR_economic_modifiers_definition.txt').read_text(encoding='utf-8-sig'))
+    assert get(get(definitions, 'industrial_development_monthly'), 'value_type') == 'percentage'
+    ideas = get(scripts['common/ideas/MSGA_SER_expansion_ideas.txt'][0][2], 'country')
+    assert get(get(ideas, 'MSGA_internal_investment_campaign'), 'modifier') == parse('income_growth_factor = -0.05 business_value_factor = 0.10 industrial_capacity_factory = 0.02 industrial_development_monthly = 0.05')
+    base = get(get(parse((tfr/'common/ideas/TFR_ideas_SER.txt').read_text(encoding='utf-8-sig'))[0][2], 'country'), 'SER_massive_emigration_problem')
+    base_mods = {k: float(v) for k, _, v in get(base, 'modifier')}
+    easing = {k: float(v) for k, _, v in get(get(ideas, 'MSGA_massive_emigration_easing'), 'modifier')}
+    assert easing == {k: v / 2 for k, v in base_mods.items()}
+    migrants = get(focuses['MSGA_send_the_migrants_back'], 'completion_reward')
+    assert get(migrants, 'remove_ideas') == 'SER_massive_emigration_problem'
+    assert get(migrants, 'add_ideas') == 'MSGA_massive_emigration_easing'
+    assert get(migrants, 'add_timed_idea') == parse('idea = MSGA_repatriation_disruption days = 75')
+    assert get(get(ideas, 'MSGA_repatriation_disruption'), 'modifier') == parse('army_org_factor = -0.05')
+    assert get(get(ideas, 'MSGA_national_consensus'), 'modifier') == parse('stability_factor = 0.05 political_power_factor = 0.05 mobilization_speed = 0.05')
+    decisions = scripts['common/decisions/MSGA_SER_expansion.txt']
+    southern = get(get(decisions, 'MSGA_economic_development'), 'MSGA_invest_southern_serbia')
+    assert get(southern, 'cost') == '20' and get(southern, 'days_remove') == '30'
+    assert get(get(southern, 'complete_effect'), 'set_temp_variable') == parse('var = debt_var_temp value = 1.0')
+    assert not any(k == 'add_building_construction' for k, _, _ in descend(get(southern, 'complete_effect')))
+    assert ('108', '=', parse('add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes }')) in descend(get(southern, 'remove_effect'))
+
+    expected = {'MSGA_SER_volunteer_template': [('infantry', 0, 0), ('infantry', 0, 1), ('infantry', 0, 2), ('artillery_brigade', 0, 3)],
+                'MSGA_SER_starting_templates': [('modern_armor', 0, 0), ('modern_armor', 0, 1), ('mechanized', 1, 0), ('mechanized', 1, 1), ('light_mechanized', 2, 0), ('light_mechanized', 2, 1)]}
+    units = [v for p in (tfr/'common/units').glob('*.txt') for k, _, v in parse(p.read_text(encoding='utf-8-sig')) if k == 'sub_units']
+    native_units = {k: v for ast in units for k, _, v in ast}
+    for id, grid in expected.items():
+        ast = scripts['history/units/' + id + '.txt']
+        assert len(ast) == 1 and ast[0][0] == 'division_template'
+        template = ast[0][2]
+        assert not any(k == 'support' for k, _, _ in template)
+        actual = [(k, int(get(v, 'x')), int(get(v, 'y'))) for k, _, v in get(template, 'regiments')]
+        assert actual == grid
+        assert sum(float(get(native_units[k], 'combat_width')) for k, _, _ in grid) == (12 if 'volunteer' in id else 24)
+        assert sum(float(get(native_units[k], 'max_strength')) for k, _, _ in grid) == (75.6 if 'volunteer' in id else 164)
+    installer = get(effects, 'MSGA_create_starting_template')
+    assert get(get(installer, 'if'), 'load_oob') == 'MSGA_SER_starting_templates'
+    assert not any(k in ('create_unit', 'add_equipment_to_stockpile', 'set_technology') for k, _, _ in descend(installer))
+    volunteer_installer = get(get(effects, 'MSGA_create_volunteer_template'), 'if')
+    assert get(volunteer_installer, 'set_division_template_cap') == parse('division_template = "Srpska dobrovoljačka garda" division_cap = 4')
+    assert get(scripts['history/units/MSGA_SER_volunteer_template.txt'][0][2], 'is_locked') == 'yes'
+    for name in ['tigers', 'scorpions', 'white_eagles', 'serbian_guard']:
+        body = get(effects, 'MSGA_raise_' + name)
+        assert ('has_country_flag', '=', 'MSGA_' + name + '_raised') in descend(body)
+        spawn = next(v for k, _, v in descend(body) if k == 'create_unit')
+        assert get(spawn, 'count') == '1' and get(spawn, 'owner') == 'ROOT'
+        assert 'Srpska dobrovoljačka garda' in get(spawn, 'division')
+        assert 'start_equipment_factor = 1' in get(spawn, 'division') and 'start_manpower_factor = 1' in get(spawn, 'division')
+        if name != 'tigers':
+            decision = get(get(decisions, 'MSGA_rearmament'), 'MSGA_raise_' + name)
+            assert get(decision, 'cost') == '25' and get(decision, 'days_remove') == '20'
+            assert get(decision, 'fire_only_once') == 'yes'
+            assert get(decision, 'remove_effect') == parse('MSGA_raise_' + name + ' = yes')
+    assert not any(p.startswith('common/characters/') for p in scripts)
+
+
 def main():
     scripts = {p.relative_to(MOD).as_posix(): parse(p.read_text(encoding='utf-8-sig'))
                for p in MOD.rglob('*') if p.suffix in ('.txt', '.gfx')}
@@ -134,16 +230,13 @@ def main():
     tree = scripts[focus_path][0][2]
     focuses = [v for k, _, v in tree if k == 'focus']
     focus_ids = [get(f, 'id') for f in focuses]
-    assert len(focus_ids) == 18
+    assert len(focus_ids) == 24
     unique(focus_ids, 'Focus')
     baseline_text = subprocess.check_output(
         ['git', 'show', '38d855e:make_serbia_great_again/' + focus_path], cwd=ROOT).decode('utf-8')
     baseline = [v for k, _, v in parse(baseline_text)[0][2] if k == 'focus']
-    topology_keys = {'id', 'x', 'y', 'cost', 'prerequisite', 'cancel_if_invalid'}
-    topology = lambda fs: [[item for item in f if item[0] in topology_keys] for f in fs]
-    assert topology(focuses) == topology(baseline), 'Focus topology or timing changed'
     by_focus = {get(f, 'id'): f for f in focuses}
-    assert get(by_focus['MSGA_reopen_on_serbian_terms'], 'available') == parse('has_country_flag = MSGA_mass_vaccination_complete')
+    assert not any(k == 'available' for k, _, _ in by_focus['MSGA_reopen_on_serbian_terms'])
     assert not any(k == 'available' for k, _, _ in by_focus['MSGA_watch_the_western_shield'])
     assert get(by_focus['MSGA_the_kosovo_question'], 'available') == parse('has_country_flag = MSGA_western_shield_cracked')
     graph = {get(f, 'id'): [get(v, 'focus') for k, _, v in f if k == 'prerequisite'] for f in focuses}
@@ -164,7 +257,7 @@ def main():
         visit(focus)
     referenced = {n for parents in graph.values() for n in parents}
     assert set(graph) - referenced == {'MSGA_the_kosovo_question'}
-    sprites = [v for k, _, v in descend(scripts['interface/MSGA_focus_icons.gfx']) if k == 'SpriteType']
+    sprites = [v for p, ast in scripts.items() if p.startswith('interface/') for k, _, v in descend(ast) if k == 'SpriteType']
     sprite_names = [get(s, 'name').strip('"') for s in sprites]
     unique(sprite_names, 'Sprite')
     for f in focuses:
@@ -181,8 +274,12 @@ def main():
         header = texture.read_bytes()[:128]
         assert header[:4] == b'DDS ' and struct.unpack_from('<I', header, 88)[0] == 32
         image = Image.open(texture).convert('RGBA')
-        reference = Image.open(ROOT / 'art/focus_icons/MSGA_TFR_focus_icons/png_95' / (texture.stem + '.png')).convert('RGBA')
-        assert image.size == (95, 95) and image.tobytes() == reference.tobytes()
+        old = ROOT / 'art/focus_icons/MSGA_TFR_focus_icons/png_95' / (texture.stem + '.png')
+        pack = ROOT / 'art/new_early_assets/MSGA_new_assets_pack'
+        source = old if old.is_file() else pack / ('source/idea_png_60x68' if 'GFX_idea_' in texture.stem else 'source/focus_png_95') / (texture.stem + '.png')
+        reference = Image.open(source).convert('RGBA')
+        assert image.size == ((60, 68) if 'GFX_idea_' in texture.stem else (95, 95))
+        assert image.tobytes() == reference.tobytes()
     categories = [k for k, _, _ in scripts['common/decisions/categories/MSGA_SER_categories.txt']]
     unique(categories, 'Category')
     decisions = []
@@ -225,14 +322,23 @@ def main():
     assert get(get(final_army, 'swap_ideas'), 'add_idea') == 'MSGA_army_ready'
     assert not any(k == 'on_daily' for k, _, _ in all_pairs), 'Daily polling is forbidden'
     covid = get(scripts['common/decisions/MSGA_SER_covid.txt'], 'MSGA_public_health')
-    assert len(covid) == 2
-    for name, _, cost, flag in [('MSGA_hospital_funding', None, '50', 'MSGA_hospitals_supported'),
-                               ('MSGA_mass_vaccination', None, '75', 'MSGA_mass_vaccination_complete')]:
-        decision = get(covid, name)
-        assert get(decision, 'cost') == cost and get(decision, 'days_remove') == '35'
-        assert ('set_country_flag', '=', flag) in get(decision, 'remove_effect')
-        assert not any(v == flag for k, _, v in get(decision, 'complete_effect'))
-    assert ('has_country_flag', '=', 'MSGA_hospitals_supported') in get(get(covid, 'MSGA_mass_vaccination'), 'available')
+    assert len(covid) == 5
+    mission = get(covid, 'MSGA_pending_outbreak')
+    assert get(mission, 'days_mission_timeout') == '104'
+    assert ('has_country_flag', '=', 'MSGA_covid_resolved') in descend(get(mission, 'timeout_effect'))
+    for name, cost, days in [('restrict_border_traffic', '10', '120'), ('emergency_screening', '15', '130'), ('public_health_controls', '20', '150')]:
+        decision = get(covid, 'MSGA_' + name)
+        assert get(decision, 'cost') == cost and get(decision, 'fire_only_once') == 'yes'
+        assert get(get(get(decision, 'complete_effect'), 'add_days_mission_timeout'), 'days') == days
+        assert get(decision, 'available') == parse('has_active_mission = MSGA_pending_outbreak')
+    vaccination = get(covid, 'MSGA_mass_vaccination')
+    assert get(vaccination, 'days_remove') == '20' and get(vaccination, 'cost') == '75'
+    assert get(vaccination, 'available') == parse('date > 2020.12.31')
+    assert ('set_country_flag', '=', 'MSGA_mass_vaccination_complete') in get(vaccination, 'remove_effect')
+    ending = get(effects_ast, 'MSGA_end_covid')
+    assert ('remove_mission', '=', 'MSGA_pending_outbreak') in ending
+    assert ('set_country_flag', '=', 'MSGA_covid_resolved') in ending
+    assert {v for k, _, v in ending if k == 'remove_ideas' and not v.startswith('MSGA_')} == {'lower_covid_cases', 'low_covid_cases', 'medium_covid_cases', 'high_covid_cases', 'higher_covid_cases'}
     event_by_id = {get(b, 'id'): b for b in event_bodies}
     dispatcher = event_by_id['MSGA_chronicle.1']
     assert get(dispatcher, 'hidden') == 'yes'
@@ -278,7 +384,7 @@ def main():
     for key in re.findall(r'\$([^$\s]+)\$', locale):
         assert key in locale_keys, f'Unresolved localisation substitution {key}'
     baseline_locale = subprocess.check_output(['git', 'show', '38d855e:make_serbia_great_again/localisation/english/MSGA_l_english.yml'], cwd=ROOT).decode('utf-8-sig')
-    for focus in focus_ids:
+    for focus in [get(f, 'id') for f in baseline]:
         pattern = rf'^\s*{focus}:\d\s+"(.*)"\s*$'
         assert re.search(pattern, locale, re.M)[1] == re.search(pattern, baseline_locale, re.M)[1]
     forbidden = {'declare_war_on', 'create_wargoal', 'annex_country', 'transfer_state', 'add_state_core', 'set_state_owner'}
@@ -316,7 +422,7 @@ def main():
             assert re.search(r'\b'+re.escape(get(v, 'modifier'))+r'\s*=\s*\{', source('common/dynamic_modifiers'))
         if k in ('add_ideas', 'remove_ideas', 'has_idea') and isinstance(v, str) and not v.startswith('MSGA_'):
             assert re.search(r'\b'+re.escape(v)+r'\s*=\s*\{', external_ideas), f'Unknown TFR idea {v}'
-        if k in ('add_income_with_inflation', 'add_debt_with_inflation'):
+        if k in ('add_income_with_inflation', 'add_debt_with_inflation', 'add_debt'):
             assert re.search(r'\b'+k+r'\s*=\s*\{', external_effects)
         if k in ('generic_not_has_corona',):
             assert re.search(r'\b'+k+r'\s*=\s*\{', external_triggers)
@@ -326,22 +432,25 @@ def main():
             assert re.search(r'\b'+get(v, 'type')+r'\s*=\s*\{', buildings)
         if k == 'has_global_flag':
             assert re.search(r'set_global_flag\s*=\s*'+re.escape(v)+r'\b', external_events + external_effects), f'Unverified global flag {v}'
-    for state in (107, 108, 1296):
+    for state in (45, 107, 108, 1296):
         matches = [p for p in (tfr/'history/states').glob('*.txt') if re.search(r'\bid\s*=\s*'+str(state)+r'\b', p.read_text(encoding='utf-8-sig', errors='replace'))]
         assert len(matches) == 1 and 'owner = SER' in matches[0].read_text(encoding='utf-8-sig')
     assert 'category = cat_old_land_doctrine' in source('common/national_focus')
+    validate_expansion(scripts, tfr, graph, by_focus)
     validate_cleanup(scripts, tfr)
     report = {'static_validation': 'passed', 'script_files': len(scripts), 'focuses': len(focuses),
-              'custom_sprites': len(sprites), 'pixel_identical_icons': len(focuses), 'events': len(events),
+              'custom_sprites': len(sprites), 'pixel_identical_icons': len(focuses), 'pixel_identical_spirit_icons': 4, 'events': len(events),
               'decisions': len(decisions), 'categories': len(categories), 'idea_definitions': len(ideas),
               'dynamic_modifiers': len(dynamic), 'localisation_keys': len(locale_keys),
-              'original_layout_prerequisites_timing_and_titles': 'unchanged', 'sole_terminal_focus': 'MSGA_the_kosovo_question',
-              'availability_changes': ['reopening requires vaccination', 'watch starts monitoring', 'Kosovo requires collapse report'],
+              'existing_focus_costs_and_titles': 'unchanged', 'new_mandatory_focus_days': 168, 'western_shield_selectable_day': 721, 'western_shield_completion_day': 756, 'sole_terminal_focus': 'MSGA_the_kosovo_question',
+              'availability_changes': ['reopening proceeds independently of vaccination', 'watch starts monitoring', 'Kosovo requires collapse report'],
               'auxiliary_business_value_cap': 0.10, 'verified_idea_modifiers': sorted(local_modifier_keys),
               'chronicle_visible_events': 7, 'chronicle_interval_days': [120, 210], 'chronicle_cooldown_days': 360,
-              'covid_decisions': 2, 'daily_polling': False, 'tfr_external_references': 'checked against installed scripts',
-              'targeted_cleanup_validation': 'passed; unrelated focus/event/COVID rewards preserved',
+              'covid_decisions': 4, 'covid_missions': 1, 'daily_polling': False, 'tfr_external_references': 'checked against installed scripts',
+              'targeted_cleanup_validation': 'passed; previous cleanup and unrelated focus/event rewards preserved',
               'paid_one_time_review_decisions': 7, 'guarded_refundable_major_projects': 7,
+              'volunteer_scripted_grants': 4, 'volunteer_engine_template_cap': 4,
+              'screenshot_template_widths': [12, 24], 'northern_infrastructure_effective_gain_at_start': 2,
               'phase2_war_effects': 0, 'campaign_acceptance': 'not certified by static checks'}
     output = ROOT / 'docs/phase1_static_validation.json'
     output.parent.mkdir(exist_ok=True)

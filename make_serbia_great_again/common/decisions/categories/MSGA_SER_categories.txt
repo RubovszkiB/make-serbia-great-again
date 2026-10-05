@@ -15,7 +15,8 @@ MSGA_public_health = {
 		tag = SER
 	}
 	visible = {
-		has_country_flag = MSGA_covid_active
+		has_country_flag = MSGA_covid_response_started
+		NOT = { has_country_flag = MSGA_covid_resolved }
 	}
 	priority = 30
 }

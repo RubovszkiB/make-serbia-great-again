@@ -5,6 +5,11 @@ on_actions = {
 				MSGA_initialize = yes
 				MSGA_resume_early_systems = yes
 				MSGA_install_defence_minister = yes
+				MSGA_create_starting_template = yes
+				if = {
+					limit = { OR = { has_country_flag = MSGA_mass_vaccination_complete has_country_flag = MSGA_covid_resolved } }
+					MSGA_end_covid = yes
+				}
 				if = {
 					limit = { has_completed_focus = MSGA_consolidate_the_state }
 					# TFR startup can re-add the SPS modifier after this file runs.

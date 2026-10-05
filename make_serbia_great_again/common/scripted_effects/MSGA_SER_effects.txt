@@ -521,27 +521,28 @@ MSGA_belgrade_development = {
 		custom_effect_tooltip = MSGA_belgrade_fallback_tt
 	}
 }
+# Adapted from GER_coronavirus_timer: a real mission, extended by delay decisions.
 MSGA_start_covid = {
 	if = {
 		limit = {
-			NOT = {
-				has_country_flag = MSGA_mass_vaccination_complete
-			}
+			NOT = { has_country_flag = MSGA_covid_response_started }
+			NOT = { has_country_flag = MSGA_covid_resolved }
+			NOT = { has_country_flag = MSGA_mass_vaccination_complete }
 		}
 		set_country_flag = MSGA_covid_response_started
-		set_country_flag = MSGA_covid_active
 		remove_ideas = MSGA_pandemic_disruption
 		remove_ideas = MSGA_pandemic_easing
 		if = {
-			limit = {
-				generic_not_has_corona = yes
-				date < 2023.1.1
-			}
-			add_ideas = low_covid_cases
+			limit = { generic_not_has_corona = yes }
+			set_country_flag = MSGA_covid_pending
+			activate_mission = MSGA_pending_outbreak
 		}
+		else = { set_country_flag = MSGA_covid_active }
 	}
 }
 MSGA_end_covid = {
+	remove_mission = MSGA_pending_outbreak
+	clr_country_flag = MSGA_covid_pending
 	remove_ideas = lower_covid_cases
 	remove_ideas = low_covid_cases
 	remove_ideas = medium_covid_cases
@@ -606,9 +607,6 @@ MSGA_resume_early_systems = {
 		limit = {
 			has_completed_focus = MSGA_contain_the_outbreak
 			NOT = {
-				has_completed_focus = MSGA_reopen_on_serbian_terms
-			}
-			NOT = {
 				has_country_flag = MSGA_covid_response_started
 			}
 		}
@@ -619,5 +617,115 @@ MSGA_resume_early_systems = {
 			has_country_flag = MSGA_kosovo_phase_unlocked
 		}
 		set_country_flag = MSGA_kosovo_crisis_unlocked
+	}
+}
+
+# Exact nominal debt uses TFR add_debt, not its inflation-scaled variant.
+MSGA_internal_investment = {
+	set_temp_variable = { var = debt_var_temp value = 2.0 }
+	add_debt = yes
+	custom_effect_tooltip = MSGA_investment_debt_tt
+	if = {
+		limit = { 45 = { is_owned_by = ROOT is_fully_controlled_by = ROOT } }
+		45 = {
+			# Add only missing factory slots; infrastructure respects TFR's cap of five.
+			if = {
+				limit = { NOT = { free_building_slots = { building = industrial_complex size > 1 } } }
+				if = {
+					limit = { free_building_slots = { building = industrial_complex size > 0 } }
+					add_extra_state_shared_building_slots = 1
+				}
+				else = { add_extra_state_shared_building_slots = 2 }
+			}
+			add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
+			if = {
+				limit = { free_building_slots = { building = infrastructure size > 2 } }
+				add_building_construction = { type = infrastructure level = 3 instant_build = yes }
+			}
+			else_if = {
+				limit = { free_building_slots = { building = infrastructure size > 1 } }
+				add_building_construction = { type = infrastructure level = 2 instant_build = yes }
+			}
+			else_if = {
+				limit = { free_building_slots = { building = infrastructure size > 0 } }
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+			}
+		}
+	}
+	custom_effect_tooltip = MSGA_northern_infrastructure_tt
+}
+MSGA_create_starting_template = {
+	if = {
+		limit = { tag = SER NOT = { has_country_flag = MSGA_starting_template_created } }
+		load_oob = MSGA_SER_starting_templates
+		set_country_flag = MSGA_starting_template_created
+	}
+}
+MSGA_create_volunteer_template = {
+	if = {
+		limit = { NOT = { has_country_flag = MSGA_volunteer_template_created } }
+		load_oob = MSGA_SER_volunteer_template
+		set_division_template_cap = { division_template = "Srpska dobrovoljačka garda" division_cap = 4 }
+		set_country_flag = MSGA_volunteer_template_created
+	}
+}
+MSGA_raise_tigers = {
+	if = {
+		limit = { NOT = { has_country_flag = MSGA_tigers_raised } }
+		MSGA_create_volunteer_template = yes
+		random_owned_state = {
+			limit = { is_core_of = ROOT is_fully_controlled_by = ROOT }
+			create_unit = {
+				division = "name = \"Arkan's Tigers\" division_template = \"Srpska dobrovoljačka garda\" start_equipment_factor = 1 start_manpower_factor = 1 start_experience_factor = 0.1"
+				owner = ROOT
+				count = 1
+			}
+			ROOT = { set_country_flag = MSGA_tigers_raised }
+		}
+	}
+}
+MSGA_raise_scorpions = {
+	if = {
+		limit = { NOT = { has_country_flag = MSGA_scorpions_raised } }
+		MSGA_create_volunteer_template = yes
+		random_owned_state = {
+			limit = { is_core_of = ROOT is_fully_controlled_by = ROOT }
+			create_unit = {
+				division = "name = \"The Scorpions\" division_template = \"Srpska dobrovoljačka garda\" start_equipment_factor = 1 start_manpower_factor = 1 start_experience_factor = 0.1"
+				owner = ROOT
+				count = 1
+			}
+			ROOT = { set_country_flag = MSGA_scorpions_raised }
+		}
+	}
+}
+MSGA_raise_white_eagles = {
+	if = {
+		limit = { NOT = { has_country_flag = MSGA_white_eagles_raised } }
+		MSGA_create_volunteer_template = yes
+		random_owned_state = {
+			limit = { is_core_of = ROOT is_fully_controlled_by = ROOT }
+			create_unit = {
+				division = "name = \"White Eagles\" division_template = \"Srpska dobrovoljačka garda\" start_equipment_factor = 1 start_manpower_factor = 1 start_experience_factor = 0.1"
+				owner = ROOT
+				count = 1
+			}
+			ROOT = { set_country_flag = MSGA_white_eagles_raised }
+		}
+	}
+}
+MSGA_raise_serbian_guard = {
+	if = {
+		limit = { NOT = { has_country_flag = MSGA_serbian_guard_raised } }
+		MSGA_create_volunteer_template = yes
+		random_owned_state = {
+			limit = { is_core_of = ROOT is_fully_controlled_by = ROOT }
+			create_unit = {
+				division = "name = \"Serbian Guard\" division_template = \"Srpska dobrovoljačka garda\" start_equipment_factor = 1 start_manpower_factor = 1 start_experience_factor = 0.1"
+				owner = ROOT
+				count = 1
+			}
+			ROOT = { set_country_flag = MSGA_serbian_guard_raised }
+		}
 	}
 }

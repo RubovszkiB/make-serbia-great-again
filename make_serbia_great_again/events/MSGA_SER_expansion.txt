@@ -1,0 +1,11 @@
+add_namespace = MSGA_expansion
+country_event = {
+	id = MSGA_expansion.1
+	title = MSGA_expansion.1.t
+	desc = MSGA_expansion.1.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = { tag = SER }
+	option = { name = MSGA_expansion.1.a }
+}

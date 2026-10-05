@@ -51,7 +51,9 @@ focus_tree = {
 			country_event = {
 				id = MSGA.2
 			}
-			unlock_decision_tooltip = MSGA_hospital_funding
+			unlock_decision_tooltip = MSGA_restrict_border_traffic
+			unlock_decision_tooltip = MSGA_emergency_screening
+			unlock_decision_tooltip = MSGA_public_health_controls
 			unlock_decision_tooltip = MSGA_mass_vaccination
 			custom_effect_tooltip = MSGA_unlock_health_tt
 			set_country_flag = MSGA_completed_contain_the_outbreak
@@ -86,9 +88,6 @@ focus_tree = {
 			}
 			custom_effect_tooltip = MSGA_reopening_tt
 			set_country_flag = MSGA_completed_reopen_on_serbian_terms
-		}
-		available = {
-			has_country_flag = MSGA_mass_vaccination_complete
 		}
 	}
 	focus = {
@@ -169,6 +168,7 @@ focus_tree = {
 		prerequisite = {
 			focus = MSGA_develop_the_morava_corridor
 		}
+		prerequisite = { focus = MSGA_internal_investment_drive }
 		ai_will_do = {
 			factor = 6
 		}
@@ -285,11 +285,12 @@ focus_tree = {
 		id = MSGA_presidential_mandate
 		icon = GFX_goal_MSGA_presidential_mandate
 		x = 8
-		y = 5
+		y = 7
 		cost = 5
 		prerequisite = {
-			focus = MSGA_manage_the_streets
+			focus = MSGA_secure_the_national_assembly
 		}
+		prerequisite = { focus = MSGA_send_the_migrants_back }
 		ai_will_do = {
 			factor = 10
 		}
@@ -404,6 +405,7 @@ focus_tree = {
 		prerequisite = {
 			focus = MSGA_arms_for_an_uncertain_world
 		}
+		prerequisite = { focus = MSGA_reconstitute_serbian_volunteer_guard }
 		ai_will_do = {
 			factor = 5
 		}
@@ -448,13 +450,13 @@ focus_tree = {
 		id = MSGA_watch_the_western_shield
 		icon = GFX_goal_MSGA_watch_the_western_shield
 		x = 8
-		y = 7
+		y = 9
 		cost = 5
 		prerequisite = {
 			focus = MSGA_serbian_recovery
 		}
 		prerequisite = {
-			focus = MSGA_presidential_mandate
+			focus = MSGA_serbia_stands_united
 		}
 		prerequisite = {
 			focus = MSGA_ready_for_the_uncertain
@@ -477,7 +479,7 @@ focus_tree = {
 		id = MSGA_the_kosovo_question
 		icon = GFX_goal_MSGA_the_kosovo_question
 		x = 8
-		y = 8
+		y = 10
 		cost = 6
 		prerequisite = {
 			focus = MSGA_watch_the_western_shield
@@ -501,6 +503,103 @@ focus_tree = {
 		}
 		available = {
 			has_country_flag = MSGA_western_shield_cracked
+		}
+	}
+	focus = {
+		id = MSGA_internal_investment_drive
+		icon = GFX_goal_MSGA_internal_investment_drive
+		x = 2
+		y = 4
+		cost = 4
+		prerequisite = { focus = MSGA_attract_productive_capital }
+		ai_will_do = { factor = 6 }
+		completion_reward = {
+			MSGA_internal_investment = yes
+			add_ideas = MSGA_internal_investment_campaign
+			unlock_decision_tooltip = MSGA_invest_southern_serbia
+			set_country_flag = MSGA_completed_internal_investment_drive
+		}
+	}
+	focus = {
+		id = MSGA_settle_old_political_accounts
+		icon = GFX_goal_MSGA_settle_old_political_accounts
+		x = 8
+		y = 5
+		cost = 2
+		prerequisite = { focus = MSGA_manage_the_streets }
+		ai_will_do = { factor = 6 }
+		completion_reward = {
+			add_political_power = 35
+			add_stability = 0.01
+			set_country_flag = MSGA_old_political_accounts_settled
+			set_country_flag = MSGA_completed_settle_old_political_accounts
+		}
+	}
+	focus = {
+		id = MSGA_secure_the_national_assembly
+		icon = GFX_goal_MSGA_secure_the_national_assembly
+		x = 7
+		y = 6
+		cost = 2
+		prerequisite = { focus = MSGA_settle_old_political_accounts }
+		ai_will_do = { factor = 6 }
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.02
+			set_country_flag = MSGA_national_assembly_secured
+			set_country_flag = MSGA_completed_secure_the_national_assembly
+		}
+	}
+	focus = {
+		id = MSGA_send_the_migrants_back
+		icon = GFX_goal_MSGA_send_the_migrants_back
+		x = 9
+		y = 6
+		cost = 3
+		prerequisite = { focus = MSGA_settle_old_political_accounts }
+		ai_will_do = { factor = 6 }
+		completion_reward = {
+			remove_ideas = SER_massive_emigration_problem
+			add_ideas = MSGA_massive_emigration_easing
+			add_stability = -0.05
+			add_war_support = 0.05
+			add_timed_idea = { idea = MSGA_repatriation_disruption days = 75 }
+			set_country_flag = MSGA_completed_send_the_migrants_back
+		}
+	}
+	focus = {
+		id = MSGA_serbia_stands_united
+		icon = GFX_goal_MSGA_serbia_stands_united
+		x = 8
+		y = 8
+		cost = 3
+		prerequisite = { focus = MSGA_presidential_mandate }
+		ai_will_do = { factor = 6 }
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_ideas = MSGA_national_consensus
+			set_country_flag = MSGA_serbian_political_preparations_complete
+			set_country_flag = MSGA_completed_serbia_stands_united
+		}
+	}
+	focus = {
+		id = MSGA_reconstitute_serbian_volunteer_guard
+		icon = GFX_goal_MSGA_reconstitute_serbian_volunteer_guard
+		x = 14
+		y = 4
+		cost = 10
+		prerequisite = { focus = MSGA_restore_defence_production }
+		ai_will_do = { factor = 6 }
+		completion_reward = {
+			MSGA_create_volunteer_template = yes
+			MSGA_raise_tigers = yes
+			unlock_decision_tooltip = MSGA_raise_scorpions
+			unlock_decision_tooltip = MSGA_raise_white_eagles
+			unlock_decision_tooltip = MSGA_raise_serbian_guard
+			custom_effect_tooltip = MSGA_volunteer_guard_tt
+			set_country_flag = MSGA_completed_reconstitute_serbian_volunteer_guard
 		}
 	}
 }

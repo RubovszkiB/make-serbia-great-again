@@ -1,0 +1,18 @@
+spriteTypes = {
+	SpriteType = {
+		name = "GFX_idea_MSGA_internal_investment_campaign"
+		texturefile = "gfx/interface/ideas/GFX_idea_MSGA_internal_investment_campaign.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_MSGA_massive_emigration_easing"
+		texturefile = "gfx/interface/ideas/GFX_idea_MSGA_massive_emigration_easing.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_MSGA_repatriation_disruption"
+		texturefile = "gfx/interface/ideas/GFX_idea_MSGA_repatriation_disruption.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_MSGA_national_consensus"
+		texturefile = "gfx/interface/ideas/GFX_idea_MSGA_national_consensus.dds"
+	}
+}

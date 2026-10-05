@@ -1,0 +1,120 @@
+{
+  "focus_icons": [
+    {
+      "display_name": "Internal Investment Drive",
+      "sprite": "GFX_goal_MSGA_internal_investment_drive",
+      "runtime_path": "gfx/interface/goals/GFX_goal_MSGA_internal_investment_drive.dds",
+      "dimensions": [
+        95,
+        95
+      ],
+      "format": "DDS, uncompressed RGBA8 via Pillow",
+      "sha256": "6f40e0f9e30181ea9c01134ee36f35a1e276efcba17400fd6eb13dfca81712fc"
+    },
+    {
+      "display_name": "Send the Migrants Back",
+      "sprite": "GFX_goal_MSGA_send_the_migrants_back",
+      "runtime_path": "gfx/interface/goals/GFX_goal_MSGA_send_the_migrants_back.dds",
+      "dimensions": [
+        95,
+        95
+      ],
+      "format": "DDS, uncompressed RGBA8 via Pillow",
+      "sha256": "6f9c02e517f0c63b7aeeb819b9b1b51808a03fc1fcdd43fcfb28c1f32713e08c"
+    },
+    {
+      "display_name": "Reconstitute the Serbian Volunteer Guard",
+      "sprite": "GFX_goal_MSGA_reconstitute_serbian_volunteer_guard",
+      "runtime_path": "gfx/interface/goals/GFX_goal_MSGA_reconstitute_serbian_volunteer_guard.dds",
+      "dimensions": [
+        95,
+        95
+      ],
+      "format": "DDS, uncompressed RGBA8 via Pillow",
+      "sha256": "ccc65a0f6b0c8fa0f6d28279350a0a909424707b3e08b54f87817c96aac78022"
+    },
+    {
+      "display_name": "Secure the National Assembly",
+      "sprite": "GFX_goal_MSGA_secure_the_national_assembly",
+      "runtime_path": "gfx/interface/goals/GFX_goal_MSGA_secure_the_national_assembly.dds",
+      "dimensions": [
+        95,
+        95
+      ],
+      "format": "DDS, uncompressed RGBA8 via Pillow",
+      "sha256": "3dff7aed8408fca5e94f1fb58f22911885e3d66c70e46447758a414bdd948157"
+    },
+    {
+      "display_name": "Settle the Old Political Accounts",
+      "sprite": "GFX_goal_MSGA_settle_old_political_accounts",
+      "runtime_path": "gfx/interface/goals/GFX_goal_MSGA_settle_old_political_accounts.dds",
+      "dimensions": [
+        95,
+        95
+      ],
+      "format": "DDS, uncompressed RGBA8 via Pillow",
+      "sha256": "97e74dd69276a904fce9492a097aa072d4738a58b79eb1114243c2aaa949c2f7"
+    },
+    {
+      "display_name": "Serbia Stands United",
+      "sprite": "GFX_goal_MSGA_serbia_stands_united",
+      "runtime_path": "gfx/interface/goals/GFX_goal_MSGA_serbia_stands_united.dds",
+      "dimensions": [
+        95,
+        95
+      ],
+      "format": "DDS, uncompressed RGBA8 via Pillow",
+      "sha256": "3ca023295c6f5f92d7540c50d23bea087c2e74f3a5c4d09c354f80644fb591e0"
+    }
+  ],
+  "idea_icons": [
+    {
+      "display_name": "Internal Investment Campaign",
+      "sprite": "GFX_idea_MSGA_internal_investment_campaign",
+      "picture_key": "MSGA_internal_investment_campaign",
+      "runtime_path": "gfx/interface/ideas/GFX_idea_MSGA_internal_investment_campaign.dds",
+      "dimensions": [
+        60,
+        68
+      ],
+      "format": "DDS, uncompressed RGBA8 via Pillow",
+      "sha256": "33df63166898680f9805b0c5ada174d6e0bc4f4a1e667c4dbddff6d0cbdabcec"
+    },
+    {
+      "display_name": "Massive Emigration Problem – Easing",
+      "sprite": "GFX_idea_MSGA_massive_emigration_easing",
+      "picture_key": "MSGA_massive_emigration_easing",
+      "runtime_path": "gfx/interface/ideas/GFX_idea_MSGA_massive_emigration_easing.dds",
+      "dimensions": [
+        60,
+        68
+      ],
+      "format": "DDS, uncompressed RGBA8 via Pillow",
+      "sha256": "3f7844efee0b83619b2d205837614908ed2617daa543b17b3068f6e47233b585"
+    },
+    {
+      "display_name": "Disruption of the Repatriation Campaign",
+      "sprite": "GFX_idea_MSGA_repatriation_disruption",
+      "picture_key": "MSGA_repatriation_disruption",
+      "runtime_path": "gfx/interface/ideas/GFX_idea_MSGA_repatriation_disruption.dds",
+      "dimensions": [
+        60,
+        68
+      ],
+      "format": "DDS, uncompressed RGBA8 via Pillow",
+      "sha256": "c9584fc2a3f7e11f2df4de37b98dacda36b270b85f5934e80f2d510ecdfa1d7f"
+    },
+    {
+      "display_name": "National Consensus",
+      "sprite": "GFX_idea_MSGA_national_consensus",
+      "picture_key": "MSGA_national_consensus",
+      "runtime_path": "gfx/interface/ideas/GFX_idea_MSGA_national_consensus.dds",
+      "dimensions": [
+        60,
+        68
+      ],
+      "format": "DDS, uncompressed RGBA8 via Pillow",
+      "sha256": "a0cdf599a8f16087a14e2b231692a8673c80764756851a9f71d1116849bf76f3"
+    }
+  ]
+}
