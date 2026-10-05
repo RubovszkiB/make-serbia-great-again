@@ -1,0 +1,67 @@
+{
+  "static_validation": "passed",
+  "validated_mod_root": "C:\\Users\\Balazs\\Documents\\ChatGPT\\MSGA\\make_serbia_great_again",
+  "focus_days": [
+    14,
+    7,
+    14,
+    21,
+    21,
+    14,
+    7
+  ],
+  "north_state": 1305,
+  "remaining_state": 785,
+  "integration_debt_B": 1,
+  "integration_treasury_debit": 0,
+  "removed_native_spirit": "SER_rebellion_of_kosovo",
+  "militia_treasury_B": 2,
+  "militia_PP": 0,
+  "brigade_width": 16,
+  "brigade_equipment_required": {
+    "infantry_equipment": 925,
+    "motorized_equipment": 110,
+    "support_equipment": 115,
+    "mechanized_equipment": 50,
+    "light_mechanized_equipment": 45,
+    "modern_tank_chassis": 14
+  },
+  "variant_stats_before_country_tech_modifiers": {
+    "M-84A": {
+      "build_cost_ic": 8.51,
+      "reliability": 0.7499999999999999,
+      "armor_value": 30.0,
+      "hardness": 0.95,
+      "maximum_speed": 7.935,
+      "breakthrough": 26.0,
+      "soft_attack": 11.0,
+      "hard_attack": 20.0,
+      "ap_attack": 85.0,
+      "defense": 5.0,
+      "fuel_consumption": 2.0,
+      "recon": 0.5
+    },
+    "T-55A": {
+      "build_cost_ic": 5.920000000000001,
+      "reliability": 0.7499999999999999,
+      "armor_value": 18.0,
+      "hardness": 0.95,
+      "maximum_speed": 7.935,
+      "breakthrough": 24.0,
+      "soft_attack": 11.0,
+      "hard_attack": 20.0,
+      "ap_attack": 85.0,
+      "defense": 3.0,
+      "fuel_consumption": 2.0,
+      "recon": 0.5
+    }
+  },
+  "legal_starting_modules": true,
+  "supplied_DDS_assets": 22,
+  "visible_events": 14,
+  "postwar_rewards_in_either_order": "passed",
+  "debt_and_spawn_idempotence": "passed",
+  "Bosnian_transition_without_war": "passed",
+  "save_load": "model flag checkpoint passed; actual engine save/load not tested",
+  "gameplay_rendering_and_production_UI": "not certified by these checks"
+}

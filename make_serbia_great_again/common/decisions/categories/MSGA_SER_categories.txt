@@ -69,3 +69,9 @@ MSGA_kosovo_operations = {
  visible = { has_country_flag = MSGA_kosovo_war_active }
  visible_when_empty = yes
 }
+
+MSGA_kosovo_integration = {
+ icon = MSGA_integrate_kosovo_serb_militias
+ allowed = { tag = SER }
+ visible = { has_country_flag = MSGA_kosovo_fully_integrated }
+}

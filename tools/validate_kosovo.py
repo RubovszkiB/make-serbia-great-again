@@ -11,7 +11,7 @@ class CampaignModel:
     It does not simulate combat, engine peace conferences, saves or rendering.
     """
     def __init__(self, scripts):
-        self.effects = dict((k, v) for k, _, v in scripts['common/scripted_effects/MSGA_SER_effects.txt'])
+        self.effects = {k:v for p,ast in scripts.items() if p.startswith('common/scripted_effects/') for k,_,v in ast}
         self.flags = {c: set() for c in ['SER', 'KOS', 'ALB', 'USA', 'GER']}
         self.ideas = {c: set() for c in self.flags}
         self.factions = {'USA': 'NATO', 'ALB': 'NATO', 'GER': 'NATO', 'SER': None, 'KOS': None}
@@ -30,6 +30,13 @@ class CampaignModel:
         self.money = 10
         self.command_power = 100
         self.temp = 0
+        self.debt = 0
+        self.cores = {785: set(), 1305: {'SER'}}
+        self.buildings = {785: {'infrastructure': 2}, 1305: {'infrastructure': 2}}
+        self.extra_slots = {785: 0, 1305: 0}
+        self.dlc = True
+        self.variants = []
+        self.loaded_oobs = []
 
     def condition(self, ast, scope='SER'):
         def item(k, op, v):
@@ -39,6 +46,11 @@ class CampaignModel:
             if k == 'AND': return self.condition(v, scope)
             if k == 'NOT': return not any(item(a, b, c) for a, b, c in v)
             if k == 'always': return v == 'yes'
+            if k == 'tag': return scope == v
+            if k == 'is_core_of': return v in self.cores[scope]
+            if k == 'has_idea': return v in self.ideas[scope]
+            if k == 'has_dlc': return self.dlc
+            if k == 'infrastructure': return self.buildings[scope]['infrastructure'] < float(v)
             if k == 'country_exists': return v in self.exists
             if k == 'exists':
                 assert v in ('yes', 'no'), 'exists accepts a boolean, not a country tag'
@@ -112,7 +124,15 @@ class CampaignModel:
             elif k == 'set_temp_variable': self.temp = float(get(v, 'value'))
             elif k == 'add_income': self.money += self.temp
             elif k == 'add_command_power': self.command_power += float(v)
-            elif k in ('remove_from_array', 'add_war_support', 'add_stability', 'army_experience'): pass
+            elif k == 'add_debt': self.debt += self.temp
+            elif k == 'add_core_of': self.cores[scope].add(v)
+            elif k == 'add_extra_state_shared_building_slots': self.extra_slots[scope] += int(v)
+            elif k == 'add_building_construction':
+                name = get(v, 'type')
+                self.buildings[scope][name] = self.buildings[scope].get(name, 0) + int(get(v, 'level'))
+            elif k == 'create_equipment_variant': self.variants.append(get(v, 'name').strip('"'))
+            elif k == 'load_oob': self.loaded_oobs.append(v)
+            elif k in ('remove_from_array', 'add_war_support', 'add_stability', 'army_experience', 'add_political_power'): pass
             else: raise AssertionError('Unmodelled campaign effect: ' + k)
 
 
@@ -123,10 +143,10 @@ def main():
     args = cli.parse_args(); mod = args.mod_root.resolve()
     scripts = {p.relative_to(mod).as_posix(): parse(p.read_text(encoding='utf-8-sig')) for p in mod.rglob('*') if p.suffix in ('.txt', '.gfx')}
     trees = {get(v, 'id'): v for p, ast in scripts.items() if p.startswith('common/national_focus/') for k, _, v in ast if k == 'focus_tree'}
-    assert set(trees) == {'MSGA_SER_phase1', 'MSGA_SER_kosovo_war', 'MSGA_SER_post_kosovo'}
+    assert set(trees) == {'MSGA_SER_phase1', 'MSGA_SER_kosovo_war', 'MSGA_SER_post_kosovo', 'MSGA_SER_bosnian_crisis'}
     focuses = {get(v, 'id'): v for tree in trees.values() for k, _, v in tree if k == 'focus'}
     all_focus_ids = [get(v, 'id') for tree in trees.values() for k, _, v in tree if k == 'focus']
-    unique(all_focus_ids, 'All chapter focus IDs'); assert len(all_focus_ids) == 29
+    unique(all_focus_ids, 'All chapter focus IDs'); assert len(all_focus_ids) == 36
     war = [get(v, 'id') for k, _, v in trees['MSGA_SER_kosovo_war'] if k == 'focus']
     assert war == ['MSGA_plan_the_attack', 'MSGA_prepare_southern_command', 'MSGA_operation_return', 'MSGA_kosovo_has_been_retaken']
     for i, id in enumerate(war):
@@ -154,7 +174,7 @@ def main():
     for id in war: assert 'GFX_goal_'+id in names and 'GFX_goal_'+id+'_shine' in names
     for body in event_bodies.values():
         if any(k == 'picture' for k, _, _ in body): assert get(body, 'picture') in names
-    locale = (mod/'localisation/english/MSGA_l_english.yml').read_text(encoding='utf-8-sig')
+    locale = '\n'.join(p.read_text(encoding='utf-8-sig') for p in (mod/'localisation/english').glob('*.yml'))
     for id in all_focus_ids: assert re.search(r'^ '+id+r'_desc:0 ', locale, re.M)
     declarations = [v for ast in scripts.values() for k, _, v in descend(ast) if k == 'declare_war_on']
     assert sorted(get(v, 'target') for v in declarations) == ['KOS', 'SER']

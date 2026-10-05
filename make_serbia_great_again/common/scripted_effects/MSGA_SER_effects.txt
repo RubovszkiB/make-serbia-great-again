@@ -870,10 +870,11 @@ MSGA_enter_post_kosovo_chapter = {
    has_country_flag = MSGA_kosovo_victory_queued
    785 = { is_owned_by = SER }
    1305 = { is_owned_by = SER }
-   NOT = { has_country_flag = MSGA_post_kosovo_active }
+   NOT = { has_country_flag = MSGA_post_kosovo_active } NOT = { has_country_flag = MSGA_bosnian_crisis_started }
   }
   clr_country_flag = MSGA_kosovo_chapter_active
   set_country_flag = MSGA_post_kosovo_active
   load_focus_tree = { tree = MSGA_SER_post_kosovo keep_completed = yes }
+  MSGA_open_post_kosovo = yes
  }
 }

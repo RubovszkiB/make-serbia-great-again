@@ -1,0 +1,69 @@
+MSGA_open_post_kosovo = {
+ if = {
+  limit = { tag = SER has_country_flag = MSGA_post_kosovo_active has_country_flag = MSGA_kosovo_resolution_done 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER } NOT = { has_country_flag = MSGA_post_kosovo_opening_sent } }
+  set_country_flag = MSGA_post_kosovo_opening_sent
+  country_event = { id = MSGA_postkosovo.1 }
+ }
+}
+MSGA_restore_northern_order = {
+ if = { limit = { 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER } NOT = { has_country_flag = MSGA_northern_kosovo_restored } }
+  set_country_flag = MSGA_northern_kosovo_restored
+  1305 = { add_core_of = SER }
+  country_event = { id = MSGA_postkosovo.2 }
+ }
+}
+MSGA_integrate_kosovo = {
+ if = { limit = { has_country_flag = MSGA_kosovo_resolution_done has_country_flag = MSGA_northern_kosovo_restored 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER } NOT = { has_country_flag = MSGA_kosovo_fully_integrated } }
+  set_temp_variable = { var = debt_var_temp value = 1 }
+  add_debt = yes
+  785 = { add_core_of = SER }
+  1305 = { add_core_of = SER }
+  set_country_flag = MSGA_kosovo_fully_integrated
+  country_event = { id = MSGA_postkosovo.4 days = 1 }
+ }
+}
+MSGA_consolidate_kosovo_authority = {
+ if = { limit = { has_country_flag = MSGA_kosovo_fully_integrated 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER } NOT = { has_country_flag = MSGA_kosovo_civil_authority } }
+  set_country_flag = MSGA_kosovo_civil_authority
+  remove_ideas = SER_rebellion_of_kosovo
+  MSGA_cleanup_kosovo_campaign = yes
+  add_stability = 0.02
+  country_event = { id = MSGA_postkosovo.5 }
+ }
+}
+MSGA_rebuild_kosovo = {
+ if = { limit = { has_country_flag = MSGA_kosovo_fully_integrated 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER } NOT = { has_country_flag = MSGA_kosovo_reconstruction_done } }
+  set_country_flag = MSGA_kosovo_reconstruction_done
+  785 = {
+   if = { limit = { infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+   add_extra_state_shared_building_slots = 1
+   add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+  }
+  country_event = { id = MSGA_postkosovo.7 }
+ }
+}
+MSGA_invest_in_pristina = {
+ if = { limit = { has_country_flag = MSGA_kosovo_fully_integrated 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER } NOT = { has_country_flag = MSGA_pristina_investment_done } }
+  set_country_flag = MSGA_pristina_investment_done
+  785 = {
+   add_extra_state_shared_building_slots = 2
+   add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+   add_building_construction = { type = office_park level = 1 instant_build = yes }
+  }
+  country_event = { id = MSGA_postkosovo.9 }
+ }
+}
+MSGA_begin_serbian_question = {
+ if = { limit = { has_country_flag = MSGA_completed_the_serbian_question NOT = { has_country_flag = MSGA_serbian_question_chain_started } }
+  set_country_flag = MSGA_serbian_question_chain_started
+  country_event = { id = MSGA_postkosovo.12 }
+ }
+}
+MSGA_enter_bosnian_chapter = {
+ if = { limit = { has_country_flag = MSGA_completed_the_serbian_question has_country_flag = MSGA_bosnian_question_emerging has_country_flag = MSGA_final_post_kosovo_story 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER } NOT = { has_country_flag = MSGA_bosnian_crisis_started } }
+  set_country_flag = MSGA_bosnian_crisis_started
+  set_country_flag = MSGA_bosnian_crisis_active
+  clr_country_flag = MSGA_post_kosovo_active
+  load_focus_tree = { tree = MSGA_SER_bosnian_crisis keep_completed = yes }
+ }
+}

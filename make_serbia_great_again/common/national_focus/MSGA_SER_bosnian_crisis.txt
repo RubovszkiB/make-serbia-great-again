@@ -1,0 +1,13 @@
+focus_tree = {
+ id = MSGA_SER_bosnian_crisis
+ country = { factor = 0 modifier = { add = 200 tag = SER has_country_flag = MSGA_bosnian_crisis_active } }
+ default = no
+ reset_on_civilwar = no
+ focus = {
+  id = MSGA_bosnian_crisis
+  icon = GFX_goal_MSGA_the_serbian_question
+  x = 0 y = 0 cost = 1
+  available = { always = no }
+  completion_reward = { custom_effect_tooltip = MSGA_bosnian_crisis_tt }
+ }
+}

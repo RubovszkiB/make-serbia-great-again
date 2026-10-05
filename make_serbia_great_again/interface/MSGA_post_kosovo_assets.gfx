@@ -1,0 +1,319 @@
+spriteTypes = {
+SpriteType = { name = "GFX_goal_MSGA_restore_order_in_kosovo" texturefile = "gfx/interface/goals/MSGA_restore_order_in_kosovo.dds" }
+SpriteType = {
+		name = "GFX_goal_MSGA_restore_order_in_kosovo_shine"
+		texturefile = "gfx/interface/goals/MSGA_restore_order_in_kosovo.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MSGA_restore_order_in_kosovo.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = {
+				x = 0.0
+				y = 0.0
+			}
+			animationtexturescale = {
+				x = 1.0
+				y = 1.0
+			}
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MSGA_restore_order_in_kosovo.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = {
+				x = 0.0
+				y = 0.0
+			}
+			animationtexturescale = {
+				x = 1.0
+				y = 1.0
+			}
+		}
+		legacy_lazy_load = no
+	}
+SpriteType = { name = "GFX_goal_MSGA_review_kosovo_administration" texturefile = "gfx/interface/goals/MSGA_review_kosovo_administration.dds" }
+SpriteType = {
+		name = "GFX_goal_MSGA_review_kosovo_administration_shine"
+		texturefile = "gfx/interface/goals/MSGA_review_kosovo_administration.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MSGA_review_kosovo_administration.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = {
+				x = 0.0
+				y = 0.0
+			}
+			animationtexturescale = {
+				x = 1.0
+				y = 1.0
+			}
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MSGA_review_kosovo_administration.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = {
+				x = 0.0
+				y = 0.0
+			}
+			animationtexturescale = {
+				x = 1.0
+				y = 1.0
+			}
+		}
+		legacy_lazy_load = no
+	}
+SpriteType = { name = "GFX_goal_MSGA_consolidate_serbian_authority" texturefile = "gfx/interface/goals/MSGA_consolidate_serbian_authority.dds" }
+SpriteType = {
+		name = "GFX_goal_MSGA_consolidate_serbian_authority_shine"
+		texturefile = "gfx/interface/goals/MSGA_consolidate_serbian_authority.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MSGA_consolidate_serbian_authority.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = {
+				x = 0.0
+				y = 0.0
+			}
+			animationtexturescale = {
+				x = 1.0
+				y = 1.0
+			}
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MSGA_consolidate_serbian_authority.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = {
+				x = 0.0
+				y = 0.0
+			}
+			animationtexturescale = {
+				x = 1.0
+				y = 1.0
+			}
+		}
+		legacy_lazy_load = no
+	}
+SpriteType = { name = "GFX_goal_MSGA_rebuild_kosovo" texturefile = "gfx/interface/goals/MSGA_rebuild_kosovo.dds" }
+SpriteType = {
+		name = "GFX_goal_MSGA_rebuild_kosovo_shine"
+		texturefile = "gfx/interface/goals/MSGA_rebuild_kosovo.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MSGA_rebuild_kosovo.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = {
+				x = 0.0
+				y = 0.0
+			}
+			animationtexturescale = {
+				x = 1.0
+				y = 1.0
+			}
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MSGA_rebuild_kosovo.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = {
+				x = 0.0
+				y = 0.0
+			}
+			animationtexturescale = {
+				x = 1.0
+				y = 1.0
+			}
+		}
+		legacy_lazy_load = no
+	}
+SpriteType = { name = "GFX_goal_MSGA_invest_in_pristina" texturefile = "gfx/interface/goals/MSGA_invest_in_pristina.dds" }
+SpriteType = {
+		name = "GFX_goal_MSGA_invest_in_pristina_shine"
+		texturefile = "gfx/interface/goals/MSGA_invest_in_pristina.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MSGA_invest_in_pristina.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = {
+				x = 0.0
+				y = 0.0
+			}
+			animationtexturescale = {
+				x = 1.0
+				y = 1.0
+			}
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MSGA_invest_in_pristina.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = {
+				x = 0.0
+				y = 0.0
+			}
+			animationtexturescale = {
+				x = 1.0
+				y = 1.0
+			}
+		}
+		legacy_lazy_load = no
+	}
+SpriteType = { name = "GFX_goal_MSGA_a_lasting_peace" texturefile = "gfx/interface/goals/MSGA_a_lasting_peace.dds" }
+SpriteType = {
+		name = "GFX_goal_MSGA_a_lasting_peace_shine"
+		texturefile = "gfx/interface/goals/MSGA_a_lasting_peace.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MSGA_a_lasting_peace.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = {
+				x = 0.0
+				y = 0.0
+			}
+			animationtexturescale = {
+				x = 1.0
+				y = 1.0
+			}
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MSGA_a_lasting_peace.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = {
+				x = 0.0
+				y = 0.0
+			}
+			animationtexturescale = {
+				x = 1.0
+				y = 1.0
+			}
+		}
+		legacy_lazy_load = no
+	}
+SpriteType = { name = "GFX_goal_MSGA_the_serbian_question" texturefile = "gfx/interface/goals/MSGA_the_serbian_question.dds" }
+SpriteType = {
+		name = "GFX_goal_MSGA_the_serbian_question_shine"
+		texturefile = "gfx/interface/goals/MSGA_the_serbian_question.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MSGA_the_serbian_question.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = {
+				x = 0.0
+				y = 0.0
+			}
+			animationtexturescale = {
+				x = 1.0
+				y = 1.0
+			}
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MSGA_the_serbian_question.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = {
+				x = 0.0
+				y = 0.0
+			}
+			animationtexturescale = {
+				x = 1.0
+				y = 1.0
+			}
+		}
+		legacy_lazy_load = no
+	}
+SpriteType = { name = "GFX_report_event_MSGA_postkosovo_event_01_morning_after_victory" texturefile = "gfx/interface/events/MSGA_postkosovo_event_01_morning_after_victory.dds" }
+SpriteType = { name = "GFX_report_event_MSGA_postkosovo_event_02_northern_municipalities" texturefile = "gfx/interface/events/MSGA_postkosovo_event_02_northern_municipalities.dds" }
+SpriteType = { name = "GFX_report_event_MSGA_postkosovo_event_03_cost_of_integration" texturefile = "gfx/interface/events/MSGA_postkosovo_event_03_cost_of_integration.dds" }
+SpriteType = { name = "GFX_report_event_MSGA_postkosovo_event_04_one_law_one_administration" texturefile = "gfx/interface/events/MSGA_postkosovo_event_04_one_law_one_administration.dds" }
+SpriteType = { name = "GFX_report_event_MSGA_postkosovo_event_05_military_to_civil_government" texturefile = "gfx/interface/events/MSGA_postkosovo_event_05_military_to_civil_government.dds" }
+SpriteType = { name = "GFX_report_event_MSGA_postkosovo_event_06_kosovo_question" texturefile = "gfx/interface/events/MSGA_postkosovo_event_06_kosovo_question.dds" }
+SpriteType = { name = "GFX_report_event_MSGA_postkosovo_event_07_reconstruction_begins" texturefile = "gfx/interface/events/MSGA_postkosovo_event_07_reconstruction_begins.dds" }
+SpriteType = { name = "GFX_report_event_MSGA_postkosovo_event_08_contracts_for_reconstruction" texturefile = "gfx/interface/events/MSGA_postkosovo_event_08_contracts_for_reconstruction.dds" }
+SpriteType = { name = "GFX_report_event_MSGA_postkosovo_event_09_investors_return_pristina" texturefile = "gfx/interface/events/MSGA_postkosovo_event_09_investors_return_pristina.dds" }
+SpriteType = { name = "GFX_report_event_MSGA_postkosovo_event_10_city_reconnected" texturefile = "gfx/interface/events/MSGA_postkosovo_event_10_city_reconnected.dds" }
+SpriteType = { name = "GFX_report_event_MSGA_postkosovo_event_11_new_kosovo" texturefile = "gfx/interface/events/MSGA_postkosovo_event_11_new_kosovo.dds" }
+SpriteType = { name = "GFX_report_event_MSGA_postkosovo_event_12_new_balance_balkans" texturefile = "gfx/interface/events/MSGA_postkosovo_event_12_new_balance_balkans.dds" }
+SpriteType = { name = "GFX_report_event_MSGA_postkosovo_event_13_voices_across_drina" texturefile = "gfx/interface/events/MSGA_postkosovo_event_13_voices_across_drina.dds" }
+SpriteType = { name = "GFX_report_event_MSGA_postkosovo_event_14_kosovo_only_beginning" texturefile = "gfx/interface/events/MSGA_postkosovo_event_14_kosovo_only_beginning.dds" }
+SpriteType = { name = "GFX_decision_MSGA_integrate_kosovo_serb_militias" texturefile = "gfx/interface/decisions/MSGA_integrate_kosovo_serb_militias.dds" }
+SpriteType = { name = "GFX_decision_category_MSGA_integrate_kosovo_serb_militias" texturefile = "gfx/interface/decisions/MSGA_integrate_kosovo_serb_militias.dds" }
+}

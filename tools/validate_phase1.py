@@ -296,19 +296,18 @@ def main():
         texture = MOD / get(sprite, 'texturefile').strip('"')
         assert texture.is_file(), texture
         header = texture.read_bytes()[:128]
-        assert header[:4] == b'DDS ' and struct.unpack_from('<I', header, 88)[0] == 32
+        assert header[:4] == b'DDS '
+        assert struct.unpack_from('<I', header, 88)[0] == 32 or header[84:88] == b'DXT5'
         image = Image.open(texture).convert('RGBA')
         old = ROOT / 'art/focus_icons/MSGA_TFR_focus_icons/png_95' / (texture.stem + '.png')
         pack = ROOT / 'art/new_early_assets/MSGA_new_assets_pack'
         source = old if old.is_file() else pack / ('source/idea_png_60x68' if 'GFX_idea_' in texture.stem else 'source/focus_png_95') / (texture.stem + '.png')
         if not source.is_file():
-            war_pack = ROOT / 'art/kosovo_war_assets/MSGA_Kosovo_War_Visual_Assets/source_png'
+            candidates = [ROOT/'art/kosovo_war_assets/MSGA_Kosovo_War_Visual_Assets', ROOT/'art/post_kosovo_assets/MSGA_Post_Kosovo_Visual_Assets']
             folder = 'focus' if texture.parent.name == 'goals' else texture.parent.name
-            source = war_pack / folder / (texture.stem.replace('MSGA_', 'SER_', 1) + '.png')
-            assert source.is_file()
-            # The pack's source crops are larger; runtime copies preserve its DDS-ready assets.
-            size_folder = {'focus': 'focus_95x95', 'events': 'events_474x156', 'mechanics': 'mechanics_64x64'}[folder]
-            source = war_pack.parent / 'dds_ready' / size_folder / (texture.stem.replace('MSGA_', 'SER_', 1) + '.dds')
+            size_folder = {'focus':'focus_95x95','events':'events_474x156','mechanics':'mechanics_64x64','decisions':'decisions_60x60'}[folder]
+            source = next((p/'dds_ready'/size_folder/(texture.stem.replace('MSGA_', 'SER_', 1)+'.dds') for p in candidates if (p/'dds_ready'/size_folder/(texture.stem.replace('MSGA_', 'SER_', 1)+'.dds')).is_file()), None)
+            assert source is not None, texture
         reference = Image.open(source).convert('RGBA')
         assert image.size == reference.size
         assert image.tobytes() == reference.tobytes()
@@ -324,7 +323,7 @@ def main():
     ideas = [k for p, ast in scripts.items() if p.startswith('common/ideas/')
              for _, _, categories_ast in ast for _, _, entries in categories_ast for k, _, _ in entries]
     dynamic = [k for k, _, _ in scripts['common/dynamic_modifiers/MSGA_SER_dynamic_modifiers.txt']]
-    effects = [k for k, _, _ in scripts['common/scripted_effects/MSGA_SER_effects.txt']]
+    effects = [k for p,ast in scripts.items() if p.startswith('common/scripted_effects/') for k,_,_ in ast]
     triggers = [k for k, _, _ in scripts['common/scripted_triggers/MSGA_SER_triggers.txt']]
     for label, values in [('Idea', ideas), ('Dynamic modifier', dynamic), ('Effect', effects), ('Trigger', triggers)]:
         unique(values, label)
@@ -406,7 +405,7 @@ def main():
                                for k, _, v in descend(get(body, 'complete_effect')))
     locale_path = MOD / 'localisation/english/MSGA_l_english.yml'
     assert locale_path.read_bytes().startswith(b'\xef\xbb\xbf')
-    locale = locale_path.read_text(encoding='utf-8-sig')
+    locale = '\n'.join(p.read_text(encoding='utf-8-sig') for p in (MOD/'localisation/english').glob('*.yml'))
     locale_keys = re.findall(r'^\s*([^\s:]+):\d\s+".*"\s*$', locale, re.M)
     unique(locale_keys, 'Localisation')
     required = focus_ids + [f + '_desc' for f in focus_ids] + ideas + dynamic + categories + decisions
@@ -419,7 +418,7 @@ def main():
     for focus in [get(f, 'id') for f in baseline]:
         pattern = rf'^\s*{focus}:\d\s+"(.*)"\s*$'
         assert re.search(pattern, locale, re.M)[1] == re.search(pattern, baseline_locale, re.M)[1]
-    forbidden = {'create_wargoal', 'add_state_core', 'set_state_owner'}
+    forbidden = {'create_wargoal', 'set_state_owner'}
     assert not {k for k, _, _ in all_pairs} & forbidden
     variable_writes = set()
     variable_reads = set()

@@ -3,12 +3,67 @@ focus_tree = {
  country = { factor = 0 modifier = { add = 200 tag = SER has_country_flag = MSGA_post_kosovo_active } }
  default = no
  reset_on_civilwar = no
-
  focus = {
-  id = MSGA_post_kosovo_settlement
-  icon = GFX_goal_MSGA_kosovo_has_been_retaken
-  x = 0 y = 0 cost = 1
-  available = { always = no }
-  completion_reward = { custom_effect_tooltip = MSGA_post_kosovo_shell_tt }
+  id = MSGA_restore_order_in_kosovo
+  icon = GFX_goal_MSGA_restore_order_in_kosovo
+  x = 4 y = 0 cost = 2
+  available = { 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER } }
+  ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_restore_order_in_kosovo MSGA_restore_northern_order = yes }
+ }
+ focus = {
+  id = MSGA_review_kosovo_administration
+  icon = GFX_goal_MSGA_review_kosovo_administration
+  x = 4 y = 1 cost = 1
+  prerequisite = { focus = MSGA_restore_order_in_kosovo }
+  available = { 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER } }
+  ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_review_kosovo_administration country_event = { id = MSGA_postkosovo.3 } }
+ }
+ focus = {
+  id = MSGA_consolidate_serbian_authority
+  icon = GFX_goal_MSGA_consolidate_serbian_authority
+  x = 4 y = 2 cost = 2
+  prerequisite = { focus = MSGA_review_kosovo_administration }
+  available = { 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER } has_country_flag = MSGA_kosovo_fully_integrated 785 = { is_core_of = SER } 1305 = { is_core_of = SER } }
+  ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_consolidate_serbian_authority MSGA_consolidate_kosovo_authority = yes }
+ }
+ focus = {
+  id = MSGA_rebuild_kosovo
+  icon = GFX_goal_MSGA_rebuild_kosovo
+  x = 2 y = 3 cost = 3
+  prerequisite = { focus = MSGA_consolidate_serbian_authority }
+  available = { 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER } has_country_flag = MSGA_kosovo_fully_integrated 785 = { is_core_of = SER } 1305 = { is_core_of = SER } }
+  ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_rebuild_kosovo MSGA_rebuild_kosovo = yes }
+ }
+ focus = {
+  id = MSGA_invest_in_pristina
+  icon = GFX_goal_MSGA_invest_in_pristina
+  x = 6 y = 3 cost = 3
+  prerequisite = { focus = MSGA_consolidate_serbian_authority }
+  available = { 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER } has_country_flag = MSGA_kosovo_fully_integrated 785 = { is_core_of = SER } 1305 = { is_core_of = SER } }
+  ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_invest_in_pristina MSGA_invest_in_pristina = yes }
+ }
+ focus = {
+  id = MSGA_a_lasting_peace
+  icon = GFX_goal_MSGA_a_lasting_peace
+  x = 4 y = 4 cost = 2
+  prerequisite = { focus = MSGA_rebuild_kosovo }
+  prerequisite = { focus = MSGA_invest_in_pristina }
+  available = { 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER } has_country_flag = MSGA_kosovo_fully_integrated 785 = { is_core_of = SER } 1305 = { is_core_of = SER } NOT = { has_idea = SER_rebellion_of_kosovo } }
+  ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_a_lasting_peace country_event = { id = MSGA_postkosovo.11 } }
+ }
+ focus = {
+  id = MSGA_the_serbian_question
+  icon = GFX_goal_MSGA_the_serbian_question
+  x = 4 y = 5 cost = 1
+  prerequisite = { focus = MSGA_a_lasting_peace }
+  available = { 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER } has_country_flag = MSGA_kosovo_fully_integrated 785 = { is_core_of = SER } 1305 = { is_core_of = SER } }
+  ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_the_serbian_question MSGA_begin_serbian_question = yes }
  }
 }

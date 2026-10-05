@@ -1,0 +1,167 @@
+{
+  "focuses": [
+    {
+      "id": "SER_restore_order_in_kosovo",
+      "title": "Restore Order in Kosovo",
+      "png": "source_png/focus/SER_restore_order_in_kosovo.png",
+      "dds_95x95": "dds_ready/focus_95x95/SER_restore_order_in_kosovo.dds"
+    },
+    {
+      "id": "SER_review_kosovo_administration",
+      "title": "Review the Kosovo Administration",
+      "png": "source_png/focus/SER_review_kosovo_administration.png",
+      "dds_95x95": "dds_ready/focus_95x95/SER_review_kosovo_administration.dds"
+    },
+    {
+      "id": "SER_consolidate_serbian_authority",
+      "title": "Consolidate Serbian Authority",
+      "png": "source_png/focus/SER_consolidate_serbian_authority.png",
+      "dds_95x95": "dds_ready/focus_95x95/SER_consolidate_serbian_authority.dds"
+    },
+    {
+      "id": "SER_rebuild_kosovo",
+      "title": "Rebuild Kosovo",
+      "png": "source_png/focus/SER_rebuild_kosovo.png",
+      "dds_95x95": "dds_ready/focus_95x95/SER_rebuild_kosovo.dds"
+    },
+    {
+      "id": "SER_invest_in_pristina",
+      "title": "Invest in Pristina",
+      "png": "source_png/focus/SER_invest_in_pristina.png",
+      "dds_95x95": "dds_ready/focus_95x95/SER_invest_in_pristina.dds"
+    },
+    {
+      "id": "SER_a_lasting_peace",
+      "title": "A Lasting Peace",
+      "png": "source_png/focus/SER_a_lasting_peace.png",
+      "dds_95x95": "dds_ready/focus_95x95/SER_a_lasting_peace.dds"
+    },
+    {
+      "id": "SER_the_serbian_question",
+      "title": "The Serbian Question",
+      "png": "source_png/focus/SER_the_serbian_question.png",
+      "dds_95x95": "dds_ready/focus_95x95/SER_the_serbian_question.dds"
+    }
+  ],
+  "events": [
+    {
+      "id": "SER_postkosovo_event_01_morning_after_victory",
+      "title": "The Morning After Victory",
+      "png": "source_png/events/SER_postkosovo_event_01_morning_after_victory.png",
+      "dds_474x156": "dds_ready/events_474x156/SER_postkosovo_event_01_morning_after_victory.dds"
+    },
+    {
+      "id": "SER_postkosovo_event_02_northern_municipalities",
+      "title": "The Northern Municipalities",
+      "png": "source_png/events/SER_postkosovo_event_02_northern_municipalities.png",
+      "dds_474x156": "dds_ready/events_474x156/SER_postkosovo_event_02_northern_municipalities.dds"
+    },
+    {
+      "id": "SER_postkosovo_event_03_cost_of_integration",
+      "title": "The Cost of Integration",
+      "png": "source_png/events/SER_postkosovo_event_03_cost_of_integration.png",
+      "dds_474x156": "dds_ready/events_474x156/SER_postkosovo_event_03_cost_of_integration.dds"
+    },
+    {
+      "id": "SER_postkosovo_event_04_one_law_one_administration",
+      "title": "One Law, One Administration",
+      "png": "source_png/events/SER_postkosovo_event_04_one_law_one_administration.png",
+      "dds_474x156": "dds_ready/events_474x156/SER_postkosovo_event_04_one_law_one_administration.dds"
+    },
+    {
+      "id": "SER_postkosovo_event_05_military_to_civil_government",
+      "title": "From Military Rule to Civil Government",
+      "png": "source_png/events/SER_postkosovo_event_05_military_to_civil_government.png",
+      "dds_474x156": "dds_ready/events_474x156/SER_postkosovo_event_05_military_to_civil_government.dds"
+    },
+    {
+      "id": "SER_postkosovo_event_06_kosovo_question",
+      "title": "The Kosovo Question",
+      "png": "source_png/events/SER_postkosovo_event_06_kosovo_question.png",
+      "dds_474x156": "dds_ready/events_474x156/SER_postkosovo_event_06_kosovo_question.dds"
+    },
+    {
+      "id": "SER_postkosovo_event_07_reconstruction_begins",
+      "title": "Reconstruction Begins",
+      "png": "source_png/events/SER_postkosovo_event_07_reconstruction_begins.png",
+      "dds_474x156": "dds_ready/events_474x156/SER_postkosovo_event_07_reconstruction_begins.dds"
+    },
+    {
+      "id": "SER_postkosovo_event_08_contracts_for_reconstruction",
+      "title": "Contracts for Reconstruction",
+      "png": "source_png/events/SER_postkosovo_event_08_contracts_for_reconstruction.png",
+      "dds_474x156": "dds_ready/events_474x156/SER_postkosovo_event_08_contracts_for_reconstruction.dds"
+    },
+    {
+      "id": "SER_postkosovo_event_09_investors_return_pristina",
+      "title": "Investors Return to Pristina",
+      "png": "source_png/events/SER_postkosovo_event_09_investors_return_pristina.png",
+      "dds_474x156": "dds_ready/events_474x156/SER_postkosovo_event_09_investors_return_pristina.dds"
+    },
+    {
+      "id": "SER_postkosovo_event_10_city_reconnected",
+      "title": "A City Reconnected",
+      "png": "source_png/events/SER_postkosovo_event_10_city_reconnected.png",
+      "dds_474x156": "dds_ready/events_474x156/SER_postkosovo_event_10_city_reconnected.dds"
+    },
+    {
+      "id": "SER_postkosovo_event_11_new_kosovo",
+      "title": "The New Kosovo",
+      "png": "source_png/events/SER_postkosovo_event_11_new_kosovo.png",
+      "dds_474x156": "dds_ready/events_474x156/SER_postkosovo_event_11_new_kosovo.dds"
+    },
+    {
+      "id": "SER_postkosovo_event_12_new_balance_balkans",
+      "title": "A New Balance in the Balkans",
+      "png": "source_png/events/SER_postkosovo_event_12_new_balance_balkans.png",
+      "dds_474x156": "dds_ready/events_474x156/SER_postkosovo_event_12_new_balance_balkans.dds"
+    },
+    {
+      "id": "SER_postkosovo_event_13_voices_across_drina",
+      "title": "Voices Across the Drina",
+      "png": "source_png/events/SER_postkosovo_event_13_voices_across_drina.png",
+      "dds_474x156": "dds_ready/events_474x156/SER_postkosovo_event_13_voices_across_drina.dds"
+    },
+    {
+      "id": "SER_postkosovo_event_14_kosovo_only_beginning",
+      "title": "Perhaps Kosovo Was Only the Beginning",
+      "png": "source_png/events/SER_postkosovo_event_14_kosovo_only_beginning.png",
+      "dds_474x156": "dds_ready/events_474x156/SER_postkosovo_event_14_kosovo_only_beginning.dds"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "SER_integrate_kosovo_serb_militias",
+      "title": "Integrate the Kosovo Serb Militias",
+      "png": "source_png/decisions/SER_integrate_kosovo_serb_militias.png",
+      "dds_60x60": "dds_ready/decisions_60x60/SER_integrate_kosovo_serb_militias.dds"
+    }
+  ],
+  "mockups": [
+    {
+      "id": "generated_kosovska_mehanizovana_brigada_mockup",
+      "title": "Kosovska Mehanizovana Brigada mockup",
+      "png": "source_png/mockups/generated_kosovska_mehanizovana_brigada_mockup.png"
+    },
+    {
+      "id": "generated_m84a_tank_designer_mockup",
+      "title": "M-84A Tank Designer mockup",
+      "png": "source_png/mockups/generated_m84a_tank_designer_mockup.png"
+    },
+    {
+      "id": "generated_vehicle_research_production_reference",
+      "title": "M-84A / T-55A / BVP M-80A / BTR-80A / Lazar 3 reference",
+      "png": "source_png/mockups/generated_vehicle_research_production_reference.png"
+    }
+  ],
+  "reference_screenshots": [
+    "reference_screenshots/reference_division_designer.jpg",
+    "reference_screenshots/reference_tank_designer_t55.jpg"
+  ],
+  "notes": [
+    "Visual pack for the post-Kosovo Serbia chapter.",
+    "The focus 'The Cost of Integration' is NOT a focus in the current design; it is an event, so the first-row concept tile was intentionally not exported as a focus.",
+    "Use TFR's existing GFX conventions and sprite definitions when integrating.",
+    "The two reference screenshots are the user's supplied Division Designer and Tank Designer references."
+  ]
+}

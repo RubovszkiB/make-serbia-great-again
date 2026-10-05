@@ -1,0 +1,14 @@
+MSGA_kosovo_integration = {
+ MSGA_integrate_kosovo_serb_militias = {
+  icon = MSGA_integrate_kosovo_serb_militias
+  allowed = { tag = SER }
+  visible = { has_country_flag = MSGA_kosovo_fully_integrated NOT = { has_country_flag = MSGA_kosovo_brigade_raised } }
+  available = { country_exists = SER has_country_flag = MSGA_kosovo_resolution_done NOT = { has_country_flag = MSGA_kosovo_war_active } 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER } 785 = { is_core_of = SER } 1305 = { is_core_of = SER } }
+  cost = 0
+  custom_cost_text = MSGA_cost_2B
+  custom_cost_trigger = { check_variable = { var = income_var value = 2 compare = greater_than_or_equals } }
+  fire_only_once = yes
+  complete_effect = { MSGA_raise_kosovo_brigade = yes }
+  ai_will_do = { factor = 5 }
+ }
+}

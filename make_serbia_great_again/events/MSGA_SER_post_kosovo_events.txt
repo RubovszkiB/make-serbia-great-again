@@ -1,0 +1,141 @@
+add_namespace = MSGA_postkosovo
+country_event = {
+ id = MSGA_postkosovo.1
+ title = MSGA_postkosovo.1.t
+ desc = MSGA_postkosovo.1.d
+ picture = GFX_report_event_MSGA_postkosovo_event_01_morning_after_victory
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = { add_political_power = 15 set_country_flag = MSGA_postwar_reconstruction }
+ option = { name = MSGA_postkosovo.1.a ai_chance = { factor = 100 }  }
+}
+country_event = {
+ id = MSGA_postkosovo.2
+ title = MSGA_postkosovo.2.t
+ desc = MSGA_postkosovo.2.d
+ picture = GFX_report_event_MSGA_postkosovo_event_02_northern_municipalities
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = { add_stability = 0.01 }
+ option = { name = MSGA_postkosovo.2.a ai_chance = { factor = 100 }  }
+}
+country_event = {
+ id = MSGA_postkosovo.3
+ title = MSGA_postkosovo.3.t
+ desc = MSGA_postkosovo.3.d
+ picture = GFX_report_event_MSGA_postkosovo_event_03_cost_of_integration
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = {  }
+ option = { name = MSGA_postkosovo.3.a ai_chance = { factor = 100 } MSGA_integrate_kosovo = yes }
+}
+country_event = {
+ id = MSGA_postkosovo.4
+ title = MSGA_postkosovo.4.t
+ desc = MSGA_postkosovo.4.d
+ picture = GFX_report_event_MSGA_postkosovo_event_04_one_law_one_administration
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = {  }
+ option = { name = MSGA_postkosovo.4.a ai_chance = { factor = 100 }  }
+}
+country_event = {
+ id = MSGA_postkosovo.5
+ title = MSGA_postkosovo.5.t
+ desc = MSGA_postkosovo.5.d
+ picture = GFX_report_event_MSGA_postkosovo_event_05_military_to_civil_government
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = { country_event = { id = MSGA_postkosovo.6 days = 2 } }
+ option = { name = MSGA_postkosovo.5.a ai_chance = { factor = 100 }  }
+}
+country_event = {
+ id = MSGA_postkosovo.6
+ title = MSGA_postkosovo.6.t
+ desc = MSGA_postkosovo.6.d
+ picture = GFX_report_event_MSGA_postkosovo_event_06_kosovo_question
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = { add_political_power = 10 }
+ option = { name = MSGA_postkosovo.6.a ai_chance = { factor = 100 }  }
+}
+country_event = {
+ id = MSGA_postkosovo.7
+ title = MSGA_postkosovo.7.t
+ desc = MSGA_postkosovo.7.d
+ picture = GFX_report_event_MSGA_postkosovo_event_07_reconstruction_begins
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = { country_event = { id = MSGA_postkosovo.8 days = 2 } }
+ option = { name = MSGA_postkosovo.7.a ai_chance = { factor = 100 }  }
+}
+country_event = {
+ id = MSGA_postkosovo.8
+ title = MSGA_postkosovo.8.t
+ desc = MSGA_postkosovo.8.d
+ picture = GFX_report_event_MSGA_postkosovo_event_08_contracts_for_reconstruction
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = {  }
+ option = { name = MSGA_postkosovo.8.a ai_chance = { factor = 100 }  }
+}
+country_event = {
+ id = MSGA_postkosovo.9
+ title = MSGA_postkosovo.9.t
+ desc = MSGA_postkosovo.9.d
+ picture = GFX_report_event_MSGA_postkosovo_event_09_investors_return_pristina
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = { country_event = { id = MSGA_postkosovo.10 days = 2 } }
+ option = { name = MSGA_postkosovo.9.a ai_chance = { factor = 100 }  }
+}
+country_event = {
+ id = MSGA_postkosovo.10
+ title = MSGA_postkosovo.10.t
+ desc = MSGA_postkosovo.10.d
+ picture = GFX_report_event_MSGA_postkosovo_event_10_city_reconnected
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = {  }
+ option = { name = MSGA_postkosovo.10.a ai_chance = { factor = 100 }  }
+}
+country_event = {
+ id = MSGA_postkosovo.11
+ title = MSGA_postkosovo.11.t
+ desc = MSGA_postkosovo.11.d
+ picture = GFX_report_event_MSGA_postkosovo_event_11_new_kosovo
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = { set_country_flag = MSGA_kosovo_peace_settled clr_country_flag = MSGA_postwar_reconstruction }
+ option = { name = MSGA_postkosovo.11.a ai_chance = { factor = 100 }  }
+}
+country_event = {
+ id = MSGA_postkosovo.12
+ title = MSGA_postkosovo.12.t
+ desc = MSGA_postkosovo.12.d
+ picture = GFX_report_event_MSGA_postkosovo_event_12_new_balance_balkans
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = { country_event = { id = MSGA_postkosovo.13 days = 2 } }
+ option = { name = MSGA_postkosovo.12.a ai_chance = { factor = 100 }  }
+}
+country_event = {
+ id = MSGA_postkosovo.13
+ title = MSGA_postkosovo.13.t
+ desc = MSGA_postkosovo.13.d
+ picture = GFX_report_event_MSGA_postkosovo_event_13_voices_across_drina
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = { set_country_flag = MSGA_bosnian_question_emerging country_event = { id = MSGA_postkosovo.14 days = 2 } }
+ option = { name = MSGA_postkosovo.13.a ai_chance = { factor = 100 }  }
+}
+country_event = {
+ id = MSGA_postkosovo.14
+ title = MSGA_postkosovo.14.t
+ desc = MSGA_postkosovo.14.d
+ picture = GFX_report_event_MSGA_postkosovo_event_14_kosovo_only_beginning
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = { set_country_flag = MSGA_final_post_kosovo_story MSGA_enter_bosnian_chapter = yes }
+ option = { name = MSGA_postkosovo.14.a ai_chance = { factor = 100 }  }
+}

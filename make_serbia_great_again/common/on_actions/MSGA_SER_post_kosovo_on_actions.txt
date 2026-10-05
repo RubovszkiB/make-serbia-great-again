@@ -1,0 +1,8 @@
+on_actions = {
+ on_startup = { effect = { SER = {
+  MSGA_initialize_serbian_vehicles = yes
+  MSGA_open_post_kosovo = yes
+  if = { limit = { has_country_flag = MSGA_kosovo_civil_authority } remove_ideas = SER_rebellion_of_kosovo }
+  if = { limit = { has_country_flag = MSGA_final_post_kosovo_story } MSGA_enter_bosnian_chapter = yes }
+ } } }
+}

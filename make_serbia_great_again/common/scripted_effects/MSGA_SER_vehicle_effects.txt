@@ -1,0 +1,25 @@
+MSGA_initialize_serbian_vehicles = {
+ if = { limit = { tag = SER NOT = { has_country_flag = MSGA_serbian_vehicles_initialized } }
+ create_equipment_variant = { name = "BVP M-80A" type = mechanized_equipment_1 }
+ create_equipment_variant = { name = "BTR-80A" type = light_mechanized_equipment_1 }
+ if = { limit = { has_dlc = "No Step Back" }
+ create_equipment_variant = { name = "M-84A" type = modern_tank_chassis_1 modules = { main_armament_slot = tank_high_velocity_cannon turret_type_slot = tank_3_man_tank_turret suspension_type_slot = tank_torsion_bar_suspension armor_type_slot = tank_cast_armor engine_type_slot = tank_gasoline_engine special_type_slot_5 = gunner_optical_sight } }
+ create_equipment_variant = { name = "T-55A" type = modern_tank_chassis_1 obsolete = yes modules = { main_armament_slot = tank_high_velocity_cannon turret_type_slot = tank_3_man_tank_turret suspension_type_slot = tank_torsion_bar_suspension armor_type_slot = tank_riveted_armor engine_type_slot = tank_gasoline_engine special_type_slot_5 = gunner_optical_sight } }
+ } else = {
+ create_equipment_variant = { name = "M-84A" type = modern_tank_equipment_1 }
+ create_equipment_variant = { name = "T-55A" type = modern_tank_equipment_1 obsolete = yes }
+ }
+ set_country_flag = MSGA_serbian_vehicles_initialized
+ }
+}
+MSGA_raise_kosovo_brigade = {
+ if = { limit = { tag = SER has_country_flag = MSGA_kosovo_resolution_done has_country_flag = MSGA_kosovo_fully_integrated 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER } 785 = { is_core_of = SER } 1305 = { is_core_of = SER } check_variable = { var = income_var value = 2 compare = greater_than_or_equals } NOT = { has_country_flag = MSGA_kosovo_brigade_raised } }
+  set_country_flag = MSGA_kosovo_brigade_raised
+  set_temp_variable = { var = income_var_temp value = -2 }
+  add_income = yes
+  MSGA_initialize_serbian_vehicles = yes
+  load_oob = MSGA_SER_kosovo_brigade_template
+  if = { limit = { has_dlc = "No Step Back" } load_oob = MSGA_SER_kosovo_brigade }
+  else = { load_oob = MSGA_SER_kosovo_brigade_legacy }
+ }
+}
