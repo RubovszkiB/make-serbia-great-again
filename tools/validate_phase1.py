@@ -307,8 +307,18 @@ def main():
         assert texture.is_file(), texture
         header = texture.read_bytes()[:128]
         assert header[:4] == b'DDS '
-        assert struct.unpack_from('<I', header, 88)[0] == 32 or header[84:88] == b'DXT5'
+        # The supplied package contains RGB24 and RGBA32 DDS; installed TFR
+        # already ships both uncompressed formats as well as DXT textures.
+        assert struct.unpack_from('<I', header, 88)[0] in (24, 32) or header[84:88] in (b'DXT1', b'DXT3', b'DXT5')
         image = Image.open(texture).convert('RGBA')
+        new_sources = ROOT / 'docs/post_bosnia_sources.json'
+        supplied_new = json.loads(new_sources.read_text())['assets'] if new_sources.exists() else {}
+        relative = texture.relative_to(MOD).as_posix()
+        if relative in supplied_new:
+            import hashlib
+            assert hashlib.sha256(texture.read_bytes()).hexdigest() == supplied_new[relative]['sha256']
+            assert image.size == ((474, 178) if '/event_pictures/' in relative else (95, 85) if '/goals/' in relative else (64, 64))
+            continue
         if get(sprite, 'name').strip('"').startswith('GFX_MSGA_event_'):
             # The 0.9 package registers lower-case spriteType and supplies DDS
             # directly at its authored size; do not route it through older packs.

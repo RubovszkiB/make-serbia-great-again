@@ -1,0 +1,9 @@
+ideas = { country = {
+ MSGA_bosnian_war_lessons = { picture = MSGA_prepared_for_war allowed = { tag = SER } removal_cost = -1 modifier = { planning_speed = 0.05 } }
+ MSGA_serbian_sphere_spirit = { picture = MSGA_prepared_for_war allowed = { tag = SER } removal_cost = -1 modifier = { political_power_factor = 0.05 stability_factor = 0.03 trade_opinion_factor = 0.10 } }
+ MSGA_bound_protectorate = { picture = MSGA_prepared_for_war allowed = { OR = { tag = BOS tag = HRZ tag = SRP } } removal_cost = -1 modifier = { autonomy_gain_global_factor = -0.10 trade_opinion_factor = 0.05 } }
+ MSGA_integrated_protectorate = { picture = MSGA_prepared_for_war allowed = { OR = { tag = BOS tag = HRZ tag = SRP } } removal_cost = -1 modifier = { autonomy_gain_global_factor = -0.10 autonomy_gain_trade_factor = -0.10 trade_opinion_factor = 0.10 } }
+ MSGA_postwar_income_recovery = { picture = MSGA_serbian_rearmament_program allowed = { tag = SER } removal_cost = -1 modifier = { income_growth_factor = 0.01 } }
+ MSGA_economic_heart_spirit = { picture = MSGA_serbian_rearmament_program allowed = { tag = SER } removal_cost = -1 modifier = { consumer_goods_factor = -0.02 industrial_capacity_factory = 0.05 business_value_factor = 0.05 income_growth_factor = 0.02 } }
+ MSGA_regional_power_prestige = { picture = MSGA_prepared_for_war allowed = { tag = SER } removal_cost = -1 modifier = { trade_opinion_factor = 0.05 } }
+} }

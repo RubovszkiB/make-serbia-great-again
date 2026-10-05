@@ -1,0 +1,5 @@
+division_template = { name = "Herzegovinian Territorial Brigade" regiments = { militia = { x = 0 y = 0 } militia = { x = 0 y = 1 } militia = { x = 0 y = 2 } } }
+units = {
+ division = { name = "1. Herzegovinian Territorial Brigade" location = 11586 division_template = "Herzegovinian Territorial Brigade" start_equipment_factor = 1 start_manpower_factor = 1 start_experience_factor = 0.1 }
+ division = { name = "2. Herzegovinian Territorial Brigade" location = 11586 division_template = "Herzegovinian Territorial Brigade" start_equipment_factor = 1 start_manpower_factor = 1 start_experience_factor = 0.1 }
+}

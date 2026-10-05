@@ -26,7 +26,7 @@ class BosniaModel(CampaignModel):
         super().__init__(scripts)
         self.mod=mod;self.scripts=scripts;self.day=0;self.queue=[];self.delivered=[];self.military=0;self.timed=[];self.stock=Counter();self.units=[];self.progress=0
         self.event_ast={get(v,'id'):v for p,ast in scripts.items() if p.startswith('events/MSGA_') for k,_,v in ast if k=='country_event'}
-        self.subjects={};self.technologies=set();self.release_succeeds=True;self.faction_leader={'NATO':'USA'}
+        self.subjects={};self.technologies=set();self.release_succeeds=True;self.faction_leader={'NATO':'USA'};self.flag_dates={}
         for c in ['BOS','SRP','HRZ','SOV','PRC','ARM']:
             self.flags[c]=set();self.ideas[c]=set();self.factions[c]=None
         self.exists.update(['BOS','SOV','PRC','ARM']);self.exists.discard('SRP')
@@ -50,6 +50,10 @@ class BosniaModel(CampaignModel):
             elif k=='controls_state':ok=self.controllers[int(v)]==scope
             elif k=='is_faction_leader':ok=self.faction_leader.get(self.factions[scope])==scope
             elif k=='has_completed_focus':ok=v in self.focuses
+            elif k=='has_country_flag' and isinstance(v,list):
+                elapsed=self.day-self.flag_dates.get((scope,get(v,'flag')),0)
+                operation=next(o for k,o,_ in v if k=='days')
+                ok=get(v,'flag') in self.flags[scope] and (elapsed>int(get(v,'days')) if operation=='>' else elapsed>=int(get(v,'days')))
             elif k=='surrender_progress':ok=self.progress>float(v)
             elif k=='controls_province':ok=self.provinces.get(int(v))==scope
             else:ok=super().condition([(k,op,v)],scope)
@@ -68,6 +72,7 @@ class BosniaModel(CampaignModel):
             elif k.isdigit():self.execute(v,int(k))
             elif k in self.effects:self.execute(self.effects[k],scope)
             elif k=='country_event':self.queue.append((self.day+int(next((b for a,_,b in v if a=='days'),'0')),scope,get(v,'id')))
+            elif k=='set_country_flag':self.flags[scope].add(v);self.flag_dates[(scope,v)]=self.day
             elif k=='release':
                 assert scope=='BOS' and v=='SRP'
                 if not self.release_succeeds:continue
@@ -202,7 +207,7 @@ def main():
     assert ('release','=','SRP') in descend(get(effects,'MSGA_release_srpska'))
     assert ('promote_character','=','SRP_milorad_dodik_char') in descend(get(effects,'MSGA_release_srpska'))
     assert ('MSGA_begin_bosnian_war','=','yes') in descend(get(effects,'MSGA_release_srpska'))
-    assert ('country_event','=',parse('id = MSGA_bosnia.11 days = 70')) in descend(get(effects,'MSGA_settle_bosnia'))
+    assert ('country_event','=',parse('id = MSGA_postbosnia.12 days = 100')) in descend(get(effects,'MSGA_settle_bosnia'))
     # Names/designs are verified against TFR source, including DLC designer aliases.
     def variants(tag):
         p=next((TFR/'history/countries').glob(tag+' - *'));return {(get(v,'name').strip('"'),get(v,'type')) for k,_,v in descend(parse(p.read_text(encoding='utf-8-sig'))) if k=='create_equipment_variant'}
@@ -282,10 +287,10 @@ def main():
     assert war_model.subjects=={'BOS':'SER','HRZ':'SER','SRP':'SER'}
     assert war_model.states[104]=='BOS' and war_model.states[851]=='HRZ' and all(war_model.states[s]=='SRP' for s in [848,849,850])
     assert war_model.wars=={frozenset(('SER','GER'))} and 'MSGA_SRP_last_stand' not in war_model.ideas['SRP']
-    settled_day=war_model.day;war_model.advance(69);assert not any(id=='MSGA_bosnia.11' for _,_,id in war_model.delivered)
-    war_model.advance(1);assert [(d,c) for d,c,id in war_model.delivered if id=='MSGA_bosnia.11']==[(settled_day+70,'SER')]
+    settled_day=war_model.day;war_model.advance(99);assert not any(id=='MSGA_postbosnia.12' for _,_,id in war_model.delivered)
+    war_model.advance(1);assert [(d,c) for d,c,id in war_model.delivered if id=='MSGA_postbosnia.12']==[(settled_day+100,'SER')]
     import copy
-    keep=copy.deepcopy(war_model);keep.execute([x for x in [v for k,_,v in procurement['MSGA_bosnia.11'] if k=='option'][1] if x[0] not in ('name','ai_chance')]);keep.execute(parse('MSGA_unite_srpska = yes'))
+    keep=copy.deepcopy(war_model);keep.execute([x for x in [v for k,_,v in war_model.event_ast['MSGA_postbosnia.12'] if k=='option'][1] if x[0] not in ('name','ai_chance')]);keep.execute(parse('MSGA_unite_srpska = yes'))
     assert keep.subjects['SRP']=='SER' and 'SRP' in keep.exists and keep.debt==0
     before_money=war_model.money;before_cores=copy.deepcopy(war_model.cores)
     war_model.execute(parse('MSGA_unite_srpska = yes'));war_model.execute(parse('MSGA_unite_srpska = yes'))
@@ -293,7 +298,7 @@ def main():
     assert war_model.debt==1 and war_model.money==before_money and war_model.cores==before_cores
     # Earlier Kosovo cleanup removes its new Last Stand, and earlier rewards stay covered by prior validators.
     kos=CampaignModel(scripts);kos.execute(parse('MSGA_start_kosovo_war = yes'));assert 'MSGA_KOS_last_stand' in kos.ideas['KOS'];kos.execute(parse('MSGA_cleanup_kosovo_campaign = yes'));assert 'MSGA_KOS_last_stand' not in kos.ideas['KOS']
-    report={'static_validation':'passed','validated_mod_root':str(mod),'version':'0.9.0','bosnia_focuses':13,'total_focuses':len(ids),'seed_days':42,'watch_days':70,'release_to_BOS_declaration_days':0,'Srpska_native_states':[848,849,850],'native_leader':'SRP_milorad_dodik_char','Srpska_starting_divisions':3,'militia_battalions_per_template':3,'territorial_decision_states':[45,108,1296,785,1305],'Belgrade_province':11586,'territorial_cost_B':.5,'territorial_days':14,'military_development_total':.60,'rearmament_days':200,'Russian_package':{'cost_B':15,'Su30':50,'Su24':25,'Mi24':50},'Chinese_package':{'cost_B':10,'J16':40,'Z10':30},'logistics':{'trains':15,'utility_vehicles':150},'modeled_surrender_threshold_at_war_support_0_to_100_percent':limits,'base_war_stability_penalty_before_after':[war,war+.06],'supplied_DDS_assets':len(sources['assets']),'native_guard_only_overrides_verified':list(sources['native_guard_overrides']),'BOS_original_regular_divisions':4,'script_flow_model':'passed: payments, DLC packages, exact template/spawn counts, ownership/refund guards, independence before immediate war, faction before same-war join, three subjects, exact 70-day event, both annexation choices, debt without treasury cost or cores, cleanup','actual_combat_UI_and_engine_save_load':'not certified by static/model checks','postwar_peace_implemented':True,'settlement_subject_states':{'BOS':[104],'HRZ':[851],'SRP':[848,849,850]},'Srpska_question_delay_days':70,'annexation_debt_B':1,'annexation_treasury_cost':0}
+    report={'static_validation':'passed','validated_mod_root':str(mod),'version':'0.10.0','bosnia_focuses':13,'total_focuses':len(ids),'seed_days':42,'watch_days':70,'release_to_BOS_declaration_days':0,'Srpska_native_states':[848,849,850],'native_leader':'SRP_milorad_dodik_char','Srpska_starting_divisions':3,'militia_battalions_per_template':3,'territorial_decision_states':[45,108,1296,785,1305],'Belgrade_province':11586,'territorial_cost_B':.5,'territorial_days':14,'military_development_total':.60,'rearmament_days':200,'Russian_package':{'cost_B':15,'Su30':50,'Su24':25,'Mi24':50},'Chinese_package':{'cost_B':10,'J16':40,'Z10':30},'logistics':{'trains':15,'utility_vehicles':150},'modeled_surrender_threshold_at_war_support_0_to_100_percent':limits,'base_war_stability_penalty_before_after':[war,war+.06],'supplied_DDS_assets':len(sources['assets']),'native_guard_only_overrides_verified':list(sources['native_guard_overrides']),'BOS_original_regular_divisions':4,'script_flow_model':'passed: payments, DLC packages, exact template/spawn counts, ownership/refund guards, independence before immediate war, faction before same-war join, three subjects, exact 100-day event, both annexation choices, debt without treasury cost or cores, cleanup','actual_combat_UI_and_engine_save_load':'not certified by static/model checks','postwar_peace_implemented':True,'settlement_subject_states':{'BOS':[104],'HRZ':[851],'SRP':[848,849,850]},'Srpska_question_delay_days':100,'annexation_debt_B':1,'annexation_treasury_cost':0}
     args.report.write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))
 
 if __name__=='__main__':main()

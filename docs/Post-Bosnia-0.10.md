@@ -1,0 +1,44 @@
+# Installed post-Bosnia chapter, 0.10.0
+
+Implemented in the actual runtime first, then copied back to source after six installed validators passed. The 55 deployed paths and final hashes are in [deployment inventory](post_bosnia_deployment.json); [source/runtime sync](post_bosnia_sync.json) confirms 218 byte-identical files and the launcher descriptor. Existing Kosovo, reconstruction and Bosnia focus files and the approved BOP are unchanged.
+
+The runtime is `C:/Users/Balazs/Documents/Paradox Interactive/Hearts of Iron IV/mod/make_serbia_great_again`. New scripts are `common/national_focus/MSGA_SER_post_bosnia.txt`, two `common/scripted_effects/MSGA_post_bosnia_*.txt` files, `common/decisions/MSGA_post_bosnia_decisions.txt`, `common/ideas/MSGA_post_bosnia_ideas.txt`, `common/opinion_modifiers/MSGA_post_bosnia_opinion.txt`, `common/on_actions/MSGA_post_bosnia_on_actions.txt`, `events/MSGA_post_bosnia_events.txt`, five auxiliary OOB/template files, localisation and two new GFX files. Existing settlement effects/events, modifiers, categories, descriptors and the shared sprite registration are updated. The inventory lists every DDS separately.
+
+Settlement calls `MSGA_open_post_bosnia` immediately. Its only campaign prerequisite is Serbia's `MSGA_bosnia_settlement_done`; a once-only chapter-started flag prevents reloading. Startup and weekly retries recover eligible saves. No deleted Kosovo decision, narrative flag or Srpska existence gate blocks the chapter.
+
+| Focus ID | Column | Days |
+|---|---|---:|
+| `MSGA_victory_in_bosnia` | Opening | 14 |
+| `MSGA_rebuild_the_west` | Opening | 14 |
+| `MSGA_new_serbian_era` | Opening | 14 |
+| `MSGA_lessons_bosnian_war` | Military | 14 |
+| `MSGA_arm_new_serbian_sphere` | Military | 14 |
+| `MSGA_serbian_defence_network` | Military | 14 |
+| `MSGA_consolidate_victory` | Political | 14 |
+| `MSGA_bind_new_protectorates` | Political | 14 |
+| `MSGA_serbian_sphere` | Political | 14 |
+| `MSGA_repair_war_economy` | Economic | 14 |
+| `MSGA_serbian_industrial_consolidation` | Economic | 14 |
+| `MSGA_economic_heart_balkans` | Economic | 14 |
+
+All twelve focuses cost `2`, meaning fourteen days each and 168 focus-days total. Positions are opening x=4/y=0–2, then military x=0, political x=4 and economic x=8 at y=3–5. All three final reward flags call the guarded automatic regional-power capstone, which grants 5% stability, 5% war support and 5% native industrial-development progress, adds trade prestige and removes remaining temporary recovery modifiers.
+
+Installed TFR declares native `BOS`, `HRZ` and `SRP`. HRZ's dormant upstream history had an Iranian leader/capital; the existing approved MSGA override already fixes it. No new tag is invented. The settlement retains BOS state 104, HRZ state 851 and SRP states 848/849/850 as Serbian puppets. Annexation removes only SRP. Protectorate effects iterate existing Serbian subjects and filter these three tags, so the political branch works before and after annexation.
+
+Bosnian and Herzegovinian decisions each cost 25 PP through the native decision `cost` plus $0.25B treasury through `income_var_temp = -0.25` / `add_income`. Each loads an editable regional template with three `militia` battalions and no support companies, then two fully equipped divisions. The subject must exist and belong to Serbia. All four muster at Serbia's controlled Belgrade province 11586 and belong to SER. This deliberately uses the requested direct-command fallback rather than leaving divisions inaccessible under puppet AI; it preserves regional division/template names. No expeditionary-force interaction is required.
+
+Srpska Territorial Defence costs zero PP and $0.5B real treasury (`income_var_temp = -0.5` / `add_income`). It uses the working Kosovo brigade's exact 16-width layout: two `mot_militia`, one `mechanized`, one `light_mechanized`, with `mbt_company`, engineer and logistics supports. Existing BVP M-80A, BTR-80A and reserve T-55A variants equip it. The package requires 925 infantry equipment, 110 motor vehicles, 115 support equipment, 50 IFVs, 45 APCs and 14 reserve tanks. Both No Step Back and legacy armour branches reuse the Kosovo implementation. It is SER-owned from creation, can be purchased while SRP is a puppet or after approved annexation, and cannot vanish when SRP disappears. Each purchase is guarded once; equipment is supplied directly to the formation without a duplicate stockpile grant.
+
+The settlement schedules `country_event = { id = MSGA_postbosnia.12 days = 100 }`. Its trigger and recovery use the dated settlement flag with `days > 99`, matching the installed engine documentation's comparison syntax. The former `MSGA_bosnia.11` is now a hidden legacy dispatcher: an old queued day-70 event cannot display the annexation question early. Weekly/startup checks deliver the current question once the deadline is reached if it was not delivered/resolved. Existing saves that already resolved the old question are not charged again.
+
+Unification uses `annex_country = { target = SRP transfer_troops = yes }`, followed by `debt_var_temp = 1` / TFR's real `add_debt`. It does not debit treasury, cost PP or create Serbian cores. Native SRP units transfer with troops and their appropriate equipment/templates; all new auxiliaries were already Serbian-owned. SRP-only cooperation/isolation/last-stand ideas are removed before annexation. The follow-up is `MSGA_postbosnia.13`. Preserve the Current Arrangement leaves SRP a puppet and changes no debt. Both choices resolve the question once.
+
+Seven spirits are added: `MSGA_bosnian_war_lessons` (180-day planning benefit), `MSGA_serbian_sphere_spirit`, `MSGA_bound_protectorate`, `MSGA_integrated_protectorate`, `MSGA_postwar_income_recovery` (180 days), `MSGA_economic_heart_spirit` and `MSGA_regional_power_prestige`. Subject autonomy reduction is applied on subjects, not incorrectly on Serbia; the integrated spirit replaces the bound spirit. Economic Heart uses `consumer_goods_factor = -0.02`, `industrial_capacity_factory = 0.05`, `business_value_factor = 0.05` and `income_growth_factor = 0.02`. All percentage modifiers are audited against installed TFR/engine sources. Reconstruction grants 180-day state construction +10% / repairs +20% in eligible controlled western/protectorate states, plus capped western-Serbia infrastructure. Debt relief is up to $0.5B and cannot create negative debt. Industrial consolidation adds two civilian factories and one `office_park`, with a controlled owned-state fallback if Belgrade is unavailable. The approved BOP receives +0.10 toward its presidency side when it exists.
+
+New event IDs are `MSGA_postbosnia.1` through `.16`: Victory, Cost, Era, Lessons, Bosnian militias, Herzegovinian militias, Srpska TD, Victory Strengthens Belgrade, Bind, Reconstruction, Factories, Srpska Question, One Serbian State, Sphere, Economic Heart and Regional Power. The last three branch flags trigger `.16` automatically; no thirteenth focus is added.
+
+The supplied ZIP contributes twelve 95×85 focus DDS, sixteen 474×178 event DDS, three 64×64 decision DDS and its complete GFX declaration file. All bytes and decoded pixels match the ZIP/PNG sources. The pack's shared Srpska question replaces the earlier texture and its old sprite declaration is removed to prevent duplicate GFX names. Twelve completion sprites reuse the supplied focus DDS. The previews and mapping notes were inspected; their text informs artwork mapping, while the user's task determines gameplay requirements. No replacement artwork was generated. [Asset hashes/mapping](post_bosnia_sources.json).
+
+Validation passed against installed files: [early](post_bosnia_regression_phase1.json), [Kosovo](post_bosnia_regression_kosovo.json), [post-Kosovo](post_bosnia_regression_post_kosovo.json), [Bosnia](post_bosnia_regression_bosnia.json), [transition](post_bosnia_regression_transition.json) and [post-Bosnia](post_bosnia_validation.json). The new model executes actual parsed effects for all six branch orders × both annexation choices × both armour DLC modes (24 scenarios), reaching day 168 with correct payments, debt and units. It also checks legacy day-70 migration, missing funds/control, debt floor, infrastructure cap, missing BOP, industrial fallback, duplicate prevention and capstone gates. Upstream compatibility guards remain unchanged.
+
+The user explicitly chose to perform the in-game test later. No game window was automated or restarted. Current `error.log` and `game.log` predate this chapter installation and contain no execution evidence for it; they cannot certify the new scripts. A fresh engine load, actual combat-to-settlement sequence, visual rendering, actual native unit transfer and save/load remain pending. This implementation is installed and statically/model validated; end-to-end gameplay acceptance is not yet claimed.

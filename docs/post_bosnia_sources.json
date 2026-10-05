@@ -1,0 +1,140 @@
+{
+  "package": "C:\\Users\\Balazs\\Downloads\\MSGA_Post_Bosnia_TFR_Assets_100d.zip",
+  "package_sha256": "86b4806f819693ee568de197506d809ab1f6453af737e4e24685fcb236b8ce73",
+  "assets": {
+    "interface/MSGA_post_bosnia_assets.gfx": {
+      "sha256": "1d47b7529a98d4d89714214ce5a4bf056deddc9752f9ed2d84937d3afaf8714d",
+      "package_entry": "interface/MSGA_post_bosnia_assets.gfx"
+    },
+    "gfx/event_pictures/MSGA_event_question_of_republika_srpska.dds": {
+      "sha256": "e232042bf4b033d10dede4f87ddc177638be5cd8d705999b108064da18a76059",
+      "package_entry": "gfx/event_pictures/MSGA_event_question_of_republika_srpska.dds"
+    },
+    "gfx/event_pictures/MSGA_event_from_war_to_reconstruction.dds": {
+      "sha256": "bb80571c262484d53e4b409d33ab3f2df0ee6b1fe69847abbe8c18b5b84b409a",
+      "package_entry": "gfx/event_pictures/MSGA_event_from_war_to_reconstruction.dds"
+    },
+    "gfx/event_pictures/MSGA_event_cost_of_victory.dds": {
+      "sha256": "50680aa988a2c30a24b2ea2caa8f9c8a4c07fe8445d30589203fa97cc5d6d108",
+      "package_entry": "gfx/event_pictures/MSGA_event_cost_of_victory.dds"
+    },
+    "gfx/event_pictures/MSGA_event_bosnian_territorial_militias.dds": {
+      "sha256": "620df806e95f3e988be4d752cbc1795c4a07d1d261ab824382ccf39406ab2ec7",
+      "package_entry": "gfx/event_pictures/MSGA_event_bosnian_territorial_militias.dds"
+    },
+    "gfx/event_pictures/MSGA_event_victory_strengthens_belgrade.dds": {
+      "sha256": "aec34c683f9b0476d45be4ab42846ddf4e8cbda21ee7a49757bc794d339bc9ba",
+      "package_entry": "gfx/event_pictures/MSGA_event_victory_strengthens_belgrade.dds"
+    },
+    "gfx/event_pictures/MSGA_event_regional_power.dds": {
+      "sha256": "7550e32d1aa13a635098741145d20faab1b583b44e7b07adcebdbd32ea86cc23",
+      "package_entry": "gfx/event_pictures/MSGA_event_regional_power.dds"
+    },
+    "gfx/event_pictures/MSGA_event_one_serbian_state.dds": {
+      "sha256": "38bd2a84cb1d18944556f4678e0c6abc66a070463ae47c64ac14a4134eaa9ad9",
+      "package_entry": "gfx/event_pictures/MSGA_event_one_serbian_state.dds"
+    },
+    "gfx/event_pictures/MSGA_event_new_serbian_era.dds": {
+      "sha256": "d3893e4d1e8ab75ccc8cc7461f48ef153d1857397a98ddcb6ed5b585e4324b90",
+      "package_entry": "gfx/event_pictures/MSGA_event_new_serbian_era.dds"
+    },
+    "gfx/event_pictures/MSGA_event_serbian_sphere.dds": {
+      "sha256": "037ea427790be0dc10cb521be1e968d90adca309db222061417102a90ee26166",
+      "package_entry": "gfx/event_pictures/MSGA_event_serbian_sphere.dds"
+    },
+    "gfx/event_pictures/MSGA_event_srpska_territorial_defence.dds": {
+      "sha256": "32f4b04785ab0a4f4c1f0bb07bc8c540f2aadc01044985e42e73f7bdcd1ec6df",
+      "package_entry": "gfx/event_pictures/MSGA_event_srpska_territorial_defence.dds"
+    },
+    "gfx/event_pictures/MSGA_event_bind_new_protectorates.dds": {
+      "sha256": "4f3c4f9952db5d6ea007447dd51c7fecde30b7b90ae34951fcc6cee81b87c4f3",
+      "package_entry": "gfx/event_pictures/MSGA_event_bind_new_protectorates.dds"
+    },
+    "gfx/event_pictures/MSGA_event_lessons_written_in_blood.dds": {
+      "sha256": "cc9acf45f00a490310ebd5ad6d2a893879b0ea5986fde599f83a62a427163f8f",
+      "package_entry": "gfx/event_pictures/MSGA_event_lessons_written_in_blood.dds"
+    },
+    "gfx/event_pictures/MSGA_event_herzegovinian_territorial_militias.dds": {
+      "sha256": "3cb099dd4c207828c24a27941bc24bbdd2df27469a6f57a6780bea63d0042b3c",
+      "package_entry": "gfx/event_pictures/MSGA_event_herzegovinian_territorial_militias.dds"
+    },
+    "gfx/event_pictures/MSGA_event_economic_heart_of_balkans.dds": {
+      "sha256": "0828645d1d8def0d628ba012115bc5dbda98169dc4cd90814ee5f96c2efc2dc1",
+      "package_entry": "gfx/event_pictures/MSGA_event_economic_heart_of_balkans.dds"
+    },
+    "gfx/event_pictures/MSGA_event_victory_in_bosnia.dds": {
+      "sha256": "757822110da3df99df2b829839103dc76532b1f8a2012f9e155a677876a7f6e1",
+      "package_entry": "gfx/event_pictures/MSGA_event_victory_in_bosnia.dds"
+    },
+    "gfx/event_pictures/MSGA_event_factories_for_peace.dds": {
+      "sha256": "0009a01fda507753ef26aecbe0546367998badcd79f6a0ff440e562d0951e15b",
+      "package_entry": "gfx/event_pictures/MSGA_event_factories_for_peace.dds"
+    },
+    "gfx/interface/goals/MSGA_focus_consolidate_victory.dds": {
+      "sha256": "e7e10f35638a0b8123e830da1f1b668000ef7eaaeff4074297df64d2da65e9cb",
+      "package_entry": "gfx/interface/goals/MSGA_focus_consolidate_victory.dds"
+    },
+    "gfx/interface/goals/MSGA_focus_repair_war_economy.dds": {
+      "sha256": "8d3072115ce065668d02fe1eead693ead72140aad92300ea78388567e0e0a720",
+      "package_entry": "gfx/interface/goals/MSGA_focus_repair_war_economy.dds"
+    },
+    "gfx/interface/goals/MSGA_focus_economic_heart_balkans.dds": {
+      "sha256": "7c15ff4555f663b1a393bf9211fa5671f2c0931766783907ed865150369fe292",
+      "package_entry": "gfx/interface/goals/MSGA_focus_economic_heart_balkans.dds"
+    },
+    "gfx/interface/goals/MSGA_focus_serbian_sphere.dds": {
+      "sha256": "87531184840eb4a0d3eb62f07b5925997f00ccf289fd81162614659804da240b",
+      "package_entry": "gfx/interface/goals/MSGA_focus_serbian_sphere.dds"
+    },
+    "gfx/interface/goals/MSGA_focus_arm_new_serbian_sphere.dds": {
+      "sha256": "78bf89b95b97a6528bc6aed5b6224b91c3f960c1fb9e81285a786c0d298c5bfc",
+      "package_entry": "gfx/interface/goals/MSGA_focus_arm_new_serbian_sphere.dds"
+    },
+    "gfx/interface/goals/MSGA_focus_bind_new_protectorates.dds": {
+      "sha256": "23474fa919d376c24deeb97b7a4c1056a8e023260b98f1ae1ccd96d4ffa9719d",
+      "package_entry": "gfx/interface/goals/MSGA_focus_bind_new_protectorates.dds"
+    },
+    "gfx/interface/goals/MSGA_focus_victory_in_bosnia.dds": {
+      "sha256": "8298b5edc2f504abd3c4d4b041f77eb01bcf124c0aed33e6809a3ada3c0cfe19",
+      "package_entry": "gfx/interface/goals/MSGA_focus_victory_in_bosnia.dds"
+    },
+    "gfx/interface/goals/MSGA_focus_new_serbian_era.dds": {
+      "sha256": "ea4354fcd38fd5d36f81baf54eabb326bd62c595426aa6af9d259e7753a0cddb",
+      "package_entry": "gfx/interface/goals/MSGA_focus_new_serbian_era.dds"
+    },
+    "gfx/interface/goals/MSGA_focus_lessons_bosnian_war.dds": {
+      "sha256": "6a913dcf3a51994e82ad62fe4040a99ba1cf1b09229e86020763feab7a325c8f",
+      "package_entry": "gfx/interface/goals/MSGA_focus_lessons_bosnian_war.dds"
+    },
+    "gfx/interface/goals/MSGA_focus_serbian_industrial_consolidation.dds": {
+      "sha256": "7261345cec8994cf979747879ea089c07f6522fdde75db1a05a41754c1503b8d",
+      "package_entry": "gfx/interface/goals/MSGA_focus_serbian_industrial_consolidation.dds"
+    },
+    "gfx/interface/goals/MSGA_focus_serbian_defence_network.dds": {
+      "sha256": "f7ea2e12be370b340b71992880c674e854e1254b4e15248b4c0be3098a99d96f",
+      "package_entry": "gfx/interface/goals/MSGA_focus_serbian_defence_network.dds"
+    },
+    "gfx/interface/goals/MSGA_focus_rebuild_the_west.dds": {
+      "sha256": "c6b4ffa87e42004765ad607f9f353a1299622ebe44e730064c54e116fc774901",
+      "package_entry": "gfx/interface/goals/MSGA_focus_rebuild_the_west.dds"
+    },
+    "gfx/interface/decisions/MSGA_decision_form_srpska_territorial_defence.dds": {
+      "sha256": "ff03ed5967b6137a3f36d8f8f2ef1c8641d18fd67bb3ec9f72ddd3631dcceb76",
+      "package_entry": "gfx/interface/decisions/MSGA_decision_form_srpska_territorial_defence.dds"
+    },
+    "gfx/interface/decisions/MSGA_decision_organise_bosnian_territorial_militias.dds": {
+      "sha256": "1e7cd63105b5089bdc0206fd37686304aaac7a06e6c8a4ac3b5d07b0ccb9851c",
+      "package_entry": "gfx/interface/decisions/MSGA_decision_organise_bosnian_territorial_militias.dds"
+    },
+    "gfx/interface/decisions/MSGA_decision_organise_herzegovinian_territorial_militias.dds": {
+      "sha256": "c1cb1d98ed8522436c9759b75141e9ffa87f14778f7617442796cae14bc13e4f",
+      "package_entry": "gfx/interface/decisions/MSGA_decision_organise_herzegovinian_territorial_militias.dds"
+    }
+  },
+  "native_tags": {
+    "BOS": "104",
+    "HRZ": "851",
+    "SRP": "848/849/850"
+  },
+  "auxiliary_control": "Serbian-owned divisions; regional identity preserved; existing SRP army transfers on annexation"
+}

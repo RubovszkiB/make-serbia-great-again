@@ -1,0 +1,14 @@
+spriteTypes = {
+ SpriteType = { name = "GFX_MSGA_focus_victory_in_bosnia_shine" texturefile = "gfx/interface/goals/MSGA_focus_victory_in_bosnia.dds" }
+ SpriteType = { name = "GFX_MSGA_focus_rebuild_the_west_shine" texturefile = "gfx/interface/goals/MSGA_focus_rebuild_the_west.dds" }
+ SpriteType = { name = "GFX_MSGA_focus_new_serbian_era_shine" texturefile = "gfx/interface/goals/MSGA_focus_new_serbian_era.dds" }
+ SpriteType = { name = "GFX_MSGA_focus_lessons_bosnian_war_shine" texturefile = "gfx/interface/goals/MSGA_focus_lessons_bosnian_war.dds" }
+ SpriteType = { name = "GFX_MSGA_focus_arm_new_serbian_sphere_shine" texturefile = "gfx/interface/goals/MSGA_focus_arm_new_serbian_sphere.dds" }
+ SpriteType = { name = "GFX_MSGA_focus_serbian_defence_network_shine" texturefile = "gfx/interface/goals/MSGA_focus_serbian_defence_network.dds" }
+ SpriteType = { name = "GFX_MSGA_focus_consolidate_victory_shine" texturefile = "gfx/interface/goals/MSGA_focus_consolidate_victory.dds" }
+ SpriteType = { name = "GFX_MSGA_focus_bind_new_protectorates_shine" texturefile = "gfx/interface/goals/MSGA_focus_bind_new_protectorates.dds" }
+ SpriteType = { name = "GFX_MSGA_focus_serbian_sphere_shine" texturefile = "gfx/interface/goals/MSGA_focus_serbian_sphere.dds" }
+ SpriteType = { name = "GFX_MSGA_focus_repair_war_economy_shine" texturefile = "gfx/interface/goals/MSGA_focus_repair_war_economy.dds" }
+ SpriteType = { name = "GFX_MSGA_focus_serbian_industrial_consolidation_shine" texturefile = "gfx/interface/goals/MSGA_focus_serbian_industrial_consolidation.dds" }
+ SpriteType = { name = "GFX_MSGA_focus_economic_heart_balkans_shine" texturefile = "gfx/interface/goals/MSGA_focus_economic_heart_balkans.dds" }
+}

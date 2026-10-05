@@ -1,0 +1,131 @@
+add_namespace = MSGA_postbosnia
+country_event = {
+ id = MSGA_postbosnia.1
+ title = MSGA_postbosnia.1.t desc = MSGA_postbosnia.1.d
+ picture = GFX_MSGA_event_victory_in_bosnia
+ is_triggered_only = yes
+ fire_only_once = yes
+ option = { name = MSGA_postbosnia.1.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_postbosnia.2
+ title = MSGA_postbosnia.2.t desc = MSGA_postbosnia.2.d
+ picture = GFX_MSGA_event_cost_of_victory
+ is_triggered_only = yes
+ fire_only_once = yes
+ option = { name = MSGA_postbosnia.2.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_postbosnia.3
+ title = MSGA_postbosnia.3.t desc = MSGA_postbosnia.3.d
+ picture = GFX_MSGA_event_new_serbian_era
+ is_triggered_only = yes
+ fire_only_once = yes
+ option = { name = MSGA_postbosnia.3.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_postbosnia.4
+ title = MSGA_postbosnia.4.t desc = MSGA_postbosnia.4.d
+ picture = GFX_MSGA_event_lessons_written_in_blood
+ is_triggered_only = yes
+ fire_only_once = yes
+ option = { name = MSGA_postbosnia.4.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_postbosnia.5
+ title = MSGA_postbosnia.5.t desc = MSGA_postbosnia.5.d
+ picture = GFX_MSGA_event_bosnian_territorial_militias
+ is_triggered_only = yes
+ fire_only_once = yes
+ option = { name = MSGA_postbosnia.5.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_postbosnia.6
+ title = MSGA_postbosnia.6.t desc = MSGA_postbosnia.6.d
+ picture = GFX_MSGA_event_herzegovinian_territorial_militias
+ is_triggered_only = yes
+ fire_only_once = yes
+ option = { name = MSGA_postbosnia.6.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_postbosnia.7
+ title = MSGA_postbosnia.7.t desc = MSGA_postbosnia.7.d
+ picture = GFX_MSGA_event_srpska_territorial_defence
+ is_triggered_only = yes
+ fire_only_once = yes
+ option = { name = MSGA_postbosnia.7.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_postbosnia.8
+ title = MSGA_postbosnia.8.t desc = MSGA_postbosnia.8.d
+ picture = GFX_MSGA_event_victory_strengthens_belgrade
+ is_triggered_only = yes
+ fire_only_once = yes
+ option = { name = MSGA_postbosnia.8.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_postbosnia.9
+ title = MSGA_postbosnia.9.t desc = MSGA_postbosnia.9.d
+ picture = GFX_MSGA_event_bind_new_protectorates
+ is_triggered_only = yes
+ fire_only_once = yes
+ option = { name = MSGA_postbosnia.9.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_postbosnia.10
+ title = MSGA_postbosnia.10.t desc = MSGA_postbosnia.10.d
+ picture = GFX_MSGA_event_from_war_to_reconstruction
+ is_triggered_only = yes
+ fire_only_once = yes
+ option = { name = MSGA_postbosnia.10.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_postbosnia.11
+ title = MSGA_postbosnia.11.t desc = MSGA_postbosnia.11.d
+ picture = GFX_MSGA_event_factories_for_peace
+ is_triggered_only = yes
+ fire_only_once = yes
+ option = { name = MSGA_postbosnia.11.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_postbosnia.13
+ title = MSGA_postbosnia.13.t desc = MSGA_postbosnia.13.d
+ picture = GFX_MSGA_event_one_serbian_state
+ is_triggered_only = yes
+ fire_only_once = yes
+ option = { name = MSGA_postbosnia.13.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_postbosnia.14
+ title = MSGA_postbosnia.14.t desc = MSGA_postbosnia.14.d
+ picture = GFX_MSGA_event_serbian_sphere
+ is_triggered_only = yes
+ fire_only_once = yes
+ option = { name = MSGA_postbosnia.14.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_postbosnia.15
+ title = MSGA_postbosnia.15.t desc = MSGA_postbosnia.15.d
+ picture = GFX_MSGA_event_economic_heart_of_balkans
+ is_triggered_only = yes
+ fire_only_once = yes
+ option = { name = MSGA_postbosnia.15.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_postbosnia.16
+ title = MSGA_postbosnia.16.t desc = MSGA_postbosnia.16.d
+ picture = GFX_MSGA_event_regional_power
+ is_triggered_only = yes
+ fire_only_once = yes
+ option = { name = MSGA_postbosnia.16.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_postbosnia.12
+ title = MSGA_postbosnia.12.t desc = MSGA_postbosnia.12.d
+ picture = GFX_MSGA_event_question_of_republika_srpska
+ is_triggered_only = yes fire_only_once = yes
+ trigger = { tag = SER has_country_flag = { flag = MSGA_bosnia_settlement_done days > 99 } NOT = { has_country_flag = MSGA_srpska_question_resolved } }
+ immediate = { set_country_flag = MSGA_srpska_question_delivered }
+ option = { name = MSGA_postbosnia.12.a trigger = { country_exists = SRP SRP = { is_subject_of = SER has_war = no } NOT = { has_country_flag = MSGA_srpska_question_resolved } } ai_chance = { factor = 70 } MSGA_unite_srpska = yes }
+ option = { name = MSGA_postbosnia.12.b ai_chance = { factor = 30 } set_country_flag = MSGA_srpska_question_resolved }
+}

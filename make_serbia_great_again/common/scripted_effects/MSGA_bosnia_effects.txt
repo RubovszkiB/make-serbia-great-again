@@ -194,15 +194,19 @@ MSGA_settle_bosnia = {
   add_to_faction = BOS add_to_faction = HRZ add_to_faction = SRP
   MSGA_cleanup_bosnia_war_modifiers = yes
   country_event = { id = MSGA_bosnia.10 }
-  country_event = { id = MSGA_bosnia.11 days = 70 }
+  country_event = { id = MSGA_postbosnia.12 days = 100 }
   set_country_flag = MSGA_srpska_question_scheduled
+  MSGA_open_post_bosnia = yes
  }
 }
 MSGA_unite_srpska = {
  if = { limit = { tag = SER has_country_flag = MSGA_bosnia_settlement_done country_exists = SRP SRP = { is_subject_of = SER has_war = no } NOT = { has_country_flag = MSGA_srpska_question_resolved } }
+  # Auxiliaries already serve under SER. Native SRP units/equipment transfer too.
+  SRP = { remove_ideas = MSGA_bound_protectorate remove_ideas = MSGA_integrated_protectorate remove_ideas = MSGA_SRP_last_stand remove_ideas = MSGA_campaign_isolation }
   annex_country = { target = SRP transfer_troops = yes }
   set_temp_variable = { var = debt_var_temp value = 1 } add_debt = yes
   set_country_flag = MSGA_srpska_question_resolved set_country_flag = MSGA_srpska_united
+  country_event = { id = MSGA_postbosnia.13 }
  }
 }
 MSGA_recover_bosnia_chain = {

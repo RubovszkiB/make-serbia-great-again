@@ -1,0 +1,33 @@
+spriteTypes = {
+    spriteType = { name = "GFX_MSGA_event_victory_in_bosnia" texturefile = "gfx/event_pictures/MSGA_event_victory_in_bosnia.dds" }
+    spriteType = { name = "GFX_MSGA_event_cost_of_victory" texturefile = "gfx/event_pictures/MSGA_event_cost_of_victory.dds" }
+    spriteType = { name = "GFX_MSGA_event_new_serbian_era" texturefile = "gfx/event_pictures/MSGA_event_new_serbian_era.dds" }
+    spriteType = { name = "GFX_MSGA_event_lessons_written_in_blood" texturefile = "gfx/event_pictures/MSGA_event_lessons_written_in_blood.dds" }
+    spriteType = { name = "GFX_MSGA_event_bosnian_territorial_militias" texturefile = "gfx/event_pictures/MSGA_event_bosnian_territorial_militias.dds" }
+    spriteType = { name = "GFX_MSGA_event_herzegovinian_territorial_militias" texturefile = "gfx/event_pictures/MSGA_event_herzegovinian_territorial_militias.dds" }
+    spriteType = { name = "GFX_MSGA_event_srpska_territorial_defence" texturefile = "gfx/event_pictures/MSGA_event_srpska_territorial_defence.dds" }
+    spriteType = { name = "GFX_MSGA_event_victory_strengthens_belgrade" texturefile = "gfx/event_pictures/MSGA_event_victory_strengthens_belgrade.dds" }
+    spriteType = { name = "GFX_MSGA_event_bind_new_protectorates" texturefile = "gfx/event_pictures/MSGA_event_bind_new_protectorates.dds" }
+    spriteType = { name = "GFX_MSGA_event_from_war_to_reconstruction" texturefile = "gfx/event_pictures/MSGA_event_from_war_to_reconstruction.dds" }
+    spriteType = { name = "GFX_MSGA_event_factories_for_peace" texturefile = "gfx/event_pictures/MSGA_event_factories_for_peace.dds" }
+    spriteType = { name = "GFX_MSGA_event_question_of_republika_srpska" texturefile = "gfx/event_pictures/MSGA_event_question_of_republika_srpska.dds" }
+    spriteType = { name = "GFX_MSGA_event_one_serbian_state" texturefile = "gfx/event_pictures/MSGA_event_one_serbian_state.dds" }
+    spriteType = { name = "GFX_MSGA_event_serbian_sphere" texturefile = "gfx/event_pictures/MSGA_event_serbian_sphere.dds" }
+    spriteType = { name = "GFX_MSGA_event_economic_heart_of_balkans" texturefile = "gfx/event_pictures/MSGA_event_economic_heart_of_balkans.dds" }
+    spriteType = { name = "GFX_MSGA_event_regional_power" texturefile = "gfx/event_pictures/MSGA_event_regional_power.dds" }
+    spriteType = { name = "GFX_MSGA_focus_victory_in_bosnia" texturefile = "gfx/interface/goals/MSGA_focus_victory_in_bosnia.dds" }
+    spriteType = { name = "GFX_MSGA_focus_rebuild_the_west" texturefile = "gfx/interface/goals/MSGA_focus_rebuild_the_west.dds" }
+    spriteType = { name = "GFX_MSGA_focus_new_serbian_era" texturefile = "gfx/interface/goals/MSGA_focus_new_serbian_era.dds" }
+    spriteType = { name = "GFX_MSGA_focus_lessons_bosnian_war" texturefile = "gfx/interface/goals/MSGA_focus_lessons_bosnian_war.dds" }
+    spriteType = { name = "GFX_MSGA_focus_arm_new_serbian_sphere" texturefile = "gfx/interface/goals/MSGA_focus_arm_new_serbian_sphere.dds" }
+    spriteType = { name = "GFX_MSGA_focus_serbian_defence_network" texturefile = "gfx/interface/goals/MSGA_focus_serbian_defence_network.dds" }
+    spriteType = { name = "GFX_MSGA_focus_consolidate_victory" texturefile = "gfx/interface/goals/MSGA_focus_consolidate_victory.dds" }
+    spriteType = { name = "GFX_MSGA_focus_bind_new_protectorates" texturefile = "gfx/interface/goals/MSGA_focus_bind_new_protectorates.dds" }
+    spriteType = { name = "GFX_MSGA_focus_serbian_sphere" texturefile = "gfx/interface/goals/MSGA_focus_serbian_sphere.dds" }
+    spriteType = { name = "GFX_MSGA_focus_repair_war_economy" texturefile = "gfx/interface/goals/MSGA_focus_repair_war_economy.dds" }
+    spriteType = { name = "GFX_MSGA_focus_serbian_industrial_consolidation" texturefile = "gfx/interface/goals/MSGA_focus_serbian_industrial_consolidation.dds" }
+    spriteType = { name = "GFX_MSGA_focus_economic_heart_balkans" texturefile = "gfx/interface/goals/MSGA_focus_economic_heart_balkans.dds" }
+    spriteType = { name = "GFX_MSGA_decision_organise_bosnian_territorial_militias" texturefile = "gfx/interface/decisions/MSGA_decision_organise_bosnian_territorial_militias.dds" }
+    spriteType = { name = "GFX_MSGA_decision_organise_herzegovinian_territorial_militias" texturefile = "gfx/interface/decisions/MSGA_decision_organise_herzegovinian_territorial_militias.dds" }
+    spriteType = { name = "GFX_MSGA_decision_form_srpska_territorial_defence" texturefile = "gfx/interface/decisions/MSGA_decision_form_srpska_territorial_defence.dds" }
+}

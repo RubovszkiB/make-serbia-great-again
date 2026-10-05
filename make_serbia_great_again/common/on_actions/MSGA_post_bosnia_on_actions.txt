@@ -1,0 +1,4 @@
+on_actions = {
+ on_startup = { effect = { SER = { MSGA_open_post_bosnia = yes MSGA_check_srpska_question = yes MSGA_check_regional_power = yes } } }
+ on_weekly = { effect = { if = { limit = { tag = SER has_country_flag = MSGA_bosnia_settlement_done } MSGA_open_post_bosnia = yes MSGA_check_srpska_question = yes MSGA_check_regional_power = yes } } }
+}

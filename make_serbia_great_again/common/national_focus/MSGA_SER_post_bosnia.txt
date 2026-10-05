@@ -1,0 +1,113 @@
+focus_tree = {
+ id = MSGA_SER_post_bosnia
+ country = { factor = 0 modifier = { add = 250 tag = SER has_country_flag = MSGA_post_bosnia_active } }
+ default = no
+ reset_on_civilwar = no
+ focus = {
+  id = MSGA_victory_in_bosnia
+  icon = GFX_MSGA_focus_victory_in_bosnia
+  x = 4 y = 0 cost = 2
+  available = { has_country_flag = MSGA_bosnia_settlement_done }
+  ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_victory_in_bosnia add_stability = 0.05 add_political_power = 25 MSGA_cleanup_bosnia_war_modifiers = yes country_event = { id = MSGA_postbosnia.1 } MSGA_check_regional_power = yes }
+ }
+ focus = {
+  id = MSGA_rebuild_the_west
+  icon = GFX_MSGA_focus_rebuild_the_west
+  x = 4 y = 1 cost = 2
+  prerequisite = { focus = MSGA_victory_in_bosnia }
+  available = { has_country_flag = MSGA_bosnia_settlement_done }
+  ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_rebuild_the_west MSGA_rebuild_western_regions = yes country_event = { id = MSGA_postbosnia.2 } MSGA_check_regional_power = yes }
+ }
+ focus = {
+  id = MSGA_new_serbian_era
+  icon = GFX_MSGA_focus_new_serbian_era
+  x = 4 y = 2 cost = 2
+  prerequisite = { focus = MSGA_rebuild_the_west }
+  available = { has_country_flag = MSGA_bosnia_settlement_done }
+  ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_new_serbian_era add_political_power = 25 country_event = { id = MSGA_postbosnia.3 } MSGA_check_regional_power = yes }
+ }
+ focus = {
+  id = MSGA_lessons_bosnian_war
+  icon = GFX_MSGA_focus_lessons_bosnian_war
+  x = 0 y = 3 cost = 2
+  prerequisite = { focus = MSGA_new_serbian_era }
+  available = { has_country_flag = MSGA_bosnia_settlement_done }
+  ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_lessons_bosnian_war army_experience = 25 add_doctrine_cost_reduction = { name = MSGA_bosnian_lessons_bonus cost_reduction = 0.25 uses = 1 category = cat_old_land_doctrine } add_timed_idea = { idea = MSGA_bosnian_war_lessons days = 180 } country_event = { id = MSGA_postbosnia.4 } MSGA_check_regional_power = yes }
+ }
+ focus = {
+  id = MSGA_arm_new_serbian_sphere
+  icon = GFX_MSGA_focus_arm_new_serbian_sphere
+  x = 0 y = 4 cost = 2
+  prerequisite = { focus = MSGA_lessons_bosnian_war }
+  available = { has_country_flag = MSGA_bosnia_settlement_done }
+  ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_arm_new_serbian_sphere set_country_flag = MSGA_protectorate_militias_unlocked unlock_decision_tooltip = MSGA_organise_bosnian_territorial_militias unlock_decision_tooltip = MSGA_organise_herzegovinian_territorial_militias MSGA_check_regional_power = yes }
+ }
+ focus = {
+  id = MSGA_serbian_defence_network
+  icon = GFX_MSGA_focus_serbian_defence_network
+  x = 0 y = 5 cost = 2
+  prerequisite = { focus = MSGA_arm_new_serbian_sphere }
+  available = { has_country_flag = MSGA_bosnia_settlement_done }
+  ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_serbian_defence_network set_country_flag = MSGA_srpska_td_unlocked unlock_decision_tooltip = MSGA_form_srpska_territorial_defence MSGA_check_regional_power = yes }
+ }
+ focus = {
+  id = MSGA_consolidate_victory
+  icon = GFX_MSGA_focus_consolidate_victory
+  x = 4 y = 3 cost = 2
+  prerequisite = { focus = MSGA_new_serbian_era }
+  available = { has_country_flag = MSGA_bosnia_settlement_done }
+  ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_consolidate_victory add_stability = 0.05 add_political_power = 50 if = { limit = { has_power_balance = { id = MSGA_SER_streets_presidency } } add_power_balance_value = { id = MSGA_SER_streets_presidency value = 0.10 } } country_event = { id = MSGA_postbosnia.8 } MSGA_check_regional_power = yes }
+ }
+ focus = {
+  id = MSGA_bind_new_protectorates
+  icon = GFX_MSGA_focus_bind_new_protectorates
+  x = 4 y = 4 cost = 2
+  prerequisite = { focus = MSGA_consolidate_victory }
+  available = { has_country_flag = MSGA_bosnia_settlement_done }
+  ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_bind_new_protectorates MSGA_bind_balkan_protectorates = yes country_event = { id = MSGA_postbosnia.9 } MSGA_check_regional_power = yes }
+ }
+ focus = {
+  id = MSGA_serbian_sphere
+  icon = GFX_MSGA_focus_serbian_sphere
+  x = 4 y = 5 cost = 2
+  prerequisite = { focus = MSGA_bind_new_protectorates }
+  available = { has_country_flag = MSGA_bosnia_settlement_done }
+  ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_serbian_sphere add_ideas = MSGA_serbian_sphere_spirit MSGA_integrate_balkan_subjects = yes country_event = { id = MSGA_postbosnia.14 } MSGA_check_regional_power = yes }
+ }
+ focus = {
+  id = MSGA_repair_war_economy
+  icon = GFX_MSGA_focus_repair_war_economy
+  x = 8 y = 3 cost = 2
+  prerequisite = { focus = MSGA_new_serbian_era }
+  available = { has_country_flag = MSGA_bosnia_settlement_done }
+  ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_repair_war_economy MSGA_repair_postwar_economy = yes country_event = { id = MSGA_postbosnia.10 } MSGA_check_regional_power = yes }
+ }
+ focus = {
+  id = MSGA_serbian_industrial_consolidation
+  icon = GFX_MSGA_focus_serbian_industrial_consolidation
+  x = 8 y = 4 cost = 2
+  prerequisite = { focus = MSGA_repair_war_economy }
+  available = { has_country_flag = MSGA_bosnia_settlement_done }
+  ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_serbian_industrial_consolidation MSGA_consolidate_postwar_industry = yes country_event = { id = MSGA_postbosnia.11 } MSGA_check_regional_power = yes }
+ }
+ focus = {
+  id = MSGA_economic_heart_balkans
+  icon = GFX_MSGA_focus_economic_heart_balkans
+  x = 8 y = 5 cost = 2
+  prerequisite = { focus = MSGA_serbian_industrial_consolidation }
+  available = { has_country_flag = MSGA_bosnia_settlement_done }
+  ai_will_do = { factor = 10 }
+  completion_reward = { set_country_flag = MSGA_completed_economic_heart_balkans add_ideas = MSGA_economic_heart_spirit country_event = { id = MSGA_postbosnia.15 } MSGA_check_regional_power = yes }
+ }
+}

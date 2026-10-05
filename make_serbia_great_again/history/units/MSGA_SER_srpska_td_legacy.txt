@@ -1,0 +1,13 @@
+units = { division = {
+ name = "Srpska Teritorijalna Odbrana"
+ location = 11586
+ division_template = "Srpska Teritorijalna Odbrana"
+ start_equipment_factor = 1
+ start_manpower_factor = 1
+ start_experience_factor = 0.1
+ force_equipment_variants = {
+  modern_tank_equipment_1 = { owner = "SER" version_name = "T-55A" }
+  mechanized_equipment_1 = { owner = "SER" version_name = "BVP M-80A" }
+  light_mechanized_equipment_1 = { owner = "SER" version_name = "BTR-80A" }
+ }
+} }

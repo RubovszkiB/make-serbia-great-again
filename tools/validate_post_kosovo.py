@@ -163,21 +163,27 @@ def main():
  assert get(state_modifier,'state_production_speed_buildings_factor')=='0.10'
  assert all(float(v)==.20 for k,_,v in state_modifier if k.startswith('state_repair_speed_'))
  # Supplied DDS bytes are used unchanged, including their authored 474x178 size.
- image_map={'MSGA_bosnia.6':'srpska_uprising','MSGA_bosnia.9':'serbia_enters_bosnian_war','MSGA_bosnia.10':'bosnia_capitulation','MSGA_bosnia.11':'question_of_republika_srpska','MSGA_postkosovo.7':'kosovo_reconstruction_begins','MSGA_postkosovo.9':'future_of_pristina','MSGA_postkosovo.15':'kosovo_rebuilt'}
+ image_map={'MSGA_bosnia.6':'srpska_uprising','MSGA_bosnia.9':'serbia_enters_bosnian_war','MSGA_bosnia.10':'bosnia_capitulation','MSGA_postbosnia.12':'question_of_republika_srpska','MSGA_postkosovo.7':'kosovo_reconstruction_begins','MSGA_postkosovo.9':'future_of_pristina','MSGA_postkosovo.15':'kosovo_rebuilt'}
  all_events={get(v,'id'):v for path,ast in scripts.items() if path.startswith('events/') for k,_,v in ast if k=='country_event'}
  supplied_hashes={}
  package_path=Path('C:/Users/Balazs/Downloads/MSGA_TFR_Bosnia_Kosovo_Event_Assets_70d.zip')
  with zipfile.ZipFile(package_path) as package:
-  assert (mod/'interface/MSGA_eventpictures.gfx').read_bytes()==package.read('MSGA_TFR_Bosnia_Kosovo_Event_Assets_70d/interface/MSGA_eventpictures.gfx')
+  previous=parse(package.read('MSGA_TFR_Bosnia_Kosovo_Event_Assets_70d/interface/MSGA_eventpictures.gfx').decode('utf-8-sig'))
+  # The shared Srpska question sprite moved to the complete supplied 100-day GFX.
+  old_entries=[(k,o,v) for k,o,v in previous[0][2] if get(v,'name').strip('"')!='GFX_MSGA_event_question_of_republika_srpska']
+  assert scripts['interface/MSGA_eventpictures.gfx'][0][2]==old_entries
   for id,stem in image_map.items():
    key='GFX_MSGA_event_'+stem;relative='gfx/event_pictures/MSGA_event_'+stem+'.dds';data=(mod/relative).read_bytes()
    assert get(all_events[id],'picture')==key and get(sprites[key],'texturefile').strip('"')==relative
-   assert data==package.read('MSGA_TFR_Bosnia_Kosovo_Event_Assets_70d/'+relative)
+   if stem=='question_of_republika_srpska':
+    latest=json.loads((ROOT/'docs/post_bosnia_sources.json').read_text())['assets']
+    assert hashlib.sha256(data).hexdigest()==latest[relative]['sha256']
+   else:assert data==package.read('MSGA_TFR_Bosnia_Kosovo_Event_Assets_70d/'+relative)
    img=Image.open(mod/relative).convert('RGBA');assert img.size==(474,178) and img.getchannel('A').getextrema()[1]>0
    supplied_hashes[relative]=hashlib.sha256(data).hexdigest()
  assert 'MSGA_kosovo_crisis' not in [k for k,_,_ in scripts['common/decisions/categories/MSGA_SER_categories.txt']]
  assert [k for k,_,_ in scripts['common/decisions/MSGA_SER_strategic_review.txt']]==['MSGA_strategic_review']
  report={'static_validation':'passed','validated_mod_root':str(mod),'focus_days':[14,7,14,21,21,14,7],'north_state':1305,'remaining_state':785,'integration_debt_B':1,'integration_treasury_debit':0,'removed_native_spirit':'SER_rebellion_of_kosovo','militia_treasury_B':2,'militia_PP':0,'brigade_width':width,'brigade_equipment_required':dict(required),'variant_stats_before_country_tech_modifiers':stats,'legal_starting_modules':True,'supplied_DDS_assets':22,'visible_events':15,'postwar_rewards_in_either_order':'passed','debt_and_spawn_idempotence':'passed','Bosnian_transition_without_war':'passed','save_load':'model flag checkpoint passed; actual engine save/load not tested','gameplay_rendering_and_production_UI':'not certified by these checks'}
- report.update({'version':'0.9.0','reconstruction_model':'passed: both choices, insufficient treasury, one-time payments, fractional development, infrastructure cap, final decision gating and cleanup','new_supplied_DDS_hashes':supplied_hashes,'supplied_event_image_dimensions':[474,178],'state_repair_bonus':.20,'state_construction_bonus':.10,'temporary_development_monthly':.005,'private_capital_business_value':.05,'private_capital_monthly_income_growth':.02,'removed_filler_decisions':5})
+ report.update({'version':'0.10.0','reconstruction_model':'passed: both choices, insufficient treasury, one-time payments, fractional development, infrastructure cap, final decision gating and cleanup','new_supplied_DDS_hashes':supplied_hashes,'supplied_event_image_dimensions':[474,178],'state_repair_bonus':.20,'state_construction_bonus':.10,'temporary_development_monthly':.005,'private_capital_business_value':.05,'private_capital_monthly_income_growth':.02,'removed_filler_decisions':5})
  args.report.write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))
 if __name__=='__main__':main()

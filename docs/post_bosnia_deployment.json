@@ -1,0 +1,305 @@
+{
+  "version": "0.10.0",
+  "runtime_target": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
+  "files": [
+    {
+      "relative": "common/national_focus/MSGA_SER_post_bosnia.txt",
+      "before_sha256": null,
+      "after_sha256": "c5e6067239cdf9c9b18aeac10b12e2e7352a2e6310afee953d6662fa1ce8f2a9"
+    },
+    {
+      "relative": "common/scripted_effects/MSGA_post_bosnia_effects.txt",
+      "before_sha256": null,
+      "after_sha256": "6194331534969ca5b261b6f1842c775ec525ccf5cbd96e362a75aebf762cb7b4"
+    },
+    {
+      "relative": "history/units/MSGA_BOS_auxiliary_militias.txt",
+      "before_sha256": null,
+      "after_sha256": "10ebac5c3481bfe520853d669cd9faec100176cb309ccf27037fc61789dda1ba"
+    },
+    {
+      "relative": "history/units/MSGA_HRZ_auxiliary_militias.txt",
+      "before_sha256": null,
+      "after_sha256": "30fc0e25b7cf656846701515520239bd2804ec536ab5b2ca8c7c0f385770b596"
+    },
+    {
+      "relative": "common/scripted_effects/MSGA_post_bosnia_auxiliaries.txt",
+      "before_sha256": null,
+      "after_sha256": "d994725609c280740e3fc8f08a946cd76307cd729e20503b30a4bb81cb7321cf"
+    },
+    {
+      "relative": "history/units/MSGA_SER_srpska_td_template.txt",
+      "before_sha256": null,
+      "after_sha256": "c6a07b709f30ba5538bb9a2ee251a47b2b278a03de487028a8b16a2e63867ebd"
+    },
+    {
+      "relative": "history/units/MSGA_SER_srpska_td.txt",
+      "before_sha256": null,
+      "after_sha256": "be9f7242f0dafe09399c29178f9eeaf7f37a16e6719b249ee71bbb5becb9b993"
+    },
+    {
+      "relative": "history/units/MSGA_SER_srpska_td_legacy.txt",
+      "before_sha256": null,
+      "after_sha256": "adf114a278cc6fe35a00330f091dbb4b35ffe12eecbf20a74800cb18e2b6d3a6"
+    },
+    {
+      "relative": "common/ideas/MSGA_post_bosnia_ideas.txt",
+      "before_sha256": null,
+      "after_sha256": "ef9dfc37a9b7099426bae0108e2f840bb42d214d8b809f514800e89a98a4b84d"
+    },
+    {
+      "relative": "common/opinion_modifiers/MSGA_post_bosnia_opinion.txt",
+      "before_sha256": null,
+      "after_sha256": "44dfd59f8e5104a5b215fb6a00334c98c1ea9512ef6a3be4e144f60b7448a9a6"
+    },
+    {
+      "relative": "common/dynamic_modifiers/MSGA_SER_dynamic_modifiers.txt",
+      "before_sha256": "f00d2246564a1bbd3a6b7ad7ff178fae3553fdf0ffa5633ca8bd9d2612839ff5",
+      "after_sha256": "18478562f79b1c8e1c6cb481176739ea4c8afe488c6b3fd1cc20b6a58e52d8d7"
+    },
+    {
+      "relative": "common/decisions/categories/MSGA_SER_categories.txt",
+      "before_sha256": "f0f5a4843abc4efb4a5ed83fd2dd480d5a7f5474e0eafa445bdeb12af48474d6",
+      "after_sha256": "4c30397a49185c8c4325836ea125a9d8f25c8a77a33b9f8cc9c2dc6c802a6ce1"
+    },
+    {
+      "relative": "common/decisions/MSGA_post_bosnia_decisions.txt",
+      "before_sha256": null,
+      "after_sha256": "b2f6d7013f7a601f4675ae1e18688a1b75e60ef38dc7e5236a6ed99ac58558a2"
+    },
+    {
+      "relative": "events/MSGA_post_bosnia_events.txt",
+      "before_sha256": null,
+      "after_sha256": "acdd6410dea4572c1388d80e94fca4509723c994cc04c5eb8f42b4d7dd1a5ff4"
+    },
+    {
+      "relative": "events/MSGA_bosnia_events.txt",
+      "before_sha256": "88d0f8f8a0aa4dcd51befa8dfba32664643f4da2f82da70584de84b548910734",
+      "after_sha256": "bc643fc5d989a01e75ef70b821eca8095cba51d2483cbae7aa442df6aaf000c6"
+    },
+    {
+      "relative": "common/scripted_effects/MSGA_bosnia_effects.txt",
+      "before_sha256": "45d4bffa0ee60fc42610a2e12b264979041840cad6108b489876fe360343857e",
+      "after_sha256": "c360ec8d231890e22ecca9a5402e239e72445b5e9b2465607724403f11371d2a"
+    },
+    {
+      "relative": "common/on_actions/MSGA_post_bosnia_on_actions.txt",
+      "before_sha256": null,
+      "after_sha256": "3ac349e1b7de1afa76151d004946aeb8ba67a986b678379ccbbe05b78b37a48d"
+    },
+    {
+      "relative": "localisation/english/MSGA_post_bosnia_l_english.yml",
+      "before_sha256": null,
+      "after_sha256": "300f77975e3894411418386ed9a0473dc6ab2652a40ea2384e69885595b51a75"
+    },
+    {
+      "relative": "localisation/english/MSGA_settlement_l_english.yml",
+      "before_sha256": "af3f54a40322649ab35daaa2e06bf92cb12a19e1f19f35a49534c96f510b337b",
+      "after_sha256": "e36858ef3b35e3e419685743f9105e4f973918f52c7f1ed8c6ad560c4f21d139"
+    },
+    {
+      "relative": "interface/MSGA_eventpictures.gfx",
+      "before_sha256": "fa91e3aef65b169067edf982b25fc7817753485b261bc7b2d0c2b06fe633f9b6",
+      "after_sha256": "3279a0bda133b1c7a4ac350a78a7cea8fe9ae1a174a050ca0faef92b9419fd70"
+    },
+    {
+      "relative": "interface/MSGA_post_bosnia_assets.gfx",
+      "before_sha256": null,
+      "after_sha256": "1d47b7529a98d4d89714214ce5a4bf056deddc9752f9ed2d84937d3afaf8714d"
+    },
+    {
+      "relative": "gfx/event_pictures/MSGA_event_question_of_republika_srpska.dds",
+      "before_sha256": "85770327b09356ef68dd4b03ebfcc020bdd7c452e192db9644cb0c1b3831ad7f",
+      "after_sha256": "e232042bf4b033d10dede4f87ddc177638be5cd8d705999b108064da18a76059"
+    },
+    {
+      "relative": "gfx/event_pictures/MSGA_event_from_war_to_reconstruction.dds",
+      "before_sha256": null,
+      "after_sha256": "bb80571c262484d53e4b409d33ab3f2df0ee6b1fe69847abbe8c18b5b84b409a"
+    },
+    {
+      "relative": "gfx/event_pictures/MSGA_event_cost_of_victory.dds",
+      "before_sha256": null,
+      "after_sha256": "50680aa988a2c30a24b2ea2caa8f9c8a4c07fe8445d30589203fa97cc5d6d108"
+    },
+    {
+      "relative": "gfx/event_pictures/MSGA_event_bosnian_territorial_militias.dds",
+      "before_sha256": null,
+      "after_sha256": "620df806e95f3e988be4d752cbc1795c4a07d1d261ab824382ccf39406ab2ec7"
+    },
+    {
+      "relative": "gfx/event_pictures/MSGA_event_victory_strengthens_belgrade.dds",
+      "before_sha256": null,
+      "after_sha256": "aec34c683f9b0476d45be4ab42846ddf4e8cbda21ee7a49757bc794d339bc9ba"
+    },
+    {
+      "relative": "gfx/event_pictures/MSGA_event_regional_power.dds",
+      "before_sha256": null,
+      "after_sha256": "7550e32d1aa13a635098741145d20faab1b583b44e7b07adcebdbd32ea86cc23"
+    },
+    {
+      "relative": "gfx/event_pictures/MSGA_event_one_serbian_state.dds",
+      "before_sha256": null,
+      "after_sha256": "38bd2a84cb1d18944556f4678e0c6abc66a070463ae47c64ac14a4134eaa9ad9"
+    },
+    {
+      "relative": "gfx/event_pictures/MSGA_event_new_serbian_era.dds",
+      "before_sha256": null,
+      "after_sha256": "d3893e4d1e8ab75ccc8cc7461f48ef153d1857397a98ddcb6ed5b585e4324b90"
+    },
+    {
+      "relative": "gfx/event_pictures/MSGA_event_serbian_sphere.dds",
+      "before_sha256": null,
+      "after_sha256": "037ea427790be0dc10cb521be1e968d90adca309db222061417102a90ee26166"
+    },
+    {
+      "relative": "gfx/event_pictures/MSGA_event_srpska_territorial_defence.dds",
+      "before_sha256": null,
+      "after_sha256": "32f4b04785ab0a4f4c1f0bb07bc8c540f2aadc01044985e42e73f7bdcd1ec6df"
+    },
+    {
+      "relative": "gfx/event_pictures/MSGA_event_bind_new_protectorates.dds",
+      "before_sha256": null,
+      "after_sha256": "4f3c4f9952db5d6ea007447dd51c7fecde30b7b90ae34951fcc6cee81b87c4f3"
+    },
+    {
+      "relative": "gfx/event_pictures/MSGA_event_lessons_written_in_blood.dds",
+      "before_sha256": null,
+      "after_sha256": "cc9acf45f00a490310ebd5ad6d2a893879b0ea5986fde599f83a62a427163f8f"
+    },
+    {
+      "relative": "gfx/event_pictures/MSGA_event_herzegovinian_territorial_militias.dds",
+      "before_sha256": null,
+      "after_sha256": "3cb099dd4c207828c24a27941bc24bbdd2df27469a6f57a6780bea63d0042b3c"
+    },
+    {
+      "relative": "gfx/event_pictures/MSGA_event_economic_heart_of_balkans.dds",
+      "before_sha256": null,
+      "after_sha256": "0828645d1d8def0d628ba012115bc5dbda98169dc4cd90814ee5f96c2efc2dc1"
+    },
+    {
+      "relative": "gfx/event_pictures/MSGA_event_victory_in_bosnia.dds",
+      "before_sha256": null,
+      "after_sha256": "757822110da3df99df2b829839103dc76532b1f8a2012f9e155a677876a7f6e1"
+    },
+    {
+      "relative": "gfx/event_pictures/MSGA_event_factories_for_peace.dds",
+      "before_sha256": null,
+      "after_sha256": "0009a01fda507753ef26aecbe0546367998badcd79f6a0ff440e562d0951e15b"
+    },
+    {
+      "relative": "gfx/interface/goals/MSGA_focus_consolidate_victory.dds",
+      "before_sha256": null,
+      "after_sha256": "e7e10f35638a0b8123e830da1f1b668000ef7eaaeff4074297df64d2da65e9cb"
+    },
+    {
+      "relative": "gfx/interface/goals/MSGA_focus_repair_war_economy.dds",
+      "before_sha256": null,
+      "after_sha256": "8d3072115ce065668d02fe1eead693ead72140aad92300ea78388567e0e0a720"
+    },
+    {
+      "relative": "gfx/interface/goals/MSGA_focus_economic_heart_balkans.dds",
+      "before_sha256": null,
+      "after_sha256": "7c15ff4555f663b1a393bf9211fa5671f2c0931766783907ed865150369fe292"
+    },
+    {
+      "relative": "gfx/interface/goals/MSGA_focus_serbian_sphere.dds",
+      "before_sha256": null,
+      "after_sha256": "87531184840eb4a0d3eb62f07b5925997f00ccf289fd81162614659804da240b"
+    },
+    {
+      "relative": "gfx/interface/goals/MSGA_focus_arm_new_serbian_sphere.dds",
+      "before_sha256": null,
+      "after_sha256": "78bf89b95b97a6528bc6aed5b6224b91c3f960c1fb9e81285a786c0d298c5bfc"
+    },
+    {
+      "relative": "gfx/interface/goals/MSGA_focus_bind_new_protectorates.dds",
+      "before_sha256": null,
+      "after_sha256": "23474fa919d376c24deeb97b7a4c1056a8e023260b98f1ae1ccd96d4ffa9719d"
+    },
+    {
+      "relative": "gfx/interface/goals/MSGA_focus_victory_in_bosnia.dds",
+      "before_sha256": null,
+      "after_sha256": "8298b5edc2f504abd3c4d4b041f77eb01bcf124c0aed33e6809a3ada3c0cfe19"
+    },
+    {
+      "relative": "gfx/interface/goals/MSGA_focus_new_serbian_era.dds",
+      "before_sha256": null,
+      "after_sha256": "ea4354fcd38fd5d36f81baf54eabb326bd62c595426aa6af9d259e7753a0cddb"
+    },
+    {
+      "relative": "gfx/interface/goals/MSGA_focus_lessons_bosnian_war.dds",
+      "before_sha256": null,
+      "after_sha256": "6a913dcf3a51994e82ad62fe4040a99ba1cf1b09229e86020763feab7a325c8f"
+    },
+    {
+      "relative": "gfx/interface/goals/MSGA_focus_serbian_industrial_consolidation.dds",
+      "before_sha256": null,
+      "after_sha256": "7261345cec8994cf979747879ea089c07f6522fdde75db1a05a41754c1503b8d"
+    },
+    {
+      "relative": "gfx/interface/goals/MSGA_focus_serbian_defence_network.dds",
+      "before_sha256": null,
+      "after_sha256": "f7ea2e12be370b340b71992880c674e854e1254b4e15248b4c0be3098a99d96f"
+    },
+    {
+      "relative": "gfx/interface/goals/MSGA_focus_rebuild_the_west.dds",
+      "before_sha256": null,
+      "after_sha256": "c6b4ffa87e42004765ad607f9f353a1299622ebe44e730064c54e116fc774901"
+    },
+    {
+      "relative": "gfx/interface/decisions/MSGA_decision_form_srpska_territorial_defence.dds",
+      "before_sha256": null,
+      "after_sha256": "ff03ed5967b6137a3f36d8f8f2ef1c8641d18fd67bb3ec9f72ddd3631dcceb76"
+    },
+    {
+      "relative": "gfx/interface/decisions/MSGA_decision_organise_bosnian_territorial_militias.dds",
+      "before_sha256": null,
+      "after_sha256": "1e7cd63105b5089bdc0206fd37686304aaac7a06e6c8a4ac3b5d07b0ccb9851c"
+    },
+    {
+      "relative": "gfx/interface/decisions/MSGA_decision_organise_herzegovinian_territorial_militias.dds",
+      "before_sha256": null,
+      "after_sha256": "c1cb1d98ed8522436c9759b75141e9ffa87f14778f7617442796cae14bc13e4f"
+    },
+    {
+      "relative": "interface/MSGA_post_bosnia_focus_shine.gfx",
+      "before_sha256": null,
+      "after_sha256": "ee13758cb73aa062b814bab89696e12b5eeb880f9058247020ed0fd793ede1e6"
+    },
+    {
+      "relative": "descriptor.mod",
+      "before_sha256": "3570c87d034b5f08b2b61dd104661fbebad0e59d2cf00fc8247179a4098990ce",
+      "after_sha256": "1e764f78f92c848895f0c1d4302d795fb124fcdcf86d26773448ef6f2f6dd4e3"
+    },
+    {
+      "relative": "make_serbia_great_again.mod",
+      "before_sha256": "be23861ef2a2555be443d434a27ef851c2338a8793012f34b6751ef8d1f7dd5d",
+      "after_sha256": "86bb563e9af7ee6b7fc15c56647b93017b277e691ad1152e2b14ce63a9e3d891"
+    }
+  ],
+  "focus_ids": [
+    "MSGA_victory_in_bosnia",
+    "MSGA_rebuild_the_west",
+    "MSGA_new_serbian_era",
+    "MSGA_lessons_bosnian_war",
+    "MSGA_arm_new_serbian_sphere",
+    "MSGA_serbian_defence_network",
+    "MSGA_consolidate_victory",
+    "MSGA_bind_new_protectorates",
+    "MSGA_serbian_sphere",
+    "MSGA_repair_war_economy",
+    "MSGA_serbian_industrial_consolidation",
+    "MSGA_economic_heart_balkans"
+  ],
+  "focus_days": 14,
+  "total_focus_days": 168,
+  "Srpska_question_days": 100,
+  "actual_game_validation": "pending user test; user explicitly reserved gameplay testing",
+  "validation": "six installed validators passed; engine playthrough pending user test",
+  "followup_corrections": [
+    "verified existing idea icons",
+    "missing category description",
+    "explicit days > 99 flag-age condition"
+  ]
+}

@@ -1,0 +1,24 @@
+MSGA_raise_bosnian_militias = {
+ if = { limit = { tag = SER has_country_flag = MSGA_protectorate_militias_unlocked country_exists = BOS BOS = { is_subject_of = SER } SER = { controls_province = 11586 } 107 = { is_owned_by = SER } check_variable = { var = income_var value = 0.25 compare = greater_than_or_equals } NOT = { has_country_flag = MSGA_bosnian_militias_raised } }
+  set_temp_variable = { var = income_var_temp value = -0.25 } add_income = yes
+  load_oob = MSGA_BOS_auxiliary_militias set_country_flag = MSGA_bosnian_militias_raised
+  country_event = { id = MSGA_postbosnia.5 }
+ }
+}
+MSGA_raise_herzegovinian_militias = {
+ if = { limit = { tag = SER has_country_flag = MSGA_protectorate_militias_unlocked country_exists = HRZ HRZ = { is_subject_of = SER } SER = { controls_province = 11586 } 107 = { is_owned_by = SER } check_variable = { var = income_var value = 0.25 compare = greater_than_or_equals } NOT = { has_country_flag = MSGA_herzegovinian_militias_raised } }
+  set_temp_variable = { var = income_var_temp value = -0.25 } add_income = yes
+  load_oob = MSGA_HRZ_auxiliary_militias set_country_flag = MSGA_herzegovinian_militias_raised
+  country_event = { id = MSGA_postbosnia.6 }
+ }
+}
+MSGA_raise_srpska_territorial_defence = {
+ if = { limit = { tag = SER has_country_flag = MSGA_srpska_td_unlocked OR = { AND = { country_exists = SRP SRP = { is_subject_of = SER } } has_country_flag = MSGA_srpska_united } SER = { controls_province = 11586 } 107 = { is_owned_by = SER } check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } NOT = { has_country_flag = MSGA_srpska_td_raised } }
+  set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes
+  MSGA_initialize_serbian_vehicles = yes
+  load_oob = MSGA_SER_srpska_td_template
+  if = { limit = { has_dlc = "No Step Back" } load_oob = MSGA_SER_srpska_td }
+  else = { load_oob = MSGA_SER_srpska_td_legacy }
+  set_country_flag = MSGA_srpska_td_raised country_event = { id = MSGA_postbosnia.7 }
+ }
+}

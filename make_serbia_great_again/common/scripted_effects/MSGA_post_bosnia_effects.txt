@@ -1,0 +1,63 @@
+# All effects are scoped to Serbia; the settlement flag owns chapter progression.
+MSGA_open_post_bosnia = {
+ if = { limit = { tag = SER has_country_flag = MSGA_bosnia_settlement_done NOT = { has_country_flag = MSGA_post_bosnia_started } }
+  set_country_flag = MSGA_post_bosnia_started set_country_flag = MSGA_post_bosnia_active
+  clr_country_flag = MSGA_bosnian_crisis_active
+  load_focus_tree = { tree = MSGA_SER_post_bosnia keep_completed = yes }
+ }
+}
+MSGA_check_srpska_question = {
+ if = { limit = { tag = SER has_country_flag = { flag = MSGA_bosnia_settlement_done days > 99 } NOT = { has_country_flag = MSGA_srpska_question_resolved } NOT = { has_country_flag = MSGA_srpska_question_delivered } }
+  country_event = { id = MSGA_postbosnia.12 }
+ }
+}
+MSGA_rebuild_western_regions = {
+ set_temp_variable = { var = industrial_development_var_temp value = 0.05 } add_industrial_development = yes
+ 1296 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
+ every_state = { limit = { OR = { state = 1296 state = 104 state = 851 state = 848 state = 849 state = 850 } OR = { AND = { is_owned_by = SER is_fully_controlled_by = SER } AND = { owner = { is_subject_of = SER } is_fully_controlled_by = OWNER } } }
+  damage_building = { type = infrastructure damage = -100 }
+  damage_building = { type = industrial_complex damage = -100 }
+  damage_building = { type = arms_factory damage = -100 }
+  damage_building = { type = office_park damage = -100 }
+  add_dynamic_modifier = { modifier = MSGA_western_reconstruction days = 180 }
+ }
+}
+MSGA_bind_balkan_protectorates = {
+ every_subject_country = { limit = { OR = { tag = BOS tag = HRZ tag = SRP } }
+  add_ideas = MSGA_bound_protectorate
+  add_opinion_modifier = { target = SER modifier = MSGA_postwar_cooperation }
+ }
+}
+MSGA_integrate_balkan_subjects = {
+ every_subject_country = { limit = { OR = { tag = BOS tag = HRZ tag = SRP } }
+  remove_ideas = MSGA_bound_protectorate add_ideas = MSGA_integrated_protectorate
+ }
+}
+MSGA_repair_postwar_economy = {
+ if = { limit = { check_variable = { var = debt_var value = 0.5 compare = greater_than_or_equals } }
+  set_temp_variable = { var = debt_var_temp value = -0.5 } add_debt = yes
+ }
+ else_if = { limit = { check_variable = { var = debt_var value = 0 compare = greater_than } }
+  set_temp_variable = { var = debt_var_temp value = debt_var }
+  multiply_temp_variable = { var = debt_var_temp value = -1 } add_debt = yes
+ }
+ set_temp_variable = { var = industrial_development_var_temp value = 0.05 } add_industrial_development = yes
+ add_timed_idea = { idea = MSGA_postwar_income_recovery days = 180 }
+}
+MSGA_consolidate_postwar_industry = {
+ set_temp_variable = { var = industrial_development_var_temp value = 0.05 } add_industrial_development = yes
+ if = { limit = { 107 = { is_owned_by = SER is_fully_controlled_by = SER } }
+  107 = { add_extra_state_shared_building_slots = 3 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } add_building_construction = { type = office_park level = 1 instant_build = yes } }
+ }
+ else = { random_owned_controlled_state = { add_extra_state_shared_building_slots = 3 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } add_building_construction = { type = office_park level = 1 instant_build = yes } } }
+}
+MSGA_check_regional_power = {
+ if = { limit = { tag = SER has_country_flag = MSGA_post_bosnia_started has_country_flag = MSGA_completed_serbian_defence_network has_country_flag = MSGA_completed_serbian_sphere has_country_flag = MSGA_completed_economic_heart_balkans NOT = { has_country_flag = MSGA_regional_power_achieved } }
+  set_country_flag = MSGA_regional_power_achieved
+  add_stability = 0.05 add_war_support = 0.05
+  set_temp_variable = { var = industrial_development_var_temp value = 0.05 } add_industrial_development = yes
+  add_ideas = MSGA_regional_power_prestige remove_ideas = MSGA_postwar_income_recovery
+  every_state = { limit = { has_dynamic_modifier = { modifier = MSGA_western_reconstruction } } remove_dynamic_modifier = { modifier = MSGA_western_reconstruction } }
+  country_event = { id = MSGA_postbosnia.16 }
+ }
+}
