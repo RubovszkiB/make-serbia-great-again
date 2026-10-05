@@ -61,13 +61,12 @@ country_event = {
 }
 country_event = {
  id = MSGA_postkosovo.7
- title = MSGA_postkosovo.7.t
- desc = MSGA_postkosovo.7.d
- picture = GFX_report_event_MSGA_postkosovo_event_07_reconstruction_begins
+ title = MSGA_postkosovo.7.t desc = MSGA_postkosovo.7.d
+ picture = GFX_MSGA_event_kosovo_reconstruction_begins
  is_triggered_only = yes
  fire_only_once = yes
  immediate = { country_event = { id = MSGA_postkosovo.8 days = 2 } }
- option = { name = MSGA_postkosovo.7.a ai_chance = { factor = 100 }  }
+ option = { name = MSGA_postkosovo.7.a ai_chance = { factor = 100 } }
 }
 country_event = {
  id = MSGA_postkosovo.8
@@ -81,13 +80,15 @@ country_event = {
 }
 country_event = {
  id = MSGA_postkosovo.9
- title = MSGA_postkosovo.9.t
- desc = MSGA_postkosovo.9.d
- picture = GFX_report_event_MSGA_postkosovo_event_09_investors_return_pristina
+ title = MSGA_postkosovo.9.t desc = MSGA_postkosovo.9.d
+ picture = GFX_MSGA_event_future_of_pristina
  is_triggered_only = yes
  fire_only_once = yes
  immediate = { country_event = { id = MSGA_postkosovo.10 days = 2 } }
- option = { name = MSGA_postkosovo.9.a ai_chance = { factor = 100 }  }
+
+ option = { name = MSGA_postkosovo.9.a trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } } ai_chance = { factor = 50 } MSGA_pristina_state_investment = yes }
+ option = { name = MSGA_postkosovo.9.b ai_chance = { factor = 50 } MSGA_pristina_private_investment = yes }
+
 }
 country_event = {
  id = MSGA_postkosovo.10
@@ -138,4 +139,14 @@ country_event = {
  fire_only_once = yes
  immediate = { set_country_flag = MSGA_final_post_kosovo_story MSGA_enter_bosnian_chapter = yes }
  option = { name = MSGA_postkosovo.14.a ai_chance = { factor = 100 }  }
+}
+
+country_event = {
+ id = MSGA_postkosovo.15
+ title = MSGA_postkosovo.15.t desc = MSGA_postkosovo.15.d
+ picture = GFX_MSGA_event_kosovo_rebuilt
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = {  }
+ option = { name = MSGA_postkosovo.15.a ai_chance = { factor = 100 } }
 }

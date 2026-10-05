@@ -49,7 +49,7 @@ focus_tree = {
   prerequisite = { focus = MSGA_start_mobilising_our_people }
   available = { 107 = { is_owned_by = SER is_core_of = SER is_fully_controlled_by = SER } SER = { controls_province = 11586 } }
   cancel_if_invalid = yes
-  completion_reward = { set_temp_variable = { var = military_development_var_temp value = 10 } add_military_development = yes MSGA_establish_territorial_defence = yes }
+  completion_reward = { set_temp_variable = { var = military_development_var_temp value = 0.10 } add_military_development = yes MSGA_establish_territorial_defence = yes }
  }
  focus = {
   id = MSGA_start_the_army_buildup
@@ -57,7 +57,7 @@ focus_tree = {
   x = 6 y = 3 cost = 5
   prerequisite = { focus = MSGA_establish_territorial_defence }
   cancel_if_invalid = yes
-  completion_reward = { set_temp_variable = { var = military_development_var_temp value = 10 } add_military_development = yes add_timed_idea = { idea = MSGA_serbian_rearmament_program days = 200 } }
+  completion_reward = { set_temp_variable = { var = military_development_var_temp value = 0.10 } add_military_development = yes add_timed_idea = { idea = MSGA_serbian_rearmament_program days = 200 } }
  }
  focus = {
   id = MSGA_buy_equipment_serbian_air_force
@@ -65,7 +65,7 @@ focus_tree = {
   x = 4 y = 4 cost = 5
   prerequisite = { focus = MSGA_start_the_army_buildup }
   cancel_if_invalid = yes
-  completion_reward = { set_temp_variable = { var = military_development_var_temp value = 10 } add_military_development = yes set_country_flag = MSGA_air_procurement_open country_event = { id = MSGA_bosnia.4 } }
+  completion_reward = { set_temp_variable = { var = military_development_var_temp value = 0.10 } add_military_development = yes set_country_flag = MSGA_air_procurement_open country_event = { id = MSGA_bosnia.4 } }
  }
  focus = {
   id = MSGA_spend_money_command_structure
@@ -73,7 +73,7 @@ focus_tree = {
   x = 6 y = 4 cost = 5
   prerequisite = { focus = MSGA_start_the_army_buildup }
   cancel_if_invalid = yes
-  completion_reward = { set_temp_variable = { var = military_development_var_temp value = 10 } add_military_development = yes add_ideas = MSGA_command_structure }
+  completion_reward = { set_temp_variable = { var = military_development_var_temp value = 0.10 } add_military_development = yes add_ideas = MSGA_command_structure }
  }
  focus = {
   id = MSGA_prepare_logistics_network
@@ -81,7 +81,7 @@ focus_tree = {
   x = 8 y = 4 cost = 5
   prerequisite = { focus = MSGA_start_the_army_buildup }
   cancel_if_invalid = yes
-  completion_reward = { set_temp_variable = { var = military_development_var_temp value = 10 } add_military_development = yes add_equipment_to_stockpile = { type = train_equipment_1 amount = 15 producer = SER } add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 150 producer = SER } }
+  completion_reward = { set_temp_variable = { var = military_development_var_temp value = 0.10 } add_military_development = yes set_technology = { basic_train = 1 } add_equipment_to_stockpile = { type = train_equipment_1 amount = 15 producer = SER } add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 150 producer = SER } }
  }
  focus = {
   id = MSGA_prepare_for_the_unthinkable
@@ -92,7 +92,7 @@ focus_tree = {
   prerequisite = { focus = MSGA_prepare_logistics_network }
   available = { has_country_flag = MSGA_air_procurement_done }
   cancel_if_invalid = yes
-  completion_reward = { set_temp_variable = { var = military_development_var_temp value = 10 } add_military_development = yes add_war_support = 0.10 add_ideas = MSGA_prepared_for_war set_country_flag = MSGA_bosnia_military_prepared }
+  completion_reward = { set_temp_variable = { var = military_development_var_temp value = 0.10 } add_military_development = yes add_war_support = 0.10 add_ideas = MSGA_prepared_for_war set_country_flag = MSGA_bosnia_military_prepared }
  }
  focus = {
   id = MSGA_seed_the_rebellion_in_bosnia
@@ -102,7 +102,7 @@ focus_tree = {
   prerequisite = { focus = MSGA_prepare_for_the_unthinkable }
   available = { has_country_flag = MSGA_bosnia_propaganda_prepared has_country_flag = MSGA_bosnia_military_prepared country_exists = BOS NOT = { country_exists = SRP } BOS = { has_war = no is_subject = no } 848 = { is_owned_by = BOS is_fully_controlled_by = BOS } 849 = { is_owned_by = BOS is_fully_controlled_by = BOS } 850 = { is_owned_by = BOS is_fully_controlled_by = BOS } }
   cancel_if_invalid = yes
-  completion_reward = { country_event = { id = MSGA_bosnia.6 } }
+  completion_reward = { MSGA_release_srpska = yes }
  }
  focus = {
   id = MSGA_watch_the_conflict

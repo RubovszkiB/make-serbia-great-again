@@ -1,0 +1,27 @@
+{
+  "runtime_target": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
+  "files": [
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\scripted_triggers\\MSGA_SER_triggers.txt",
+      "relative": "common/scripted_triggers/MSGA_SER_triggers.txt",
+      "before_sha256": "289771eab7c34d8997c5754ea0df6b14d8626b7bbf444959dc79621dad0c0d35",
+      "after_sha256": "d26b1a77bb846fa0d4f0a8071db8c5a4db660f7416f5027e979471fc6eb2e421"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\scripted_effects\\MSGA_SER_post_kosovo_effects.txt",
+      "relative": "common/scripted_effects/MSGA_SER_post_kosovo_effects.txt",
+      "before_sha256": "f121a8a8bf7cc146bf780c31c62f95682b72f453d84a2af4c5baf19080a6d35e",
+      "after_sha256": "900dfa7fa08cc6c73136aba06be56aa16f1f69b26bc3a14bfd19a4fcaef8fd21"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\on_actions\\MSGA_SER_post_kosovo_on_actions.txt",
+      "relative": "common/on_actions/MSGA_SER_post_kosovo_on_actions.txt",
+      "before_sha256": "f8e10e2780e85e5771adf86e90d14c667e6501d9dcda1cd79ca2319730602abc",
+      "after_sha256": "276053aa3d8743de64f55631036037cc374f58b0a0b079af3d026d8eddfd16b2"
+    }
+  ],
+  "final_reconstruction_decision_required": false,
+  "required_terminal_focus": "MSGA_the_serbian_question",
+  "first_Bosnia_focus": "MSGA_start_make_serbia_great_again",
+  "actual_game_validation": "pending"
+}

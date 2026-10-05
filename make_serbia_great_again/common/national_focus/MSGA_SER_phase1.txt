@@ -493,11 +493,11 @@ focus_tree = {
 			country_event = {
 				id = MSGA.9
 			}
-			unlock_decision_tooltip = MSGA_commission_kosovo_dossier
-			unlock_decision_tooltip = MSGA_assess_kfor
-			unlock_decision_tooltip = MSGA_consult_general_staff
-			unlock_decision_tooltip = MSGA_contact_regional_partners
-			unlock_decision_tooltip = MSGA_map_northern_contingencies
+
+
+
+
+
 			custom_effect_tooltip = MSGA_phase2_tt
 			set_country_flag = MSGA_completed_the_kosovo_question
             MSGA_enter_kosovo_chapter = yes

@@ -1,0 +1,8 @@
+capital = 851
+set_research_slots = 2
+set_stability = 0.45
+set_war_support = 0.20
+set_politics = { ruling_party = authoritarian_democrat elections_allowed = no }
+set_popularities = { authoritarian_democrat = 100 }
+recruit_character = MSGA_herzegovina_council
+set_technology = { infantry_weapons1 = 1 infantry_weapons2 = 1 motorised_infantry = 1 basic_train = 1 }

@@ -1,0 +1,11 @@
+# Kosovo reconstruction to Bosnia transition repair
+
+The affected first focus is `MSGA_start_make_serbia_great_again`. It had no additional availability condition: the preceding chapter failed to load its tree.
+
+In `common/scripted_effects/MSGA_SER_post_kosovo_effects.txt`, `MSGA_enter_bosnian_chapter` required `MSGA_completed_the_serbian_question`, `MSGA_bosnian_question_emerging` and `MSGA_final_post_kosovo_story`. The latter two flags were assigned by delayed narrative events 13/14. Approved focus completion alone therefore left the unlock blocked until those events ran; startup recovery also depended on the final story flag. The optional reconstruction decision did not invoke the chapter transition. No removed Kosovo preparation decision was actually required by that old gate.
+
+The repaired dependency uses `MSGA_bosnian_chapter_ready` in `common/scripted_triggers/MSGA_SER_triggers.txt`: Serbia must have completed the war resolution, full integration, both reconstruction focuses and The Serbian Question, and own, fully control and core states 785/1305. Completed focus or its once-only reward flag satisfies each focus check. A Lasting Peace remains in the approved focus prerequisite chain. The optional final reconstruction decision and delayed narrative flags are not required.
+
+`MSGA_begin_serbian_question` now calls the guarded transition immediately, independently of the once-only narrative queue. `common/on_actions/MSGA_SER_post_kosovo_on_actions.txt` retries it at startup and weekly for Serbia. The existing once-only Bosnia-started flag prevents reloads. Existing focus layout, icons and approved focus structure remain unchanged.
+
+All five validators passed against the installed mod. `docs/github_validate_transition.json` covers both reconstruction orders, with and without the optional final decision, immediate unlock before narrative events, startup recovery, control-restoration retry, repeated calls and negative missing-requirement cases. The state model checks the actual script syntax and dependencies; it is not an engine playthrough. The user will perform the fresh Serbia in-game test later. No successful combat, save/load or engine error-free claim is made.

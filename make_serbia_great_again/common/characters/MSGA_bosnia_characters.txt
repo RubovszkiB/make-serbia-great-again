@@ -1,0 +1,6 @@
+characters = {
+ MSGA_herzegovina_council = {
+  name = MSGA_herzegovina_council
+  country_leader = { ideology = military_democracy }
+ }
+}

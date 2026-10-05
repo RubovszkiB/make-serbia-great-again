@@ -12,3 +12,16 @@ MSGA_major_project_free = {
 
 # This campaign owns the Serbia/Bosnia chain; unrelated TFR countries/events stay active.
 MSGA_native_balkan_story_allowed = { SER = { NOT = { has_country_flag = MSGA_campaign_active } } }
+
+# Approved focus progression is authoritative; story events and the optional
+# final reconstruction decision cannot hold the chapter switch hostage.
+MSGA_bosnian_chapter_ready = {
+ tag = SER
+ has_country_flag = MSGA_kosovo_resolution_done
+ has_country_flag = MSGA_kosovo_fully_integrated
+ OR = { has_completed_focus = MSGA_rebuild_kosovo has_country_flag = MSGA_completed_rebuild_kosovo }
+ OR = { has_completed_focus = MSGA_invest_in_pristina has_country_flag = MSGA_completed_invest_in_pristina }
+ OR = { has_completed_focus = MSGA_the_serbian_question has_country_flag = MSGA_completed_the_serbian_question }
+ 785 = { is_owned_by = SER is_fully_controlled_by = SER is_core_of = SER }
+ 1305 = { is_owned_by = SER is_fully_controlled_by = SER is_core_of = SER }
+}

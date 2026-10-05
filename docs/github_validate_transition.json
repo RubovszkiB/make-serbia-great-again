@@ -1,0 +1,57 @@
+{
+  "static_and_model_validation": "passed",
+  "validated_mod_root": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
+  "blocked_Bosnia_focus": "MSGA_start_make_serbia_great_again",
+  "required_terminal_Kosovo_focus": "MSGA_the_serbian_question",
+  "final_reconstruction_decision_required": false,
+  "focus_layout_and_artwork": "unchanged",
+  "positive_scenarios": [
+    {
+      "focus_order": [
+        "MSGA_rebuild_kosovo",
+        "MSGA_invest_in_pristina"
+      ],
+      "final_decision_completed": false,
+      "unlock": "immediate at approved terminal focus, before narrative events"
+    },
+    {
+      "focus_order": [
+        "MSGA_rebuild_kosovo",
+        "MSGA_invest_in_pristina"
+      ],
+      "final_decision_completed": true,
+      "unlock": "immediate at approved terminal focus, before narrative events"
+    },
+    {
+      "focus_order": [
+        "MSGA_invest_in_pristina",
+        "MSGA_rebuild_kosovo"
+      ],
+      "final_decision_completed": false,
+      "unlock": "immediate at approved terminal focus, before narrative events"
+    },
+    {
+      "focus_order": [
+        "MSGA_invest_in_pristina",
+        "MSGA_rebuild_kosovo"
+      ],
+      "final_decision_completed": true,
+      "unlock": "immediate at approved terminal focus, before narrative events"
+    }
+  ],
+  "startup_recovery_without_story_flags": "passed",
+  "weekly_retry_after_control_recovered": "passed",
+  "negative_cases": [
+    "war",
+    "integration",
+    "rebuild",
+    "pristina",
+    "terminal",
+    "ownership",
+    "control",
+    "core",
+    "wrong country scope"
+  ],
+  "duplicate_transition_and_reward_prevention": "passed",
+  "gameplay_validation": "not certified by these model checks"
+}

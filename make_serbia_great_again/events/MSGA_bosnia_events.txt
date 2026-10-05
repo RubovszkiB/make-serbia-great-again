@@ -54,13 +54,12 @@ country_event = {
 }
 country_event = {
  id = MSGA_bosnia.6
- title = MSGA_bosnia.6.t
- desc = MSGA_bosnia.6.d
- picture = GFX_report_event_MSGA_republika_srpska_proclaimed
+ title = MSGA_bosnia.6.t desc = MSGA_bosnia.6.d
+ picture = GFX_MSGA_event_srpska_uprising
  is_triggered_only = yes
- fire_only_once = yes
- immediate = { MSGA_release_srpska = yes }
- option = { name = MSGA_bosnia.6.a ai_chance = { factor = 100 }  }
+
+ immediate = {  }
+ option = { name = MSGA_bosnia.6.a ai_chance = { factor = 100 } }
 }
 country_event = {
  id = MSGA_bosnia.7 hidden = yes is_triggered_only = yes fire_only_once = yes
@@ -78,15 +77,36 @@ country_event = {
 }
 country_event = {
  id = MSGA_bosnia.9
- title = MSGA_bosnia.9.t
- desc = MSGA_bosnia.9.d
- picture = GFX_report_event_MSGA_answer_the_call
+ title = MSGA_bosnia.9.t desc = MSGA_bosnia.9.d
+ picture = GFX_MSGA_event_serbia_enters_bosnian_war
  is_triggered_only = yes
- fire_only_once = yes
+
  immediate = {  }
  option = { name = MSGA_bosnia.9.a ai_chance = { factor = 100 } MSGA_join_srpska_war = yes }
 }
 country_event = {
  id = MSGA_bosnia.99 hidden = yes is_triggered_only = yes
  immediate = { clr_country_flag = MSGA_bosnia_observer_pending MSGA_cleanup_bosnia_war_modifiers = yes MSGA_check_bosnian_intervention = yes MSGA_schedule_bosnia_observer = yes }
+}
+
+country_event = {
+ id = MSGA_bosnia.10
+ title = MSGA_bosnia.10.t desc = MSGA_bosnia.10.d
+ picture = GFX_MSGA_event_bosnia_capitulation
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = {  }
+ option = { name = MSGA_bosnia.10.a ai_chance = { factor = 100 } }
+}
+country_event = {
+ id = MSGA_bosnia.11
+ title = MSGA_bosnia.11.t desc = MSGA_bosnia.11.d
+ picture = GFX_MSGA_event_question_of_republika_srpska
+ is_triggered_only = yes
+ fire_only_once = yes
+ immediate = {  }
+
+ option = { name = MSGA_bosnia.11.a trigger = { country_exists = SRP SRP = { is_subject_of = SER has_war = no } NOT = { has_country_flag = MSGA_srpska_question_resolved } } ai_chance = { factor = 70 } MSGA_unite_srpska = yes }
+ option = { name = MSGA_bosnia.11.b ai_chance = { factor = 30 } set_country_flag = MSGA_srpska_question_resolved }
+
 }

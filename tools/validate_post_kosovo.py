@@ -1,7 +1,7 @@
 """Validate the installed post-Kosovo chapter without claiming gameplay acceptance."""
 from pathlib import Path
 from collections import Counter
-import argparse,json,re,subprocess
+import argparse,json,re,subprocess,hashlib,zipfile
 from PIL import Image
 from validate_phase1 import parse,get,descend,ROOT,unique
 from validate_kosovo import CampaignModel
@@ -17,7 +17,14 @@ def main():
  assert 'MSGA_the_cost_of_integration' not in focus
  # Previously implemented gameplay must survive unchanged, apart from chapter loading.
  for path in ['common/national_focus/MSGA_SER_phase1.txt','common/national_focus/MSGA_SER_kosovo_war.txt','events/MSGA_SER_kosovo_events.txt','common/decisions/MSGA_SER_expansion.txt','common/decisions/MSGA_SER_phase1.txt','common/ideas/MSGA_SER_ideas.txt','common/bop/MSGA_SER_bop.txt']:
-  before=subprocess.check_output(['git','show','09f9212:make_serbia_great_again/'+path],cwd=ROOT).decode('utf-8-sig');assert scripts[path]==parse(before),path
+  before=parse(subprocess.check_output(['git','show','09f9212:make_serbia_great_again/'+path],cwd=ROOT).decode('utf-8-sig'))
+  if path.endswith('MSGA_SER_phase1.txt'):
+   # Only the removed Kosovo filler unlock tooltips may differ from this baseline.
+   def strip_filler(ast):
+    removed={'MSGA_commission_kosovo_dossier','MSGA_assess_kfor','MSGA_consult_general_staff','MSGA_contact_regional_partners','MSGA_map_northern_contingencies'}
+    return [(k,o,strip_filler(v) if isinstance(v,list) else v) for k,o,v in ast if not(k=='unlock_decision_tooltip' and v in removed)]
+   assert strip_filler(scripts[path])==strip_filler(before),path
+  else:assert scripts[path]==before,path
  effects=scripts['common/scripted_effects/MSGA_SER_post_kosovo_effects.txt']
  core_operations=[]
  for name,_,ast in effects:
@@ -28,9 +35,9 @@ def main():
       core_operations.extend((state,target) for key,_,target in body if key=='add_core_of')
  assert core_operations==[('1305','SER'),('785','SER'),('1305','SER')]
  assert not any(k in ('declare_war_on','annex_country','transfer_state','create_wargoal','add_state_core') for path in ['common/scripted_effects/MSGA_SER_post_kosovo_effects.txt','events/MSGA_SER_post_kosovo_events.txt','common/national_focus/MSGA_SER_bosnian_crisis.txt'] for k,_,_ in descend(scripts[path]))
- events={get(v,'id'):v for k,_,v in scripts['events/MSGA_SER_post_kosovo_events.txt'] if k=='country_event'};assert len(events)==14
+ events={get(v,'id'):v for k,_,v in scripts['events/MSGA_SER_post_kosovo_events.txt'] if k=='country_event'};assert len(events)==15
  locales='\n'.join(p.read_text(encoding='utf-8-sig') for p in (mod/'localisation/english').glob('*.yml'))
- sprites={get(v,'name').strip('"'):v for path,ast in scripts.items() if path.startswith('interface/') for k,_,v in descend(ast) if k=='SpriteType'}
+ sprites={get(v,'name').strip('"'):v for path,ast in scripts.items() if path.startswith('interface/') for k,_,v in descend(ast) if k.lower()=='spritetype'}
  for id,body in focus.items():assert get(body,'icon') in sprites and get(body,'icon')+'_shine' in sprites
  for i,body in events.items():
   assert get(body,'fire_only_once')=='yes' and get(body,'picture') in sprites
@@ -110,7 +117,8 @@ def main():
   model.execute([x for x in get(events['MSGA_postkosovo.3'],'option') if x[0] not in ('name','ai_chance')]);assert model.debt==1
   model.execute(get(focus[ids[2]],'completion_reward'));assert 'SER_rebellion_of_kosovo' not in model.ideas['SER']
   for id in order:model.execute(get(focus[id],'completion_reward'))
-  assert model.buildings[785]=={'infrastructure':3,'industrial_complex':2,'office_park':1}
+  assert model.buildings[785]=={'infrastructure':4,'industrial_complex':2,'office_park':1}
+  assert abs(model.development-.10)<1e-8 and len(model.damage_repaired)==3
   before=model.buildings[785].copy()
   for id in order:model.execute(get(focus[id],'completion_reward'))
   assert before==model.buildings[785]
@@ -120,10 +128,56 @@ def main():
   model.execute(get(decision,'complete_effect'));assert len(model.loaded_oobs)==2
   checkpoint=json.loads(json.dumps({c:list(flags) for c,flags in model.flags.items()}));model.flags={c:set(flags) for c,flags in checkpoint.items()}
   model.execute(parse('MSGA_initialize_serbian_vehicles = yes'));assert model.variants.count('M-84A')==1
-  model.execute(get(focus[ids[5]],'completion_reward'));model.execute(get(focus[ids[6]],'completion_reward'));assert model.tree=='MSGA_SER_post_kosovo'
+  model.execute(get(focus[ids[5]],'completion_reward'));model.execute(get(focus[ids[6]],'completion_reward'));assert model.tree=='MSGA_SER_bosnian_crisis'
   for i in [12,13,14]:model.execute(get(events[f'MSGA_postkosovo.{i}'],'immediate'))
   assert model.tree=='MSGA_SER_bosnian_crisis' and not model.wars
   before=len(model.events);model.execute(parse('MSGA_enter_bosnian_chapter = yes MSGA_enter_post_kosovo_chapter = yes'));assert len(model.events)==before and model.tree=='MSGA_SER_bosnian_crisis'
- report={'static_validation':'passed','validated_mod_root':str(mod),'focus_days':[14,7,14,21,21,14,7],'north_state':1305,'remaining_state':785,'integration_debt_B':1,'integration_treasury_debit':0,'removed_native_spirit':'SER_rebellion_of_kosovo','militia_treasury_B':2,'militia_PP':0,'brigade_width':width,'brigade_equipment_required':dict(required),'variant_stats_before_country_tech_modifiers':stats,'legal_starting_modules':True,'supplied_DDS_assets':22,'visible_events':14,'postwar_rewards_in_either_order':'passed','debt_and_spawn_idempotence':'passed','Bosnian_transition_without_war':'passed','save_load':'model flag checkpoint passed; actual engine save/load not tested','gameplay_rendering_and_production_UI':'not certified by these checks'}
+ # 0.9: the actual new options must pay once, use fractional native development,
+ # and unlock exactly one final decision after BOTH existing focus rewards.
+ final=get(scripts['common/decisions/MSGA_SER_post_kosovo.txt'][0][2],'MSGA_finish_kosovo_reconstruction')
+ assert get(final,'cost')=='50' and get(final,'fire_only_once')=='yes'
+ assert get(final,'custom_cost_trigger')==parse('check_variable = { var = income_var value = 1 compare = greater_than_or_equals }')
+ choices=[v for k,_,v in events['MSGA_postkosovo.9'] if k=='option'];assert len(choices)==2
+ for choice,expected_cost,expected_development in zip(choices,[.5,0],[.15,.13]):
+  reconstruction=CampaignModel(scripts);reconstruction.states=reconstruction.controllers={785:'SER',1305:'SER'};reconstruction.flags['SER'].add('MSGA_kosovo_fully_integrated')
+  assert not reconstruction.condition(get(final,'visible'))
+  reconstruction.execute(get(focus['MSGA_rebuild_kosovo'],'completion_reward'));assert not reconstruction.condition(get(final,'visible'))
+  reconstruction.execute(get(focus['MSGA_invest_in_pristina'],'completion_reward'));assert reconstruction.condition(get(final,'visible'))
+  reward=[x for x in choice if x[0] not in ('name','trigger','ai_chance')]
+  reconstruction.execute(reward);reconstruction.execute(reward)
+  assert reconstruction.money==10-expected_cost and abs(reconstruction.development-expected_development)<1e-8
+  assert reconstruction.buildings[785]=={'infrastructure':5,'industrial_complex':3 if expected_cost else 2,'office_park':1 if expected_cost else 2}
+  assert ('MSGA_kosovo_development_program',180) in reconstruction.timed_ideas
+  assert 'MSGA_kosovo_reconstruction_state' in reconstruction.modifiers[785]
+  reconstruction.execute(get(final,'complete_effect'));reconstruction.execute(get(final,'complete_effect'))
+  assert reconstruction.money==9-expected_cost and abs(reconstruction.development-expected_development-.05)<1e-8
+  assert not reconstruction.condition(get(final,'visible')) and not reconstruction.modifiers[785]
+  assert reconstruction.events.count(('SER','MSGA_postkosovo.15'))==1
+ # Insufficient treasury cannot produce a free state-funded city upgrade.
+ poor=CampaignModel(scripts);poor.states[785]=poor.controllers[785]='SER';poor.money=.49
+ poor.execute(parse('MSGA_pristina_state_investment = yes'));assert poor.money==.49 and poor.development==0
+ new_ideas=get(get(scripts['common/ideas/MSGA_reconstruction_ideas.txt'],'ideas'),'country')
+ assert get(get(new_ideas,'MSGA_pristina_private_capital'),'modifier')==parse('business_value_factor = 0.05 income_growth_factor = 0.02')
+ assert get(get(new_ideas,'MSGA_kosovo_development_program'),'modifier')==parse('industrial_development_monthly = 0.005')
+ state_modifier=get(scripts['common/dynamic_modifiers/MSGA_SER_dynamic_modifiers.txt'],'MSGA_kosovo_reconstruction_state')
+ assert get(state_modifier,'state_production_speed_buildings_factor')=='0.10'
+ assert all(float(v)==.20 for k,_,v in state_modifier if k.startswith('state_repair_speed_'))
+ # Supplied DDS bytes are used unchanged, including their authored 474x178 size.
+ image_map={'MSGA_bosnia.6':'srpska_uprising','MSGA_bosnia.9':'serbia_enters_bosnian_war','MSGA_bosnia.10':'bosnia_capitulation','MSGA_bosnia.11':'question_of_republika_srpska','MSGA_postkosovo.7':'kosovo_reconstruction_begins','MSGA_postkosovo.9':'future_of_pristina','MSGA_postkosovo.15':'kosovo_rebuilt'}
+ all_events={get(v,'id'):v for path,ast in scripts.items() if path.startswith('events/') for k,_,v in ast if k=='country_event'}
+ supplied_hashes={}
+ package_path=Path('C:/Users/Balazs/Downloads/MSGA_TFR_Bosnia_Kosovo_Event_Assets_70d.zip')
+ with zipfile.ZipFile(package_path) as package:
+  assert (mod/'interface/MSGA_eventpictures.gfx').read_bytes()==package.read('MSGA_TFR_Bosnia_Kosovo_Event_Assets_70d/interface/MSGA_eventpictures.gfx')
+  for id,stem in image_map.items():
+   key='GFX_MSGA_event_'+stem;relative='gfx/event_pictures/MSGA_event_'+stem+'.dds';data=(mod/relative).read_bytes()
+   assert get(all_events[id],'picture')==key and get(sprites[key],'texturefile').strip('"')==relative
+   assert data==package.read('MSGA_TFR_Bosnia_Kosovo_Event_Assets_70d/'+relative)
+   img=Image.open(mod/relative).convert('RGBA');assert img.size==(474,178) and img.getchannel('A').getextrema()[1]>0
+   supplied_hashes[relative]=hashlib.sha256(data).hexdigest()
+ assert 'MSGA_kosovo_crisis' not in [k for k,_,_ in scripts['common/decisions/categories/MSGA_SER_categories.txt']]
+ assert [k for k,_,_ in scripts['common/decisions/MSGA_SER_strategic_review.txt']]==['MSGA_strategic_review']
+ report={'static_validation':'passed','validated_mod_root':str(mod),'focus_days':[14,7,14,21,21,14,7],'north_state':1305,'remaining_state':785,'integration_debt_B':1,'integration_treasury_debit':0,'removed_native_spirit':'SER_rebellion_of_kosovo','militia_treasury_B':2,'militia_PP':0,'brigade_width':width,'brigade_equipment_required':dict(required),'variant_stats_before_country_tech_modifiers':stats,'legal_starting_modules':True,'supplied_DDS_assets':22,'visible_events':15,'postwar_rewards_in_either_order':'passed','debt_and_spawn_idempotence':'passed','Bosnian_transition_without_war':'passed','save_load':'model flag checkpoint passed; actual engine save/load not tested','gameplay_rendering_and_production_UI':'not certified by these checks'}
+ report.update({'version':'0.9.0','reconstruction_model':'passed: both choices, insufficient treasury, one-time payments, fractional development, infrastructure cap, final decision gating and cleanup','new_supplied_DDS_hashes':supplied_hashes,'supplied_event_image_dimensions':[474,178],'state_repair_bonus':.20,'state_construction_bonus':.10,'temporary_development_monthly':.005,'private_capital_business_value':.05,'private_capital_monthly_income_growth':.02,'removed_filler_decisions':5})
  args.report.write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))
 if __name__=='__main__':main()

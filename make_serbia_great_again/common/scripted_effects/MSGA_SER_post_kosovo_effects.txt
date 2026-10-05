@@ -34,10 +34,20 @@ MSGA_consolidate_kosovo_authority = {
 MSGA_rebuild_kosovo = {
  if = { limit = { has_country_flag = MSGA_kosovo_fully_integrated 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER } NOT = { has_country_flag = MSGA_kosovo_reconstruction_done } }
   set_country_flag = MSGA_kosovo_reconstruction_done
+  set_temp_variable = { var = industrial_development_var_temp value = 0.05 } add_industrial_development = yes
+  MSGA_cleanup_kosovo_campaign = yes
+  remove_ideas = SER_rebellion_of_kosovo
+  add_timed_idea = { idea = MSGA_kosovo_development_program days = 180 }
   785 = {
    if = { limit = { infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
    add_extra_state_shared_building_slots = 1
    add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+  }
+  785 = {
+   damage_building = { type = infrastructure damage = -100 }
+   damage_building = { type = industrial_complex damage = -100 }
+   damage_building = { type = office_park damage = -100 }
+   add_dynamic_modifier = { modifier = MSGA_kosovo_reconstruction_state days = 180 }
   }
   country_event = { id = MSGA_postkosovo.7 }
  }
@@ -45,25 +55,56 @@ MSGA_rebuild_kosovo = {
 MSGA_invest_in_pristina = {
  if = { limit = { has_country_flag = MSGA_kosovo_fully_integrated 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER } NOT = { has_country_flag = MSGA_pristina_investment_done } }
   set_country_flag = MSGA_pristina_investment_done
+  set_temp_variable = { var = industrial_development_var_temp value = 0.05 } add_industrial_development = yes
   785 = {
    add_extra_state_shared_building_slots = 2
    add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
    add_building_construction = { type = office_park level = 1 instant_build = yes }
   }
+  785 = { if = { limit = { infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
   country_event = { id = MSGA_postkosovo.9 }
  }
 }
 MSGA_begin_serbian_question = {
- if = { limit = { has_country_flag = MSGA_completed_the_serbian_question NOT = { has_country_flag = MSGA_serbian_question_chain_started } }
+ if = { limit = { tag = SER OR = { has_completed_focus = MSGA_the_serbian_question has_country_flag = MSGA_completed_the_serbian_question } NOT = { has_country_flag = MSGA_serbian_question_chain_started } }
   set_country_flag = MSGA_serbian_question_chain_started
   country_event = { id = MSGA_postkosovo.12 }
  }
+ # Completion opens the next chapter immediately. The existing narrative
+ # events still run, but their one-shot flags are no longer progression gates.
+ MSGA_enter_bosnian_chapter = yes
 }
 MSGA_enter_bosnian_chapter = {
- if = { limit = { has_country_flag = MSGA_completed_the_serbian_question has_country_flag = MSGA_bosnian_question_emerging has_country_flag = MSGA_final_post_kosovo_story 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER } NOT = { has_country_flag = MSGA_bosnian_crisis_started } }
+ if = { limit = { MSGA_bosnian_chapter_ready = yes NOT = { has_country_flag = MSGA_bosnian_crisis_started } }
   set_country_flag = MSGA_bosnian_crisis_started
   set_country_flag = MSGA_bosnian_crisis_active
   clr_country_flag = MSGA_post_kosovo_active
   load_focus_tree = { tree = MSGA_SER_bosnian_crisis keep_completed = yes }
+ }
+}
+
+MSGA_pristina_state_investment = {
+ if = { limit = { 785 = { is_owned_by = SER is_fully_controlled_by = SER } NOT = { has_country_flag = MSGA_pristina_path_chosen } check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
+  set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes
+  set_temp_variable = { var = industrial_development_var_temp value = 0.05 } add_industrial_development = yes
+  785 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } if = { limit = { infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
+  add_stability = 0.02 set_country_flag = MSGA_pristina_path_chosen
+ }
+}
+MSGA_pristina_private_investment = {
+ if = { limit = { 785 = { is_owned_by = SER is_fully_controlled_by = SER } NOT = { has_country_flag = MSGA_pristina_path_chosen } }
+  set_temp_variable = { var = industrial_development_var_temp value = 0.03 } add_industrial_development = yes
+  785 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = office_park level = 1 instant_build = yes } if = { limit = { infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
+  add_ideas = MSGA_pristina_private_capital set_country_flag = MSGA_pristina_path_chosen
+ }
+}
+MSGA_complete_kosovo_reconstruction = {
+ if = { limit = { has_country_flag = MSGA_kosovo_reconstruction_done has_country_flag = MSGA_pristina_investment_done NOT = { has_country_flag = MSGA_kosovo_rebuilt } 785 = { is_owned_by = SER is_fully_controlled_by = SER } check_variable = { var = income_var value = 1 compare = greater_than_or_equals } }
+  set_temp_variable = { var = income_var_temp value = -1 } add_income = yes
+  set_temp_variable = { var = industrial_development_var_temp value = 0.05 } add_industrial_development = yes
+  785 = { if = { limit = { infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } if = { limit = { has_dynamic_modifier = { modifier = MSGA_kosovo_reconstruction_state } } remove_dynamic_modifier = { modifier = MSGA_kosovo_reconstruction_state } } }
+  remove_ideas = MSGA_kosovo_development_program remove_ideas = SER_rebellion_of_kosovo
+  MSGA_cleanup_kosovo_campaign = yes
+  set_country_flag = MSGA_kosovo_rebuilt country_event = { id = MSGA_postkosovo.15 }
  }
 }

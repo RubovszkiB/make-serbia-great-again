@@ -26,11 +26,13 @@ class BosniaModel(CampaignModel):
         super().__init__(scripts)
         self.mod=mod;self.scripts=scripts;self.day=0;self.queue=[];self.delivered=[];self.military=0;self.timed=[];self.stock=Counter();self.units=[];self.progress=0
         self.event_ast={get(v,'id'):v for p,ast in scripts.items() if p.startswith('events/MSGA_') for k,_,v in ast if k=='country_event'}
-        for c in ['BOS','SRP','SOV','PRC','ARM']:
+        self.subjects={};self.technologies=set();self.release_succeeds=True;self.faction_leader={'NATO':'USA'}
+        for c in ['BOS','SRP','HRZ','SOV','PRC','ARM']:
             self.flags[c]=set();self.ideas[c]=set();self.factions[c]=None
         self.exists.update(['BOS','SOV','PRC','ARM']);self.exists.discard('SRP')
         for s in [45,107,108,1296,785,1305]:self.states[s]=self.controllers[s]='SER';self.cores[s]={'SER'}
         for s in [848,849,850]:self.states[s]=self.controllers[s]='BOS';self.cores[s]={'BOS','SRP'}
+        for s in [104,851]:self.states[s]=self.controllers[s]='BOS';self.cores[s]={'BOS'}
         self.provinces={11586:'SER',3617:'SER',11887:'SER',6998:'SER',14402:'SER',14400:'SER'}
         self.flags['SER'].add('MSGA_campaign_active')
 
@@ -43,7 +45,10 @@ class BosniaModel(CampaignModel):
             elif k.isdigit():ok=self.condition(v,int(k))
             elif k=='MSGA_native_balkan_story_allowed':ok='MSGA_campaign_active' not in self.flags['SER']
             elif k=='has_war':ok=any(scope in w for w in self.wars)==(v=='yes')
-            elif k=='is_subject':ok=v=='no'
+            elif k=='is_subject':ok=(scope in self.subjects)==(v=='yes')
+            elif k=='is_subject_of':ok=self.subjects.get(scope)==v
+            elif k=='controls_state':ok=self.controllers[int(v)]==scope
+            elif k=='is_faction_leader':ok=self.faction_leader.get(self.factions[scope])==scope
             elif k=='has_completed_focus':ok=v in self.focuses
             elif k=='surrender_progress':ok=self.progress>float(v)
             elif k=='controls_province':ok=self.provinces.get(int(v))==scope
@@ -64,8 +69,33 @@ class BosniaModel(CampaignModel):
             elif k in self.effects:self.execute(self.effects[k],scope)
             elif k=='country_event':self.queue.append((self.day+int(next((b for a,_,b in v if a=='days'),'0')),scope,get(v,'id')))
             elif k=='release':
-                assert scope=='BOS' and v=='SRP';self.exists.add(v)
+                assert scope=='BOS' and v=='SRP'
+                if not self.release_succeeds:continue
+                self.exists.add(v);self.subjects[v]=scope
                 for s in [848,849,850]:self.states[s]=self.controllers[s]='SRP'
+            elif k=='end_puppet':self.subjects.pop(v,None)
+            elif k=='create_faction':
+                self.factions[scope]=v;self.faction_leader[v]=scope;self.trace.append(('faction',scope,v))
+            elif k=='dismantle_faction':
+                current=self.factions[scope]
+                for c in self.factions:
+                    if self.factions[c]==current:self.factions[c]=None
+                self.faction_leader.pop(current,None)
+            elif k=='add_to_faction':
+                assert self.faction_leader[self.factions[scope]]==scope
+                self.factions[v]=self.factions[scope];self.trace.append(('faction_member',v))
+            elif k=='set_autonomy':
+                assert get(v,'autonomy_state')=='autonomy_puppet'
+                self.subjects[get(v,'target')]=scope
+            elif k=='set_technology':self.technologies.update(a for a,_,b in v if b=='1')
+            elif k=='white_peace':self.wars.discard(frozenset((scope,v)))
+            elif k=='transfer_state':
+                self.exists.add(scope);self.states[int(v)]=self.controllers[int(v)]=scope
+            elif k=='annex_country':
+                target=get(v,'target');assert target=='SRP';self.exists.discard(target);self.subjects.pop(target,None)
+                for s in self.states:
+                    if self.states[s]==target:self.states[s]=self.controllers[s]=scope
+                self.wars={w for w in self.wars if target not in w}
             elif k=='delete_unit':self.units=[x for x in self.units if x[0]!=scope]
             elif k=='load_oob':
                 oob=parse((self.mod/'history/units'/f'{v.strip(chr(34))}.txt').read_text(encoding='utf-8-sig'))
@@ -75,12 +105,15 @@ class BosniaModel(CampaignModel):
             elif k=='add_to_war':
                 assert frozenset(('SRP','BOS')) in self.wars
                 assert get(v,'targeted_alliance')=='SRP' and get(v,'enemy')=='BOS'
+                assert self.factions['SER']==self.factions['SRP'] and self.faction_leader[self.factions['SER']]=='SER'
                 self.wars.add(frozenset(('SER','BOS')));self.trace.append(('join','SER','SRP','BOS'))
             elif k=='add_military_development':self.military+=self.temp
             elif k=='add_timed_idea':self.timed.append((get(v,'idea'),int(get(v,'days'))))
-            elif k=='add_equipment_to_stockpile':self.stock[get(v,'type')]+=int(get(v,'amount'))
+            elif k=='add_equipment_to_stockpile':
+                if get(v,'type')=='train_equipment_1':assert 'basic_train' in self.technologies
+                self.stock[get(v,'type')]+=int(get(v,'amount'))
             elif k=='hidden_effect':self.execute(v,scope)
-            elif k in ('set_politics','promote_character','custom_effect_tooltip','remove_mission'):pass
+            elif k in ('set_politics','promote_character','custom_effect_tooltip','remove_mission','set_capital'):pass
             else:super().execute([(k,op,v)],scope)
 
     def advance(self,days):
@@ -161,11 +194,15 @@ def main():
     for event in ['MSGA_bosnia.4','MSGA_bosnia.5']:
         fallback=[v for k,_,v in procurement[event] if k=='option' and get(v,'name')==event+'.c'][0]
         assert float(get(get(fallback,'ai_chance'),'factor'))>0, 'Unfunded AI must be able to defer procurement'
-    assert not any(k in ('annex_country','puppet','transfer_state','add_core_of','create_wargoal','white_peace') for k,_,_ in descend(effects))
+    assert not any(k=='create_wargoal' for k,_,_ in descend(effects))
+    assert [get(v,'target') for k,_,v in descend(effects) if k=='annex_country']==['SRP']
+    assert {v for k,_,v in descend(effects) if k=='transfer_state'}=={'104','851','848','849','850'}
+    assert [(k,v) for k,_,v in descend(effects) if k=='add_core_of']==[('add_core_of','HRZ')]
     calls=[v for k,_,v in descend(effects) if k=='declare_war_on'];assert len(calls)==1 and get(calls[0],'target')=='SRP'
     assert ('release','=','SRP') in descend(get(effects,'MSGA_release_srpska'))
     assert ('promote_character','=','SRP_milorad_dodik_char') in descend(get(effects,'MSGA_release_srpska'))
-    assert ('country_event','=',parse('id = MSGA_bosnia.7 days = 15')) in descend(get(effects,'MSGA_release_srpska'))
+    assert ('MSGA_begin_bosnian_war','=','yes') in descend(get(effects,'MSGA_release_srpska'))
+    assert ('country_event','=',parse('id = MSGA_bosnia.11 days = 70')) in descend(get(effects,'MSGA_settle_bosnia'))
     # Names/designs are verified against TFR source, including DLC designer aliases.
     def variants(tag):
         p=next((TFR/'history/countries').glob(tag+' - *'));return {(get(v,'name').strip('"'),get(v,'type')) for k,_,v in descend(parse(p.read_text(encoding='utf-8-sig'))) if k=='create_equipment_variant'}
@@ -194,8 +231,8 @@ def main():
         limits.extend(min(maximum,base+bonus+low*(1-support)) for support in [0,.25,.5,.75,1])
     assert all(abs(x-.99)<1e-8 for x in limits) and max(limits)<1
     prepared=get(get(ideas,'MSGA_prepared_for_war'),'modifier');assert abs((war+float(get(prepared,'war_stability_factor')))/war-.7)<1e-8
-    # Parse and execute actual code for one-time payments/spawns, both supplier
-    # paths/DLC modes, the 15-day scheduler and the guarded intervention.
+    # Parse and execute actual code for payments/spawns, both supplier/DLC paths,
+    # independence, immediate war, same-war faction join and 70-day settlement.
     model=BosniaModel(scripts,mod)
     assert not model.condition(parse('MSGA_native_balkan_story_allowed = yes'))
     model.flags['SER'].discard('MSGA_campaign_active');assert model.condition(parse('MSGA_native_balkan_story_allowed = yes'));model.flags['SER'].add('MSGA_campaign_active')
@@ -221,29 +258,42 @@ def main():
     total=BosniaModel(scripts,mod);total.flags['SER'].add('MSGA_air_procurement_done')
     for id,b in focuses.items():
         if any(k=='add_military_development' for k,_,_ in get(b,'completion_reward')):total.execute(get(b,'completion_reward'))
-    assert total.military==60 and ('MSGA_serbian_rearmament_program',200) in total.timed
+    assert abs(total.military-.60)<1e-8 and ('MSGA_serbian_rearmament_program',200) in total.timed
     assert total.stock['train_equipment_1']==15 and total.stock['motorized_equipment_1']==150
-    # No release before preparations. Deterministic declaration by BOS after 15 days.
+    # Independence precedes the immediate war. A failed release must be retryable.
+    failed=BosniaModel(scripts,mod);failed.release_succeeds=False;failed.flags['SER'].update(['MSGA_bosnia_propaganda_prepared','MSGA_bosnia_military_prepared'])
+    failed.execute(parse('MSGA_release_srpska = yes'));assert 'MSGA_srpska_released' not in failed.flags['SER'] and not failed.wars
+    failed.release_succeeds=True;failed.execute(parse('MSGA_release_srpska = yes'));assert 'MSGA_srpska_released' in failed.flags['SER'] and 'SRP' not in failed.subjects
     war_model=BosniaModel(scripts,mod);war_model.execute(parse('MSGA_release_srpska = yes'));assert 'SRP' not in war_model.exists
     war_model.flags['SER'].update(['MSGA_bosnia_propaganda_prepared','MSGA_bosnia_military_prepared']);war_model.execute(parse('MSGA_release_srpska = yes'))
     assert 'SRP' in war_model.exists and len(war_model.units)==3 and all(war_model.states[s]=='SRP' for s in [848,849,850])
     war_model.execute(parse('MSGA_release_srpska = yes'));assert len(war_model.units)==3
-    war_model.advance(14);assert not war_model.wars
-    war_model.advance(1);assert war_model.wars=={frozenset(('BOS','SRP'))} and ('declare','BOS','SRP') in war_model.trace
-    war_model.progress=.10;war_model.execute(parse('MSGA_check_bosnian_intervention = yes'));assert 'MSGA_bosnia_intervention_fired' not in war_model.flags['SER']
-    war_model.execute(get(focuses['MSGA_watch_the_conflict'],'completion_reward'));war_model.advance(0);assert 'MSGA_bosnia_intervention_fired' in war_model.flags['SER']
-    war_model.execute(parse('MSGA_check_bosnian_intervention = yes'));war_model.advance(2)
+    assert war_model.wars=={frozenset(('BOS','SRP'))} and ('declare','BOS','SRP') in war_model.trace
+    assert 'SRP' not in war_model.subjects and 'MSGA_bosnia_intervention_fired' in war_model.flags['SER']
+    war_model.advance(1);war_model.execute(parse('MSGA_check_bosnian_intervention = yes'));war_model.advance(0)
     assert sum(id=='MSGA_bosnia.9' for _,_,id in war_model.delivered)==1
     war_model.execute(parse('MSGA_join_srpska_war = yes'));war_model.execute(parse('MSGA_join_srpska_war = yes'))
     assert war_model.trace.count(('join','SER','SRP','BOS'))==1 and 'SRP' in war_model.exists
     assert war_model.wars=={frozenset(('BOS','SRP')),frozenset(('BOS','SER'))}
-    war_model.wars.clear();war_model.execute(parse('MSGA_cleanup_bosnia_war_modifiers = yes'));assert 'MSGA_SRP_last_stand' not in war_model.ideas['SRP']
-    wait=BosniaModel(scripts,mod);wait.exists.add('SRP');wait.flags['SER'].update(['MSGA_bosnia_story_active','MSGA_watched_bosnian_conflict']);wait.wars.add(frozenset(('BOS','SRP')))
-    for progress in [0,.01,.02]:wait.progress=progress;wait.execute(parse('MSGA_check_bosnian_intervention = yes'));assert not wait.queue
-    wait.execute(parse('MSGA_schedule_bosnia_observer = yes'));wait.progress=.03;wait.advance(1);assert any(id=='MSGA_bosnia.9' for _,_,id in wait.delivered)
+    assert war_model.trace.index(('faction_member','SRP'))<war_model.trace.index(('join','SER','SRP','BOS'))
+    war_model.execute(parse('MSGA_settle_bosnia = yes'));assert not war_model.subjects
+    war_model.capitulated.add('BOS');war_model.wars.add(frozenset(('SER','GER')))
+    war_model.execute(parse('MSGA_settle_bosnia = yes'));war_model.execute(parse('MSGA_settle_bosnia = yes'))
+    assert war_model.subjects=={'BOS':'SER','HRZ':'SER','SRP':'SER'}
+    assert war_model.states[104]=='BOS' and war_model.states[851]=='HRZ' and all(war_model.states[s]=='SRP' for s in [848,849,850])
+    assert war_model.wars=={frozenset(('SER','GER'))} and 'MSGA_SRP_last_stand' not in war_model.ideas['SRP']
+    settled_day=war_model.day;war_model.advance(69);assert not any(id=='MSGA_bosnia.11' for _,_,id in war_model.delivered)
+    war_model.advance(1);assert [(d,c) for d,c,id in war_model.delivered if id=='MSGA_bosnia.11']==[(settled_day+70,'SER')]
+    import copy
+    keep=copy.deepcopy(war_model);keep.execute([x for x in [v for k,_,v in procurement['MSGA_bosnia.11'] if k=='option'][1] if x[0] not in ('name','ai_chance')]);keep.execute(parse('MSGA_unite_srpska = yes'))
+    assert keep.subjects['SRP']=='SER' and 'SRP' in keep.exists and keep.debt==0
+    before_money=war_model.money;before_cores=copy.deepcopy(war_model.cores)
+    war_model.execute(parse('MSGA_unite_srpska = yes'));war_model.execute(parse('MSGA_unite_srpska = yes'))
+    assert 'SRP' not in war_model.exists and all(war_model.states[s]=='SER' for s in [848,849,850])
+    assert war_model.debt==1 and war_model.money==before_money and war_model.cores==before_cores
     # Earlier Kosovo cleanup removes its new Last Stand, and earlier rewards stay covered by prior validators.
     kos=CampaignModel(scripts);kos.execute(parse('MSGA_start_kosovo_war = yes'));assert 'MSGA_KOS_last_stand' in kos.ideas['KOS'];kos.execute(parse('MSGA_cleanup_kosovo_campaign = yes'));assert 'MSGA_KOS_last_stand' not in kos.ideas['KOS']
-    report={'static_validation':'passed','validated_mod_root':str(mod),'version':'0.8.0','bosnia_focuses':13,'total_focuses':len(ids),'seed_days':42,'watch_days':70,'release_to_BOS_declaration_days':15,'Srpska_native_states':[848,849,850],'native_leader':'SRP_milorad_dodik_char','Srpska_starting_divisions':3,'militia_battalions_per_template':3,'territorial_decision_states':[45,108,1296,785,1305],'Belgrade_province':11586,'territorial_cost_B':.5,'territorial_days':14,'military_development_total':60,'rearmament_days':200,'Russian_package':{'cost_B':15,'Su30':50,'Su24':25,'Mi24':50},'Chinese_package':{'cost_B':10,'J16':40,'Z10':30},'logistics':{'trains':15,'utility_vehicles':150},'modeled_surrender_threshold_at_war_support_0_to_100_percent':limits,'base_war_stability_penalty_before_after':[war,war+.06],'supplied_DDS_assets':len(sources['assets']),'native_guard_only_overrides_verified':list(sources['native_guard_overrides']),'BOS_original_regular_divisions':4,'script_flow_model':'passed: payments, DLC packages, exact template/spawn counts, ownership/refund guards, 15-day war declaration, nonzero loss threshold, once-only join, cleanup','actual_combat_UI_and_engine_save_load':'not certified by static/model checks','postwar_peace_implemented':False}
+    report={'static_validation':'passed','validated_mod_root':str(mod),'version':'0.9.0','bosnia_focuses':13,'total_focuses':len(ids),'seed_days':42,'watch_days':70,'release_to_BOS_declaration_days':0,'Srpska_native_states':[848,849,850],'native_leader':'SRP_milorad_dodik_char','Srpska_starting_divisions':3,'militia_battalions_per_template':3,'territorial_decision_states':[45,108,1296,785,1305],'Belgrade_province':11586,'territorial_cost_B':.5,'territorial_days':14,'military_development_total':.60,'rearmament_days':200,'Russian_package':{'cost_B':15,'Su30':50,'Su24':25,'Mi24':50},'Chinese_package':{'cost_B':10,'J16':40,'Z10':30},'logistics':{'trains':15,'utility_vehicles':150},'modeled_surrender_threshold_at_war_support_0_to_100_percent':limits,'base_war_stability_penalty_before_after':[war,war+.06],'supplied_DDS_assets':len(sources['assets']),'native_guard_only_overrides_verified':list(sources['native_guard_overrides']),'BOS_original_regular_divisions':4,'script_flow_model':'passed: payments, DLC packages, exact template/spawn counts, ownership/refund guards, independence before immediate war, faction before same-war join, three subjects, exact 70-day event, both annexation choices, debt without treasury cost or cores, cleanup','actual_combat_UI_and_engine_save_load':'not certified by static/model checks','postwar_peace_implemented':True,'settlement_subject_states':{'BOS':[104],'HRZ':[851],'SRP':[848,849,850]},'Srpska_question_delay_days':70,'annexation_debt_B':1,'annexation_treasury_cost':0}
     args.report.write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))
 
 if __name__=='__main__':main()

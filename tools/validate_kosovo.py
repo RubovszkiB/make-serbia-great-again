@@ -12,6 +12,7 @@ class CampaignModel:
     """
     def __init__(self, scripts):
         self.effects = {k:v for p,ast in scripts.items() if p.startswith('common/scripted_effects/') for k,_,v in ast}
+        self.triggers = {k:v for p,ast in scripts.items() if p.startswith('common/scripted_triggers/') for k,_,v in ast}
         self.flags = {c: set() for c in ['SER', 'KOS', 'ALB', 'USA', 'GER']}
         self.ideas = {c: set() for c in self.flags}
         self.factions = {'USA': 'NATO', 'ALB': 'NATO', 'GER': 'NATO', 'SER': None, 'KOS': None}
@@ -38,9 +39,13 @@ class CampaignModel:
         self.variants = []
         self.loaded_oobs = []
         self.nato_members = {'GER', 'ALB'}
+        self.development = 0
+        self.timed_ideas = []
+        self.damage_repaired = []
 
     def condition(self, ast, scope='SER'):
         def item(k, op, v):
+            if k in self.triggers: return self.condition(self.triggers[k], scope) == (v == 'yes')
             if k in self.flags: return self.condition(v, k)
             if k.isdigit(): return self.condition(v, int(k))
             if k == 'OR': return any(item(a, b, c) for a, b, c in v)
@@ -57,6 +62,7 @@ class CampaignModel:
                 assert v in ('yes', 'no'), 'exists accepts a boolean, not a country tag'
                 return (scope in self.exists) == (v == 'yes')
             if k == 'has_country_flag': return v in self.flags[scope]
+            if k == 'has_completed_focus': return v in self.focuses
             if k == 'has_war_with': return frozenset((scope, v)) in self.wars
             if k == 'has_capitulated': return (scope in self.capitulated) == (v == 'yes')
             if k == 'controls_province': return v == '14402' and self.pristina == scope
@@ -129,6 +135,9 @@ class CampaignModel:
             elif k == 'add_income': self.money += self.temp
             elif k == 'add_command_power': self.command_power += float(v)
             elif k == 'add_debt': self.debt += self.temp
+            elif k == 'add_industrial_development': self.development += self.temp
+            elif k == 'add_timed_idea': self.timed_ideas.append((get(v, 'idea'), int(get(v, 'days'))))
+            elif k == 'damage_building': self.damage_repaired.append((scope, get(v, 'type'), float(get(v, 'damage'))))
             elif k == 'add_core_of': self.cores[scope].add(v)
             elif k == 'add_extra_state_shared_building_slots': self.extra_slots[scope] += int(v)
             elif k == 'add_building_construction':

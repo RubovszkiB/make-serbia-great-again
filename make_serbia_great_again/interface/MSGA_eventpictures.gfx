@@ -1,0 +1,30 @@
+spriteTypes = {
+    spriteType = {
+        name = "GFX_MSGA_event_srpska_uprising"
+        texturefile = "gfx/event_pictures/MSGA_event_srpska_uprising.dds"
+    }
+    spriteType = {
+        name = "GFX_MSGA_event_serbia_enters_bosnian_war"
+        texturefile = "gfx/event_pictures/MSGA_event_serbia_enters_bosnian_war.dds"
+    }
+    spriteType = {
+        name = "GFX_MSGA_event_bosnia_capitulation"
+        texturefile = "gfx/event_pictures/MSGA_event_bosnia_capitulation.dds"
+    }
+    spriteType = {
+        name = "GFX_MSGA_event_question_of_republika_srpska"
+        texturefile = "gfx/event_pictures/MSGA_event_question_of_republika_srpska.dds"
+    }
+    spriteType = {
+        name = "GFX_MSGA_event_kosovo_reconstruction_begins"
+        texturefile = "gfx/event_pictures/MSGA_event_kosovo_reconstruction_begins.dds"
+    }
+    spriteType = {
+        name = "GFX_MSGA_event_future_of_pristina"
+        texturefile = "gfx/event_pictures/MSGA_event_future_of_pristina.dds"
+    }
+    spriteType = {
+        name = "GFX_MSGA_event_kosovo_rebuilt"
+        texturefile = "gfx/event_pictures/MSGA_event_kosovo_rebuilt.dds"
+    }
+}

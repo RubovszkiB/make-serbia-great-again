@@ -1,0 +1,31 @@
+{
+  "static_validation": "passed",
+  "validated_mod_root": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
+  "focus_trees": [
+    "MSGA_SER_bosnian_crisis",
+    "MSGA_SER_kosovo_war",
+    "MSGA_SER_phase1",
+    "MSGA_SER_post_kosovo"
+  ],
+  "total_focuses": 48,
+  "war_focus_days": [
+    7,
+    7,
+    7
+  ],
+  "kosovo_states": [
+    785,
+    1305
+  ],
+  "pristina_province": 14402,
+  "sector_attack_penalty": -0.3,
+  "sector_movement_penalty": -0.1,
+  "offensive_preparation_days": 14,
+  "offensive_preparation_CP": 25,
+  "militia_treasury_B": 2,
+  "reserve_treasury_B": 3,
+  "political_power_cost": 0,
+  "visible_campaign_events": 14,
+  "script_flow_model": "passed: ordering, ownership gates, cleanup, idempotency, pending intervention cancellation, unrelated-war preservation, treasury deductions",
+  "gameplay_test": "not certified by static checks or the model"
+}

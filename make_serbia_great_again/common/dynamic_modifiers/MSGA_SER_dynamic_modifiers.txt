@@ -25,3 +25,12 @@ MSGA_unprepared_sector = {
  army_attack_factor = -0.30
  army_speed_factor = -0.10
 }
+
+MSGA_kosovo_reconstruction_state = {
+ enable = { always = yes }
+ state_production_speed_buildings_factor = 0.10
+ state_repair_speed_infrastructure_factor = 0.20
+ state_repair_speed_industrial_complex_factor = 0.20
+ state_repair_speed_arms_factory_factor = 0.20
+ state_repair_speed_office_park_factor = 0.20
+}

@@ -88,7 +88,8 @@ def validate_cleanup(scripts, tfr):
     strip_unlocks = lambda body: [item for item in body if item[0] != 'unlock_decision_tooltip']
     assert strip_unlocks(contain) == strip_unlocks(get(before['MSGA_contain_the_outbreak'], 'completion_reward'))
     final = get(after['MSGA_the_kosovo_question'], 'completion_reward')
-    assert [item for item in final if item[0] != 'MSGA_enter_kosovo_chapter'] == get(before['MSGA_the_kosovo_question'], 'completion_reward')
+    # 0.9 explicitly removes the five unapproved preparation decisions.
+    assert [item for item in final if item[0] not in ('MSGA_enter_kosovo_chapter', 'unlock_decision_tooltip')] == [item for item in get(before['MSGA_the_kosovo_question'], 'completion_reward') if item[0] != 'unlock_decision_tooltip']
     recovery = get(after['MSGA_serbian_recovery'], 'completion_reward')
     assert [v for k, _, v in recovery if k == 'remove_ideas'] == ['SER_scars_of_bombings_idea']
 
@@ -123,7 +124,10 @@ def validate_cleanup(scripts, tfr):
     installer = get(scripts['common/scripted_effects/MSGA_SER_effects.txt'], 'MSGA_install_defence_minister')
     assert ('has_country_flag', '=', 'MSGA_defence_minister_initialized') in descend(installer)
     assert ('set_country_flag', '=', 'MSGA_defence_minister_initialized') in descend(installer)
-    assert not any(p.startswith('common/characters/') for p in scripts), 'Do not duplicate base characters'
+    # The new reconstruction council belongs only to the native HRZ successor.
+    character_files = [p for p in scripts if p.startswith('common/characters/')]
+    assert character_files == ['common/characters/MSGA_bosnia_characters.txt']
+    assert [k for k, _, _ in get(scripts[character_files[0]], 'characters')] == ['MSGA_herzegovina_council']
 
     history = (tfr/'history/countries/SER - Serbia.txt').read_text(encoding='utf-8-sig')
     assert 'SER_scars_of_bombings_idea' in history and 'recruit_character = SER_aleksandar_vulin' in history
@@ -237,7 +241,7 @@ def validate_expansion(scripts, tfr, graph, focuses):
             assert get(get(decision, 'complete_effect'), 'set_temp_variable') == parse('var = income_var_temp value = -2')
             assert get(decision, 'fire_only_once') == 'yes'
             assert get(decision, 'remove_effect') == parse('MSGA_raise_' + name + ' = yes')
-    assert not any(p.startswith('common/characters/') for p in scripts)
+    assert [p for p in scripts if p.startswith('common/characters/')] == ['common/characters/MSGA_bosnia_characters.txt']
 
 
 def main():
@@ -287,7 +291,7 @@ def main():
         visit(focus)
     referenced = {n for parents in graph.values() for n in parents}
     assert set(graph) - referenced == {'MSGA_the_kosovo_question'}
-    sprites = [v for p, ast in scripts.items() if p.startswith('interface/') for k, _, v in descend(ast) if k == 'SpriteType']
+    sprites = [v for p, ast in scripts.items() if p.startswith('interface/') for k, _, v in descend(ast) if k.lower() == 'spritetype']
     sprite_names = [get(s, 'name').strip('"') for s in sprites]
     unique(sprite_names, 'Sprite')
     for f in focuses:
@@ -305,6 +309,15 @@ def main():
         assert header[:4] == b'DDS '
         assert struct.unpack_from('<I', header, 88)[0] == 32 or header[84:88] == b'DXT5'
         image = Image.open(texture).convert('RGBA')
+        if get(sprite, 'name').strip('"').startswith('GFX_MSGA_event_'):
+            # The 0.9 package registers lower-case spriteType and supplies DDS
+            # directly at its authored size; do not route it through older packs.
+            import zipfile
+            with zipfile.ZipFile(Path('C:/Users/Balazs/Downloads/MSGA_TFR_Bosnia_Kosovo_Event_Assets_70d.zip')) as supplied:
+                relative = texture.relative_to(MOD).as_posix()
+                assert texture.read_bytes() == supplied.read('MSGA_TFR_Bosnia_Kosovo_Event_Assets_70d/' + relative)
+            assert image.size == (474, 178)
+            continue
         old = ROOT / 'art/focus_icons/MSGA_TFR_focus_icons/png_95' / (texture.stem + '.png')
         pack = ROOT / 'art/new_early_assets/MSGA_new_assets_pack'
         source = old if old.is_file() else pack / ('source/idea_png_60x68' if 'GFX_idea_' in texture.stem else 'source/focus_png_95') / (texture.stem + '.png')
@@ -397,7 +410,7 @@ def main():
         assert get(b, 'is_triggered_only') == 'yes'
         if id.startswith('MSGA_chronicle.'):
             assert not any(k == 'fire_only_once' for k, _, _ in b)
-        elif get(b, 'id') not in ('MSGA.10', 'MSGA.11', 'MSGA_geopolitics.2', 'MSGA_cleanup.1', 'MSGA_kosovo.21', 'MSGA_kosovo.99', 'MSGA_bosnia.5', 'MSGA_bosnia.99'):
+        elif get(b, 'id') not in ('MSGA.10', 'MSGA.11', 'MSGA_geopolitics.2', 'MSGA_cleanup.1', 'MSGA_kosovo.21', 'MSGA_kosovo.99', 'MSGA_bosnia.5', 'MSGA_bosnia.6', 'MSGA_bosnia.9', 'MSGA_bosnia.99'):
             assert get(b, 'fire_only_once') == 'yes'
     major_ids = {'MSGA_belgrade_business', 'MSGA_morava_works', 'MSGA_bor_modernisation',
                  'MSGA_lignite_modernisation', 'MSGA_jadar_survey', 'MSGA_jadar_feasibility', 'MSGA_expand_defence'}
@@ -505,7 +518,7 @@ def main():
               'chronicle_visible_events': 7, 'chronicle_interval_days': [120, 210], 'chronicle_cooldown_days': 360,
               'covid_decisions': 4, 'covid_missions': 1, 'daily_polling': False, 'tfr_external_references': 'checked against installed scripts',
               'targeted_cleanup_validation': 'passed; previous cleanup and unrelated focus/event rewards preserved',
-              'paid_one_time_review_decisions': 7, 'guarded_refundable_major_projects': 7,
+              'paid_one_time_review_decisions': 2, 'guarded_refundable_major_projects': 7,
               'volunteer_scripted_grants': 4, 'volunteer_engine_template_cap': 4,
               'screenshot_template_widths': [12, 24], 'northern_infrastructure_effective_gain_at_start': 2,
               'phase2_enabled': True, 'campaign_acceptance': 'not certified by static checks'}

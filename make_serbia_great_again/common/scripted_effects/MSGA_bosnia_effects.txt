@@ -98,50 +98,63 @@ MSGA_buy_chinese_air_package = {
 }
 
 MSGA_release_srpska = {
- if = { limit = { tag = SER has_country_flag = MSGA_bosnia_propaganda_prepared has_country_flag = MSGA_bosnia_military_prepared country_exists = BOS NOT = { country_exists = SRP } NOT = { has_country_flag = MSGA_srpska_released } BOS = { has_war = no is_subject = no } 848 = { is_owned_by = BOS is_fully_controlled_by = BOS } 849 = { is_owned_by = BOS is_fully_controlled_by = BOS } 850 = { is_owned_by = BOS is_fully_controlled_by = BOS } }
-  set_country_flag = MSGA_bosnia_story_active
-  set_country_flag = MSGA_srpska_released
+ if = { limit = { tag = SER has_country_flag = MSGA_bosnia_propaganda_prepared has_country_flag = MSGA_bosnia_military_prepared country_exists = BOS NOT = { country_exists = SRP } BOS = { has_war = no is_subject = no } 848 = { is_owned_by = BOS is_fully_controlled_by = BOS } 849 = { is_owned_by = BOS is_fully_controlled_by = BOS } 850 = { is_owned_by = BOS is_fully_controlled_by = BOS } }
   BOS = { release = SRP }
-  SRP = {
-   # No country-history OOB or native uprising reinforcement may enlarge this army.
-   delete_unit = { disband = no }
-   set_politics = { ruling_party = social_democrat elections_allowed = no }
-   promote_character = SRP_milorad_dodik_char
-   load_oob = "MSGA_SRP_guard"
-   add_ideas = MSGA_SRP_last_stand
-   add_ideas = MSGA_campaign_isolation
-   set_country_flag = MSGA_bosnia_custom_release
+  # Current engine documents release as a puppet: independence must precede war.
+  if = { limit = { SRP = { is_subject_of = BOS } } BOS = { end_puppet = SRP } }
+  if = { limit = { country_exists = SRP SRP = { is_subject = no } }
+   SRP = {
+    transfer_state = 848 transfer_state = 849 transfer_state = 850
+    set_capital = { state = 848 }
+    delete_unit = { disband = no }
+    set_politics = { ruling_party = social_democrat elections_allowed = no }
+    promote_character = SRP_milorad_dodik_char
+    load_oob = "MSGA_SRP_guard"
+    add_ideas = MSGA_SRP_last_stand add_ideas = MSGA_campaign_isolation
+    set_country_flag = MSGA_bosnia_custom_release
+   }
+   set_country_flag = MSGA_bosnia_story_active set_country_flag = MSGA_srpska_released
+   country_event = { id = MSGA_bosnia.6 }
+   MSGA_begin_bosnian_war = yes
   }
-  BOS = { country_event = { id = MSGA_bosnia.7 days = 15 } }
  }
 }
 MSGA_begin_bosnian_war = {
- if = { limit = { tag = SER has_country_flag = MSGA_srpska_released NOT = { has_country_flag = MSGA_bosnian_war_started } country_exists = BOS country_exists = SRP BOS = { NOT = { has_war_with = SRP } } }
-  set_country_flag = MSGA_bosnian_war_started
-  # Keep this local war outside automatic faction and guarantee escalation.
+ if = { limit = { tag = SER has_country_flag = MSGA_srpska_released NOT = { has_country_flag = MSGA_bosnian_war_started } country_exists = BOS country_exists = SRP SRP = { is_subject = no } BOS = { NOT = { has_war_with = SRP } } }
   every_other_country = {
    if = { limit = { has_guaranteed = SRP } set_country_flag = MSGA_restore_SRP_guarantee diplomatic_relation = { country = SRP relation = guarantee active = no } }
   }
-  if = { limit = { SRP = { is_in_faction = yes } } SRP = { if = { limit = { is_faction_leader = no } every_other_country = { limit = { is_in_faction_with = SRP is_faction_leader = yes } remove_from_faction = SRP } } } }
+  if = { limit = { SRP = { is_in_faction = yes is_faction_leader = no } } SRP = { every_other_country = { limit = { is_in_faction_with = SRP is_faction_leader = yes } remove_from_faction = SRP } } }
   BOS = { declare_war_on = { target = SRP type = annex_everything } }
-  country_event = { id = MSGA_bosnia.8 }
+  if = { limit = { SRP = { has_war_with = BOS } }
+   set_country_flag = MSGA_bosnian_war_started
+   MSGA_check_bosnian_intervention = yes
+   MSGA_schedule_bosnia_observer = yes
+  }
  }
 }
 MSGA_check_bosnian_intervention = {
- if = { limit = { has_country_flag = MSGA_watched_bosnian_conflict has_country_flag = MSGA_bosnia_story_active country_exists = SRP country_exists = BOS SRP = { has_war_with = BOS has_capitulated = no surrender_progress > 0.02 } NOT = { has_war_with = BOS } NOT = { has_country_flag = MSGA_bosnia_intervention_fired } }
+ if = { limit = { has_country_flag = MSGA_bosnia_story_active has_country_flag = MSGA_bosnian_war_started country_exists = SRP country_exists = BOS SRP = { has_war_with = BOS has_capitulated = no } NOT = { has_war_with = BOS } NOT = { has_country_flag = MSGA_bosnia_intervention_fired } }
   set_country_flag = MSGA_bosnia_intervention_fired
-  country_event = { id = MSGA_bosnia.9 }
+  country_event = { id = MSGA_bosnia.9 days = 1 }
  }
 }
 MSGA_join_srpska_war = {
  if = { limit = { tag = SER has_country_flag = MSGA_bosnia_intervention_fired NOT = { has_country_flag = MSGA_bosnia_intervened } country_exists = SRP country_exists = BOS SRP = { has_war_with = BOS has_capitulated = no } NOT = { has_war_with = BOS } }
-  add_to_war = { targeted_alliance = SRP enemy = BOS hostility_reason = asked_to_join single_target_only = yes }
-  set_country_flag = MSGA_bosnia_intervened
-  add_war_support = 0.03
+  if = { limit = { is_in_faction = yes }
+   if = { limit = { is_faction_leader = yes } dismantle_faction = yes }
+   else = { every_other_country = { limit = { is_faction_leader = yes is_in_faction_with = SER } remove_from_faction = SER } }
+  }
+  create_faction = MSGA_serbian_alliance
+  add_to_faction = SRP
+  if = { limit = { is_faction_leader = yes SRP = { is_in_faction_with = SER } }
+   add_to_war = { targeted_alliance = SRP enemy = BOS hostility_reason = asked_to_join single_target_only = yes }
+   if = { limit = { has_war_with = BOS } set_country_flag = MSGA_bosnia_intervened add_war_support = 0.03 }
+  }
  }
 }
 MSGA_schedule_bosnia_observer = {
- if = { limit = { has_country_flag = MSGA_watched_bosnian_conflict has_country_flag = MSGA_bosnia_story_active NOT = { has_country_flag = MSGA_bosnia_intervention_fired } NOT = { has_country_flag = MSGA_bosnia_observer_pending } country_exists = SRP SRP = { has_war_with = BOS has_capitulated = no } }
+ if = { limit = { has_country_flag = MSGA_bosnia_story_active NOT = { has_country_flag = MSGA_bosnia_intervention_fired } NOT = { has_country_flag = MSGA_bosnia_observer_pending } country_exists = SRP SRP = { has_war_with = BOS has_capitulated = no } }
   set_country_flag = MSGA_bosnia_observer_pending
   country_event = { id = MSGA_bosnia.99 days = 1 }
  }
@@ -157,9 +170,51 @@ MSGA_cleanup_bosnia_war_modifiers = {
 }
 MSGA_resume_bosnia_systems = {
  if = { limit = { tag = SER has_country_flag = MSGA_campaign_active }
+  MSGA_recover_bosnia_chain = yes
   # Cancel the native Kosovo deadline without executing its incompatible rewards.
   remove_mission = SER_take_kosovo_mission
   if = { limit = { has_country_flag = MSGA_kosovo_war_active country_exists = KOS } KOS = { add_ideas = MSGA_KOS_last_stand } }
   if = { limit = { has_country_flag = MSGA_bosnia_story_active } MSGA_cleanup_bosnia_war_modifiers = yes MSGA_check_bosnian_intervention = yes MSGA_schedule_bosnia_observer = yes }
+ }
+}
+
+# Only our local war can enter this settlement. Flag first prevents peace-hook recursion.
+MSGA_settle_bosnia = {
+ if = { limit = { tag = SER has_country_flag = MSGA_bosnian_war_started has_country_flag = MSGA_bosnia_intervened NOT = { has_country_flag = MSGA_bosnia_settlement_done } country_exists = BOS country_exists = SRP OR = { has_country_flag = MSGA_bosnia_defeated BOS = { has_capitulated = yes } AND = { controls_state = 104 controls_state = 851 } } }
+  set_country_flag = MSGA_bosnia_settlement_done
+  if = { limit = { has_war_with = BOS } white_peace = BOS }
+  SRP = { if = { limit = { has_war_with = BOS } white_peace = BOS } transfer_state = 848 transfer_state = 849 transfer_state = 850 }
+  BOS = { transfer_state = 104 set_capital = { state = 104 } }
+  # TFR's HRZ tag exists, but its dormant history belongs to an Iranian faction.
+  851 = { add_core_of = HRZ }
+  HRZ = { transfer_state = 851 set_capital = { state = 851 } set_politics = { ruling_party = authoritarian_democrat elections_allowed = no } }
+  set_autonomy = { target = BOS autonomy_state = autonomy_puppet end_wars = no end_civil_wars = no }
+  set_autonomy = { target = HRZ autonomy_state = autonomy_puppet end_wars = no end_civil_wars = no }
+  set_autonomy = { target = SRP autonomy_state = autonomy_puppet end_wars = no end_civil_wars = no }
+  add_to_faction = BOS add_to_faction = HRZ add_to_faction = SRP
+  MSGA_cleanup_bosnia_war_modifiers = yes
+  country_event = { id = MSGA_bosnia.10 }
+  country_event = { id = MSGA_bosnia.11 days = 70 }
+  set_country_flag = MSGA_srpska_question_scheduled
+ }
+}
+MSGA_unite_srpska = {
+ if = { limit = { tag = SER has_country_flag = MSGA_bosnia_settlement_done country_exists = SRP SRP = { is_subject_of = SER has_war = no } NOT = { has_country_flag = MSGA_srpska_question_resolved } }
+  annex_country = { target = SRP transfer_troops = yes }
+  set_temp_variable = { var = debt_var_temp value = 1 } add_debt = yes
+  set_country_flag = MSGA_srpska_question_resolved set_country_flag = MSGA_srpska_united
+ }
+}
+MSGA_recover_bosnia_chain = {
+ if = { limit = { tag = SER has_country_flag = MSGA_bosnian_crisis_active NOT = { has_country_flag = MSGA_bosnia_settlement_done } }
+  if = { limit = { has_completed_focus = MSGA_prepare_the_nation_for_war } set_country_flag = MSGA_bosnia_propaganda_prepared }
+  if = { limit = { has_completed_focus = MSGA_prepare_for_the_unthinkable } set_country_flag = MSGA_bosnia_military_prepared }
+  if = { limit = { has_completed_focus = MSGA_seed_the_rebellion_in_bosnia NOT = { country_exists = SRP } } MSGA_release_srpska = yes }
+  if = { limit = { has_country_flag = MSGA_srpska_released country_exists = SRP NOT = { has_country_flag = MSGA_bosnian_war_started } } MSGA_begin_bosnian_war = yes }
+  if = { limit = { has_country_flag = MSGA_bosnian_war_started SRP = { has_war_with = BOS } NOT = { has_country_flag = MSGA_bosnia_intervened } }
+   # Requeue a consumed old one-shot prompt when upgrading a campaign.
+   if = { limit = { has_country_flag = MSGA_bosnia_intervention_fired NOT = { has_country_flag = MSGA_bosnia_intervention_recovered } } set_country_flag = MSGA_bosnia_intervention_recovered country_event = { id = MSGA_bosnia.9 days = 1 } }
+   else = { MSGA_check_bosnian_intervention = yes }
+  }
  }
 }

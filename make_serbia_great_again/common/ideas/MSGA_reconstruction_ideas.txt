@@ -1,0 +1,4 @@
+ideas = { country = {
+ MSGA_kosovo_development_program = { picture = MSGA_prepared_for_war allowed = { tag = SER } removal_cost = -1 modifier = { industrial_development_monthly = 0.005 } }
+ MSGA_pristina_private_capital = { picture = MSGA_command_structure allowed = { tag = SER } removal_cost = -1 modifier = { business_value_factor = 0.05 income_growth_factor = 0.02 } }
+} }

@@ -3,6 +3,7 @@ on_actions = {
   MSGA_initialize_serbian_vehicles = yes
   MSGA_open_post_kosovo = yes
   if = { limit = { has_country_flag = MSGA_kosovo_civil_authority } remove_ideas = SER_rebellion_of_kosovo }
-  if = { limit = { has_country_flag = MSGA_final_post_kosovo_story } MSGA_enter_bosnian_chapter = yes }
+  MSGA_enter_bosnian_chapter = yes
  } } }
+ on_weekly = { effect = { if = { limit = { tag = SER has_country_flag = MSGA_campaign_active } MSGA_enter_bosnian_chapter = yes } } }
 }

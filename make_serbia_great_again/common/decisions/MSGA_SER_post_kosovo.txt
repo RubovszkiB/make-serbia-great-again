@@ -11,4 +11,16 @@ MSGA_kosovo_integration = {
   complete_effect = { MSGA_raise_kosovo_brigade = yes }
   ai_will_do = { factor = 5 }
  }
+
+ MSGA_finish_kosovo_reconstruction = {
+  icon = generic_construction
+  allowed = { tag = SER }
+  visible = { has_country_flag = MSGA_kosovo_reconstruction_done has_country_flag = MSGA_pristina_investment_done NOT = { has_country_flag = MSGA_kosovo_rebuilt } }
+  available = { 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER } }
+  cost = 50 custom_cost_text = MSGA_cost_1B
+  custom_cost_trigger = { check_variable = { var = income_var value = 1 compare = greater_than_or_equals } }
+  fire_only_once = yes
+  complete_effect = { MSGA_complete_kosovo_reconstruction = yes }
+  ai_will_do = { factor = 5 }
+ }
 }

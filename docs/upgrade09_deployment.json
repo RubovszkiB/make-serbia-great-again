@@ -1,0 +1,174 @@
+{
+  "runtime_target": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
+  "version": "0.9.0",
+  "files": [
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\characters\\MSGA_bosnia_characters.txt",
+      "relative": "common/characters/MSGA_bosnia_characters.txt",
+      "before_sha256": null,
+      "after_sha256": "c2b490a75b86a8c4e89b8aa9653f1a2ae8df470ded81e09a68369f7576f591ca"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\decisions\\categories\\MSGA_SER_categories.txt",
+      "relative": "common/decisions/categories/MSGA_SER_categories.txt",
+      "before_sha256": "d7fc78a6df94ad9e6e0114bbef28279c50bf5acf06ac7c4b4bed0afc1ef06b79",
+      "after_sha256": "f0f5a4843abc4efb4a5ed83fd2dd480d5a7f5474e0eafa445bdeb12af48474d6"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\decisions\\MSGA_SER_post_kosovo.txt",
+      "relative": "common/decisions/MSGA_SER_post_kosovo.txt",
+      "before_sha256": "9a83403ef0e031a6a8c1fca25a23ccbffa6ab0a932ca173d24aeacc97b91e404",
+      "after_sha256": "3a317eb40b5f7784eb258aba76bbc80e5fb143f031a97481674ea1d7207a9fce"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\decisions\\MSGA_SER_strategic_review.txt",
+      "relative": "common/decisions/MSGA_SER_strategic_review.txt",
+      "before_sha256": "7e2f59ed85346899cc7e266d57f370c88359b521321e1ade737c5b8b7b936180",
+      "after_sha256": "eedb9cb60e2db7a6857186fb6cadd9918e115213ffeeffebae8a6a78bad1405b"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\dynamic_modifiers\\MSGA_SER_dynamic_modifiers.txt",
+      "relative": "common/dynamic_modifiers/MSGA_SER_dynamic_modifiers.txt",
+      "before_sha256": "cf116a8245c71424a34243a58d14165a095fd79f4f32a2c3d2e899ee8ea10a56",
+      "after_sha256": "f00d2246564a1bbd3a6b7ad7ff178fae3553fdf0ffa5633ca8bd9d2612839ff5"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\ideas\\MSGA_reconstruction_ideas.txt",
+      "relative": "common/ideas/MSGA_reconstruction_ideas.txt",
+      "before_sha256": null,
+      "after_sha256": "7533f72deffd12ca2499d1895a0140dbb83196a4355d5589047f9b9a7329a44e"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\national_focus\\MSGA_SER_bosnian_crisis.txt",
+      "relative": "common/national_focus/MSGA_SER_bosnian_crisis.txt",
+      "before_sha256": "4e148b0294307f85d14fc913b9f1e489e2c4b45e60ec498fb551142250c2b3a2",
+      "after_sha256": "6214cba9fc7f0fe452fccfa32697ef9bb83ce25d576caab600d2f2e30f681f4f"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\national_focus\\MSGA_SER_phase1.txt",
+      "relative": "common/national_focus/MSGA_SER_phase1.txt",
+      "before_sha256": "eb42b6d7fe4d8d556cfd5a91f290543fcaa488181ed118b8936cc81493a6b922",
+      "after_sha256": "2dfeac7d43a82539cf94b633526b806f5354b5b41655a14365f7ec28910c692d"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\on_actions\\MSGA_bosnia_on_actions.txt",
+      "relative": "common/on_actions/MSGA_bosnia_on_actions.txt",
+      "before_sha256": "105f4c0f52a5255e40849e067b55f9971b1b85483b7184298f8e24f195c8717a",
+      "after_sha256": "38a516b92663dd2af81cd135b42705148cb0fdad449de43796b306fc88926ab4"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\scripted_effects\\MSGA_bosnia_effects.txt",
+      "relative": "common/scripted_effects/MSGA_bosnia_effects.txt",
+      "before_sha256": "cc296cd60efa7f1ea87ffef06f981244643c582c95882849562da20b0f73f073",
+      "after_sha256": "45d4bffa0ee60fc42610a2e12b264979041840cad6108b489876fe360343857e"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\scripted_effects\\MSGA_SER_post_kosovo_effects.txt",
+      "relative": "common/scripted_effects/MSGA_SER_post_kosovo_effects.txt",
+      "before_sha256": "fef5edb46656ae04bdb49a374342060ce96c3e6a219a7dcd0d691fcb72e67724",
+      "after_sha256": "f121a8a8bf7cc146bf780c31c62f95682b72f453d84a2af4c5baf19080a6d35e"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\descriptor.mod",
+      "relative": "descriptor.mod",
+      "before_sha256": "4454c6d61abc17f6bea9151bef99a0b50bbec7cd5237fdda8c37ceb6d8478b61",
+      "after_sha256": "3570c87d034b5f08b2b61dd104661fbebad0e59d2cf00fc8247179a4098990ce"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\events\\MSGA_bosnia_events.txt",
+      "relative": "events/MSGA_bosnia_events.txt",
+      "before_sha256": "c47b1a03ee2370f578fe58ab77f8177b3ed80ef178a8303f099927b8684c89ba",
+      "after_sha256": "20a8edbe61f47028fe375d50fbd3b1235cd51c6e84f69734eeb04806dc071ae6"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\events\\MSGA_SER_post_kosovo_events.txt",
+      "relative": "events/MSGA_SER_post_kosovo_events.txt",
+      "before_sha256": "99b7431ac4614b3a63a93a00a3845a17032a4eea2c2f131ab89665e8faf557da",
+      "after_sha256": "c67cde8a9e1cce5f589846f0501be4aa9d25b162ca996a22fb2e3b3340aad2d4"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_bosnia_capitulation.dds",
+      "relative": "gfx/event_pictures/MSGA_event_bosnia_capitulation.dds",
+      "before_sha256": null,
+      "after_sha256": "f0a50872d7bcb565438e25b4721909919f37ac70d8851d5e47ec90ee9ed73dd7"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_future_of_pristina.dds",
+      "relative": "gfx/event_pictures/MSGA_event_future_of_pristina.dds",
+      "before_sha256": null,
+      "after_sha256": "c1cf68e555ebc5037c7ae2ed539d9ca20e9042ef139c9495499c49efb171a8ac"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_kosovo_rebuilt.dds",
+      "relative": "gfx/event_pictures/MSGA_event_kosovo_rebuilt.dds",
+      "before_sha256": null,
+      "after_sha256": "55530ecbcc740f9590251f0e9f9dd2346e6bed252dd562025255ab5ec27724db"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_kosovo_reconstruction_begins.dds",
+      "relative": "gfx/event_pictures/MSGA_event_kosovo_reconstruction_begins.dds",
+      "before_sha256": null,
+      "after_sha256": "3c0da852457272329bcae788ade9bc836214a3d6ca14b3c72ad5dfb501fb00a0"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_question_of_republika_srpska.dds",
+      "relative": "gfx/event_pictures/MSGA_event_question_of_republika_srpska.dds",
+      "before_sha256": null,
+      "after_sha256": "85770327b09356ef68dd4b03ebfcc020bdd7c452e192db9644cb0c1b3831ad7f"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_serbia_enters_bosnian_war.dds",
+      "relative": "gfx/event_pictures/MSGA_event_serbia_enters_bosnian_war.dds",
+      "before_sha256": null,
+      "after_sha256": "975f0136fec633710dab5dc945b885244ac86744b0b588c75f19dfe8256c3c5f"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_event_srpska_uprising.dds",
+      "relative": "gfx/event_pictures/MSGA_event_srpska_uprising.dds",
+      "before_sha256": null,
+      "after_sha256": "3edd804eae52899e0373af52092748d343296f7b4986cf6ad403011bacd06c50"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\history\\countries\\HRZ - Herzegovina.txt",
+      "relative": "history/countries/HRZ - Herzegovina.txt",
+      "before_sha256": null,
+      "after_sha256": "4345649a35e0847dd810250f01a669997bf13c8588feba4d4bf0d6b4989d825c"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\interface\\MSGA_eventpictures.gfx",
+      "relative": "interface/MSGA_eventpictures.gfx",
+      "before_sha256": null,
+      "after_sha256": "fa91e3aef65b169067edf982b25fc7817753485b261bc7b2d0c2b06fe633f9b6"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\localisation\\english\\MSGA_bosnia_l_english.yml",
+      "relative": "localisation/english/MSGA_bosnia_l_english.yml",
+      "before_sha256": "46d2cfdd7034233da0431983c4f8834fb2a802e398e82ee74451ec88738b4e70",
+      "after_sha256": "2963d5c3a1975aad75fafbb28200f34f67c67a82cc8459ee695609162eff0b2f"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\localisation\\english\\MSGA_post_kosovo_l_english.yml",
+      "relative": "localisation/english/MSGA_post_kosovo_l_english.yml",
+      "before_sha256": "307252972fff2c4ab569c79fc6f244c068110890e668316fd6266b0b800c98dc",
+      "after_sha256": "05ec1a3f1245fda6beec27c208a99d1bd8ec6bde94ecf817ea6ca98e2bbfc677"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\localisation\\english\\MSGA_settlement_l_english.yml",
+      "relative": "localisation/english/MSGA_settlement_l_english.yml",
+      "before_sha256": null,
+      "after_sha256": "af3f54a40322649ab35daaa2e06bf92cb12a19e1f19f35a49534c96f510b337b"
+    },
+    {
+      "file": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\make_serbia_great_again.mod",
+      "relative": "make_serbia_great_again.mod",
+      "before_sha256": "2a09dcfca4706aca46cd60348441fcfb4d379a581e253b5c2da6ee8ec2673b16",
+      "after_sha256": "be23861ef2a2555be443d434a27ef851c2338a8793012f34b6751ef8d1f7dd5d"
+    }
+  ],
+  "launcher_descriptor": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again.mod",
+  "descriptor_path_verified": true,
+  "live_file_count": 172,
+  "repo_sync": "pending user live gameplay test; project game folder remains 0.8",
+  "gameplay_validation": "user took over after stopping Computer Use; not certified",
+  "initial_engine_messages": "obsolete filler decision tooltips and redundant runtime recruitment were removed; engine has not been restarted to verify these fixes"
+}
