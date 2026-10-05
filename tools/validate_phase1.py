@@ -5,6 +5,7 @@ import re
 import struct
 import subprocess
 from collections import Counter
+import argparse
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -223,6 +224,12 @@ def validate_expansion(scripts, tfr, graph, focuses):
 
 
 def main():
+    global MOD
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--mod-root', type=Path, default=MOD, help='Validate this mod installation using project source assets and Git baselines.')
+    parser.add_argument('--report', type=Path, default=ROOT / 'docs/phase1_static_validation.json')
+    args = parser.parse_args()
+    MOD = args.mod_root.resolve(strict=True)
     scripts = {p.relative_to(MOD).as_posix(): parse(p.read_text(encoding='utf-8-sig'))
                for p in MOD.rglob('*') if p.suffix in ('.txt', '.gfx')}
     all_pairs = [item for ast in scripts.values() for item in descend(ast)]
@@ -438,7 +445,7 @@ def main():
     assert 'category = cat_old_land_doctrine' in source('common/national_focus')
     validate_expansion(scripts, tfr, graph, by_focus)
     validate_cleanup(scripts, tfr)
-    report = {'static_validation': 'passed', 'script_files': len(scripts), 'focuses': len(focuses),
+    report = {'static_validation': 'passed', 'validated_mod_root': str(MOD), 'script_files': len(scripts), 'focuses': len(focuses),
               'custom_sprites': len(sprites), 'pixel_identical_icons': len(focuses), 'pixel_identical_spirit_icons': 4, 'events': len(events),
               'decisions': len(decisions), 'categories': len(categories), 'idea_definitions': len(ideas),
               'dynamic_modifiers': len(dynamic), 'localisation_keys': len(locale_keys),
@@ -452,7 +459,7 @@ def main():
               'volunteer_scripted_grants': 4, 'volunteer_engine_template_cap': 4,
               'screenshot_template_widths': [12, 24], 'northern_infrastructure_effective_gain_at_start': 2,
               'phase2_war_effects': 0, 'campaign_acceptance': 'not certified by static checks'}
-    output = ROOT / 'docs/phase1_static_validation.json'
+    output = args.report.resolve()
     output.parent.mkdir(exist_ok=True)
     output.write_text(json.dumps(report, indent=2) + '\n')
     print(json.dumps(report, indent=2))

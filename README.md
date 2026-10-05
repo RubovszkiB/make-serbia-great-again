@@ -17,7 +17,7 @@ Serbia Phase 1 submod for **Hearts of Iron IV / The Fire Rises**. Version **0.5.
 - Chronicle stories use a 120–210-day delayed dispatcher with quiet weight and cooldowns; Western monitoring uses a 30-day observer that stops after reporting collapse.
 - Two strategic and five Kosovo studies record one-time findings for later crisis policy.
 
-See [expansion report](docs/Phase1-0.5-Expansion.md) and [static validation](docs/phase1_static_validation.json). No game was launched or local installation updated for this increment. Runtime tooltips, decision delivery, division equipment, template caps and save/load remain unverified.
+The current build is deployed to `C:/Users/Balazs/Documents/Paradox Interactive/Hearts of Iron IV/mod/make_serbia_great_again`. All 57 project mod files and the sibling launcher descriptor match the installed copy. See [deployment inventory](docs/local_deployment.json), [installed-version validation](docs/local_runtime_validation.json) and [expansion report](docs/Phase1-0.5-Expansion.md). No game was launched during deployment. Runtime tooltips, decision delivery, division equipment, template caps and save/load remain unverified.
 
 ## Requirements and installation
 
@@ -27,6 +27,8 @@ See [expansion report](docs/Phase1-0.5-Expansion.md) and [static validation](doc
 - Place `make_serbia_great_again.mod` beside that directory and edit its `path` for your machine. The source descriptor records the development installation path.
 - Enable TFR and MSGA. Yugoslavia Reborn is not a dependency and its replacements conflict with an additive co-load.
 - Start a new Serbia campaign to receive every revised focus reward. Already completed focuses do not rerun their rewards in an old save.
+
+For development, deploy with `tools/deploy_local.py`, then validate with `tools/validate_phase1.py --mod-root "C:/Users/Balazs/Documents/Paradox Interactive/Hearts of Iron IV/mod/make_serbia_great_again" --report docs/local_runtime_validation.json`. Local deployment and validation precede GitHub commits and pushes. The deployment script preserves the existing Workshop identity, checks the descriptor path and verifies source/runtime SHA-256 hashes.
 
 ## Artwork and development
 
