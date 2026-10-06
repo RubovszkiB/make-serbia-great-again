@@ -149,7 +149,7 @@ MSGA_join_srpska_war = {
   add_to_faction = SRP
   if = { limit = { is_faction_leader = yes SRP = { is_in_faction_with = SER } }
    add_to_war = { targeted_alliance = SRP enemy = BOS hostility_reason = asked_to_join single_target_only = yes }
-   if = { limit = { has_war_with = BOS } set_country_flag = MSGA_bosnia_intervened add_war_support = 0.03 }
+   if = { limit = { has_war_with = BOS } set_country_flag = MSGA_bosnia_intervened add_war_support = 0.03 MSGA_update_campaign_puppet_rule = yes }
   }
  }
 }
@@ -180,23 +180,35 @@ MSGA_resume_bosnia_systems = {
 
 # Only our local war can enter this settlement. Flag first prevents peace-hook recursion.
 MSGA_settle_bosnia = {
- if = { limit = { tag = SER has_country_flag = MSGA_bosnian_war_started has_country_flag = MSGA_bosnia_intervened NOT = { has_country_flag = MSGA_bosnia_settlement_done } country_exists = BOS country_exists = SRP OR = { has_country_flag = MSGA_bosnia_defeated BOS = { has_capitulated = yes } AND = { controls_state = 104 controls_state = 851 } } }
+ # A real conference-created Serbian subject is the completion proof. Never
+ # terminate the live war or create its peace outcome before the conference.
+ if = { limit = { tag = SER has_war = no has_country_flag = MSGA_bosnian_war_started has_country_flag = MSGA_bosnia_intervened NOT = { has_country_flag = MSGA_bosnia_settlement_done } BOS = { exists = yes is_subject_of = SER has_war = no }
+  104 = { owner = { OR = { tag = SER is_subject_of = SER AND = { tag = SRP is_in_faction_with = SER } } } }
+  851 = { owner = { OR = { tag = SER is_subject_of = SER AND = { tag = SRP is_in_faction_with = SER } } } }
+  848 = { owner = { OR = { tag = SER is_subject_of = SER AND = { tag = SRP is_in_faction_with = SER } } } }
+  849 = { owner = { OR = { tag = SER is_subject_of = SER AND = { tag = SRP is_in_faction_with = SER } } } }
+  850 = { owner = { OR = { tag = SER is_subject_of = SER AND = { tag = SRP is_in_faction_with = SER } } } }
+ }
+  # Guard state-transfer callbacks; only publish the postwar chapter after the
+  # existing three-subject settlement has actually succeeded.
   set_country_flag = MSGA_bosnia_settlement_done
-  if = { limit = { has_war_with = BOS } white_peace = BOS }
-  SRP = { if = { limit = { has_war_with = BOS } white_peace = BOS } transfer_state = 848 transfer_state = 849 transfer_state = 850 }
+  SRP = { transfer_state = 848 transfer_state = 849 transfer_state = 850 }
   BOS = { transfer_state = 104 set_capital = { state = 104 } }
-  # TFR's HRZ tag exists, but its dormant history belongs to an Iranian faction.
   851 = { add_core_of = HRZ }
   HRZ = { transfer_state = 851 set_capital = { state = 851 } set_politics = { ruling_party = authoritarian_democrat elections_allowed = no } }
   set_autonomy = { target = BOS autonomy_state = autonomy_puppet end_wars = no end_civil_wars = no }
   set_autonomy = { target = HRZ autonomy_state = autonomy_puppet end_wars = no end_civil_wars = no }
   set_autonomy = { target = SRP autonomy_state = autonomy_puppet end_wars = no end_civil_wars = no }
-  add_to_faction = BOS add_to_faction = HRZ add_to_faction = SRP
-  MSGA_cleanup_bosnia_war_modifiers = yes
-  country_event = { id = MSGA_bosnia.10 }
-  country_event = { id = MSGA_postbosnia.12 days = 100 }
-  set_country_flag = MSGA_srpska_question_scheduled
-  MSGA_open_post_bosnia = yes
+  if = { limit = { BOS = { exists = yes is_subject_of = SER } HRZ = { exists = yes is_subject_of = SER } SRP = { exists = yes is_subject_of = SER } }
+   add_to_faction = BOS add_to_faction = HRZ add_to_faction = SRP
+   MSGA_cleanup_bosnia_war_modifiers = yes
+   country_event = { id = MSGA_bosnia.10 }
+   country_event = { id = MSGA_postbosnia.12 days = 100 }
+   set_country_flag = MSGA_srpska_question_scheduled
+   MSGA_open_post_bosnia = yes
+   MSGA_update_campaign_puppet_rule = yes
+  }
+  else = { clr_country_flag = MSGA_bosnia_settlement_done }
  }
 }
 MSGA_unite_srpska = {
@@ -220,5 +232,17 @@ MSGA_recover_bosnia_chain = {
    if = { limit = { has_country_flag = MSGA_bosnia_intervention_fired NOT = { has_country_flag = MSGA_bosnia_intervention_recovered } } set_country_flag = MSGA_bosnia_intervention_recovered country_event = { id = MSGA_bosnia.9 days = 1 } }
    else = { MSGA_check_bosnian_intervention = yes }
   }
+ }
+}
+
+# TFR disables can_puppet in every ideology. Own only our Serbian override.
+MSGA_update_campaign_puppet_rule = {
+ if = { limit = { tag = SER }
+  if = { limit = { OR = {
+   AND = { has_country_flag = MSGA_bosnia_intervened NOT = { has_country_flag = MSGA_bosnia_settlement_done } }
+  } }
+   if = { limit = { NOT = { has_rule = can_puppet } } set_rule = { can_puppet = yes } set_country_flag = MSGA_campaign_puppet_rule_owned }
+  }
+  else_if = { limit = { has_country_flag = MSGA_campaign_puppet_rule_owned } clear_rule = { can_puppet = yes } clr_country_flag = MSGA_campaign_puppet_rule_owned }
  }
 }

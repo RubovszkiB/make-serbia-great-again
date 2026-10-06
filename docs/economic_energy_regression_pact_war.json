@@ -1,0 +1,5400 @@
+{
+  "validation": "passed",
+  "validated_mod_root": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
+  "namespace": "MSGA_pactwar",
+  "visible_event_ids": [
+    "MSGA_pactwar.1",
+    "MSGA_pactwar.2",
+    "MSGA_pactwar.3",
+    "MSGA_pactwar.4",
+    "MSGA_pactwar.5",
+    "MSGA_pactwar.6",
+    "MSGA_pactwar.7",
+    "MSGA_pactwar.8",
+    "MSGA_pactwar.9",
+    "MSGA_pactwar.10",
+    "MSGA_pactwar.11"
+  ],
+  "observer": "MSGA_pactwar.90",
+  "verified_capitals": {
+    "MNT": {
+      "state": 105,
+      "province": 9809
+    },
+    "MAC": {
+      "state": 106,
+      "province": 3882
+    },
+    "ALB": {
+      "state": 44,
+      "province": 9914
+    },
+    "SLV": {
+      "state": 102,
+      "province": 9627
+    },
+    "CRO": {
+      "state": 109,
+      "province": 11581
+    }
+  },
+  "artwork_files": 10,
+  "native_peace_wrapper": "original 0.11 AST byte-independent parity; native upstream hash unchanged",
+  "terrain_tech_land_unit_types": 77,
+  "capitulation_orders": 120,
+  "winner_variants": [
+    "SER",
+    "BOS subject",
+    "GER active faction ally"
+  ],
+  "modeled_scenarios": 526,
+  "cases": [
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "MAC",
+        "ALB",
+        "SLV",
+        "CRO"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "MAC",
+        "ALB",
+        "SLV",
+        "CRO"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "MAC",
+        "ALB",
+        "SLV",
+        "CRO"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "MAC",
+        "ALB",
+        "CRO",
+        "SLV"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "MAC",
+        "ALB",
+        "CRO",
+        "SLV"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "MAC",
+        "ALB",
+        "CRO",
+        "SLV"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "MAC",
+        "SLV",
+        "ALB",
+        "CRO"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "MAC",
+        "SLV",
+        "ALB",
+        "CRO"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "MAC",
+        "SLV",
+        "ALB",
+        "CRO"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "MAC",
+        "SLV",
+        "CRO",
+        "ALB"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "MAC",
+        "SLV",
+        "CRO",
+        "ALB"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "MAC",
+        "SLV",
+        "CRO",
+        "ALB"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "MAC",
+        "CRO",
+        "ALB",
+        "SLV"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "MAC",
+        "CRO",
+        "ALB",
+        "SLV"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "MAC",
+        "CRO",
+        "ALB",
+        "SLV"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "MAC",
+        "CRO",
+        "SLV",
+        "ALB"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "MAC",
+        "CRO",
+        "SLV",
+        "ALB"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "MAC",
+        "CRO",
+        "SLV",
+        "ALB"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "ALB",
+        "MAC",
+        "SLV",
+        "CRO"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "ALB",
+        "MAC",
+        "SLV",
+        "CRO"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "ALB",
+        "MAC",
+        "SLV",
+        "CRO"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "ALB",
+        "MAC",
+        "CRO",
+        "SLV"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "ALB",
+        "MAC",
+        "CRO",
+        "SLV"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "ALB",
+        "MAC",
+        "CRO",
+        "SLV"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "ALB",
+        "SLV",
+        "MAC",
+        "CRO"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "ALB",
+        "SLV",
+        "MAC",
+        "CRO"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "ALB",
+        "SLV",
+        "MAC",
+        "CRO"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "ALB",
+        "SLV",
+        "CRO",
+        "MAC"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "ALB",
+        "SLV",
+        "CRO",
+        "MAC"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "ALB",
+        "SLV",
+        "CRO",
+        "MAC"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "ALB",
+        "CRO",
+        "MAC",
+        "SLV"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "ALB",
+        "CRO",
+        "MAC",
+        "SLV"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "ALB",
+        "CRO",
+        "MAC",
+        "SLV"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "ALB",
+        "CRO",
+        "SLV",
+        "MAC"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "ALB",
+        "CRO",
+        "SLV",
+        "MAC"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "ALB",
+        "CRO",
+        "SLV",
+        "MAC"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "SLV",
+        "MAC",
+        "ALB",
+        "CRO"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "SLV",
+        "MAC",
+        "ALB",
+        "CRO"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "SLV",
+        "MAC",
+        "ALB",
+        "CRO"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "SLV",
+        "MAC",
+        "CRO",
+        "ALB"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "SLV",
+        "MAC",
+        "CRO",
+        "ALB"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "SLV",
+        "MAC",
+        "CRO",
+        "ALB"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "SLV",
+        "ALB",
+        "MAC",
+        "CRO"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "SLV",
+        "ALB",
+        "MAC",
+        "CRO"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "SLV",
+        "ALB",
+        "MAC",
+        "CRO"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "SLV",
+        "ALB",
+        "CRO",
+        "MAC"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "SLV",
+        "ALB",
+        "CRO",
+        "MAC"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "SLV",
+        "ALB",
+        "CRO",
+        "MAC"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "SLV",
+        "CRO",
+        "MAC",
+        "ALB"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "SLV",
+        "CRO",
+        "MAC",
+        "ALB"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "SLV",
+        "CRO",
+        "MAC",
+        "ALB"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "SLV",
+        "CRO",
+        "ALB",
+        "MAC"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "SLV",
+        "CRO",
+        "ALB",
+        "MAC"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "SLV",
+        "CRO",
+        "ALB",
+        "MAC"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "CRO",
+        "MAC",
+        "ALB",
+        "SLV"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "CRO",
+        "MAC",
+        "ALB",
+        "SLV"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "CRO",
+        "MAC",
+        "ALB",
+        "SLV"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "CRO",
+        "MAC",
+        "SLV",
+        "ALB"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "CRO",
+        "MAC",
+        "SLV",
+        "ALB"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "CRO",
+        "MAC",
+        "SLV",
+        "ALB"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "CRO",
+        "ALB",
+        "MAC",
+        "SLV"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "CRO",
+        "ALB",
+        "MAC",
+        "SLV"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "CRO",
+        "ALB",
+        "MAC",
+        "SLV"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "CRO",
+        "ALB",
+        "SLV",
+        "MAC"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "CRO",
+        "ALB",
+        "SLV",
+        "MAC"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "CRO",
+        "ALB",
+        "SLV",
+        "MAC"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "CRO",
+        "SLV",
+        "MAC",
+        "ALB"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "CRO",
+        "SLV",
+        "MAC",
+        "ALB"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "CRO",
+        "SLV",
+        "MAC",
+        "ALB"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "CRO",
+        "SLV",
+        "ALB",
+        "MAC"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "CRO",
+        "SLV",
+        "ALB",
+        "MAC"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MNT",
+        "CRO",
+        "SLV",
+        "ALB",
+        "MAC"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "MNT",
+        "ALB",
+        "SLV",
+        "CRO"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "MNT",
+        "ALB",
+        "SLV",
+        "CRO"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "MNT",
+        "ALB",
+        "SLV",
+        "CRO"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "MNT",
+        "ALB",
+        "CRO",
+        "SLV"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "MNT",
+        "ALB",
+        "CRO",
+        "SLV"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "MNT",
+        "ALB",
+        "CRO",
+        "SLV"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "MNT",
+        "SLV",
+        "ALB",
+        "CRO"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "MNT",
+        "SLV",
+        "ALB",
+        "CRO"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "MNT",
+        "SLV",
+        "ALB",
+        "CRO"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "MNT",
+        "SLV",
+        "CRO",
+        "ALB"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "MNT",
+        "SLV",
+        "CRO",
+        "ALB"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "MNT",
+        "SLV",
+        "CRO",
+        "ALB"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "MNT",
+        "CRO",
+        "ALB",
+        "SLV"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "MNT",
+        "CRO",
+        "ALB",
+        "SLV"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "MNT",
+        "CRO",
+        "ALB",
+        "SLV"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "MNT",
+        "CRO",
+        "SLV",
+        "ALB"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "MNT",
+        "CRO",
+        "SLV",
+        "ALB"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "MNT",
+        "CRO",
+        "SLV",
+        "ALB"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "ALB",
+        "MNT",
+        "SLV",
+        "CRO"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "ALB",
+        "MNT",
+        "SLV",
+        "CRO"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "ALB",
+        "MNT",
+        "SLV",
+        "CRO"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "ALB",
+        "MNT",
+        "CRO",
+        "SLV"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "ALB",
+        "MNT",
+        "CRO",
+        "SLV"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "ALB",
+        "MNT",
+        "CRO",
+        "SLV"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "ALB",
+        "SLV",
+        "MNT",
+        "CRO"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "ALB",
+        "SLV",
+        "MNT",
+        "CRO"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "ALB",
+        "SLV",
+        "MNT",
+        "CRO"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "ALB",
+        "SLV",
+        "CRO",
+        "MNT"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "ALB",
+        "SLV",
+        "CRO",
+        "MNT"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "ALB",
+        "SLV",
+        "CRO",
+        "MNT"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "ALB",
+        "CRO",
+        "MNT",
+        "SLV"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "ALB",
+        "CRO",
+        "MNT",
+        "SLV"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "ALB",
+        "CRO",
+        "MNT",
+        "SLV"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "ALB",
+        "CRO",
+        "SLV",
+        "MNT"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "ALB",
+        "CRO",
+        "SLV",
+        "MNT"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "ALB",
+        "CRO",
+        "SLV",
+        "MNT"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "SLV",
+        "MNT",
+        "ALB",
+        "CRO"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "SLV",
+        "MNT",
+        "ALB",
+        "CRO"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "SLV",
+        "MNT",
+        "ALB",
+        "CRO"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "SLV",
+        "MNT",
+        "CRO",
+        "ALB"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "SLV",
+        "MNT",
+        "CRO",
+        "ALB"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "SLV",
+        "MNT",
+        "CRO",
+        "ALB"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "SLV",
+        "ALB",
+        "MNT",
+        "CRO"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "SLV",
+        "ALB",
+        "MNT",
+        "CRO"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "SLV",
+        "ALB",
+        "MNT",
+        "CRO"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "SLV",
+        "ALB",
+        "CRO",
+        "MNT"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "SLV",
+        "ALB",
+        "CRO",
+        "MNT"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "SLV",
+        "ALB",
+        "CRO",
+        "MNT"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "SLV",
+        "CRO",
+        "MNT",
+        "ALB"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "SLV",
+        "CRO",
+        "MNT",
+        "ALB"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "SLV",
+        "CRO",
+        "MNT",
+        "ALB"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "SLV",
+        "CRO",
+        "ALB",
+        "MNT"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "SLV",
+        "CRO",
+        "ALB",
+        "MNT"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "SLV",
+        "CRO",
+        "ALB",
+        "MNT"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "CRO",
+        "MNT",
+        "ALB",
+        "SLV"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "CRO",
+        "MNT",
+        "ALB",
+        "SLV"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "CRO",
+        "MNT",
+        "ALB",
+        "SLV"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "CRO",
+        "MNT",
+        "SLV",
+        "ALB"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "CRO",
+        "MNT",
+        "SLV",
+        "ALB"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "CRO",
+        "MNT",
+        "SLV",
+        "ALB"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "CRO",
+        "ALB",
+        "MNT",
+        "SLV"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "CRO",
+        "ALB",
+        "MNT",
+        "SLV"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "CRO",
+        "ALB",
+        "MNT",
+        "SLV"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "CRO",
+        "ALB",
+        "SLV",
+        "MNT"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "CRO",
+        "ALB",
+        "SLV",
+        "MNT"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "CRO",
+        "ALB",
+        "SLV",
+        "MNT"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "CRO",
+        "SLV",
+        "MNT",
+        "ALB"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "CRO",
+        "SLV",
+        "MNT",
+        "ALB"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "CRO",
+        "SLV",
+        "MNT",
+        "ALB"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "CRO",
+        "SLV",
+        "ALB",
+        "MNT"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "CRO",
+        "SLV",
+        "ALB",
+        "MNT"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "MAC",
+        "CRO",
+        "SLV",
+        "ALB",
+        "MNT"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MNT",
+        "MAC",
+        "SLV",
+        "CRO"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MNT",
+        "MAC",
+        "SLV",
+        "CRO"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MNT",
+        "MAC",
+        "SLV",
+        "CRO"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MNT",
+        "MAC",
+        "CRO",
+        "SLV"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MNT",
+        "MAC",
+        "CRO",
+        "SLV"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MNT",
+        "MAC",
+        "CRO",
+        "SLV"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MNT",
+        "SLV",
+        "MAC",
+        "CRO"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MNT",
+        "SLV",
+        "MAC",
+        "CRO"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MNT",
+        "SLV",
+        "MAC",
+        "CRO"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MNT",
+        "SLV",
+        "CRO",
+        "MAC"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MNT",
+        "SLV",
+        "CRO",
+        "MAC"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MNT",
+        "SLV",
+        "CRO",
+        "MAC"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MNT",
+        "CRO",
+        "MAC",
+        "SLV"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MNT",
+        "CRO",
+        "MAC",
+        "SLV"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MNT",
+        "CRO",
+        "MAC",
+        "SLV"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MNT",
+        "CRO",
+        "SLV",
+        "MAC"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MNT",
+        "CRO",
+        "SLV",
+        "MAC"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MNT",
+        "CRO",
+        "SLV",
+        "MAC"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MAC",
+        "MNT",
+        "SLV",
+        "CRO"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MAC",
+        "MNT",
+        "SLV",
+        "CRO"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MAC",
+        "MNT",
+        "SLV",
+        "CRO"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MAC",
+        "MNT",
+        "CRO",
+        "SLV"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MAC",
+        "MNT",
+        "CRO",
+        "SLV"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MAC",
+        "MNT",
+        "CRO",
+        "SLV"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MAC",
+        "SLV",
+        "MNT",
+        "CRO"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MAC",
+        "SLV",
+        "MNT",
+        "CRO"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MAC",
+        "SLV",
+        "MNT",
+        "CRO"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MAC",
+        "SLV",
+        "CRO",
+        "MNT"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MAC",
+        "SLV",
+        "CRO",
+        "MNT"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MAC",
+        "SLV",
+        "CRO",
+        "MNT"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MAC",
+        "CRO",
+        "MNT",
+        "SLV"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MAC",
+        "CRO",
+        "MNT",
+        "SLV"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MAC",
+        "CRO",
+        "MNT",
+        "SLV"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MAC",
+        "CRO",
+        "SLV",
+        "MNT"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MAC",
+        "CRO",
+        "SLV",
+        "MNT"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "MAC",
+        "CRO",
+        "SLV",
+        "MNT"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "SLV",
+        "MNT",
+        "MAC",
+        "CRO"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "SLV",
+        "MNT",
+        "MAC",
+        "CRO"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "SLV",
+        "MNT",
+        "MAC",
+        "CRO"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "SLV",
+        "MNT",
+        "CRO",
+        "MAC"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "SLV",
+        "MNT",
+        "CRO",
+        "MAC"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "SLV",
+        "MNT",
+        "CRO",
+        "MAC"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "SLV",
+        "MAC",
+        "MNT",
+        "CRO"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "SLV",
+        "MAC",
+        "MNT",
+        "CRO"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "SLV",
+        "MAC",
+        "MNT",
+        "CRO"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "SLV",
+        "MAC",
+        "CRO",
+        "MNT"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "SLV",
+        "MAC",
+        "CRO",
+        "MNT"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "SLV",
+        "MAC",
+        "CRO",
+        "MNT"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "SLV",
+        "CRO",
+        "MNT",
+        "MAC"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "SLV",
+        "CRO",
+        "MNT",
+        "MAC"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "SLV",
+        "CRO",
+        "MNT",
+        "MAC"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "SLV",
+        "CRO",
+        "MAC",
+        "MNT"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "SLV",
+        "CRO",
+        "MAC",
+        "MNT"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "SLV",
+        "CRO",
+        "MAC",
+        "MNT"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "CRO",
+        "MNT",
+        "MAC",
+        "SLV"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "CRO",
+        "MNT",
+        "MAC",
+        "SLV"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "CRO",
+        "MNT",
+        "MAC",
+        "SLV"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "CRO",
+        "MNT",
+        "SLV",
+        "MAC"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "CRO",
+        "MNT",
+        "SLV",
+        "MAC"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "CRO",
+        "MNT",
+        "SLV",
+        "MAC"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "CRO",
+        "MAC",
+        "MNT",
+        "SLV"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "CRO",
+        "MAC",
+        "MNT",
+        "SLV"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "CRO",
+        "MAC",
+        "MNT",
+        "SLV"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "CRO",
+        "MAC",
+        "SLV",
+        "MNT"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "CRO",
+        "MAC",
+        "SLV",
+        "MNT"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "CRO",
+        "MAC",
+        "SLV",
+        "MNT"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "CRO",
+        "SLV",
+        "MNT",
+        "MAC"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "CRO",
+        "SLV",
+        "MNT",
+        "MAC"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "CRO",
+        "SLV",
+        "MNT",
+        "MAC"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "CRO",
+        "SLV",
+        "MAC",
+        "MNT"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "CRO",
+        "SLV",
+        "MAC",
+        "MNT"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "ALB",
+        "CRO",
+        "SLV",
+        "MAC",
+        "MNT"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MNT",
+        "MAC",
+        "ALB",
+        "CRO"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MNT",
+        "MAC",
+        "ALB",
+        "CRO"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MNT",
+        "MAC",
+        "ALB",
+        "CRO"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MNT",
+        "MAC",
+        "CRO",
+        "ALB"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MNT",
+        "MAC",
+        "CRO",
+        "ALB"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MNT",
+        "MAC",
+        "CRO",
+        "ALB"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MNT",
+        "ALB",
+        "MAC",
+        "CRO"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MNT",
+        "ALB",
+        "MAC",
+        "CRO"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MNT",
+        "ALB",
+        "MAC",
+        "CRO"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MNT",
+        "ALB",
+        "CRO",
+        "MAC"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MNT",
+        "ALB",
+        "CRO",
+        "MAC"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MNT",
+        "ALB",
+        "CRO",
+        "MAC"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MNT",
+        "CRO",
+        "MAC",
+        "ALB"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MNT",
+        "CRO",
+        "MAC",
+        "ALB"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MNT",
+        "CRO",
+        "MAC",
+        "ALB"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MNT",
+        "CRO",
+        "ALB",
+        "MAC"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MNT",
+        "CRO",
+        "ALB",
+        "MAC"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MNT",
+        "CRO",
+        "ALB",
+        "MAC"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MAC",
+        "MNT",
+        "ALB",
+        "CRO"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MAC",
+        "MNT",
+        "ALB",
+        "CRO"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MAC",
+        "MNT",
+        "ALB",
+        "CRO"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MAC",
+        "MNT",
+        "CRO",
+        "ALB"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MAC",
+        "MNT",
+        "CRO",
+        "ALB"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MAC",
+        "MNT",
+        "CRO",
+        "ALB"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MAC",
+        "ALB",
+        "MNT",
+        "CRO"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MAC",
+        "ALB",
+        "MNT",
+        "CRO"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MAC",
+        "ALB",
+        "MNT",
+        "CRO"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MAC",
+        "ALB",
+        "CRO",
+        "MNT"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MAC",
+        "ALB",
+        "CRO",
+        "MNT"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MAC",
+        "ALB",
+        "CRO",
+        "MNT"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MAC",
+        "CRO",
+        "MNT",
+        "ALB"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MAC",
+        "CRO",
+        "MNT",
+        "ALB"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MAC",
+        "CRO",
+        "MNT",
+        "ALB"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MAC",
+        "CRO",
+        "ALB",
+        "MNT"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MAC",
+        "CRO",
+        "ALB",
+        "MNT"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "MAC",
+        "CRO",
+        "ALB",
+        "MNT"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "ALB",
+        "MNT",
+        "MAC",
+        "CRO"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "ALB",
+        "MNT",
+        "MAC",
+        "CRO"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "ALB",
+        "MNT",
+        "MAC",
+        "CRO"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "ALB",
+        "MNT",
+        "CRO",
+        "MAC"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "ALB",
+        "MNT",
+        "CRO",
+        "MAC"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "ALB",
+        "MNT",
+        "CRO",
+        "MAC"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "ALB",
+        "MAC",
+        "MNT",
+        "CRO"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "ALB",
+        "MAC",
+        "MNT",
+        "CRO"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "ALB",
+        "MAC",
+        "MNT",
+        "CRO"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "ALB",
+        "MAC",
+        "CRO",
+        "MNT"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "ALB",
+        "MAC",
+        "CRO",
+        "MNT"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "ALB",
+        "MAC",
+        "CRO",
+        "MNT"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "ALB",
+        "CRO",
+        "MNT",
+        "MAC"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "ALB",
+        "CRO",
+        "MNT",
+        "MAC"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "ALB",
+        "CRO",
+        "MNT",
+        "MAC"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "ALB",
+        "CRO",
+        "MAC",
+        "MNT"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "ALB",
+        "CRO",
+        "MAC",
+        "MNT"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "ALB",
+        "CRO",
+        "MAC",
+        "MNT"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "CRO",
+        "MNT",
+        "MAC",
+        "ALB"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "CRO",
+        "MNT",
+        "MAC",
+        "ALB"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "CRO",
+        "MNT",
+        "MAC",
+        "ALB"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "CRO",
+        "MNT",
+        "ALB",
+        "MAC"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "CRO",
+        "MNT",
+        "ALB",
+        "MAC"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "CRO",
+        "MNT",
+        "ALB",
+        "MAC"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "CRO",
+        "MAC",
+        "MNT",
+        "ALB"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "CRO",
+        "MAC",
+        "MNT",
+        "ALB"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "CRO",
+        "MAC",
+        "MNT",
+        "ALB"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "CRO",
+        "MAC",
+        "ALB",
+        "MNT"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "CRO",
+        "MAC",
+        "ALB",
+        "MNT"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "CRO",
+        "MAC",
+        "ALB",
+        "MNT"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "CRO",
+        "ALB",
+        "MNT",
+        "MAC"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "CRO",
+        "ALB",
+        "MNT",
+        "MAC"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "CRO",
+        "ALB",
+        "MNT",
+        "MAC"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "CRO",
+        "ALB",
+        "MAC",
+        "MNT"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "CRO",
+        "ALB",
+        "MAC",
+        "MNT"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "SLV",
+        "CRO",
+        "ALB",
+        "MAC",
+        "MNT"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MNT",
+        "MAC",
+        "ALB",
+        "SLV"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MNT",
+        "MAC",
+        "ALB",
+        "SLV"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MNT",
+        "MAC",
+        "ALB",
+        "SLV"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MNT",
+        "MAC",
+        "SLV",
+        "ALB"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MNT",
+        "MAC",
+        "SLV",
+        "ALB"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MNT",
+        "MAC",
+        "SLV",
+        "ALB"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MNT",
+        "ALB",
+        "MAC",
+        "SLV"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MNT",
+        "ALB",
+        "MAC",
+        "SLV"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MNT",
+        "ALB",
+        "MAC",
+        "SLV"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MNT",
+        "ALB",
+        "SLV",
+        "MAC"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MNT",
+        "ALB",
+        "SLV",
+        "MAC"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MNT",
+        "ALB",
+        "SLV",
+        "MAC"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MNT",
+        "SLV",
+        "MAC",
+        "ALB"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MNT",
+        "SLV",
+        "MAC",
+        "ALB"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MNT",
+        "SLV",
+        "MAC",
+        "ALB"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MNT",
+        "SLV",
+        "ALB",
+        "MAC"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MNT",
+        "SLV",
+        "ALB",
+        "MAC"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MNT",
+        "SLV",
+        "ALB",
+        "MAC"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MAC",
+        "MNT",
+        "ALB",
+        "SLV"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MAC",
+        "MNT",
+        "ALB",
+        "SLV"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MAC",
+        "MNT",
+        "ALB",
+        "SLV"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MAC",
+        "MNT",
+        "SLV",
+        "ALB"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MAC",
+        "MNT",
+        "SLV",
+        "ALB"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MAC",
+        "MNT",
+        "SLV",
+        "ALB"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MAC",
+        "ALB",
+        "MNT",
+        "SLV"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MAC",
+        "ALB",
+        "MNT",
+        "SLV"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MAC",
+        "ALB",
+        "MNT",
+        "SLV"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MAC",
+        "ALB",
+        "SLV",
+        "MNT"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MAC",
+        "ALB",
+        "SLV",
+        "MNT"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MAC",
+        "ALB",
+        "SLV",
+        "MNT"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MAC",
+        "SLV",
+        "MNT",
+        "ALB"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MAC",
+        "SLV",
+        "MNT",
+        "ALB"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MAC",
+        "SLV",
+        "MNT",
+        "ALB"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MAC",
+        "SLV",
+        "ALB",
+        "MNT"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MAC",
+        "SLV",
+        "ALB",
+        "MNT"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "MAC",
+        "SLV",
+        "ALB",
+        "MNT"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "ALB",
+        "MNT",
+        "MAC",
+        "SLV"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "ALB",
+        "MNT",
+        "MAC",
+        "SLV"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "ALB",
+        "MNT",
+        "MAC",
+        "SLV"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "ALB",
+        "MNT",
+        "SLV",
+        "MAC"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "ALB",
+        "MNT",
+        "SLV",
+        "MAC"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "ALB",
+        "MNT",
+        "SLV",
+        "MAC"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "ALB",
+        "MAC",
+        "MNT",
+        "SLV"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "ALB",
+        "MAC",
+        "MNT",
+        "SLV"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "ALB",
+        "MAC",
+        "MNT",
+        "SLV"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "ALB",
+        "MAC",
+        "SLV",
+        "MNT"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "ALB",
+        "MAC",
+        "SLV",
+        "MNT"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "ALB",
+        "MAC",
+        "SLV",
+        "MNT"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "ALB",
+        "SLV",
+        "MNT",
+        "MAC"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "ALB",
+        "SLV",
+        "MNT",
+        "MAC"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "ALB",
+        "SLV",
+        "MNT",
+        "MAC"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "ALB",
+        "SLV",
+        "MAC",
+        "MNT"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "ALB",
+        "SLV",
+        "MAC",
+        "MNT"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "ALB",
+        "SLV",
+        "MAC",
+        "MNT"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "SLV",
+        "MNT",
+        "MAC",
+        "ALB"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "SLV",
+        "MNT",
+        "MAC",
+        "ALB"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "SLV",
+        "MNT",
+        "MAC",
+        "ALB"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "SLV",
+        "MNT",
+        "ALB",
+        "MAC"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "SLV",
+        "MNT",
+        "ALB",
+        "MAC"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "SLV",
+        "MNT",
+        "ALB",
+        "MAC"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "SLV",
+        "MAC",
+        "MNT",
+        "ALB"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "SLV",
+        "MAC",
+        "MNT",
+        "ALB"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "SLV",
+        "MAC",
+        "MNT",
+        "ALB"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "SLV",
+        "MAC",
+        "ALB",
+        "MNT"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "SLV",
+        "MAC",
+        "ALB",
+        "MNT"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "SLV",
+        "MAC",
+        "ALB",
+        "MNT"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "SLV",
+        "ALB",
+        "MNT",
+        "MAC"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "SLV",
+        "ALB",
+        "MNT",
+        "MAC"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "SLV",
+        "ALB",
+        "MNT",
+        "MAC"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "SLV",
+        "ALB",
+        "MAC",
+        "MNT"
+      ],
+      "winner": "SER"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "SLV",
+        "ALB",
+        "MAC",
+        "MNT"
+      ],
+      "winner": "BOS"
+    },
+    {
+      "kind": "defeat_order",
+      "order": [
+        "CRO",
+        "SLV",
+        "ALB",
+        "MAC",
+        "MNT"
+      ],
+      "winner": "GER"
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MNT",
+        "MAC",
+        "ALB",
+        "SLV",
+        "CRO"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MNT",
+        "MAC",
+        "ALB",
+        "CRO",
+        "SLV"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MNT",
+        "MAC",
+        "SLV",
+        "ALB",
+        "CRO"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MNT",
+        "MAC",
+        "SLV",
+        "CRO",
+        "ALB"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MNT",
+        "MAC",
+        "CRO",
+        "ALB",
+        "SLV"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MNT",
+        "MAC",
+        "CRO",
+        "SLV",
+        "ALB"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MNT",
+        "ALB",
+        "MAC",
+        "SLV",
+        "CRO"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MNT",
+        "ALB",
+        "MAC",
+        "CRO",
+        "SLV"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MNT",
+        "ALB",
+        "SLV",
+        "MAC",
+        "CRO"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MNT",
+        "ALB",
+        "SLV",
+        "CRO",
+        "MAC"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MNT",
+        "ALB",
+        "CRO",
+        "MAC",
+        "SLV"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MNT",
+        "ALB",
+        "CRO",
+        "SLV",
+        "MAC"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MNT",
+        "SLV",
+        "MAC",
+        "ALB",
+        "CRO"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MNT",
+        "SLV",
+        "MAC",
+        "CRO",
+        "ALB"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MNT",
+        "SLV",
+        "ALB",
+        "MAC",
+        "CRO"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MNT",
+        "SLV",
+        "ALB",
+        "CRO",
+        "MAC"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MNT",
+        "SLV",
+        "CRO",
+        "MAC",
+        "ALB"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MNT",
+        "SLV",
+        "CRO",
+        "ALB",
+        "MAC"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MNT",
+        "CRO",
+        "MAC",
+        "ALB",
+        "SLV"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MNT",
+        "CRO",
+        "MAC",
+        "SLV",
+        "ALB"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MNT",
+        "CRO",
+        "ALB",
+        "MAC",
+        "SLV"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MNT",
+        "CRO",
+        "ALB",
+        "SLV",
+        "MAC"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MNT",
+        "CRO",
+        "SLV",
+        "MAC",
+        "ALB"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MNT",
+        "CRO",
+        "SLV",
+        "ALB",
+        "MAC"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MAC",
+        "MNT",
+        "ALB",
+        "SLV",
+        "CRO"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MAC",
+        "MNT",
+        "ALB",
+        "CRO",
+        "SLV"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MAC",
+        "MNT",
+        "SLV",
+        "ALB",
+        "CRO"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MAC",
+        "MNT",
+        "SLV",
+        "CRO",
+        "ALB"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MAC",
+        "MNT",
+        "CRO",
+        "ALB",
+        "SLV"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MAC",
+        "MNT",
+        "CRO",
+        "SLV",
+        "ALB"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MAC",
+        "ALB",
+        "MNT",
+        "SLV",
+        "CRO"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MAC",
+        "ALB",
+        "MNT",
+        "CRO",
+        "SLV"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MAC",
+        "ALB",
+        "SLV",
+        "MNT",
+        "CRO"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MAC",
+        "ALB",
+        "SLV",
+        "CRO",
+        "MNT"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MAC",
+        "ALB",
+        "CRO",
+        "MNT",
+        "SLV"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MAC",
+        "ALB",
+        "CRO",
+        "SLV",
+        "MNT"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MAC",
+        "SLV",
+        "MNT",
+        "ALB",
+        "CRO"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MAC",
+        "SLV",
+        "MNT",
+        "CRO",
+        "ALB"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MAC",
+        "SLV",
+        "ALB",
+        "MNT",
+        "CRO"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MAC",
+        "SLV",
+        "ALB",
+        "CRO",
+        "MNT"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MAC",
+        "SLV",
+        "CRO",
+        "MNT",
+        "ALB"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MAC",
+        "SLV",
+        "CRO",
+        "ALB",
+        "MNT"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MAC",
+        "CRO",
+        "MNT",
+        "ALB",
+        "SLV"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MAC",
+        "CRO",
+        "MNT",
+        "SLV",
+        "ALB"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MAC",
+        "CRO",
+        "ALB",
+        "MNT",
+        "SLV"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MAC",
+        "CRO",
+        "ALB",
+        "SLV",
+        "MNT"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MAC",
+        "CRO",
+        "SLV",
+        "MNT",
+        "ALB"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "MAC",
+        "CRO",
+        "SLV",
+        "ALB",
+        "MNT"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "ALB",
+        "MNT",
+        "MAC",
+        "SLV",
+        "CRO"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "ALB",
+        "MNT",
+        "MAC",
+        "CRO",
+        "SLV"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "ALB",
+        "MNT",
+        "SLV",
+        "MAC",
+        "CRO"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "ALB",
+        "MNT",
+        "SLV",
+        "CRO",
+        "MAC"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "ALB",
+        "MNT",
+        "CRO",
+        "MAC",
+        "SLV"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "ALB",
+        "MNT",
+        "CRO",
+        "SLV",
+        "MAC"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "ALB",
+        "MAC",
+        "MNT",
+        "SLV",
+        "CRO"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "ALB",
+        "MAC",
+        "MNT",
+        "CRO",
+        "SLV"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "ALB",
+        "MAC",
+        "SLV",
+        "MNT",
+        "CRO"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "ALB",
+        "MAC",
+        "SLV",
+        "CRO",
+        "MNT"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "ALB",
+        "MAC",
+        "CRO",
+        "MNT",
+        "SLV"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "ALB",
+        "MAC",
+        "CRO",
+        "SLV",
+        "MNT"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "ALB",
+        "SLV",
+        "MNT",
+        "MAC",
+        "CRO"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "ALB",
+        "SLV",
+        "MNT",
+        "CRO",
+        "MAC"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "ALB",
+        "SLV",
+        "MAC",
+        "MNT",
+        "CRO"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "ALB",
+        "SLV",
+        "MAC",
+        "CRO",
+        "MNT"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "ALB",
+        "SLV",
+        "CRO",
+        "MNT",
+        "MAC"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "ALB",
+        "SLV",
+        "CRO",
+        "MAC",
+        "MNT"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "ALB",
+        "CRO",
+        "MNT",
+        "MAC",
+        "SLV"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "ALB",
+        "CRO",
+        "MNT",
+        "SLV",
+        "MAC"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "ALB",
+        "CRO",
+        "MAC",
+        "MNT",
+        "SLV"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "ALB",
+        "CRO",
+        "MAC",
+        "SLV",
+        "MNT"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "ALB",
+        "CRO",
+        "SLV",
+        "MNT",
+        "MAC"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "ALB",
+        "CRO",
+        "SLV",
+        "MAC",
+        "MNT"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "SLV",
+        "MNT",
+        "MAC",
+        "ALB",
+        "CRO"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "SLV",
+        "MNT",
+        "MAC",
+        "CRO",
+        "ALB"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "SLV",
+        "MNT",
+        "ALB",
+        "MAC",
+        "CRO"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "SLV",
+        "MNT",
+        "ALB",
+        "CRO",
+        "MAC"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "SLV",
+        "MNT",
+        "CRO",
+        "MAC",
+        "ALB"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "SLV",
+        "MNT",
+        "CRO",
+        "ALB",
+        "MAC"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "SLV",
+        "MAC",
+        "MNT",
+        "ALB",
+        "CRO"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "SLV",
+        "MAC",
+        "MNT",
+        "CRO",
+        "ALB"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "SLV",
+        "MAC",
+        "ALB",
+        "MNT",
+        "CRO"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "SLV",
+        "MAC",
+        "ALB",
+        "CRO",
+        "MNT"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "SLV",
+        "MAC",
+        "CRO",
+        "MNT",
+        "ALB"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "SLV",
+        "MAC",
+        "CRO",
+        "ALB",
+        "MNT"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "SLV",
+        "ALB",
+        "MNT",
+        "MAC",
+        "CRO"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "SLV",
+        "ALB",
+        "MNT",
+        "CRO",
+        "MAC"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "SLV",
+        "ALB",
+        "MAC",
+        "MNT",
+        "CRO"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "SLV",
+        "ALB",
+        "MAC",
+        "CRO",
+        "MNT"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "SLV",
+        "ALB",
+        "CRO",
+        "MNT",
+        "MAC"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "SLV",
+        "ALB",
+        "CRO",
+        "MAC",
+        "MNT"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "SLV",
+        "CRO",
+        "MNT",
+        "MAC",
+        "ALB"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "SLV",
+        "CRO",
+        "MNT",
+        "ALB",
+        "MAC"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "SLV",
+        "CRO",
+        "MAC",
+        "MNT",
+        "ALB"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "SLV",
+        "CRO",
+        "MAC",
+        "ALB",
+        "MNT"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "SLV",
+        "CRO",
+        "ALB",
+        "MNT",
+        "MAC"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "SLV",
+        "CRO",
+        "ALB",
+        "MAC",
+        "MNT"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "CRO",
+        "MNT",
+        "MAC",
+        "ALB",
+        "SLV"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "CRO",
+        "MNT",
+        "MAC",
+        "SLV",
+        "ALB"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "CRO",
+        "MNT",
+        "ALB",
+        "MAC",
+        "SLV"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "CRO",
+        "MNT",
+        "ALB",
+        "SLV",
+        "MAC"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "CRO",
+        "MNT",
+        "SLV",
+        "MAC",
+        "ALB"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "CRO",
+        "MNT",
+        "SLV",
+        "ALB",
+        "MAC"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "CRO",
+        "MAC",
+        "MNT",
+        "ALB",
+        "SLV"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "CRO",
+        "MAC",
+        "MNT",
+        "SLV",
+        "ALB"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "CRO",
+        "MAC",
+        "ALB",
+        "MNT",
+        "SLV"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "CRO",
+        "MAC",
+        "ALB",
+        "SLV",
+        "MNT"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "CRO",
+        "MAC",
+        "SLV",
+        "MNT",
+        "ALB"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "CRO",
+        "MAC",
+        "SLV",
+        "ALB",
+        "MNT"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "CRO",
+        "ALB",
+        "MNT",
+        "MAC",
+        "SLV"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "CRO",
+        "ALB",
+        "MNT",
+        "SLV",
+        "MAC"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "CRO",
+        "ALB",
+        "MAC",
+        "MNT",
+        "SLV"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "CRO",
+        "ALB",
+        "MAC",
+        "SLV",
+        "MNT"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "CRO",
+        "ALB",
+        "SLV",
+        "MNT",
+        "MAC"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "CRO",
+        "ALB",
+        "SLV",
+        "MAC",
+        "MNT"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "CRO",
+        "SLV",
+        "MNT",
+        "MAC",
+        "ALB"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "CRO",
+        "SLV",
+        "MNT",
+        "ALB",
+        "MAC"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "CRO",
+        "SLV",
+        "MAC",
+        "MNT",
+        "ALB"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "CRO",
+        "SLV",
+        "MAC",
+        "ALB",
+        "MNT"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "CRO",
+        "SLV",
+        "ALB",
+        "MNT",
+        "MAC"
+      ]
+    },
+    {
+      "kind": "capital_order_and_expiry",
+      "order": [
+        "CRO",
+        "SLV",
+        "ALB",
+        "MAC",
+        "MNT"
+      ]
+    },
+    {
+      "kind": "third_party",
+      "tag": "MNT"
+    },
+    {
+      "kind": "peace_subject",
+      "tag": "MNT"
+    },
+    {
+      "kind": "already_capitulated",
+      "tag": "MNT"
+    },
+    {
+      "kind": "capital_owned_but_not_controlled",
+      "tag": "MNT"
+    },
+    {
+      "kind": "no_campaign",
+      "tag": "MNT"
+    },
+    {
+      "kind": "guard_proof_duplicate_unrelated_war_recovery",
+      "tag": "MNT"
+    },
+    {
+      "kind": "normal_capitulation_without_capital_event",
+      "tag": "MNT"
+    },
+    {
+      "kind": "no_observer_after_external_peace",
+      "tag": "MNT"
+    },
+    {
+      "kind": "third_party",
+      "tag": "MAC"
+    },
+    {
+      "kind": "peace_subject",
+      "tag": "MAC"
+    },
+    {
+      "kind": "already_capitulated",
+      "tag": "MAC"
+    },
+    {
+      "kind": "capital_owned_but_not_controlled",
+      "tag": "MAC"
+    },
+    {
+      "kind": "no_campaign",
+      "tag": "MAC"
+    },
+    {
+      "kind": "guard_proof_duplicate_unrelated_war_recovery",
+      "tag": "MAC"
+    },
+    {
+      "kind": "normal_capitulation_without_capital_event",
+      "tag": "MAC"
+    },
+    {
+      "kind": "no_observer_after_external_peace",
+      "tag": "MAC"
+    },
+    {
+      "kind": "third_party",
+      "tag": "ALB"
+    },
+    {
+      "kind": "peace_subject",
+      "tag": "ALB"
+    },
+    {
+      "kind": "already_capitulated",
+      "tag": "ALB"
+    },
+    {
+      "kind": "capital_owned_but_not_controlled",
+      "tag": "ALB"
+    },
+    {
+      "kind": "no_campaign",
+      "tag": "ALB"
+    },
+    {
+      "kind": "guard_proof_duplicate_unrelated_war_recovery",
+      "tag": "ALB"
+    },
+    {
+      "kind": "normal_capitulation_without_capital_event",
+      "tag": "ALB"
+    },
+    {
+      "kind": "no_observer_after_external_peace",
+      "tag": "ALB"
+    },
+    {
+      "kind": "third_party",
+      "tag": "SLV"
+    },
+    {
+      "kind": "peace_subject",
+      "tag": "SLV"
+    },
+    {
+      "kind": "already_capitulated",
+      "tag": "SLV"
+    },
+    {
+      "kind": "capital_owned_but_not_controlled",
+      "tag": "SLV"
+    },
+    {
+      "kind": "no_campaign",
+      "tag": "SLV"
+    },
+    {
+      "kind": "guard_proof_duplicate_unrelated_war_recovery",
+      "tag": "SLV"
+    },
+    {
+      "kind": "normal_capitulation_without_capital_event",
+      "tag": "SLV"
+    },
+    {
+      "kind": "no_observer_after_external_peace",
+      "tag": "SLV"
+    },
+    {
+      "kind": "third_party",
+      "tag": "CRO"
+    },
+    {
+      "kind": "peace_subject",
+      "tag": "CRO"
+    },
+    {
+      "kind": "already_capitulated",
+      "tag": "CRO"
+    },
+    {
+      "kind": "capital_owned_but_not_controlled",
+      "tag": "CRO"
+    },
+    {
+      "kind": "no_campaign",
+      "tag": "CRO"
+    },
+    {
+      "kind": "guard_proof_duplicate_unrelated_war_recovery",
+      "tag": "CRO"
+    },
+    {
+      "kind": "normal_capitulation_without_capital_event",
+      "tag": "CRO"
+    },
+    {
+      "kind": "no_observer_after_external_peace",
+      "tag": "CRO"
+    },
+    {
+      "kind": "final_missing_subject",
+      "tag": "MNT"
+    },
+    {
+      "kind": "final_missing_subject",
+      "tag": "MAC"
+    },
+    {
+      "kind": "final_missing_subject",
+      "tag": "ALB"
+    },
+    {
+      "kind": "final_missing_subject",
+      "tag": "SLV"
+    },
+    {
+      "kind": "final_missing_subject",
+      "tag": "CRO"
+    },
+    {
+      "kind": "preserve_native_major_and_unrelated_serbian_war"
+    }
+  ],
+  "capital_capture_forces_capitulation": false,
+  "target_autonomy": "autonomy_puppet, freedom 0.5, end_wars yes, end_civil_wars no",
+  "engine_acceptance": "NOT RUN: user reserved gameplay. Engine restoration, AI calls, peace conference order, rendering and save serialization require in-game testing. Model uses documented target-only war cancellation; normal combat casualties are not simulated.",
+  "version": "0.13.0"
+}

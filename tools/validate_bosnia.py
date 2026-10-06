@@ -34,7 +34,7 @@ class BosniaModel(CampaignModel):
         super().__init__(scripts)
         self.mod=mod;self.scripts=scripts;self.day=0;self.queue=[];self.delivered=[];self.military=0;self.timed=[];self.stock=Counter();self.units=[];self.progress=0
         self.event_ast={get(v,'id'):v for p,ast in scripts.items() if p.startswith('events/MSGA_') for k,_,v in ast if k=='country_event'}
-        self.subjects={};self.technologies=set();self.release_succeeds=True;self.faction_leader={'NATO':'USA'};self.flag_dates={}
+        self.subjects={};self.rules={};self.technologies=set();self.release_succeeds=True;self.faction_leader={'NATO':'USA'};self.flag_dates={}
         for c in ['BOS','SRP','HRZ','SOV','PRC','ARM']:
             self.flags[c]=set();self.ideas[c]=set();self.factions[c]=None
         self.exists.update(['BOS','SOV','PRC','ARM']);self.exists.discard('SRP')
@@ -51,7 +51,9 @@ class BosniaModel(CampaignModel):
                 ok=all(parts) if k=='AND' else any(parts) if k=='OR' else not any(parts)
             elif k in self.flags:ok=self.condition(v,k)
             elif k.isdigit():ok=self.condition(v,int(k))
+            elif k=='owner':ok=self.condition(v,self.states[scope])
             elif k=='MSGA_native_balkan_story_allowed':ok='MSGA_campaign_active' not in self.flags['SER']
+            elif k=='has_rule':ok=self.rules.get(scope,{}).get(v)=='yes'
             elif k=='has_war':ok=any(scope in w for w in self.wars)==(v=='yes')
             elif k=='is_subject':ok=(scope in self.subjects)==(v=='yes')
             elif k=='is_subject_of':ok=self.subjects.get(scope)==v
@@ -100,6 +102,11 @@ class BosniaModel(CampaignModel):
             elif k=='set_autonomy':
                 assert get(v,'autonomy_state')=='autonomy_puppet'
                 self.subjects[get(v,'target')]=scope
+            elif k in ('set_rule','clear_rule'):
+                for name,_,value in v:
+                    if name=='desc':continue
+                    if k=='set_rule':self.rules.setdefault(scope,{})[name]=value
+                    else:self.rules.setdefault(scope,{}).pop(name,None)
             elif k=='set_technology':self.technologies.update(a for a,_,b in v if b=='1')
             elif k=='white_peace':self.wars.discard(frozenset((scope,v)))
             elif k=='transfer_state':
@@ -291,10 +298,17 @@ def main():
     assert war_model.trace.index(('faction_member','SRP'))<war_model.trace.index(('join','SER','SRP','BOS'))
     war_model.execute(parse('MSGA_settle_bosnia = yes'));assert not war_model.subjects
     war_model.capitulated.add('BOS');war_model.wars.add(frozenset(('SER','GER')))
+    # Capitulation alone is not a conference outcome. Preserve unrelated war.
+    war_model.execute(parse('MSGA_settle_bosnia = yes'));assert not war_model.subjects
+    war_model.wars={frozenset(('SER','GER'))};war_model.subjects['BOS']='SER'
+    war_model.execute(parse('MSGA_settle_bosnia = yes'));assert war_model.subjects=={'BOS':'SER'}
+    assert war_model.wars=={frozenset(('SER','GER'))}
+    # External peace/conference inputs precede the existing three-client settlement.
+    war_model.wars.clear()
     war_model.execute(parse('MSGA_settle_bosnia = yes'));war_model.execute(parse('MSGA_settle_bosnia = yes'))
     assert war_model.subjects=={'BOS':'SER','HRZ':'SER','SRP':'SER'}
     assert war_model.states[104]=='BOS' and war_model.states[851]=='HRZ' and all(war_model.states[s]=='SRP' for s in [848,849,850])
-    assert war_model.wars=={frozenset(('SER','GER'))} and 'MSGA_SRP_last_stand' not in war_model.ideas['SRP']
+    assert not war_model.wars and 'MSGA_SRP_last_stand' not in war_model.ideas['SRP']
     settled_day=war_model.day;war_model.advance(99);assert not any(id=='MSGA_postbosnia.12' for _,_,id in war_model.delivered)
     war_model.advance(1);assert [(d,c) for d,c,id in war_model.delivered if id=='MSGA_postbosnia.12']==[(settled_day+100,'SER')]
     import copy

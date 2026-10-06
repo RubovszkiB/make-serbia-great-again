@@ -2,6 +2,7 @@
 from pathlib import Path
 import argparse,copy,hashlib,itertools,json,math,re,subprocess,zipfile
 from PIL import Image
+from validation_history import expected_hash, check_current_art, approved_script
 from validate_phase1 import ROOT,parse,get,descend
 from validate_pact_war import WarModel,COUNTRIES
 from validate_encirclement import EncirclementModel
@@ -117,13 +118,16 @@ def main():
  scripts={p.relative_to(mod).as_posix():parse(p.read_text(encoding='utf-8-sig')) for p in mod.rglob('*') if p.suffix in ('.txt','.gfx')}
  sources=json.loads((ROOT/'docs/new_order_sources.json').read_text());changed=set(sources['changed_relative_paths'])
  for path,digest in sources['baseline_sha256'].items():
-  if path not in changed:assert hashlib.sha256((mod/path).read_bytes()).hexdigest()==digest,path
+  if path not in changed:assert hashlib.sha256((mod/path).read_bytes()).hexdigest()==expected_hash(path,digest),path
  for path,digest in sources['native_sources_sha256'].items():assert hashlib.sha256((TFR/path).read_bytes()).hexdigest()==digest,path
  cats='common/decisions/categories/MSGA_SER_categories.txt';pact='common/scripted_effects/MSGA_pact_war_effects.txt'
  prior=lambda p:parse(subprocess.check_output(['git','show','26a1e41:make_serbia_great_again/'+p],cwd=ROOT).decode('utf-8-sig'))
  assert scripts[cats][:-1]==prior(cats) and scripts[cats][-1][0]=='MSGA_consolidate_the_serbian_sphere'
  def unhook(body):return [(k,o,unhook(v) if isinstance(v,list) else v) for k,o,v in body if k!='MSGA_schedule_new_order_victory']
- assert unhook(scripts[pact])==prior(pact)
+ if approved_script(pact):
+  assert hashlib.sha256((mod/pact).read_bytes()).hexdigest()==expected_hash(pact,'')
+  assert [x for x in unhook(scripts[pact]) if x[0]!='MSGA_handle_pact_capitulation']==[x for x in prior(pact) if x[0]!='MSGA_handle_pact_capitulation']
+ else:assert unhook(scripts[pact])==prior(pact)
  encirclement='common/scripted_effects/MSGA_encirclement_effects.txt'
  guarded=copy.deepcopy(scripts[encirclement]);opening=get(get(guarded,'MSGA_open_pact_planning'),'if');limit=get(opening,'limit')
  assert limit.count(('NOT','=',parse('has_country_flag = MSGA_balkan_war_victory')))==1
@@ -174,6 +178,7 @@ def main():
  with zipfile.ZipFile(sources['package']) as z:
   assert (mod/'interface/MSGA_new_balkan_order_assets.gfx').read_bytes()==z.read(next(n for n in z.namelist() if n.endswith('/interface/MSGA_new_balkan_order_assets.gfx')))
   for path,record in sources['assets'].items():
+   if check_current_art(mod/path,path):continue
    data=(mod/path).read_bytes();assert data==z.read(record['zip_member']);assert hashlib.sha256(data).hexdigest()==record['sha256']
    with Image.open(mod/path) as image:assert list(image.size)==record['size'];image.load()
  assert len(sources['assets'])==30

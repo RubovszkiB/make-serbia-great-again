@@ -27216,6 +27216,9 @@ on_actions = {
 on_actions = {
 	on_capitulation_immediate = { #Only on_capitulation_immediate can make transfer_navy take effect
 		effect = {
+			# MSGA: settle before vanilla processes surrender or opens a conference.
+			if = { limit = { MSGA_pact_capitulation_context = yes } MSGA_handle_pact_capitulation = yes }
+			else = {
 			if = {
 				# America kill USN
 				limit = {
@@ -27391,6 +27394,8 @@ on_actions = {
 			#Братан я тоже НИХУЯ не ебу!!!! ЧТО ЗА ХУЙНЯ???? ~ Wood
 			
 			clr_global_flag = skip_default_capitulation
+		
+			}
 		}
 	}
 }

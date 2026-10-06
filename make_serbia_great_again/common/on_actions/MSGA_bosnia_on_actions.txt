@@ -1,9 +1,10 @@
 on_actions = {
- on_capitulation_immediate = { effect = { if = { limit = { ROOT = { tag = BOS } FROM = { OR = { tag = SER tag = SRP } } SER = { has_country_flag = MSGA_bosnia_intervened } } SER = { set_country_flag = MSGA_bosnia_defeated MSGA_settle_bosnia = yes } } } }
+ on_capitulation_immediate = { effect = { if = { limit = { ROOT = { tag = BOS } FROM = { OR = { tag = SER tag = SRP is_subject_of = SER } } SER = { has_country_flag = MSGA_bosnia_intervened } } SER = { set_country_flag = MSGA_bosnia_defeated } } } }
  on_state_control_changed = { effect = { SER = { MSGA_settle_bosnia = yes } } }
-
- on_startup = { effect = { SER = { MSGA_resume_bosnia_systems = yes } } }
- on_weekly = { effect = { if = { limit = { tag = SER has_country_flag = MSGA_bosnia_story_active } MSGA_recover_bosnia_chain = yes MSGA_settle_bosnia = yes MSGA_cleanup_bosnia_war_modifiers = yes } } }
- on_peace = { effect = { SER = { MSGA_cleanup_bosnia_war_modifiers = yes } } }
- on_peaceconference_ended = { effect = { SER = { MSGA_cleanup_bosnia_war_modifiers = yes } } }
+ on_startup = { effect = { SER = { MSGA_update_campaign_puppet_rule = yes MSGA_resume_bosnia_systems = yes MSGA_settle_bosnia = yes MSGA_open_post_bosnia = yes } } }
+ on_weekly = { effect = { if = { limit = { tag = SER } MSGA_update_campaign_puppet_rule = yes if = { limit = { has_country_flag = MSGA_bosnia_story_active } MSGA_recover_bosnia_chain = yes MSGA_settle_bosnia = yes MSGA_open_post_bosnia = yes MSGA_cleanup_bosnia_war_modifiers = yes } } } }
+ on_war = { effect = { SER = { MSGA_update_campaign_puppet_rule = yes } } }
+ on_peaceconference_started = { effect = { SER = { MSGA_update_campaign_puppet_rule = yes } } }
+ on_peace = { effect = { SER = { MSGA_settle_bosnia = yes MSGA_open_post_bosnia = yes MSGA_cleanup_bosnia_war_modifiers = yes MSGA_update_campaign_puppet_rule = yes } } }
+ on_peaceconference_ended = { effect = { SER = { MSGA_settle_bosnia = yes MSGA_open_post_bosnia = yes MSGA_cleanup_bosnia_war_modifiers = yes MSGA_update_campaign_puppet_rule = yes } } }
 }

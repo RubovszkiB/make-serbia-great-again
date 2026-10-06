@@ -1,0 +1,320 @@
+{
+  "date": "2026-10-06",
+  "scripts": {
+    "common/on_actions/MSGA_bosnia_on_actions.txt": "119819cfbf465cf9180882628d404458965d4feabbe0dd4ece13d877a873660c",
+    "common/on_actions/TFR_on_actions_ZZZ_peace.txt": "b9ff9f24e45fe93b9f02c78c2296ebf35c6bbcd0dc8ad4ca945b815730a1186e",
+    "common/scripted_effects/MSGA_bosnia_effects.txt": "2d9ee8525df96342d0fa3eb41d16e1f069063a4dfeb26e31fde3afea04a15a31",
+    "common/scripted_effects/MSGA_pact_war_effects.txt": "bab4ff89f17ebc7436bffda7a20d581e451924b5accd71135a7b034ceb8a963f",
+    "common/scripted_effects/MSGA_post_bosnia_effects.txt": "7d1c9f0bd47b88d966feeee415accd243fd55365cde0b3076c427b5b14895b37",
+    "common/scripted_triggers/MSGA_pact_war_triggers.txt": "c0c932c5156b3968ff07de9ca7579bec0baa12037e6c0c38d8487d0900c7fc2f"
+  },
+  "visuals": {
+    "gfx/event_pictures/MSGA_event_the_ljubljana_protocol.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/events_474x178/MSGA_event_the_ljubljana_protocol.dds",
+      "sha256": "1d3eccc990c4c7904ddc7e3be87f72f2b7dc5c2119204634b3e421780575f450",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_the_south_slavic_question_returns.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/events_474x178/MSGA_event_the_south_slavic_question_returns.dds",
+      "sha256": "2b5385db82424f29cf841920d1557ea24a2f92bd0f4c44f5b583d426a542500a",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_the_conference_of_belgrade.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/events_474x178/MSGA_event_the_conference_of_belgrade.dds",
+      "sha256": "90c1e504f0756f7a21411fbc627c1d65022f96cf5cf4004c0b2140ef11964ce7",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_the_zagreb_accords.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/events_474x178/MSGA_event_the_zagreb_accords.dds",
+      "sha256": "d7bea579697a30e3715de6f112f7c41a54bd543fdba1dc72dd1e9c6cfad964e5",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_the_balkans_stabilise.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/events_474x178/MSGA_event_the_balkans_stabilise.dds",
+      "sha256": "8f18963f3670312c54079d44ee26d60cc7ab396a49472167810a25c2f45232a6",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_the_tirana_arrangement.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/events_474x178/MSGA_event_the_tirana_arrangement.dds",
+      "sha256": "ab0a1925f3273f3196f89e4b71bb69a5703e516e7000a091cec1ba72413891a3",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_the_sarajevo_framework.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/events_474x178/MSGA_event_the_sarajevo_framework.dds",
+      "sha256": "feb06415a1cd515ec76e189e3a339cff0fe12453f8c56f664c5da286f0f8ed14",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_the_new_balkan_order.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/events_474x178/MSGA_event_the_new_balkan_order.dds",
+      "sha256": "886037614b9df8975811474c2b59192fa949ae2a9cb51428ce6637dc8581dbc6",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_the_skopje_agreement.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/events_474x178/MSGA_event_the_skopje_agreement.dds",
+      "sha256": "2e79f7df7fad4c828718b3899045cb67fab840594921ba2129d6f12d718f442a",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_the_podgorica_settlement.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/events_474x178/MSGA_event_the_podgorica_settlement.dds",
+      "sha256": "0de33f73d4d31901b4e62b176e73a3f3d7eabb112999fbff05fed0f347d36774",
+      "size": [
+        474,
+        178
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_stockpile_continental_war.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/focus_95x85/MSGA_focus_stockpile_continental_war.dds",
+      "sha256": "36d3261650fddcf2d498fc58b079076a478e97874f3f6c89296672c43f2148ea",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_consolidate_victory.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/focus_95x85/MSGA_focus_consolidate_victory.dds",
+      "sha256": "09be764752b5135b090aa84e4e9021d6df49d504dcee0c197153685a2862eee0",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_coordinate_protectorates.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/focus_95x85/MSGA_focus_coordinate_protectorates.dds",
+      "sha256": "adaa629793d12c6ef86c487c3ebc8b8b7618824441497fe531e4b53f02a9bdf3",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_economic_heart_balkans.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/focus_95x85/MSGA_focus_economic_heart_balkans.dds",
+      "sha256": "82c559f1c4a88594fe4cb06680a11997d5b3cb4ce5070aeeebe3fcd071a1f493",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_call_up_reserves.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/focus_95x85/MSGA_focus_call_up_reserves.dds",
+      "sha256": "85e30f2676772e0d41babc6e4286cee8d71eff59a3e5e34db74e10ade55d37db",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_serbian_sphere.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/focus_95x85/MSGA_focus_serbian_sphere.dds",
+      "sha256": "8ab3a55836a780169b1798e1c2e5434569a82af46e64d4045a2eedc69d0d1557",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_rebuild_the_west.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/focus_95x85/MSGA_focus_rebuild_the_west.dds",
+      "sha256": "e3d04869801c8a3ba1bdd02d8b37d052fe8440405646342241d327dc0e856581",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_prepare_western_front.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/focus_95x85/MSGA_focus_prepare_western_front.dds",
+      "sha256": "9c6184bc73605c88e2ccef8010f199007040dfe0e83f7c672447530a552a650e",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_pressure_skopje.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/focus_95x85/MSGA_focus_pressure_skopje.dds",
+      "sha256": "c55bbacf3dbb5e445e2448ebc4e348c042449fe26eb072775b299c24b449b26a",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_pressure_podgorica.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/focus_95x85/MSGA_focus_pressure_podgorica.dds",
+      "sha256": "1e587b5e1162c7324ff77f1df797479eb867580ea4a50a4343a197795c9b42ed",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_arm_new_serbian_sphere.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/focus_95x85/MSGA_focus_arm_new_serbian_sphere.dds",
+      "sha256": "ab44b8aef850de53ad6021a5ea97677a3ad9f9b0dbaae13be6df1f4f76a5fc4e",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_lessons_bosnian_war.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/focus_95x85/MSGA_focus_lessons_bosnian_war.dds",
+      "sha256": "05ccd540f6443b3f1cce82b1fec1e1671c4256621b0e965e476a27e4f23c3e67",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_serbian_industrial_consolidation.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/focus_95x85/MSGA_focus_serbian_industrial_consolidation.dds",
+      "sha256": "b8335fdb203f8b39ea387549b3ec9e5c38855523780aa3c6f2f9e359a9f98bbf",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_break_the_ring.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/focus_95x85/MSGA_focus_break_the_ring.dds",
+      "sha256": "b7d4e5c3ba6e901be67dadb5facf806b72c3fa8a0822661efd58d9a73c75e8db",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_balkans_close_ranks.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/focus_95x85/MSGA_focus_balkans_close_ranks.dds",
+      "sha256": "cc82d37dfafc9ca486b849cdb61d8e1b5ea241821baa66d533a3c406f5d37679",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_new_serbian_era.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/focus_95x85/MSGA_focus_new_serbian_era.dds",
+      "sha256": "3d65d8c7d7a99c33aa58ef92acaa3fce7408d601701e72d34659f6192162dcb1",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_repair_war_economy.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/focus_95x85/MSGA_focus_repair_war_economy.dds",
+      "sha256": "d40c9332648e40dff0c5cc84e912ab90c19e0e5494052d283e8df597c6510d10",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_bind_new_protectorates.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/focus_95x85/MSGA_focus_bind_new_protectorates.dds",
+      "sha256": "c73aa6736492e7372104cf61c9f84faff419934a197b65c62f79cb65f67167ea",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_fortify_kosovo.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/focus_95x85/MSGA_focus_fortify_kosovo.dds",
+      "sha256": "9c1ae1fc0fd1fa09eff1c09a0102431fd354d45eb188e15e5c2598b025f64038",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_serbian_defence_network.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/focus_95x85/MSGA_focus_serbian_defence_network.dds",
+      "sha256": "e71da88e2dbf8a04238b0d55f45b0569fe6dbe0a200a53ec6604045354b73f7e",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_secure_drina_corridor.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/focus_95x85/MSGA_focus_secure_drina_corridor.dds",
+      "sha256": "a091cbca0109f0a22297047be656cd93998b820136beb60c9e6584068dab45fa",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_victory_in_bosnia.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/focus_95x85/MSGA_focus_victory_in_bosnia.dds",
+      "sha256": "f7fccce3bfd64b76bb0cfe0cbafc7f1beea3444d37e5117a68c94a4205b50ddd",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_serbian_war_plan.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/focus_95x85/MSGA_focus_serbian_war_plan.dds",
+      "sha256": "437d9af051c249593e434a31057586c654ddf36a57b235efdb912dde4754aa54",
+      "size": [
+        95,
+        85
+      ]
+    },
+    "gfx/interface/goals/MSGA_focus_prepare_southern_front.dds": {
+      "package": "C:\\Users\\Balazs\\Downloads\\MSGA_TFR_regenerated_visuals_v2.zip",
+      "zip_member": "MSGA_TFR_regenerated_visuals_v2/dds_ready/focus_95x85/MSGA_focus_prepare_southern_front.dds",
+      "sha256": "757edefb8b7ecc62f2ebf358b123d096def94328688e0550fd80a3f51e5c0e18",
+      "size": [
+        95,
+        85
+      ]
+    }
+  },
+  "reason": "Previously authorized local peace-flow corrections and 34 exact regenerated visual replacements; historical source records preserved."
+}

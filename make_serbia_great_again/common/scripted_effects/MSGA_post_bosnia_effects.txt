@@ -1,6 +1,6 @@
 # All effects are scoped to Serbia; the settlement flag owns chapter progression.
 MSGA_open_post_bosnia = {
- if = { limit = { tag = SER has_country_flag = MSGA_bosnia_settlement_done NOT = { has_country_flag = MSGA_post_bosnia_started } }
+ if = { limit = { tag = SER has_country_flag = MSGA_bosnia_settlement_done NOT = { has_country_flag = MSGA_encirclement_started } NOT = { has_country_flag = MSGA_balkan_war_victory } OR = { NOT = { has_country_flag = MSGA_post_bosnia_started } NOT = { has_focus_tree = MSGA_SER_post_bosnia } } }
   set_country_flag = MSGA_post_bosnia_started set_country_flag = MSGA_post_bosnia_active
   clr_country_flag = MSGA_bosnian_crisis_active
   load_focus_tree = { tree = MSGA_SER_post_bosnia keep_completed = yes }

@@ -7,6 +7,7 @@ import subprocess
 from collections import Counter
 import argparse
 from PIL import Image
+from validation_history import check_current_art
 
 ROOT = Path(__file__).resolve().parents[1]
 MOD = ROOT / "make_serbia_great_again"
@@ -314,6 +315,7 @@ def main():
         new_sources = ROOT / 'docs/post_bosnia_sources.json'
         supplied_new = json.loads(new_sources.read_text())['assets'] if new_sources.exists() else {}
         relative = texture.relative_to(MOD).as_posix()
+        if check_current_art(texture, relative):continue
         order_sources = ROOT / 'docs/new_order_sources.json'
         supplied_order = json.loads(order_sources.read_text())['assets'] if order_sources.exists() else {}
         if relative in supplied_order:
@@ -367,7 +369,7 @@ def main():
         reference = Image.open(source).convert('RGBA')
         assert image.size == reference.size
         assert image.tobytes() == reference.tobytes()
-    categories = [k for k, _, _ in scripts['common/decisions/categories/MSGA_SER_categories.txt']]
+    categories = [k for p, ast in scripts.items() if p.startswith('common/decisions/categories/') for k, _, _ in ast]
     unique(categories, 'Category')
     decisions = []
     for p, ast in scripts.items():
@@ -441,6 +443,12 @@ def main():
         assert get(b, 'is_triggered_only') == 'yes'
         if id.startswith('MSGA_chronicle.'):
             assert not any(k == 'fire_only_once' for k, _, _ in b)
+        elif id.startswith(('MSGA_econ.', 'MSGA_energy.')):
+            # These milestones use persistent country flags, also guarding
+            # duplicate queued deliveries after loading a save.
+            seen = id.replace('.', '_') + '_seen'
+            assert ('has_country_flag', '=', seen) in get(get(b, 'trigger'), 'NOT')
+            assert ('set_country_flag', '=', seen) in get(b, 'immediate')
         elif get(b, 'id') not in ('MSGA.10', 'MSGA.11', 'MSGA_geopolitics.2', 'MSGA_cleanup.1', 'MSGA_kosovo.21', 'MSGA_kosovo.99', 'MSGA_bosnia.5', 'MSGA_bosnia.6', 'MSGA_bosnia.9', 'MSGA_bosnia.99', 'MSGA_pactwar.90', 'MSGA_neworder.90', 'MSGA_neworder.91'):
             assert get(b, 'fire_only_once') == 'yes'
     major_ids = {'MSGA_belgrade_business', 'MSGA_morava_works', 'MSGA_bor_modernisation',
@@ -468,8 +476,13 @@ def main():
     required += [k + '_desc' for k in ideas + categories + decisions]
     required += [v for k, _, v in all_pairs if k in ('custom_effect_tooltip', 'custom_cost_text', 'title', 'desc', 'name') and isinstance(v, str) and v.startswith('MSGA')]
     assert not set(required) - set(locale_keys), f'Missing localisation {set(required) - set(locale_keys)}'
+    import os
+    native_roots = [Path(os.environ.get('MSGA_TFR_ROOT', r'C:\Program Files (x86)\Steam\steamapps\workshop\content\394360\3350890356')),
+                    Path(r'C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV')]
+    native_locale_keys = {key for root in native_roots for p in (root/'localisation/english').rglob('*.yml')
+                          for key in re.findall(r'^\s*([^\s:#]+):(?:\d+)?\s*"', p.read_text(encoding='utf-8-sig', errors='replace'), re.M)}
     for key in re.findall(r'\$([^$\s]+)\$', locale):
-        assert key in locale_keys, f'Unresolved localisation substitution {key}'
+        assert key in locale_keys or key in native_locale_keys, f'Unresolved localisation substitution {key}'
     baseline_locale = subprocess.check_output(['git', 'show', '38d855e:make_serbia_great_again/localisation/english/MSGA_l_english.yml'], cwd=ROOT).decode('utf-8-sig')
     for focus in [get(f, 'id') for f in baseline]:
         pattern = rf'^\s*{focus}:\d\s+"(.*)"\s*$'

@@ -7,6 +7,8 @@ combat, peace conferences, AI calls, country restoration and save UI need HOI4.
 from pathlib import Path
 import argparse,copy,hashlib,itertools,json,math,re,subprocess,zipfile
 from PIL import Image
+from validation_history import expected_hash
+from validate_bosnia import strip_guards
 from validate_phase1 import ROOT,parse,get,descend,unique
 from validate_bosnia import TFR,GAME
 from validate_encirclement import EncirclementModel
@@ -20,7 +22,7 @@ class WarModel(EncirclementModel):
   self.callback_root='MNT';self.callback_from='SER'
   self.rules={c:{} for c in self.flags};self.technology={c:set() for c in self.flags}
   self.metrics={c:{'stability':0.,'support':0.,'xp':0.} for c in self.flags}
-  self.expirations={};self.native_fallbacks=0
+  self.expirations={};self.native_fallbacks=0;self.global_flags=set()
   self.idea_ast={k:v for p,a in scripts.items() if p.startswith('common/ideas/') for _,_,b in a for _,_,d in b for k,_,v in d}
   self.faction_leader['MSGA_zagreb_tirana_pact']='CRO';self.faction_leader['MSGA_serbian_alliance']='SER'
   for c in TAGS:self.factions[c]='MSGA_zagreb_tirana_pact'
@@ -56,6 +58,8 @@ class WarModel(EncirclementModel):
    elif k in ('add_stability','add_war_support','army_experience'):
     field={'add_stability':'stability','add_war_support':'support','army_experience':'xp'}[k]
     self.metrics[scope][field]+=float(v)
+   elif k=='set_global_flag':self.global_flags.add(v)
+   elif k=='clr_global_flag':self.global_flags.discard(v)
    elif k=='set_country_flag' and isinstance(v,list):
     name=get(v,'flag');self.flags[scope].add(name);self.flag_dates[(scope,name)]=self.day
    elif k=='set_faction_leader':
@@ -117,9 +121,13 @@ def main():
  scripts={p.relative_to(mod).as_posix():parse(p.read_text(encoding='utf-8-sig')) for p in mod.rglob('*') if p.suffix in ('.txt','.gfx')}
  sources=json.loads((ROOT/'docs/pact_war_sources.json').read_text())
  original=subprocess.check_output(['git','show','d87f5c9:make_serbia_great_again/'+PEACE],cwd=ROOT).decode('utf-8-sig')
- assert scripts[PEACE]==parse(wrap_native(original)),'Native peace handler changed outside the exact narrow wrapper'
+ assert strip_guards(scripts[PEACE])==strip_guards(parse(original)),'Native peace handler changed outside approved callback wrappers'
+ assert hashlib.sha256((mod/PEACE).read_bytes()).hexdigest()==expected_hash(PEACE,'')
  handler=get(scripts['common/scripted_effects/MSGA_pact_war_effects.txt'],'MSGA_handle_pact_capitulation')
- assert handler[0]==parse('if = { limit = { NOT = { has_country_flag = MSGA_pact_real_capitulation } } set_country_flag = MSGA_pact_real_capitulation }')[0]
+ assert parse('if = { limit = { NOT = { has_country_flag = MSGA_pact_real_capitulation } } set_country_flag = MSGA_pact_real_capitulation }')[0] in handler
+ if handler[0][0]=='set_global_flag':
+  assert handler[0]==handler[-1]==('set_global_flag','=','skip_default_capitulation')
+  assert ('MSGA_finish_pact_campaign','=','yes') in descend(handler)
  assert hashlib.sha256((TFR/PEACE).read_bytes()).hexdigest()==sources['native_guard_override']['upstream_sha256']
  # All pre-existing files except the two documented script hooks and descriptors are byte-identical.
  allowed=set(sources['changed_relative_paths'])
@@ -127,7 +135,7 @@ def main():
   if path=='common/decisions/categories/MSGA_SER_categories.txt' and 'common/scripted_triggers/MSGA_new_order_triggers.txt' in scripts:
    old=parse(subprocess.check_output(['git','show','26a1e41:make_serbia_great_again/'+path],cwd=ROOT).decode('utf-8-sig'))
    assert scripts[path][:-1]==old and scripts[path][-1][0]=='MSGA_consolidate_the_serbian_sphere'
-  elif path not in allowed:assert hashlib.sha256((mod/path).read_bytes()).hexdigest()==digest,path
+  elif path not in allowed:assert hashlib.sha256((mod/path).read_bytes()).hexdigest()==expected_hash(path,digest),path
  before_effect=parse(subprocess.check_output(['git','show','d87f5c9:make_serbia_great_again/common/scripted_effects/MSGA_encirclement_effects.txt'],cwd=ROOT).decode('utf-8-sig'))
  new_effect=copy.deepcopy(scripts['common/scripted_effects/MSGA_encirclement_effects.txt'])
  def remove_calls(body):
@@ -262,7 +270,10 @@ def main():
    cases.append({'kind':negative,'tag':tag})
   m=WarModel(scripts,mod);m.provinces[province]='SER';effect(m,'MSGA_scan_pact_capitals');effect(m,'MSGA_retry_pact_settlements')
   assert not flags(m) and tag not in m.subjects,'Capital control is not surrender proof'
-  m.callback(tag);assert m.native_fallbacks==1 and not flags(m),'Callback without has_capitulated must not settle'
+  # Capital observation is not an event input; actual immediate callbacks may
+  # arrive before the engine's has_capitulated boolean is updated.
+  early=copy.deepcopy(m);early.callback(tag);assert early.subjects[tag]=='SER' and 'skip_default_capitulation' in early.global_flags
+  m.callback('BOS');assert m.native_fallbacks==1 and not flags(m),'Unrelated capitulation must use native handler'
   m.capitulated.add(tag);m.callback(tag,'GER');assert not flags(m) and m.native_fallbacks==2,'Third-party victor must use native handler'
   m.wars.add(frozenset(('USA','GER')));cap(m,tag);assert frozenset(('USA','GER')) in m.wars
   recorded=m.flag_dates[(tag,'MSGA_pact_real_capitulation')];m.advance(1);m.callback(tag)

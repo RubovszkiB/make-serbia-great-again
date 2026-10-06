@@ -1,0 +1,75 @@
+{
+  "validation": "passed",
+  "validated_mod_root": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
+  "categories": [
+    "MSGA_serbian_economic_cooperation",
+    "MSGA_serbian_energy_development"
+  ],
+  "projects": 19,
+  "repeatable_programmes": 18,
+  "milestones": 8,
+  "provided_art_DDS": 68,
+  "repeatable_timing_days": [
+    180,
+    70,
+    250
+  ],
+  "starting_states": [
+    45,
+    107,
+    108,
+    1296
+  ],
+  "mining_rewards_each": {
+    "steel": 3,
+    "tungsten": 2
+  },
+  "maximum_scripted_energy_buildings": {
+    "power_plant": 2,
+    "energy_farm": 2,
+    "nuclear_reactor": 2
+  },
+  "existing_campaign_hashes_preserved": 320,
+  "modeled_cases": [
+    "Repeatable: industrial_efficiency_programme",
+    "Repeatable: subsidise_serbian_manufacturers",
+    "Repeatable: infrastructure_investment_programme",
+    "Repeatable: support_serbian_businesses",
+    "Repeatable: chinese_industrial_cooperation",
+    "Repeatable: chinese_mining_expertise",
+    "Repeatable: chinese_infrastructure_cooperation",
+    "Repeatable: chinese_technology_transfer",
+    "Repeatable: russian_energy_cooperation",
+    "Repeatable: russian_heavy_industry_cooperation",
+    "Repeatable: russian_technological_assistance",
+    "Repeatable: european_development_grants",
+    "Repeatable: european_industrial_standards",
+    "Repeatable: european_technology_partnership",
+    "Repeatable: european_business_cooperation",
+    "Repeatable: chinese_renewable_technology_transfer",
+    "Repeatable: renewable_energy_subsidies",
+    "Repeatable: russian_nuclear_technical_assistance",
+    "One-time/cancellation: expand_bor_mining_complex",
+    "One-time/cancellation: develop_jadar_mining_project",
+    "One-time/cancellation: serbian_mineral_processing_expansion",
+    "One-time/cancellation: central_serbian_industrial_park",
+    "One-time/cancellation: southern_serbian_industrial_development",
+    "One-time/cancellation: morava_logistics_development",
+    "One-time/cancellation: modernise_serbian_power_grid",
+    "One-time/cancellation: modernise_nikola_tesla_complex",
+    "One-time/cancellation: expand_kostolac_energy_complex",
+    "One-time/cancellation: upgrade_djerdap_power_system",
+    "One-time/cancellation: develop_bor_renewable_complex",
+    "One-time/cancellation: expand_bor_renewable_complex",
+    "One-time/cancellation: establish_serbian_solar_manufacturing",
+    "One-time/cancellation: develop_grid_scale_storage",
+    "One-time/cancellation: seek_russian_nuclear_expertise",
+    "One-time/cancellation: establish_serbian_nuclear_programme",
+    "One-time/cancellation: train_serbian_nuclear_workforce",
+    "One-time/cancellation: first_serbian_nuclear_power_plant",
+    "One-time/cancellation: expand_serbian_nuclear_programme"
+  ],
+  "native_exclusivity": "Kostolac/Bor alternatives tested in both orders",
+  "cancellation": "Ownership/control loss returns costs without rewards; permits retry",
+  "engine_acceptance": "NOT RUN: user reserved the game test; no game window or save was touched."
+}

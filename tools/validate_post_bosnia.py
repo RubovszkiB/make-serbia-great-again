@@ -14,6 +14,7 @@ import re
 import subprocess
 import zipfile
 from PIL import Image
+from validation_history import check_current_art
 from validate_phase1 import ROOT, parse, get, descend, unique
 from validate_bosnia import BosniaModel, TFR, GAME
 
@@ -145,6 +146,9 @@ def main():
     with zipfile.ZipFile(sources['package']) as supplied:
         assert hashlib.sha256(Path(sources['package']).read_bytes()).hexdigest()==sources['package_sha256']
         for rel,record in sources['assets'].items():
+            if check_current_art(mod/rel,rel):
+                assert rel in used_assets
+                continue
             data=(mod/rel).read_bytes();assert data==supplied.read(record['package_entry'])
             if rel.endswith('.dds'):
                 assert rel in used_assets
@@ -193,6 +197,8 @@ def main():
         m.factions['SER']='MSGA_serbian_alliance';m.faction_leader['MSGA_serbian_alliance']='SER'
         m.units=[('SRP','Native Srpska Guard',6983)]
         m.templates[('SRP','Native Srpska Guard')]=parse('name = "Native Srpska Guard" regiments = { militia = { x = 0 y = 0 } }')
+        m.execute(parse('MSGA_settle_bosnia = yes'));assert 'MSGA_bosnia_settlement_done' not in m.flags['SER']
+        m.wars.clear();m.subjects['BOS']='SER' # external conference-created subject
         m.execute(parse('MSGA_settle_bosnia = yes'))
         assert m.tree=='MSGA_SER_post_bosnia' and m.subjects=={'BOS':'SER','HRZ':'SER','SRP':'SER'} and not m.wars
         m.execute(parse('MSGA_open_post_bosnia = yes MSGA_settle_bosnia = yes'));assert len([x for x in m.queue if x[2]=='MSGA_postbosnia.12'])==1

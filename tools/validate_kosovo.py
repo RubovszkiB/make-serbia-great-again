@@ -63,6 +63,7 @@ class CampaignModel:
                 return (scope in self.exists) == (v == 'yes')
             if k == 'has_country_flag': return v in self.flags[scope]
             if k == 'has_completed_focus': return v in self.focuses
+            if k == 'has_focus_tree': return getattr(self, 'tree', None) == v
             if k == 'has_war_with': return frozenset((scope, v)) in self.wars
             if k == 'has_capitulated': return (scope in self.capitulated) == (v == 'yes')
             if k == 'controls_province': return v == '14402' and self.pristina == scope

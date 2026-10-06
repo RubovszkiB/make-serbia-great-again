@@ -1,0 +1,2 @@
+MSGA_serbian_economic_cooperation = { icon = GFX_decision_category_MSGA_development_0 allowed = { tag = SER } visible = { MSGA_development_unlocked = yes } visible_when_empty = yes priority = 14 }
+MSGA_serbian_energy_development = { icon = GFX_decision_category_MSGA_development_1 allowed = { tag = SER } visible = { MSGA_development_unlocked = yes } visible_when_empty = yes priority = 13 }

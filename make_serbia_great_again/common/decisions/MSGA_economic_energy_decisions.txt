@@ -1,0 +1,358 @@
+MSGA_serbian_economic_cooperation = {
+MSGA_expand_bor_mining_complex = {
+ icon = GFX_decision_MSGA_expand_bor_mining_complex allowed = { tag = SER }
+ visible = { MSGA_development_unlocked = yes NOT = { has_country_flag = MSGA_done_expand_bor_mining_complex } }
+ available = { MSGA_development_unlocked = yes has_war = no MSGA_eligible_expand_bor_mining_complex = yes  custom_trigger_tooltip = { tooltip = MSGA_development_state_free_tt NOT = { has_country_flag = MSGA_development_state_108_busy } } NOT = { has_country_flag = MSGA_pending_expand_bor_mining_complex } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_5
+ custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
+ days_remove = 120 cancel_if_not_visible = no
+ cancel_trigger = { NOT = { MSGA_eligible_expand_bor_mining_complex = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = { flag = MSGA_pending_expand_bor_mining_complex days = 121 } set_country_flag = { flag = MSGA_development_state_108_busy days = 121 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ remove_effect = { MSGA_finish_expand_bor_mining_complex = yes } cancel_effect = { MSGA_cancel_expand_bor_mining_complex = yes }
+ ai_will_do = { base = 5 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.5 compare = greater_than_or_equals } } } }
+}
+MSGA_develop_jadar_mining_project = {
+ icon = GFX_decision_MSGA_develop_jadar_mining_project allowed = { tag = SER }
+ visible = { MSGA_development_unlocked = yes NOT = { has_country_flag = MSGA_done_develop_jadar_mining_project } }
+ available = { MSGA_development_unlocked = yes has_war = no MSGA_eligible_develop_jadar_mining_project = yes  custom_trigger_tooltip = { tooltip = MSGA_development_state_free_tt NOT = { has_country_flag = MSGA_development_state_1296_busy } } NOT = { has_country_flag = MSGA_pending_develop_jadar_mining_project } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_5
+ custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
+ days_remove = 120 cancel_if_not_visible = no
+ cancel_trigger = { NOT = { MSGA_eligible_develop_jadar_mining_project = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = { flag = MSGA_pending_develop_jadar_mining_project days = 121 } set_country_flag = { flag = MSGA_development_state_1296_busy days = 121 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ remove_effect = { MSGA_finish_develop_jadar_mining_project = yes } cancel_effect = { MSGA_cancel_develop_jadar_mining_project = yes }
+ ai_will_do = { base = 5 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.5 compare = greater_than_or_equals } } } }
+}
+MSGA_serbian_mineral_processing_expansion = {
+ icon = GFX_decision_MSGA_serbian_mineral_processing_expansion allowed = { tag = SER }
+ visible = { MSGA_development_unlocked = yes NOT = { has_country_flag = MSGA_done_serbian_mineral_processing_expansion } }
+ available = { MSGA_development_unlocked = yes has_war = no MSGA_eligible_serbian_mineral_processing_expansion = yes  custom_trigger_tooltip = { tooltip = MSGA_development_state_free_tt NOT = { has_country_flag = MSGA_development_state_1296_busy } } NOT = { has_country_flag = MSGA_pending_serbian_mineral_processing_expansion } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_5
+ custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
+ days_remove = 120 cancel_if_not_visible = no
+ cancel_trigger = { NOT = { MSGA_eligible_serbian_mineral_processing_expansion = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = { flag = MSGA_pending_serbian_mineral_processing_expansion days = 121 } set_country_flag = { flag = MSGA_development_state_1296_busy days = 121 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ remove_effect = { MSGA_finish_serbian_mineral_processing_expansion = yes } cancel_effect = { MSGA_cancel_serbian_mineral_processing_expansion = yes }
+ ai_will_do = { base = 5 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.5 compare = greater_than_or_equals } } } }
+}
+MSGA_central_serbian_industrial_park = {
+ icon = GFX_decision_MSGA_central_serbian_industrial_park allowed = { tag = SER }
+ visible = { MSGA_development_unlocked = yes NOT = { has_country_flag = MSGA_done_central_serbian_industrial_park } }
+ available = { MSGA_development_unlocked = yes has_war = no MSGA_eligible_central_serbian_industrial_park = yes  custom_trigger_tooltip = { tooltip = MSGA_development_state_free_tt NOT = { has_country_flag = MSGA_development_state_1296_busy } } NOT = { has_country_flag = MSGA_pending_central_serbian_industrial_park } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_5
+ custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
+ days_remove = 90 cancel_if_not_visible = no
+ cancel_trigger = { NOT = { MSGA_eligible_central_serbian_industrial_park = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = { flag = MSGA_pending_central_serbian_industrial_park days = 91 } set_country_flag = { flag = MSGA_development_state_1296_busy days = 91 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ remove_effect = { MSGA_finish_central_serbian_industrial_park = yes } cancel_effect = { MSGA_cancel_central_serbian_industrial_park = yes }
+ ai_will_do = { base = 5 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.5 compare = greater_than_or_equals } } } }
+}
+MSGA_southern_serbian_industrial_development = {
+ icon = GFX_decision_MSGA_southern_serbian_industrial_development allowed = { tag = SER }
+ visible = { MSGA_development_unlocked = yes NOT = { has_country_flag = MSGA_done_southern_serbian_industrial_development } }
+ available = { MSGA_development_unlocked = yes has_war = no MSGA_eligible_southern_serbian_industrial_development = yes  custom_trigger_tooltip = { tooltip = MSGA_development_state_free_tt NOT = { has_country_flag = MSGA_development_state_108_busy } } NOT = { has_country_flag = MSGA_pending_southern_serbian_industrial_development } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_5
+ custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
+ days_remove = 90 cancel_if_not_visible = no
+ cancel_trigger = { NOT = { MSGA_eligible_southern_serbian_industrial_development = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = { flag = MSGA_pending_southern_serbian_industrial_development days = 91 } set_country_flag = { flag = MSGA_development_state_108_busy days = 91 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ remove_effect = { MSGA_finish_southern_serbian_industrial_development = yes } cancel_effect = { MSGA_cancel_southern_serbian_industrial_development = yes }
+ ai_will_do = { base = 5 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.5 compare = greater_than_or_equals } } } }
+}
+MSGA_morava_logistics_development = {
+ icon = GFX_decision_MSGA_morava_logistics_development allowed = { tag = SER }
+ visible = { MSGA_development_unlocked = yes NOT = { has_country_flag = MSGA_done_morava_logistics_development } }
+ available = { MSGA_development_unlocked = yes has_war = no MSGA_eligible_morava_logistics_development = yes  custom_trigger_tooltip = { tooltip = MSGA_development_state_free_tt NOT = { has_country_flag = MSGA_development_state_1296_busy } } NOT = { has_country_flag = MSGA_pending_morava_logistics_development } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_4
+ custom_cost_trigger = { check_variable = { var = income_var value = 0.4 compare = greater_than_or_equals } }
+ days_remove = 120 cancel_if_not_visible = no
+ cancel_trigger = { NOT = { MSGA_eligible_morava_logistics_development = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.4 } add_income = yes set_country_flag = { flag = MSGA_pending_morava_logistics_development days = 121 } set_country_flag = { flag = MSGA_development_state_1296_busy days = 121 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ remove_effect = { MSGA_finish_morava_logistics_development = yes } cancel_effect = { MSGA_cancel_morava_logistics_development = yes }
+ ai_will_do = { base = 5 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.4 compare = greater_than_or_equals } } } }
+}
+MSGA_industrial_efficiency_programme = {
+ icon = GFX_decision_MSGA_industrial_efficiency_programme allowed = { tag = SER } visible = { MSGA_development_unlocked = yes }
+ available = { MSGA_development_unlocked = yes has_war = no  NOT = { has_country_flag = MSGA_cooldown_industrial_efficiency_programme } NOT = { has_idea = MSGA_industrial_efficiency_programme } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_2 custom_cost_trigger = { check_variable = { var = income_var value = 0.2 compare = greater_than_or_equals } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.2 } add_income = yes add_timed_idea = { idea = MSGA_industrial_efficiency_programme days = 180 } set_country_flag = { flag = MSGA_cooldown_industrial_efficiency_programme days = 250 } custom_effect_tooltip = MSGA_development_repeatable_tt }
+ ai_will_do = { base = 2 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1 compare = greater_than_or_equals } } } }
+}
+MSGA_subsidise_serbian_manufacturers = {
+ icon = GFX_decision_MSGA_subsidise_serbian_manufacturers allowed = { tag = SER } visible = { MSGA_development_unlocked = yes }
+ available = { MSGA_development_unlocked = yes has_war = no  NOT = { has_country_flag = MSGA_cooldown_subsidise_serbian_manufacturers } NOT = { has_idea = MSGA_subsidise_serbian_manufacturers } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_2 custom_cost_trigger = { check_variable = { var = income_var value = 0.2 compare = greater_than_or_equals } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.2 } add_income = yes add_timed_idea = { idea = MSGA_subsidise_serbian_manufacturers days = 180 } set_country_flag = { flag = MSGA_cooldown_subsidise_serbian_manufacturers days = 250 } custom_effect_tooltip = MSGA_development_repeatable_tt }
+ ai_will_do = { base = 2 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1 compare = greater_than_or_equals } } } }
+}
+MSGA_infrastructure_investment_programme = {
+ icon = GFX_decision_MSGA_infrastructure_investment_programme allowed = { tag = SER } visible = { MSGA_development_unlocked = yes }
+ available = { MSGA_development_unlocked = yes has_war = no  NOT = { has_country_flag = MSGA_cooldown_infrastructure_investment_programme } NOT = { has_idea = MSGA_infrastructure_investment_programme } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_2 custom_cost_trigger = { check_variable = { var = income_var value = 0.2 compare = greater_than_or_equals } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.2 } add_income = yes add_timed_idea = { idea = MSGA_infrastructure_investment_programme days = 180 } set_country_flag = { flag = MSGA_cooldown_infrastructure_investment_programme days = 250 } custom_effect_tooltip = MSGA_development_repeatable_tt }
+ ai_will_do = { base = 2 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1 compare = greater_than_or_equals } } } }
+}
+MSGA_support_serbian_businesses = {
+ icon = GFX_decision_MSGA_support_serbian_businesses allowed = { tag = SER } visible = { MSGA_development_unlocked = yes }
+ available = { MSGA_development_unlocked = yes has_war = no  NOT = { has_country_flag = MSGA_cooldown_support_serbian_businesses } NOT = { has_idea = MSGA_support_serbian_businesses } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_2 custom_cost_trigger = { check_variable = { var = income_var value = 0.2 compare = greater_than_or_equals } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.2 } add_income = yes add_timed_idea = { idea = MSGA_support_serbian_businesses days = 180 } set_country_flag = { flag = MSGA_cooldown_support_serbian_businesses days = 250 } custom_effect_tooltip = MSGA_development_repeatable_tt }
+ ai_will_do = { base = 2 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1 compare = greater_than_or_equals } } } }
+}
+MSGA_chinese_industrial_cooperation = {
+ icon = GFX_decision_MSGA_chinese_industrial_cooperation allowed = { tag = SER } visible = { MSGA_development_unlocked = yes }
+ available = { MSGA_development_unlocked = yes has_war = no PRC = { exists = yes NOT = { has_war_with = SER } } NOT = { has_country_flag = MSGA_cooldown_chinese_industrial_cooperation } NOT = { has_idea = MSGA_chinese_industrial_cooperation } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_2 custom_cost_trigger = { check_variable = { var = income_var value = 0.2 compare = greater_than_or_equals } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.2 } add_income = yes add_timed_idea = { idea = MSGA_chinese_industrial_cooperation days = 180 } set_country_flag = { flag = MSGA_cooldown_chinese_industrial_cooperation days = 250 } custom_effect_tooltip = MSGA_development_repeatable_tt }
+ ai_will_do = { base = 2 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1 compare = greater_than_or_equals } } } }
+}
+MSGA_chinese_mining_expertise = {
+ icon = GFX_decision_MSGA_chinese_mining_expertise allowed = { tag = SER } visible = { MSGA_development_unlocked = yes }
+ available = { MSGA_development_unlocked = yes has_war = no PRC = { exists = yes NOT = { has_war_with = SER } } NOT = { has_country_flag = MSGA_cooldown_chinese_mining_expertise } NOT = { has_idea = MSGA_chinese_mining_expertise } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_2 custom_cost_trigger = { check_variable = { var = income_var value = 0.2 compare = greater_than_or_equals } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.2 } add_income = yes add_timed_idea = { idea = MSGA_chinese_mining_expertise days = 180 } set_country_flag = { flag = MSGA_cooldown_chinese_mining_expertise days = 250 } custom_effect_tooltip = MSGA_development_repeatable_tt }
+ ai_will_do = { base = 2 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1 compare = greater_than_or_equals } } } }
+}
+MSGA_chinese_infrastructure_cooperation = {
+ icon = GFX_decision_MSGA_chinese_infrastructure_cooperation allowed = { tag = SER } visible = { MSGA_development_unlocked = yes }
+ available = { MSGA_development_unlocked = yes has_war = no PRC = { exists = yes NOT = { has_war_with = SER } } NOT = { has_country_flag = MSGA_cooldown_chinese_infrastructure_cooperation } NOT = { has_idea = MSGA_chinese_infrastructure_cooperation } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_2 custom_cost_trigger = { check_variable = { var = income_var value = 0.2 compare = greater_than_or_equals } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.2 } add_income = yes add_timed_idea = { idea = MSGA_chinese_infrastructure_cooperation days = 180 } set_country_flag = { flag = MSGA_cooldown_chinese_infrastructure_cooperation days = 250 } custom_effect_tooltip = MSGA_development_repeatable_tt }
+ ai_will_do = { base = 2 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1 compare = greater_than_or_equals } } } }
+}
+MSGA_chinese_technology_transfer = {
+ icon = GFX_decision_MSGA_chinese_technology_transfer allowed = { tag = SER } visible = { MSGA_development_unlocked = yes }
+ available = { MSGA_development_unlocked = yes has_war = no PRC = { exists = yes NOT = { has_war_with = SER } } NOT = { has_country_flag = MSGA_cooldown_chinese_technology_transfer } NOT = { has_idea = MSGA_chinese_technology_transfer } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_2 custom_cost_trigger = { check_variable = { var = income_var value = 0.2 compare = greater_than_or_equals } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.2 } add_income = yes add_timed_idea = { idea = MSGA_chinese_technology_transfer days = 180 } set_country_flag = { flag = MSGA_cooldown_chinese_technology_transfer days = 250 } custom_effect_tooltip = MSGA_development_repeatable_tt }
+ ai_will_do = { base = 2 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1 compare = greater_than_or_equals } } } }
+}
+MSGA_russian_energy_cooperation = {
+ icon = GFX_decision_MSGA_russian_energy_cooperation allowed = { tag = SER } visible = { MSGA_development_unlocked = yes }
+ available = { MSGA_development_unlocked = yes has_war = no SOV = { exists = yes NOT = { has_war_with = SER } } NOT = { has_country_flag = MSGA_cooldown_russian_energy_cooperation } NOT = { has_idea = MSGA_russian_energy_cooperation } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_2 custom_cost_trigger = { check_variable = { var = income_var value = 0.2 compare = greater_than_or_equals } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.2 } add_income = yes add_timed_idea = { idea = MSGA_russian_energy_cooperation days = 180 } set_country_flag = { flag = MSGA_cooldown_russian_energy_cooperation days = 250 } custom_effect_tooltip = MSGA_development_repeatable_tt }
+ ai_will_do = { base = 2 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1 compare = greater_than_or_equals } } } }
+}
+MSGA_russian_heavy_industry_cooperation = {
+ icon = GFX_decision_MSGA_russian_heavy_industry_cooperation allowed = { tag = SER } visible = { MSGA_development_unlocked = yes }
+ available = { MSGA_development_unlocked = yes has_war = no SOV = { exists = yes NOT = { has_war_with = SER } } NOT = { has_country_flag = MSGA_cooldown_russian_heavy_industry_cooperation } NOT = { has_idea = MSGA_russian_heavy_industry_cooperation } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_2 custom_cost_trigger = { check_variable = { var = income_var value = 0.2 compare = greater_than_or_equals } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.2 } add_income = yes add_timed_idea = { idea = MSGA_russian_heavy_industry_cooperation days = 180 } set_country_flag = { flag = MSGA_cooldown_russian_heavy_industry_cooperation days = 250 } custom_effect_tooltip = MSGA_development_repeatable_tt }
+ ai_will_do = { base = 2 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1 compare = greater_than_or_equals } } } }
+}
+MSGA_russian_technological_assistance = {
+ icon = GFX_decision_MSGA_russian_technological_assistance allowed = { tag = SER } visible = { MSGA_development_unlocked = yes }
+ available = { MSGA_development_unlocked = yes has_war = no SOV = { exists = yes NOT = { has_war_with = SER } } NOT = { has_country_flag = MSGA_cooldown_russian_technological_assistance } NOT = { has_idea = MSGA_russian_technological_assistance } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_2 custom_cost_trigger = { check_variable = { var = income_var value = 0.2 compare = greater_than_or_equals } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.2 } add_income = yes add_timed_idea = { idea = MSGA_russian_technological_assistance days = 180 } set_country_flag = { flag = MSGA_cooldown_russian_technological_assistance days = 250 } custom_effect_tooltip = MSGA_development_repeatable_tt }
+ ai_will_do = { base = 2 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1 compare = greater_than_or_equals } } } }
+}
+MSGA_european_development_grants = {
+ icon = GFX_decision_MSGA_european_development_grants allowed = { tag = SER } visible = { MSGA_development_unlocked = yes }
+ available = { MSGA_development_unlocked = yes has_war = no OR = { GER = { exists = yes NOT = { has_war_with = SER } } ITA = { exists = yes NOT = { has_war_with = SER } } HUN = { exists = yes NOT = { has_war_with = SER } } } NOT = { has_country_flag = MSGA_cooldown_european_development_grants } NOT = { has_idea = MSGA_european_development_grants } }
+ cost = 50
+ complete_effect = { add_timed_idea = { idea = MSGA_european_development_grants days = 180 } set_country_flag = { flag = MSGA_cooldown_european_development_grants days = 250 } custom_effect_tooltip = MSGA_development_repeatable_tt }
+ ai_will_do = { base = 2 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1 compare = greater_than_or_equals } } } }
+}
+MSGA_european_industrial_standards = {
+ icon = GFX_decision_MSGA_european_industrial_standards allowed = { tag = SER } visible = { MSGA_development_unlocked = yes }
+ available = { MSGA_development_unlocked = yes has_war = no OR = { GER = { exists = yes NOT = { has_war_with = SER } } ITA = { exists = yes NOT = { has_war_with = SER } } HUN = { exists = yes NOT = { has_war_with = SER } } } NOT = { has_country_flag = MSGA_cooldown_european_industrial_standards } NOT = { has_idea = MSGA_european_industrial_standards } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_2 custom_cost_trigger = { check_variable = { var = income_var value = 0.2 compare = greater_than_or_equals } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.2 } add_income = yes add_timed_idea = { idea = MSGA_european_industrial_standards days = 180 } set_country_flag = { flag = MSGA_cooldown_european_industrial_standards days = 250 } custom_effect_tooltip = MSGA_development_repeatable_tt }
+ ai_will_do = { base = 2 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1 compare = greater_than_or_equals } } } }
+}
+MSGA_european_technology_partnership = {
+ icon = GFX_decision_MSGA_european_technology_partnership allowed = { tag = SER } visible = { MSGA_development_unlocked = yes }
+ available = { MSGA_development_unlocked = yes has_war = no OR = { GER = { exists = yes NOT = { has_war_with = SER } } ITA = { exists = yes NOT = { has_war_with = SER } } HUN = { exists = yes NOT = { has_war_with = SER } } } NOT = { has_country_flag = MSGA_cooldown_european_technology_partnership } NOT = { has_idea = MSGA_european_technology_partnership } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_2 custom_cost_trigger = { check_variable = { var = income_var value = 0.2 compare = greater_than_or_equals } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.2 } add_income = yes add_timed_idea = { idea = MSGA_european_technology_partnership days = 180 } set_country_flag = { flag = MSGA_cooldown_european_technology_partnership days = 250 } custom_effect_tooltip = MSGA_development_repeatable_tt }
+ ai_will_do = { base = 2 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1 compare = greater_than_or_equals } } } }
+}
+MSGA_european_business_cooperation = {
+ icon = GFX_decision_MSGA_european_business_cooperation allowed = { tag = SER } visible = { MSGA_development_unlocked = yes }
+ available = { MSGA_development_unlocked = yes has_war = no OR = { GER = { exists = yes NOT = { has_war_with = SER } } ITA = { exists = yes NOT = { has_war_with = SER } } HUN = { exists = yes NOT = { has_war_with = SER } } } NOT = { has_country_flag = MSGA_cooldown_european_business_cooperation } NOT = { has_idea = MSGA_european_business_cooperation } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_2 custom_cost_trigger = { check_variable = { var = income_var value = 0.2 compare = greater_than_or_equals } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.2 } add_income = yes add_timed_idea = { idea = MSGA_european_business_cooperation days = 180 } set_country_flag = { flag = MSGA_cooldown_european_business_cooperation days = 250 } custom_effect_tooltip = MSGA_development_repeatable_tt }
+ ai_will_do = { base = 2 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1 compare = greater_than_or_equals } } } }
+}
+}
+MSGA_serbian_energy_development = {
+MSGA_modernise_serbian_power_grid = {
+ icon = GFX_decision_MSGA_modernise_serbian_power_grid allowed = { tag = SER }
+ visible = { MSGA_development_unlocked = yes NOT = { has_country_flag = MSGA_done_modernise_serbian_power_grid } }
+ available = { MSGA_development_unlocked = yes has_war = no MSGA_eligible_modernise_serbian_power_grid = yes  custom_trigger_tooltip = { tooltip = MSGA_development_state_free_tt NOT = { has_country_flag = MSGA_development_state_107_busy } } NOT = { has_country_flag = MSGA_pending_modernise_serbian_power_grid } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_4
+ custom_cost_trigger = { check_variable = { var = income_var value = 0.4 compare = greater_than_or_equals } }
+ days_remove = 60 cancel_if_not_visible = no
+ cancel_trigger = { NOT = { MSGA_eligible_modernise_serbian_power_grid = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.4 } add_income = yes set_country_flag = { flag = MSGA_pending_modernise_serbian_power_grid days = 61 } set_country_flag = { flag = MSGA_development_state_107_busy days = 61 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ remove_effect = { MSGA_finish_modernise_serbian_power_grid = yes } cancel_effect = { MSGA_cancel_modernise_serbian_power_grid = yes }
+ ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.4 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
+}
+MSGA_modernise_nikola_tesla_complex = {
+ icon = GFX_decision_MSGA_modernise_nikola_tesla_complex allowed = { tag = SER }
+ visible = { MSGA_development_unlocked = yes NOT = { has_country_flag = MSGA_done_modernise_nikola_tesla_complex } }
+ available = { MSGA_development_unlocked = yes has_war = no MSGA_eligible_modernise_nikola_tesla_complex = yes  custom_trigger_tooltip = { tooltip = MSGA_development_state_free_tt NOT = { has_country_flag = MSGA_development_state_1296_busy } } NOT = { has_country_flag = MSGA_pending_modernise_nikola_tesla_complex } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_5
+ custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
+ days_remove = 90 cancel_if_not_visible = no
+ cancel_trigger = { NOT = { MSGA_eligible_modernise_nikola_tesla_complex = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = { flag = MSGA_pending_modernise_nikola_tesla_complex days = 91 } set_country_flag = { flag = MSGA_development_state_1296_busy days = 91 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ remove_effect = { MSGA_finish_modernise_nikola_tesla_complex = yes } cancel_effect = { MSGA_cancel_modernise_nikola_tesla_complex = yes }
+ ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.5 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
+}
+MSGA_expand_kostolac_energy_complex = {
+ icon = GFX_decision_MSGA_expand_kostolac_energy_complex allowed = { tag = SER }
+ visible = { MSGA_development_unlocked = yes NOT = { has_country_flag = MSGA_done_expand_kostolac_energy_complex } }
+ available = { MSGA_development_unlocked = yes has_war = no MSGA_eligible_expand_kostolac_energy_complex = yes  custom_trigger_tooltip = { tooltip = MSGA_development_state_free_tt NOT = { has_country_flag = MSGA_development_state_108_busy } } NOT = { has_country_flag = MSGA_pending_expand_kostolac_energy_complex } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_5
+ custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
+ days_remove = 90 cancel_if_not_visible = no
+ cancel_trigger = { NOT = { MSGA_eligible_expand_kostolac_energy_complex = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = { flag = MSGA_pending_expand_kostolac_energy_complex days = 91 } set_country_flag = { flag = MSGA_development_state_108_busy days = 91 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ remove_effect = { MSGA_finish_expand_kostolac_energy_complex = yes } cancel_effect = { MSGA_cancel_expand_kostolac_energy_complex = yes }
+ ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.5 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
+}
+MSGA_upgrade_djerdap_power_system = {
+ icon = GFX_decision_MSGA_upgrade_djerdap_power_system allowed = { tag = SER }
+ visible = { MSGA_development_unlocked = yes NOT = { has_country_flag = MSGA_done_upgrade_djerdap_power_system } }
+ available = { MSGA_development_unlocked = yes has_war = no MSGA_eligible_upgrade_djerdap_power_system = yes  custom_trigger_tooltip = { tooltip = MSGA_development_state_free_tt NOT = { has_country_flag = MSGA_development_state_108_busy } } NOT = { has_country_flag = MSGA_pending_upgrade_djerdap_power_system } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_4
+ custom_cost_trigger = { check_variable = { var = income_var value = 0.4 compare = greater_than_or_equals } }
+ days_remove = 75 cancel_if_not_visible = no
+ cancel_trigger = { NOT = { MSGA_eligible_upgrade_djerdap_power_system = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.4 } add_income = yes set_country_flag = { flag = MSGA_pending_upgrade_djerdap_power_system days = 76 } set_country_flag = { flag = MSGA_development_state_108_busy days = 76 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ remove_effect = { MSGA_finish_upgrade_djerdap_power_system = yes } cancel_effect = { MSGA_cancel_upgrade_djerdap_power_system = yes }
+ ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.4 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
+}
+MSGA_develop_bor_renewable_complex = {
+ icon = GFX_decision_MSGA_develop_bor_renewable_complex allowed = { tag = SER }
+ visible = { MSGA_development_unlocked = yes NOT = { has_country_flag = MSGA_done_develop_bor_renewable_complex } }
+ available = { MSGA_development_unlocked = yes has_war = no MSGA_eligible_develop_bor_renewable_complex = yes PRC = { exists = yes NOT = { has_war_with = SER } } custom_trigger_tooltip = { tooltip = MSGA_development_state_free_tt NOT = { has_country_flag = MSGA_development_state_108_busy } } NOT = { has_country_flag = MSGA_pending_develop_bor_renewable_complex } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_5
+ custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
+ days_remove = 120 cancel_if_not_visible = no
+ cancel_trigger = { NOT = { MSGA_eligible_develop_bor_renewable_complex = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = { flag = MSGA_pending_develop_bor_renewable_complex days = 121 } set_country_flag = { flag = MSGA_development_state_108_busy days = 121 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ remove_effect = { MSGA_finish_develop_bor_renewable_complex = yes } cancel_effect = { MSGA_cancel_develop_bor_renewable_complex = yes }
+ ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.5 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
+}
+MSGA_expand_bor_renewable_complex = {
+ icon = GFX_decision_MSGA_expand_bor_renewable_complex allowed = { tag = SER }
+ visible = { MSGA_development_unlocked = yes NOT = { has_country_flag = MSGA_done_expand_bor_renewable_complex } }
+ available = { MSGA_development_unlocked = yes has_war = no MSGA_eligible_expand_bor_renewable_complex = yes PRC = { exists = yes NOT = { has_war_with = SER } } custom_trigger_tooltip = { tooltip = MSGA_development_state_free_tt NOT = { has_country_flag = MSGA_development_state_108_busy } } NOT = { has_country_flag = MSGA_pending_expand_bor_renewable_complex } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_6
+ custom_cost_trigger = { check_variable = { var = income_var value = 0.6 compare = greater_than_or_equals } }
+ days_remove = 120 cancel_if_not_visible = no
+ cancel_trigger = { NOT = { MSGA_eligible_expand_bor_renewable_complex = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.6 } add_income = yes set_country_flag = { flag = MSGA_pending_expand_bor_renewable_complex days = 121 } set_country_flag = { flag = MSGA_development_state_108_busy days = 121 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ remove_effect = { MSGA_finish_expand_bor_renewable_complex = yes } cancel_effect = { MSGA_cancel_expand_bor_renewable_complex = yes }
+ ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.6 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
+}
+MSGA_establish_serbian_solar_manufacturing = {
+ icon = GFX_decision_MSGA_establish_serbian_solar_manufacturing allowed = { tag = SER }
+ visible = { MSGA_development_unlocked = yes NOT = { has_country_flag = MSGA_done_establish_serbian_solar_manufacturing } }
+ available = { MSGA_development_unlocked = yes has_war = no MSGA_eligible_establish_serbian_solar_manufacturing = yes PRC = { exists = yes NOT = { has_war_with = SER } } custom_trigger_tooltip = { tooltip = MSGA_development_state_free_tt NOT = { has_country_flag = MSGA_development_state_45_busy } } NOT = { has_country_flag = MSGA_pending_establish_serbian_solar_manufacturing } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_5
+ custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
+ days_remove = 90 cancel_if_not_visible = no
+ cancel_trigger = { NOT = { MSGA_eligible_establish_serbian_solar_manufacturing = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = { flag = MSGA_pending_establish_serbian_solar_manufacturing days = 91 } set_country_flag = { flag = MSGA_development_state_45_busy days = 91 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ remove_effect = { MSGA_finish_establish_serbian_solar_manufacturing = yes } cancel_effect = { MSGA_cancel_establish_serbian_solar_manufacturing = yes }
+ ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.5 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
+}
+MSGA_develop_grid_scale_storage = {
+ icon = GFX_decision_MSGA_develop_grid_scale_storage allowed = { tag = SER }
+ visible = { MSGA_development_unlocked = yes NOT = { has_country_flag = MSGA_done_develop_grid_scale_storage } }
+ available = { MSGA_development_unlocked = yes has_war = no MSGA_eligible_develop_grid_scale_storage = yes  custom_trigger_tooltip = { tooltip = MSGA_development_state_free_tt NOT = { has_country_flag = MSGA_development_state_107_busy } } NOT = { has_country_flag = MSGA_pending_develop_grid_scale_storage } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_4
+ custom_cost_trigger = { check_variable = { var = income_var value = 0.4 compare = greater_than_or_equals } }
+ days_remove = 90 cancel_if_not_visible = no
+ cancel_trigger = { NOT = { MSGA_eligible_develop_grid_scale_storage = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.4 } add_income = yes set_country_flag = { flag = MSGA_pending_develop_grid_scale_storage days = 91 } set_country_flag = { flag = MSGA_development_state_107_busy days = 91 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ remove_effect = { MSGA_finish_develop_grid_scale_storage = yes } cancel_effect = { MSGA_cancel_develop_grid_scale_storage = yes }
+ ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.4 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
+}
+MSGA_seek_russian_nuclear_expertise = {
+ icon = GFX_decision_MSGA_seek_russian_nuclear_expertise allowed = { tag = SER }
+ visible = { MSGA_development_unlocked = yes NOT = { has_country_flag = MSGA_done_seek_russian_nuclear_expertise } }
+ available = { MSGA_development_unlocked = yes has_war = no MSGA_eligible_seek_russian_nuclear_expertise = yes SOV = { exists = yes NOT = { has_war_with = SER } } NOT = { has_country_flag = MSGA_pending_seek_russian_nuclear_expertise } }
+ cost = 50 custom_cost_text = MSGA_development_cost_0_2
+ custom_cost_trigger = { check_variable = { var = income_var value = 0.2 compare = greater_than_or_equals } }
+ days_remove = 60 cancel_if_not_visible = no
+ cancel_trigger = { NOT = { MSGA_eligible_seek_russian_nuclear_expertise = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.2 } add_income = yes set_country_flag = { flag = MSGA_pending_seek_russian_nuclear_expertise days = 61 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ remove_effect = { MSGA_finish_seek_russian_nuclear_expertise = yes } cancel_effect = { MSGA_cancel_seek_russian_nuclear_expertise = yes }
+ ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.2 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
+}
+MSGA_establish_serbian_nuclear_programme = {
+ icon = GFX_decision_MSGA_establish_serbian_nuclear_programme allowed = { tag = SER }
+ visible = { MSGA_development_unlocked = yes NOT = { has_country_flag = MSGA_done_establish_serbian_nuclear_programme } }
+ available = { MSGA_development_unlocked = yes has_war = no MSGA_eligible_establish_serbian_nuclear_programme = yes SOV = { exists = yes NOT = { has_war_with = SER } } NOT = { has_country_flag = MSGA_pending_establish_serbian_nuclear_programme } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_5
+ custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
+ days_remove = 120 cancel_if_not_visible = no
+ cancel_trigger = { NOT = { MSGA_eligible_establish_serbian_nuclear_programme = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = { flag = MSGA_pending_establish_serbian_nuclear_programme days = 121 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ remove_effect = { MSGA_finish_establish_serbian_nuclear_programme = yes } cancel_effect = { MSGA_cancel_establish_serbian_nuclear_programme = yes }
+ ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.5 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
+}
+MSGA_train_serbian_nuclear_workforce = {
+ icon = GFX_decision_MSGA_train_serbian_nuclear_workforce allowed = { tag = SER }
+ visible = { MSGA_development_unlocked = yes NOT = { has_country_flag = MSGA_done_train_serbian_nuclear_workforce } }
+ available = { MSGA_development_unlocked = yes has_war = no MSGA_eligible_train_serbian_nuclear_workforce = yes SOV = { exists = yes NOT = { has_war_with = SER } } NOT = { has_country_flag = MSGA_pending_train_serbian_nuclear_workforce } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_3
+ custom_cost_trigger = { check_variable = { var = income_var value = 0.3 compare = greater_than_or_equals } }
+ days_remove = 90 cancel_if_not_visible = no
+ cancel_trigger = { NOT = { MSGA_eligible_train_serbian_nuclear_workforce = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.3 } add_income = yes set_country_flag = { flag = MSGA_pending_train_serbian_nuclear_workforce days = 91 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ remove_effect = { MSGA_finish_train_serbian_nuclear_workforce = yes } cancel_effect = { MSGA_cancel_train_serbian_nuclear_workforce = yes }
+ ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.3 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
+}
+MSGA_first_serbian_nuclear_power_plant = {
+ icon = GFX_decision_MSGA_first_serbian_nuclear_power_plant allowed = { tag = SER }
+ visible = { MSGA_development_unlocked = yes NOT = { has_country_flag = MSGA_done_first_serbian_nuclear_power_plant } }
+ available = { MSGA_development_unlocked = yes has_war = no MSGA_eligible_first_serbian_nuclear_power_plant = yes SOV = { exists = yes NOT = { has_war_with = SER } } custom_trigger_tooltip = { tooltip = MSGA_development_state_free_tt NOT = { has_country_flag = MSGA_development_state_45_busy } } NOT = { has_country_flag = MSGA_pending_first_serbian_nuclear_power_plant } }
+ cost = 0 custom_cost_text = MSGA_development_cost_1_5
+ custom_cost_trigger = { check_variable = { var = income_var value = 1.5 compare = greater_than_or_equals } }
+ days_remove = 180 cancel_if_not_visible = no
+ cancel_trigger = { NOT = { MSGA_eligible_first_serbian_nuclear_power_plant = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -1.5 } add_income = yes set_country_flag = { flag = MSGA_pending_first_serbian_nuclear_power_plant days = 181 } set_country_flag = { flag = MSGA_development_state_45_busy days = 181 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ remove_effect = { MSGA_finish_first_serbian_nuclear_power_plant = yes } cancel_effect = { MSGA_cancel_first_serbian_nuclear_power_plant = yes }
+ ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 3 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
+}
+MSGA_expand_serbian_nuclear_programme = {
+ icon = GFX_decision_MSGA_expand_serbian_nuclear_programme allowed = { tag = SER }
+ visible = { MSGA_development_unlocked = yes NOT = { has_country_flag = MSGA_done_expand_serbian_nuclear_programme } }
+ available = { MSGA_development_unlocked = yes has_war = no MSGA_eligible_expand_serbian_nuclear_programme = yes SOV = { exists = yes NOT = { has_war_with = SER } } custom_trigger_tooltip = { tooltip = MSGA_development_state_free_tt NOT = { has_country_flag = MSGA_development_state_45_busy } } NOT = { has_country_flag = MSGA_pending_expand_serbian_nuclear_programme } }
+ cost = 0 custom_cost_text = MSGA_development_cost_1_5
+ custom_cost_trigger = { check_variable = { var = income_var value = 1.5 compare = greater_than_or_equals } }
+ days_remove = 180 cancel_if_not_visible = no
+ cancel_trigger = { NOT = { MSGA_eligible_expand_serbian_nuclear_programme = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -1.5 } add_income = yes set_country_flag = { flag = MSGA_pending_expand_serbian_nuclear_programme days = 181 } set_country_flag = { flag = MSGA_development_state_45_busy days = 181 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ remove_effect = { MSGA_finish_expand_serbian_nuclear_programme = yes } cancel_effect = { MSGA_cancel_expand_serbian_nuclear_programme = yes }
+ ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 3 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
+}
+MSGA_chinese_renewable_technology_transfer = {
+ icon = GFX_decision_MSGA_chinese_renewable_technology_transfer allowed = { tag = SER } visible = { MSGA_development_unlocked = yes }
+ available = { MSGA_development_unlocked = yes has_war = no PRC = { exists = yes NOT = { has_war_with = SER } } NOT = { has_country_flag = MSGA_cooldown_chinese_renewable_technology_transfer } NOT = { has_idea = MSGA_chinese_renewable_technology_transfer } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_2 custom_cost_trigger = { check_variable = { var = income_var value = 0.2 compare = greater_than_or_equals } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.2 } add_income = yes add_timed_idea = { idea = MSGA_chinese_renewable_technology_transfer days = 180 } set_country_flag = { flag = MSGA_cooldown_chinese_renewable_technology_transfer days = 250 } custom_effect_tooltip = MSGA_development_repeatable_tt }
+ ai_will_do = { base = 2 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1 compare = greater_than_or_equals } } } }
+}
+MSGA_renewable_energy_subsidies = {
+ icon = GFX_decision_MSGA_renewable_energy_subsidies allowed = { tag = SER } visible = { MSGA_development_unlocked = yes }
+ available = { MSGA_development_unlocked = yes has_war = no  NOT = { has_country_flag = MSGA_cooldown_renewable_energy_subsidies } NOT = { has_idea = MSGA_renewable_energy_subsidies } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_2 custom_cost_trigger = { check_variable = { var = income_var value = 0.2 compare = greater_than_or_equals } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.2 } add_income = yes add_timed_idea = { idea = MSGA_renewable_energy_subsidies days = 180 } set_country_flag = { flag = MSGA_cooldown_renewable_energy_subsidies days = 250 } custom_effect_tooltip = MSGA_development_repeatable_tt }
+ ai_will_do = { base = 2 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1 compare = greater_than_or_equals } } } }
+}
+MSGA_russian_nuclear_technical_assistance = {
+ icon = GFX_decision_MSGA_russian_nuclear_technical_assistance allowed = { tag = SER } visible = { MSGA_development_unlocked = yes }
+ available = { MSGA_development_unlocked = yes has_war = no SOV = { exists = yes NOT = { has_war_with = SER } } has_country_flag = MSGA_done_seek_russian_nuclear_expertise NOT = { has_country_flag = MSGA_cooldown_russian_nuclear_technical_assistance } NOT = { has_idea = MSGA_russian_nuclear_technical_assistance } }
+ cost = 0 custom_cost_text = MSGA_development_cost_0_2 custom_cost_trigger = { check_variable = { var = income_var value = 0.2 compare = greater_than_or_equals } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.2 } add_income = yes add_timed_idea = { idea = MSGA_russian_nuclear_technical_assistance days = 180 } set_country_flag = { flag = MSGA_cooldown_russian_nuclear_technical_assistance days = 250 } custom_effect_tooltip = MSGA_development_repeatable_tt }
+ ai_will_do = { base = 2 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1 compare = greater_than_or_equals } } } }
+}
+}

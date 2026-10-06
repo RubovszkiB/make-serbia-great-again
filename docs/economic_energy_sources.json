@@ -1,0 +1,2630 @@
+{
+  "runtime": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
+  "package": "C:\\Users\\Balazs\\Downloads\\MSGA_Economic_Energy_Visuals.zip",
+  "package_sha256": "489259697f407a8c7b20d1e87c25b613a293c83f1a6000d8ff0dab809207807b",
+  "baseline_sha256": {
+    "descriptor.mod": "259964fa35007983fe0c592db8190eee8e2cbb69a6ffe6d693c25c4b9e246ffd",
+    "make_serbia_great_again.mod": "6b595b40d4442b91fa33f877d0b41547590533ae78a759664e308bbcc64fd794",
+    "MSGA_DEV_NOTES.md": "a3c62a2f3ccffaddd9596d464d2b641eb821e31b0fb7915e5e079b155fcae64c",
+    "events/MSGA_bosnia_events.txt": "bc643fc5d989a01e75ef70b821eca8095cba51d2483cbae7aa442df6aaf000c6",
+    "events/MSGA_encirclement_events.txt": "083ede025a3510e04c29686eb7c007a9946769fcef101c3f99b9c57b3c0a7a89",
+    "events/MSGA_new_order_events.txt": "ecb8f02ec3c9a8f14f2dd4e90751254d66e08929a6c926a09625bb0446d973d2",
+    "events/MSGA_pact_war_events.txt": "f25ea2f19e37e564ffa9df103f1afc44c918c1315fac8d3fb198926bb2056fa5",
+    "events/MSGA_post_bosnia_events.txt": "acdd6410dea4572c1388d80e94fca4509723c994cc04c5eb8f42b4d7dd1a5ff4",
+    "events/MSGA_SER_chronicle.txt": "ceae34d1277d6b914b91e7d2b8661603616e61e32abb37deeeba145aa7c3a98a",
+    "events/MSGA_SER_cleanup.txt": "836ae4682930c5804432d819a96204aa2179cb3192f1e8ef0bd5d4c6ff7ae816",
+    "events/MSGA_SER_early_rewards.txt": "b5a2dde8c650b0360dfd3cd5d6a2ac12b98d4e2f3ee6c242d63ddc3573ddebfd",
+    "events/MSGA_SER_events.txt": "ceb0faacdbdeecfe78ad13c22298f2a42b8e748bfe5554eeb07f8b95262087e0",
+    "events/MSGA_SER_expansion.txt": "f0fba4925f7d6d9ecf2412f8c563426874542d4ccf0ebf719bfbd0692765df1d",
+    "events/MSGA_SER_kosovo_events.txt": "6c54bad8d3ed27f59c4ce17b5d9db6e99210538c1472fb627d72aaa5b04ce03f",
+    "events/MSGA_SER_post_kosovo_events.txt": "d280df6bdebc22e2e8a21ebfd07e2268c151878fe9e1090e392da41b73f585e9",
+    "events/TFR_events_SER.txt": "ec1c68bd4d6cf184e64b77595cc19d694d197c7171105f1f3dd03e2fb2a0f572",
+    "events/TFR_events_ZZZ_NATO.txt": "0a8f8db28a4ddd224ea3d6f1e0b48ce6d3ef452e83e3b1a7f6c7021f0a6eef6d",
+    "interface/MSGA_balkan_encirclement_assets.gfx": "09b36c374b6c1e4ef10fe151831cca73bc225dd5150ef1940f6529bc7a79c81c",
+    "interface/MSGA_balkan_war_eventpictures.gfx": "86905efe8f8cc478a20d931bab00ec5334aaa564ed7ad58ad25e846bd5b3d05b",
+    "interface/MSGA_bosnia_assets.gfx": "1c40fa19e06b69c362e1e563cc22bcfb7c5f51bb86e74cf4fc4403fe0725ac49",
+    "interface/MSGA_eventpictures.gfx": "3279a0bda133b1c7a4ac350a78a7cea8fe9ae1a174a050ca0faef92b9419fd70",
+    "interface/MSGA_focus_icons.gfx": "83224b02bb3e4e20bc7b67181f5d81114761d2f2951c5fc3084dad0faa30d16f",
+    "interface/MSGA_kosovo_assets.gfx": "7b32761c69f79353c9a31013db1d66264ea08b1812b9cc9e1fb0344e4a1b9c7b",
+    "interface/MSGA_new_balkan_order_assets.gfx": "11b1a1902e9757a236688b1ed6ced54e4b78de788a2c6164ca08e6a2d486a0fc",
+    "interface/MSGA_new_focus_icons.gfx": "1bda26d70dbbe57d1d6cfa4b8c49b523ba3495cf0fa70c27ebe1b31236166e99",
+    "interface/MSGA_new_ideas.gfx": "36c743e8fbf8b9010b26e1c906bb6f94c6994d8590696a887fa66671b20b05ed",
+    "interface/MSGA_new_order_engine_aliases.gfx": "3789c9157edc98d9ab1e3eed7b6555271e9d8302c8076e888fd6cc25e2767042",
+    "interface/MSGA_post_bosnia_assets.gfx": "1d47b7529a98d4d89714214ce5a4bf056deddc9752f9ed2d84937d3afaf8714d",
+    "interface/MSGA_post_bosnia_focus_shine.gfx": "ee13758cb73aa062b814bab89696e12b5eeb880f9058247020ed0fd793ede1e6",
+    "interface/MSGA_post_kosovo_assets.gfx": "d6d79ea01e811d9d07a8a870e3b4c10c2891a158c827dfa990ca499c38849748",
+    "common/bop/MSGA_SER_bop.txt": "f9191db755d857aa71126485fc40aa440477c76bde5d349d6adc56705057e0c8",
+    "common/characters/MSGA_bosnia_characters.txt": "c2b490a75b86a8c4e89b8aa9653f1a2ae8df470ded81e09a68369f7576f591ca",
+    "common/country_leader/MSGA_SER_minister_traits.txt": "7c799771bcee832418746cf7786f8f931ca935e1187233b2af185bcee07c4764",
+    "common/decisions/MSGA_bosnia_decisions.txt": "bb6c3e00a4f3fc3920101907ce4e88bc40f981facdb9b251462b95472bd05013",
+    "common/decisions/MSGA_new_order_decisions.txt": "049a00eacb688d9ccf7e43546328ac3990980941547dd1f8c8d5d1534363b3b8",
+    "common/decisions/MSGA_post_bosnia_decisions.txt": "b2f6d7013f7a601f4675ae1e18688a1b75e60ef38dc7e5236a6ed99ac58558a2",
+    "common/decisions/MSGA_SER_bop_decisions.txt": "1ff895b97add7ee873710f01efe06fb7b93e4f2e3cda220979c1009359e989ee",
+    "common/decisions/MSGA_SER_covid.txt": "50cf9b6401c2fbc7ebcbfe066ff8f200409c750fc151775539a484ffa383bea5",
+    "common/decisions/MSGA_SER_expansion.txt": "01646609604360b45ba164d9f413d4349652bc8ca20fd97c0e0d57e0bda5d469",
+    "common/decisions/MSGA_SER_kosovo_operations.txt": "ea18f30462da2b8a3b528c4528f0403410636bf1eaf527ddef436f60f6add075",
+    "common/decisions/MSGA_SER_phase1.txt": "2f38ec4df0cf48f233a8192cf3d92f62ee59b56b211b074b3a0af167a4cc0312",
+    "common/decisions/MSGA_SER_post_kosovo.txt": "3a317eb40b5f7784eb258aba76bbc80e5fb143f031a97481674ea1d7207a9fce",
+    "common/decisions/MSGA_SER_strategic_review.txt": "eedb9cb60e2db7a6857186fb6cadd9918e115213ffeeffebae8a6a78bad1405b",
+    "common/decisions/TFR_decisions_SER.txt": "bb4ae4314ca040ee8d47c81b342d685b03d6553c870a20afccb3890587b4f031",
+    "common/dynamic_modifiers/MSGA_SER_dynamic_modifiers.txt": "18478562f79b1c8e1c6cb481176739ea4c8afe488c6b3fd1cc20b6a58e52d8d7",
+    "common/ideas/MSGA_bosnia_ideas.txt": "0281dc7c91163f648807693a8b5c9ae3f1dd2249f56bd0ba43dd83d0f0886e33",
+    "common/ideas/MSGA_encirclement_ideas.txt": "9fd8e61bd85d230a06ccb99162918842821610870988d4a31b8fd50f5f36583f",
+    "common/ideas/MSGA_new_order_ideas.txt": "65ea6bb9956d6d0885d2c628cdcb5732d536256c8fdf9ade8e82b5b65bb4db50",
+    "common/ideas/MSGA_pact_war_ideas.txt": "264c1c65c361a3074f9567c30af947902b45b6c5c1ccbbb87cb396205320f453",
+    "common/ideas/MSGA_post_bosnia_ideas.txt": "ef9dfc37a9b7099426bae0108e2f840bb42d214d8b809f514800e89a98a4b84d",
+    "common/ideas/MSGA_reconstruction_ideas.txt": "7533f72deffd12ca2499d1895a0140dbb83196a4355d5589047f9b9a7329a44e",
+    "common/ideas/MSGA_SER_expansion_ideas.txt": "15e31d8441045227b886f513e039570c5007feeb974228ba7d590de896aa1d9f",
+    "common/ideas/MSGA_SER_ideas.txt": "248ab043562403033b58ee9f2a12cc22b991a2621cc77f76e62fbbaae58f3a0a",
+    "common/ideas/MSGA_SER_kosovo_ideas.txt": "0206c4f72b9acf8530c95e22cb206e4ed4cbda848319f58608b99f2d7a124f9c",
+    "common/national_focus/MSGA_SER_bosnian_crisis.txt": "6214cba9fc7f0fe452fccfa32697ef9bb83ce25d576caab600d2f2e30f681f4f",
+    "common/national_focus/MSGA_SER_kosovo_war.txt": "688032e88d1e3a9e4d96e69a6b28b5fac6154b0a1826586afd786c7ef1b12f2c",
+    "common/national_focus/MSGA_SER_new_balkan_order.txt": "f158e44bb626e908b623505894d9abe548b65611c96fe53f67d765402459274a",
+    "common/national_focus/MSGA_SER_pact_war_planning.txt": "d8530140a38be36e05dd5739cfda4d12decef1c371c16a5ae60ba8a8fac752f2",
+    "common/national_focus/MSGA_SER_phase1.txt": "2dfeac7d43a82539cf94b633526b806f5354b5b41655a14365f7ec28910c692d",
+    "common/national_focus/MSGA_SER_post_bosnia.txt": "c5e6067239cdf9c9b18aeac10b12e2e7352a2e6310afee953d6662fa1ce8f2a9",
+    "common/national_focus/MSGA_SER_post_kosovo.txt": "ab443c5771b7c0e9589693914a12f9478e332d59242036fab940131dcea4b691",
+    "common/national_focus/MSGA_SER_southern_question.txt": "4f656999b0e8acdbb28f14c133c99b8542a9be824b927cf23f1700a56d989477",
+    "common/on_actions/MSGA_bosnia_on_actions.txt": "119819cfbf465cf9180882628d404458965d4feabbe0dd4ece13d877a873660c",
+    "common/on_actions/MSGA_encirclement_on_actions.txt": "4555564f229177026f85d9fc7886f42b45a0c1139feb509ecd8e1debeac2d489",
+    "common/on_actions/MSGA_new_order_on_actions.txt": "27685fb653535275d917d35d7a4815168604050859573dc763b743484e591d09",
+    "common/on_actions/MSGA_pact_war_on_actions.txt": "61a2ffe489fe90f824bdc2ba2a53e76e8f9bbc6c51e4b80a29e630b5084e1137",
+    "common/on_actions/MSGA_post_bosnia_on_actions.txt": "3ac349e1b7de1afa76151d004946aeb8ba67a986b678379ccbbe05b78b37a48d",
+    "common/on_actions/MSGA_SER_kosovo_on_actions.txt": "a3031bd1d3b37d3d94d2af01bcac2ab09d02224a6823558b6e95c220a33e3df8",
+    "common/on_actions/MSGA_SER_on_actions.txt": "3fc69a91f1e98df253d0f6d176cb5c5adf84dedbe4713c0ac3193c43b961f3f0",
+    "common/on_actions/MSGA_SER_post_kosovo_on_actions.txt": "276053aa3d8743de64f55631036037cc374f58b0a0b079af3d026d8eddfd16b2",
+    "common/on_actions/TFR_on_actions_ZZZ_peace.txt": "b9ff9f24e45fe93b9f02c78c2296ebf35c6bbcd0dc8ad4ca945b815730a1186e",
+    "common/opinion_modifiers/MSGA_new_order_opinions.txt": "901af816f43b60d07f62d2de2cbf2367c1b8719f6a123ad8d82dede3905f8680",
+    "common/opinion_modifiers/MSGA_post_bosnia_opinion.txt": "44dfd59f8e5104a5b215fb6a00334c98c1ea9512ef6a3be4e144f60b7448a9a6",
+    "common/scripted_effects/MSGA_bosnia_effects.txt": "2d9ee8525df96342d0fa3eb41d16e1f069063a4dfeb26e31fde3afea04a15a31",
+    "common/scripted_effects/MSGA_encirclement_effects.txt": "e36b8efc1b15317c9b381781890c6be15f15c1c1ddb25e9b2e984541c8509b61",
+    "common/scripted_effects/MSGA_new_order_effects.txt": "3a9a5b825566583b5374f8f1fa3d0d5b473ced5a6f26eaeee29daadd32178baf",
+    "common/scripted_effects/MSGA_pact_diplomacy.txt": "a8159c6e2047c85f3bb9bd3c185ae66cfa92b0edc7c58d8a15f25edd49f1da84",
+    "common/scripted_effects/MSGA_pact_mobilisation.txt": "f9d715a59a71a073fea6a51d322e47ddc0dc1b3c6a989685e332cebd116bd1dd",
+    "common/scripted_effects/MSGA_pact_war_effects.txt": "bab4ff89f17ebc7436bffda7a20d581e451924b5accd71135a7b034ceb8a963f",
+    "common/scripted_effects/MSGA_post_bosnia_auxiliaries.txt": "d994725609c280740e3fc8f08a946cd76307cd729e20503b30a4bb81cb7321cf",
+    "common/scripted_effects/MSGA_post_bosnia_effects.txt": "7d1c9f0bd47b88d966feeee415accd243fd55365cde0b3076c427b5b14895b37",
+    "common/scripted_effects/MSGA_SER_effects.txt": "6931929c526881917b102ac3c3618b3d6cc09b3880a04299f061aebf88712b2d",
+    "common/scripted_effects/MSGA_SER_post_kosovo_effects.txt": "900dfa7fa08cc6c73136aba06be56aa16f1f69b26bc3a14bfd19a4fcaef8fd21",
+    "common/scripted_effects/MSGA_SER_vehicle_effects.txt": "1032ce4e8befe5e033361a67a05a0201b2bdec798a879a3214d1ed89c7848867",
+    "common/scripted_triggers/MSGA_encirclement_triggers.txt": "fde8b30cdb82f5c55beb557721a97b661ca959c01b30d8b3d0b82751913bb574",
+    "common/scripted_triggers/MSGA_new_order_triggers.txt": "82a53d3a8e0c0a0f79fa75a7d88e8dfae65215b62df802d612fab4c47ca22254",
+    "common/scripted_triggers/MSGA_pact_war_triggers.txt": "c0c932c5156b3968ff07de9ca7579bec0baa12037e6c0c38d8487d0900c7fc2f",
+    "common/scripted_triggers/MSGA_SER_triggers.txt": "d26b1a77bb846fa0d4f0a8071db8c5a4db660f7416f5027e979471fc6eb2e421",
+    "common/technologies/MSGA_pact_war_technologies.txt": "019fcc8db08f48a3e471407cef4be84fd233a8d6bec9c50c8d8bc4fc019c428c",
+    "common/decisions/categories/MSGA_SER_categories.txt": "0b9f4b3669083f28039dd76710f69845a5a5c65fd816358a12e76508f8bc2101",
+    "gfx/event_pictures/MSGA_event_air_force_supplier_choice.dds": "afcb7eae0b8aa6603709ad1941ce2631b2eb3ecf42360539f45784d804fda49a",
+    "gfx/event_pictures/MSGA_event_allies_take_positions.dds": "f40833dca3d37a8f762ab207cda7ef74f88ff3c8aaee36359f06f8397bb38755",
+    "gfx/event_pictures/MSGA_event_answer_the_call.dds": "8a5a4003141bc61b262f7767e485a00685a54eda10a0d65ed7dd82d425ed5d81",
+    "gfx/event_pictures/MSGA_event_balkan_states_break_with_brussels.dds": "c4d777afe216d441d119978ea893d59a2cc333271727e1bbb9a70726b47bbbf4",
+    "gfx/event_pictures/MSGA_event_belgrade_opens_for_business.dds": "96214ed31ca6ac25b3f339b454880c847d31240da77012a454f54d7d841d8329",
+    "gfx/event_pictures/MSGA_event_bind_new_protectorates.dds": "4f3c4f9952db5d6ea007447dd51c7fecde30b7b90ae34951fcc6cee81b87c4f3",
+    "gfx/event_pictures/MSGA_event_bosnian_territorial_militias.dds": "620df806e95f3e988be4d752cbc1795c4a07d1d261ab824382ccf39406ab2ec7",
+    "gfx/event_pictures/MSGA_event_bosnia_capitulation.dds": "f0a50872d7bcb565438e25b4721909919f37ac70d8851d5e47ec90ee9ed73dd7",
+    "gfx/event_pictures/MSGA_event_bosnia_declares_war.dds": "0db304d556c91ad4e33e7599cbf2b98333c7ac0e944835149f9cad46cd58fcdc",
+    "gfx/event_pictures/MSGA_event_calculation_failed.dds": "8c45194605e75c3807ad995ae6067093ee9ce8b1e9cb470976842c4df694fd42",
+    "gfx/event_pictures/MSGA_event_cost_of_victory.dds": "50680aa988a2c30a24b2ea2caa8f9c8a4c07fe8445d30589203fa97cc5d6d108",
+    "gfx/event_pictures/MSGA_event_croatia_capitulates.dds": "6612c50573ceaceb662bd8be5a207799b3564927d0b7b8713d9bcc42cb4c6fec",
+    "gfx/event_pictures/MSGA_event_economic_heart_of_balkans.dds": "0828645d1d8def0d628ba012115bc5dbda98169dc4cd90814ee5f96c2efc2dc1",
+    "gfx/event_pictures/MSGA_event_emergency_measures_belgrade.dds": "849c1e7067252ea208c3157526760dd7a6482e08b39c8be90a21c968a15b2184",
+    "gfx/event_pictures/MSGA_event_factories_for_peace.dds": "0009a01fda507753ef26aecbe0546367998badcd79f6a0ff440e562d0951e15b",
+    "gfx/event_pictures/MSGA_event_first_blow.dds": "49bf968d6872f4b72e731776a3d046962673acae9307982ce90bf055075712a6",
+    "gfx/event_pictures/MSGA_event_from_war_to_reconstruction.dds": "bb80571c262484d53e4b409d33ab3f2df0ee6b1fe69847abbe8c18b5b84b409a",
+    "gfx/event_pictures/MSGA_event_future_of_pristina.dds": "c1cf68e555ebc5037c7ae2ed539d9ca20e9042ef139c9495499c49efb171a8ac",
+    "gfx/event_pictures/MSGA_event_herzegovinian_territorial_militias.dds": "3cb099dd4c207828c24a27941bc24bbdd2df27469a6f57a6780bea63d0042b3c",
+    "gfx/event_pictures/MSGA_event_kosovo_front_line.dds": "45b6e67aba7181573a0cb4ff52325e30b262f0a3e639b5940b23f63a0b6d4f85",
+    "gfx/event_pictures/MSGA_event_kosovo_rebuilt.dds": "55530ecbcc740f9590251f0e9f9dd2346e6bed252dd562025255ab5ec27724db",
+    "gfx/event_pictures/MSGA_event_kosovo_reconstruction_begins.dds": "3c0da852457272329bcae788ade9bc836214a3d6ca14b3c72ad5dfb501fb00a0",
+    "gfx/event_pictures/MSGA_event_lessons_written_in_blood.dds": "cc9acf45f00a490310ebd5ad6d2a893879b0ea5986fde599f83a62a427163f8f",
+    "gfx/event_pictures/MSGA_event_ljubljana_has_fallen.dds": "7868703f9c2e6e3f381e4a40daa405415ae5630dab6cd1415037728f524f5779",
+    "gfx/event_pictures/MSGA_event_ljubljana_seeks_terms.dds": "22f8098a7c4d59f6a256d3040c9bce2ba596d67da68f25c83c0da209a3774a4c",
+    "gfx/event_pictures/MSGA_event_new_serbian_era.dds": "d3893e4d1e8ab75ccc8cc7461f48ef153d1857397a98ddcb6ed5b585e4324b90",
+    "gfx/event_pictures/MSGA_event_one_serbian_state.dds": "38bd2a84cb1d18944556f4678e0c6abc66a070463ae47c64ac14a4134eaa9ad9",
+    "gfx/event_pictures/MSGA_event_pact_mobilises.dds": "9cbdf9bbddf1feb56970ccc78ebc68ff89f352215aabd81ce7a1474c7c0237e6",
+    "gfx/event_pictures/MSGA_event_podgorica_has_fallen.dds": "1399622be35fc440e4f1c4476f627b9ae5d97961af177980d10cba1acae0e0da",
+    "gfx/event_pictures/MSGA_event_podgorica_rejects_belgrade.dds": "45a616bb3de21f978a95d1fe85e268a007a4c246266455dadff2a3dc54489b49",
+    "gfx/event_pictures/MSGA_event_podgorica_submits.dds": "28f34fea0f9e5afc91ded4110e6e178e95770ab92c0e0cf5365a3f86ca3de65c",
+    "gfx/event_pictures/MSGA_event_question_of_republika_srpska.dds": "e232042bf4b033d10dede4f87ddc177638be5cd8d705999b108064da18a76059",
+    "gfx/event_pictures/MSGA_event_regional_power.dds": "7550e32d1aa13a635098741145d20faab1b583b44e7b07adcebdbd32ea86cc23",
+    "gfx/event_pictures/MSGA_event_republika_srpska_proclaimed.dds": "a1df69c818f5f91b6d26a0b72da390ae33816fe58b97a7d1eb388bcf123f2f21",
+    "gfx/event_pictures/MSGA_event_serbian_sphere.dds": "037ea427790be0dc10cb521be1e968d90adca309db222061417102a90ee26166",
+    "gfx/event_pictures/MSGA_event_serbia_enters_bosnian_war.dds": "975f0136fec633710dab5dc945b885244ac86744b0b588c75f19dfe8256c3c5f",
+    "gfx/event_pictures/MSGA_event_serbia_mobilises.dds": "b42025209930da2c84a0a000eb6612cbc0ff5576f8f04595f31f867e9c620ed6",
+    "gfx/event_pictures/MSGA_event_skopje_accepts_terms.dds": "fa65d7831dee9ca2c9c048cecd37a15c64a358ad0ef325335a4e9e4bd8f66667",
+    "gfx/event_pictures/MSGA_event_skopje_has_fallen.dds": "19c3fe50d849671972172e67f6f6007d741bfc29b6556e3b507bd14d1d840aa5",
+    "gfx/event_pictures/MSGA_event_skopje_refuses_serbian_demands.dds": "b3ee08f76a6daca904279425aaf58f9c5b831f00368022a0b81368642db050b1",
+    "gfx/event_pictures/MSGA_event_srpska_territorial_defence.dds": "32f4b04785ab0a4f4c1f0bb07bc8c540f2aadc01044985e42e73f7bdcd1ec6df",
+    "gfx/event_pictures/MSGA_event_srpska_uprising.dds": "3edd804eae52899e0373af52092748d343296f7b4986cf6ad403011bacd06c50",
+    "gfx/event_pictures/MSGA_event_start_make_serbia_great_again.dds": "6fdc0a1b5ea26c2281865821f7990ad95a657c46d5df3369ffab8c5f7b8acdcf",
+    "gfx/event_pictures/MSGA_event_the_arteries_of_serbia.dds": "f5edd0d0d99f2bbf735e3059ab922f0f0c1d1c6d3db34339c83419edaeede4fe",
+    "gfx/event_pictures/MSGA_event_the_balkans_stabilise.dds": "8f18963f3670312c54079d44ee26d60cc7ab396a49472167810a25c2f45232a6",
+    "gfx/event_pictures/MSGA_event_the_bill_comes_due.dds": "dae69984200fb71489effaa82407ec0e0ee0164a5c78951dd8ee4b6eb4d1d52b",
+    "gfx/event_pictures/MSGA_event_the_conference_of_belgrade.dds": "90c1e504f0756f7a21411fbc627c1d65022f96cf5cf4004c0b2140ef11964ce7",
+    "gfx/event_pictures/MSGA_event_the_furnaces_burn_again.dds": "f734a9fc4679a9649e9e0eaa2e98fd58a52bd59b824d0f5082f8b028f771b800",
+    "gfx/event_pictures/MSGA_event_the_ljubljana_protocol.dds": "1d3eccc990c4c7904ddc7e3be87f72f2b7dc5c2119204634b3e421780575f450",
+    "gfx/event_pictures/MSGA_event_the_new_balkan_order.dds": "886037614b9df8975811474c2b59192fa949ae2a9cb51428ce6637dc8581dbc6",
+    "gfx/event_pictures/MSGA_event_the_podgorica_settlement.dds": "0de33f73d4d31901b4e62b176e73a3f3d7eabb112999fbff05fed0f347d36774",
+    "gfx/event_pictures/MSGA_event_the_reconstruction_authority.dds": "10db68c3841b5c0dbbcca9812f3cd07a2b1f4994709db2de98d2d8daa94e144a",
+    "gfx/event_pictures/MSGA_event_the_sarajevo_framework.dds": "feb06415a1cd515ec76e189e3a339cff0fe12453f8c56f664c5da286f0f8ed14",
+    "gfx/event_pictures/MSGA_event_the_skopje_agreement.dds": "2e79f7df7fad4c828718b3899045cb67fab840594921ba2129d6f12d718f442a",
+    "gfx/event_pictures/MSGA_event_the_south_slavic_question_returns.dds": "2b5385db82424f29cf841920d1557ea24a2f92bd0f4c44f5b583d426a542500a",
+    "gfx/event_pictures/MSGA_event_the_tirana_arrangement.dds": "ab0a1925f3273f3196f89e4b71bb69a5703e516e7000a091cec1ba72413891a3",
+    "gfx/event_pictures/MSGA_event_the_zagreb_accords.dds": "d7bea579697a30e3715de6f112f7c41a54bd543fdba1dc72dd1e9c6cfad964e5",
+    "gfx/event_pictures/MSGA_event_tirana_accepts_new_order.dds": "8e98fd21a2386f5951b3fe3865499ce3ddf88e073c206c62bc701a0ef0964f7e",
+    "gfx/event_pictures/MSGA_event_tirana_has_fallen.dds": "0c74bfeefe2127e79c77b7cb4527d116aaa405ee8d8e47119cb7d09e4e7adf4c",
+    "gfx/event_pictures/MSGA_event_victory_in_bosnia.dds": "757822110da3df99df2b829839103dc76532b1f8a2012f9e155a677876a7f6e1",
+    "gfx/event_pictures/MSGA_event_victory_in_the_balkan_war.dds": "8125d53a80a6d64c4966faeeefe1230d44fb5678cea84e116cc3aeea9c93c8d9",
+    "gfx/event_pictures/MSGA_event_victory_strengthens_belgrade.dds": "aec34c683f9b0476d45be4ab42846ddf4e8cbda21ee7a49757bc794d339bc9ba",
+    "gfx/event_pictures/MSGA_event_western_shield.dds": "16f038a8581b13691023073a3920a635e115af9e2be42980552a6a53b01414c2",
+    "gfx/event_pictures/MSGA_event_zagreb_has_fallen.dds": "d5cdbd0d6a196c852152b4b1e79821f7c953c7234f88f583dce44decd4653627",
+    "gfx/event_pictures/MSGA_event_zagreb_tirana_pact.dds": "034062d7e1b8ad3f7bb6a930a2a2d89d528ddbdd4f0708dd4ea25396da4f5adf",
+    "gfx/interface/decisions/MSGA_decision_form_srpska_territorial_defence.dds": "ff03ed5967b6137a3f36d8f8f2ef1c8641d18fd67bb3ec9f72ddd3631dcceb76",
+    "gfx/interface/decisions/MSGA_decision_organise_bosnian_territorial_militias.dds": "1e7cd63105b5089bdc0206fd37686304aaac7a06e6c8a4ac3b5d07b0ccb9851c",
+    "gfx/interface/decisions/MSGA_decision_organise_herzegovinian_territorial_militias.dds": "c1cb1d98ed8522436c9759b75141e9ffa87f14778f7617442796cae14bc13e4f",
+    "gfx/interface/decisions/MSGA_form_territorial_defence.dds": "4944015cdfd4df1cc1cae38841bbf770ee88ec4299e40cc80e5961ffbd1ec3e6",
+    "gfx/interface/decisions/MSGA_integrate_kosovo_serb_militias.dds": "f86ae4f69193221caeff64918af2eb0974c27e40d545e5ffc184636e3d78e115",
+    "gfx/interface/decisions/MSGA_territorial_defence.dds": "190ba5a373d0d6bf7414d3668ab6d23ddb441d3ff9c9f76a6e31437341c88305",
+    "gfx/interface/events/MSGA_kosovo_event_01_general_staff_presents_plan.dds": "aec8d17b02a2b29f7cd4a8fca5bed44ae6af091804bf2fee0dc930f3c8aab265",
+    "gfx/interface/events/MSGA_kosovo_event_02_troops_move_south.dds": "c601390315e3e0311aad32a741b81be971fdea5a0c14f5bd785783e8a31c44c4",
+    "gfx/interface/events/MSGA_kosovo_event_03_operation_return_begins.dds": "8d32efcd9887713d1408d2e0af11d99fe88bd1be6d32063974cb44a183e118ff",
+    "gfx/interface/events/MSGA_kosovo_event_04_emergency_address.dds": "3c92db364a681f08bc160a04f0c4fb01393ceb836a36739ae8270b7170b5e644",
+    "gfx/interface/events/MSGA_kosovo_event_05_pristina_mobilisation.dds": "a856f7d3a5957fd06edfb14012bae5f79f0c4b10f2f0f6099968304bfe4aa1c4",
+    "gfx/interface/events/MSGA_kosovo_event_06_nato_calls_for_restraint.dds": "eb2d5f4c5678b127787395a81270562374208005fb36082c503f1f5f98a0f18e",
+    "gfx/interface/events/MSGA_kosovo_event_07_pristina_has_fallen.dds": "c1ddd45814d0ad23014f9976a202ee8aeecaed59367919b0ab86490c92a7d05e",
+    "gfx/interface/events/MSGA_kosovo_event_08_albania_enters_war.dds": "313443c0cef6c46b065eea55e2f19a8c24d6cee6b7f198be4207d93cff0994a9",
+    "gfx/interface/events/MSGA_kosovo_event_09_nato_distances_tirana.dds": "3695e2c02e836060e40f3ce510029561995ad0ff3e2c1ded6840ce2ac77729ba",
+    "gfx/interface/events/MSGA_kosovo_event_10_kosovo_capitulated.dds": "93813b150f294bc9079a5f4ce7faa53f6aca08e93721b54785d02c2d50995f77",
+    "gfx/interface/events/MSGA_kosovo_event_11_tirana_requests_ceasefire.dds": "2500e70d2bf7fa3951f57ae02e865ca29d9e606c9604156dcd0b28172fceb304",
+    "gfx/interface/events/MSGA_kosovo_event_12_kosovo_returns_to_serbian_control.dds": "da0cd56693747c934922bad5a5b23321a6159c4d53d38fe65b2cec745eb23c2b",
+    "gfx/interface/events/MSGA_postkosovo_event_01_morning_after_victory.dds": "06f556d221f436e937396038de1e4aa72bc31069c859bbfdb87a08d1e11adeb5",
+    "gfx/interface/events/MSGA_postkosovo_event_02_northern_municipalities.dds": "c6909aba4015fac43af169c2489cd3ecdb56aa0228af521c9f7234ff1f21cd30",
+    "gfx/interface/events/MSGA_postkosovo_event_03_cost_of_integration.dds": "64623673ac034cb81a6cee981a0dc14b023c5347e970db85ed12966331e90906",
+    "gfx/interface/events/MSGA_postkosovo_event_04_one_law_one_administration.dds": "0e58167589955bb6699661f407cad65f5ff05079f5353c6d7ada85a53aa007e3",
+    "gfx/interface/events/MSGA_postkosovo_event_05_military_to_civil_government.dds": "48a6e9f907b35b0255d0af0d26a2f2167a107d3fd88a80507e4b062198fb6d0e",
+    "gfx/interface/events/MSGA_postkosovo_event_06_kosovo_question.dds": "324cc1efb9d6b2120a4a6be5dbaaa9cf3144242b3f25246f30dcb2f3729ba04c",
+    "gfx/interface/events/MSGA_postkosovo_event_07_reconstruction_begins.dds": "b6771b066f755d36de5862d07315002e9939c6567a921a2b75f056242d120e78",
+    "gfx/interface/events/MSGA_postkosovo_event_08_contracts_for_reconstruction.dds": "5b65e89db660e199b23d44d0f3a9503e48925fde575152a7a786af99fd538dc6",
+    "gfx/interface/events/MSGA_postkosovo_event_09_investors_return_pristina.dds": "a824f3f544084ae0a5ea6aff28b031a193547f168f09bf8d52ef1fa4818849a1",
+    "gfx/interface/events/MSGA_postkosovo_event_10_city_reconnected.dds": "b4dd21edfecc43f770ce0653c3e2fcda03051efe816ee7bd9e7bcb7cbf02c22e",
+    "gfx/interface/events/MSGA_postkosovo_event_11_new_kosovo.dds": "89aac472241dcd3a9b316d8801345f008c2966cd23357c9408ea2b027bd09db9",
+    "gfx/interface/events/MSGA_postkosovo_event_12_new_balance_balkans.dds": "7b20603da26d701a343f2fbb216fc2a1c17d8614acb3d5f555df3ad63c1c4ad0",
+    "gfx/interface/events/MSGA_postkosovo_event_13_voices_across_drina.dds": "bf636fd5e03d5070827207475ac43f2bd511659624bac985af4556c1e32dfefb",
+    "gfx/interface/events/MSGA_postkosovo_event_14_kosovo_only_beginning.dds": "a6dd65b3a89ac3dd81e85c5805e27b375457092787191c920922f0707b015e6d",
+    "gfx/interface/goals/GFX_goal_MSGA_arms_for_an_uncertain_world.dds": "a1c290a561adc1547e3019804f8e5ba553b2bb2cad5d9418fb121012b5ee2f31",
+    "gfx/interface/goals/GFX_goal_MSGA_attract_productive_capital.dds": "6061e088b3a9c59e41a0e627f7cede5c38bc577ff487e7e314c2bc46f9bff403",
+    "gfx/interface/goals/GFX_goal_MSGA_consolidate_the_state.dds": "db84949d5b16b728ba5a3a6319809724262fc53b121db4e7bd6fe2add2df7bd6",
+    "gfx/interface/goals/GFX_goal_MSGA_contain_the_outbreak.dds": "cc13d79411b48ec638c5f43d24fb38b04a05cd86aa48ba24d4b1947ba107548a",
+    "gfx/interface/goals/GFX_goal_MSGA_develop_the_morava_corridor.dds": "1981d095860ab04438a99d68ea4a5f51b1f495dba994a20d183c8eb7bf86efb2",
+    "gfx/interface/goals/GFX_goal_MSGA_independent_resource_policy.dds": "09067be6d9f905b7dbcb3bf3d3343c5c2b455dc4ec5387d05aba2fdfb5d25a4e",
+    "gfx/interface/goals/GFX_goal_MSGA_internal_investment_drive.dds": "6f40e0f9e30181ea9c01134ee36f35a1e276efcba17400fd6eb13dfca81712fc",
+    "gfx/interface/goals/GFX_goal_MSGA_manage_the_streets.dds": "94e278ea0b0b5a2194c5b1763fb09421000c3709a369fe8b38fea22c2abc9cd9",
+    "gfx/interface/goals/GFX_goal_MSGA_modernise_the_army.dds": "7cb51f99914629a4859efe51561e4d372cd3a37cf49173f8fad25e84d19cd972",
+    "gfx/interface/goals/GFX_goal_MSGA_presidential_mandate.dds": "f467ffff45a0a517459fe1d4fe2942df4297e44c9973f68143e6565fba77d4da",
+    "gfx/interface/goals/GFX_goal_MSGA_ready_for_the_uncertain.dds": "4b9105aeae1f61742d0a99449210daccf4c9412cf949d3b883ee79e0e8b4e62f",
+    "gfx/interface/goals/GFX_goal_MSGA_reconstitute_serbian_volunteer_guard.dds": "ccc65a0f6b0c8fa0f6d28279350a0a909424707b3e08b54f87817c96aac78022",
+    "gfx/interface/goals/GFX_goal_MSGA_reopen_on_serbian_terms.dds": "f51d07dc453783a66a318f75763012d84b352e13f0e7212dea69302cbe9d59cd",
+    "gfx/interface/goals/GFX_goal_MSGA_restore_defence_production.dds": "e78258500cf2b09746b6214dff335b8151de550c93633583464530edffb0dce0",
+    "gfx/interface/goals/GFX_goal_MSGA_secure_supply_lines.dds": "296756e8783f281eb8f27a8d2c0f2eaf3fa6e3772fc529347a38b85a6cecae0f",
+    "gfx/interface/goals/GFX_goal_MSGA_secure_the_national_assembly.dds": "3dff7aed8408fca5e94f1fb58f22911885e3d66c70e46447758a414bdd948157",
+    "gfx/interface/goals/GFX_goal_MSGA_send_the_migrants_back.dds": "6f9c02e517f0c63b7aeeb819b9b1b51808a03fc1fcdd43fcfb28c1f32713e08c",
+    "gfx/interface/goals/GFX_goal_MSGA_serbian_recovery.dds": "ac95959e51a0de645650409d0b9c780818a9ea14a9f4979c7cc8154337f09c99",
+    "gfx/interface/goals/GFX_goal_MSGA_serbia_in_the_new_decade.dds": "b92ea0a812544d871ec3722dcfa1e172adb4c1f9daf376561eb0ba14e9b3ce74",
+    "gfx/interface/goals/GFX_goal_MSGA_serbia_stands_united.dds": "3ca023295c6f5f92d7540c50d23bea087c2e74f3a5c4d09c354f80644fb591e0",
+    "gfx/interface/goals/GFX_goal_MSGA_settle_old_political_accounts.dds": "97e74dd69276a904fce9492a097aa072d4738a58b79eb1114243c2aaa949c2f7",
+    "gfx/interface/goals/GFX_goal_MSGA_the_kosovo_question.dds": "dd6ccd3f464341e8504f9a17990a8fe87b40cbda2fedb29b94478dadfa676870",
+    "gfx/interface/goals/GFX_goal_MSGA_upgrade_belgrade_services.dds": "873e000bfb5976153b25b4faca97ee268ae2a982854028b4c1a97a6bcea24b60",
+    "gfx/interface/goals/GFX_goal_MSGA_watch_the_western_shield.dds": "d599019492395cd5de80d4b44e8b6ac7be301c0d5624d2056f3835bf7533d36e",
+    "gfx/interface/goals/MSGA_a_lasting_peace.dds": "19913fef3eaad6bd5b359eb390df012780f63f1c680040215d5e861ef209ca16",
+    "gfx/interface/goals/MSGA_buy_equipment_serbian_air_force.dds": "91dfdbb2afcf68ff59fe8bc8f130ec3b0c29c8f0e4de65bae09d93621123249b",
+    "gfx/interface/goals/MSGA_consolidate_serbian_authority.dds": "af48281aa07948e19d512924e4cce77c80a035e42ef8162dbf4c4d14364ea6ea",
+    "gfx/interface/goals/MSGA_establish_territorial_defence.dds": "bdf67bf32c3182c7aaf32611e54fde6ae1394d411c4ae9e686a763e7aa89ff71",
+    "gfx/interface/goals/MSGA_focus_arm_new_serbian_sphere.dds": "ab44b8aef850de53ad6021a5ea97677a3ad9f9b0dbaae13be6df1f4f76a5fc4e",
+    "gfx/interface/goals/MSGA_focus_balkans_close_ranks.dds": "cc82d37dfafc9ca486b849cdb61d8e1b5ea241821baa66d533a3c406f5d37679",
+    "gfx/interface/goals/MSGA_focus_begin_reconstruction.dds": "4955ca17bdcde77469d1acf0d514442d6f82fcabd4761f23c6f95e209c76e81e",
+    "gfx/interface/goals/MSGA_focus_bind_new_protectorates.dds": "c73aa6736492e7372104cf61c9f84faff419934a197b65c62f79cb65f67167ea",
+    "gfx/interface/goals/MSGA_focus_break_the_ring.dds": "b7d4e5c3ba6e901be67dadb5facf806b72c3fa8a0822661efd58d9a73c75e8db",
+    "gfx/interface/goals/MSGA_focus_call_up_reserves.dds": "85e30f2676772e0d41babc6e4286cee8d71eff59a3e5e34db74e10ade55d37db",
+    "gfx/interface/goals/MSGA_focus_consolidate_victory.dds": "09be764752b5135b090aa84e4e9021d6df49d504dcee0c197153685a2862eee0",
+    "gfx/interface/goals/MSGA_focus_coordinate_protectorates.dds": "adaa629793d12c6ef86c487c3ebc8b8b7618824441497fe531e4b53f02a9bdf3",
+    "gfx/interface/goals/MSGA_focus_count_the_cost.dds": "95d67914a7e6ef00a6d75988426d79d7bdac5084a4c61e5160fcb53064fecb57",
+    "gfx/interface/goals/MSGA_focus_economic_heart_balkans.dds": "82c559f1c4a88594fe4cb06680a11997d5b3cb4ce5070aeeebe3fcd071a1f493",
+    "gfx/interface/goals/MSGA_focus_fortify_kosovo.dds": "9c1ae1fc0fd1fa09eff1c09a0102431fd354d45eb188e15e5c2598b025f64038",
+    "gfx/interface/goals/MSGA_focus_lessons_bosnian_war.dds": "05ccd540f6443b3f1cce82b1fec1e1671c4256621b0e965e476a27e4f23c3e67",
+    "gfx/interface/goals/MSGA_focus_new_serbian_era.dds": "3d65d8c7d7a99c33aa58ef92acaa3fce7408d601701e72d34659f6192162dcb1",
+    "gfx/interface/goals/MSGA_focus_prepare_southern_front.dds": "757edefb8b7ecc62f2ebf358b123d096def94328688e0550fd80a3f51e5c0e18",
+    "gfx/interface/goals/MSGA_focus_prepare_western_front.dds": "9c6184bc73605c88e2ccef8010f199007040dfe0e83f7c672447530a552a650e",
+    "gfx/interface/goals/MSGA_focus_pressure_podgorica.dds": "1e587b5e1162c7324ff77f1df797479eb867580ea4a50a4343a197795c9b42ed",
+    "gfx/interface/goals/MSGA_focus_pressure_skopje.dds": "c55bbacf3dbb5e445e2448ebc4e348c042449fe26eb072775b299c24b449b26a",
+    "gfx/interface/goals/MSGA_focus_rebuild_the_west.dds": "e3d04869801c8a3ba1bdd02d8b37d052fe8440405646342241d327dc0e856581",
+    "gfx/interface/goals/MSGA_focus_repair_the_roads_and_railways.dds": "6afd11efbb138b2f79f1e82277cf0a041a86984fa252f0531190b6f7b453c049",
+    "gfx/interface/goals/MSGA_focus_repair_war_economy.dds": "d40c9332648e40dff0c5cc84e912ab90c19e0e5494052d283e8df597c6510d10",
+    "gfx/interface/goals/MSGA_focus_restart_serbian_commerce.dds": "1b892ab5632f3147f139b2c989d4a7e1594f018dc9f96bb159216df76e78de8a",
+    "gfx/interface/goals/MSGA_focus_restore_serbian_industry.dds": "d98cdf466a91d43b713d2ac50fdca3583a1fac46873438e6fd55c4afe551b3f6",
+    "gfx/interface/goals/MSGA_focus_secure_drina_corridor.dds": "a091cbca0109f0a22297047be656cd93998b820136beb60c9e6584068dab45fa",
+    "gfx/interface/goals/MSGA_focus_serbian_defence_network.dds": "e71da88e2dbf8a04238b0d55f45b0569fe6dbe0a200a53ec6604045354b73f7e",
+    "gfx/interface/goals/MSGA_focus_serbian_industrial_consolidation.dds": "b8335fdb203f8b39ea387549b3ec9e5c38855523780aa3c6f2f9e359a9f98bbf",
+    "gfx/interface/goals/MSGA_focus_serbian_sphere.dds": "8ab3a55836a780169b1798e1c2e5434569a82af46e64d4045a2eedc69d0d1557",
+    "gfx/interface/goals/MSGA_focus_serbian_war_plan.dds": "437d9af051c249593e434a31057586c654ddf36a57b235efdb912dde4754aa54",
+    "gfx/interface/goals/MSGA_focus_south_slavic_unity.dds": "b51ab6eca2f31727ef972666196634f2cc095d151b82622da0e938c53dce9a58",
+    "gfx/interface/goals/MSGA_focus_stabilise_the_new_order.dds": "4d1b32df3dde319875a1c3425b2ac5c692382db16f768aaf8cd116c19f1d4209",
+    "gfx/interface/goals/MSGA_focus_stockpile_continental_war.dds": "36d3261650fddcf2d498fc58b079076a478e97874f3f6c89296672c43f2148ea",
+    "gfx/interface/goals/MSGA_focus_the_south_slavic_question.dds": "45ba37238aa6dff25805a241ea338ce628e26d7fcb533190bbef1cdaefc6561f",
+    "gfx/interface/goals/MSGA_focus_victory_in_bosnia.dds": "f7fccce3bfd64b76bb0cfe0cbafc7f1beea3444d37e5117a68c94a4205b50ddd",
+    "gfx/interface/goals/MSGA_invest_in_pristina.dds": "973c95b2678d18623d139f4be61b206fbf37aefc80759eb5a393ed19ed992abb",
+    "gfx/interface/goals/MSGA_kosovo_has_been_retaken.dds": "0d4fb6cdf622d53bf061c4e24c9e4be706413f89338d8547a0fe2ab80b87fed3",
+    "gfx/interface/goals/MSGA_one_people_across_the_drina.dds": "fdd1f6de50d60c58add75e8a99318bcfc9dee4e1f1d119cc1875f58def609384",
+    "gfx/interface/goals/MSGA_operation_return.dds": "a853ae6143590914b145347d512d96247b5cce8d51ff92a3eb7c0e2e746e10ff",
+    "gfx/interface/goals/MSGA_plan_the_attack.dds": "461209c0c9ce3eb6e50d982939b36a20d4f2bd0f5a5be413b2d3fbe63f73c3ae",
+    "gfx/interface/goals/MSGA_prepare_for_the_unthinkable.dds": "f2f50d1c4589e5c9e093b51359bf8a5fe09d108601009889b6ed2829d68a80fb",
+    "gfx/interface/goals/MSGA_prepare_logistics_network.dds": "bf1378794e88525c725d0ae370bc8681e56945c491abb960488305a6d632f423",
+    "gfx/interface/goals/MSGA_prepare_southern_command.dds": "26813613a87a920104b081bfaf2f89895847cafc989a67db871ba707fdd42b6e",
+    "gfx/interface/goals/MSGA_prepare_the_nation_for_war.dds": "052b604c63918a42a675d8657c924af9d3a0430d53915f7ec7e36a9c71682c89",
+    "gfx/interface/goals/MSGA_rebuild_kosovo.dds": "74c4e18c4e1c42daf48b5de780b6d0b9f3c4c5f0d8984466b40302b3bdbd02ec",
+    "gfx/interface/goals/MSGA_restore_order_in_kosovo.dds": "7a0afad0b2c5c7d3eed78c833590360a439d18f692295b1993ef9221915bdf74",
+    "gfx/interface/goals/MSGA_review_kosovo_administration.dds": "efb3d2fd3e3b4497a9b7237a065554862edd38939d314237dc8aaf9978bbbd26",
+    "gfx/interface/goals/MSGA_seed_the_rebellion_in_bosnia.dds": "bc8ae5d8a1563befade30c941059c14c2b696f825f832e740c117e0ac23c847f",
+    "gfx/interface/goals/MSGA_spend_money_command_structure.dds": "b7b18d15566c68c1fccab3297656ea7cbc10727c9f4f905dc37cf3ffb64460b3",
+    "gfx/interface/goals/MSGA_start_make_serbia_great_again.dds": "f4da72484c7b90951b2a041e4d602a545a9b34c42864f53917042915c9daab05",
+    "gfx/interface/goals/MSGA_start_mobilising_our_people.dds": "d05fa2619b7cca9dec5ed94e82104862a03c039a5bd61837b4df5db4f533c391",
+    "gfx/interface/goals/MSGA_start_the_army_buildup.dds": "c545f4fc2f423bf16946fea3b0bc559e065113fe6d4cb07c3efaa97fbaa9dbb7",
+    "gfx/interface/goals/MSGA_strengthen_national_narrative.dds": "d2029241a3515bd56d4d62241928c20bdb4fcd1dcd7ef854739d2778e1a9b15b",
+    "gfx/interface/goals/MSGA_the_serbian_question.dds": "fc81a38e66b926650c9ea1e77f6a5f16e9e7927583f3898368c1d8248d09a413",
+    "gfx/interface/goals/MSGA_watch_the_conflict.dds": "96a6463317e58a2d8fa6450d499f91272930893605ee562731e8c079b46a6630",
+    "gfx/interface/ideas/GFX_idea_MSGA_internal_investment_campaign.dds": "33df63166898680f9805b0c5ada174d6e0bc4f4a1e667c4dbddff6d0cbdabcec",
+    "gfx/interface/ideas/GFX_idea_MSGA_massive_emigration_easing.dds": "3f7844efee0b83619b2d205837614908ed2617daa543b17b3068f6e47233b585",
+    "gfx/interface/ideas/GFX_idea_MSGA_national_consensus.dds": "a0cdf599a8f16087a14e2b231692a8673c80764756851a9f71d1116849bf76f3",
+    "gfx/interface/ideas/GFX_idea_MSGA_repatriation_disruption.dds": "c9584fc2a3f7e11f2df4de37b98dacda36b270b85f5934e80f2d510ecdfa1d7f",
+    "gfx/interface/ideas/MSGA_decision_consolidate_the_serbian_sphere.dds": "d1b1af9baebe2a0ac581869dffa7eff1fa56828fdc3b4152c422ed2508e15039",
+    "gfx/interface/ideas/MSGA_idea_a_stabilised_balkan_order.dds": "002e44edbe29991103489c03d3935bb3b2471bfeb609e27667bf054aa21753f0",
+    "gfx/interface/ideas/MSGA_idea_the_cost_of_victory.dds": "c261747e5d165a9d5f57dac43e11a5ca5c1dec4573233a4c6539572e7ae42724",
+    "gfx/interface/ideas/MSGA_idea_the_cost_of_victory_ii.dds": "7ed5e67fd0c39a6ca9cb0f591c4f5dc8819fdbc8863d3f7dd61e54e7ac8dff0b",
+    "gfx/interface/ideas/MSGA_idea_the_cost_of_victory_iii.dds": "4fb21e70a72f2788ac76c46ae506e9bad7774ba102e9a27bc9f7ed210d8c7f1d",
+    "gfx/interface/ideas/MSGA_idea_the_cost_of_victory_iv.dds": "82ee15235cb6669921887034c74aeda4c386d5baea38d533fa89aacabc7324e9",
+    "gfx/interface/ideas/MSGA_KOS_last_stand.dds": "61cb9737c24996b179d2df0ef35c95a325d3ff6953f486e935216a743fb9e2f2",
+    "gfx/interface/ideas/MSGA_prepared_for_war.dds": "691f97a58400f0b31d899b55b5b62dbb3bdde4d85f9deb0e4543b47292c95544",
+    "gfx/interface/ideas/MSGA_serbian_rearmament_program.dds": "fcd06092a70da92e223332ef626343def722aea4ea51b5d6dae2e2a4bad288fe",
+    "gfx/interface/ideas/MSGA_spirit_surprise_attack.dds": "be4a351d854db46fb1de798404a7aeb57cf4e3348f56f9c20a50a963fba2f09d",
+    "gfx/interface/ideas/MSGA_SRP_last_stand.dds": "cab2dfa13a8587e07480fd67edee052ec288784d95fd46f43bb63aef400fa05a",
+    "gfx/interface/mechanics/MSGA_offensive_ready.dds": "0404cb22dd9aeafebd2ae08e96b6bca1722c1b389bf7cfa61ca32974e8c9e963",
+    "gfx/interface/mechanics/MSGA_prepare_offensive.dds": "f3118cb851183818a21ce883f122e97ec041585d8463edd96b99c25b94d26a59",
+    "gfx/interface/mechanics/MSGA_unprepared_sector.dds": "963df52a20a0fd8599906e20f48c69bbc6c7ae381df58d08fc4cf4b8a83918e6",
+    "history/countries/HRZ - Herzegovina.txt": "4345649a35e0847dd810250f01a669997bf13c8588feba4d4bf0d6b4989d825c",
+    "history/countries/SRP - Republika Srpska.txt": "21140d751aa3c84fe8f1b78dd5a52f1120884fb7b82090f648bd18e422813bae",
+    "history/units/MSGA_ALB_pact_emergency.txt": "58c22c0067988bdcaddc17830abe8d140012c8698c5d49a205359fe61374b2b4",
+    "history/units/MSGA_BOS_auxiliary_militias.txt": "10ebac5c3481bfe520853d669cd9faec100176cb309ccf27037fc61789dda1ba",
+    "history/units/MSGA_CRO_pact_emergency.txt": "bb928aeb720e291a63df9b3ec6a7ab8bcded23767889533d870620f9c85ca77e",
+    "history/units/MSGA_HRZ_auxiliary_militias.txt": "30fc0e25b7cf656846701515520239bd2804ec536ab5b2ca8c7c0f385770b596",
+    "history/units/MSGA_MAC_pact_emergency.txt": "69302da5252a1f5d8ec2ece889ddf54a5f8ea0b828cc4ec9e4a824158a1bde62",
+    "history/units/MSGA_MNT_pact_emergency.txt": "a4268c9e71e27797543343c3d359a567f5c372d34fbc173ef769b6a1fa5b3006",
+    "history/units/MSGA_SER_kosovo_brigade.txt": "f355471a3bcdecc665d1872e616408e071d1fee4dd34fb516b076c2835936825",
+    "history/units/MSGA_SER_kosovo_brigade_legacy.txt": "224a6a8a6e71203026958deb36fdd833359030d46a83a0b376bdce59d4f21efc",
+    "history/units/MSGA_SER_kosovo_brigade_template.txt": "2430e8883d30cba9cf8d367c88ea19dc2541d40827f9b586df6cb19a97364f31",
+    "history/units/MSGA_SER_pact_emergency.txt": "2064c03fcb9dad20960053dbb4d89dc2d8ce63ded75ba4627b68e094a467cdc8",
+    "history/units/MSGA_SER_srpska_td.txt": "be9f7242f0dafe09399c29178f9eeaf7f37a16e6719b249ee71bbb5becb9b993",
+    "history/units/MSGA_SER_srpska_td_legacy.txt": "adf114a278cc6fe35a00330f091dbb4b35ffe12eecbf20a74800cb18e2b6d3a6",
+    "history/units/MSGA_SER_srpska_td_template.txt": "c6a07b709f30ba5538bb9a2ee251a47b2b278a03de487028a8b16a2e63867ebd",
+    "history/units/MSGA_SER_starting_templates.txt": "66dae69b30265fd9b2968756e598e950eef94714bf5f2860989b13de10442455",
+    "history/units/MSGA_SER_territorial_107.txt": "ffea147c658051619f046139df4d0b49fc258b619348c5a7d99029a50e314a9b",
+    "history/units/MSGA_SER_territorial_108.txt": "6a3303261226f1f889c28f1bc95b78937f5725705847c889e89f63de8c56a6b9",
+    "history/units/MSGA_SER_territorial_1296.txt": "880191d11d37af994a8756cc4e90f29bcd3569833d7c9629314995d37432f85e",
+    "history/units/MSGA_SER_territorial_1305.txt": "09ff052f6d5cb0db993003cbf8cde40f94e2a80229d3225a32416fc4215eca20",
+    "history/units/MSGA_SER_territorial_45.txt": "33078ef6f008d17dc7af65b3e67220823c36c6b0aea482d5b7cef46f6ecb674b",
+    "history/units/MSGA_SER_territorial_785.txt": "e32bbb7dd05b202a362fa359e5efe20ca163763c6d52a78a6e42f2f90ef7410e",
+    "history/units/MSGA_SER_territorial_template.txt": "9aeed6ce327d3dca738b9451abd89b395bfd5d15c4d9d33a7a66cbdb291fb327",
+    "history/units/MSGA_SER_volunteer_template.txt": "1a7541716e60b861b48d4a87657c3e6bbd8ee3da8a06f1602e4c1f10a2c06b57",
+    "history/units/MSGA_SLV_pact_emergency.txt": "33d0329af05937803762540793cdf7749ea7875387b7ec5353c51cd9eec2105f",
+    "history/units/MSGA_SRP_empty.txt": "a371dc5244633af03e2a1d951561757a42aa09c55266ccb0da7737a26f0a7447",
+    "history/units/MSGA_SRP_guard.txt": "1e931dc0d116bdda2598a248ce4ceec942d9ac90334c819ae985b5791fef0c7f",
+    "localisation/english/MSGA_bosnia_l_english.yml": "2963d5c3a1975aad75fafbb28200f34f67c67a82cc8459ee695609162eff0b2f",
+    "localisation/english/MSGA_encirclement_l_english.yml": "7e7491a03a192f2422494cf13f61f8fda1ca6eda1c11b6dc08ed5db4134c0c7c",
+    "localisation/english/MSGA_l_english.yml": "7c1f1fc37bc7210da2a91d456a82a837bf0455a3c7a424a4b5ab019c9521c14e",
+    "localisation/english/MSGA_new_order_l_english.yml": "f875ac1ec5b15fb3669f413d0af19122f3ddbdac4c7d64dde33f32cccd65e783",
+    "localisation/english/MSGA_pact_war_l_english.yml": "b42e926be1b02db9e18079689e0d7d56a9d791d64dff572204bfd705c41f48f8",
+    "localisation/english/MSGA_post_bosnia_l_english.yml": "300f77975e3894411418386ed9a0473dc6ab2652a40ea2384e69885595b51a75",
+    "localisation/english/MSGA_post_kosovo_l_english.yml": "05ec1a3f1245fda6beec27c208a99d1bd8ec6bde94ecf817ea6ca98e2bbfc677",
+    "localisation/english/MSGA_settlement_l_english.yml": "e36858ef3b35e3e419685743f9105e4f973918f52c7f1ed8c6ad560c4f21d139"
+  },
+  "starting_serbia_states": {
+    "107": "history/states/107-Kosavo.txt",
+    "108": "history/states/108-Eastern Serbia.txt",
+    "1296": "history/states/1296 - Sumadija and Western Serbia.txt",
+    "45": "history/states/45-Yugoslavia.txt"
+  },
+  "state_geography": {
+    "Bor/Kostolac/Djerdap/Nis": 108,
+    "Jadar/Obrenovac/Kragujevac/Morava corridor": 1296,
+    "Belgrade city": 107,
+    "Vojvodina/nuclear site/solar manufacturing": 45
+  },
+  "reference_repository": "https://github.com/RubovszkiB/HOI4-TFR-Austria-Hungary-reborn",
+  "reference_commit": "8e4e35f8093f826dc21fafbccb82e3e1cd3eb18e",
+  "native_sources_sha256": {
+    "common/buildings/TFR_buildings.txt": "92c70c6510f94d4135a3ca305d0bd36808ac5b346c2b1ea6b61cf07b9aa40aaf",
+    "common/scripted_effects/00_TFR_scripted_effects_ZZZ_generic.txt": "e6b6273e47d65523585638830aa36f458de4ae52b1f19d115c7444f354f10e84",
+    "common/modifier_definitions/00_TFR_economic_modifiers_definition.txt": "7c93341f9e316c0f6cb9d72ef1b26e19d12d4a3a86d4d78d13986622961648c1",
+    "common/dynamic_modifiers/00_TFR_dynamic_modifiers_ZZZ_generic.txt": "0ff29d0415023523e31d65b4c69d76f483145a49226ec3b3b48c401be06bb7aa",
+    "common/technologies/electronic_mechanical_engineering.txt": "e0ab51e70c333fbdb28b7a85cbbd635be306de29c3c09cf88943e6e5bf165320",
+    "common/decisions/TFR_decisions_SER.txt": "aeb6a5c0fbe5ccf011a9c5248792626141d1d6be04da83984fd2efcbb0ed025c",
+    "common/decisions/TFR_decisions_SOV.txt": "f4e691f57d3e1efd4b6a1c4e7ba85bf125ff4d6e2fcddc09581e19f65b86106f",
+    "common/decisions/TFR_decisions_GER.txt": "a0934351becba65f54f948a94de165affdf93dade67020fcd4d66d0c0b0cb5a0",
+    "history/states/107-Kosavo.txt": "9fa194845b448449c71d9a4f88449efb01c784652954aeb71cba435be53f3ee9",
+    "history/states/108-Eastern Serbia.txt": "0e868aa2417b442e41749da8b3dde733ef69553a1a3c52d34d271a7c0d110ab2",
+    "history/states/1296 - Sumadija and Western Serbia.txt": "ea3f0a91f937a1e3945e5b2d71701083aaec431ef1378242c6cd37c962271510",
+    "history/states/45-Yugoslavia.txt": "c0e2e130714dc9709842a6f786c4c24c5279effd9a06a7b81d93ab0bd4fba26e"
+  },
+  "native_energy_buildings": {
+    "power_plant": [
+      [
+        "base_cost",
+        "=",
+        "10800"
+      ],
+      [
+        "per_level_extra_cost",
+        "=",
+        "1080"
+      ],
+      [
+        "icon_frame",
+        "=",
+        "17"
+      ],
+      [
+        "value",
+        "=",
+        "5"
+      ],
+      [
+        "infrastructure_construction_effect",
+        "=",
+        "yes"
+      ],
+      [
+        "show_modifier",
+        "=",
+        "yes"
+      ],
+      [
+        "local_resources_coal",
+        "=",
+        "6"
+      ],
+      [
+        "local_resources_oil",
+        "=",
+        "-4"
+      ],
+      [
+        "local_resources_steel",
+        "=",
+        "-1"
+      ],
+      [
+        "state_modifiers",
+        "=",
+        [
+          [
+            "local_building_slots",
+            "=",
+            "1"
+          ],
+          [
+            "local_building_slots_factor",
+            "=",
+            "0.2"
+          ],
+          [
+            "state_production_speed_buildings_factor",
+            "=",
+            "0.1"
+          ]
+        ]
+      ],
+      [
+        "level_cap",
+        "=",
+        [
+          [
+            "state_max",
+            "=",
+            "4"
+          ],
+          [
+            "shares_slots",
+            "=",
+            "yes"
+          ],
+          [
+            "exclusive_with",
+            "=",
+            "nuclear_reactor"
+          ],
+          [
+            "exclusive_with",
+            "=",
+            "energy_farm"
+          ]
+        ]
+      ]
+    ],
+    "energy_farm": [
+      [
+        "base_cost",
+        "=",
+        "16200"
+      ],
+      [
+        "per_level_extra_cost",
+        "=",
+        "1620"
+      ],
+      [
+        "icon_frame",
+        "=",
+        "18"
+      ],
+      [
+        "value",
+        "=",
+        "5"
+      ],
+      [
+        "infrastructure_construction_effect",
+        "=",
+        "yes"
+      ],
+      [
+        "show_modifier",
+        "=",
+        "yes"
+      ],
+      [
+        "local_resources_coal",
+        "=",
+        "4"
+      ],
+      [
+        "local_resources_steel",
+        "=",
+        "-2"
+      ],
+      [
+        "state_modifiers",
+        "=",
+        [
+          [
+            "local_building_slots",
+            "=",
+            "1"
+          ],
+          [
+            "local_building_slots_factor",
+            "=",
+            "0.2"
+          ],
+          [
+            "state_production_speed_buildings_factor",
+            "=",
+            "0.1"
+          ]
+        ]
+      ],
+      [
+        "level_cap",
+        "=",
+        [
+          [
+            "state_max",
+            "=",
+            "4"
+          ],
+          [
+            "shares_slots",
+            "=",
+            "yes"
+          ],
+          [
+            "exclusive_with",
+            "=",
+            "power_plant"
+          ],
+          [
+            "exclusive_with",
+            "=",
+            "nuclear_reactor"
+          ]
+        ]
+      ]
+    ],
+    "nuclear_reactor": [
+      [
+        "spawn_point",
+        "=",
+        "nuclear_reactor_spawn"
+      ],
+      [
+        "show_on_map",
+        "=",
+        "1"
+      ],
+      [
+        "base_cost",
+        "=",
+        "54000"
+      ],
+      [
+        "per_level_extra_cost",
+        "=",
+        "13500"
+      ],
+      [
+        "icon_frame",
+        "=",
+        "13"
+      ],
+      [
+        "local_resources_steel",
+        "=",
+        "0"
+      ],
+      [
+        "nuclear_reactor",
+        "=",
+        "yes"
+      ],
+      [
+        "value",
+        "=",
+        "10"
+      ],
+      [
+        "infrastructure_construction_effect",
+        "=",
+        "yes"
+      ],
+      [
+        "show_modifier",
+        "=",
+        "yes"
+      ],
+      [
+        "local_resources_coal",
+        "=",
+        "12"
+      ],
+      [
+        "local_resources_chromium",
+        "=",
+        "-4"
+      ],
+      [
+        "country_modifiers",
+        "=",
+        [
+          [
+            "modifiers",
+            "=",
+            [
+              [
+                "nuclear_production_factor",
+                "=",
+                "3"
+              ]
+            ]
+          ]
+        ]
+      ],
+      [
+        "state_modifiers",
+        "=",
+        [
+          [
+            "local_building_slots",
+            "=",
+            "1"
+          ],
+          [
+            "local_building_slots_factor",
+            "=",
+            "0.4"
+          ],
+          [
+            "state_production_speed_buildings_factor",
+            "=",
+            "0.2"
+          ]
+        ]
+      ],
+      [
+        "level_cap",
+        "=",
+        [
+          [
+            "state_max",
+            "=",
+            "2"
+          ],
+          [
+            "shares_slots",
+            "=",
+            "yes"
+          ],
+          [
+            "exclusive_with",
+            "=",
+            "power_plant"
+          ],
+          [
+            "exclusive_with",
+            "=",
+            "energy_farm"
+          ]
+        ]
+      ]
+    ]
+  },
+  "assets": {
+    "gfx/interface/decisions/MSGA_expand_bor_mining_complex.dds": {
+      "sha256": "ffa21940774738518692d4eff293b8b4bc2d6b465c1edcf96d53b614057c398d",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        28,
+        774,
+        202,
+        854
+      ]
+    },
+    "gfx/interface/decisions/MSGA_develop_jadar_mining_project.dds": {
+      "sha256": "ffa21940774738518692d4eff293b8b4bc2d6b465c1edcf96d53b614057c398d",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        28,
+        774,
+        202,
+        854
+      ]
+    },
+    "gfx/interface/decisions/MSGA_serbian_mineral_processing_expansion.dds": {
+      "sha256": "efb8b894f8a76c73becee5cfcef55496ef4929a5fb8ffbeb294adc2462a5a8eb",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        28,
+        670,
+        202,
+        750
+      ]
+    },
+    "gfx/interface/decisions/MSGA_central_serbian_industrial_park.dds": {
+      "sha256": "7fec1e0b6c30556a4ee80b1c04cd550d7338693f7518586a5bd74620722ffe7d",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        28,
+        365,
+        202,
+        445
+      ]
+    },
+    "gfx/interface/decisions/MSGA_southern_serbian_industrial_development.dds": {
+      "sha256": "df9f2d9b909087af62776d3c520dbcff8e84f09bbd4afbe13cac25e0d20e3b7d",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        28,
+        264,
+        202,
+        344
+      ]
+    },
+    "gfx/interface/decisions/MSGA_morava_logistics_development.dds": {
+      "sha256": "e326ad5bbf5d97210f3ae7773a73be0f48ace39f549f167cac9060946e1b8bd9",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        28,
+        467,
+        202,
+        547
+      ]
+    },
+    "gfx/interface/decisions/MSGA_modernise_serbian_power_grid.dds": {
+      "sha256": "4384759469a957a9129cc63a40d3fed6c3c9b5c1d1d010926a2cabfeeb11e41d",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_energy_development.png",
+      "crop": [
+        28,
+        282,
+        180,
+        381
+      ]
+    },
+    "gfx/interface/decisions/MSGA_modernise_nikola_tesla_complex.dds": {
+      "sha256": "b7dbcabdba820c65bea478fb366183c0fd86b6692fc2262c4e36b9865095adb3",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_energy_development.png",
+      "crop": [
+        28,
+        407,
+        180,
+        506
+      ]
+    },
+    "gfx/interface/decisions/MSGA_expand_kostolac_energy_complex.dds": {
+      "sha256": "ee410a21d874666c4f046d4b14892c2f11c61660a36cd6489c801baf77f82c6c",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_energy_development.png",
+      "crop": [
+        28,
+        529,
+        180,
+        628
+      ]
+    },
+    "gfx/interface/decisions/MSGA_upgrade_djerdap_power_system.dds": {
+      "sha256": "092f1d6c172359b62a3f8ec2a21e7bca54093c40f3125e70913cc16fe8bf0396",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_energy_development.png",
+      "crop": [
+        28,
+        652,
+        180,
+        751
+      ]
+    },
+    "gfx/interface/decisions/MSGA_develop_bor_renewable_complex.dds": {
+      "sha256": "a9b264e110741bf00ab4634171b5f04c823482e4e8bddd879d6865f5220892c9",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_energy_development.png",
+      "crop": [
+        540,
+        407,
+        688,
+        506
+      ]
+    },
+    "gfx/interface/decisions/MSGA_expand_bor_renewable_complex.dds": {
+      "sha256": "4f13436c46855fdb8b13a7afbdd11262e6d4b85f3c917053971e74c80ec30255",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_energy_development.png",
+      "crop": [
+        540,
+        524,
+        688,
+        623
+      ]
+    },
+    "gfx/interface/decisions/MSGA_establish_serbian_solar_manufacturing.dds": {
+      "sha256": "db4a2ae2e1a508c6ff0dffd3bb140573cc90f0127544093004746d20715d5a86",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_energy_development.png",
+      "crop": [
+        540,
+        636,
+        688,
+        735
+      ]
+    },
+    "gfx/interface/decisions/MSGA_develop_grid_scale_storage.dds": {
+      "sha256": "48a659208ba5fefa05de1c0013b3386b96631bee8c2a1503290067ee6fe3f57b",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_energy_development.png",
+      "crop": [
+        540,
+        751,
+        688,
+        850
+      ]
+    },
+    "gfx/interface/decisions/MSGA_seek_russian_nuclear_expertise.dds": {
+      "sha256": "31798638061df6ac36369d33f0fa511b30405d150fa362e56fead7cff25bb0b1",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_energy_development.png",
+      "crop": [
+        1050,
+        284,
+        1209,
+        383
+      ]
+    },
+    "gfx/interface/decisions/MSGA_establish_serbian_nuclear_programme.dds": {
+      "sha256": "9f37326ac15a94c8934c0b369e503d99d2476256e6ff4f312227a5d9258ad7a9",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_energy_development.png",
+      "crop": [
+        1050,
+        406,
+        1209,
+        505
+      ]
+    },
+    "gfx/interface/decisions/MSGA_train_serbian_nuclear_workforce.dds": {
+      "sha256": "8bebe9db7b7800d71f0de5712d6a91520a46ef5b161495a47e9d84bd566599a7",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_energy_development.png",
+      "crop": [
+        1050,
+        525,
+        1209,
+        624
+      ]
+    },
+    "gfx/interface/decisions/MSGA_first_serbian_nuclear_power_plant.dds": {
+      "sha256": "910ebb750b03fee0484c2e6832685c05261d7e2e6fe9653196fe133d135ab37c",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_energy_development.png",
+      "crop": [
+        1050,
+        646,
+        1209,
+        745
+      ]
+    },
+    "gfx/interface/decisions/MSGA_expand_serbian_nuclear_programme.dds": {
+      "sha256": "292c251ea43e1b2ee92eadc2b45fe6184569e6b426bd2ddaab58603f33452ab0",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_energy_development.png",
+      "crop": [
+        1050,
+        766,
+        1209,
+        865
+      ]
+    },
+    "gfx/interface/decisions/MSGA_industrial_efficiency_programme.dds": {
+      "sha256": "b56254cda40e08bb8193dbb08f62566be9d0c43df4f421d75c1582b18c3efdfc",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        28,
+        878,
+        202,
+        958
+      ]
+    },
+    "gfx/interface/decisions/MSGA_subsidise_serbian_manufacturers.dds": {
+      "sha256": "efb8b894f8a76c73becee5cfcef55496ef4929a5fb8ffbeb294adc2462a5a8eb",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        28,
+        670,
+        202,
+        750
+      ]
+    },
+    "gfx/interface/decisions/MSGA_infrastructure_investment_programme.dds": {
+      "sha256": "e326ad5bbf5d97210f3ae7773a73be0f48ace39f549f167cac9060946e1b8bd9",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        28,
+        467,
+        202,
+        547
+      ]
+    },
+    "gfx/interface/decisions/MSGA_support_serbian_businesses.dds": {
+      "sha256": "f0685312062db6f11a23603c0336f4c0cbdfe2e73e174fe4fa41532820b1fc41",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        28,
+        569,
+        202,
+        649
+      ]
+    },
+    "gfx/interface/decisions/MSGA_chinese_industrial_cooperation.dds": {
+      "sha256": "5c60ea300fb199aafd3eb8aed80283e673ad21644410eb48f855d041f7bd85b3",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        540,
+        263,
+        713,
+        345
+      ]
+    },
+    "gfx/interface/decisions/MSGA_chinese_mining_expertise.dds": {
+      "sha256": "4d5e8f6bdc018cf0439b1675daf4daae1bbfb6998a5709f773768b9a88459011",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        540,
+        364,
+        713,
+        446
+      ]
+    },
+    "gfx/interface/decisions/MSGA_chinese_infrastructure_cooperation.dds": {
+      "sha256": "90c71cd43067c12ef2531b99f32f23cc12e303e3e3d463f7331a0b930b95b611",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        540,
+        466,
+        713,
+        548
+      ]
+    },
+    "gfx/interface/decisions/MSGA_chinese_technology_transfer.dds": {
+      "sha256": "45b21790796575d3bdcf896e9ae12cc5f29588548a1cf26b830da9610f235e24",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        540,
+        568,
+        713,
+        650
+      ]
+    },
+    "gfx/interface/decisions/MSGA_russian_energy_cooperation.dds": {
+      "sha256": "e20ee068d2a3de7ded541aa72cb7899c0539ad7e84b6b8265b928361bb4e4586",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        540,
+        731,
+        713,
+        810
+      ]
+    },
+    "gfx/interface/decisions/MSGA_russian_heavy_industry_cooperation.dds": {
+      "sha256": "6ce3847e64b5a661ca8b280f8e4203501a4c09b2ef57735d5831c3809652344e",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        540,
+        815,
+        713,
+        894
+      ]
+    },
+    "gfx/interface/decisions/MSGA_russian_technological_assistance.dds": {
+      "sha256": "dadc80fb1f4e15b9f9d2764fe0fdae33c4f64260b9d698d6dd921a44a60063d3",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        540,
+        899,
+        713,
+        978
+      ]
+    },
+    "gfx/interface/decisions/MSGA_european_development_grants.dds": {
+      "sha256": "8e129d6c6a42d8b55962d4ff2eed6cf6240e29bd696468e7aa0ce90ebd04f58c",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        1045,
+        262,
+        1203,
+        345
+      ]
+    },
+    "gfx/interface/decisions/MSGA_european_industrial_standards.dds": {
+      "sha256": "a37f45cd53e98273f92e29b4cbcf5bd62e4197c833d2a65bd3c4c89e870686e3",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        1045,
+        364,
+        1203,
+        447
+      ]
+    },
+    "gfx/interface/decisions/MSGA_european_technology_partnership.dds": {
+      "sha256": "e04bd5e3931c108a2707be2aac2eb8aa2872f8f7bbe997edd45309621fcb8d77",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        1045,
+        466,
+        1203,
+        549
+      ]
+    },
+    "gfx/interface/decisions/MSGA_european_business_cooperation.dds": {
+      "sha256": "ab3e59e4974d0f1cd705bf83eff3ebf27cf724685c61561bde48e56cfd6c761e",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        1045,
+        568,
+        1203,
+        651
+      ]
+    },
+    "gfx/interface/decisions/MSGA_chinese_renewable_technology_transfer.dds": {
+      "sha256": "fb9b32611db36932936bad00b00bc9c60186c3e86f39e5e3696c24337d155e9e",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_energy_development.png",
+      "crop": [
+        540,
+        286,
+        688,
+        385
+      ]
+    },
+    "gfx/interface/decisions/MSGA_renewable_energy_subsidies.dds": {
+      "sha256": "199d8ce8cc557b90dec0e5af3b69dd5d405d8210d554902846678d1bfb6bc64b",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_energy_development.png",
+      "crop": [
+        540,
+        865,
+        688,
+        964
+      ]
+    },
+    "gfx/interface/decisions/MSGA_russian_nuclear_technical_assistance.dds": {
+      "sha256": "f76726793a3ea276ffb1fa3821e0b111a84c3f593b094790d22e350f1bb48070",
+      "size": [
+        52,
+        45
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_energy_development.png",
+      "crop": [
+        1050,
+        880,
+        1209,
+        979
+      ]
+    },
+    "gfx/interface/ideas/MSGA_grid_modernisation_bonus.dds": {
+      "sha256": "b5a708ff6841025e1f7b41c303555de3057f275f29c8416bac69f8a4001fb631",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_energy_development.png",
+      "crop": [
+        28,
+        282,
+        180,
+        381
+      ]
+    },
+    "gfx/interface/ideas/MSGA_nuclear_programme_research.dds": {
+      "sha256": "55ef50f69493354150325b6f12d27a9f0f254116e17ab24203618d59ed13c604",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_energy_development.png",
+      "crop": [
+        1050,
+        406,
+        1209,
+        505
+      ]
+    },
+    "gfx/interface/ideas/MSGA_grid_scale_storage_network.dds": {
+      "sha256": "acb4ce652c3af1bbb9ad90c8b77a450e0f22932060e907e216da916ec9c01ee6",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_energy_development.png",
+      "crop": [
+        540,
+        751,
+        688,
+        850
+      ]
+    },
+    "gfx/interface/ideas/MSGA_industrial_efficiency_programme.dds": {
+      "sha256": "4f3dda718dc10b9093646ec3964376e16a84fec3ca7a064441358e43b6889917",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        28,
+        878,
+        202,
+        958
+      ]
+    },
+    "gfx/interface/ideas/MSGA_subsidise_serbian_manufacturers.dds": {
+      "sha256": "68c79d5e43c5b3d7ad9c769cd42cb37a6383cbc932a85121b2495b9e61d67b13",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        28,
+        670,
+        202,
+        750
+      ]
+    },
+    "gfx/interface/ideas/MSGA_infrastructure_investment_programme.dds": {
+      "sha256": "ae501fca0e71123477e49b15d4c8b686291d97ac860bdeb442d62044550fc659",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        28,
+        467,
+        202,
+        547
+      ]
+    },
+    "gfx/interface/ideas/MSGA_support_serbian_businesses.dds": {
+      "sha256": "bfc30d96c3a27ab1dd5660bc67c34428b79882538b95d54416afe67fa1535684",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        28,
+        569,
+        202,
+        649
+      ]
+    },
+    "gfx/interface/ideas/MSGA_chinese_industrial_cooperation.dds": {
+      "sha256": "26e50e676106318907318cc4d3b2c3a94b9836989a17e12bb537cf4b3092b585",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        540,
+        263,
+        713,
+        345
+      ]
+    },
+    "gfx/interface/ideas/MSGA_chinese_mining_expertise.dds": {
+      "sha256": "51cca4d8c1a98e26bdb20ecebf2c629e72e897e30e839ece22fda7c57a9eac6c",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        540,
+        364,
+        713,
+        446
+      ]
+    },
+    "gfx/interface/ideas/MSGA_chinese_infrastructure_cooperation.dds": {
+      "sha256": "b2a6c0f7c7ce48abf00c9cbefb553619d2de3918e765191e1e1e8d795102facc",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        540,
+        466,
+        713,
+        548
+      ]
+    },
+    "gfx/interface/ideas/MSGA_chinese_technology_transfer.dds": {
+      "sha256": "1f8f4c14fc9c2e1bbb958a8bedb61c1dfa455e150c7180bc42eb934f0a706511",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        540,
+        568,
+        713,
+        650
+      ]
+    },
+    "gfx/interface/ideas/MSGA_russian_energy_cooperation.dds": {
+      "sha256": "c1262fc6dd11fdfbb077b6e55aaece7618279bbd02219199dba3d27156141dd1",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        540,
+        731,
+        713,
+        810
+      ]
+    },
+    "gfx/interface/ideas/MSGA_russian_heavy_industry_cooperation.dds": {
+      "sha256": "d71296089484cf960ee47bb06ddfa4d1caccc5d4a582674b4c6cee6e36b06651",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        540,
+        815,
+        713,
+        894
+      ]
+    },
+    "gfx/interface/ideas/MSGA_russian_technological_assistance.dds": {
+      "sha256": "b5f95228ec165891f1b66845d044aa518ae249c762115564a48adb0b60ee4acb",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        540,
+        899,
+        713,
+        978
+      ]
+    },
+    "gfx/interface/ideas/MSGA_european_development_grants.dds": {
+      "sha256": "4e8eedeae0a0297d5c51ca24f7f2274c539c13eb0c4ce0202b50a87ff6e00e3c",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        1045,
+        262,
+        1203,
+        345
+      ]
+    },
+    "gfx/interface/ideas/MSGA_european_industrial_standards.dds": {
+      "sha256": "e5d1bccce8dad3510bef81f3152c34ae6022596e469f5d274db6adf16311adfd",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        1045,
+        364,
+        1203,
+        447
+      ]
+    },
+    "gfx/interface/ideas/MSGA_european_technology_partnership.dds": {
+      "sha256": "d9ff23382659deb35ee2b5c1a8aeaa8c3e2f4bee4a785a73de9c1ad27229203f",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        1045,
+        466,
+        1203,
+        549
+      ]
+    },
+    "gfx/interface/ideas/MSGA_european_business_cooperation.dds": {
+      "sha256": "726e71896f07ad652b9bec63f57b84562b13049313e2b38e89a0fc967775febc",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        1045,
+        568,
+        1203,
+        651
+      ]
+    },
+    "gfx/interface/ideas/MSGA_chinese_renewable_technology_transfer.dds": {
+      "sha256": "cf3ef59cde856993d5eb2f5ede432f92586132078441cbc74270fafb017225b9",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_energy_development.png",
+      "crop": [
+        540,
+        286,
+        688,
+        385
+      ]
+    },
+    "gfx/interface/ideas/MSGA_renewable_energy_subsidies.dds": {
+      "sha256": "55027f84905ebda3f28cf3759c31647a67320e4b4c7548f50507ff16951a586c",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_energy_development.png",
+      "crop": [
+        540,
+        865,
+        688,
+        964
+      ]
+    },
+    "gfx/interface/ideas/MSGA_russian_nuclear_technical_assistance.dds": {
+      "sha256": "605098f7e2a32ef18f01183b3f05625b96249ea682654884233b9fb8b650fff9",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_energy_development.png",
+      "crop": [
+        1050,
+        880,
+        1209,
+        979
+      ]
+    },
+    "gfx/interface/decisions/MSGA_development_category_0.dds": {
+      "sha256": "355ec8d5c3e4ee025cad0fc20899e8a2bfa228bc7637cdd8e7d065efc121a1a1",
+      "size": [
+        52,
+        40
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_economic_cooperation.png",
+      "crop": [
+        24,
+        22,
+        198,
+        150
+      ]
+    },
+    "gfx/interface/decisions/MSGA_development_category_1.dds": {
+      "sha256": "9d27466986452736c4a200d49dfb1e17da7684bd7770d3da2995ab7ec34eddd2",
+      "size": [
+        52,
+        40
+      ],
+      "compression": "DXT5",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/decision_concepts/MSGA_preview_energy_development.png",
+      "crop": [
+        24,
+        22,
+        198,
+        150
+      ]
+    },
+    "gfx/event_pictures/MSGA_event_infrastructure_strategy_meeting.dds": {
+      "sha256": "c1503e4e6e5d736e8762b84bc0e4616c74a66ab80b2275c9d9e7c05467256e9f",
+      "size": [
+        500,
+        250
+      ],
+      "compression": "DXT3",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/event_pictures/MSGA_event_infrastructure_strategy_meeting.png",
+      "crop": null
+    },
+    "gfx/event_pictures/MSGA_event_highway_rail_renaissance.dds": {
+      "sha256": "212d7c129a104f79f27395f565c7a7a73e018e07672f994ae9203fdc32c81e7e",
+      "size": [
+        500,
+        250
+      ],
+      "compression": "DXT3",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/event_pictures/MSGA_event_highway_rail_renaissance.png",
+      "crop": null
+    },
+    "gfx/event_pictures/MSGA_event_mining_expansion.dds": {
+      "sha256": "54a3dfbff07748c734cad57d7fd874a8ab312f2b9c57d671c1d4e582e63f5584",
+      "size": [
+        500,
+        250
+      ],
+      "compression": "DXT3",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/event_pictures/MSGA_event_mining_expansion.png",
+      "crop": null
+    },
+    "gfx/event_pictures/MSGA_event_industrial_revival.dds": {
+      "sha256": "4229dd10b84f12d3f0fd6e10b7e8e4d762a8b71f4be91e2b8856b59016933f21",
+      "size": [
+        500,
+        250
+      ],
+      "compression": "DXT3",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/event_pictures/MSGA_event_industrial_revival.png",
+      "crop": null
+    },
+    "gfx/event_pictures/MSGA_event_energy_modernisation_briefing.dds": {
+      "sha256": "34ac35f4651043cbf255c6feb2ecc13dc91116a14a3a71981fa906acc8bf2186",
+      "size": [
+        500,
+        250
+      ],
+      "compression": "DXT3",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/event_pictures/MSGA_event_energy_modernisation_briefing.png",
+      "crop": null
+    },
+    "gfx/event_pictures/MSGA_event_chinese_renewable_partnership.dds": {
+      "sha256": "8f2e3f7687d475b552bcc9b01f95f284a8f7025a8f53af856a62f4aaec7fa311",
+      "size": [
+        500,
+        250
+      ],
+      "compression": "DXT3",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/event_pictures/MSGA_event_chinese_renewable_partnership.png",
+      "crop": null
+    },
+    "gfx/event_pictures/MSGA_event_russian_nuclear_briefing.dds": {
+      "sha256": "974045ec5efd388747cead7e5347f415ac54bd9c7c5b03b58eb65b9d1633335c",
+      "size": [
+        500,
+        250
+      ],
+      "compression": "DXT3",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/event_pictures/MSGA_event_russian_nuclear_briefing.png",
+      "crop": null
+    },
+    "gfx/event_pictures/MSGA_event_first_serbian_nuclear_plant.dds": {
+      "sha256": "9ceebf38f4a4fd3e9d68f672b87243ce9ba8ac9d1b8802b325dd395da481b4ad",
+      "size": [
+        500,
+        250
+      ],
+      "compression": "DXT3",
+      "zip_entry": "MSGA_Economic_Energy_Visuals/event_pictures/MSGA_event_first_serbian_nuclear_plant.png",
+      "crop": null
+    }
+  },
+  "projects": [
+    {
+      "stem": "expand_bor_mining_complex",
+      "title": "Expand the Bor Mining Complex",
+      "state": 108,
+      "cash": 0.5,
+      "days": 120,
+      "reward": "mining",
+      "text": "+3 Steel, +2 Tungsten; +1 Infrastructure below level 5 (otherwise +1 shared building slot); Industrial Development +0.05.",
+      "crop": [
+        28,
+        774,
+        202,
+        854
+      ],
+      "group": "domestic",
+      "energy": false,
+      "requires": null,
+      "technology": null,
+      "event": "MSGA_econ.3",
+      "industrial": 0.05,
+      "academic": 0,
+      "pp": 0
+    },
+    {
+      "stem": "develop_jadar_mining_project",
+      "title": "Develop the Jadar Mining Project",
+      "state": 1296,
+      "cash": 0.5,
+      "days": 120,
+      "reward": "jadar",
+      "text": "+3 Steel, +2 Tungsten, +1 shared building slot and Industrial Development +0.05.",
+      "crop": [
+        28,
+        774,
+        202,
+        854
+      ],
+      "group": "domestic",
+      "energy": false,
+      "requires": null,
+      "technology": null,
+      "event": null,
+      "industrial": 0.05,
+      "academic": 0,
+      "pp": 0
+    },
+    {
+      "stem": "serbian_mineral_processing_expansion",
+      "title": "Serbian Mineral Processing Expansion",
+      "state": 1296,
+      "cash": 0.5,
+      "days": 120,
+      "reward": "civilian",
+      "text": "+1 Civilian Factory and +1 shared building slot; Industrial Development +0.03.",
+      "crop": [
+        28,
+        670,
+        202,
+        750
+      ],
+      "group": "domestic",
+      "energy": false,
+      "requires": null,
+      "technology": null,
+      "event": null,
+      "industrial": 0.03,
+      "academic": 0,
+      "pp": 0
+    },
+    {
+      "stem": "central_serbian_industrial_park",
+      "title": "Central Serbian Industrial Park",
+      "state": 1296,
+      "cash": 0.5,
+      "days": 90,
+      "reward": "civilian",
+      "text": "+1 Civilian Factory and +1 shared building slot around Kragujevac; Industrial Development +0.03.",
+      "crop": [
+        28,
+        365,
+        202,
+        445
+      ],
+      "group": "domestic",
+      "energy": false,
+      "requires": null,
+      "technology": null,
+      "event": null,
+      "industrial": 0.03,
+      "academic": 0,
+      "pp": 0
+    },
+    {
+      "stem": "southern_serbian_industrial_development",
+      "title": "Southern Serbian Industrial Development",
+      "state": 108,
+      "cash": 0.5,
+      "days": 90,
+      "reward": "slot",
+      "text": "+1 shared building slot and Industrial Development +0.03 around Nis. Complements the earlier southern factory investment.",
+      "crop": [
+        28,
+        264,
+        202,
+        344
+      ],
+      "group": "domestic",
+      "energy": false,
+      "requires": null,
+      "technology": null,
+      "event": null,
+      "industrial": 0.03,
+      "academic": 0,
+      "pp": 0
+    },
+    {
+      "stem": "morava_logistics_development",
+      "title": "Serbian Logistics and Morava Development",
+      "state": 1296,
+      "cash": 0.4,
+      "days": 120,
+      "reward": "logistics",
+      "text": "+1 Infrastructure and +1 shared building slot; Industrial Development +0.025. Requires room below the native infrastructure cap of 5.",
+      "crop": [
+        28,
+        467,
+        202,
+        547
+      ],
+      "group": "domestic",
+      "energy": false,
+      "requires": null,
+      "technology": null,
+      "event": "MSGA_econ.2",
+      "industrial": 0.025,
+      "academic": 0,
+      "pp": 0
+    },
+    {
+      "stem": "modernise_serbian_power_grid",
+      "title": "Modernise the Serbian Power Grid",
+      "state": 107,
+      "cash": 0.4,
+      "days": 60,
+      "reward": "grid",
+      "text": "+1 Infrastructure below level 5 (otherwise +1 shared building slot); Industrial Development +0.025. For 180 days: Construction Speed +5%, Power Plant and Infrastructure Construction Speed +10%.",
+      "crop": [
+        28,
+        282,
+        180,
+        381
+      ],
+      "group": "domestic",
+      "energy": true,
+      "requires": null,
+      "technology": null,
+      "event": "MSGA_energy.1",
+      "industrial": 0.025,
+      "academic": 0,
+      "pp": 0
+    },
+    {
+      "stem": "modernise_nikola_tesla_complex",
+      "title": "Modernise the Nikola Tesla Complex",
+      "state": 1296,
+      "cash": 0.5,
+      "days": 90,
+      "reward": "power_plant",
+      "text": "+1 Power Plant and +1 shared building slot in the Obrenovac region; Industrial Development +0.025.",
+      "crop": [
+        28,
+        407,
+        180,
+        506
+      ],
+      "group": "domestic",
+      "energy": true,
+      "requires": null,
+      "technology": null,
+      "event": null,
+      "industrial": 0.025,
+      "academic": 0,
+      "pp": 0
+    },
+    {
+      "stem": "expand_kostolac_energy_complex",
+      "title": "Expand the Kostolac Energy Complex",
+      "state": 108,
+      "cash": 0.5,
+      "days": 90,
+      "reward": "power_plant",
+      "text": "+1 Power Plant and +1 shared building slot; Industrial Development +0.025. Native TFR rules make this incompatible with Bor renewable generation in Morava.",
+      "crop": [
+        28,
+        529,
+        180,
+        628
+      ],
+      "group": "domestic",
+      "energy": true,
+      "requires": null,
+      "technology": null,
+      "event": null,
+      "industrial": 0.025,
+      "academic": 0,
+      "pp": 0
+    },
+    {
+      "stem": "upgrade_djerdap_power_system",
+      "title": "Upgrade the Djerdap Power System",
+      "state": 108,
+      "cash": 0.4,
+      "days": 75,
+      "reward": "hydro",
+      "text": "+2 native Energy resource from existing hydroelectric generation; +1 Infrastructure below level 5 (otherwise +1 shared building slot); Industrial Development +0.025. No additional Energy Farm is granted.",
+      "crop": [
+        28,
+        652,
+        180,
+        751
+      ],
+      "group": "domestic",
+      "energy": true,
+      "requires": null,
+      "technology": null,
+      "event": null,
+      "industrial": 0.025,
+      "academic": 0,
+      "pp": 0
+    },
+    {
+      "stem": "develop_bor_renewable_complex",
+      "title": "Develop the Bor Renewable Energy Complex",
+      "state": 108,
+      "cash": 0.5,
+      "days": 120,
+      "reward": "energy_farm",
+      "text": "+1 Energy Farm and +1 shared building slot; Industrial Development +0.03. Native TFR rules make this incompatible with a Kostolac Power Plant in Morava.",
+      "crop": [
+        540,
+        407,
+        688,
+        506
+      ],
+      "group": "china",
+      "energy": true,
+      "requires": null,
+      "technology": null,
+      "event": "MSGA_energy.2",
+      "industrial": 0.03,
+      "academic": 0,
+      "pp": 0
+    },
+    {
+      "stem": "expand_bor_renewable_complex",
+      "title": "Expand the Bor Renewable Complex",
+      "state": 108,
+      "cash": 0.6,
+      "days": 120,
+      "reward": "energy_farm",
+      "text": "+1 additional Energy Farm and +1 shared building slot; Industrial Development +0.025. This is the final scripted Energy Farm.",
+      "crop": [
+        540,
+        524,
+        688,
+        623
+      ],
+      "group": "china",
+      "energy": true,
+      "requires": "develop_bor_renewable_complex",
+      "technology": null,
+      "event": null,
+      "industrial": 0.025,
+      "academic": 0,
+      "pp": 0
+    },
+    {
+      "stem": "establish_serbian_solar_manufacturing",
+      "title": "Establish Serbian Solar Manufacturing",
+      "state": 45,
+      "cash": 0.5,
+      "days": 90,
+      "reward": "civilian",
+      "text": "+1 Civilian Factory and +1 shared building slot in Vojvodina; Industrial Development +0.03. No Energy Farm is granted.",
+      "crop": [
+        540,
+        636,
+        688,
+        735
+      ],
+      "group": "china",
+      "energy": true,
+      "requires": null,
+      "technology": null,
+      "event": null,
+      "industrial": 0.03,
+      "academic": 0,
+      "pp": 0
+    },
+    {
+      "stem": "develop_grid_scale_storage",
+      "title": "Develop Grid-Scale Energy Storage",
+      "state": 107,
+      "cash": 0.4,
+      "days": 90,
+      "reward": "storage",
+      "text": "Permanent Factory Energy Consumption -3%; Industrial Development +0.025. Uses native efficiency rather than a new storage currency.",
+      "crop": [
+        540,
+        751,
+        688,
+        850
+      ],
+      "group": "domestic",
+      "energy": true,
+      "requires": null,
+      "technology": null,
+      "event": null,
+      "industrial": 0.025,
+      "academic": 0,
+      "pp": 0
+    },
+    {
+      "stem": "seek_russian_nuclear_expertise",
+      "title": "Seek Russian Nuclear Expertise",
+      "state": null,
+      "cash": 0.2,
+      "days": 60,
+      "reward": "expertise",
+      "text": "One 50% nuclear research bonus; Academic Development +0.05. Unlocks the nuclear programme and technical assistance; grants no reactor.",
+      "crop": [
+        1050,
+        284,
+        1209,
+        383
+      ],
+      "group": "russia",
+      "energy": true,
+      "requires": null,
+      "technology": null,
+      "event": "MSGA_energy.3",
+      "industrial": 0,
+      "academic": 0.05,
+      "pp": 50
+    },
+    {
+      "stem": "establish_serbian_nuclear_programme",
+      "title": "Establish the Serbian Nuclear Programme",
+      "state": null,
+      "cash": 0.5,
+      "days": 120,
+      "reward": "nuclear_programme",
+      "text": "One 50% nuclear research bonus; Academic Development +0.05; Research Speed +3% for 365 days. Unlocks workforce training; grants no reactor.",
+      "crop": [
+        1050,
+        406,
+        1209,
+        505
+      ],
+      "group": "russia",
+      "energy": true,
+      "requires": "seek_russian_nuclear_expertise",
+      "technology": null,
+      "event": null,
+      "industrial": 0,
+      "academic": 0.05,
+      "pp": 0
+    },
+    {
+      "stem": "train_serbian_nuclear_workforce",
+      "title": "Train Serbia's Nuclear Workforce",
+      "state": null,
+      "cash": 0.3,
+      "days": 90,
+      "reward": "workforce",
+      "text": "One 50% nuclear research bonus; Academic Development +0.05. Unlocks construction after native reactor technology is researched.",
+      "crop": [
+        1050,
+        525,
+        1209,
+        624
+      ],
+      "group": "russia",
+      "energy": true,
+      "requires": "establish_serbian_nuclear_programme",
+      "technology": null,
+      "event": null,
+      "industrial": 0,
+      "academic": 0.05,
+      "pp": 0
+    },
+    {
+      "stem": "first_serbian_nuclear_power_plant",
+      "title": "Begin Construction of Serbia's First Nuclear Power Plant",
+      "state": 45,
+      "cash": 1.5,
+      "days": 180,
+      "reward": "nuclear_reactor",
+      "text": "+1 Nuclear Reactor and +1 shared building slot in Vojvodina; Industrial Development +0.05. Requires $nuclear_reactors$ technology and no incompatible energy building.",
+      "crop": [
+        1050,
+        646,
+        1209,
+        745
+      ],
+      "group": "russia",
+      "energy": true,
+      "requires": "train_serbian_nuclear_workforce",
+      "technology": "nuclear_reactors",
+      "event": "MSGA_energy.4",
+      "industrial": 0.05,
+      "academic": 0,
+      "pp": 0
+    },
+    {
+      "stem": "expand_serbian_nuclear_programme",
+      "title": "Expand the Serbian Nuclear Programme",
+      "state": 45,
+      "cash": 1.5,
+      "days": 180,
+      "reward": "nuclear_reactor",
+      "text": "+1 additional Nuclear Reactor and +1 shared building slot in Vojvodina; Industrial Development +0.025. Requires $nuclear_reactors2$ technology; this is the final scripted reactor.",
+      "crop": [
+        1050,
+        766,
+        1209,
+        865
+      ],
+      "group": "russia",
+      "energy": true,
+      "requires": "first_serbian_nuclear_power_plant",
+      "technology": "nuclear_reactors2",
+      "event": null,
+      "industrial": 0.025,
+      "academic": 0,
+      "pp": 0
+    }
+  ],
+  "programmes": [
+    {
+      "stem": "industrial_efficiency_programme",
+      "title": "Industrial Efficiency Programme",
+      "modifiers": {
+        "production_factory_efficiency_gain_factor": 0.075,
+        "industrial_capacity_factory": 0.025
+      },
+      "text": "Production Efficiency Growth +7.5%; Factory Output +2.5%.",
+      "crop": [
+        28,
+        878,
+        202,
+        958
+      ],
+      "group": "domestic",
+      "energy": false,
+      "requires": null,
+      "pp": 0,
+      "cash": 0.2
+    },
+    {
+      "stem": "subsidise_serbian_manufacturers",
+      "title": "Subsidise Serbian Manufacturers",
+      "modifiers": {
+        "industrial_capacity_factory": 0.05
+      },
+      "text": "Factory Output +5%.",
+      "crop": [
+        28,
+        670,
+        202,
+        750
+      ],
+      "group": "domestic",
+      "energy": false,
+      "requires": null,
+      "pp": 0,
+      "cash": 0.2
+    },
+    {
+      "stem": "infrastructure_investment_programme",
+      "title": "Infrastructure Investment Programme",
+      "modifiers": {
+        "production_speed_buildings_factor": 0.05,
+        "production_speed_infrastructure_factor": 0.1
+      },
+      "text": "Construction Speed +5%; Infrastructure Construction Speed +10%.",
+      "crop": [
+        28,
+        467,
+        202,
+        547
+      ],
+      "group": "domestic",
+      "energy": false,
+      "requires": null,
+      "pp": 0,
+      "cash": 0.2
+    },
+    {
+      "stem": "support_serbian_businesses",
+      "title": "Support Serbian Businesses",
+      "modifiers": {
+        "business_value_factor": 0.04,
+        "income_growth_factor": 0.005
+      },
+      "text": "Business Value +4%; native Income Growth +0.5%.",
+      "crop": [
+        28,
+        569,
+        202,
+        649
+      ],
+      "group": "domestic",
+      "energy": false,
+      "requires": null,
+      "pp": 0,
+      "cash": 0.2
+    },
+    {
+      "stem": "chinese_industrial_cooperation",
+      "title": "Chinese Industrial Cooperation",
+      "modifiers": {
+        "industrial_capacity_factory": 0.05,
+        "production_speed_industrial_complex_factor": 0.05
+      },
+      "text": "Factory Output +5%; Civilian Factory Construction Speed +5%.",
+      "crop": [
+        540,
+        263,
+        713,
+        345
+      ],
+      "group": "china",
+      "energy": false,
+      "requires": null,
+      "pp": 0,
+      "cash": 0.2
+    },
+    {
+      "stem": "chinese_mining_expertise",
+      "title": "Chinese Mining Expertise",
+      "modifiers": {
+        "local_resources_factor": 0.1,
+        "industrial_development_monthly": 0.0025
+      },
+      "text": "Resource Gain +10%; monthly Industrial Development +0.0025.",
+      "crop": [
+        540,
+        364,
+        713,
+        446
+      ],
+      "group": "china",
+      "energy": false,
+      "requires": null,
+      "pp": 0,
+      "cash": 0.2
+    },
+    {
+      "stem": "chinese_infrastructure_cooperation",
+      "title": "Chinese Infrastructure Cooperation",
+      "modifiers": {
+        "production_speed_buildings_factor": 0.075,
+        "production_speed_infrastructure_factor": 0.1
+      },
+      "text": "Construction Speed +7.5%; Infrastructure Construction Speed +10%.",
+      "crop": [
+        540,
+        466,
+        713,
+        548
+      ],
+      "group": "china",
+      "energy": false,
+      "requires": null,
+      "pp": 0,
+      "cash": 0.2
+    },
+    {
+      "stem": "chinese_technology_transfer",
+      "title": "Chinese Technology Transfer",
+      "modifiers": {
+        "research_speed_factor": 0.03,
+        "industrial_development_monthly": 0.0025
+      },
+      "text": "Research Speed +3%; monthly Industrial Development +0.0025.",
+      "crop": [
+        540,
+        568,
+        713,
+        650
+      ],
+      "group": "china",
+      "energy": false,
+      "requires": null,
+      "pp": 0,
+      "cash": 0.2
+    },
+    {
+      "stem": "russian_energy_cooperation",
+      "title": "Russian Energy Cooperation",
+      "modifiers": {
+        "factory_energy_consumption": -0.03,
+        "industrial_capacity_factory": 0.03
+      },
+      "text": "Factory Energy Consumption -3%; Factory Output +3%.",
+      "crop": [
+        540,
+        731,
+        713,
+        810
+      ],
+      "group": "russia",
+      "energy": false,
+      "requires": null,
+      "pp": 0,
+      "cash": 0.2
+    },
+    {
+      "stem": "russian_heavy_industry_cooperation",
+      "title": "Russian Heavy Industry Cooperation",
+      "modifiers": {
+        "production_factory_efficiency_gain_factor": 0.05,
+        "production_speed_arms_factory_factor": 0.05
+      },
+      "text": "Production Efficiency Growth +5%; Military Factory Construction Speed +5%.",
+      "crop": [
+        540,
+        815,
+        713,
+        894
+      ],
+      "group": "russia",
+      "energy": false,
+      "requires": null,
+      "pp": 0,
+      "cash": 0.2
+    },
+    {
+      "stem": "russian_technological_assistance",
+      "title": "Russian Technological Assistance",
+      "modifiers": {
+        "research_speed_factor": 0.02,
+        "industrial_development_monthly": 0.0025
+      },
+      "text": "Research Speed +2%; monthly Industrial Development +0.0025.",
+      "crop": [
+        540,
+        899,
+        713,
+        978
+      ],
+      "group": "russia",
+      "energy": false,
+      "requires": null,
+      "pp": 0,
+      "cash": 0.2
+    },
+    {
+      "stem": "european_development_grants",
+      "title": "European Development Grants",
+      "modifiers": {
+        "business_value_factor": 0.025,
+        "society_development_monthly": 0.002,
+        "industrial_development_monthly": 0.002
+      },
+      "text": "Business Value +2.5%; monthly Society and Industrial Development +0.002 each.",
+      "crop": [
+        1045,
+        262,
+        1203,
+        345
+      ],
+      "group": "europe",
+      "energy": false,
+      "requires": null,
+      "pp": 50,
+      "cash": 0
+    },
+    {
+      "stem": "european_industrial_standards",
+      "title": "European Industrial Standards",
+      "modifiers": {
+        "production_factory_efficiency_gain_factor": 0.05,
+        "industrial_capacity_factory": 0.03
+      },
+      "text": "Production Efficiency Growth +5%; Factory Output +3%.",
+      "crop": [
+        1045,
+        364,
+        1203,
+        447
+      ],
+      "group": "europe",
+      "energy": false,
+      "requires": null,
+      "pp": 0,
+      "cash": 0.2
+    },
+    {
+      "stem": "european_technology_partnership",
+      "title": "European Technology Partnership",
+      "modifiers": {
+        "research_speed_factor": 0.03,
+        "academic_development_monthly": 0.0025
+      },
+      "text": "Research Speed +3%; monthly Academic Development +0.0025.",
+      "crop": [
+        1045,
+        466,
+        1203,
+        549
+      ],
+      "group": "europe",
+      "energy": false,
+      "requires": null,
+      "pp": 0,
+      "cash": 0.2
+    },
+    {
+      "stem": "european_business_cooperation",
+      "title": "European Business Cooperation",
+      "modifiers": {
+        "business_value_factor": 0.05,
+        "income_growth_factor": 0.005
+      },
+      "text": "Business Value +5%; native Income Growth +0.5%.",
+      "crop": [
+        1045,
+        568,
+        1203,
+        651
+      ],
+      "group": "europe",
+      "energy": false,
+      "requires": null,
+      "pp": 0,
+      "cash": 0.2
+    },
+    {
+      "stem": "chinese_renewable_technology_transfer",
+      "title": "Chinese Renewable Technology Transfer",
+      "modifiers": {
+        "production_speed_energy_farm_factor": 0.125,
+        "production_speed_buildings_factor": 0.03,
+        "industrial_development_monthly": 0.0025
+      },
+      "text": "Energy Farm Construction Speed +12.5%; Construction Speed +3%; monthly Industrial Development +0.0025.",
+      "crop": [
+        540,
+        286,
+        688,
+        385
+      ],
+      "group": "china",
+      "energy": true,
+      "requires": null,
+      "pp": 0,
+      "cash": 0.2
+    },
+    {
+      "stem": "renewable_energy_subsidies",
+      "title": "Renewable Energy Subsidies",
+      "modifiers": {
+        "production_speed_energy_farm_factor": 0.15,
+        "industrial_development_monthly": 0.0025
+      },
+      "text": "Energy Farm Construction Speed +15%; monthly Industrial Development +0.0025.",
+      "crop": [
+        540,
+        865,
+        688,
+        964
+      ],
+      "group": "domestic",
+      "energy": true,
+      "requires": null,
+      "pp": 0,
+      "cash": 0.2
+    },
+    {
+      "stem": "russian_nuclear_technical_assistance",
+      "title": "Russian Nuclear Technical Assistance",
+      "modifiers": {
+        "production_speed_nuclear_reactor_factor": 0.125,
+        "research_speed_factor": 0.02,
+        "academic_development_monthly": 0.0025
+      },
+      "text": "Nuclear Reactor Construction Speed +12.5%; Research Speed +2%; monthly Academic Development +0.0025.",
+      "crop": [
+        1050,
+        880,
+        1209,
+        979
+      ],
+      "group": "russia",
+      "energy": true,
+      "requires": "seek_russian_nuclear_expertise",
+      "pp": 0,
+      "cash": 0.2
+    }
+  ],
+  "events": [
+    [
+      "MSGA_econ.1",
+      "A New Economic Strategy for Serbia",
+      "infrastructure_strategy_meeting",
+      "Belgrade has brought economic planners, manufacturers and infrastructure specialists around the same table. Recovery must now become a sustained programme of investment rather than a succession of emergency measures.\n\nDomestic projects and cooperation with China, Russia and European partners can strengthen production without placing the country inside a new political bloc. Each programme will be judged by its practical contribution to Serbia.",
+      "Build on the recovery."
+    ],
+    [
+      "MSGA_econ.2",
+      "The Morava Corridor Takes Shape",
+      "highway_rail_renaissance",
+      "New freight connections and improved road access are linking central Serbian workshops to suppliers and customers. The corridor is becoming an economic route as well as a transport project.\n\nIndustry can now plan around more reliable deliveries. Further investment will depend on productive use of these connections rather than another round of announcements.",
+      "Connect our economic centres."
+    ],
+    [
+      "MSGA_econ.3",
+      "The Bor Expansion",
+      "mining_expansion",
+      "The expanded Bor complex has begun turning investment into dependable industrial capacity. Improved access and modern equipment support extraction, while domestic firms prepare to process a larger share of the output.\n\nThe programme is measured in useful inputs for Serbian industry. Steel and tungsten production provide the campaign economy with a practical representation of that mineral investment.",
+      "Bring the investment into production."
+    ],
+    [
+      "MSGA_econ.4",
+      "Serbian Industrial Revival",
+      "industrial_revival",
+      "Several permanent projects have now moved beyond the planning stage. Industrial sites, mineral processing and transport investment are beginning to reinforce one another across Serbia.\n\nThe improvement is gradual, but visible. A stronger domestic production base gives the government more room to meet future challenges without relying on temporary economic measures alone.",
+      "The results are becoming visible."
+    ],
+    [
+      "MSGA_energy.1",
+      "Powering Serbia's Future",
+      "energy_modernisation_briefing",
+      "The first stage of grid modernisation has been completed. Engineers can now direct further work towards reliable supply, improved connections and the replacement of ageing equipment.\n\nTraditional generation, renewables and a possible civilian nuclear programme will each require careful investment. Modernisation begins with a network capable of supporting them.",
+      "Build a dependable power system."
+    ],
+    [
+      "MSGA_energy.2",
+      "A Renewable Partnership with China",
+      "chinese_renewable_partnership",
+      "Serbian and Chinese specialists have completed the opening stage of the Bor renewable project. The partnership combines equipment, engineering support and local work on generation and grid connections.\n\nIts purpose is practical: diversify supply and develop expertise that Serbian firms can use themselves. Additional capacity will follow the same measured investment process.",
+      "Diversify Serbian generation."
+    ],
+    [
+      "MSGA_energy.3",
+      "The Nuclear Question",
+      "russian_nuclear_briefing",
+      "Russian technical advisers have joined Serbian planners to examine a peaceful civilian nuclear programme. Their first task is to establish the expertise needed for licensing, research and long-term operation.\n\nAdvice alone cannot build a reactor. Serbia must organise a programme, train a workforce, research the required technology and commit substantial capital before construction can begin.",
+      "Prepare before we build."
+    ],
+    [
+      "MSGA_energy.4",
+      "Serbia Enters the Nuclear Age",
+      "first_serbian_nuclear_plant",
+      "Serbia's first civilian nuclear power plant has entered service. Years of preparation, technical training and concentrated investment have produced a new source of dependable generation.\n\nThe achievement brings lasting responsibilities for operation and maintenance. A second reactor remains a separate project, requiring additional funding and the appropriate native technology.",
+      "A new chapter in Serbian energy."
+    ]
+  ],
+  "new_runtime_files": [
+    "common/decisions/MSGA_economic_energy_decisions.txt",
+    "common/decisions/categories/MSGA_economic_energy_categories.txt",
+    "common/ideas/MSGA_economic_energy_ideas.txt",
+    "common/on_actions/MSGA_economic_energy_on_actions.txt",
+    "common/scripted_effects/MSGA_economic_energy_effects.txt",
+    "common/scripted_triggers/MSGA_economic_energy_triggers.txt",
+    "events/MSGA_economic_energy_events.txt",
+    "gfx/event_pictures/MSGA_event_chinese_renewable_partnership.dds",
+    "gfx/event_pictures/MSGA_event_energy_modernisation_briefing.dds",
+    "gfx/event_pictures/MSGA_event_first_serbian_nuclear_plant.dds",
+    "gfx/event_pictures/MSGA_event_highway_rail_renaissance.dds",
+    "gfx/event_pictures/MSGA_event_industrial_revival.dds",
+    "gfx/event_pictures/MSGA_event_infrastructure_strategy_meeting.dds",
+    "gfx/event_pictures/MSGA_event_mining_expansion.dds",
+    "gfx/event_pictures/MSGA_event_russian_nuclear_briefing.dds",
+    "gfx/interface/decisions/MSGA_central_serbian_industrial_park.dds",
+    "gfx/interface/decisions/MSGA_chinese_industrial_cooperation.dds",
+    "gfx/interface/decisions/MSGA_chinese_infrastructure_cooperation.dds",
+    "gfx/interface/decisions/MSGA_chinese_mining_expertise.dds",
+    "gfx/interface/decisions/MSGA_chinese_renewable_technology_transfer.dds",
+    "gfx/interface/decisions/MSGA_chinese_technology_transfer.dds",
+    "gfx/interface/decisions/MSGA_develop_bor_renewable_complex.dds",
+    "gfx/interface/decisions/MSGA_develop_grid_scale_storage.dds",
+    "gfx/interface/decisions/MSGA_develop_jadar_mining_project.dds",
+    "gfx/interface/decisions/MSGA_development_category_0.dds",
+    "gfx/interface/decisions/MSGA_development_category_1.dds",
+    "gfx/interface/decisions/MSGA_establish_serbian_nuclear_programme.dds",
+    "gfx/interface/decisions/MSGA_establish_serbian_solar_manufacturing.dds",
+    "gfx/interface/decisions/MSGA_european_business_cooperation.dds",
+    "gfx/interface/decisions/MSGA_european_development_grants.dds",
+    "gfx/interface/decisions/MSGA_european_industrial_standards.dds",
+    "gfx/interface/decisions/MSGA_european_technology_partnership.dds",
+    "gfx/interface/decisions/MSGA_expand_bor_mining_complex.dds",
+    "gfx/interface/decisions/MSGA_expand_bor_renewable_complex.dds",
+    "gfx/interface/decisions/MSGA_expand_kostolac_energy_complex.dds",
+    "gfx/interface/decisions/MSGA_expand_serbian_nuclear_programme.dds",
+    "gfx/interface/decisions/MSGA_first_serbian_nuclear_power_plant.dds",
+    "gfx/interface/decisions/MSGA_industrial_efficiency_programme.dds",
+    "gfx/interface/decisions/MSGA_infrastructure_investment_programme.dds",
+    "gfx/interface/decisions/MSGA_modernise_nikola_tesla_complex.dds",
+    "gfx/interface/decisions/MSGA_modernise_serbian_power_grid.dds",
+    "gfx/interface/decisions/MSGA_morava_logistics_development.dds",
+    "gfx/interface/decisions/MSGA_renewable_energy_subsidies.dds",
+    "gfx/interface/decisions/MSGA_russian_energy_cooperation.dds",
+    "gfx/interface/decisions/MSGA_russian_heavy_industry_cooperation.dds",
+    "gfx/interface/decisions/MSGA_russian_nuclear_technical_assistance.dds",
+    "gfx/interface/decisions/MSGA_russian_technological_assistance.dds",
+    "gfx/interface/decisions/MSGA_seek_russian_nuclear_expertise.dds",
+    "gfx/interface/decisions/MSGA_serbian_mineral_processing_expansion.dds",
+    "gfx/interface/decisions/MSGA_southern_serbian_industrial_development.dds",
+    "gfx/interface/decisions/MSGA_subsidise_serbian_manufacturers.dds",
+    "gfx/interface/decisions/MSGA_support_serbian_businesses.dds",
+    "gfx/interface/decisions/MSGA_train_serbian_nuclear_workforce.dds",
+    "gfx/interface/decisions/MSGA_upgrade_djerdap_power_system.dds",
+    "gfx/interface/ideas/MSGA_chinese_industrial_cooperation.dds",
+    "gfx/interface/ideas/MSGA_chinese_infrastructure_cooperation.dds",
+    "gfx/interface/ideas/MSGA_chinese_mining_expertise.dds",
+    "gfx/interface/ideas/MSGA_chinese_renewable_technology_transfer.dds",
+    "gfx/interface/ideas/MSGA_chinese_technology_transfer.dds",
+    "gfx/interface/ideas/MSGA_european_business_cooperation.dds",
+    "gfx/interface/ideas/MSGA_european_development_grants.dds",
+    "gfx/interface/ideas/MSGA_european_industrial_standards.dds",
+    "gfx/interface/ideas/MSGA_european_technology_partnership.dds",
+    "gfx/interface/ideas/MSGA_grid_modernisation_bonus.dds",
+    "gfx/interface/ideas/MSGA_grid_scale_storage_network.dds",
+    "gfx/interface/ideas/MSGA_industrial_efficiency_programme.dds",
+    "gfx/interface/ideas/MSGA_infrastructure_investment_programme.dds",
+    "gfx/interface/ideas/MSGA_nuclear_programme_research.dds",
+    "gfx/interface/ideas/MSGA_renewable_energy_subsidies.dds",
+    "gfx/interface/ideas/MSGA_russian_energy_cooperation.dds",
+    "gfx/interface/ideas/MSGA_russian_heavy_industry_cooperation.dds",
+    "gfx/interface/ideas/MSGA_russian_nuclear_technical_assistance.dds",
+    "gfx/interface/ideas/MSGA_russian_technological_assistance.dds",
+    "gfx/interface/ideas/MSGA_subsidise_serbian_manufacturers.dds",
+    "gfx/interface/ideas/MSGA_support_serbian_businesses.dds",
+    "interface/MSGA_economic_energy_assets.gfx",
+    "localisation/english/MSGA_economic_energy_l_english.yml"
+  ],
+  "fallbacks": [
+    "No separate copper/lithium resource. User requested native steel and tungsten: each mining project grants +3 steel and +2 tungsten.",
+    "No dedicated hydro building is introduced. Djerdap adds 2 native coal/Energy resource to existing generation.",
+    "No storage currency/building: native factory_energy_consumption -3% permanently.",
+    "User chose native energy exclusivity: Kostolac thermal and Bor renewable projects share state 108 and are alternatives."
+  ],
+  "native_graphics_examples": {
+    "decision": [
+      "gfx/interface/decisions/generic/generic_construction.png",
+      [
+        52,
+        45
+      ]
+    ],
+    "compressed_decision": [
+      "gfx/interface/decisions/reconstruction.dds",
+      "DXT5"
+    ],
+    "event": [
+      "gfx/event_pictures/report_event_001.dds",
+      [
+        500,
+        250
+      ],
+      "DXT3"
+    ],
+    "category": [
+      "GAME/gfx/interface/decisions/decision_category_generic_economy.dds",
+      [
+        52,
+        40
+      ]
+    ],
+    "idea": [
+      "gfx/interface/ideas/companies/industrial/lifan_industry.dds",
+      [
+        64,
+        64
+      ],
+      "DXT5"
+    ]
+  }
+}

@@ -6,6 +6,7 @@ from pathlib import Path
 from collections import Counter
 import argparse,copy,hashlib,itertools,json,re,subprocess,zipfile
 from PIL import Image
+from validation_history import check_current_art
 from validate_phase1 import ROOT,parse,get,descend,unique
 from validate_post_bosnia import PostBosniaModel
 from validate_bosnia import TFR,GAME
@@ -143,6 +144,7 @@ def main():
  all_new='\n'.join((mod/p).read_text(encoding='utf-8-sig') for p in sources['changed_relative_paths'] if p.endswith(('.txt','.gfx')) and not p.startswith('events/TFR_'))
  assert not any(word in all_new for word in ['cohesion','pact_collapses','cracks_in_pact','counteroffensive','element_of_surprise_lost','tirana_strikes_back','hold_vardar_line'])
  for path,record in sources['assets'].items():
+  if check_current_art(mod/path,path):continue
   data=(mod/path).read_bytes();assert hashlib.sha256(data).hexdigest()==record['sha256']
   with zipfile.ZipFile(sources['package']) as z:assert data==z.read(record['zip_member'])
   assert Image.open(mod/path).size==((474,178) if '/event_pictures/' in path else (95,85) if '/goals/' in path else (60,68))

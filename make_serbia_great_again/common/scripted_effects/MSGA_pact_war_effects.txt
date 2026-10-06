@@ -54,12 +54,17 @@ MSGA_scan_pact_capitals = {
 }
 # ROOT = actual capitulated country; FROM = victorious country in on_capitulation.
 MSGA_handle_pact_capitulation = {
+ # Suppress TFR's default surrender path before removing the target's wars.
+ set_global_flag = skip_default_capitulation
  if = { limit = { NOT = { has_country_flag = MSGA_pact_real_capitulation } } set_country_flag = MSGA_pact_real_capitulation }
  if = { limit = { tag = MNT } SER = { MSGA_settle_pact_montenegro = yes } }
  if = { limit = { tag = MAC } SER = { MSGA_settle_pact_macedonia = yes } }
  if = { limit = { tag = ALB } SER = { MSGA_settle_pact_albania = yes } }
  if = { limit = { tag = SLV } SER = { MSGA_settle_pact_slovenia = yes } }
  if = { limit = { tag = CRO } SER = { MSGA_settle_pact_croatia = yes } }
+ # Final victory is published in this callback, not in a later conference.
+ SER = { MSGA_finish_pact_campaign = yes MSGA_update_campaign_puppet_rule = yes }
+ set_global_flag = skip_default_capitulation
 }
 MSGA_retry_pact_settlements = {
  MSGA_settle_pact_montenegro = yes
