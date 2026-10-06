@@ -6,7 +6,7 @@ The two exact category IDs are `MSGA_serbian_economic_cooperation` and `MSGA_ser
 
 ## Permanent projects
 
-Each completes once. Costs are paid on activation; ownership/control loss or an invalid native building condition cancels and refunds the paid cost exactly once. Country/state reservations last one day beyond completion and are released on completion or cancellation. Cancelled projects may be retried. Only native 2020 Serbian states **45, 107, 108 and 1296** qualify; later conquests and subjects never expand that whitelist.
+Each completes once. Costs are paid on activation; ownership/control loss or an invalid native building condition cancels and refunds the paid cost exactly once. **The targeted 2026-10-06 bugfix replaced expiring project reservations with persistent pending/busy flags, explicitly released on completion or cancellation.** Completion uses separate final safety triggers, grants rewards before setting done, and logs building commands with `[MSGA ECON]`. Cancelled projects may be retried. Only native 2020 Serbian states **45, 107, 108 and 1296** qualify; later conquests and subjects never expand that whitelist.
 
 | Decision ID | State | Treasury ($B) | PP | Days | Native reward / prerequisite |
 |---|---:|---:|---:|---:|---|
@@ -83,6 +83,8 @@ All eight events are narrative only, with one option and persistent queued/seen 
 The supplied `MSGA_Economic_Energy_Visuals.zip` provides all artwork. Individual illustrated motifs were cropped from the two concept boards, excluding printed board labels and numbers. Exports follow inspected installed formats: 37 decision DDS at 52×45 DXT5, 21 spirit DDS at 64×64 DXT5, two category DDS at 52×40 DXT5 and eight event DDS at 500×250 DXT3. Event images are fitted/cropped without stretching. All 68 textures have unique resolved sprites; no generic replacement/fallback image is used. Exported icon and event contact sheets were visually inspected. Existing user artwork remains byte-identical.
 
 ## Deployment and validation
+
+The targeted lifecycle/icon correction is recorded in `economic_energy_bugfix_sync.json`, with current installed hashes and 40 changed runtime paths. Only `validate_economic_energy.py` was rerun for that correction; it verifies parsed commands, persistent flags, release/refund, 19 delayed callbacks, 13 reachable building/infrastructure grants and icon formats/paths. The older ten-suite results below describe the initial increment. Actual engine building delivery still requires the user's test. Category, spirit and event textures remain unchanged; 37 decision crops were tightened and centred with aspect preserved inside the existing 52×45 DXT5 canvas. The generator reproduces this composition.
 
 Primary installation: `C:/Users/Balazs/Documents/Paradox Interactive/Hearts of Iron IV/mod/make_serbia_great_again`. Its sibling launcher descriptor points to this exact directory and retains Workshop identity **3813570241**. All **397** source/runtime files match byte-for-byte; all previous **320** runtime files are unchanged by this increment.
 

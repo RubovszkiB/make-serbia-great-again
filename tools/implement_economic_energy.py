@@ -2,7 +2,7 @@
 from pathlib import Path
 from zipfile import ZipFile
 from PIL import Image, ImageOps
-import hashlib, io, json, struct
+import argparse, hashlib, io, json, struct, shutil
 from validate_phase1 import ROOT, parse, get
 from validate_bosnia import TFR, GAME
 
@@ -13,6 +13,10 @@ CATEGORIES = ['MSGA_serbian_economic_cooperation', 'MSGA_serbian_energy_developm
 PREFIX = 'MSGA_'
 PROJECTS = []
 PROGRAMMES = []
+REFRESH = False
+REFRESH_TEXT = {'common/decisions/MSGA_economic_energy_decisions.txt',
+                'common/scripted_effects/MSGA_economic_energy_effects.txt',
+                'common/scripted_triggers/MSGA_economic_energy_triggers.txt'}
 
 def project(stem, title, state, cash, days, reward, text, crop, *, group='domestic', energy=False, requires=None, technology=None, event=None, industrial=0.025, academic=0):
     PROJECTS.append(dict(stem=stem, title=title, state=state, cash=cash, days=days, reward=reward, text=text, crop=crop,
@@ -130,8 +134,11 @@ def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 def inventory(folder): return {p.relative_to(folder).as_posix():sha(p) for p in folder.rglob('*') if p.is_file()}
 def write(path, text, bom=False):
     p=MOD/path; p.parent.mkdir(parents=True,exist_ok=True)
-    if p.exists(): raise AssertionError('Additive file already exists: '+path)
     text='\n'.join(line.rstrip() for line in text.splitlines())+'\n'
+    if REFRESH and path not in REFRESH_TEXT:
+        assert p.read_text(encoding='utf-8-sig')==text,path
+        return
+    if p.exists() and not REFRESH: raise AssertionError('Additive file already exists: '+path)
     p.write_text(text,encoding='utf-8-sig' if bom else 'utf-8',newline='\r\n')
 def cash_test(amount):return f'check_variable = {{ var = income_var value = {amount:g} compare = greater_than_or_equals }}'
 def charge(amount):return f'set_temp_variable = {{ var = income_var_temp value = {-amount:g} }} add_income = yes'
@@ -140,17 +147,64 @@ def partner(group):
     return {'domestic':'','china':'PRC = { exists = yes NOT = { has_war_with = SER } }',
             'russia':'SOV = { exists = yes NOT = { has_war_with = SER } }',
             'europe':'OR = { GER = { exists = yes NOT = { has_war_with = SER } } ITA = { exists = yes NOT = { has_war_with = SER } } HUN = { exists = yes NOT = { has_war_with = SER } } }'}[group]
-def infra():return 'if = { limit = { infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } else = { add_extra_state_shared_building_slots = 1 }'
+def debug(stem, message):return f'log = "[MSGA ECON] MSGA_{stem} {message}"'
+def infra(stem, state):return 'if = { limit = { infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } '+debug(stem,f'granted infrastructure in state {state}')+' } else = { add_extra_state_shared_building_slots = 1 '+debug(stem,f'infrastructure capped; granted shared slot in state {state}')+' }'
+
+def decision_crop(p):
+    # Tight foreground motifs from the supplied boards; do not reuse these
+    # crops for spirits, categories or event pictures.
+    crops = {
+      tuple(D[0]):(113,270,199,346), tuple(D[1]):(111,372,200,450),
+      tuple(D[2]):(107,474,200,553), tuple(D[3]):(108,576,199,652),
+      tuple(D[4]):(105,677,200,756), tuple(D[5]):(98,779,200,865),
+      tuple(D[6]):(106,883,200,971),
+      tuple(C[0]):(625,265,714,345), tuple(C[1]):(620,368,714,449),
+      tuple(C[2]):(600,471,705,547), tuple(C[3]):(620,570,714,648),
+      tuple(R[0]):(614,733,714,813), tuple(R[1]):(615,819,714,898),
+      tuple(R[2]):(615,902,714,984),
+      tuple(E[0]):(1101,265,1206,346), tuple(E[1]):(1103,364,1206,446),
+      tuple(E[2]):(1103,468,1206,549), tuple(E[3]):(1103,570,1206,650),
+      tuple(ED[0]):(93,295,182,385), tuple(ED[1]):(88,421,182,505),
+      tuple(ED[2]):(88,539,182,627), tuple(ED[3]):(88,664,182,751),
+      tuple(EC[0]):(568,309,658,374), tuple(EC[1]):(592,415,681,503),
+      tuple(EC[2]):(592,533,681,623), tuple(EC[3]):(583,654,681,731),
+      tuple(EC[4]):(587,762,681,847), tuple(EC[5]):(583,887,681,970),
+      tuple(ER[0]):(1095,311,1183,376), tuple(ER[1]):(1111,420,1208,505),
+      tuple(ER[2]):(1109,539,1208,626), tuple(ER[3]):(1109,664,1208,752),
+      tuple(ER[4]):(1109,787,1208,873), tuple(ER[5]):(1131,913,1208,984),
+    }
+    return crops[tuple(p['crop'])]
+
+def decision_image(im):
+    # Fit the complete selected foreground object inside a two-pixel margin.
+    # Contain preserves aspect ratio and avoids chopping off the emblem.
+    result=Image.new('RGBA',(52,45),(19,27,31,255))
+    motif=ImageOps.contain(im,(48,41),method=Image.Resampling.LANCZOS).convert('RGBA')
+    result.paste(motif,((52-motif.width)//2,(45-motif.height)//2))
+    return result
 def development(p):
     return ''.join(f' set_temp_variable = {{ var = {name}_development_var_temp value = {p[name]:g} }} add_{name}_development = yes' for name in ['industrial','academic'] if p[name])
 def event_effect(id):return 'MSGA_milestone_'+id.replace('MSGA_','').replace('.','_')
 
 def main():
+    global MOD, REFRESH
+    cli=argparse.ArgumentParser(description=__doc__)
+    cli.add_argument('--refresh-projects-and-icons',action='store_true')
+    REFRESH=cli.parse_args().refresh_projects_and_icons
     baseline=inventory(LIVE);assert baseline==inventory(MOD)
+    prior=json.loads((ROOT/'docs/economic_energy_sources.json').read_text()) if REFRESH else None
+    if REFRESH:
+        backup=ROOT/'logs/economic_energy_bugfix_backup';backup.mkdir(parents=True,exist_ok=True)
+        if not (backup/'before_sha256.json').exists():(backup/'before_sha256.json').write_text(json.dumps(baseline,indent=2)+'\n')
+        for path in REFRESH_TEXT|{p for p in prior['assets'] if p.startswith('gfx/interface/decisions/') and prior['assets'][p]['size']==[52,45]}:
+            dest=backup/path;dest.parent.mkdir(parents=True,exist_ok=True)
+            if not dest.exists():shutil.copyfile(LIVE/path,dest)
+        MOD=LIVE  # Commit runtime changes first, then mirror only these paths.
     native_buildings=get(parse((TFR/'common/buildings/TFR_buildings.txt').read_text()),'buildings')
     assert get(get(native_buildings,'infrastructure'),'level_cap')==parse('state_max = 5')
     owners={}; histories={}
-    for p in (TFR/'history/states').glob('*.txt'):
+    state_files=[TFR/p for p in prior['starting_serbia_states'].values()] if REFRESH else (TFR/'history/states').glob('*.txt')
+    for p in state_files:
         a=get(parse(p.read_text(encoding='utf-8-sig',errors='replace')),'state');h=get(a,'history')
         values=[v for k,o,v in h if k=='owner']
         if values and values[-1]=='SER': owners[int(get(a,'id'))]=p.relative_to(TFR).as_posix();histories[int(get(a,'id'))]=h
@@ -194,18 +248,28 @@ def main():
                 state_rules+=f' {reward} < {limit} '
                 state_rules+=' '.join(f'{b} < 1' for b in ['power_plant','energy_farm','nuclear_reactor'] if b!=reward)
             rules+=f' {state} = {{ {state_rules} }}'
-            if reward=='mining':state_effect=infra()+' add_resource = { type = steel amount = 3 } add_resource = { type = tungsten amount = 2 }'
+            if reward=='mining':state_effect=infra(stem,state)+' add_resource = { type = steel amount = 3 } add_resource = { type = tungsten amount = 2 }'
             elif reward=='jadar':state_effect='add_extra_state_shared_building_slots = 1 add_resource = { type = steel amount = 3 } add_resource = { type = tungsten amount = 2 }'
             elif reward=='slot':state_effect='add_extra_state_shared_building_slots = 1'
             elif reward=='logistics':state_effect='add_extra_state_shared_building_slots = 1 add_building_construction = { type = infrastructure level = 1 instant_build = yes }'
-            elif reward in ['grid','hydro']:state_effect=infra()+(' add_resource = { type = coal amount = 2 }' if reward=='hydro' else '')
+            elif reward in ['grid','hydro']:state_effect=infra(stem,state)+(' add_resource = { type = coal amount = 2 }' if reward=='hydro' else '')
             elif reward in ['civilian','power_plant','energy_farm','nuclear_reactor']:
                 building='industrial_complex' if reward=='civilian' else reward
                 state_effect=f'add_extra_state_shared_building_slots = 1 add_building_construction = {{ type = {building} level = 1 instant_build = yes }}'
         triggers.append(f'{eligible} = {{ {rules} }}')
+        safety='MSGA_safe_finish_'+stem
+        # Start-only prerequisite/technology checks must not invalidate a
+        # paid project at the final tick. Retain actual reward capacity and
+        # native energy exclusivity, without a circular free-slot test.
+        safe_rules='tag = SER'+(f' {state} = {{ {state_rules.replace("MSGA_development_starting_serbia_state = yes ", "")} }}' if state else '')
+        triggers.append(f'{safety} = {{ {safe_rules} }}')
+        grants_building=reward in ['mining','logistics','grid','hydro','civilian','power_plant','energy_farm','nuclear_reactor']
+        if reward in ['logistics','civilian','power_plant','energy_farm','nuclear_reactor']:
+            building='infrastructure' if reward=='logistics' else 'industrial_complex' if reward=='civilian' else reward
+            state_effect+=' '+debug(stem,f'granted {building} in state {state}')
         release=f'clr_country_flag = {pending} '+(f'clr_country_flag = MSGA_development_state_{state}_busy' if state else '')
         cancel='MSGA_cancel_'+stem
-        effects.append(f'{cancel} = {{ if = {{ limit = {{ has_country_flag = {pending} }} {refund(p["cash"])} '+(f'add_political_power = {p["pp"]} ' if p['pp'] else '')+release+' } }')
+        effects.append(f'{cancel} = {{ if = {{ limit = {{ has_country_flag = {pending} }} '+(debug(stem,'cancelled')+' ' if grants_building else '')+refund(p['cash'])+' '+(f'add_political_power = {p["pp"]} ' if p['pp'] else '')+release+' } }')
         reward_code=(f'{state} = {{ {state_effect} }} ' if state else '')+development(p)
         if reward in ['power_plant','energy_farm','nuclear_reactor']:reward_code+=' update_power_plants_effect = yes'
         if reward in ['expertise','nuclear_programme','workforce']:reward_code+=f' add_tech_bonus = {{ name = MSGA_nuclear_research_bonus bonus = 0.5 uses = 1 category = nuclear }}'
@@ -213,12 +277,12 @@ def main():
         if reward=='nuclear_programme':reward_code+=' add_timed_idea = { idea = MSGA_nuclear_programme_research days = 365 }'
         if reward=='storage':reward_code+=' add_ideas = MSGA_grid_scale_storage_network'
         if p['event']:reward_code+=' '+event_effect(p['event'])+' = yes'
-        if not p['energy']:reward_code+=' MSGA_check_industrial_revival = yes'
-        effects.append(f'MSGA_finish_{stem} = {{ if = {{ limit = {{ has_country_flag = {pending} NOT = {{ has_country_flag = {done} }} {eligible} = yes }} set_country_flag = {done} {reward_code} {release} }} else = {{ {cancel} = yes }} }}')
+        after_done=' MSGA_check_industrial_revival = yes' if not p['energy'] else ''
+        effects.append(f'MSGA_finish_{stem} = {{ '+(debug(stem,'completion fired')+' ' if grants_building else '')+f'if = {{ limit = {{ has_country_flag = {pending} NOT = {{ has_country_flag = {done} }} {safety} = yes }} {reward_code} set_country_flag = {done}{after_done} {release} }} else = {{ {cancel} = yes }} }}')
         available=f'MSGA_development_unlocked = yes has_war = no {eligible} = yes {partner(p["group"])}'
         if state:available+=f' custom_trigger_tooltip = {{ tooltip = MSGA_development_state_free_tt NOT = {{ has_country_flag = MSGA_development_state_{state}_busy }} }}'
-        start=f'{charge(p["cash"])} set_country_flag = {{ flag = {pending} days = {p["days"]+1} }}'
-        if state:start+=f' set_country_flag = {{ flag = MSGA_development_state_{state}_busy days = {p["days"]+1} }}'
+        start=f'{charge(p["cash"])} set_country_flag = {pending}'
+        if state:start+=f' set_country_flag = MSGA_development_state_{state}_busy'
         start+=' custom_effect_tooltip = MSGA_development_cancel_tt'
         threshold=3 if reward=='nuclear_reactor' else p['cash']+1
         ai=f'base = {8 if p["energy"] else 5} modifier = {{ factor = 0 NOT = {{ {cash_test(threshold)} }} }}'
@@ -230,7 +294,7 @@ def main():
  cost = {p['pp']} custom_cost_text = MSGA_development_cost_{str(p['cash']).replace('.','_')}
  custom_cost_trigger = {{ {cash_test(p['cash'])} }}
  days_remove = {p['days']} cancel_if_not_visible = no
- cancel_trigger = {{ NOT = {{ {eligible} = yes }} }}
+ cancel_trigger = {{ NOT = {{ {safety} = yes }} }}
  complete_effect = {{ {start} }}
  remove_effect = {{ MSGA_finish_{stem} = yes }} cancel_effect = {{ {cancel} = yes }}
  ai_will_do = {{ {ai} }}
@@ -266,14 +330,19 @@ def main():
         boards={False:Image.open(io.BytesIO(z.read(root+'decision_concepts/MSGA_preview_economic_cooperation.png'))).convert('RGB'),True:Image.open(io.BytesIO(z.read(root+'decision_concepts/MSGA_preview_energy_development.png'))).convert('RGB')}
         def artwork(path,sprite,im,size,compression,entry,crop):
             out=MOD/path;out.parent.mkdir(parents=True,exist_ok=True)
-            assert not out.exists(),path
-            result=ImageOps.fit(im,size,method=Image.Resampling.LANCZOS).convert('RGBA')
+            is_decision=size==(52,45)
+            if REFRESH and not is_decision:
+                asset_records[path]=prior['assets'][path]
+                sprites.append(f'spriteType = {{ name = "{sprite}" texturefile = "{path}" }}')
+                return
+            assert REFRESH or not out.exists(),path
+            result=decision_image(im) if is_decision else ImageOps.fit(im,size,method=Image.Resampling.LANCZOS).convert('RGBA')
             result.save(out,pixel_format=compression)
             with Image.open(out) as check:assert check.size==size;check.load()
             sprites.append(f'spriteType = {{ name = "{sprite}" texturefile = "{path}" }}')
             asset_records[path]={'sha256':sha(out),'size':list(size),'compression':compression,'zip_entry':root+entry,'crop':list(crop) if crop else None}
         for p in PROJECTS+PROGRAMMES:
-            id='MSGA_'+p['stem'];crop=p['crop'];b=boards[p['energy']].crop(crop)
+            id='MSGA_'+p['stem'];crop=decision_crop(p);b=boards[p['energy']].crop(crop)
             artwork('gfx/interface/decisions/'+id+'.dds','GFX_decision_'+id,b,(52,45),'DXT5','decision_concepts/MSGA_preview_'+('energy_development' if p['energy'] else 'economic_cooperation')+'.png',crop)
         for id,(mods,crop,energy) in extra_ideas.items():
             artwork('gfx/interface/ideas/'+id+'.dds','GFX_idea_'+id,boards[energy].crop(crop),(64,64),'DXT5','decision_concepts/MSGA_preview_'+('energy_development' if energy else 'economic_cooperation')+'.png',crop)
@@ -302,9 +371,13 @@ def main():
     for path,text in output.items():
         if not path.endswith('.yml'):parse(text)
         write(path,text,bom=path.endswith('.yml'))
-    assert all(sha(MOD/p)==digest for p,digest in baseline.items()),'Existing campaign files changed'
+    changed=REFRESH_TEXT|{p for p,a in asset_records.items() if a['size']==[52,45]}
+    assert all(sha(MOD/p)==digest for p,digest in baseline.items() if not REFRESH or p not in changed),'Unrelated campaign files changed'
+    if REFRESH:
+        for path in sorted(changed):shutil.copyfile(LIVE/path,ROOT/'make_serbia_great_again'/path)
+        assert inventory(LIVE)==inventory(ROOT/'make_serbia_great_again')
     native_paths=['common/buildings/TFR_buildings.txt','common/scripted_effects/00_TFR_scripted_effects_ZZZ_generic.txt','common/modifier_definitions/00_TFR_economic_modifiers_definition.txt','common/dynamic_modifiers/00_TFR_dynamic_modifiers_ZZZ_generic.txt','common/technologies/electronic_mechanical_engineering.txt','common/decisions/TFR_decisions_SER.txt','common/decisions/TFR_decisions_SOV.txt','common/decisions/TFR_decisions_GER.txt']+list(owners.values())
-    data={'runtime':str(LIVE),'package':str(PACK),'package_sha256':sha(PACK),'baseline_sha256':baseline,
+    data={'runtime':str(LIVE),'package':str(PACK),'package_sha256':sha(PACK),'baseline_sha256':prior['baseline_sha256'] if REFRESH else baseline,
           'starting_serbia_states':owners,'state_geography':{'Bor/Kostolac/Djerdap/Nis':108,'Jadar/Obrenovac/Kragujevac/Morava corridor':1296,'Belgrade city':107,'Vojvodina/nuclear site/solar manufacturing':45},
           'reference_repository':'https://github.com/RubovszkiB/HOI4-TFR-Austria-Hungary-reborn','reference_commit':'8e4e35f8093f826dc21fafbccb82e3e1cd3eb18e',
           'native_sources_sha256':{p:sha(TFR/p) for p in native_paths},'native_energy_buildings':{n:get(native_buildings,n) for n in ['power_plant','energy_farm','nuclear_reactor']},
@@ -313,6 +386,6 @@ def main():
           'fallbacks':['No separate copper/lithium resource. User requested native steel and tungsten: each mining project grants +3 steel and +2 tungsten.','No dedicated hydro building is introduced. Djerdap adds 2 native coal/Energy resource to existing generation.','No storage currency/building: native factory_energy_consumption -3% permanently.','User chose native energy exclusivity: Kostolac thermal and Bor renewable projects share state 108 and are alternatives.'],
           'native_graphics_examples':{'decision':['gfx/interface/decisions/generic/generic_construction.png',[52,45]],'compressed_decision':['gfx/interface/decisions/reconstruction.dds','DXT5'],'event':['gfx/event_pictures/report_event_001.dds',[500,250],'DXT3'],'category':['GAME/gfx/interface/decisions/decision_category_generic_economy.dds',[52,40]],'idea':['gfx/interface/ideas/companies/industrial/lifan_industry.dds',[64,64],'DXT5']}}
     (ROOT/'docs/economic_energy_sources.json').write_text(json.dumps(data,indent=2)+'\n')
-    print(f'Generated {len(PROJECTS)} permanent projects, {len(PROGRAMMES)} repeatable programmes, 8 milestones and {len(asset_records)} supplied-art DDS. Existing 320 runtime/source files unchanged.')
+    print(f'Generated {len(PROJECTS)} permanent projects, {len(PROGRAMMES)} repeatable programmes, 8 milestones and {len(asset_records)} supplied-art DDS. Existing 320 campaign files unchanged; targeted runtime files synchronized.')
 
 if __name__=='__main__':main()

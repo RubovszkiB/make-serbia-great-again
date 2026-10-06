@@ -6,8 +6,8 @@ MSGA_expand_bor_mining_complex = {
  cost = 0 custom_cost_text = MSGA_development_cost_0_5
  custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
  days_remove = 120 cancel_if_not_visible = no
- cancel_trigger = { NOT = { MSGA_eligible_expand_bor_mining_complex = yes } }
- complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = { flag = MSGA_pending_expand_bor_mining_complex days = 121 } set_country_flag = { flag = MSGA_development_state_108_busy days = 121 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ cancel_trigger = { NOT = { MSGA_safe_finish_expand_bor_mining_complex = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = MSGA_pending_expand_bor_mining_complex set_country_flag = MSGA_development_state_108_busy custom_effect_tooltip = MSGA_development_cancel_tt }
  remove_effect = { MSGA_finish_expand_bor_mining_complex = yes } cancel_effect = { MSGA_cancel_expand_bor_mining_complex = yes }
  ai_will_do = { base = 5 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.5 compare = greater_than_or_equals } } } }
 }
@@ -18,8 +18,8 @@ MSGA_develop_jadar_mining_project = {
  cost = 0 custom_cost_text = MSGA_development_cost_0_5
  custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
  days_remove = 120 cancel_if_not_visible = no
- cancel_trigger = { NOT = { MSGA_eligible_develop_jadar_mining_project = yes } }
- complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = { flag = MSGA_pending_develop_jadar_mining_project days = 121 } set_country_flag = { flag = MSGA_development_state_1296_busy days = 121 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ cancel_trigger = { NOT = { MSGA_safe_finish_develop_jadar_mining_project = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = MSGA_pending_develop_jadar_mining_project set_country_flag = MSGA_development_state_1296_busy custom_effect_tooltip = MSGA_development_cancel_tt }
  remove_effect = { MSGA_finish_develop_jadar_mining_project = yes } cancel_effect = { MSGA_cancel_develop_jadar_mining_project = yes }
  ai_will_do = { base = 5 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.5 compare = greater_than_or_equals } } } }
 }
@@ -30,8 +30,8 @@ MSGA_serbian_mineral_processing_expansion = {
  cost = 0 custom_cost_text = MSGA_development_cost_0_5
  custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
  days_remove = 120 cancel_if_not_visible = no
- cancel_trigger = { NOT = { MSGA_eligible_serbian_mineral_processing_expansion = yes } }
- complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = { flag = MSGA_pending_serbian_mineral_processing_expansion days = 121 } set_country_flag = { flag = MSGA_development_state_1296_busy days = 121 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ cancel_trigger = { NOT = { MSGA_safe_finish_serbian_mineral_processing_expansion = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = MSGA_pending_serbian_mineral_processing_expansion set_country_flag = MSGA_development_state_1296_busy custom_effect_tooltip = MSGA_development_cancel_tt }
  remove_effect = { MSGA_finish_serbian_mineral_processing_expansion = yes } cancel_effect = { MSGA_cancel_serbian_mineral_processing_expansion = yes }
  ai_will_do = { base = 5 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.5 compare = greater_than_or_equals } } } }
 }
@@ -42,8 +42,8 @@ MSGA_central_serbian_industrial_park = {
  cost = 0 custom_cost_text = MSGA_development_cost_0_5
  custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
  days_remove = 90 cancel_if_not_visible = no
- cancel_trigger = { NOT = { MSGA_eligible_central_serbian_industrial_park = yes } }
- complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = { flag = MSGA_pending_central_serbian_industrial_park days = 91 } set_country_flag = { flag = MSGA_development_state_1296_busy days = 91 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ cancel_trigger = { NOT = { MSGA_safe_finish_central_serbian_industrial_park = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = MSGA_pending_central_serbian_industrial_park set_country_flag = MSGA_development_state_1296_busy custom_effect_tooltip = MSGA_development_cancel_tt }
  remove_effect = { MSGA_finish_central_serbian_industrial_park = yes } cancel_effect = { MSGA_cancel_central_serbian_industrial_park = yes }
  ai_will_do = { base = 5 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.5 compare = greater_than_or_equals } } } }
 }
@@ -54,8 +54,8 @@ MSGA_southern_serbian_industrial_development = {
  cost = 0 custom_cost_text = MSGA_development_cost_0_5
  custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
  days_remove = 90 cancel_if_not_visible = no
- cancel_trigger = { NOT = { MSGA_eligible_southern_serbian_industrial_development = yes } }
- complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = { flag = MSGA_pending_southern_serbian_industrial_development days = 91 } set_country_flag = { flag = MSGA_development_state_108_busy days = 91 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ cancel_trigger = { NOT = { MSGA_safe_finish_southern_serbian_industrial_development = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = MSGA_pending_southern_serbian_industrial_development set_country_flag = MSGA_development_state_108_busy custom_effect_tooltip = MSGA_development_cancel_tt }
  remove_effect = { MSGA_finish_southern_serbian_industrial_development = yes } cancel_effect = { MSGA_cancel_southern_serbian_industrial_development = yes }
  ai_will_do = { base = 5 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.5 compare = greater_than_or_equals } } } }
 }
@@ -66,8 +66,8 @@ MSGA_morava_logistics_development = {
  cost = 0 custom_cost_text = MSGA_development_cost_0_4
  custom_cost_trigger = { check_variable = { var = income_var value = 0.4 compare = greater_than_or_equals } }
  days_remove = 120 cancel_if_not_visible = no
- cancel_trigger = { NOT = { MSGA_eligible_morava_logistics_development = yes } }
- complete_effect = { set_temp_variable = { var = income_var_temp value = -0.4 } add_income = yes set_country_flag = { flag = MSGA_pending_morava_logistics_development days = 121 } set_country_flag = { flag = MSGA_development_state_1296_busy days = 121 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ cancel_trigger = { NOT = { MSGA_safe_finish_morava_logistics_development = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.4 } add_income = yes set_country_flag = MSGA_pending_morava_logistics_development set_country_flag = MSGA_development_state_1296_busy custom_effect_tooltip = MSGA_development_cancel_tt }
  remove_effect = { MSGA_finish_morava_logistics_development = yes } cancel_effect = { MSGA_cancel_morava_logistics_development = yes }
  ai_will_do = { base = 5 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.4 compare = greater_than_or_equals } } } }
 }
@@ -185,8 +185,8 @@ MSGA_modernise_serbian_power_grid = {
  cost = 0 custom_cost_text = MSGA_development_cost_0_4
  custom_cost_trigger = { check_variable = { var = income_var value = 0.4 compare = greater_than_or_equals } }
  days_remove = 60 cancel_if_not_visible = no
- cancel_trigger = { NOT = { MSGA_eligible_modernise_serbian_power_grid = yes } }
- complete_effect = { set_temp_variable = { var = income_var_temp value = -0.4 } add_income = yes set_country_flag = { flag = MSGA_pending_modernise_serbian_power_grid days = 61 } set_country_flag = { flag = MSGA_development_state_107_busy days = 61 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ cancel_trigger = { NOT = { MSGA_safe_finish_modernise_serbian_power_grid = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.4 } add_income = yes set_country_flag = MSGA_pending_modernise_serbian_power_grid set_country_flag = MSGA_development_state_107_busy custom_effect_tooltip = MSGA_development_cancel_tt }
  remove_effect = { MSGA_finish_modernise_serbian_power_grid = yes } cancel_effect = { MSGA_cancel_modernise_serbian_power_grid = yes }
  ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.4 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
 }
@@ -197,8 +197,8 @@ MSGA_modernise_nikola_tesla_complex = {
  cost = 0 custom_cost_text = MSGA_development_cost_0_5
  custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
  days_remove = 90 cancel_if_not_visible = no
- cancel_trigger = { NOT = { MSGA_eligible_modernise_nikola_tesla_complex = yes } }
- complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = { flag = MSGA_pending_modernise_nikola_tesla_complex days = 91 } set_country_flag = { flag = MSGA_development_state_1296_busy days = 91 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ cancel_trigger = { NOT = { MSGA_safe_finish_modernise_nikola_tesla_complex = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = MSGA_pending_modernise_nikola_tesla_complex set_country_flag = MSGA_development_state_1296_busy custom_effect_tooltip = MSGA_development_cancel_tt }
  remove_effect = { MSGA_finish_modernise_nikola_tesla_complex = yes } cancel_effect = { MSGA_cancel_modernise_nikola_tesla_complex = yes }
  ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.5 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
 }
@@ -209,8 +209,8 @@ MSGA_expand_kostolac_energy_complex = {
  cost = 0 custom_cost_text = MSGA_development_cost_0_5
  custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
  days_remove = 90 cancel_if_not_visible = no
- cancel_trigger = { NOT = { MSGA_eligible_expand_kostolac_energy_complex = yes } }
- complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = { flag = MSGA_pending_expand_kostolac_energy_complex days = 91 } set_country_flag = { flag = MSGA_development_state_108_busy days = 91 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ cancel_trigger = { NOT = { MSGA_safe_finish_expand_kostolac_energy_complex = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = MSGA_pending_expand_kostolac_energy_complex set_country_flag = MSGA_development_state_108_busy custom_effect_tooltip = MSGA_development_cancel_tt }
  remove_effect = { MSGA_finish_expand_kostolac_energy_complex = yes } cancel_effect = { MSGA_cancel_expand_kostolac_energy_complex = yes }
  ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.5 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
 }
@@ -221,8 +221,8 @@ MSGA_upgrade_djerdap_power_system = {
  cost = 0 custom_cost_text = MSGA_development_cost_0_4
  custom_cost_trigger = { check_variable = { var = income_var value = 0.4 compare = greater_than_or_equals } }
  days_remove = 75 cancel_if_not_visible = no
- cancel_trigger = { NOT = { MSGA_eligible_upgrade_djerdap_power_system = yes } }
- complete_effect = { set_temp_variable = { var = income_var_temp value = -0.4 } add_income = yes set_country_flag = { flag = MSGA_pending_upgrade_djerdap_power_system days = 76 } set_country_flag = { flag = MSGA_development_state_108_busy days = 76 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ cancel_trigger = { NOT = { MSGA_safe_finish_upgrade_djerdap_power_system = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.4 } add_income = yes set_country_flag = MSGA_pending_upgrade_djerdap_power_system set_country_flag = MSGA_development_state_108_busy custom_effect_tooltip = MSGA_development_cancel_tt }
  remove_effect = { MSGA_finish_upgrade_djerdap_power_system = yes } cancel_effect = { MSGA_cancel_upgrade_djerdap_power_system = yes }
  ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.4 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
 }
@@ -233,8 +233,8 @@ MSGA_develop_bor_renewable_complex = {
  cost = 0 custom_cost_text = MSGA_development_cost_0_5
  custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
  days_remove = 120 cancel_if_not_visible = no
- cancel_trigger = { NOT = { MSGA_eligible_develop_bor_renewable_complex = yes } }
- complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = { flag = MSGA_pending_develop_bor_renewable_complex days = 121 } set_country_flag = { flag = MSGA_development_state_108_busy days = 121 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ cancel_trigger = { NOT = { MSGA_safe_finish_develop_bor_renewable_complex = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = MSGA_pending_develop_bor_renewable_complex set_country_flag = MSGA_development_state_108_busy custom_effect_tooltip = MSGA_development_cancel_tt }
  remove_effect = { MSGA_finish_develop_bor_renewable_complex = yes } cancel_effect = { MSGA_cancel_develop_bor_renewable_complex = yes }
  ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.5 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
 }
@@ -245,8 +245,8 @@ MSGA_expand_bor_renewable_complex = {
  cost = 0 custom_cost_text = MSGA_development_cost_0_6
  custom_cost_trigger = { check_variable = { var = income_var value = 0.6 compare = greater_than_or_equals } }
  days_remove = 120 cancel_if_not_visible = no
- cancel_trigger = { NOT = { MSGA_eligible_expand_bor_renewable_complex = yes } }
- complete_effect = { set_temp_variable = { var = income_var_temp value = -0.6 } add_income = yes set_country_flag = { flag = MSGA_pending_expand_bor_renewable_complex days = 121 } set_country_flag = { flag = MSGA_development_state_108_busy days = 121 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ cancel_trigger = { NOT = { MSGA_safe_finish_expand_bor_renewable_complex = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.6 } add_income = yes set_country_flag = MSGA_pending_expand_bor_renewable_complex set_country_flag = MSGA_development_state_108_busy custom_effect_tooltip = MSGA_development_cancel_tt }
  remove_effect = { MSGA_finish_expand_bor_renewable_complex = yes } cancel_effect = { MSGA_cancel_expand_bor_renewable_complex = yes }
  ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.6 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
 }
@@ -257,8 +257,8 @@ MSGA_establish_serbian_solar_manufacturing = {
  cost = 0 custom_cost_text = MSGA_development_cost_0_5
  custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
  days_remove = 90 cancel_if_not_visible = no
- cancel_trigger = { NOT = { MSGA_eligible_establish_serbian_solar_manufacturing = yes } }
- complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = { flag = MSGA_pending_establish_serbian_solar_manufacturing days = 91 } set_country_flag = { flag = MSGA_development_state_45_busy days = 91 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ cancel_trigger = { NOT = { MSGA_safe_finish_establish_serbian_solar_manufacturing = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = MSGA_pending_establish_serbian_solar_manufacturing set_country_flag = MSGA_development_state_45_busy custom_effect_tooltip = MSGA_development_cancel_tt }
  remove_effect = { MSGA_finish_establish_serbian_solar_manufacturing = yes } cancel_effect = { MSGA_cancel_establish_serbian_solar_manufacturing = yes }
  ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.5 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
 }
@@ -269,8 +269,8 @@ MSGA_develop_grid_scale_storage = {
  cost = 0 custom_cost_text = MSGA_development_cost_0_4
  custom_cost_trigger = { check_variable = { var = income_var value = 0.4 compare = greater_than_or_equals } }
  days_remove = 90 cancel_if_not_visible = no
- cancel_trigger = { NOT = { MSGA_eligible_develop_grid_scale_storage = yes } }
- complete_effect = { set_temp_variable = { var = income_var_temp value = -0.4 } add_income = yes set_country_flag = { flag = MSGA_pending_develop_grid_scale_storage days = 91 } set_country_flag = { flag = MSGA_development_state_107_busy days = 91 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ cancel_trigger = { NOT = { MSGA_safe_finish_develop_grid_scale_storage = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.4 } add_income = yes set_country_flag = MSGA_pending_develop_grid_scale_storage set_country_flag = MSGA_development_state_107_busy custom_effect_tooltip = MSGA_development_cancel_tt }
  remove_effect = { MSGA_finish_develop_grid_scale_storage = yes } cancel_effect = { MSGA_cancel_develop_grid_scale_storage = yes }
  ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.4 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
 }
@@ -281,8 +281,8 @@ MSGA_seek_russian_nuclear_expertise = {
  cost = 50 custom_cost_text = MSGA_development_cost_0_2
  custom_cost_trigger = { check_variable = { var = income_var value = 0.2 compare = greater_than_or_equals } }
  days_remove = 60 cancel_if_not_visible = no
- cancel_trigger = { NOT = { MSGA_eligible_seek_russian_nuclear_expertise = yes } }
- complete_effect = { set_temp_variable = { var = income_var_temp value = -0.2 } add_income = yes set_country_flag = { flag = MSGA_pending_seek_russian_nuclear_expertise days = 61 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ cancel_trigger = { NOT = { MSGA_safe_finish_seek_russian_nuclear_expertise = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.2 } add_income = yes set_country_flag = MSGA_pending_seek_russian_nuclear_expertise custom_effect_tooltip = MSGA_development_cancel_tt }
  remove_effect = { MSGA_finish_seek_russian_nuclear_expertise = yes } cancel_effect = { MSGA_cancel_seek_russian_nuclear_expertise = yes }
  ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.2 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
 }
@@ -293,8 +293,8 @@ MSGA_establish_serbian_nuclear_programme = {
  cost = 0 custom_cost_text = MSGA_development_cost_0_5
  custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
  days_remove = 120 cancel_if_not_visible = no
- cancel_trigger = { NOT = { MSGA_eligible_establish_serbian_nuclear_programme = yes } }
- complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = { flag = MSGA_pending_establish_serbian_nuclear_programme days = 121 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ cancel_trigger = { NOT = { MSGA_safe_finish_establish_serbian_nuclear_programme = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.5 } add_income = yes set_country_flag = MSGA_pending_establish_serbian_nuclear_programme custom_effect_tooltip = MSGA_development_cancel_tt }
  remove_effect = { MSGA_finish_establish_serbian_nuclear_programme = yes } cancel_effect = { MSGA_cancel_establish_serbian_nuclear_programme = yes }
  ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.5 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
 }
@@ -305,8 +305,8 @@ MSGA_train_serbian_nuclear_workforce = {
  cost = 0 custom_cost_text = MSGA_development_cost_0_3
  custom_cost_trigger = { check_variable = { var = income_var value = 0.3 compare = greater_than_or_equals } }
  days_remove = 90 cancel_if_not_visible = no
- cancel_trigger = { NOT = { MSGA_eligible_train_serbian_nuclear_workforce = yes } }
- complete_effect = { set_temp_variable = { var = income_var_temp value = -0.3 } add_income = yes set_country_flag = { flag = MSGA_pending_train_serbian_nuclear_workforce days = 91 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ cancel_trigger = { NOT = { MSGA_safe_finish_train_serbian_nuclear_workforce = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -0.3 } add_income = yes set_country_flag = MSGA_pending_train_serbian_nuclear_workforce custom_effect_tooltip = MSGA_development_cancel_tt }
  remove_effect = { MSGA_finish_train_serbian_nuclear_workforce = yes } cancel_effect = { MSGA_cancel_train_serbian_nuclear_workforce = yes }
  ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.3 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
 }
@@ -317,8 +317,8 @@ MSGA_first_serbian_nuclear_power_plant = {
  cost = 0 custom_cost_text = MSGA_development_cost_1_5
  custom_cost_trigger = { check_variable = { var = income_var value = 1.5 compare = greater_than_or_equals } }
  days_remove = 180 cancel_if_not_visible = no
- cancel_trigger = { NOT = { MSGA_eligible_first_serbian_nuclear_power_plant = yes } }
- complete_effect = { set_temp_variable = { var = income_var_temp value = -1.5 } add_income = yes set_country_flag = { flag = MSGA_pending_first_serbian_nuclear_power_plant days = 181 } set_country_flag = { flag = MSGA_development_state_45_busy days = 181 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ cancel_trigger = { NOT = { MSGA_safe_finish_first_serbian_nuclear_power_plant = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -1.5 } add_income = yes set_country_flag = MSGA_pending_first_serbian_nuclear_power_plant set_country_flag = MSGA_development_state_45_busy custom_effect_tooltip = MSGA_development_cancel_tt }
  remove_effect = { MSGA_finish_first_serbian_nuclear_power_plant = yes } cancel_effect = { MSGA_cancel_first_serbian_nuclear_power_plant = yes }
  ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 3 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
 }
@@ -329,8 +329,8 @@ MSGA_expand_serbian_nuclear_programme = {
  cost = 0 custom_cost_text = MSGA_development_cost_1_5
  custom_cost_trigger = { check_variable = { var = income_var value = 1.5 compare = greater_than_or_equals } }
  days_remove = 180 cancel_if_not_visible = no
- cancel_trigger = { NOT = { MSGA_eligible_expand_serbian_nuclear_programme = yes } }
- complete_effect = { set_temp_variable = { var = income_var_temp value = -1.5 } add_income = yes set_country_flag = { flag = MSGA_pending_expand_serbian_nuclear_programme days = 181 } set_country_flag = { flag = MSGA_development_state_45_busy days = 181 } custom_effect_tooltip = MSGA_development_cancel_tt }
+ cancel_trigger = { NOT = { MSGA_safe_finish_expand_serbian_nuclear_programme = yes } }
+ complete_effect = { set_temp_variable = { var = income_var_temp value = -1.5 } add_income = yes set_country_flag = MSGA_pending_expand_serbian_nuclear_programme set_country_flag = MSGA_development_state_45_busy custom_effect_tooltip = MSGA_development_cancel_tt }
  remove_effect = { MSGA_finish_expand_serbian_nuclear_programme = yes } cancel_effect = { MSGA_cancel_expand_serbian_nuclear_programme = yes }
  ai_will_do = { base = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 3 compare = greater_than_or_equals } } } modifier = { factor = 3 has_resources_in_country = { resource = coal amount < 0 } } }
 }

@@ -96,7 +96,7 @@ class DevelopmentModel:
             elif k=='add_tech_bonus':assert get(v,'category')=='nuclear';self.research.append(v)
             elif k=='update_power_plants_effect':self.update_calls+=1
             elif k=='country_event':self.queue.append((self.day+int(get(v,'days')),get(v,'id')))
-            elif k=='custom_effect_tooltip':pass
+            elif k in ['custom_effect_tooltip','log']:pass
             else:raise AssertionError(('Unmodeled effect',k,o,v))
 
     def start(self, stem):
@@ -196,7 +196,27 @@ def main():
         m.advance(69);assert not m.start(p['stem']);m.advance(1);assert m.start(p['stem'])
         poor=DevelopmentModel(scripts);poor.prerequisites(p);poor.money=max(0,p['cash']-.001);poor.pp=49 if p['pp'] else 300
         assert not poor.start(p['stem']);cases.append('Repeatable: '+p['stem'])
+    building_projects=[]
     for p in source['projects']:
+        stem=p['stem'];pending='MSGA_pending_'+stem;done='MSGA_done_'+stem
+        decision=get(get(scripts['common/decisions/MSGA_economic_energy_decisions.txt'], 'MSGA_serbian_energy_development' if p['energy'] else 'MSGA_serbian_economic_cooperation'),'MSGA_'+stem)
+        start=get(decision,'complete_effect')
+        assert ('set_country_flag','=',pending) in start
+        if p['state']:assert ('set_country_flag','=','MSGA_development_state_'+str(p['state'])+'_busy') in start
+        assert not any(k=='set_country_flag' and isinstance(v,list) for k,o,v in descend(start)),stem
+        finish=get(new_effects,'MSGA_finish_'+stem);success=get(finish,'if');safety='MSGA_safe_finish_'+stem
+        assert (safety,'=','yes') in get(success,'limit')
+        assert not any(k.startswith('MSGA_eligible_') for k,o,v in descend(finish)),stem
+        assert not any(k in ['has_tech','has_country_flag','check_variable','has_war'] for k,o,v in descend(get(scripts['common/scripted_triggers/MSGA_economic_energy_triggers.txt'],safety))),stem
+        for release in [pending]+(['MSGA_development_state_'+str(p['state'])+'_busy'] if p['state'] else []):
+            assert ('clr_country_flag','=',release) in success
+            assert ('clr_country_flag','=',release) in descend(get(new_effects,'MSGA_cancel_'+stem))
+        grants=[i for i,(k,o,v) in enumerate(success) if k==str(p['state']) and any(x[0]=='add_building_construction' for x in descend(v))]
+        if grants:
+            building_projects.append('MSGA_'+stem)
+            assert grants[-1]<success.index(('set_country_flag','=',done)),stem
+            assert any(k=='log' and 'completion fired' in v for k,o,v in finish),stem
+            assert any(k=='log' and 'granted' in v for k,o,v in descend(success)),stem
         m=DevelopmentModel(scripts);m.prerequisites(p);cash=m.money;pp=m.pp;before=copy.deepcopy(m.buildings)
         assert m.start(p['stem']);assert math.isclose(m.money,cash-p['cash']) and m.pp==pp-p['pp']
         assert not m.start(p['stem']);m.advance(p['days']-1);assert 'MSGA_done_'+p['stem'] not in m.flags['SER']
@@ -218,6 +238,14 @@ def main():
             else:continue
             assert not bad.start(p['stem'])
         cases.append('One-time/cancellation: '+p['stem'])
+        # Delay completion beyond the old one-day grace period. This tests
+        # the scripts' resilience, not HOI4's application of a building.
+        delayed=DevelopmentModel(scripts);delayed.prerequisites(p);assert delayed.start(stem)
+        delayed.jobs['MSGA_'+stem]+=7;delayed.techs.clear()
+        if p['requires']:delayed.flags['SER'].pop('MSGA_done_'+p['requires'],None)
+        delayed.advance(p['days']+6);assert pending in delayed.flags['SER'] and delayed.flags['SER'][pending] is None
+        delayed.advance(1);assert done in delayed.flags['SER'] and pending not in delayed.flags['SER']
+        cases.append('Delayed callback, no start-only recheck: '+stem)
     # Native state exclusivity, reservations, first and second building ceilings.
     for first,blocked in [('expand_kostolac_energy_complex','develop_bor_renewable_complex'),('develop_bor_renewable_complex','expand_kostolac_energy_complex')]:
         m=DevelopmentModel(scripts);assert m.start(first);assert not m.start(blocked);m.advance(next(p['days'] for p in source['projects'] if p['stem']==first));assert not m.start(blocked)
@@ -242,6 +270,7 @@ def main():
         p=next(p for p in source['projects'] if p['stem']==stem);assert m.start(stem);m.advance(p['days'])
     m.advance(1);assert Counter(m.delivered)['MSGA_econ.4']==1 and m.variables['MSGA_permanent_economic_projects']==3
     report={'validation':'passed','validated_mod_root':str(mod),'categories':['MSGA_serbian_economic_cooperation','MSGA_serbian_energy_development'],'projects':19,'repeatable_programmes':18,'milestones':8,'provided_art_DDS':len(source['assets']),'repeatable_timing_days':[180,70,250],'starting_states':sorted(START),'mining_rewards_each':{'steel':3,'tungsten':2},'maximum_scripted_energy_buildings':{b:grants[b] for b in ENERGY},'existing_campaign_hashes_preserved':len(source['baseline_sha256']),'modeled_cases':cases,'native_exclusivity':'Kostolac/Bor alternatives tested in both orders','cancellation':'Ownership/control loss returns costs without rewards; permits retry','engine_acceptance':'NOT RUN: user reserved the game test; no game window or save was touched.'}
+    report.update(static_model_validation='passed',actual_engine_validation='NOT RUN: user performs the HOI4 test; building counters model script commands only.',project_lifecycle='Persistent pending/busy flags; explicitly released on success/cancellation; reward before done; separate final safety triggers.',delayed_callback_cases=19,building_projects_verified=building_projects,decision_icon_composition='Tight foreground crop, aspect preserved, centred within 52x45 DXT5 canvas; categories/spirits/events unchanged.')
     args.report.write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({k:v for k,v in report.items() if k!='modeled_cases'},indent=2))
 
 if __name__=='__main__':main()

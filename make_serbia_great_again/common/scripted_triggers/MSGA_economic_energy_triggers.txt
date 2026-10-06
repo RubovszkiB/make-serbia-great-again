@@ -1,21 +1,40 @@
 MSGA_development_starting_serbia_state = { OR = { state = 45 state = 107 state = 108 state = 1296 } }
 MSGA_development_unlocked = { tag = SER OR = { has_country_flag = MSGA_economic_energy_unlocked has_completed_focus = MSGA_serbian_recovery has_country_flag = MSGA_completed_serbian_recovery } }
 MSGA_eligible_expand_bor_mining_complex = { tag = SER 108 = { MSGA_development_starting_serbia_state = yes is_owned_by = SER is_fully_controlled_by = SER } }
+MSGA_safe_finish_expand_bor_mining_complex = { tag = SER 108 = { is_owned_by = SER is_fully_controlled_by = SER } }
 MSGA_eligible_develop_jadar_mining_project = { tag = SER 1296 = { MSGA_development_starting_serbia_state = yes is_owned_by = SER is_fully_controlled_by = SER } }
+MSGA_safe_finish_develop_jadar_mining_project = { tag = SER 1296 = { is_owned_by = SER is_fully_controlled_by = SER } }
 MSGA_eligible_serbian_mineral_processing_expansion = { tag = SER 1296 = { MSGA_development_starting_serbia_state = yes is_owned_by = SER is_fully_controlled_by = SER industrial_complex < 20 } }
+MSGA_safe_finish_serbian_mineral_processing_expansion = { tag = SER 1296 = { is_owned_by = SER is_fully_controlled_by = SER industrial_complex < 20 } }
 MSGA_eligible_central_serbian_industrial_park = { tag = SER 1296 = { MSGA_development_starting_serbia_state = yes is_owned_by = SER is_fully_controlled_by = SER industrial_complex < 20 } }
+MSGA_safe_finish_central_serbian_industrial_park = { tag = SER 1296 = { is_owned_by = SER is_fully_controlled_by = SER industrial_complex < 20 } }
 MSGA_eligible_southern_serbian_industrial_development = { tag = SER 108 = { MSGA_development_starting_serbia_state = yes is_owned_by = SER is_fully_controlled_by = SER } }
+MSGA_safe_finish_southern_serbian_industrial_development = { tag = SER 108 = { is_owned_by = SER is_fully_controlled_by = SER } }
 MSGA_eligible_morava_logistics_development = { tag = SER 1296 = { MSGA_development_starting_serbia_state = yes is_owned_by = SER is_fully_controlled_by = SER infrastructure < 5 } }
+MSGA_safe_finish_morava_logistics_development = { tag = SER 1296 = { is_owned_by = SER is_fully_controlled_by = SER infrastructure < 5 } }
 MSGA_eligible_modernise_serbian_power_grid = { tag = SER 107 = { MSGA_development_starting_serbia_state = yes is_owned_by = SER is_fully_controlled_by = SER } }
+MSGA_safe_finish_modernise_serbian_power_grid = { tag = SER 107 = { is_owned_by = SER is_fully_controlled_by = SER } }
 MSGA_eligible_modernise_nikola_tesla_complex = { tag = SER 1296 = { MSGA_development_starting_serbia_state = yes is_owned_by = SER is_fully_controlled_by = SER power_plant < 4 energy_farm < 1 nuclear_reactor < 1 } }
+MSGA_safe_finish_modernise_nikola_tesla_complex = { tag = SER 1296 = { is_owned_by = SER is_fully_controlled_by = SER power_plant < 4 energy_farm < 1 nuclear_reactor < 1 } }
 MSGA_eligible_expand_kostolac_energy_complex = { tag = SER 108 = { MSGA_development_starting_serbia_state = yes is_owned_by = SER is_fully_controlled_by = SER power_plant < 4 energy_farm < 1 nuclear_reactor < 1 } }
+MSGA_safe_finish_expand_kostolac_energy_complex = { tag = SER 108 = { is_owned_by = SER is_fully_controlled_by = SER power_plant < 4 energy_farm < 1 nuclear_reactor < 1 } }
 MSGA_eligible_upgrade_djerdap_power_system = { tag = SER 108 = { MSGA_development_starting_serbia_state = yes is_owned_by = SER is_fully_controlled_by = SER } }
+MSGA_safe_finish_upgrade_djerdap_power_system = { tag = SER 108 = { is_owned_by = SER is_fully_controlled_by = SER } }
 MSGA_eligible_develop_bor_renewable_complex = { tag = SER 108 = { MSGA_development_starting_serbia_state = yes is_owned_by = SER is_fully_controlled_by = SER energy_farm < 4 power_plant < 1 nuclear_reactor < 1 } }
+MSGA_safe_finish_develop_bor_renewable_complex = { tag = SER 108 = { is_owned_by = SER is_fully_controlled_by = SER energy_farm < 4 power_plant < 1 nuclear_reactor < 1 } }
 MSGA_eligible_expand_bor_renewable_complex = { tag = SER has_country_flag = MSGA_done_develop_bor_renewable_complex 108 = { MSGA_development_starting_serbia_state = yes is_owned_by = SER is_fully_controlled_by = SER energy_farm < 4 power_plant < 1 nuclear_reactor < 1 } }
+MSGA_safe_finish_expand_bor_renewable_complex = { tag = SER 108 = { is_owned_by = SER is_fully_controlled_by = SER energy_farm < 4 power_plant < 1 nuclear_reactor < 1 } }
 MSGA_eligible_establish_serbian_solar_manufacturing = { tag = SER 45 = { MSGA_development_starting_serbia_state = yes is_owned_by = SER is_fully_controlled_by = SER industrial_complex < 20 } }
+MSGA_safe_finish_establish_serbian_solar_manufacturing = { tag = SER 45 = { is_owned_by = SER is_fully_controlled_by = SER industrial_complex < 20 } }
 MSGA_eligible_develop_grid_scale_storage = { tag = SER 107 = { MSGA_development_starting_serbia_state = yes is_owned_by = SER is_fully_controlled_by = SER } }
+MSGA_safe_finish_develop_grid_scale_storage = { tag = SER 107 = { is_owned_by = SER is_fully_controlled_by = SER } }
 MSGA_eligible_seek_russian_nuclear_expertise = { tag = SER }
+MSGA_safe_finish_seek_russian_nuclear_expertise = { tag = SER }
 MSGA_eligible_establish_serbian_nuclear_programme = { tag = SER has_country_flag = MSGA_done_seek_russian_nuclear_expertise }
+MSGA_safe_finish_establish_serbian_nuclear_programme = { tag = SER }
 MSGA_eligible_train_serbian_nuclear_workforce = { tag = SER has_country_flag = MSGA_done_establish_serbian_nuclear_programme }
+MSGA_safe_finish_train_serbian_nuclear_workforce = { tag = SER }
 MSGA_eligible_first_serbian_nuclear_power_plant = { tag = SER has_country_flag = MSGA_done_train_serbian_nuclear_workforce has_tech = nuclear_reactors 45 = { MSGA_development_starting_serbia_state = yes is_owned_by = SER is_fully_controlled_by = SER nuclear_reactor < 2 power_plant < 1 energy_farm < 1 } }
+MSGA_safe_finish_first_serbian_nuclear_power_plant = { tag = SER 45 = { is_owned_by = SER is_fully_controlled_by = SER nuclear_reactor < 2 power_plant < 1 energy_farm < 1 } }
 MSGA_eligible_expand_serbian_nuclear_programme = { tag = SER has_country_flag = MSGA_done_first_serbian_nuclear_power_plant has_tech = nuclear_reactors2 45 = { MSGA_development_starting_serbia_state = yes is_owned_by = SER is_fully_controlled_by = SER nuclear_reactor < 2 power_plant < 1 energy_farm < 1 } }
+MSGA_safe_finish_expand_serbian_nuclear_programme = { tag = SER 45 = { is_owned_by = SER is_fully_controlled_by = SER nuclear_reactor < 2 power_plant < 1 energy_farm < 1 } }
