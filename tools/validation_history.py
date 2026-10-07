@@ -16,7 +16,7 @@ def revisions():
 
 def expected_hash(path, historical):
     # Exact later user-approved revisions, without rewriting historical ledgers.
-    for file in ['balkan_rearmament_sources.json','yugoslav_politics_sources.json','endgame_sources.json','decision_ux_sources.json']:
+    for file in ['balkan_mini_sources.json','balkan_rearmament_sources.json','yugoslav_politics_sources.json','endgame_sources.json','decision_ux_sources.json']:
         p=ROOT/'docs'/file
         if not p.exists():continue
         later=json.loads(p.read_text())
@@ -39,7 +39,7 @@ def check_current_art(texture, relative):
         with ZipFile(record['package']) as z:assert data==z.read(record['zip_member'])
         with Image.open(texture) as im:assert list(im.size)==record['size'];im.load()
         return True
-    for name in ['balkan_rearmament_sources.json','yugoslav_politics_sources.json','economic_energy_sources.json','endgame_sources.json']:
+    for name in ['balkan_mini_sources.json','balkan_rearmament_sources.json','yugoslav_politics_sources.json','economic_energy_sources.json','endgame_sources.json']:
         source=ROOT/'docs'/name
         if not source.exists():continue
         record=json.loads(source.read_text())['assets'].get(relative)

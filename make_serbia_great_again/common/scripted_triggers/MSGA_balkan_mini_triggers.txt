@@ -1,0 +1,2 @@
+MSGA_mini_kosovo_started = { SER = { has_country_flag = MSGA_kosovo_war_started } }
+MSGA_mini_rearmament_unlocked = { OR = { has_country_flag = MSGA_mini_rearmament_unlocked MSGA_mini_kosovo_started = yes } }

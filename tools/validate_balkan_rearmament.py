@@ -9,6 +9,7 @@ import argparse, copy, hashlib, json, re
 from PIL import Image
 from validate_phase1 import parse, get, descend, unique
 from implement_balkan_rearmament import ROOT, TARGET, TFR, GAME, TAGS, NATIVE_TRIGGER, ALB, CRO, CONTRACTS, IDEAS, identity
+from validation_history import expected_hash
 
 def val(a,k,default=None):return next((v for key,o,v in a if key==k),default)
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -108,8 +109,8 @@ def main():
  cli=argparse.ArgumentParser();cli.add_argument('--mod-root',type=Path,required=True);cli.add_argument('--report',type=Path,default=ROOT/'docs/balkan_rearmament_validation.json');args=cli.parse_args();mod=args.mod_root.resolve(strict=True);assert mod==TARGET.resolve(strict=True)
  record=json.loads((ROOT/'docs/balkan_rearmament_sources.json').read_text())
  for p,d in record['baseline_sha256'].items():
-  if p not in record['deployed_sha256']:assert sha(mod/p)==d,p
- for p,d in record['deployed_sha256'].items():assert sha(mod/p)==d,p
+  if p not in record['deployed_sha256']:assert sha(mod/p)==expected_hash(p,d),p
+ for p,d in record['deployed_sha256'].items():assert sha(mod/p)==expected_hash(p,d),p
  for p,d in record['native_sources_sha256'].items():assert sha(TFR/p)==d,p
  scripts={p.relative_to(mod).as_posix():parse(p.read_text(encoding='utf-8-sig',errors='replace')) for p in mod.rglob('*') if p.suffix in ['.txt','.gfx']}
  # The single native override differs only by seven tag clauses in relevance.
@@ -272,7 +273,7 @@ def main():
  m=Smoke(scripts,'CRO');m.flags['SER'].add('MSGA_bosnia_intervened');m.controller[109]='SER';m.focus('MSGA_CRO_aggressive_rearmament');assert not m.available('MSGA_CRO_emergency_defence_budget');negatives.append('lost_industry_control')
  on=scripts['common/on_actions/MSGA_balkan_rearmament_on_actions.txt'];assert not any(k in ['on_daily','add_building_construction','load_oob','create_unit'] for k,o,v in descend(on))
  assert (mod.parent/'make_serbia_great_again.mod').read_bytes()==(mod/'make_serbia_great_again.mod').read_bytes()
- descriptor=(mod/'make_serbia_great_again.mod').read_text();assert 'version="0.16.0"' in descriptor and 'remote_file_id="3813570241"' in descriptor and Path(re.search(r'^path="([^"]+)"',descriptor,re.M)[1]).resolve()==mod
+ descriptor=(mod/'make_serbia_great_again.mod').read_text();assert 'remote_file_id="3813570241"' in descriptor and Path(re.search(r'^path="([^"]+)"',descriptor,re.M)[1]).resolve()==mod
  report={'static_and_model_validation':'passed','validated_mod_root':str(mod),'version':'0.16.0','focus_count':25,'decision_count':11,'ideas':14,'DDS':29,'Croatia_starting_MIL':3,'Croatia_Proper_MIL':2,'Albania_starting_MIL':1,'CRO_new_template':'2 infantry + 1 artillery_brigade; no supports; no new units','AI_targets':TAGS,'native_relevance_truth_cases':truth_cases,'production_lock_addition_paths_audited':audit,'weekly_reapplication_model':'8 weeks per country; native startup exclusion and cleanup protect listed tags; unrelated countries unchanged','focus_smoke_models':routes,'contract_models':contracts,'negative_cases':negatives,'original_files_preserved':559-2,'actual_engine_validation':'NOT RUN. Static/model smoke only; user reserves running game and saves. Actual AI production, construction, training, equipment usability, focus selection and rendering require engine tests.'}
  args.report.write_text(json.dumps(report,indent=2)+'\n');print(f'LIVE Balkan checks passed: 25 focuses, 11 one-time contracts, 12 delivery models, {len(negatives)} negative cases, 7 AI targets.')
 

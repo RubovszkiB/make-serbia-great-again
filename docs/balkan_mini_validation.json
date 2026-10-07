@@ -1,0 +1,211 @@
+{
+  "static_and_model_validation": "passed",
+  "validated_mod_root": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
+  "version": "0.17.0",
+  "focus_count": 42,
+  "decision_count": 13,
+  "idea_count": 23,
+  "DDS": 50,
+  "existing_files_unchanged": 600,
+  "starting_BOS_militias": 2,
+  "militia_battalions_each": 3,
+  "armour_requirements": {
+    "modern_tank_chassis": 50,
+    "infantry_equipment": 775,
+    "motorized_equipment": 120,
+    "support_equipment": 110,
+    "artillery_equipment": 12,
+    "manpower": 4550
+  },
+  "armour_cap": 1,
+  "T55_existing_design_reused": true,
+  "focus_routes": [
+    {
+      "tag": "BOS",
+      "focuses": 14,
+      "state_MIL": 3,
+      "forts": {
+        "11899": 2,
+        "6799": 1
+      },
+      "infrastructure": 3,
+      "own_unlock_survives_SER_flag_cleanup": true,
+      "rewards_once": true
+    },
+    {
+      "tag": "MAC",
+      "focuses": 14,
+      "state_MIL": 2,
+      "forts": {
+        "3882": 1,
+        "907": 1
+      },
+      "infrastructure": 5,
+      "own_unlock_survives_SER_flag_cleanup": true,
+      "rewards_once": true
+    },
+    {
+      "tag": "MNT",
+      "focuses": 14,
+      "state_MIL": 1,
+      "forts": {
+        "11858": 1,
+        "6913": 1
+      },
+      "infrastructure": 4,
+      "own_unlock_survives_SER_flag_cleanup": true,
+      "rewards_once": true
+    }
+  ],
+  "contract_models": [
+    {
+      "id": "MSGA_BOS_purchase_regional_surplus_arms",
+      "NSB": false,
+      "once_paid_and_delivered": true,
+      "exact_days": 14,
+      "model_pending_roundtrip": true
+    },
+    {
+      "id": "MSGA_BOS_acquire_emergency_artillery_stocks",
+      "NSB": false,
+      "once_paid_and_delivered": true,
+      "exact_days": 18,
+      "model_pending_roundtrip": true
+    },
+    {
+      "id": "MSGA_BOS_purchase_used_military_vehicles",
+      "NSB": false,
+      "once_paid_and_delivered": true,
+      "exact_days": 18,
+      "model_pending_roundtrip": true
+    },
+    {
+      "id": "MSGA_BOS_foreign_anti_tank_assistance",
+      "NSB": false,
+      "once_paid_and_delivered": true,
+      "exact_days": 21,
+      "model_pending_roundtrip": true
+    },
+    {
+      "id": "MSGA_BOS_purchase_yugoslav_t55_reserves",
+      "NSB": false,
+      "once_paid_and_delivered": true,
+      "exact_days": 30,
+      "model_pending_roundtrip": true
+    },
+    {
+      "id": "MSGA_BOS_purchase_yugoslav_t55_reserves",
+      "NSB": true,
+      "once_paid_and_delivered": true,
+      "exact_days": 30,
+      "model_pending_roundtrip": true
+    },
+    {
+      "id": "MSGA_MAC_purchase_yugoslav_reserve_rifles",
+      "NSB": false,
+      "once_paid_and_delivered": true,
+      "exact_days": 10,
+      "model_pending_roundtrip": true
+    },
+    {
+      "id": "MSGA_MAC_acquire_balkan_artillery_stocks",
+      "NSB": false,
+      "once_paid_and_delivered": true,
+      "exact_days": 14,
+      "model_pending_roundtrip": true
+    },
+    {
+      "id": "MSGA_MAC_buy_used_army_trucks",
+      "NSB": false,
+      "once_paid_and_delivered": true,
+      "exact_days": 14,
+      "model_pending_roundtrip": true
+    },
+    {
+      "id": "MSGA_MAC_emergency_anti_tank_purchase",
+      "NSB": false,
+      "once_paid_and_delivered": true,
+      "exact_days": 21,
+      "model_pending_roundtrip": true
+    },
+    {
+      "id": "MSGA_MNT_search_former_yugoslav_stockpiles",
+      "NSB": false,
+      "once_paid_and_delivered": true,
+      "exact_days": 10,
+      "model_pending_roundtrip": true
+    },
+    {
+      "id": "MSGA_MNT_purchase_surplus_heavy_weapons",
+      "NSB": false,
+      "once_paid_and_delivered": true,
+      "exact_days": 14,
+      "model_pending_roundtrip": true
+    },
+    {
+      "id": "MSGA_MNT_acquire_used_military_vehicles",
+      "NSB": false,
+      "once_paid_and_delivered": true,
+      "exact_days": 14,
+      "model_pending_roundtrip": true
+    },
+    {
+      "id": "MSGA_MNT_emergency_anti_tank_shipment",
+      "NSB": false,
+      "once_paid_and_delivered": true,
+      "exact_days": 21,
+      "model_pending_roundtrip": true
+    }
+  ],
+  "negative_cases": [
+    "BOS_active_only_not_started",
+    "BOS_old_save_migration",
+    "BOS_unrelated_war_callback",
+    "MAC_active_only_not_started",
+    "MAC_old_save_migration",
+    "MAC_unrelated_war_callback",
+    "MNT_active_only_not_started",
+    "MNT_old_save_migration",
+    "MNT_unrelated_war_callback",
+    "MSGA_BOS_purchase_regional_surplus_arms_insufficient_funds",
+    "MSGA_BOS_purchase_regional_surplus_arms_refund_retry",
+    "MSGA_BOS_acquire_emergency_artillery_stocks_insufficient_funds",
+    "MSGA_BOS_acquire_emergency_artillery_stocks_refund_retry",
+    "MSGA_BOS_purchase_used_military_vehicles_insufficient_funds",
+    "MSGA_BOS_purchase_used_military_vehicles_refund_retry",
+    "MSGA_BOS_foreign_anti_tank_assistance_insufficient_funds",
+    "MSGA_BOS_foreign_anti_tank_assistance_refund_retry",
+    "MSGA_BOS_purchase_yugoslav_t55_reserves_insufficient_funds",
+    "MSGA_BOS_purchase_yugoslav_t55_reserves_refund_retry",
+    "MSGA_MAC_purchase_yugoslav_reserve_rifles_insufficient_funds",
+    "MSGA_MAC_purchase_yugoslav_reserve_rifles_refund_retry",
+    "MSGA_MAC_acquire_balkan_artillery_stocks_insufficient_funds",
+    "MSGA_MAC_acquire_balkan_artillery_stocks_refund_retry",
+    "MSGA_MAC_buy_used_army_trucks_insufficient_funds",
+    "MSGA_MAC_buy_used_army_trucks_refund_retry",
+    "MSGA_MAC_emergency_anti_tank_purchase_insufficient_funds",
+    "MSGA_MAC_emergency_anti_tank_purchase_refund_retry",
+    "MSGA_MNT_search_former_yugoslav_stockpiles_insufficient_funds",
+    "MSGA_MNT_search_former_yugoslav_stockpiles_refund_retry",
+    "MSGA_MNT_purchase_surplus_heavy_weapons_insufficient_funds",
+    "MSGA_MNT_purchase_surplus_heavy_weapons_refund_retry",
+    "MSGA_MNT_acquire_used_military_vehicles_insufficient_funds",
+    "MSGA_MNT_acquire_used_military_vehicles_refund_retry",
+    "MSGA_MNT_emergency_anti_tank_shipment_insufficient_funds",
+    "MSGA_MNT_emergency_anti_tank_shipment_refund_retry",
+    "BOS_parallel_shipments",
+    "MAC_parallel_shipments",
+    "MNT_parallel_shipments",
+    "T55_missing_supplier_refund",
+    "BOS_lost_industry_control",
+    "BOS_building_rejection_rollback",
+    "MAC_lost_industry_control",
+    "MAC_building_rejection_rollback",
+    "MNT_lost_industry_control",
+    "MNT_building_rejection_rollback",
+    "BOS_training_requires_actual_equipment_and_manpower"
+  ],
+  "existing_Balkan_AI_restoration_hashes_unchanged": true,
+  "Serbian_Kosovo_Bosnia_endgame_economic_scripts_hashes_unchanged": true,
+  "actual_engine_validation": "NOT RUN. User reserves game/saves; parsed-script smoke does not certify engine AI training, construction, research, equipment transfer, rendering or save/load."
+}

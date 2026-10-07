@@ -1,0 +1,3 @@
+MSGA_BOS_mini_procurement = { icon = MSGA_mini_BOS_kosovo_alarm allowed = { original_tag = BOS } visible = { tag = BOS MSGA_mini_rearmament_unlocked = yes } }
+MSGA_MAC_mini_procurement = { icon = military_operation allowed = { original_tag = MAC } visible = { tag = MAC MSGA_mini_rearmament_unlocked = yes } }
+MSGA_MNT_mini_procurement = { icon = military_operation allowed = { original_tag = MNT } visible = { tag = MNT MSGA_mini_rearmament_unlocked = yes } }

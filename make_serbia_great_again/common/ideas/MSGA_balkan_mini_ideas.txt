@@ -1,0 +1,25 @@
+ideas = { country = {
+MSGA_BOS_peace_assistance = { picture = MSGA_mini_idea_BOS_fragile_federation_spirit allowed = { original_tag = BOS } removal_cost = -1 modifier = { income_growth_factor = 0.01 } }
+MSGA_BOS_business_confidence = { picture = MSGA_mini_idea_BOS_fragile_federation_spirit allowed = { original_tag = BOS } removal_cost = -1 modifier = { business_value_factor = 0.05 income_growth_factor = 0.01 } }
+MSGA_BOS_domestic_industry = { picture = MSGA_mini_idea_BOS_fragile_federation_spirit allowed = { original_tag = BOS } removal_cost = -1 modifier = { industrial_capacity_factory = 0.03 } }
+MSGA_BOS_territorial_planning = { picture = MSGA_mini_idea_BOS_bosnia_mobilised_spirit allowed = { original_tag = BOS } removal_cost = -1 modifier = { army_defence_factor = 0.05 training_time_army_factor = -0.1 } }
+MSGA_BOS_fragile_federation = { picture = MSGA_mini_idea_BOS_fragile_federation_spirit allowed = { original_tag = BOS } removal_cost = -1 modifier = { stability_factor = 0.03 army_defence_factor = 0.03 land_reinforce_rate = 0.05 } }
+MSGA_BOS_emergency_mobilisation = { picture = MSGA_mini_idea_BOS_bosnia_mobilised_spirit allowed = { original_tag = BOS } removal_cost = -1 modifier = { mobilization_speed = 0.1 } }
+MSGA_BOS_emergency_construction = { picture = MSGA_mini_idea_BOS_bosnia_mobilised_spirit allowed = { original_tag = BOS } removal_cost = -1 modifier = { production_speed_arms_factory_factor = 0.05 } }
+MSGA_BOS_war_industry = { picture = MSGA_mini_idea_BOS_bosnia_mobilised_spirit allowed = { original_tag = BOS } removal_cost = -1 modifier = { industrial_capacity_factory = 0.05 } }
+MSGA_BOS_bosnia_mobilised = { picture = MSGA_mini_idea_BOS_bosnia_mobilised_spirit allowed = { original_tag = BOS } removal_cost = -1 modifier = { army_defence_factor = 0.075 army_org_factor = 0.05 land_reinforce_rate = 0.1 training_time_army_factor = -0.1 } }
+MSGA_MAC_peace_assistance = { picture = MSGA_mini_idea_MAC_quiet_republic_spirit allowed = { original_tag = MAC } removal_cost = -1 modifier = { income_growth_factor = 0.01 } }
+MSGA_MAC_skopje_industry = { picture = MSGA_mini_idea_MAC_quiet_republic_spirit allowed = { original_tag = MAC } removal_cost = -1 modifier = { business_value_factor = 0.05 industrial_capacity_factory = 0.02 } }
+MSGA_MAC_vardar_development = { picture = MSGA_mini_idea_MAC_quiet_republic_spirit allowed = { original_tag = MAC } removal_cost = -1 modifier = { income_growth_factor = 0.005 } }
+MSGA_MAC_quiet_republic = { picture = MSGA_mini_idea_MAC_quiet_republic_spirit allowed = { original_tag = MAC } removal_cost = -1 modifier = { stability_factor = 0.03 training_time_army_factor = -0.05 } }
+MSGA_MAC_emergency_construction = { picture = MSGA_mini_idea_MAC_armed_macedonia_spirit allowed = { original_tag = MAC } removal_cost = -1 modifier = { production_speed_arms_factory_factor = 0.05 } }
+MSGA_MAC_skopje_workshops = { picture = MSGA_mini_idea_MAC_armed_macedonia_spirit allowed = { original_tag = MAC } removal_cost = -1 modifier = { industrial_capacity_factory = 0.05 production_factory_max_efficiency_factor = 0.05 } }
+MSGA_MAC_reserve_mobilisation = { picture = MSGA_mini_idea_MAC_armed_macedonia_spirit allowed = { original_tag = MAC } removal_cost = -1 modifier = { conscription_factor = 0.03 mobilization_speed = 0.1 } }
+MSGA_MAC_armed_macedonia = { picture = MSGA_mini_idea_MAC_armed_macedonia_spirit allowed = { original_tag = MAC } removal_cost = -1 modifier = { army_defence_factor = 0.05 army_org_factor = 0.05 land_reinforce_rate = 0.05 } }
+MSGA_MNT_peace_assistance = { picture = MSGA_mini_idea_MNT_stable_small_state_spirit allowed = { original_tag = MNT } removal_cost = -1 modifier = { income_growth_factor = 0.01 } }
+MSGA_MNT_tourism_services = { picture = MSGA_mini_idea_MNT_stable_small_state_spirit allowed = { original_tag = MNT } removal_cost = -1 modifier = { business_value_factor = 0.05 income_growth_factor = 0.02 } }
+MSGA_MNT_stable_small_state = { picture = MSGA_mini_idea_MNT_stable_small_state_spirit allowed = { original_tag = MNT } removal_cost = -1 modifier = { stability_factor = 0.05 industrial_capacity_factory = 0.02 } }
+MSGA_MNT_reserve_mobilisation = { picture = MSGA_mini_idea_MNT_montenegro_prepared_spirit allowed = { original_tag = MNT } removal_cost = -1 modifier = { conscription_factor = 0.02 mobilization_speed = 0.1 } }
+MSGA_MNT_territorial_training = { picture = MSGA_mini_idea_MNT_montenegro_prepared_spirit allowed = { original_tag = MNT } removal_cost = -1 modifier = { training_time_army_factor = -0.1 } }
+MSGA_MNT_montenegro_prepared = { picture = MSGA_mini_idea_MNT_montenegro_prepared_spirit allowed = { original_tag = MNT } removal_cost = -1 modifier = { army_defence_factor = 0.075 army_org_factor = 0.05 land_reinforce_rate = 0.05 } }
+} }

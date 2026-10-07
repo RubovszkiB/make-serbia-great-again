@@ -1,7 +1,7 @@
 """Targeted static and script-flow checks; these do not replace HOI4 gameplay testing."""
 from pathlib import Path
 import argparse, json, re
-from validate_phase1 import parse, get, descend, unique, ROOT, early_unlocks
+from validate_phase1 import parse, get, descend, unique, ROOT, early_unlocks, decision_presentation
 
 
 class CampaignModel:
@@ -159,11 +159,14 @@ def main():
     cli.add_argument('--report', type=Path, default=ROOT/'docs/kosovo_validation.json')
     args = cli.parse_args(); mod = args.mod_root.resolve()
     scripts = {p.relative_to(mod).as_posix(): parse(p.read_text(encoding='utf-8-sig')) for p in mod.rglob('*') if p.suffix in ('.txt', '.gfx')}
+    scripts = {p: decision_presentation(a) if p.startswith('common/decisions/') else a for p,a in scripts.items()}
     trees = {get(v, 'id'): v for p, ast in scripts.items() if p.startswith('common/national_focus/') for k, _, v in ast if k == 'focus_tree'}
-    assert set(trees) == {'MSGA_SER_phase1', 'MSGA_SER_kosovo_war', 'MSGA_SER_post_kosovo', 'MSGA_SER_bosnian_crisis', 'MSGA_SER_post_bosnia', 'MSGA_SER_southern_question', 'MSGA_SER_pact_war_planning', 'MSGA_SER_new_balkan_order'}
+    campaign_trees = {'MSGA_SER_phase1', 'MSGA_SER_kosovo_war', 'MSGA_SER_post_kosovo', 'MSGA_SER_bosnian_crisis', 'MSGA_SER_post_bosnia', 'MSGA_SER_southern_question', 'MSGA_SER_pact_war_planning', 'MSGA_SER_new_balkan_order'}
+    assert campaign_trees <= set(trees)
+    assert sum(k == 'focus' for name in campaign_trees for k,_,v in trees[name]) == 80
     focuses = {get(v, 'id'): v for tree in trees.values() for k, _, v in tree if k == 'focus'}
     all_focus_ids = [get(v, 'id') for tree in trees.values() for k, _, v in tree if k == 'focus']
-    unique(all_focus_ids, 'All chapter focus IDs'); assert len(all_focus_ids) == 80
+    unique(all_focus_ids, 'All chapter focus IDs')
     war = [get(v, 'id') for k, _, v in trees['MSGA_SER_kosovo_war'] if k == 'focus']
     assert war == ['MSGA_plan_the_attack', 'MSGA_prepare_southern_command', 'MSGA_operation_return', 'MSGA_kosovo_has_been_retaken']
     for i, id in enumerate(war):
@@ -259,7 +262,7 @@ def main():
     # The already-declared intervention event must become harmless after resolution.
     before = model.wars.copy();model.execute(get(event_bodies['MSGA_kosovo.20'],'immediate'),'ALB');assert before == model.wars
     # Treasury costs execute native nominal money effects, preserving timed delivery.
-    militia = scripts['common/decisions/MSGA_SER_expansion.txt'][1][2]
+    militia = next(v for k,_,v in scripts['common/decisions/MSGA_SER_expansion.txt'] if any(name == 'MSGA_raise_scorpions' for name,_,body in v))
     for name in ['scorpions','white_eagles','serbian_guard']:
         body = get(militia,'MSGA_raise_'+name)
         assert get(body,'cost')=='0' and model.condition(get(body,'custom_cost_trigger'))

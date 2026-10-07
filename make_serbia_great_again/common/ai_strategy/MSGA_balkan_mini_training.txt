@@ -1,0 +1,2 @@
+MSGA_BOS_mini_training = { allowed = { original_tag = BOS } enable = { MSGA_BOS_can_train_armoured_brigade = yes } abort_when_not_enabled = yes ai_strategy = { type = unit_ratio id = modern_armor value = 15 } }
+MSGA_MNT_mini_training = { allowed = { original_tag = MNT } enable = { MSGA_MNT_can_train_territorial = yes } abort_when_not_enabled = yes ai_strategy = { type = unit_ratio id = militia value = 60 } }
