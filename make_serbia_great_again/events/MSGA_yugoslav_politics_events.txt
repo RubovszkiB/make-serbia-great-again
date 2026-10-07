@@ -1,0 +1,19 @@
+add_namespace = MSGA_yugopolitics
+country_event = { id = MSGA_yugopolitics.1 title = MSGA_yugopolitics.1.t desc = MSGA_yugopolitics.1.d picture = GFX_MSGA_yp_event_the_politics_of_the_new_yugoslavia
+   is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_endgame_yugoslavia_complete has_country_flag = MSGA_yp_done_yugoslavia_proclaimed }
+   option = { name = MSGA_yugopolitics.1.a } }
+country_event = { id = MSGA_yugopolitics.2 title = MSGA_yugopolitics.2.t desc = MSGA_yugopolitics.2.d picture = GFX_MSGA_yp_event_the_political_future_of_yugoslavia
+   is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_endgame_yugoslavia_complete has_country_flag = MSGA_yp_done_future_of_the_federation }
+   option = { name = MSGA_yugopolitics.2.a } }
+country_event = { id = MSGA_yugopolitics.3 title = MSGA_yugopolitics.3.t desc = MSGA_yugopolitics.3.d picture = GFX_MSGA_yp_event_the_return_of_the_red_star
+   is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_endgame_yugoslavia_complete has_country_flag = MSGA_yugoslav_federation_proclaimed has_country_flag = MSGA_yugoslavia_socialist_path NOT = { has_country_flag = MSGA_yugoslavia_status_quo_path } NOT = { has_country_flag = MSGA_yugoslavia_nationalist_path } has_country_flag = MSGA_yp_done_titos_legacy } immediate = { MSGA_yp_restore_socialist_identity = yes }
+   option = { name = MSGA_yugopolitics.3.a } }
+country_event = { id = MSGA_yugopolitics.4 title = MSGA_yugopolitics.4.t desc = MSGA_yugopolitics.4.d picture = GFX_MSGA_yp_event_federal_continuity
+   is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_endgame_yugoslavia_complete has_country_flag = MSGA_yugoslav_federation_proclaimed NOT = { has_country_flag = MSGA_yugoslavia_socialist_path } has_country_flag = MSGA_yugoslavia_status_quo_path NOT = { has_country_flag = MSGA_yugoslavia_nationalist_path } has_country_flag = MSGA_yp_done_a_stable_federation }
+   option = { name = MSGA_yugopolitics.4.a } }
+country_event = { id = MSGA_yugopolitics.5 title = MSGA_yugopolitics.5.t desc = MSGA_yugopolitics.5.d picture = GFX_MSGA_yp_event_national_renewal
+   is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_endgame_yugoslavia_complete has_country_flag = MSGA_yugoslav_federation_proclaimed NOT = { has_country_flag = MSGA_yugoslavia_socialist_path } NOT = { has_country_flag = MSGA_yugoslavia_status_quo_path } has_country_flag = MSGA_yugoslavia_nationalist_path has_country_flag = MSGA_yp_done_national_renewal }
+   option = { name = MSGA_yugopolitics.5.a } }
+country_event = { id = MSGA_yugopolitics.6 title = MSGA_yugopolitics.6.t desc = MSGA_yugopolitics.6.d picture = GFX_MSGA_yp_event_a_yugoslavia_for_a_new_era
+   is_triggered_only = yes fire_only_once = yes trigger = { tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_endgame_yugoslavia_complete has_country_flag = MSGA_yugoslav_political_settlement_complete }
+   option = { name = MSGA_yugopolitics.6.a } }

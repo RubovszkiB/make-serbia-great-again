@@ -1,0 +1,77 @@
+{
+  "static_and_model_validation": "passed",
+  "validated_mod_root": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
+  "version": "0.15.0",
+  "focus_ids": [
+    "MSGA_a_national_yugoslavia",
+    "MSGA_a_stable_federation",
+    "MSGA_future_of_the_federation",
+    "MSGA_keep_the_status_quo",
+    "MSGA_national_renewal",
+    "MSGA_national_yugoslavia",
+    "MSGA_return_to_socialism",
+    "MSGA_socialist_yugoslavia",
+    "MSGA_the_vucic_system",
+    "MSGA_titos_legacy",
+    "MSGA_yugoslavia_proclaimed"
+  ],
+  "events": 6,
+  "ideas": 6,
+  "DDS_assets": 23,
+  "socialist_flags": 3,
+  "normal_flags_sha256_unchanged": {
+    "gfx/flags/SER_MSGA_YUGOSLAV_FEDERATION.tga": "fbb5f58e6bab716e0633f3a1ed622e7e92dcb18c8900cb269892ad26edd4ffa0",
+    "gfx/flags/medium/SER_MSGA_YUGOSLAV_FEDERATION.tga": "8eb2246d6bc02f0a7d75d332b4489048ff84bf2d8c426dd5d176118710b35ff6",
+    "gfx/flags/small/SER_MSGA_YUGOSLAV_FEDERATION.tga": "e70d73464ecd591b4dcb5f9dcd6c4677165499dd4ab6758f31a224f19ead14cb"
+  },
+  "three_full_route_models": [
+    {
+      "route": "socialist",
+      "leader": "SER_ivica_dacic",
+      "ruling_party": "communist",
+      "cosmetic": "SER_MSGA_SOCIALIST_YUGOSLAVIA",
+      "settlement_complete": true,
+      "native_starting_popularity_model": 0.55,
+      "territory_debt_armies_unchanged": true,
+      "duplicate_rewards_blocked": true
+    },
+    {
+      "route": "status_quo",
+      "leader": "SER_aleksandar_vucic",
+      "ruling_party": "conservative",
+      "cosmetic": "SER_MSGA_YUGOSLAV_FEDERATION",
+      "settlement_complete": true,
+      "native_starting_popularity_model": null,
+      "territory_debt_armies_unchanged": true,
+      "duplicate_rewards_blocked": true
+    },
+    {
+      "route": "nationalist",
+      "leader": "SER_aleksandar_vucic",
+      "ruling_party": "nationalist",
+      "cosmetic": "SER_MSGA_YUGOSLAV_FEDERATION",
+      "settlement_complete": true,
+      "native_starting_popularity_model": 0.6,
+      "territory_debt_armies_unchanged": true,
+      "duplicate_rewards_blocked": true
+    }
+  ],
+  "negative_cases": [
+    "missing_MSGA_yugoslavia_path",
+    "missing_MSGA_endgame_yugoslavia_complete",
+    "missing_MSGA_yugoslav_federation_proclaimed",
+    "missing_final_formation_focus",
+    "wrong_country",
+    "premature_red_star_socialist",
+    "premature_red_star_status_quo",
+    "premature_red_star_nationalist",
+    "conflicting_flags_fail_closed",
+    "status_quo_preserves_actual_ideology_party"
+  ],
+  "all_previous_528_files_preserved_except": [
+    "common/national_focus/MSGA_SER_endgame.txt",
+    "descriptor.mod",
+    "make_serbia_great_again.mod"
+  ],
+  "actual_engine_validation": "NOT RUN. User reserves game tests; native leaders, popularity redistribution and rendering remain engine checks."
+}

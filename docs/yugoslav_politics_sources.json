@@ -1,14 +1,11 @@
 {
-  "runtime_target": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
-  "launcher_descriptor": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again.mod",
   "version": "0.15.0",
-  "before_missing_files": [],
-  "before_changed_files": [],
-  "copied_absolute_paths": [],
-  "verified_source_file_count": 559,
-  "verified_sha256_by_relative_path": {
-    "descriptor.mod": "b2e872588bc4489855b052665895f465978470d88177916c573050107cb65e2e",
-    "make_serbia_great_again.mod": "7201a969597b9b5c3223f9705d3db7f2227a61089b1bb14b00b7ab4451fd4cc4",
+  "runtime": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
+  "package": "C:\\Users\\Balazs\\Downloads\\MSGA_Yugo_Politics_Visuals_v1.zip",
+  "package_sha256": "ffea667217db7045d30e8411e4706d5db65f63766c2f90cfacc798d5a924ff3f",
+  "baseline_sha256": {
+    "descriptor.mod": "e19a907a39b1a3a305659a5300da043ae102f7c2da60e63b5263ff4fda56cad5",
+    "make_serbia_great_again.mod": "26c6b57208fa597ce88ae5799cd4fb15f3a0ad5f0b8ec6be3c83280bd8cfd9a9",
     "MSGA_DEV_NOTES.md": "a3c62a2f3ccffaddd9596d464d2b641eb821e31b0fb7915e5e079b155fcae64c",
     "events/MSGA_bosnia_events.txt": "bc643fc5d989a01e75ef70b821eca8095cba51d2483cbae7aa442df6aaf000c6",
     "events/MSGA_economic_energy_events.txt": "b0ffb2220a0c86a3e2c28bd50478dd3161acba028efcff0e18ed9d610700feb2",
@@ -24,7 +21,6 @@
     "events/MSGA_SER_expansion.txt": "f0fba4925f7d6d9ecf2412f8c563426874542d4ccf0ebf719bfbd0692765df1d",
     "events/MSGA_SER_kosovo_events.txt": "6c54bad8d3ed27f59c4ce17b5d9db6e99210538c1472fb627d72aaa5b04ce03f",
     "events/MSGA_SER_post_kosovo_events.txt": "d280df6bdebc22e2e8a21ebfd07e2268c151878fe9e1090e392da41b73f585e9",
-    "events/MSGA_yugoslav_politics_events.txt": "07d0a97382e13ff7be6f05abcc07d3e08805c748d18cdfc8b9fc6698160a58bc",
     "events/TFR_events_SER.txt": "ec1c68bd4d6cf184e64b77595cc19d694d197c7171105f1f3dd03e2fb2a0f572",
     "events/TFR_events_ZZZ_NATO.txt": "0a8f8db28a4ddd224ea3d6f1e0b48ce6d3ef452e83e3b1a7f6c7021f0a6eef6d",
     "interface/MSGA_balkan_encirclement_assets.gfx": "09b36c374b6c1e4ef10fe151831cca73bc225dd5150ef1940f6529bc7a79c81c",
@@ -42,7 +38,6 @@
     "interface/MSGA_post_bosnia_assets.gfx": "1d47b7529a98d4d89714214ce5a4bf056deddc9752f9ed2d84937d3afaf8714d",
     "interface/MSGA_post_bosnia_focus_shine.gfx": "ee13758cb73aa062b814bab89696e12b5eeb880f9058247020ed0fd793ede1e6",
     "interface/MSGA_post_kosovo_assets.gfx": "d6d79ea01e811d9d07a8a870e3b4c10c2891a158c827dfa990ca499c38849748",
-    "interface/MSGA_yugoslav_politics_assets.gfx": "74919b107416bc0c1aeb16aaf12c237f8a8813707a3b80f9941c00e710615da6",
     "common/bop/MSGA_SER_bop.txt": "f9191db755d857aa71126485fc40aa440477c76bde5d349d6adc56705057e0c8",
     "common/characters/MSGA_bosnia_characters.txt": "c2b490a75b86a8c4e89b8aa9653f1a2ae8df470ded81e09a68369f7576f591ca",
     "common/country_leader/MSGA_SER_minister_traits.txt": "7c799771bcee832418746cf7786f8f931ca935e1187233b2af185bcee07c4764",
@@ -71,9 +66,8 @@
     "common/ideas/MSGA_SER_expansion_ideas.txt": "15e31d8441045227b886f513e039570c5007feeb974228ba7d590de896aa1d9f",
     "common/ideas/MSGA_SER_ideas.txt": "248ab043562403033b58ee9f2a12cc22b991a2621cc77f76e62fbbaae58f3a0a",
     "common/ideas/MSGA_SER_kosovo_ideas.txt": "0206c4f72b9acf8530c95e22cb206e4ed4cbda848319f58608b99f2d7a124f9c",
-    "common/ideas/MSGA_yugoslav_politics_ideas.txt": "745e1e5c7e4b47299edc7d7e601a3e88cc504712136382092b13d0b7f6792cbd",
     "common/national_focus/MSGA_SER_bosnian_crisis.txt": "6214cba9fc7f0fe452fccfa32697ef9bb83ce25d576caab600d2f2e30f681f4f",
-    "common/national_focus/MSGA_SER_endgame.txt": "08d40c40c0f4c85983c73ae0ced4d3e724339356272314c964d0022691bae9ae",
+    "common/national_focus/MSGA_SER_endgame.txt": "5372876ccf5ed6408b6c820b46f07e966397ccbaa4daa10beb9d11e8ef6180a8",
     "common/national_focus/MSGA_SER_kosovo_war.txt": "688032e88d1e3a9e4d96e69a6b28b5fac6154b0a1826586afd786c7ef1b12f2c",
     "common/national_focus/MSGA_SER_new_balkan_order.txt": "f158e44bb626e908b623505894d9abe548b65611c96fe53f67d765402459274a",
     "common/national_focus/MSGA_SER_pact_war_planning.txt": "d8530140a38be36e05dd5739cfda4d12decef1c371c16a5ae60ba8a8fac752f2",
@@ -108,7 +102,6 @@
     "common/scripted_effects/MSGA_SER_effects.txt": "6931929c526881917b102ac3c3618b3d6cc09b3880a04299f061aebf88712b2d",
     "common/scripted_effects/MSGA_SER_post_kosovo_effects.txt": "900dfa7fa08cc6c73136aba06be56aa16f1f69b26bc3a14bfd19a4fcaef8fd21",
     "common/scripted_effects/MSGA_SER_vehicle_effects.txt": "1032ce4e8befe5e033361a67a05a0201b2bdec798a879a3214d1ed89c7848867",
-    "common/scripted_effects/MSGA_yugoslav_politics_effects.txt": "cf155bf2583730e00b19f01d0ab29a30518e288b1b01350d439eba74a60c1f92",
     "common/scripted_localisation/MSGA_endgame_scripted_localisation.txt": "16cdcc3de94eadf7e54de83c96b051a898f68077cddb695253436aeb07b003bb",
     "common/scripted_triggers/MSGA_economic_energy_triggers.txt": "a2ac0c44a6cd9b896c9d1cdeb46aae1f333ba1910a22fa6115b0e79369eeed31",
     "common/scripted_triggers/MSGA_encirclement_triggers.txt": "fde8b30cdb82f5c55beb557721a97b661ca959c01b30d8b3d0b82751913bb574",
@@ -223,20 +216,11 @@
     "gfx/event_pictures/MSGA_event_western_shield.dds": "16f038a8581b13691023073a3920a635e115af9e2be42980552a6a53b01414c2",
     "gfx/event_pictures/MSGA_event_zagreb_has_fallen.dds": "d5cdbd0d6a196c852152b4b1e79821f7c953c7234f88f583dce44decd4653627",
     "gfx/event_pictures/MSGA_event_zagreb_tirana_pact.dds": "034062d7e1b8ad3f7bb6a930a2a2d89d528ddbdd4f0708dd4ea25396da4f5adf",
-    "gfx/event_pictures/MSGA_yp_a_yugoslavia_for_a_new_era.dds": "c788e23b4f7c6ac927d30872da0c8898f10cf44e283da3abb9634cfe8e901e88",
-    "gfx/event_pictures/MSGA_yp_federal_continuity.dds": "70149e0c8aab82c58f5f8c8b740ece4adc13cfc1c84df23393d332629f2d58ae",
-    "gfx/event_pictures/MSGA_yp_national_renewal.dds": "dac243a6e2e2615c20c2ddf0d3753382864a8936b2db3907ff9ff60fa49791cf",
-    "gfx/event_pictures/MSGA_yp_the_political_future_of_yugoslavia.dds": "40d2ef3a601958d7c8cdcaf631c7465836a6175136498e62a8102ff63e7f4e81",
-    "gfx/event_pictures/MSGA_yp_the_politics_of_the_new_yugoslavia.dds": "f267b1b045c478a04442bd15e03010ac3ca851f4761823db87051edd088ead0f",
-    "gfx/event_pictures/MSGA_yp_the_return_of_the_red_star.dds": "ee466c5783198724c3c337ee8c49a896d0b8b2613c4a13af10805529b390a28d",
     "gfx/flags/SER_MSGA_GREATER_SERBIA.tga": "1ff90f530a6ee7b6afb1547307097544e3491fdd51aab8b37ad43c08a8c5edf3",
-    "gfx/flags/SER_MSGA_SOCIALIST_YUGOSLAVIA.tga": "7f4243fdcb62a83419e3f5609d1061f5693b908da60a08d51a86476619e44dba",
     "gfx/flags/SER_MSGA_YUGOSLAV_FEDERATION.tga": "fbb5f58e6bab716e0633f3a1ed622e7e92dcb18c8900cb269892ad26edd4ffa0",
     "gfx/flags/medium/SER_MSGA_GREATER_SERBIA.tga": "32f19c9747b06c1e67c7883d4ad6a3b00652d8ccb50228bfb94f12ae9bd0fe1e",
-    "gfx/flags/medium/SER_MSGA_SOCIALIST_YUGOSLAVIA.tga": "5e04dd6bc56a8c8d5c1b88b9c1b4b01e45b78cf06b07c7ffe2a3e422119fb2e5",
     "gfx/flags/medium/SER_MSGA_YUGOSLAV_FEDERATION.tga": "8eb2246d6bc02f0a7d75d332b4489048ff84bf2d8c426dd5d176118710b35ff6",
     "gfx/flags/small/SER_MSGA_GREATER_SERBIA.tga": "34a996bec54e48c9378a150e3d31ab4c6d60b47b487257a4f32271cc23ca45e9",
-    "gfx/flags/small/SER_MSGA_SOCIALIST_YUGOSLAVIA.tga": "e406ac1da6f0dce20e944ad2a64b25a200af75f2c853e78b7d8d6a181a3f0150",
     "gfx/flags/small/SER_MSGA_YUGOSLAV_FEDERATION.tga": "e70d73464ecd591b4dcb5f9dcd6c4677165499dd4ab6758f31a224f19ead14cb",
     "gfx/interface/decisions/MSGA_central_serbian_industrial_park.dds": "14f1dc65c81ad0d11ea694271f581fc6852dba24d6dead59ad1fb1f4e43a1ed8",
     "gfx/interface/decisions/MSGA_chinese_industrial_cooperation.dds": "6ffbc214cb22166f24f699d399e35520def76b32256da4160bd0ba942d316615",
@@ -452,17 +436,6 @@
     "gfx/interface/goals/MSGA_strengthen_national_narrative.dds": "d2029241a3515bd56d4d62241928c20bdb4fcd1dcd7ef854739d2778e1a9b15b",
     "gfx/interface/goals/MSGA_the_serbian_question.dds": "fc81a38e66b926650c9ea1e77f6a5f16e9e7927583f3898368c1d8248d09a413",
     "gfx/interface/goals/MSGA_watch_the_conflict.dds": "96a6463317e58a2d8fa6450d499f91272930893605ee562731e8c079b46a6630",
-    "gfx/interface/goals/MSGA_yp_a_national_yugoslavia.dds": "779cdcf44caa52f2a110a9bbd3d7147b5ff9c5be85ce5cede52c107d7acca0b1",
-    "gfx/interface/goals/MSGA_yp_a_stable_federation.dds": "92be2cad52b87fce719d7563de01ca798c0a95b0d2124a7f0454147bfe9d81d8",
-    "gfx/interface/goals/MSGA_yp_future_of_the_federation.dds": "5c981644c24fe715fdd1f519af1d8caf7d879268efdd7b7d2ed5642f6e97f70b",
-    "gfx/interface/goals/MSGA_yp_keep_the_status_quo.dds": "49a1b365dc3167041254b54b97e84a8d7887f493c970957d0b7d9bb5e03739f1",
-    "gfx/interface/goals/MSGA_yp_national_renewal.dds": "4caf4d87b85d7ce3f7cb6cf6c26627e43255a29533659c8d5e9a8bff740bed53",
-    "gfx/interface/goals/MSGA_yp_national_yugoslavia.dds": "779cdcf44caa52f2a110a9bbd3d7147b5ff9c5be85ce5cede52c107d7acca0b1",
-    "gfx/interface/goals/MSGA_yp_return_to_socialism.dds": "73fe2a4c3af4224514abf757e74d30cdc1ddc0fee35eb06b67d7913fda22a4be",
-    "gfx/interface/goals/MSGA_yp_socialist_yugoslavia.dds": "18637892f9c9abcc895dd09cc2b5f0c47cdcdffafe8f19fc1a0f9ada4d23f3d3",
-    "gfx/interface/goals/MSGA_yp_the_vucic_system.dds": "e766a514661fc14f271c1794ea4c5802483d61c3cc2e7caa0c47fdafae6ecb26",
-    "gfx/interface/goals/MSGA_yp_titos_legacy.dds": "411fe09796e76627e3b00409ef8b2eecb00d1e8205c9e55883f6f3a8ffabc013",
-    "gfx/interface/goals/MSGA_yp_yugoslavia_proclaimed.dds": "b81d49e88e04c835e83a81e8c26e36837d035679a5ee126f361b4d03ce2b6e1f",
     "gfx/interface/ideas/GFX_idea_MSGA_internal_investment_campaign.dds": "33df63166898680f9805b0c5ada174d6e0bc4f4a1e667c4dbddff6d0cbdabcec",
     "gfx/interface/ideas/GFX_idea_MSGA_massive_emigration_easing.dds": "3f7844efee0b83619b2d205837614908ed2617daa543b17b3068f6e47233b585",
     "gfx/interface/ideas/GFX_idea_MSGA_national_consensus.dds": "a0cdf599a8f16087a14e2b231692a8673c80764756851a9f71d1116849bf76f3",
@@ -518,12 +491,6 @@
     "gfx/interface/ideas/MSGA_SRP_last_stand.dds": "cab2dfa13a8587e07480fd67edee052ec288784d95fd46f43bb63aef400fa05a",
     "gfx/interface/ideas/MSGA_subsidise_serbian_manufacturers.dds": "68c79d5e43c5b3d7ad9c769cd42cb37a6383cbc932a85121b2495b9e61d67b13",
     "gfx/interface/ideas/MSGA_support_serbian_businesses.dds": "bfc30d96c3a27ab1dd5660bc67c34428b79882538b95d54416afe67fa1535684",
-    "gfx/interface/ideas/MSGA_yp_federal_continuity.dds": "a126c528d334aa05e4439c892560bffd0b452112e3eb7ee58f44bf9dd38416c6",
-    "gfx/interface/ideas/MSGA_yp_one_yugoslav_state.dds": "c560e1c21810cf1f599e923ae23d1868a158d2ef07f019704d8eb518b475d1b7",
-    "gfx/interface/ideas/MSGA_yp_renewed_socialist_federation.dds": "42f43a5886ac5ac39f584f8d3f87a2c9ca8215c4ec92d41892aca324bb8e3e94",
-    "gfx/interface/ideas/MSGA_yp_titos_legacy.dds": "8a9754457b61a4d136ecd93a236e51bc37e6bf2a18bcd7063ea6132dd8ae1432",
-    "gfx/interface/ideas/MSGA_yp_vucic_system.dds": "5f2f3c57ce67c67b8dd5214914d993c81d5005b41208ec0d31cc69164275113b",
-    "gfx/interface/ideas/MSGA_yp_yugoslav_national_renewal.dds": "84883b8e1392b2911092ed1c7720fcc0ed1f3e765feccd38ca07bea20d0605be",
     "gfx/interface/mechanics/MSGA_offensive_ready.dds": "0404cb22dd9aeafebd2ae08e96b6bca1722c1b389bf7cfa61ca32974e8c9e963",
     "gfx/interface/mechanics/MSGA_prepare_offensive.dds": "f3118cb851183818a21ce883f122e97ec041585d8463edd96b99c25b94d26a59",
     "gfx/interface/mechanics/MSGA_unprepared_sector.dds": "963df52a20a0fd8599906e20f48c69bbc6c7ae381df58d08fc4cf4b8a83918e6",
@@ -564,20 +531,509 @@
     "localisation/english/MSGA_pact_war_l_english.yml": "b42e926be1b02db9e18079689e0d7d56a9d791d64dff572204bfd705c41f48f8",
     "localisation/english/MSGA_post_bosnia_l_english.yml": "300f77975e3894411418386ed9a0473dc6ab2652a40ea2384e69885595b51a75",
     "localisation/english/MSGA_post_kosovo_l_english.yml": "05ec1a3f1245fda6beec27c208a99d1bd8ec6bde94ecf817ea6ca98e2bbfc677",
-    "localisation/english/MSGA_settlement_l_english.yml": "e36858ef3b35e3e419685743f9105e4f973918f52c7f1ed8c6ad560c4f21d139",
-    "localisation/english/MSGA_yugoslav_politics_l_english.yml": "b1afa6d78bd25a225a1937986acdd672a447a121224b5f9a010fe2e56216bafe"
+    "localisation/english/MSGA_settlement_l_english.yml": "e36858ef3b35e3e419685743f9105e4f973918f52c7f1ed8c6ad560c4f21d139"
   },
-  "runtime_only_files": [],
-  "all_project_files_match_runtime": true,
-  "launcher_descriptor_matches_project": true,
-  "descriptor_path_verified": "C:/Users/Balazs/Documents/Paradox Interactive/Hearts of Iron IV/mod/make_serbia_great_again",
-  "required_new_focuses_present": [
-    "MSGA_internal_investment_drive",
-    "MSGA_settle_old_political_accounts",
-    "MSGA_secure_the_national_assembly",
-    "MSGA_send_the_migrants_back",
-    "MSGA_serbia_stands_united",
-    "MSGA_reconstitute_serbian_volunteer_guard"
+  "deployed_sha256": {
+    "common/national_focus/MSGA_SER_endgame.txt": "08d40c40c0f4c85983c73ae0ced4d3e724339356272314c964d0022691bae9ae",
+    "common/scripted_effects/MSGA_yugoslav_politics_effects.txt": "cf155bf2583730e00b19f01d0ab29a30518e288b1b01350d439eba74a60c1f92",
+    "events/MSGA_yugoslav_politics_events.txt": "07d0a97382e13ff7be6f05abcc07d3e08805c748d18cdfc8b9fc6698160a58bc",
+    "common/ideas/MSGA_yugoslav_politics_ideas.txt": "745e1e5c7e4b47299edc7d7e601a3e88cc504712136382092b13d0b7f6792cbd",
+    "localisation/english/MSGA_yugoslav_politics_l_english.yml": "b1afa6d78bd25a225a1937986acdd672a447a121224b5f9a010fe2e56216bafe",
+    "gfx/interface/goals/MSGA_yp_yugoslavia_proclaimed.dds": "b81d49e88e04c835e83a81e8c26e36837d035679a5ee126f361b4d03ce2b6e1f",
+    "gfx/interface/goals/MSGA_yp_future_of_the_federation.dds": "5c981644c24fe715fdd1f519af1d8caf7d879268efdd7b7d2ed5642f6e97f70b",
+    "gfx/interface/goals/MSGA_yp_return_to_socialism.dds": "73fe2a4c3af4224514abf757e74d30cdc1ddc0fee35eb06b67d7913fda22a4be",
+    "gfx/interface/goals/MSGA_yp_titos_legacy.dds": "411fe09796e76627e3b00409ef8b2eecb00d1e8205c9e55883f6f3a8ffabc013",
+    "gfx/interface/goals/MSGA_yp_socialist_yugoslavia.dds": "18637892f9c9abcc895dd09cc2b5f0c47cdcdffafe8f19fc1a0f9ada4d23f3d3",
+    "gfx/interface/goals/MSGA_yp_keep_the_status_quo.dds": "49a1b365dc3167041254b54b97e84a8d7887f493c970957d0b7d9bb5e03739f1",
+    "gfx/interface/goals/MSGA_yp_the_vucic_system.dds": "e766a514661fc14f271c1794ea4c5802483d61c3cc2e7caa0c47fdafae6ecb26",
+    "gfx/interface/goals/MSGA_yp_a_stable_federation.dds": "92be2cad52b87fce719d7563de01ca798c0a95b0d2124a7f0454147bfe9d81d8",
+    "gfx/interface/goals/MSGA_yp_a_national_yugoslavia.dds": "779cdcf44caa52f2a110a9bbd3d7147b5ff9c5be85ce5cede52c107d7acca0b1",
+    "gfx/interface/goals/MSGA_yp_national_renewal.dds": "4caf4d87b85d7ce3f7cb6cf6c26627e43255a29533659c8d5e9a8bff740bed53",
+    "gfx/interface/goals/MSGA_yp_national_yugoslavia.dds": "779cdcf44caa52f2a110a9bbd3d7147b5ff9c5be85ce5cede52c107d7acca0b1",
+    "gfx/event_pictures/MSGA_yp_the_politics_of_the_new_yugoslavia.dds": "f267b1b045c478a04442bd15e03010ac3ca851f4761823db87051edd088ead0f",
+    "gfx/event_pictures/MSGA_yp_the_political_future_of_yugoslavia.dds": "40d2ef3a601958d7c8cdcaf631c7465836a6175136498e62a8102ff63e7f4e81",
+    "gfx/event_pictures/MSGA_yp_the_return_of_the_red_star.dds": "ee466c5783198724c3c337ee8c49a896d0b8b2613c4a13af10805529b390a28d",
+    "gfx/event_pictures/MSGA_yp_federal_continuity.dds": "70149e0c8aab82c58f5f8c8b740ece4adc13cfc1c84df23393d332629f2d58ae",
+    "gfx/event_pictures/MSGA_yp_national_renewal.dds": "dac243a6e2e2615c20c2ddf0d3753382864a8936b2db3907ff9ff60fa49791cf",
+    "gfx/event_pictures/MSGA_yp_a_yugoslavia_for_a_new_era.dds": "c788e23b4f7c6ac927d30872da0c8898f10cf44e283da3abb9634cfe8e901e88",
+    "gfx/interface/ideas/MSGA_yp_titos_legacy.dds": "8a9754457b61a4d136ecd93a236e51bc37e6bf2a18bcd7063ea6132dd8ae1432",
+    "gfx/interface/ideas/MSGA_yp_renewed_socialist_federation.dds": "42f43a5886ac5ac39f584f8d3f87a2c9ca8215c4ec92d41892aca324bb8e3e94",
+    "gfx/interface/ideas/MSGA_yp_vucic_system.dds": "5f2f3c57ce67c67b8dd5214914d993c81d5005b41208ec0d31cc69164275113b",
+    "gfx/interface/ideas/MSGA_yp_federal_continuity.dds": "a126c528d334aa05e4439c892560bffd0b452112e3eb7ee58f44bf9dd38416c6",
+    "gfx/interface/ideas/MSGA_yp_yugoslav_national_renewal.dds": "84883b8e1392b2911092ed1c7720fcc0ed1f3e765feccd38ca07bea20d0605be",
+    "gfx/interface/ideas/MSGA_yp_one_yugoslav_state.dds": "c560e1c21810cf1f599e923ae23d1868a158d2ef07f019704d8eb518b475d1b7",
+    "interface/MSGA_yugoslav_politics_assets.gfx": "74919b107416bc0c1aeb16aaf12c237f8a8813707a3b80f9941c00e710615da6",
+    "gfx/flags/SER_MSGA_SOCIALIST_YUGOSLAVIA.tga": "7f4243fdcb62a83419e3f5609d1061f5693b908da60a08d51a86476619e44dba",
+    "gfx/flags/medium/SER_MSGA_SOCIALIST_YUGOSLAVIA.tga": "5e04dd6bc56a8c8d5c1b88b9c1b4b01e45b78cf06b07c7ffe2a3e422119fb2e5",
+    "gfx/flags/small/SER_MSGA_SOCIALIST_YUGOSLAVIA.tga": "e406ac1da6f0dce20e944ad2a64b25a200af75f2c853e78b7d8d6a181a3f0150",
+    "descriptor.mod": "b2e872588bc4489855b052665895f465978470d88177916c573050107cb65e2e",
+    "make_serbia_great_again.mod": "7201a969597b9b5c3223f9705d3db7f2227a61089b1bb14b00b7ab4451fd4cc4"
+  },
+  "changed_relative_paths": [
+    "common/ideas/MSGA_yugoslav_politics_ideas.txt",
+    "common/national_focus/MSGA_SER_endgame.txt",
+    "common/scripted_effects/MSGA_yugoslav_politics_effects.txt",
+    "descriptor.mod",
+    "events/MSGA_yugoslav_politics_events.txt",
+    "gfx/event_pictures/MSGA_yp_a_yugoslavia_for_a_new_era.dds",
+    "gfx/event_pictures/MSGA_yp_federal_continuity.dds",
+    "gfx/event_pictures/MSGA_yp_national_renewal.dds",
+    "gfx/event_pictures/MSGA_yp_the_political_future_of_yugoslavia.dds",
+    "gfx/event_pictures/MSGA_yp_the_politics_of_the_new_yugoslavia.dds",
+    "gfx/event_pictures/MSGA_yp_the_return_of_the_red_star.dds",
+    "gfx/flags/SER_MSGA_SOCIALIST_YUGOSLAVIA.tga",
+    "gfx/flags/medium/SER_MSGA_SOCIALIST_YUGOSLAVIA.tga",
+    "gfx/flags/small/SER_MSGA_SOCIALIST_YUGOSLAVIA.tga",
+    "gfx/interface/goals/MSGA_yp_a_national_yugoslavia.dds",
+    "gfx/interface/goals/MSGA_yp_a_stable_federation.dds",
+    "gfx/interface/goals/MSGA_yp_future_of_the_federation.dds",
+    "gfx/interface/goals/MSGA_yp_keep_the_status_quo.dds",
+    "gfx/interface/goals/MSGA_yp_national_renewal.dds",
+    "gfx/interface/goals/MSGA_yp_national_yugoslavia.dds",
+    "gfx/interface/goals/MSGA_yp_return_to_socialism.dds",
+    "gfx/interface/goals/MSGA_yp_socialist_yugoslavia.dds",
+    "gfx/interface/goals/MSGA_yp_the_vucic_system.dds",
+    "gfx/interface/goals/MSGA_yp_titos_legacy.dds",
+    "gfx/interface/goals/MSGA_yp_yugoslavia_proclaimed.dds",
+    "gfx/interface/ideas/MSGA_yp_federal_continuity.dds",
+    "gfx/interface/ideas/MSGA_yp_one_yugoslav_state.dds",
+    "gfx/interface/ideas/MSGA_yp_renewed_socialist_federation.dds",
+    "gfx/interface/ideas/MSGA_yp_titos_legacy.dds",
+    "gfx/interface/ideas/MSGA_yp_vucic_system.dds",
+    "gfx/interface/ideas/MSGA_yp_yugoslav_national_renewal.dds",
+    "interface/MSGA_yugoslav_politics_assets.gfx",
+    "localisation/english/MSGA_yugoslav_politics_l_english.yml",
+    "make_serbia_great_again.mod"
   ],
-  "game_launched": false
+  "deployed_absolute_paths": [
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\ideas\\MSGA_yugoslav_politics_ideas.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\national_focus\\MSGA_SER_endgame.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\scripted_effects\\MSGA_yugoslav_politics_effects.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\descriptor.mod",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\events\\MSGA_yugoslav_politics_events.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_yp_a_yugoslavia_for_a_new_era.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_yp_federal_continuity.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_yp_national_renewal.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_yp_the_political_future_of_yugoslavia.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_yp_the_politics_of_the_new_yugoslavia.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\event_pictures\\MSGA_yp_the_return_of_the_red_star.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\flags\\SER_MSGA_SOCIALIST_YUGOSLAVIA.tga",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\flags\\medium\\SER_MSGA_SOCIALIST_YUGOSLAVIA.tga",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\flags\\small\\SER_MSGA_SOCIALIST_YUGOSLAVIA.tga",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_yp_a_national_yugoslavia.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_yp_a_stable_federation.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_yp_future_of_the_federation.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_yp_keep_the_status_quo.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_yp_national_renewal.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_yp_national_yugoslavia.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_yp_return_to_socialism.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_yp_socialist_yugoslavia.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_yp_the_vucic_system.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_yp_titos_legacy.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_yp_yugoslavia_proclaimed.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\ideas\\MSGA_yp_federal_continuity.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\ideas\\MSGA_yp_one_yugoslav_state.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\ideas\\MSGA_yp_renewed_socialist_federation.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\ideas\\MSGA_yp_titos_legacy.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\ideas\\MSGA_yp_vucic_system.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\ideas\\MSGA_yp_yugoslav_national_renewal.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\interface\\MSGA_yugoslav_politics_assets.gfx",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\localisation\\english\\MSGA_yugoslav_politics_l_english.yml",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\make_serbia_great_again.mod",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again.mod"
+  ],
+  "native_sources_sha256": {
+    "common/ideologies/TFR_ideologies.txt": "d01fe6e95a5b44b5b4ce830305d9549b40379ba6ceb9229c3612a3e677b3166b",
+    "localisation/english/TFR_ideologies_l_english.yml": "dc250cc8d0735728e4eb25a5d510d3be1e993b2ebb1404eed3d9efb5ab7aece7",
+    "common/characters/TFR_characters_SER.txt": "b97654ea6cb40a3298995e48f782cd9fec3be39691b4ad105d959f3e4900e6f1",
+    "history/countries/SER - Serbia.txt": "ea97000a3b64bd17a982c9741029ec388e0fb7fefce85563890fb46d674a9764",
+    "events/TFR_events_SER.txt": "bc2f9684d8d07472903b9016b22568629eb2b0619e7197f0a8678dc792f66cf7",
+    "events/TFR_events_GER.txt": "fbac72d7cb202d364650bacdcca974e3d453ef9fa6c7e1b9f93f50955c5adfa0",
+    "gfx/flags/medium/YUG_communist.tga": "b7fa15eec2f3ab79857c99d9765be0d73631e39c898d50196a770d3d4d71e07e"
+  },
+  "focuses": [
+    [
+      "yugoslavia_proclaimed",
+      "Yugoslavia Proclaimed",
+      28,
+      19,
+      12,
+      "a_new_yugoslavia",
+      null,
+      "yugoslavia_proclaimed"
+    ],
+    [
+      "future_of_the_federation",
+      "The Future of the Federation",
+      28,
+      19,
+      13,
+      "yugoslavia_proclaimed",
+      null,
+      "the_future_of_the_federation"
+    ],
+    [
+      "return_to_socialism",
+      "Return to Socialism",
+      35,
+      16,
+      14,
+      "future_of_the_federation",
+      "socialist",
+      "return_to_socialism"
+    ],
+    [
+      "titos_legacy",
+      "Tito\u2019s Legacy",
+      35,
+      16,
+      15,
+      "return_to_socialism",
+      "socialist",
+      "titos_legacy"
+    ],
+    [
+      "socialist_yugoslavia",
+      "Socialist Yugoslavia",
+      35,
+      16,
+      16,
+      "titos_legacy",
+      "socialist",
+      "socialist_yugoslavia"
+    ],
+    [
+      "keep_the_status_quo",
+      "Keep the Status Quo",
+      35,
+      19,
+      14,
+      "future_of_the_federation",
+      "status_quo",
+      "keep_the_status_quo"
+    ],
+    [
+      "the_vucic_system",
+      "The Vu\u010di\u0107 System",
+      35,
+      19,
+      15,
+      "keep_the_status_quo",
+      "status_quo",
+      "the_vucic_system"
+    ],
+    [
+      "a_stable_federation",
+      "A Stable Federation",
+      35,
+      19,
+      16,
+      "the_vucic_system",
+      "status_quo",
+      "a_stable_federation"
+    ],
+    [
+      "a_national_yugoslavia",
+      "A National Yugoslavia",
+      35,
+      22,
+      14,
+      "future_of_the_federation",
+      "nationalist",
+      "a_national_yugoslavia"
+    ],
+    [
+      "national_renewal",
+      "National Renewal",
+      35,
+      22,
+      15,
+      "a_national_yugoslavia",
+      "nationalist",
+      "national_renewal"
+    ],
+    [
+      "national_yugoslavia",
+      "National Yugoslavia",
+      35,
+      22,
+      16,
+      "national_renewal",
+      "nationalist",
+      "national_yugoslavia"
+    ]
+  ],
+  "assets": {
+    "gfx/interface/goals/MSGA_yp_yugoslavia_proclaimed.dds": {
+      "source_member": "MSGA_Yugo_Politics_Visuals_v1/focus/yugoslavia_proclaimed.png",
+      "source_sha256": "909ee2e6073421316ee91710aef2aa3daf59db4fe3128a1f0df11bee18b11607",
+      "sha256": "b81d49e88e04c835e83a81e8c26e36837d035679a5ee126f361b4d03ce2b6e1f",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5",
+      "crop": "aspect preserved, transparent canvas"
+    },
+    "gfx/interface/goals/MSGA_yp_future_of_the_federation.dds": {
+      "source_member": "MSGA_Yugo_Politics_Visuals_v1/focus/the_future_of_the_federation.png",
+      "source_sha256": "9f0998062e5d228ef3f5fcd3c35d994945e571a2ac1eb4dbb98ff59635e7e9cb",
+      "sha256": "5c981644c24fe715fdd1f519af1d8caf7d879268efdd7b7d2ed5642f6e97f70b",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5",
+      "crop": "aspect preserved, transparent canvas"
+    },
+    "gfx/interface/goals/MSGA_yp_return_to_socialism.dds": {
+      "source_member": "MSGA_Yugo_Politics_Visuals_v1/focus/return_to_socialism.png",
+      "source_sha256": "659514eadc624e6cdd948f83ee499ac116e8fc7490be548896359443311132cf",
+      "sha256": "73fe2a4c3af4224514abf757e74d30cdc1ddc0fee35eb06b67d7913fda22a4be",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5",
+      "crop": "aspect preserved, transparent canvas"
+    },
+    "gfx/interface/goals/MSGA_yp_titos_legacy.dds": {
+      "source_member": "MSGA_Yugo_Politics_Visuals_v1/focus/titos_legacy.png",
+      "source_sha256": "80e8caaadc0fff57f2186a1f97945c20455a604fcde0a79894b88e1b37e43b35",
+      "sha256": "411fe09796e76627e3b00409ef8b2eecb00d1e8205c9e55883f6f3a8ffabc013",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5",
+      "crop": "aspect preserved, transparent canvas"
+    },
+    "gfx/interface/goals/MSGA_yp_socialist_yugoslavia.dds": {
+      "source_member": "MSGA_Yugo_Politics_Visuals_v1/focus/socialist_yugoslavia.png",
+      "source_sha256": "7219d82a68699c4e52cd377ca16119495b021526d937271be77af2629a071d4d",
+      "sha256": "18637892f9c9abcc895dd09cc2b5f0c47cdcdffafe8f19fc1a0f9ada4d23f3d3",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5",
+      "crop": "aspect preserved, transparent canvas"
+    },
+    "gfx/interface/goals/MSGA_yp_keep_the_status_quo.dds": {
+      "source_member": "MSGA_Yugo_Politics_Visuals_v1/focus/keep_the_status_quo.png",
+      "source_sha256": "9c67f30e6897705201d45865c57970a27f50e8ffa9c37508773b9923a3d36aef",
+      "sha256": "49a1b365dc3167041254b54b97e84a8d7887f493c970957d0b7d9bb5e03739f1",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5",
+      "crop": "aspect preserved, transparent canvas"
+    },
+    "gfx/interface/goals/MSGA_yp_the_vucic_system.dds": {
+      "source_member": "MSGA_Yugo_Politics_Visuals_v1/focus/the_vucic_system.png",
+      "source_sha256": "ea43eee57a397dde91955971ce9e1fe38b304d26938284c554e4f90c491c9455",
+      "sha256": "e766a514661fc14f271c1794ea4c5802483d61c3cc2e7caa0c47fdafae6ecb26",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5",
+      "crop": "aspect preserved, transparent canvas"
+    },
+    "gfx/interface/goals/MSGA_yp_a_stable_federation.dds": {
+      "source_member": "MSGA_Yugo_Politics_Visuals_v1/focus/a_stable_federation.png",
+      "source_sha256": "6bce9ff372205e2f9bd32960a3105aab49ec69771179198b21fa00fe665e0b01",
+      "sha256": "92be2cad52b87fce719d7563de01ca798c0a95b0d2124a7f0454147bfe9d81d8",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5",
+      "crop": "aspect preserved, transparent canvas"
+    },
+    "gfx/interface/goals/MSGA_yp_a_national_yugoslavia.dds": {
+      "source_member": "MSGA_Yugo_Politics_Visuals_v1/focus/a_national_yugoslavia.png",
+      "source_sha256": "2f789f6b7ee2749643eb1d9829bbfbb7437b4bf3af59408059430474bb01418c",
+      "sha256": "779cdcf44caa52f2a110a9bbd3d7147b5ff9c5be85ce5cede52c107d7acca0b1",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5",
+      "crop": "aspect preserved, transparent canvas"
+    },
+    "gfx/interface/goals/MSGA_yp_national_renewal.dds": {
+      "source_member": "MSGA_Yugo_Politics_Visuals_v1/focus/national_renewal.png",
+      "source_sha256": "3e5a1da1eb53dfc4a7932a66eb4550ced1c9a8bc1774a23d68b5acb72d1ffc00",
+      "sha256": "4caf4d87b85d7ce3f7cb6cf6c26627e43255a29533659c8d5e9a8bff740bed53",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5",
+      "crop": "aspect preserved, transparent canvas"
+    },
+    "gfx/interface/goals/MSGA_yp_national_yugoslavia.dds": {
+      "source_member": "MSGA_Yugo_Politics_Visuals_v1/focus/national_yugoslavia.png",
+      "source_sha256": "2f789f6b7ee2749643eb1d9829bbfbb7437b4bf3af59408059430474bb01418c",
+      "sha256": "779cdcf44caa52f2a110a9bbd3d7147b5ff9c5be85ce5cede52c107d7acca0b1",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5",
+      "crop": "aspect preserved, transparent canvas"
+    },
+    "gfx/event_pictures/MSGA_yp_the_politics_of_the_new_yugoslavia.dds": {
+      "source_member": "MSGA_Yugo_Politics_Visuals_v1/event/the_politics_of_the_new_yugoslavia.png",
+      "source_sha256": "9f0998062e5d228ef3f5fcd3c35d994945e571a2ac1eb4dbb98ff59635e7e9cb",
+      "sha256": "f267b1b045c478a04442bd15e03010ac3ca851f4761823db87051edd088ead0f",
+      "size": [
+        500,
+        250
+      ],
+      "compression": "DXT5",
+      "crop": "event fit"
+    },
+    "gfx/event_pictures/MSGA_yp_the_political_future_of_yugoslavia.dds": {
+      "source_member": "MSGA_Yugo_Politics_Visuals_v1/event/the_political_future_of_yugoslavia.png",
+      "source_sha256": "6bce9ff372205e2f9bd32960a3105aab49ec69771179198b21fa00fe665e0b01",
+      "sha256": "40d2ef3a601958d7c8cdcaf631c7465836a6175136498e62a8102ff63e7f4e81",
+      "size": [
+        500,
+        250
+      ],
+      "compression": "DXT5",
+      "crop": "event fit"
+    },
+    "gfx/event_pictures/MSGA_yp_the_return_of_the_red_star.dds": {
+      "source_member": "MSGA_Yugo_Politics_Visuals_v1/event/the_return_of_the_red_star.png",
+      "source_sha256": "659514eadc624e6cdd948f83ee499ac116e8fc7490be548896359443311132cf",
+      "sha256": "ee466c5783198724c3c337ee8c49a896d0b8b2613c4a13af10805529b390a28d",
+      "size": [
+        500,
+        250
+      ],
+      "compression": "DXT5",
+      "crop": "event fit"
+    },
+    "gfx/event_pictures/MSGA_yp_federal_continuity.dds": {
+      "source_member": "MSGA_Yugo_Politics_Visuals_v1/event/federal_continuity.png",
+      "source_sha256": "9c67f30e6897705201d45865c57970a27f50e8ffa9c37508773b9923a3d36aef",
+      "sha256": "70149e0c8aab82c58f5f8c8b740ece4adc13cfc1c84df23393d332629f2d58ae",
+      "size": [
+        500,
+        250
+      ],
+      "compression": "DXT5",
+      "crop": "event fit"
+    },
+    "gfx/event_pictures/MSGA_yp_national_renewal.dds": {
+      "source_member": "MSGA_Yugo_Politics_Visuals_v1/event/national_renewal.png",
+      "source_sha256": "3e5a1da1eb53dfc4a7932a66eb4550ced1c9a8bc1774a23d68b5acb72d1ffc00",
+      "sha256": "dac243a6e2e2615c20c2ddf0d3753382864a8936b2db3907ff9ff60fa49791cf",
+      "size": [
+        500,
+        250
+      ],
+      "compression": "DXT5",
+      "crop": "event fit"
+    },
+    "gfx/event_pictures/MSGA_yp_a_yugoslavia_for_a_new_era.dds": {
+      "source_member": "MSGA_Yugo_Politics_Visuals_v1/event/a_yugoslavia_for_a_new_era.png",
+      "source_sha256": "909ee2e6073421316ee91710aef2aa3daf59db4fe3128a1f0df11bee18b11607",
+      "sha256": "c788e23b4f7c6ac927d30872da0c8898f10cf44e283da3abb9634cfe8e901e88",
+      "size": [
+        500,
+        250
+      ],
+      "compression": "DXT5",
+      "crop": "event fit"
+    },
+    "gfx/interface/ideas/MSGA_yp_titos_legacy.dds": {
+      "source_member": "MSGA_Yugo_Politics_Visuals_v1/focus/titos_legacy.png",
+      "source_sha256": "80e8caaadc0fff57f2186a1f97945c20455a604fcde0a79894b88e1b37e43b35",
+      "sha256": "8a9754457b61a4d136ecd93a236e51bc37e6bf2a18bcd7063ea6132dd8ae1432",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "crop": "aspect preserved, transparent canvas"
+    },
+    "gfx/interface/ideas/MSGA_yp_renewed_socialist_federation.dds": {
+      "source_member": "MSGA_Yugo_Politics_Visuals_v1/focus/socialist_yugoslavia.png",
+      "source_sha256": "7219d82a68699c4e52cd377ca16119495b021526d937271be77af2629a071d4d",
+      "sha256": "42f43a5886ac5ac39f584f8d3f87a2c9ca8215c4ec92d41892aca324bb8e3e94",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "crop": "aspect preserved, transparent canvas"
+    },
+    "gfx/interface/ideas/MSGA_yp_vucic_system.dds": {
+      "source_member": "MSGA_Yugo_Politics_Visuals_v1/focus/the_vucic_system.png",
+      "source_sha256": "ea43eee57a397dde91955971ce9e1fe38b304d26938284c554e4f90c491c9455",
+      "sha256": "5f2f3c57ce67c67b8dd5214914d993c81d5005b41208ec0d31cc69164275113b",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "crop": "aspect preserved, transparent canvas"
+    },
+    "gfx/interface/ideas/MSGA_yp_federal_continuity.dds": {
+      "source_member": "MSGA_Yugo_Politics_Visuals_v1/focus/a_stable_federation.png",
+      "source_sha256": "6bce9ff372205e2f9bd32960a3105aab49ec69771179198b21fa00fe665e0b01",
+      "sha256": "a126c528d334aa05e4439c892560bffd0b452112e3eb7ee58f44bf9dd38416c6",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "crop": "aspect preserved, transparent canvas"
+    },
+    "gfx/interface/ideas/MSGA_yp_yugoslav_national_renewal.dds": {
+      "source_member": "MSGA_Yugo_Politics_Visuals_v1/focus/national_renewal.png",
+      "source_sha256": "3e5a1da1eb53dfc4a7932a66eb4550ced1c9a8bc1774a23d68b5acb72d1ffc00",
+      "sha256": "84883b8e1392b2911092ed1c7720fcc0ed1f3e765feccd38ca07bea20d0605be",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "crop": "aspect preserved, transparent canvas"
+    },
+    "gfx/interface/ideas/MSGA_yp_one_yugoslav_state.dds": {
+      "source_member": "MSGA_Yugo_Politics_Visuals_v1/focus/national_yugoslavia.png",
+      "source_sha256": "2f789f6b7ee2749643eb1d9829bbfbb7437b4bf3af59408059430474bb01418c",
+      "sha256": "c560e1c21810cf1f599e923ae23d1868a158d2ef07f019704d8eb518b475d1b7",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5",
+      "crop": "aspect preserved, transparent canvas"
+    }
+  },
+  "normal_flag_sha256": {
+    "gfx/flags/SER_MSGA_YUGOSLAV_FEDERATION.tga": "fbb5f58e6bab716e0633f3a1ed622e7e92dcb18c8900cb269892ad26edd4ffa0",
+    "gfx/flags/medium/SER_MSGA_YUGOSLAV_FEDERATION.tga": "8eb2246d6bc02f0a7d75d332b4489048ff84bf2d8c426dd5d176118710b35ff6",
+    "gfx/flags/small/SER_MSGA_YUGOSLAV_FEDERATION.tga": "e70d73464ecd591b4dcb5f9dcd6c4677165499dd4ab6758f31a224f19ead14cb"
+  },
+  "ideology_keys": {
+    "authoritarian_socialist": "communist",
+    "socialist_subideology": "market_socialism",
+    "nationalist": "nationalist",
+    "nationalist_subideology": "autocrat",
+    "status_quo": "conservative"
+  },
+  "leader_reuse": {
+    "socialist": "SER_ivica_dacic",
+    "nationalist": "SER_aleksandar_vucic",
+    "status_quo": "unchanged"
+  },
+  "actual_engine_validation": "Reserved for user; no game or save touched"
 }

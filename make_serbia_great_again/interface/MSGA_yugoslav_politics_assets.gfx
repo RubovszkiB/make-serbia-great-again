@@ -1,0 +1,36 @@
+spriteTypes = {
+spriteType = { name = "GFX_MSGA_yp_focus_yugoslavia_proclaimed" texturefile = "gfx/interface/goals/MSGA_yp_yugoslavia_proclaimed.dds" }
+spriteType = { name = "GFX_MSGA_yp_focus_yugoslavia_proclaimed_shine" texturefile = "gfx/interface/goals/MSGA_yp_yugoslavia_proclaimed.dds" }
+spriteType = { name = "GFX_MSGA_yp_focus_future_of_the_federation" texturefile = "gfx/interface/goals/MSGA_yp_future_of_the_federation.dds" }
+spriteType = { name = "GFX_MSGA_yp_focus_future_of_the_federation_shine" texturefile = "gfx/interface/goals/MSGA_yp_future_of_the_federation.dds" }
+spriteType = { name = "GFX_MSGA_yp_focus_return_to_socialism" texturefile = "gfx/interface/goals/MSGA_yp_return_to_socialism.dds" }
+spriteType = { name = "GFX_MSGA_yp_focus_return_to_socialism_shine" texturefile = "gfx/interface/goals/MSGA_yp_return_to_socialism.dds" }
+spriteType = { name = "GFX_MSGA_yp_focus_titos_legacy" texturefile = "gfx/interface/goals/MSGA_yp_titos_legacy.dds" }
+spriteType = { name = "GFX_MSGA_yp_focus_titos_legacy_shine" texturefile = "gfx/interface/goals/MSGA_yp_titos_legacy.dds" }
+spriteType = { name = "GFX_MSGA_yp_focus_socialist_yugoslavia" texturefile = "gfx/interface/goals/MSGA_yp_socialist_yugoslavia.dds" }
+spriteType = { name = "GFX_MSGA_yp_focus_socialist_yugoslavia_shine" texturefile = "gfx/interface/goals/MSGA_yp_socialist_yugoslavia.dds" }
+spriteType = { name = "GFX_MSGA_yp_focus_keep_the_status_quo" texturefile = "gfx/interface/goals/MSGA_yp_keep_the_status_quo.dds" }
+spriteType = { name = "GFX_MSGA_yp_focus_keep_the_status_quo_shine" texturefile = "gfx/interface/goals/MSGA_yp_keep_the_status_quo.dds" }
+spriteType = { name = "GFX_MSGA_yp_focus_the_vucic_system" texturefile = "gfx/interface/goals/MSGA_yp_the_vucic_system.dds" }
+spriteType = { name = "GFX_MSGA_yp_focus_the_vucic_system_shine" texturefile = "gfx/interface/goals/MSGA_yp_the_vucic_system.dds" }
+spriteType = { name = "GFX_MSGA_yp_focus_a_stable_federation" texturefile = "gfx/interface/goals/MSGA_yp_a_stable_federation.dds" }
+spriteType = { name = "GFX_MSGA_yp_focus_a_stable_federation_shine" texturefile = "gfx/interface/goals/MSGA_yp_a_stable_federation.dds" }
+spriteType = { name = "GFX_MSGA_yp_focus_a_national_yugoslavia" texturefile = "gfx/interface/goals/MSGA_yp_a_national_yugoslavia.dds" }
+spriteType = { name = "GFX_MSGA_yp_focus_a_national_yugoslavia_shine" texturefile = "gfx/interface/goals/MSGA_yp_a_national_yugoslavia.dds" }
+spriteType = { name = "GFX_MSGA_yp_focus_national_renewal" texturefile = "gfx/interface/goals/MSGA_yp_national_renewal.dds" }
+spriteType = { name = "GFX_MSGA_yp_focus_national_renewal_shine" texturefile = "gfx/interface/goals/MSGA_yp_national_renewal.dds" }
+spriteType = { name = "GFX_MSGA_yp_focus_national_yugoslavia" texturefile = "gfx/interface/goals/MSGA_yp_national_yugoslavia.dds" }
+spriteType = { name = "GFX_MSGA_yp_focus_national_yugoslavia_shine" texturefile = "gfx/interface/goals/MSGA_yp_national_yugoslavia.dds" }
+spriteType = { name = "GFX_MSGA_yp_event_the_politics_of_the_new_yugoslavia" texturefile = "gfx/event_pictures/MSGA_yp_the_politics_of_the_new_yugoslavia.dds" }
+spriteType = { name = "GFX_MSGA_yp_event_the_political_future_of_yugoslavia" texturefile = "gfx/event_pictures/MSGA_yp_the_political_future_of_yugoslavia.dds" }
+spriteType = { name = "GFX_MSGA_yp_event_the_return_of_the_red_star" texturefile = "gfx/event_pictures/MSGA_yp_the_return_of_the_red_star.dds" }
+spriteType = { name = "GFX_MSGA_yp_event_federal_continuity" texturefile = "gfx/event_pictures/MSGA_yp_federal_continuity.dds" }
+spriteType = { name = "GFX_MSGA_yp_event_national_renewal" texturefile = "gfx/event_pictures/MSGA_yp_national_renewal.dds" }
+spriteType = { name = "GFX_MSGA_yp_event_a_yugoslavia_for_a_new_era" texturefile = "gfx/event_pictures/MSGA_yp_a_yugoslavia_for_a_new_era.dds" }
+spriteType = { name = "GFX_idea_MSGA_yp_idea_titos_legacy" texturefile = "gfx/interface/ideas/MSGA_yp_titos_legacy.dds" }
+spriteType = { name = "GFX_idea_MSGA_yp_idea_renewed_socialist_federation" texturefile = "gfx/interface/ideas/MSGA_yp_renewed_socialist_federation.dds" }
+spriteType = { name = "GFX_idea_MSGA_yp_idea_vucic_system" texturefile = "gfx/interface/ideas/MSGA_yp_vucic_system.dds" }
+spriteType = { name = "GFX_idea_MSGA_yp_idea_federal_continuity" texturefile = "gfx/interface/ideas/MSGA_yp_federal_continuity.dds" }
+spriteType = { name = "GFX_idea_MSGA_yp_idea_yugoslav_national_renewal" texturefile = "gfx/interface/ideas/MSGA_yp_yugoslav_national_renewal.dds" }
+spriteType = { name = "GFX_idea_MSGA_yp_idea_one_yugoslav_state" texturefile = "gfx/interface/ideas/MSGA_yp_one_yugoslav_state.dds" }
+}

@@ -6,6 +6,7 @@ import argparse,copy,hashlib,json,math,re,subprocess
 from PIL import Image
 from validate_phase1 import parse,get,descend,unique,ROOT,decision_presentation
 from validate_bosnia import TFR,GAME
+from validation_history import expected_hash
 
 def val(body,name,default=None):return next((v for k,o,v in body if k==name),default)
 def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -154,11 +155,18 @@ def main():
  else:
   for p,d in source['baseline_sha256'].items():
    if p not in source['changed_relative_paths']:assert digest(mod/p)==d,p
-  for p,d in source['deployed_sha256'].items():assert digest(mod/p)==d,p
+  for p,d in source['deployed_sha256'].items():assert digest(mod/p)==expected_hash(p,d),p
  for p,d in source['native_sources_sha256'].items():assert digest(TFR/p)==d,p
  assert digest(Path(source['package']))==source['package_sha256']
  tree=scripts['common/national_focus/MSGA_SER_endgame.txt'][0][2];focuses={get(v,'id'):v for k,o,v in tree if k=='focus'}
- assert len(focuses)==29;unique([(get(v,'x'),get(v,'y')) for v in focuses.values()],'endgame positions')
+ continuation=ROOT/'docs/yugoslav_politics_sources.json'
+ if continuation.exists() and not args.prepared:
+  political=json.loads(continuation.read_text());new_ids={'MSGA_'+row[0] for row in political['focuses']}
+  assert len(focuses)==40 and new_ids<=focuses.keys()
+  old=parse(subprocess.check_output(['git','show','a182e7944cdd528b540ab9f121c5ccf2e7104fd8:make_serbia_great_again/common/national_focus/MSGA_SER_endgame.txt'],cwd=ROOT).decode('utf-8-sig'))
+  assert [(k,o,v) for k,o,v in tree if k!='focus' or get(v,'id') not in new_ids]==old[0][2], 'Existing endgame must be unchanged'
+ else:assert len(focuses)==29
+ unique([(get(v,'x'),get(v,'y')) for v in focuses.values()],'endgame positions')
  unique([get(v,'id') for p,a in scripts.items() if p.startswith('common/national_focus/') for k,o,b in a for k,o,v in b if k=='focus'],'all focus IDs')
  for stem,days,x,y,parents,avail in source['focuses']:
   b=focuses['MSGA_'+stem];assert math.isclose(float(get(b,'cost'))*7,days)
@@ -311,6 +319,9 @@ def main():
  # Native construction rejection rolls back introduced slots without inventing buildings.
  m=Model(scripts,mod,source);m.build_reject=True;m.flags['SER']|={'MSGA_endgame_choice_active','MSGA_yugoslavia_path'};m.effect('MSGA_eg_focus_arsenal_of_yugoslavia');assert m.buildings[107]['arms_factory']==0 and m.slots[107]==0
  report={'static_and_model_validation':'passed','validated_mod_root':str(mod),'prepared_overlay_only':args.prepared,'version':source['version'],'focus_count':29,'timed_decisions':31,'optional_peaceful_dialogues':3,'events':31,'DDS_assets':len(source['assets']),'flags':6,'scenarios':cases,'negative_cases':negatives+['premature_tree_entry','wrong_country','pending_save_model','native_build_rejection'],'native_debt_API':'debt_var_temp + add_debt; no treasury change, no inflation multiplier','baseline_preserved_except':'one New Balkan Order hand-off and two version descriptors','actual_engine_validation':'NOT RUN: user reserved game testing. Models do not certify timers, annexation transfer, UI, native construction ticks or engine save/load.'}
+ report['chapter_version']=source['version']
+ report['version']=re.search(r'^version="([^"]+)"',(mod/'descriptor.mod').read_text(),re.M)[1] if not args.prepared else source['version']
+ report['installed_tree_focus_count']=len(focuses)
  args.report.parent.mkdir(parents=True,exist_ok=True);args.report.write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))
 
 if __name__=='__main__':main()
