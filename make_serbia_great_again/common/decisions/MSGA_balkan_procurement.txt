@@ -1,0 +1,81 @@
+MSGA_ALB_procurement = {
+MSGA_ALB_purchase_old_eastern_rifles = { icon = generic_military cost = 0 days_remove = 10
+    visible = { tag = ALB has_completed_focus = MSGA_ALB_a_vulnerable_nation NOT = { has_country_flag = MSGA_ALB_purchase_old_eastern_rifles_completed } }
+    available = { custom_trigger_tooltip = { tooltip = MSGA_ALB_purchase_old_eastern_rifles_available_tt tag = ALB has_capitulated = no has_completed_focus = MSGA_ALB_a_vulnerable_nation NOT = { has_country_flag = MSGA_ALB_procurement_busy } NOT = { has_country_flag = MSGA_ALB_purchase_old_eastern_rifles_completed } check_variable = { var = income_var value = 0.4 compare = greater_than_or_equals } } }
+    complete_effect = { custom_effect_tooltip = MSGA_ALB_purchase_old_eastern_rifles_start_tt hidden_effect = { MSGA_ALB_purchase_old_eastern_rifles_start = yes } }
+    remove_effect = { custom_effect_tooltip = MSGA_ALB_purchase_old_eastern_rifles_finish_tt hidden_effect = { MSGA_ALB_purchase_old_eastern_rifles_finish = yes } }
+    cancel_trigger = { hidden_trigger = { OR = { has_capitulated = yes } } } cancel_effect = { hidden_effect = { MSGA_ALB_purchase_old_eastern_rifles_cancel = yes } }
+    ai_will_do = { factor = 30 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 0.65 compare = greater_than_or_equals } } } } }
+MSGA_ALB_acquire_old_mortars = { icon = generic_military_support cost = 0 days_remove = 14
+    visible = { tag = ALB has_completed_focus = MSGA_ALB_open_the_surplus_markets NOT = { has_country_flag = MSGA_ALB_acquire_old_mortars_completed } }
+    available = { custom_trigger_tooltip = { tooltip = MSGA_ALB_acquire_old_mortars_available_tt tag = ALB has_capitulated = no has_completed_focus = MSGA_ALB_open_the_surplus_markets NOT = { has_country_flag = MSGA_ALB_procurement_busy } NOT = { has_country_flag = MSGA_ALB_acquire_old_mortars_completed } check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } } }
+    complete_effect = { custom_effect_tooltip = MSGA_ALB_acquire_old_mortars_start_tt hidden_effect = { MSGA_ALB_acquire_old_mortars_start = yes } }
+    remove_effect = { custom_effect_tooltip = MSGA_ALB_acquire_old_mortars_finish_tt hidden_effect = { MSGA_ALB_acquire_old_mortars_finish = yes } }
+    cancel_trigger = { hidden_trigger = { OR = { has_capitulated = yes } } } cancel_effect = { hidden_effect = { MSGA_ALB_acquire_old_mortars_cancel = yes } }
+    ai_will_do = { factor = 30 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 0.75 compare = greater_than_or_equals } } } } }
+MSGA_ALB_buy_used_military_trucks = { icon = generic_trucks cost = 0 days_remove = 14
+    visible = { tag = ALB has_completed_focus = MSGA_ALB_open_the_surplus_markets NOT = { has_country_flag = MSGA_ALB_buy_used_military_trucks_completed } }
+    available = { custom_trigger_tooltip = { tooltip = MSGA_ALB_buy_used_military_trucks_available_tt tag = ALB has_capitulated = no has_completed_focus = MSGA_ALB_open_the_surplus_markets NOT = { has_country_flag = MSGA_ALB_procurement_busy } NOT = { has_country_flag = MSGA_ALB_buy_used_military_trucks_completed } check_variable = { var = income_var value = 0.6 compare = greater_than_or_equals } } }
+    complete_effect = { custom_effect_tooltip = MSGA_ALB_buy_used_military_trucks_start_tt hidden_effect = { MSGA_ALB_buy_used_military_trucks_start = yes } }
+    remove_effect = { custom_effect_tooltip = MSGA_ALB_buy_used_military_trucks_finish_tt hidden_effect = { MSGA_ALB_buy_used_military_trucks_finish = yes } }
+    cancel_trigger = { hidden_trigger = { OR = { has_capitulated = yes } } } cancel_effect = { hidden_effect = { MSGA_ALB_buy_used_military_trucks_cancel = yes } }
+    ai_will_do = { factor = 30 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 0.85 compare = greater_than_or_equals } } } } }
+MSGA_ALB_turkish_small_arms_contract = { icon = generic_military cost = 0 days_remove = 21
+    visible = { tag = ALB has_completed_focus = MSGA_ALB_look_to_ankara NOT = { has_country_flag = MSGA_ALB_turkish_small_arms_contract_completed } }
+    available = { custom_trigger_tooltip = { tooltip = MSGA_ALB_turkish_small_arms_contract_available_tt tag = ALB has_capitulated = no has_completed_focus = MSGA_ALB_look_to_ankara NOT = { has_country_flag = MSGA_ALB_procurement_busy } NOT = { has_country_flag = MSGA_ALB_turkish_small_arms_contract_completed } check_variable = { var = income_var value = 0.9 compare = greater_than_or_equals } } }
+    complete_effect = { custom_effect_tooltip = MSGA_ALB_turkish_small_arms_contract_start_tt hidden_effect = { MSGA_ALB_turkish_small_arms_contract_start = yes } }
+    remove_effect = { custom_effect_tooltip = MSGA_ALB_turkish_small_arms_contract_finish_tt hidden_effect = { MSGA_ALB_turkish_small_arms_contract_finish = yes } }
+    cancel_trigger = { hidden_trigger = { OR = { has_capitulated = yes } } } cancel_effect = { hidden_effect = { MSGA_ALB_turkish_small_arms_contract_cancel = yes } }
+    ai_will_do = { factor = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.15 compare = greater_than_or_equals } } } } }
+MSGA_ALB_acquire_modern_at_weapons = { icon = generic_military_support cost = 0 days_remove = 21
+    visible = { tag = ALB has_completed_focus = MSGA_ALB_secure_foreign_stockpiles NOT = { has_country_flag = MSGA_ALB_acquire_modern_at_weapons_completed } }
+    available = { custom_trigger_tooltip = { tooltip = MSGA_ALB_acquire_modern_at_weapons_available_tt tag = ALB has_capitulated = no has_completed_focus = MSGA_ALB_secure_foreign_stockpiles NOT = { has_country_flag = MSGA_ALB_procurement_busy } NOT = { has_country_flag = MSGA_ALB_acquire_modern_at_weapons_completed } check_variable = { var = income_var value = 1.1 compare = greater_than_or_equals } } }
+    complete_effect = { custom_effect_tooltip = MSGA_ALB_acquire_modern_at_weapons_start_tt hidden_effect = { MSGA_ALB_acquire_modern_at_weapons_start = yes } }
+    remove_effect = { custom_effect_tooltip = MSGA_ALB_acquire_modern_at_weapons_finish_tt hidden_effect = { MSGA_ALB_acquire_modern_at_weapons_finish = yes } }
+    cancel_trigger = { hidden_trigger = { OR = { has_capitulated = yes } } } cancel_effect = { hidden_effect = { MSGA_ALB_acquire_modern_at_weapons_cancel = yes } }
+    ai_will_do = { factor = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.35 compare = greater_than_or_equals } } } } }
+MSGA_ALB_purchase_turkish_armoured_vehicles = { icon = generic_tank cost = 0 days_remove = 30
+    visible = { tag = ALB has_completed_focus = MSGA_ALB_look_to_ankara NOT = { has_country_flag = MSGA_ALB_purchase_turkish_armoured_vehicles_completed } }
+    available = { custom_trigger_tooltip = { tooltip = MSGA_ALB_purchase_turkish_armoured_vehicles_available_tt tag = ALB has_capitulated = no has_completed_focus = MSGA_ALB_look_to_ankara NOT = { has_country_flag = MSGA_ALB_procurement_busy } NOT = { has_country_flag = MSGA_ALB_purchase_turkish_armoured_vehicles_completed } check_variable = { var = income_var value = 1.4 compare = greater_than_or_equals } } }
+    complete_effect = { custom_effect_tooltip = MSGA_ALB_purchase_turkish_armoured_vehicles_start_tt hidden_effect = { MSGA_ALB_purchase_turkish_armoured_vehicles_start = yes } }
+    remove_effect = { custom_effect_tooltip = MSGA_ALB_purchase_turkish_armoured_vehicles_finish_tt hidden_effect = { MSGA_ALB_purchase_turkish_armoured_vehicles_finish = yes } }
+    cancel_trigger = { hidden_trigger = { OR = { has_capitulated = yes } } } cancel_effect = { hidden_effect = { MSGA_ALB_purchase_turkish_armoured_vehicles_cancel = yes } }
+    ai_will_do = { factor = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.65 compare = greater_than_or_equals } } } } }
+}
+MSGA_CRO_procurement = {
+MSGA_CRO_nato_small_arms_package = { icon = generic_military cost = 0 days_remove = 21
+    visible = { tag = CRO has_completed_focus = MSGA_CRO_western_procurement NOT = { has_country_flag = MSGA_CRO_nato_small_arms_package_completed } }
+    available = { custom_trigger_tooltip = { tooltip = MSGA_CRO_nato_small_arms_package_available_tt tag = CRO has_capitulated = no has_completed_focus = MSGA_CRO_western_procurement NOT = { has_country_flag = MSGA_CRO_procurement_busy } NOT = { has_country_flag = MSGA_CRO_nato_small_arms_package_completed } check_variable = { var = income_var value = 1.2 compare = greater_than_or_equals } } }
+    complete_effect = { custom_effect_tooltip = MSGA_CRO_nato_small_arms_package_start_tt hidden_effect = { MSGA_CRO_nato_small_arms_package_start = yes } }
+    remove_effect = { custom_effect_tooltip = MSGA_CRO_nato_small_arms_package_finish_tt hidden_effect = { MSGA_CRO_nato_small_arms_package_finish = yes } }
+    cancel_trigger = { hidden_trigger = { OR = { has_capitulated = yes } } } cancel_effect = { hidden_effect = { MSGA_CRO_nato_small_arms_package_cancel = yes } }
+    ai_will_do = { factor = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.7 compare = greater_than_or_equals } } } } }
+MSGA_CRO_european_artillery_contract = { icon = generic_military_support cost = 0 days_remove = 24
+    visible = { tag = CRO has_completed_focus = MSGA_CRO_western_procurement NOT = { has_country_flag = MSGA_CRO_european_artillery_contract_completed } }
+    available = { custom_trigger_tooltip = { tooltip = MSGA_CRO_european_artillery_contract_available_tt tag = CRO has_capitulated = no has_completed_focus = MSGA_CRO_western_procurement NOT = { has_country_flag = MSGA_CRO_procurement_busy } NOT = { has_country_flag = MSGA_CRO_european_artillery_contract_completed } check_variable = { var = income_var value = 1.4 compare = greater_than_or_equals } } }
+    complete_effect = { custom_effect_tooltip = MSGA_CRO_european_artillery_contract_start_tt hidden_effect = { MSGA_CRO_european_artillery_contract_start = yes } }
+    remove_effect = { custom_effect_tooltip = MSGA_CRO_european_artillery_contract_finish_tt hidden_effect = { MSGA_CRO_european_artillery_contract_finish = yes } }
+    cancel_trigger = { hidden_trigger = { OR = { has_capitulated = yes } } } cancel_effect = { hidden_effect = { MSGA_CRO_european_artillery_contract_cancel = yes } }
+    ai_will_do = { factor = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.9 compare = greater_than_or_equals } } } } }
+MSGA_CRO_american_ifv_package = { icon = generic_tank cost = 0 days_remove = 35
+    visible = { tag = CRO has_completed_focus = MSGA_CRO_armoured_modernisation NOT = { has_country_flag = MSGA_CRO_american_ifv_package_completed } }
+    available = { custom_trigger_tooltip = { tooltip = MSGA_CRO_american_ifv_package_available_tt tag = CRO has_capitulated = no has_completed_focus = MSGA_CRO_armoured_modernisation NOT = { has_country_flag = MSGA_CRO_procurement_busy } NOT = { has_country_flag = MSGA_CRO_american_ifv_package_completed } check_variable = { var = income_var value = 2.4 compare = greater_than_or_equals } } }
+    complete_effect = { custom_effect_tooltip = MSGA_CRO_american_ifv_package_start_tt hidden_effect = { MSGA_CRO_american_ifv_package_start = yes } }
+    remove_effect = { custom_effect_tooltip = MSGA_CRO_american_ifv_package_finish_tt hidden_effect = { MSGA_CRO_american_ifv_package_finish = yes } }
+    cancel_trigger = { hidden_trigger = { OR = { has_capitulated = yes } } } cancel_effect = { hidden_effect = { MSGA_CRO_american_ifv_package_cancel = yes } }
+    ai_will_do = { factor = 2 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 2.9 compare = greater_than_or_equals } } } } }
+MSGA_CRO_german_armour_contract = { icon = generic_tank cost = 0 days_remove = 45
+    visible = { tag = CRO has_completed_focus = MSGA_CRO_armoured_modernisation NOT = { has_country_flag = MSGA_CRO_german_armour_contract_completed } }
+    available = { custom_trigger_tooltip = { tooltip = MSGA_CRO_german_armour_contract_available_tt tag = CRO has_capitulated = no country_exists = GER has_completed_focus = MSGA_CRO_armoured_modernisation NOT = { has_country_flag = MSGA_CRO_procurement_busy } NOT = { has_country_flag = MSGA_CRO_german_armour_contract_completed } check_variable = { var = income_var value = 2.8 compare = greater_than_or_equals } } }
+    complete_effect = { custom_effect_tooltip = MSGA_CRO_german_armour_contract_start_tt hidden_effect = { MSGA_CRO_german_armour_contract_start = yes } }
+    remove_effect = { custom_effect_tooltip = MSGA_CRO_german_armour_contract_finish_tt hidden_effect = { MSGA_CRO_german_armour_contract_finish = yes } }
+    cancel_trigger = { hidden_trigger = { OR = { has_capitulated = yes NOT = { country_exists = GER } } } } cancel_effect = { hidden_effect = { MSGA_CRO_german_armour_contract_cancel = yes } }
+    ai_will_do = { factor = 2 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 3.3 compare = greater_than_or_equals } } } } }
+MSGA_CRO_modern_at_package = { icon = generic_military_support cost = 0 days_remove = 21
+    visible = { tag = CRO has_completed_focus = MSGA_CRO_western_procurement NOT = { has_country_flag = MSGA_CRO_modern_at_package_completed } }
+    available = { custom_trigger_tooltip = { tooltip = MSGA_CRO_modern_at_package_available_tt tag = CRO has_capitulated = no has_completed_focus = MSGA_CRO_western_procurement NOT = { has_country_flag = MSGA_CRO_procurement_busy } NOT = { has_country_flag = MSGA_CRO_modern_at_package_completed } check_variable = { var = income_var value = 1.1 compare = greater_than_or_equals } } }
+    complete_effect = { custom_effect_tooltip = MSGA_CRO_modern_at_package_start_tt hidden_effect = { MSGA_CRO_modern_at_package_start = yes } }
+    remove_effect = { custom_effect_tooltip = MSGA_CRO_modern_at_package_finish_tt hidden_effect = { MSGA_CRO_modern_at_package_finish = yes } }
+    cancel_trigger = { hidden_trigger = { OR = { has_capitulated = yes } } } cancel_effect = { hidden_effect = { MSGA_CRO_modern_at_package_cancel = yes } }
+    ai_will_do = { factor = 8 modifier = { factor = 0 NOT = { check_variable = { var = income_var value = 1.6 compare = greater_than_or_equals } } } } }
+}

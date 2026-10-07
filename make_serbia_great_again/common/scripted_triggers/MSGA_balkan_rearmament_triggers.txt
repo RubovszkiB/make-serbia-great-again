@@ -1,0 +1,2 @@
+MSGA_balkan_ai_target = { OR = { tag = SLV tag = CRO tag = BOS tag = MNT tag = KOS tag = ALB tag = MAC } }
+MSGA_croatian_bosnia_escalation = { SER = { has_country_flag = MSGA_bosnia_intervened } }

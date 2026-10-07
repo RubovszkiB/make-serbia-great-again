@@ -1,0 +1,16 @@
+ideas = { country = {
+MSGA_ALB_surplus_procurement_network = { picture = MSGA_rearm_idea_ALB_surplus_procurement_network allowed = { original_tag = ALB } removal_cost = -1 modifier = { income_growth_factor = 0.01 business_value_factor = 0.02 industrial_capacity_factory = 0.02 } }
+MSGA_ALB_armed_albania = { picture = MSGA_rearm_idea_ALB_armed_albania_spirit allowed = { original_tag = ALB } removal_cost = -1 modifier = { army_defence_factor = 0.05 army_org_factor = 0.05 mobilization_speed = 0.05 } }
+MSGA_ALB_workshop_expansion = { picture = MSGA_rearm_idea_ALB_surplus_procurement_network allowed = { original_tag = ALB } removal_cost = -1 modifier = { production_speed_arms_factory_factor = 0.05 } }
+MSGA_ALB_domestic_ammunition = { picture = MSGA_rearm_idea_ALB_surplus_procurement_network allowed = { original_tag = ALB } removal_cost = -1 modifier = { industrial_capacity_factory = 0.05 } }
+MSGA_ALB_battalion_readiness = { picture = MSGA_rearm_idea_ALB_armed_albania_spirit allowed = { original_tag = ALB } removal_cost = -1 modifier = { army_org_factor = 0.05 land_reinforce_rate = 0.05 } }
+MSGA_CRO_business_confidence = { picture = MSGA_rearm_idea_CRO_croatian_arms_exports allowed = { original_tag = CRO } removal_cost = -1 modifier = { income_growth_factor = 0.01 } }
+MSGA_CRO_hs_produkt_support = { picture = MSGA_rearm_idea_CRO_croatian_arms_exports allowed = { original_tag = CRO } removal_cost = -1 modifier = { industrial_capacity_factory = 0.02 } }
+MSGA_CRO_arms_exports = { picture = MSGA_rearm_idea_CRO_croatian_arms_exports allowed = { original_tag = CRO } removal_cost = -1 modifier = { industrial_capacity_factory = 0.03 income_growth_factor = 0.02 business_value_factor = 0.05 } }
+MSGA_CRO_training_readiness = { picture = MSGA_rearm_idea_CRO_croatia_rearmed_spirit allowed = { original_tag = CRO } removal_cost = -1 modifier = { training_time_army_factor = -0.05 } }
+MSGA_CRO_stable_industry = { picture = MSGA_rearm_idea_CRO_croatian_arms_exports allowed = { original_tag = CRO } removal_cost = -1 modifier = { industrial_capacity_factory = 0.03 } }
+MSGA_CRO_emergency_construction = { picture = MSGA_rearm_idea_CRO_croatian_arms_exports allowed = { original_tag = CRO } removal_cost = -1 modifier = { production_speed_arms_factory_factor = 0.05 } }
+MSGA_CRO_western_procurement_support = { picture = MSGA_rearm_idea_CRO_croatian_arms_exports allowed = { original_tag = CRO } removal_cost = -1 modifier = { income_growth_factor = 0.01 } }
+MSGA_CRO_reserve_preparation = { picture = MSGA_rearm_idea_CRO_croatia_rearmed_spirit allowed = { original_tag = CRO } removal_cost = -1 modifier = { recruitable_population_factor = 0.05 mobilization_speed = 0.1 } }
+MSGA_CRO_rearmed = { picture = MSGA_rearm_idea_CRO_croatia_rearmed_spirit allowed = { original_tag = CRO } removal_cost = -1 modifier = { industrial_capacity_factory = 0.075 army_org_factor = 0.05 army_defence_factor = 0.05 production_factory_max_efficiency_factor = 0.05 } }
+} }

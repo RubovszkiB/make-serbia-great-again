@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,hashlib,json,re
 from collections import Counter
 from PIL import Image
-from validate_phase1 import parse,get,descend,unique,ROOT
+from validate_phase1 import parse,get,descend,unique,ROOT,decision_presentation
 from validate_kosovo import CampaignModel
 
 TFR=Path(r'C:\Program Files (x86)\Steam\steamapps\workshop\content\394360\3350890356')
@@ -167,7 +167,7 @@ def main():
     assert len(focuses)==13;positions=[(get(v,'x'),get(v,'y')) for v in focuses.values()];unique(positions,'Focus positions')
     ids=[get(v,'id') for ast in scripts.values() for k,_,v in descend(ast) if k=='focus' and isinstance(v,list)];unique(ids,'Focus IDs')
     event_ids=[get(v,'id') for p,ast in scripts.items() if p.startswith('events/') for k,_,v in ast if k in ('country_event','news_event')];unique(event_ids,'Event IDs')
-    decisions=[(k,v) for _,_,entries in scripts['common/decisions/MSGA_bosnia_decisions.txt'] for k,_,v in entries];unique([k for k,_ in decisions],'Bosnia decision IDs')
+    decisions=[(k,decision_presentation(v)) for _,_,entries in scripts['common/decisions/MSGA_bosnia_decisions.txt'] for k,_,v in entries];unique([k for k,_ in decisions],'Bosnia decision IDs')
     graph={id:[get(v,'focus') for k,_,v in b if k=='prerequisite'] for id,b in focuses.items()}
     def visit(id,trail=()):
         assert id not in trail

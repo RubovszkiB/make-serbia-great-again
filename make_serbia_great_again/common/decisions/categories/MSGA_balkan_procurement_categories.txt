@@ -1,0 +1,2 @@
+MSGA_ALB_procurement = { icon = military_operation allowed = { original_tag = ALB } visible = { tag = ALB has_country_flag = MSGA_ALB_a_vulnerable_nation_done } }
+MSGA_CRO_procurement = { icon = military_operation allowed = { original_tag = CRO } visible = { tag = CRO has_country_flag = MSGA_CRO_aggressive_rearmament_done } }

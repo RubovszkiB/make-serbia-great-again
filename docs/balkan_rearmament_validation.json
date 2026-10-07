@@ -1,0 +1,182 @@
+{
+  "static_and_model_validation": "passed",
+  "validated_mod_root": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
+  "version": "0.16.0",
+  "focus_count": 25,
+  "decision_count": 11,
+  "ideas": 14,
+  "DDS": 29,
+  "Croatia_starting_MIL": 3,
+  "Croatia_Proper_MIL": 2,
+  "Albania_starting_MIL": 1,
+  "CRO_new_template": "2 infantry + 1 artillery_brigade; no supports; no new units",
+  "AI_targets": {
+    "SLV": 4,
+    "CRO": 4,
+    "BOS": 3,
+    "MNT": 3,
+    "KOS": 3,
+    "ALB": 3,
+    "MAC": 3
+  },
+  "native_relevance_truth_cases": 736,
+  "production_lock_addition_paths_audited": {
+    "common/decisions/TFR_decisions_ISR.txt": 5,
+    "common/on_actions/00_TFR_on_actions_ZZZ_startup.txt": 1
+  },
+  "weekly_reapplication_model": "8 weeks per country; native startup exclusion and cleanup protect listed tags; unrelated countries unchanged",
+  "focus_smoke_models": [
+    {
+      "country": "ALB",
+      "focuses": 9,
+      "military_factories_in_project_state": 2,
+      "all_focus_rewards_one_time": true
+    },
+    {
+      "country": "CRO",
+      "focuses": 16,
+      "military_factories_in_project_state": 5,
+      "all_focus_rewards_one_time": true
+    }
+  ],
+  "contract_models": [
+    {
+      "id": "MSGA_ALB_purchase_old_eastern_rifles",
+      "NSB": false,
+      "cost_B": 0.4,
+      "days": 10,
+      "delivery_exact_once": true,
+      "no_early_delivery": true,
+      "persistent_pending_model": true
+    },
+    {
+      "id": "MSGA_ALB_acquire_old_mortars",
+      "NSB": false,
+      "cost_B": 0.5,
+      "days": 14,
+      "delivery_exact_once": true,
+      "no_early_delivery": true,
+      "persistent_pending_model": true
+    },
+    {
+      "id": "MSGA_ALB_buy_used_military_trucks",
+      "NSB": false,
+      "cost_B": 0.6,
+      "days": 14,
+      "delivery_exact_once": true,
+      "no_early_delivery": true,
+      "persistent_pending_model": true
+    },
+    {
+      "id": "MSGA_ALB_turkish_small_arms_contract",
+      "NSB": false,
+      "cost_B": 0.9,
+      "days": 21,
+      "delivery_exact_once": true,
+      "no_early_delivery": true,
+      "persistent_pending_model": true
+    },
+    {
+      "id": "MSGA_ALB_acquire_modern_at_weapons",
+      "NSB": false,
+      "cost_B": 1.1,
+      "days": 21,
+      "delivery_exact_once": true,
+      "no_early_delivery": true,
+      "persistent_pending_model": true
+    },
+    {
+      "id": "MSGA_ALB_purchase_turkish_armoured_vehicles",
+      "NSB": false,
+      "cost_B": 1.4,
+      "days": 30,
+      "delivery_exact_once": true,
+      "no_early_delivery": true,
+      "persistent_pending_model": true
+    },
+    {
+      "id": "MSGA_CRO_nato_small_arms_package",
+      "NSB": false,
+      "cost_B": 1.2,
+      "days": 21,
+      "delivery_exact_once": true,
+      "no_early_delivery": true,
+      "persistent_pending_model": true
+    },
+    {
+      "id": "MSGA_CRO_european_artillery_contract",
+      "NSB": false,
+      "cost_B": 1.4,
+      "days": 24,
+      "delivery_exact_once": true,
+      "no_early_delivery": true,
+      "persistent_pending_model": true
+    },
+    {
+      "id": "MSGA_CRO_american_ifv_package",
+      "NSB": false,
+      "cost_B": 2.4,
+      "days": 35,
+      "delivery_exact_once": true,
+      "no_early_delivery": true,
+      "persistent_pending_model": true
+    },
+    {
+      "id": "MSGA_CRO_german_armour_contract",
+      "NSB": false,
+      "cost_B": 2.8,
+      "days": 45,
+      "delivery_exact_once": true,
+      "no_early_delivery": true,
+      "persistent_pending_model": true
+    },
+    {
+      "id": "MSGA_CRO_german_armour_contract",
+      "NSB": true,
+      "cost_B": 2.8,
+      "days": 45,
+      "delivery_exact_once": true,
+      "no_early_delivery": true,
+      "persistent_pending_model": true
+    },
+    {
+      "id": "MSGA_CRO_modern_at_package",
+      "NSB": false,
+      "cost_B": 1.1,
+      "days": 21,
+      "delivery_exact_once": true,
+      "no_early_delivery": true,
+      "persistent_pending_model": true
+    }
+  ],
+  "negative_cases": [
+    "MSGA_ALB_purchase_old_eastern_rifles_insufficient_treasury",
+    "MSGA_ALB_purchase_old_eastern_rifles_cancel_refund_retry",
+    "MSGA_ALB_acquire_old_mortars_insufficient_treasury",
+    "MSGA_ALB_acquire_old_mortars_cancel_refund_retry",
+    "MSGA_ALB_buy_used_military_trucks_insufficient_treasury",
+    "MSGA_ALB_buy_used_military_trucks_cancel_refund_retry",
+    "MSGA_ALB_turkish_small_arms_contract_insufficient_treasury",
+    "MSGA_ALB_turkish_small_arms_contract_cancel_refund_retry",
+    "MSGA_ALB_acquire_modern_at_weapons_insufficient_treasury",
+    "MSGA_ALB_acquire_modern_at_weapons_cancel_refund_retry",
+    "MSGA_ALB_purchase_turkish_armoured_vehicles_insufficient_treasury",
+    "MSGA_ALB_purchase_turkish_armoured_vehicles_cancel_refund_retry",
+    "MSGA_CRO_nato_small_arms_package_insufficient_treasury",
+    "MSGA_CRO_nato_small_arms_package_cancel_refund_retry",
+    "MSGA_CRO_european_artillery_contract_insufficient_treasury",
+    "MSGA_CRO_european_artillery_contract_cancel_refund_retry",
+    "MSGA_CRO_american_ifv_package_insufficient_treasury",
+    "MSGA_CRO_american_ifv_package_cancel_refund_retry",
+    "MSGA_CRO_german_armour_contract_insufficient_treasury",
+    "MSGA_CRO_german_armour_contract_cancel_refund_retry",
+    "MSGA_CRO_modern_at_package_insufficient_treasury",
+    "MSGA_CRO_modern_at_package_cancel_refund_retry",
+    "German_seller_disappears",
+    "parallel_contract_guard",
+    "native_build_rejection_rolls_back_slot",
+    "lost_industry_control"
+  ],
+  "original_files_preserved": 557,
+  "actual_engine_validation": "NOT RUN. Static/model smoke only; user reserves running game and saves. Actual AI production, construction, training, equipment usability, focus selection and rendering require engine tests."
+}

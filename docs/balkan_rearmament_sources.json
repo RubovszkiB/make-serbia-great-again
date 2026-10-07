@@ -1,14 +1,9 @@
 {
-  "runtime_target": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
-  "launcher_descriptor": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again.mod",
   "version": "0.16.0",
-  "before_missing_files": [],
-  "before_changed_files": [],
-  "copied_absolute_paths": [],
-  "verified_source_file_count": 602,
-  "verified_sha256_by_relative_path": {
-    "descriptor.mod": "6dc4f7bfe0a2fd595d4288e5e81e787b5a0fa270506fd9576d0b4db71fd93728",
-    "make_serbia_great_again.mod": "df8fba65d0deba16416ee64f3030f3c55151fb5a97d05c1b3c0412243df8c799",
+  "runtime": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
+  "baseline_sha256": {
+    "descriptor.mod": "b2e872588bc4489855b052665895f465978470d88177916c573050107cb65e2e",
+    "make_serbia_great_again.mod": "7201a969597b9b5c3223f9705d3db7f2227a61089b1bb14b00b7ab4451fd4cc4",
     "MSGA_DEV_NOTES.md": "a3c62a2f3ccffaddd9596d464d2b641eb821e31b0fb7915e5e079b155fcae64c",
     "events/MSGA_bosnia_events.txt": "bc643fc5d989a01e75ef70b821eca8095cba51d2483cbae7aa442df6aaf000c6",
     "events/MSGA_economic_energy_events.txt": "b0ffb2220a0c86a3e2c28bd50478dd3161acba028efcff0e18ed9d610700feb2",
@@ -28,7 +23,6 @@
     "events/TFR_events_SER.txt": "ec1c68bd4d6cf184e64b77595cc19d694d197c7171105f1f3dd03e2fb2a0f572",
     "events/TFR_events_ZZZ_NATO.txt": "0a8f8db28a4ddd224ea3d6f1e0b48ce6d3ef452e83e3b1a7f6c7021f0a6eef6d",
     "interface/MSGA_balkan_encirclement_assets.gfx": "09b36c374b6c1e4ef10fe151831cca73bc225dd5150ef1940f6529bc7a79c81c",
-    "interface/MSGA_balkan_rearmament_assets.gfx": "7dd10641c33fb25be06cc1abb4052dfb4cb63d6c3280f2c53724a8b57fa2826d",
     "interface/MSGA_balkan_war_eventpictures.gfx": "86905efe8f8cc478a20d931bab00ec5334aaa564ed7ad58ad25e846bd5b3d05b",
     "interface/MSGA_bosnia_assets.gfx": "1c40fa19e06b69c362e1e563cc22bcfb7c5f51bb86e74cf4fc4403fe0725ac49",
     "interface/MSGA_economic_energy_assets.gfx": "460b734c3f18ad218e449aba3d55cde113a448c76a1b73db30bd3f87af5c8b0e",
@@ -44,11 +38,9 @@
     "interface/MSGA_post_bosnia_focus_shine.gfx": "ee13758cb73aa062b814bab89696e12b5eeb880f9058247020ed0fd793ede1e6",
     "interface/MSGA_post_kosovo_assets.gfx": "d6d79ea01e811d9d07a8a870e3b4c10c2891a158c827dfa990ca499c38849748",
     "interface/MSGA_yugoslav_politics_assets.gfx": "74919b107416bc0c1aeb16aaf12c237f8a8813707a3b80f9941c00e710615da6",
-    "common/ai_templates/MSGA_CRO_light_infantry.txt": "5c646c4284888feae156daddd10f52a251a6ff9a52f084a67771c132e3109572",
     "common/bop/MSGA_SER_bop.txt": "f9191db755d857aa71126485fc40aa440477c76bde5d349d6adc56705057e0c8",
     "common/characters/MSGA_bosnia_characters.txt": "c2b490a75b86a8c4e89b8aa9653f1a2ae8df470ded81e09a68369f7576f591ca",
     "common/country_leader/MSGA_SER_minister_traits.txt": "7c799771bcee832418746cf7786f8f931ca935e1187233b2af185bcee07c4764",
-    "common/decisions/MSGA_balkan_procurement.txt": "60ba0015014f7d620ceae9ce81c1b842944c296af05c5b9c617a3acdd3244865",
     "common/decisions/MSGA_bosnia_decisions.txt": "f106c220f3db783c871df4d7dd29804ed196e52a5e193497e974a4a9258ad03c",
     "common/decisions/MSGA_economic_energy_decisions.txt": "2eb4b92a8a19e661c01c742920e814ba221d02b56d584934407061ea5ead9d9d",
     "common/decisions/MSGA_endgame_decisions.txt": "e35a099f9e3991caea4a4b40a63d05182aface1edb191b894886d376785ded6d",
@@ -63,7 +55,6 @@
     "common/decisions/MSGA_SER_strategic_review.txt": "068e62ea6a7ac8a9c5300885a21ecd43006f2633cf4b52b9db2265c48f4877bc",
     "common/decisions/TFR_decisions_SER.txt": "bb4ae4314ca040ee8d47c81b342d685b03d6553c870a20afccb3890587b4f031",
     "common/dynamic_modifiers/MSGA_SER_dynamic_modifiers.txt": "18478562f79b1c8e1c6cb481176739ea4c8afe488c6b3fd1cc20b6a58e52d8d7",
-    "common/ideas/MSGA_balkan_rearmament_ideas.txt": "e12102e89d17ce3e9a30906d8aea2139a4a37769efdbdede0191f388abf0ecb7",
     "common/ideas/MSGA_bosnia_ideas.txt": "0281dc7c91163f648807693a8b5c9ae3f1dd2249f56bd0ba43dd83d0f0886e33",
     "common/ideas/MSGA_economic_energy_ideas.txt": "f99f2182aa17be09aee5df318a792b29fadce7fb4e6bd103cbc16d37354d5e14",
     "common/ideas/MSGA_encirclement_ideas.txt": "9fd8e61bd85d230a06ccb99162918842821610870988d4a31b8fd50f5f36583f",
@@ -76,8 +67,6 @@
     "common/ideas/MSGA_SER_ideas.txt": "248ab043562403033b58ee9f2a12cc22b991a2621cc77f76e62fbbaae58f3a0a",
     "common/ideas/MSGA_SER_kosovo_ideas.txt": "0206c4f72b9acf8530c95e22cb206e4ed4cbda848319f58608b99f2d7a124f9c",
     "common/ideas/MSGA_yugoslav_politics_ideas.txt": "745e1e5c7e4b47299edc7d7e601a3e88cc504712136382092b13d0b7f6792cbd",
-    "common/national_focus/MSGA_ALB_rearmament.txt": "54d1138fd3ea47e5524da30d8a2fe3ddf0b1402e11db3b6831e3bc25f149aec7",
-    "common/national_focus/MSGA_CRO_rearmament.txt": "b8236aef6ce174352d7ee8c73e4e3952c5e09d755d6069820ff3b9809efeb1e3",
     "common/national_focus/MSGA_SER_bosnian_crisis.txt": "6214cba9fc7f0fe452fccfa32697ef9bb83ce25d576caab600d2f2e30f681f4f",
     "common/national_focus/MSGA_SER_endgame.txt": "08d40c40c0f4c85983c73ae0ced4d3e724339356272314c964d0022691bae9ae",
     "common/national_focus/MSGA_SER_kosovo_war.txt": "688032e88d1e3a9e4d96e69a6b28b5fac6154b0a1826586afd786c7ef1b12f2c",
@@ -87,7 +76,6 @@
     "common/national_focus/MSGA_SER_post_bosnia.txt": "c5e6067239cdf9c9b18aeac10b12e2e7352a2e6310afee953d6662fa1ce8f2a9",
     "common/national_focus/MSGA_SER_post_kosovo.txt": "ab443c5771b7c0e9589693914a12f9478e332d59242036fab940131dcea4b691",
     "common/national_focus/MSGA_SER_southern_question.txt": "4f656999b0e8acdbb28f14c133c99b8542a9be824b927cf23f1700a56d989477",
-    "common/on_actions/MSGA_balkan_rearmament_on_actions.txt": "c21d3b194332b81249bc121876723ff9cb130af6aed1aa976747d52c4f3e7a0b",
     "common/on_actions/MSGA_bosnia_on_actions.txt": "119819cfbf465cf9180882628d404458965d4feabbe0dd4ece13d877a873660c",
     "common/on_actions/MSGA_economic_energy_on_actions.txt": "f9fccc105a56af9463e19156b7a373de321182a6fb25d84c52730e0acccb57ef",
     "common/on_actions/MSGA_encirclement_on_actions.txt": "4555564f229177026f85d9fc7886f42b45a0c1139feb509ecd8e1debeac2d489",
@@ -102,7 +90,6 @@
     "common/opinion_modifiers/MSGA_endgame_opinions.txt": "3383e5e3fcd430dfc2ed0e555a26650735ce31e2282baaebc6cdf91985795876",
     "common/opinion_modifiers/MSGA_new_order_opinions.txt": "901af816f43b60d07f62d2de2cbf2367c1b8719f6a123ad8d82dede3905f8680",
     "common/opinion_modifiers/MSGA_post_bosnia_opinion.txt": "44dfd59f8e5104a5b215fb6a00334c98c1ea9512ef6a3be4e144f60b7448a9a6",
-    "common/scripted_effects/MSGA_balkan_rearmament_effects.txt": "4c4d67a1b2c2fe832357024fecfbea7431f3de564f46ee03752e0a2e95a8eefb",
     "common/scripted_effects/MSGA_bosnia_effects.txt": "2d9ee8525df96342d0fa3eb41d16e1f069063a4dfeb26e31fde3afea04a15a31",
     "common/scripted_effects/MSGA_economic_energy_effects.txt": "68a2da7b6d706337009f39940e34a1a4d26b06828a15dff38d4a9d38381008b6",
     "common/scripted_effects/MSGA_encirclement_effects.txt": "e36b8efc1b15317c9b381781890c6be15f15c1c1ddb25e9b2e984541c8509b61",
@@ -118,8 +105,6 @@
     "common/scripted_effects/MSGA_SER_vehicle_effects.txt": "1032ce4e8befe5e033361a67a05a0201b2bdec798a879a3214d1ed89c7848867",
     "common/scripted_effects/MSGA_yugoslav_politics_effects.txt": "cf155bf2583730e00b19f01d0ab29a30518e288b1b01350d439eba74a60c1f92",
     "common/scripted_localisation/MSGA_endgame_scripted_localisation.txt": "16cdcc3de94eadf7e54de83c96b051a898f68077cddb695253436aeb07b003bb",
-    "common/scripted_triggers/00_TFR_scripted_triggers_ZZZ_generic.txt": "8e5dcfd249c2fd6cc25968328b549effb83691eb09ce72819c1266eb001775b2",
-    "common/scripted_triggers/MSGA_balkan_rearmament_triggers.txt": "6efe4e87e5b0f88a5cbb55987ce17351846f2cdd6fbc0244a55226400eb4f470",
     "common/scripted_triggers/MSGA_economic_energy_triggers.txt": "a2ac0c44a6cd9b896c9d1cdeb46aae1f333ba1910a22fa6115b0e79369eeed31",
     "common/scripted_triggers/MSGA_encirclement_triggers.txt": "fde8b30cdb82f5c55beb557721a97b661ca959c01b30d8b3d0b82751913bb574",
     "common/scripted_triggers/MSGA_endgame_triggers.txt": "e4d442ad61424e13e49246e1d2df8d99f81306765adc6d225d97c88fc04678e1",
@@ -127,7 +112,6 @@
     "common/scripted_triggers/MSGA_pact_war_triggers.txt": "c0c932c5156b3968ff07de9ca7579bec0baa12037e6c0c38d8487d0900c7fc2f",
     "common/scripted_triggers/MSGA_SER_triggers.txt": "d26b1a77bb846fa0d4f0a8071db8c5a4db660f7416f5027e979471fc6eb2e421",
     "common/technologies/MSGA_pact_war_technologies.txt": "019fcc8db08f48a3e471407cef4be84fd233a8d6bec9c50c8d8bc4fc019c428c",
-    "common/decisions/categories/MSGA_balkan_procurement_categories.txt": "a07648f8763f95a65bd8e071fdc1a83459ce8d13a6695b30d8b3cfaab110a2f1",
     "common/decisions/categories/MSGA_economic_energy_categories.txt": "f733b5e916a5e5603b19aa8c14b2e4d277018563ee7fea21d291912fa5162f8f",
     "common/decisions/categories/MSGA_endgame_categories.txt": "3b59e6622c055878ac8d92b3722bad2677ed927df33358a01648737734f6920c",
     "common/decisions/categories/MSGA_SER_categories.txt": "1d203e74796d123d49dc2711183a236c1608ebcb8d8dff9b60d0e04a0a2069f8",
@@ -452,31 +436,6 @@
     "gfx/interface/goals/MSGA_prepare_logistics_network.dds": "bf1378794e88525c725d0ae370bc8681e56945c491abb960488305a6d632f423",
     "gfx/interface/goals/MSGA_prepare_southern_command.dds": "26813613a87a920104b081bfaf2f89895847cafc989a67db871ba707fdd42b6e",
     "gfx/interface/goals/MSGA_prepare_the_nation_for_war.dds": "052b604c63918a42a675d8657c924af9d3a0430d53915f7ec7e36a9c71682c89",
-    "gfx/interface/goals/MSGA_rearm_ALB_armed_albania.dds": "8cf5f9d32cdfedce3f411b2c7b4d1184338b616f76315f6f72414a4ce4b0714e",
-    "gfx/interface/goals/MSGA_rearm_ALB_a_vulnerable_nation.dds": "9ce31c749bf39ce16156b3b8a6afadf39394c5981075494ea22a4b05d02a9a95",
-    "gfx/interface/goals/MSGA_rearm_ALB_domestic_ammunition.dds": "d5768cb708cfe9f0f68fe9fae9af368b0d1ffcb926eebc3120ebf145d4f942c0",
-    "gfx/interface/goals/MSGA_rearm_ALB_empty_the_old_depots.dds": "178354b2fb4fb4d551e7b90b16d16f448c40b6ce550080069f31c894c0d5a111",
-    "gfx/interface/goals/MSGA_rearm_ALB_expand_military_workshops.dds": "db977446427cc11c0eee19a4a850c870e1c0c4a811e6a072f77b2cf19434f084",
-    "gfx/interface/goals/MSGA_rearm_ALB_look_to_ankara.dds": "4e02ad7dc57c57476b7953f6677d962796d9b1054604cd3b36be18969706daa6",
-    "gfx/interface/goals/MSGA_rearm_ALB_open_the_surplus_markets.dds": "81c49dcf48b2eceb61444599aa357a0badb8e4715fb5c1fd9eb79d65152ff510",
-    "gfx/interface/goals/MSGA_rearm_ALB_secure_foreign_stockpiles.dds": "c2537d49a551637e4596b467a67564e5e68ab978c7b178c70a1c186b269fc4db",
-    "gfx/interface/goals/MSGA_rearm_ALB_weapons_for_every_battalion.dds": "57f8d3dff2824c2aebf7ebbae378a289176afcdbc9cb9dc83f228e6b5279ef42",
-    "gfx/interface/goals/MSGA_rearm_CRO_aggressive_rearmament.dds": "9e539313b8fb1673d03b0dde10020a5aceffb55f57c830fe2f47ec962dd8a3f3",
-    "gfx/interface/goals/MSGA_rearm_CRO_armoured_modernisation.dds": "cfab59006c9e394cff5816e7263cc5c8890050da0967564fbabbf196ea47627a",
-    "gfx/interface/goals/MSGA_rearm_CRO_a_stable_croatia.dds": "f431ddca4c072713b62cbaa4207ef307ca96213ae797538afcf1445fbc92c7dd",
-    "gfx/interface/goals/MSGA_rearm_CRO_business_as_usual.dds": "f20c64633b3b1847cda875b453e863fc5708a411946ff508adca5fd73458d751",
-    "gfx/interface/goals/MSGA_rearm_CRO_croatia_rearmed.dds": "b3e59b6fc3d57027d3b9b14403c5f8d3f7767b2e688c3bed19026322d19b1616",
-    "gfx/interface/goals/MSGA_rearm_CRO_emergency_defence_budget.dds": "78991c502089e812874b1862f8a6ee6d1ca764bc1032093c2750180a9fe0c19f",
-    "gfx/interface/goals/MSGA_rearm_CRO_expand_hs_produkt.dds": "f7c41aacd6b02d103dce0bef509391a7c46612f385b7450636fdbd339c566989",
-    "gfx/interface/goals/MSGA_rearm_CRO_export_contracts.dds": "0e3e39d3e33370fa477ffc042919621b43dd199e87b89f7f79863c3c2be41d54",
-    "gfx/interface/goals/MSGA_rearm_CRO_maintain_readiness.dds": "bcc0ab3cb12564a0d497a2444d76bd604f25d831035939110a2cfd0823071e99",
-    "gfx/interface/goals/MSGA_rearm_CRO_mass_arms_production.dds": "e17545d4f31d303b12e417a79c31362ecaa86ad784b3a5db1fd91002cf14fcb3",
-    "gfx/interface/goals/MSGA_rearm_CRO_modernise_the_army.dds": "5df80b85ce47a3b6630c8c760dbdc7e59ab37da079baa64a6be14f197573c7ba",
-    "gfx/interface/goals/MSGA_rearm_CRO_prepare_the_reserves.dds": "3fe3e531408884e9f24143a7fd26f2851b1bb0f9af9d5ac22d60d1bcf03d0352",
-    "gfx/interface/goals/MSGA_rearm_CRO_reactivate_duro_dakovic.dds": "0ffe7c28f729fe96f7568997f83cfb8b5a23d23a40da06b19eb7e0f69c9b718c",
-    "gfx/interface/goals/MSGA_rearm_CRO_secure_slavonia.dds": "23bdd01ff1e51672b303a16c1d2cee5c9a10adbd4245d079663036af4360140a",
-    "gfx/interface/goals/MSGA_rearm_CRO_support_hs_produkt.dds": "dec93f5411352f1725a11c9f0bd68db06449d803b8c9e79fee44e012937c8a61",
-    "gfx/interface/goals/MSGA_rearm_CRO_western_procurement.dds": "e3001557d05897163103c74a690132c62d092570817b87b7fbe348d98ce93b73",
     "gfx/interface/goals/MSGA_rebuild_kosovo.dds": "74c4e18c4e1c42daf48b5de780b6d0b9f3c4c5f0d8984466b40302b3bdbd02ec",
     "gfx/interface/goals/MSGA_restore_order_in_kosovo.dds": "7a0afad0b2c5c7d3eed78c833590360a439d18f692295b1993ef9221915bdf74",
     "gfx/interface/goals/MSGA_review_kosovo_administration.dds": "efb3d2fd3e3b4497a9b7237a065554862edd38939d314237dc8aaf9978bbbd26",
@@ -544,10 +503,6 @@
     "gfx/interface/ideas/MSGA_KOS_last_stand.dds": "61cb9737c24996b179d2df0ef35c95a325d3ff6953f486e935216a743fb9e2f2",
     "gfx/interface/ideas/MSGA_nuclear_programme_research.dds": "55ef50f69493354150325b6f12d27a9f0f254116e17ab24203618d59ed13c604",
     "gfx/interface/ideas/MSGA_prepared_for_war.dds": "691f97a58400f0b31d899b55b5b62dbb3bdde4d85f9deb0e4543b47292c95544",
-    "gfx/interface/ideas/MSGA_rearm_ALB_armed_albania_spirit.dds": "cdc499f0e2401d3cacb9a5cbfdf2d373bc2a801f389e18eec25db1637f29790d",
-    "gfx/interface/ideas/MSGA_rearm_ALB_surplus_procurement_network.dds": "d1ce503a421bb88b2a987370b9adf9dccecdb07271049eb6ef9dfca37563234a",
-    "gfx/interface/ideas/MSGA_rearm_CRO_croatian_arms_exports.dds": "ce633c15a7fa7a478039ed20eb351e06f92d02c4c0d538cbe181b705f1ae0794",
-    "gfx/interface/ideas/MSGA_rearm_CRO_croatia_rearmed_spirit.dds": "861287044e1c9816337438b829314a84502e29dc2dff3b97424f7cddea886a24",
     "gfx/interface/ideas/MSGA_renewable_energy_subsidies.dds": "55027f84905ebda3f28cf3759c31647a67320e4b4c7548f50507ff16951a586c",
     "gfx/interface/ideas/MSGA_russian_energy_cooperation.dds": "c1262fc6dd11fdfbb077b6e55aaece7618279bbd02219199dba3d27156141dd1",
     "gfx/interface/ideas/MSGA_russian_heavy_industry_cooperation.dds": "d71296089484cf960ee47bb06ddfa4d1caccc5d4a582674b4c6cee6e36b06651",
@@ -569,8 +524,6 @@
     "gfx/interface/mechanics/MSGA_unprepared_sector.dds": "963df52a20a0fd8599906e20f48c69bbc6c7ae381df58d08fc4cf4b8a83918e6",
     "history/countries/HRZ - Herzegovina.txt": "4345649a35e0847dd810250f01a669997bf13c8588feba4d4bf0d6b4989d825c",
     "history/countries/SRP - Republika Srpska.txt": "21140d751aa3c84fe8f1b78dd5a52f1120884fb7b82090f648bd18e422813bae",
-    "history/states/109-Eastern Croatia.txt": "1a39be9b83a5c8d50d380f6092054cb5cb786e347980327c3a983d8dc0dac042",
-    "history/units/CRO_2020.txt": "49624f99c41cde18bdbd5e267accaa284c76de5a141b6945858f80fc72bf367c",
     "history/units/MSGA_ALB_pact_emergency.txt": "58c22c0067988bdcaddc17830abe8d140012c8698c5d49a205359fe61374b2b4",
     "history/units/MSGA_BOS_auxiliary_militias.txt": "10ebac5c3481bfe520853d669cd9faec100176cb309ccf27037fc61789dda1ba",
     "history/units/MSGA_CRO_pact_emergency.txt": "bb928aeb720e291a63df9b3ec6a7ab8bcded23767889533d870620f9c85ca77e",
@@ -596,7 +549,6 @@
     "history/units/MSGA_SLV_pact_emergency.txt": "33d0329af05937803762540793cdf7749ea7875387b7ec5353c51cd9eec2105f",
     "history/units/MSGA_SRP_empty.txt": "a371dc5244633af03e2a1d951561757a42aa09c55266ccb0da7737a26f0a7447",
     "history/units/MSGA_SRP_guard.txt": "1e931dc0d116bdda2598a248ce4ceec942d9ac90334c819ae985b5791fef0c7f",
-    "localisation/english/MSGA_balkan_rearmament_l_english.yml": "51bd3570578c1fa4022cb9b5cb12f8dc802f662a5ca2fb94a69cd3e844b92896",
     "localisation/english/MSGA_bosnia_l_english.yml": "2963d5c3a1975aad75fafbb28200f34f67c67a82cc8459ee695609162eff0b2f",
     "localisation/english/MSGA_decision_ux_l_english.yml": "21d6cd25119658ee293bedbee7a556c29b71d7f13f9da8143ddf1d80cd472304",
     "localisation/english/MSGA_economic_energy_l_english.yml": "2d476c18591d02f2e3d5d24a81e9dc6f410e0d06f56f5e8b807cc8070382861a",
@@ -610,17 +562,1158 @@
     "localisation/english/MSGA_settlement_l_english.yml": "e36858ef3b35e3e419685743f9105e4f973918f52c7f1ed8c6ad560c4f21d139",
     "localisation/english/MSGA_yugoslav_politics_l_english.yml": "b1afa6d78bd25a225a1937986acdd672a447a121224b5f9a010fe2e56216bafe"
   },
-  "runtime_only_files": [],
-  "all_project_files_match_runtime": true,
-  "launcher_descriptor_matches_project": true,
-  "descriptor_path_verified": "C:/Users/Balazs/Documents/Paradox Interactive/Hearts of Iron IV/mod/make_serbia_great_again",
-  "required_new_focuses_present": [
-    "MSGA_internal_investment_drive",
-    "MSGA_settle_old_political_accounts",
-    "MSGA_secure_the_national_assembly",
-    "MSGA_send_the_migrants_back",
-    "MSGA_serbia_stands_united",
-    "MSGA_reconstitute_serbian_volunteer_guard"
+  "deployed_sha256": {
+    "common/scripted_triggers/00_TFR_scripted_triggers_ZZZ_generic.txt": "8e5dcfd249c2fd6cc25968328b549effb83691eb09ce72819c1266eb001775b2",
+    "common/scripted_triggers/MSGA_balkan_rearmament_triggers.txt": "6efe4e87e5b0f88a5cbb55987ce17351846f2cdd6fbc0244a55226400eb4f470",
+    "common/on_actions/MSGA_balkan_rearmament_on_actions.txt": "c21d3b194332b81249bc121876723ff9cb130af6aed1aa976747d52c4f3e7a0b",
+    "history/states/109-Eastern Croatia.txt": "1a39be9b83a5c8d50d380f6092054cb5cb786e347980327c3a983d8dc0dac042",
+    "history/units/CRO_2020.txt": "49624f99c41cde18bdbd5e267accaa284c76de5a141b6945858f80fc72bf367c",
+    "common/ai_templates/MSGA_CRO_light_infantry.txt": "5c646c4284888feae156daddd10f52a251a6ff9a52f084a67771c132e3109572",
+    "common/national_focus/MSGA_ALB_rearmament.txt": "54d1138fd3ea47e5524da30d8a2fe3ddf0b1402e11db3b6831e3bc25f149aec7",
+    "common/national_focus/MSGA_CRO_rearmament.txt": "b8236aef6ce174352d7ee8c73e4e3952c5e09d755d6069820ff3b9809efeb1e3",
+    "common/decisions/MSGA_balkan_procurement.txt": "60ba0015014f7d620ceae9ce81c1b842944c296af05c5b9c617a3acdd3244865",
+    "common/decisions/categories/MSGA_balkan_procurement_categories.txt": "a07648f8763f95a65bd8e071fdc1a83459ce8d13a6695b30d8b3cfaab110a2f1",
+    "common/scripted_effects/MSGA_balkan_rearmament_effects.txt": "4c4d67a1b2c2fe832357024fecfbea7431f3de564f46ee03752e0a2e95a8eefb",
+    "common/ideas/MSGA_balkan_rearmament_ideas.txt": "e12102e89d17ce3e9a30906d8aea2139a4a37769efdbdede0191f388abf0ecb7",
+    "localisation/english/MSGA_balkan_rearmament_l_english.yml": "51bd3570578c1fa4022cb9b5cb12f8dc802f662a5ca2fb94a69cd3e844b92896",
+    "gfx/interface/goals/MSGA_rearm_ALB_a_vulnerable_nation.dds": "9ce31c749bf39ce16156b3b8a6afadf39394c5981075494ea22a4b05d02a9a95",
+    "gfx/interface/goals/MSGA_rearm_ALB_open_the_surplus_markets.dds": "81c49dcf48b2eceb61444599aa357a0badb8e4715fb5c1fd9eb79d65152ff510",
+    "gfx/interface/goals/MSGA_rearm_ALB_empty_the_old_depots.dds": "178354b2fb4fb4d551e7b90b16d16f448c40b6ce550080069f31c894c0d5a111",
+    "gfx/interface/goals/MSGA_rearm_ALB_expand_military_workshops.dds": "db977446427cc11c0eee19a4a850c870e1c0c4a811e6a072f77b2cf19434f084",
+    "gfx/interface/goals/MSGA_rearm_ALB_domestic_ammunition.dds": "d5768cb708cfe9f0f68fe9fae9af368b0d1ffcb926eebc3120ebf145d4f942c0",
+    "gfx/interface/goals/MSGA_rearm_ALB_weapons_for_every_battalion.dds": "57f8d3dff2824c2aebf7ebbae378a289176afcdbc9cb9dc83f228e6b5279ef42",
+    "gfx/interface/goals/MSGA_rearm_ALB_look_to_ankara.dds": "4e02ad7dc57c57476b7953f6677d962796d9b1054604cd3b36be18969706daa6",
+    "gfx/interface/goals/MSGA_rearm_ALB_secure_foreign_stockpiles.dds": "c2537d49a551637e4596b467a67564e5e68ab978c7b178c70a1c186b269fc4db",
+    "gfx/interface/goals/MSGA_rearm_ALB_armed_albania.dds": "8cf5f9d32cdfedce3f411b2c7b4d1184338b616f76315f6f72414a4ce4b0714e",
+    "gfx/interface/goals/MSGA_rearm_CRO_business_as_usual.dds": "f20c64633b3b1847cda875b453e863fc5708a411946ff508adca5fd73458d751",
+    "gfx/interface/goals/MSGA_rearm_CRO_support_hs_produkt.dds": "dec93f5411352f1725a11c9f0bd68db06449d803b8c9e79fee44e012937c8a61",
+    "gfx/interface/goals/MSGA_rearm_CRO_export_contracts.dds": "0e3e39d3e33370fa477ffc042919621b43dd199e87b89f7f79863c3c2be41d54",
+    "gfx/interface/goals/MSGA_rearm_CRO_maintain_readiness.dds": "bcc0ab3cb12564a0d497a2444d76bd604f25d831035939110a2cfd0823071e99",
+    "gfx/interface/goals/MSGA_rearm_CRO_modernise_the_army.dds": "5df80b85ce47a3b6630c8c760dbdc7e59ab37da079baa64a6be14f197573c7ba",
+    "gfx/interface/goals/MSGA_rearm_CRO_a_stable_croatia.dds": "f431ddca4c072713b62cbaa4207ef307ca96213ae797538afcf1445fbc92c7dd",
+    "gfx/interface/goals/MSGA_rearm_CRO_aggressive_rearmament.dds": "9e539313b8fb1673d03b0dde10020a5aceffb55f57c830fe2f47ec962dd8a3f3",
+    "gfx/interface/goals/MSGA_rearm_CRO_emergency_defence_budget.dds": "78991c502089e812874b1862f8a6ee6d1ca764bc1032093c2750180a9fe0c19f",
+    "gfx/interface/goals/MSGA_rearm_CRO_expand_hs_produkt.dds": "f7c41aacd6b02d103dce0bef509391a7c46612f385b7450636fdbd339c566989",
+    "gfx/interface/goals/MSGA_rearm_CRO_mass_arms_production.dds": "e17545d4f31d303b12e417a79c31362ecaa86ad784b3a5db1fd91002cf14fcb3",
+    "gfx/interface/goals/MSGA_rearm_CRO_reactivate_duro_dakovic.dds": "0ffe7c28f729fe96f7568997f83cfb8b5a23d23a40da06b19eb7e0f69c9b718c",
+    "gfx/interface/goals/MSGA_rearm_CRO_armoured_modernisation.dds": "cfab59006c9e394cff5816e7263cc5c8890050da0967564fbabbf196ea47627a",
+    "gfx/interface/goals/MSGA_rearm_CRO_western_procurement.dds": "e3001557d05897163103c74a690132c62d092570817b87b7fbe348d98ce93b73",
+    "gfx/interface/goals/MSGA_rearm_CRO_prepare_the_reserves.dds": "3fe3e531408884e9f24143a7fd26f2851b1bb0f9af9d5ac22d60d1bcf03d0352",
+    "gfx/interface/goals/MSGA_rearm_CRO_secure_slavonia.dds": "23bdd01ff1e51672b303a16c1d2cee5c9a10adbd4245d079663036af4360140a",
+    "gfx/interface/goals/MSGA_rearm_CRO_croatia_rearmed.dds": "b3e59b6fc3d57027d3b9b14403c5f8d3f7767b2e688c3bed19026322d19b1616",
+    "gfx/interface/ideas/MSGA_rearm_ALB_armed_albania_spirit.dds": "cdc499f0e2401d3cacb9a5cbfdf2d373bc2a801f389e18eec25db1637f29790d",
+    "gfx/interface/ideas/MSGA_rearm_ALB_surplus_procurement_network.dds": "d1ce503a421bb88b2a987370b9adf9dccecdb07271049eb6ef9dfca37563234a",
+    "gfx/interface/ideas/MSGA_rearm_CRO_croatia_rearmed_spirit.dds": "861287044e1c9816337438b829314a84502e29dc2dff3b97424f7cddea886a24",
+    "gfx/interface/ideas/MSGA_rearm_CRO_croatian_arms_exports.dds": "ce633c15a7fa7a478039ed20eb351e06f92d02c4c0d538cbe181b705f1ae0794",
+    "interface/MSGA_balkan_rearmament_assets.gfx": "7dd10641c33fb25be06cc1abb4052dfb4cb63d6c3280f2c53724a8b57fa2826d",
+    "descriptor.mod": "6dc4f7bfe0a2fd595d4288e5e81e787b5a0fa270506fd9576d0b4db71fd93728",
+    "make_serbia_great_again.mod": "df8fba65d0deba16416ee64f3030f3c55151fb5a97d05c1b3c0412243df8c799"
+  },
+  "changed_relative_paths": [
+    "common/ai_templates/MSGA_CRO_light_infantry.txt",
+    "common/decisions/MSGA_balkan_procurement.txt",
+    "common/decisions/categories/MSGA_balkan_procurement_categories.txt",
+    "common/ideas/MSGA_balkan_rearmament_ideas.txt",
+    "common/national_focus/MSGA_ALB_rearmament.txt",
+    "common/national_focus/MSGA_CRO_rearmament.txt",
+    "common/on_actions/MSGA_balkan_rearmament_on_actions.txt",
+    "common/scripted_effects/MSGA_balkan_rearmament_effects.txt",
+    "common/scripted_triggers/00_TFR_scripted_triggers_ZZZ_generic.txt",
+    "common/scripted_triggers/MSGA_balkan_rearmament_triggers.txt",
+    "descriptor.mod",
+    "gfx/interface/goals/MSGA_rearm_ALB_a_vulnerable_nation.dds",
+    "gfx/interface/goals/MSGA_rearm_ALB_armed_albania.dds",
+    "gfx/interface/goals/MSGA_rearm_ALB_domestic_ammunition.dds",
+    "gfx/interface/goals/MSGA_rearm_ALB_empty_the_old_depots.dds",
+    "gfx/interface/goals/MSGA_rearm_ALB_expand_military_workshops.dds",
+    "gfx/interface/goals/MSGA_rearm_ALB_look_to_ankara.dds",
+    "gfx/interface/goals/MSGA_rearm_ALB_open_the_surplus_markets.dds",
+    "gfx/interface/goals/MSGA_rearm_ALB_secure_foreign_stockpiles.dds",
+    "gfx/interface/goals/MSGA_rearm_ALB_weapons_for_every_battalion.dds",
+    "gfx/interface/goals/MSGA_rearm_CRO_a_stable_croatia.dds",
+    "gfx/interface/goals/MSGA_rearm_CRO_aggressive_rearmament.dds",
+    "gfx/interface/goals/MSGA_rearm_CRO_armoured_modernisation.dds",
+    "gfx/interface/goals/MSGA_rearm_CRO_business_as_usual.dds",
+    "gfx/interface/goals/MSGA_rearm_CRO_croatia_rearmed.dds",
+    "gfx/interface/goals/MSGA_rearm_CRO_emergency_defence_budget.dds",
+    "gfx/interface/goals/MSGA_rearm_CRO_expand_hs_produkt.dds",
+    "gfx/interface/goals/MSGA_rearm_CRO_export_contracts.dds",
+    "gfx/interface/goals/MSGA_rearm_CRO_maintain_readiness.dds",
+    "gfx/interface/goals/MSGA_rearm_CRO_mass_arms_production.dds",
+    "gfx/interface/goals/MSGA_rearm_CRO_modernise_the_army.dds",
+    "gfx/interface/goals/MSGA_rearm_CRO_prepare_the_reserves.dds",
+    "gfx/interface/goals/MSGA_rearm_CRO_reactivate_duro_dakovic.dds",
+    "gfx/interface/goals/MSGA_rearm_CRO_secure_slavonia.dds",
+    "gfx/interface/goals/MSGA_rearm_CRO_support_hs_produkt.dds",
+    "gfx/interface/goals/MSGA_rearm_CRO_western_procurement.dds",
+    "gfx/interface/ideas/MSGA_rearm_ALB_armed_albania_spirit.dds",
+    "gfx/interface/ideas/MSGA_rearm_ALB_surplus_procurement_network.dds",
+    "gfx/interface/ideas/MSGA_rearm_CRO_croatia_rearmed_spirit.dds",
+    "gfx/interface/ideas/MSGA_rearm_CRO_croatian_arms_exports.dds",
+    "history/states/109-Eastern Croatia.txt",
+    "history/units/CRO_2020.txt",
+    "interface/MSGA_balkan_rearmament_assets.gfx",
+    "localisation/english/MSGA_balkan_rearmament_l_english.yml",
+    "make_serbia_great_again.mod"
   ],
-  "game_launched": false
+  "deployed_absolute_paths": [
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\ai_templates\\MSGA_CRO_light_infantry.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\decisions\\MSGA_balkan_procurement.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\decisions\\categories\\MSGA_balkan_procurement_categories.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\ideas\\MSGA_balkan_rearmament_ideas.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\national_focus\\MSGA_ALB_rearmament.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\national_focus\\MSGA_CRO_rearmament.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\on_actions\\MSGA_balkan_rearmament_on_actions.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\scripted_effects\\MSGA_balkan_rearmament_effects.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\scripted_triggers\\00_TFR_scripted_triggers_ZZZ_generic.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\common\\scripted_triggers\\MSGA_balkan_rearmament_triggers.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\descriptor.mod",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_ALB_a_vulnerable_nation.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_ALB_armed_albania.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_ALB_domestic_ammunition.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_ALB_empty_the_old_depots.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_ALB_expand_military_workshops.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_ALB_look_to_ankara.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_ALB_open_the_surplus_markets.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_ALB_secure_foreign_stockpiles.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_ALB_weapons_for_every_battalion.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_CRO_a_stable_croatia.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_CRO_aggressive_rearmament.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_CRO_armoured_modernisation.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_CRO_business_as_usual.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_CRO_croatia_rearmed.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_CRO_emergency_defence_budget.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_CRO_expand_hs_produkt.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_CRO_export_contracts.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_CRO_maintain_readiness.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_CRO_mass_arms_production.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_CRO_modernise_the_army.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_CRO_prepare_the_reserves.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_CRO_reactivate_duro_dakovic.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_CRO_secure_slavonia.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_CRO_support_hs_produkt.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\goals\\MSGA_rearm_CRO_western_procurement.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\ideas\\MSGA_rearm_ALB_armed_albania_spirit.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\ideas\\MSGA_rearm_ALB_surplus_procurement_network.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\ideas\\MSGA_rearm_CRO_croatia_rearmed_spirit.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\gfx\\interface\\ideas\\MSGA_rearm_CRO_croatian_arms_exports.dds",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\history\\states\\109-Eastern Croatia.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\history\\units\\CRO_2020.txt",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\interface\\MSGA_balkan_rearmament_assets.gfx",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\localisation\\english\\MSGA_balkan_rearmament_l_english.yml",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again\\make_serbia_great_again.mod",
+    "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again.mod"
+  ],
+  "package": "C:\\Users\\Balazs\\Downloads\\Balkan_Rearmament_TFR_Assets.zip",
+  "package_sha256": "31c8be38ae23da6728e3f00d5cd311d90bbb50139c0809878cc38ef76a5f3461",
+  "native_sources_sha256": {
+    "common/scripted_triggers/00_TFR_scripted_triggers_ZZZ_generic.txt": "d98ddcaaed791ccc42b09d94ea3b6f8de855ec80ba12485b75e1574af130a5f8",
+    "common/ideas/TFR_ideas_ZZZ_mishmash.txt": "20fa7006ff1039caff11acde389a78ef45282545f706304a6f7fdc6502131fc8",
+    "common/on_actions/00_TFR_on_actions_ZZZ_startup.txt": "34225ff44ed66f0b89202b9d40959c094f81ff3e7fb4afae57a97d4e62d6e471",
+    "common/on_actions/00_TFR_on_actions_ZZZ_money.txt": "8f01d4f3bc3eef4c63a18ff93215fdd660e5f003d65e3ce7cb768443e69c8b9b",
+    "common/ai_strategy/TFR_ai_strategy_ZZZ.txt": "d257f147c1b685db0e1c5c478fce524fe22edd0dc482dc6e0e6c37803f01cba5",
+    "common/ai_templates/generic.txt": "233c23c343108765e11f8a57f8283af85882f6a131ee30ac24d91a7aaaca4e09",
+    "common/scripted_effects/00_TFR_scripted_effects_ZZZ_generic.txt": "e6b6273e47d65523585638830aa36f458de4ae52b1f19d115c7444f354f10e84",
+    "common/modifier_definitions/00_TFR_economic_modifiers_definition.txt": "7c93341f9e316c0f6cb9d72ef1b26e19d12d4a3a86d4d78d13986622961648c1",
+    "history/states/109-Eastern Croatia.txt": "46901d28f4b7d716d232ab24600f7081785b45e1a6413167373e71b2683bb8e7",
+    "history/states/103-Dalmatia.txt": "89a10b71b8442561dc42a5b21945571812c2cc0d74f486e7bb211e3d21c61b41",
+    "history/states/44-Albania.txt": "0800bd0577515f9d35d0d00de165c185dc801fb40b2e9bbf941875543354a9fe",
+    "history/units/CRO_2020.txt": "b2fa248699f57af0e92de3cf85acbdc6bb7c4c85dea8e1fd6070a44e12ba55f2",
+    "history/units/ALB_2000.txt": "5468ab71658a3c189b62a39cc003519e18b17103d6234ed543416679ce709b46",
+    "history/countries/GER - Germany.txt": "936ad88defc51cbdf0feea99da9b2aba3a35f9da7c7068e0bccde6aacb97cfe4",
+    "common/units/equipment/infantry.txt": "b27ae8e974b93cb50a781f898dcbfde8c0951f6d7f3c6e4445e3e99c4cec253a",
+    "common/units/equipment/artillery.txt": "d5d28a3a21ce5e69f1ead227370889f0d624089f0bc66c394d84ff107e058a9c",
+    "common/units/equipment/anti_tank.txt": "7772e769034ccdd1821a3154c7dbdcf0e9c2c3caa5818d0363c9fccc8e002b83",
+    "common/units/equipment/mechanized.txt": "b2718c1dee9085853fd922671cbd9f95cd47cc04b7a4c97ecc2d033183c7cf99",
+    "common/units/equipment/motorized.txt": "052a2407c6a4e6bb10291da5013ba2573614d939859e022d750534cb9cb6d5d2",
+    "common/units/equipment/support.txt": "7c95f3285b6daae50d99ca1727af966365484fd1835e3a5ce392137d0ed92307",
+    "common/units/equipment/x_tank_chassis.txt": "7093ed6bfb489dd3dc7104198af91619c5a7c460f2eba873192278ce633703c2",
+    "common/units/infantry.txt": "46faa482003e44d1164f293d31e357c7a851e45fae5930dad32f78339fe7353c",
+    "common/units/artillery.txt": "4ea330d92c4c7818baa034f17afbcdacf6bfd01c57b57c9bd70918d2af701494",
+    "common/technologies/infantry.txt": "50f6c550866a7d0b7e317d58e56f97c04791a6570b5830098e258b8b6a283161",
+    "common/technology_tags/00_technology.txt": "24005ea62be994874d2f9d08aae50f8cea9eb748034f8b3f57e3f59c22f96796",
+    "common/country_tags/00_countries.txt": "385908675807f8fcae593e0247b4d6e71f4bb252bceeb695e13b02f7bfbdde90",
+    "interface/TFR_interface_decisions.gfx": "ee81f6be16691a44e65a24c4d589205de8c67d800424336a55e28ecf14e3e5a7",
+    "interface/decisions.gfx": "1b3290285ece8d99b415262100c52e8b2d29e9dcee4992728f544e1703d287ea",
+    "map/definition.csv": "a23b1bc25eb12040d3f7aa9a1ab462f486646db0feb4199ded510f3beb8608e1",
+    "map/provinces.bmp": "d5a00f9bd0f6e8ea3bc1daf62a81ad84460fcb0642ddf8507c61266cf49ccca0",
+    "history/countries/ALB - Albania.txt": "c24f89a7ba44fe6d677f9a386173043c5afb34f727acdc2f02ec40324c824907",
+    "history/countries/BOS - Bosnia.txt": "e631f3c5bc13bd9ac15ea0ff6dffd3a565932052b2e03ce7bc532dbe63bcc32b",
+    "history/countries/CRO - Croatia.txt": "c7724a2be6e4fe938d952df9591a575dfd286048b2bc1a32162203e78830dc11",
+    "history/countries/KOS - Kosovo.txt": "4867b074368bbd4821901b601c1891628814e89b28674a1282662c07ed304cee",
+    "history/countries/MAC - Macedonia.txt": "1d751e43fa630de9eee0683f536e7894dd7ff21f72343f06661e32c107ed9df3",
+    "history/countries/MNT - Montenegro.txt": "f4716125d4a4a5c1306feb5db474ad080ab7792890862d8b24bbc4a161aa375c",
+    "history/countries/SLV - Slovenia.txt": "1b38f18dc912dcb0c7bf77bae971564d289ca3ef9648abc340fd1d31467b251f"
+  },
+  "assets": {
+    "gfx/interface/goals/MSGA_rearm_ALB_a_vulnerable_nation.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Albania/focus/ALB_a_vulnerable_nation.png",
+      "source_sha256": "7cb31bcb9e7bebd2ce348cb891659287204ed9ee2cdcae9329172328a85a08a9",
+      "sha256": "9ce31c749bf39ce16156b3b8a6afadf39394c5981075494ea22a4b05d02a9a95",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/goals/MSGA_rearm_ALB_open_the_surplus_markets.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Albania/focus/ALB_open_the_surplus_markets.png",
+      "source_sha256": "c24d352c07e99d4aa6dddf83789aaeaba5fee3098d901d66b7143867f98b0d66",
+      "sha256": "81c49dcf48b2eceb61444599aa357a0badb8e4715fb5c1fd9eb79d65152ff510",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/goals/MSGA_rearm_ALB_empty_the_old_depots.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Albania/focus/ALB_empty_the_old_depots.png",
+      "source_sha256": "8cec398edf709135879c4f7b38be852f2aaef9fa19f36c7eb5d53c0394f55b25",
+      "sha256": "178354b2fb4fb4d551e7b90b16d16f448c40b6ce550080069f31c894c0d5a111",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/goals/MSGA_rearm_ALB_expand_military_workshops.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Albania/focus/ALB_expand_military_workshops.png",
+      "source_sha256": "b6748c8cd88494d1d68d0507cc5ddcc2bf792c70fc4d757786e4462cdaba978f",
+      "sha256": "db977446427cc11c0eee19a4a850c870e1c0c4a811e6a072f77b2cf19434f084",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/goals/MSGA_rearm_ALB_domestic_ammunition.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Albania/focus/ALB_domestic_ammunition.png",
+      "source_sha256": "94e58461bccc77b63398e7b7a552282bc58e4dcf40dfa751cd7aca6d37b8cbc8",
+      "sha256": "d5768cb708cfe9f0f68fe9fae9af368b0d1ffcb926eebc3120ebf145d4f942c0",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/goals/MSGA_rearm_ALB_weapons_for_every_battalion.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Albania/focus/ALB_weapons_for_every_battalion.png",
+      "source_sha256": "5464ec0f56f9e67e6a56beee2982b262dc913f7e185f208585e4c81e172fcbf6",
+      "sha256": "57f8d3dff2824c2aebf7ebbae378a289176afcdbc9cb9dc83f228e6b5279ef42",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/goals/MSGA_rearm_ALB_look_to_ankara.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Albania/focus/ALB_look_to_ankara.png",
+      "source_sha256": "fd83f43ba645914115a0fa098300deb6b487b49b6a4a1ab1713ed85f30df00d5",
+      "sha256": "4e02ad7dc57c57476b7953f6677d962796d9b1054604cd3b36be18969706daa6",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/goals/MSGA_rearm_ALB_secure_foreign_stockpiles.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Albania/focus/ALB_secure_foreign_stockpiles.png",
+      "source_sha256": "5e431fd1f85844cee63f4fb475cbd42649bd926a98816c98a489ebdd957a4e68",
+      "sha256": "c2537d49a551637e4596b467a67564e5e68ab978c7b178c70a1c186b269fc4db",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/goals/MSGA_rearm_ALB_armed_albania.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Albania/focus/ALB_armed_albania.png",
+      "source_sha256": "340b5415b21370d1e5df4207f29fcafcad26cf2f2ca1249dfc6398e2f461e0a4",
+      "sha256": "8cf5f9d32cdfedce3f411b2c7b4d1184338b616f76315f6f72414a4ce4b0714e",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/goals/MSGA_rearm_CRO_business_as_usual.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Croatia/focus/CRO_business_as_usual.png",
+      "source_sha256": "cab9066b1b285f6242b2b39fe47b93df7853a6c3598a8b65d33d556ee8e019a2",
+      "sha256": "f20c64633b3b1847cda875b453e863fc5708a411946ff508adca5fd73458d751",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/goals/MSGA_rearm_CRO_support_hs_produkt.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Croatia/focus/CRO_support_hs_produkt.png",
+      "source_sha256": "80facf7a1c455bf23e32648e5b711f527b49ab1e3fd215388c8f630975284d85",
+      "sha256": "dec93f5411352f1725a11c9f0bd68db06449d803b8c9e79fee44e012937c8a61",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/goals/MSGA_rearm_CRO_export_contracts.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Croatia/focus/CRO_export_contracts.png",
+      "source_sha256": "683dd55e6271f71728f2916854161574d28a15a5e8130cb695b51a961c89e400",
+      "sha256": "0e3e39d3e33370fa477ffc042919621b43dd199e87b89f7f79863c3c2be41d54",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/goals/MSGA_rearm_CRO_maintain_readiness.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Croatia/focus/CRO_maintain_readiness.png",
+      "source_sha256": "181a434952d9021b1f8ce9dcb08dc5121b7faec32de39fe2e3c07095eb47a4ff",
+      "sha256": "bcc0ab3cb12564a0d497a2444d76bd604f25d831035939110a2cfd0823071e99",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/goals/MSGA_rearm_CRO_modernise_the_army.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Croatia/focus/CRO_modernise_the_army.png",
+      "source_sha256": "1d2b7f96aa24510f2d504dd4e5e1b4219b901f940fe69ececb2d62979e568960",
+      "sha256": "5df80b85ce47a3b6630c8c760dbdc7e59ab37da079baa64a6be14f197573c7ba",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/goals/MSGA_rearm_CRO_a_stable_croatia.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Croatia/focus/CRO_a_stable_croatia.png",
+      "source_sha256": "0e5b0d169f4ba0c5a524bdb219db3abe320234140bdb462ef58a1c77c2905884",
+      "sha256": "f431ddca4c072713b62cbaa4207ef307ca96213ae797538afcf1445fbc92c7dd",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/goals/MSGA_rearm_CRO_aggressive_rearmament.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Croatia/focus/CRO_aggressive_rearmament.png",
+      "source_sha256": "db6bd2a5392e99981e592e78fe37e3eee4569e0833c4b3a2f9db731ab2bac52f",
+      "sha256": "9e539313b8fb1673d03b0dde10020a5aceffb55f57c830fe2f47ec962dd8a3f3",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/goals/MSGA_rearm_CRO_emergency_defence_budget.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Croatia/focus/CRO_emergency_defence_budget.png",
+      "source_sha256": "44a5e47e8b65733bc74be98eab5df63bb0475939bf401558cccfbd2a8e304efa",
+      "sha256": "78991c502089e812874b1862f8a6ee6d1ca764bc1032093c2750180a9fe0c19f",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/goals/MSGA_rearm_CRO_expand_hs_produkt.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Croatia/focus/CRO_expand_hs_produkt.png",
+      "source_sha256": "8bc5627545d38ca56ebf3ac26e09d8a3b6e196464cd73902cf72304ef3d52e2f",
+      "sha256": "f7c41aacd6b02d103dce0bef509391a7c46612f385b7450636fdbd339c566989",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/goals/MSGA_rearm_CRO_mass_arms_production.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Croatia/focus/CRO_mass_arms_production.png",
+      "source_sha256": "b18f508f4756e2ca9b13471f5b4d25e0548ab31517a2063b9986d36816909bd5",
+      "sha256": "e17545d4f31d303b12e417a79c31362ecaa86ad784b3a5db1fd91002cf14fcb3",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/goals/MSGA_rearm_CRO_reactivate_duro_dakovic.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Croatia/focus/CRO_reactivate_duro_dakovic.png",
+      "source_sha256": "64d99a6d723c83122eab8694bba6461804d348dcb89c25bb5daec4ff3ae5de6c",
+      "sha256": "0ffe7c28f729fe96f7568997f83cfb8b5a23d23a40da06b19eb7e0f69c9b718c",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/goals/MSGA_rearm_CRO_armoured_modernisation.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Croatia/focus/CRO_armoured_modernisation.png",
+      "source_sha256": "5b65808bd42e17c44a60aa2bf35855fdedf14e13174e63c10b515350aea05efc",
+      "sha256": "cfab59006c9e394cff5816e7263cc5c8890050da0967564fbabbf196ea47627a",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/goals/MSGA_rearm_CRO_western_procurement.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Croatia/focus/CRO_western_procurement.png",
+      "source_sha256": "97a07e6098153f102f2f4d0fb942669775bd445ad761074a6c064d7e0b5b914f",
+      "sha256": "e3001557d05897163103c74a690132c62d092570817b87b7fbe348d98ce93b73",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/goals/MSGA_rearm_CRO_prepare_the_reserves.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Croatia/focus/CRO_prepare_the_reserves.png",
+      "source_sha256": "77e461581f30693ef7299b34f925e682c6d1fc53e05040f821a49ce748a0ba7a",
+      "sha256": "3fe3e531408884e9f24143a7fd26f2851b1bb0f9af9d5ac22d60d1bcf03d0352",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/goals/MSGA_rearm_CRO_secure_slavonia.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Croatia/focus/CRO_secure_slavonia.png",
+      "source_sha256": "c0d8ccd6db8204be2c74cf942aa8c379e0750f10f5b4aff694a9ded69495d484",
+      "sha256": "23bdd01ff1e51672b303a16c1d2cee5c9a10adbd4245d079663036af4360140a",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/goals/MSGA_rearm_CRO_croatia_rearmed.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/Croatia/focus/CRO_croatia_rearmed.png",
+      "source_sha256": "faa04799148ba0d7224790226fc7ecdcc61e55d4a93ed03a0b6b491a39c96b05",
+      "sha256": "b3e59b6fc3d57027d3b9b14403c5f8d3f7767b2e688c3bed19026322d19b1616",
+      "size": [
+        95,
+        85
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/ideas/MSGA_rearm_ALB_armed_albania_spirit.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/National_Spirits/ALB_armed_albania_spirit.png",
+      "source_sha256": "87c58f4a1cc4bf09bb2a72c79b709f2a657207baa1c52e402078a756641193be",
+      "sha256": "cdc499f0e2401d3cacb9a5cbfdf2d373bc2a801f389e18eec25db1637f29790d",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/ideas/MSGA_rearm_ALB_surplus_procurement_network.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/National_Spirits/ALB_surplus_procurement_network.png",
+      "source_sha256": "5f6a638a2e317e2d410daa4ed706f56e8340828746537c373523defb57206a83",
+      "sha256": "d1ce503a421bb88b2a987370b9adf9dccecdb07271049eb6ef9dfca37563234a",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/ideas/MSGA_rearm_CRO_croatia_rearmed_spirit.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/National_Spirits/CRO_croatia_rearmed_spirit.png",
+      "source_sha256": "e960c78825cfea2c2da80898e1d0093d3bba5c93b7f0e68c74e22199503921d3",
+      "sha256": "861287044e1c9816337438b829314a84502e29dc2dff3b97424f7cddea886a24",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5"
+    },
+    "gfx/interface/ideas/MSGA_rearm_CRO_croatian_arms_exports.dds": {
+      "source_member": "Balkan_Rearmament_TFR_Assets/National_Spirits/CRO_croatian_arms_exports.png",
+      "source_sha256": "707294c9b6106bf97cb8304c025d932f2697e317f2b9fca0adf81d327bac8a25",
+      "sha256": "ce633c15a7fa7a478039ed20eb351e06f92d02c4c0d538cbe181b705f1ae0794",
+      "size": [
+        64,
+        64
+      ],
+      "compression": "DXT5"
+    }
+  },
+  "focuses": [
+    {
+      "id": "MSGA_ALB_a_vulnerable_nation",
+      "tag": "ALB",
+      "days": 21,
+      "parents": [],
+      "native_direct_reward": "add_war_support = 0.05 add_political_power = 25 army_experience = 5 set_temp_variable = { var = income_var_temp value = 1 } add_income = yes",
+      "contracts_unlocked": [
+        "Purchase Old Eastern Rifles"
+      ]
+    },
+    {
+      "id": "MSGA_ALB_open_the_surplus_markets",
+      "tag": "ALB",
+      "days": 28,
+      "parents": [
+        "MSGA_ALB_a_vulnerable_nation"
+      ],
+      "native_direct_reward": "add_ideas = MSGA_ALB_surplus_procurement_network",
+      "contracts_unlocked": [
+        "Acquire Old Mortars",
+        "Buy Used Military Trucks"
+      ]
+    },
+    {
+      "id": "MSGA_ALB_empty_the_old_depots",
+      "tag": "ALB",
+      "days": 28,
+      "parents": [
+        "MSGA_ALB_open_the_surplus_markets"
+      ],
+      "native_direct_reward": "add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1500 producer = SOV } add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 60 producer = SOV } add_equipment_to_stockpile = { type = support_equipment_1 amount = 75 producer = ALB }",
+      "contracts_unlocked": []
+    },
+    {
+      "id": "MSGA_ALB_expand_military_workshops",
+      "tag": "ALB",
+      "days": 35,
+      "parents": [
+        "MSGA_ALB_a_vulnerable_nation"
+      ],
+      "native_direct_reward": "44 = { if = { limit = { is_owned_by = ALB is_fully_controlled_by = ALB arms_factory < 20 }\n set_temp_variable = { var = MSGA_rearm_build_before value = building_level@arms_factory }\n set_temp_variable = { var = MSGA_rearm_build_expected value = MSGA_rearm_build_before } add_to_temp_variable = { var = MSGA_rearm_build_expected value = 1 }\n add_extra_state_shared_building_slots = 1\n if = { limit = { free_building_slots = { building = arms_factory size > 0 include_locked = yes } } add_building_construction = { type = arms_factory level = 1 instant_build = yes } }\n set_temp_variable = { var = MSGA_rearm_build_after value = building_level@arms_factory }\n if = { limit = { check_variable = { var = MSGA_rearm_build_after value = MSGA_rearm_build_expected compare = equals } } log = \"[MSGA REARM] ALB military factory verified in state 44\" }\n else = { add_extra_state_shared_building_slots = -1 log = \"[MSGA REARM] ALB military factory rejected in state 44\" } } } add_timed_idea = { idea = MSGA_ALB_workshop_expansion days = 180 }",
+      "contracts_unlocked": []
+    },
+    {
+      "id": "MSGA_ALB_domestic_ammunition",
+      "tag": "ALB",
+      "days": 35,
+      "parents": [
+        "MSGA_ALB_expand_military_workshops"
+      ],
+      "native_direct_reward": "add_timed_idea = { idea = MSGA_ALB_domestic_ammunition days = 180 } add_equipment_to_stockpile = { type = support_equipment_1 amount = 25 producer = ALB }",
+      "contracts_unlocked": []
+    },
+    {
+      "id": "MSGA_ALB_weapons_for_every_battalion",
+      "tag": "ALB",
+      "days": 35,
+      "parents": [
+        "MSGA_ALB_empty_the_old_depots",
+        "MSGA_ALB_domestic_ammunition"
+      ],
+      "native_direct_reward": "add_ideas = MSGA_ALB_battalion_readiness",
+      "contracts_unlocked": []
+    },
+    {
+      "id": "MSGA_ALB_look_to_ankara",
+      "tag": "ALB",
+      "days": 35,
+      "parents": [
+        "MSGA_ALB_weapons_for_every_battalion"
+      ],
+      "native_direct_reward": "",
+      "contracts_unlocked": [
+        "Turkish Small Arms Contract",
+        "Purchase Turkish Armoured Vehicles"
+      ]
+    },
+    {
+      "id": "MSGA_ALB_secure_foreign_stockpiles",
+      "tag": "ALB",
+      "days": 35,
+      "parents": [
+        "MSGA_ALB_weapons_for_every_battalion"
+      ],
+      "native_direct_reward": "set_temp_variable = { var = income_var_temp value = 0.5 } add_income = yes",
+      "contracts_unlocked": [
+        "Acquire Modern AT Weapons"
+      ]
+    },
+    {
+      "id": "MSGA_ALB_armed_albania",
+      "tag": "ALB",
+      "days": 35,
+      "parents": [
+        "MSGA_ALB_look_to_ankara",
+        "MSGA_ALB_secure_foreign_stockpiles"
+      ],
+      "native_direct_reward": "remove_ideas = MSGA_ALB_battalion_readiness add_ideas = MSGA_ALB_armed_albania",
+      "contracts_unlocked": []
+    },
+    {
+      "id": "MSGA_CRO_business_as_usual",
+      "tag": "CRO",
+      "days": 35,
+      "parents": [],
+      "native_direct_reward": "add_political_power = 40 add_stability = 0.02 add_timed_idea = { idea = MSGA_CRO_business_confidence days = 180 }",
+      "contracts_unlocked": []
+    },
+    {
+      "id": "MSGA_CRO_support_hs_produkt",
+      "tag": "CRO",
+      "days": 35,
+      "parents": [
+        "MSGA_CRO_business_as_usual"
+      ],
+      "native_direct_reward": "109 = { add_extra_state_shared_building_slots = 1 } add_ideas = MSGA_CRO_hs_produkt_support",
+      "contracts_unlocked": []
+    },
+    {
+      "id": "MSGA_CRO_export_contracts",
+      "tag": "CRO",
+      "days": 35,
+      "parents": [
+        "MSGA_CRO_support_hs_produkt"
+      ],
+      "native_direct_reward": "add_ideas = MSGA_CRO_arms_exports",
+      "contracts_unlocked": []
+    },
+    {
+      "id": "MSGA_CRO_maintain_readiness",
+      "tag": "CRO",
+      "days": 35,
+      "parents": [
+        "MSGA_CRO_business_as_usual"
+      ],
+      "native_direct_reward": "army_experience = 5 add_war_support = 0.025 add_ideas = MSGA_CRO_training_readiness",
+      "contracts_unlocked": []
+    },
+    {
+      "id": "MSGA_CRO_modernise_the_army",
+      "tag": "CRO",
+      "days": 35,
+      "parents": [
+        "MSGA_CRO_maintain_readiness"
+      ],
+      "native_direct_reward": "add_equipment_to_stockpile = { type = support_equipment_1 amount = 50 producer = CRO } add_tech_bonus = { name = MSGA_CRO_infantry_research bonus = 0.5 uses = 1 category = infantry_weapons }",
+      "contracts_unlocked": []
+    },
+    {
+      "id": "MSGA_CRO_a_stable_croatia",
+      "tag": "CRO",
+      "days": 28,
+      "parents": [
+        "MSGA_CRO_export_contracts",
+        "MSGA_CRO_modernise_the_army"
+      ],
+      "native_direct_reward": "add_stability = 0.05 add_ideas = MSGA_CRO_stable_industry",
+      "contracts_unlocked": []
+    },
+    {
+      "id": "MSGA_CRO_aggressive_rearmament",
+      "tag": "CRO",
+      "days": 21,
+      "parents": [],
+      "native_direct_reward": "add_war_support = 0.10",
+      "contracts_unlocked": []
+    },
+    {
+      "id": "MSGA_CRO_emergency_defence_budget",
+      "tag": "CRO",
+      "days": 28,
+      "parents": [
+        "MSGA_CRO_aggressive_rearmament"
+      ],
+      "native_direct_reward": "109 = { if = { limit = { is_owned_by = CRO is_fully_controlled_by = CRO arms_factory < 20 }\n set_temp_variable = { var = MSGA_rearm_build_before value = building_level@arms_factory }\n set_temp_variable = { var = MSGA_rearm_build_expected value = MSGA_rearm_build_before } add_to_temp_variable = { var = MSGA_rearm_build_expected value = 1 }\n add_extra_state_shared_building_slots = 2\n if = { limit = { free_building_slots = { building = arms_factory size > 0 include_locked = yes } } add_building_construction = { type = arms_factory level = 1 instant_build = yes } }\n set_temp_variable = { var = MSGA_rearm_build_after value = building_level@arms_factory }\n if = { limit = { check_variable = { var = MSGA_rearm_build_after value = MSGA_rearm_build_expected compare = equals } } log = \"[MSGA REARM] CRO military factory verified in state 109\" }\n else = { add_extra_state_shared_building_slots = -2 log = \"[MSGA REARM] CRO military factory rejected in state 109\" } } } add_timed_idea = { idea = MSGA_CRO_emergency_construction days = 180 }",
+      "contracts_unlocked": []
+    },
+    {
+      "id": "MSGA_CRO_expand_hs_produkt",
+      "tag": "CRO",
+      "days": 35,
+      "parents": [
+        "MSGA_CRO_emergency_defence_budget"
+      ],
+      "native_direct_reward": "109 = { if = { limit = { is_owned_by = CRO is_fully_controlled_by = CRO arms_factory < 20 }\n set_temp_variable = { var = MSGA_rearm_build_before value = building_level@arms_factory }\n set_temp_variable = { var = MSGA_rearm_build_expected value = MSGA_rearm_build_before } add_to_temp_variable = { var = MSGA_rearm_build_expected value = 1 }\n \n if = { limit = { free_building_slots = { building = arms_factory size > 0 include_locked = yes } } add_building_construction = { type = arms_factory level = 1 instant_build = yes } }\n set_temp_variable = { var = MSGA_rearm_build_after value = building_level@arms_factory }\n if = { limit = { check_variable = { var = MSGA_rearm_build_after value = MSGA_rearm_build_expected compare = equals } } log = \"[MSGA REARM] CRO military factory verified in state 109\" }\n else = {  log = \"[MSGA REARM] CRO military factory rejected in state 109\" } } } add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 1200 producer = CRO }",
+      "contracts_unlocked": []
+    },
+    {
+      "id": "MSGA_CRO_mass_arms_production",
+      "tag": "CRO",
+      "days": 35,
+      "parents": [
+        "MSGA_CRO_expand_hs_produkt"
+      ],
+      "native_direct_reward": "add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 2200 producer = CRO } add_equipment_to_stockpile = { type = support_equipment_1 amount = 120 producer = CRO } add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 60 producer = CRO }",
+      "contracts_unlocked": []
+    },
+    {
+      "id": "MSGA_CRO_reactivate_duro_dakovic",
+      "tag": "CRO",
+      "days": 35,
+      "parents": [
+        "MSGA_CRO_emergency_defence_budget"
+      ],
+      "native_direct_reward": "109 = { if = { limit = { is_owned_by = CRO is_fully_controlled_by = CRO arms_factory < 20 }\n set_temp_variable = { var = MSGA_rearm_build_before value = building_level@arms_factory }\n set_temp_variable = { var = MSGA_rearm_build_expected value = MSGA_rearm_build_before } add_to_temp_variable = { var = MSGA_rearm_build_expected value = 1 }\n \n if = { limit = { free_building_slots = { building = arms_factory size > 0 include_locked = yes } } add_building_construction = { type = arms_factory level = 1 instant_build = yes } }\n set_temp_variable = { var = MSGA_rearm_build_after value = building_level@arms_factory }\n if = { limit = { check_variable = { var = MSGA_rearm_build_after value = MSGA_rearm_build_expected compare = equals } } log = \"[MSGA REARM] CRO military factory verified in state 109\" }\n else = {  log = \"[MSGA REARM] CRO military factory rejected in state 109\" } } } add_tech_bonus = { name = MSGA_CRO_armour_research bonus = 0.5 uses = 1 category = armor }",
+      "contracts_unlocked": []
+    },
+    {
+      "id": "MSGA_CRO_armoured_modernisation",
+      "tag": "CRO",
+      "days": 35,
+      "parents": [
+        "MSGA_CRO_reactivate_duro_dakovic"
+      ],
+      "native_direct_reward": "",
+      "contracts_unlocked": [
+        "American IFV Package",
+        "German Armour Contract"
+      ]
+    },
+    {
+      "id": "MSGA_CRO_western_procurement",
+      "tag": "CRO",
+      "days": 35,
+      "parents": [
+        "MSGA_CRO_mass_arms_production",
+        "MSGA_CRO_armoured_modernisation"
+      ],
+      "native_direct_reward": "add_timed_idea = { idea = MSGA_CRO_western_procurement_support days = 180 }",
+      "contracts_unlocked": [
+        "NATO Small Arms Package",
+        "European Artillery Contract",
+        "Modern AT Package"
+      ]
+    },
+    {
+      "id": "MSGA_CRO_prepare_the_reserves",
+      "tag": "CRO",
+      "days": 28,
+      "parents": [
+        "MSGA_CRO_western_procurement"
+      ],
+      "native_direct_reward": "add_ideas = MSGA_CRO_reserve_preparation",
+      "contracts_unlocked": []
+    },
+    {
+      "id": "MSGA_CRO_secure_slavonia",
+      "tag": "CRO",
+      "days": 28,
+      "parents": [
+        "MSGA_CRO_western_procurement"
+      ],
+      "native_direct_reward": "109 = { if = { limit = { infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } add_building_construction = { type = bunker level = 2 province = 3627 instant_build = yes } }",
+      "contracts_unlocked": []
+    },
+    {
+      "id": "MSGA_CRO_croatia_rearmed",
+      "tag": "CRO",
+      "days": 35,
+      "parents": [
+        "MSGA_CRO_prepare_the_reserves",
+        "MSGA_CRO_secure_slavonia"
+      ],
+      "native_direct_reward": "add_ideas = MSGA_CRO_rearmed",
+      "contracts_unlocked": []
+    }
+  ],
+  "contracts": [
+    [
+      "ALB",
+      "purchase_old_eastern_rifles",
+      "Purchase Old Eastern Rifles",
+      0.4,
+      10,
+      "a_vulnerable_nation",
+      [
+        [
+          "infantry_equipment_1",
+          1800,
+          "SOV"
+        ]
+      ],
+      "generic_military"
+    ],
+    [
+      "ALB",
+      "acquire_old_mortars",
+      "Acquire Old Mortars",
+      0.5,
+      14,
+      "open_the_surplus_markets",
+      [
+        [
+          "artillery_equipment_1",
+          60,
+          "SOV"
+        ],
+        [
+          "support_equipment_1",
+          40,
+          "ALB"
+        ]
+      ],
+      "generic_military_support"
+    ],
+    [
+      "ALB",
+      "buy_used_military_trucks",
+      "Buy Used Military Trucks",
+      0.6,
+      14,
+      "open_the_surplus_markets",
+      [
+        [
+          "motorized_equipment_1",
+          120,
+          "SOV"
+        ]
+      ],
+      "generic_trucks"
+    ],
+    [
+      "ALB",
+      "turkish_small_arms_contract",
+      "Turkish Small Arms Contract",
+      0.9,
+      21,
+      "look_to_ankara",
+      [
+        [
+          "infantry_equipment_3",
+          1600,
+          "TUR"
+        ],
+        [
+          "support_equipment_1",
+          60,
+          "TUR"
+        ]
+      ],
+      "generic_military"
+    ],
+    [
+      "ALB",
+      "acquire_modern_at_weapons",
+      "Acquire Modern AT Weapons",
+      1.1,
+      21,
+      "secure_foreign_stockpiles",
+      [
+        [
+          "anti_tank_equipment_2",
+          120,
+          "TUR"
+        ]
+      ],
+      "generic_military_support"
+    ],
+    [
+      "ALB",
+      "purchase_turkish_armoured_vehicles",
+      "Purchase Turkish Armoured Vehicles",
+      1.4,
+      30,
+      "look_to_ankara",
+      [
+        [
+          "light_mechanized_equipment_2",
+          60,
+          "TUR"
+        ]
+      ],
+      "generic_tank"
+    ],
+    [
+      "CRO",
+      "nato_small_arms_package",
+      "NATO Small Arms Package",
+      1.2,
+      21,
+      "western_procurement",
+      [
+        [
+          "infantry_equipment_3",
+          1800,
+          "USA"
+        ],
+        [
+          "support_equipment_1",
+          80,
+          "USA"
+        ]
+      ],
+      "generic_military"
+    ],
+    [
+      "CRO",
+      "european_artillery_contract",
+      "European Artillery Contract",
+      1.4,
+      24,
+      "western_procurement",
+      [
+        [
+          "artillery_equipment_2",
+          96,
+          "GER"
+        ]
+      ],
+      "generic_military_support"
+    ],
+    [
+      "CRO",
+      "american_ifv_package",
+      "American IFV Package",
+      2.4,
+      35,
+      "armoured_modernisation",
+      [
+        [
+          "mechanized_equipment_2",
+          70,
+          "USA"
+        ]
+      ],
+      "generic_tank"
+    ],
+    [
+      "CRO",
+      "german_armour_contract",
+      "German Armour Contract",
+      2.8,
+      45,
+      "armoured_modernisation",
+      [
+        [
+          "modern_tank_equipment_3",
+          40,
+          "GER"
+        ]
+      ],
+      "generic_tank"
+    ],
+    [
+      "CRO",
+      "modern_at_package",
+      "Modern AT Package",
+      1.1,
+      21,
+      "western_procurement",
+      [
+        [
+          "anti_tank_equipment_2",
+          120,
+          "USA"
+        ]
+      ],
+      "generic_military_support"
+    ]
+  ],
+  "ideas": {
+    "ALB_surplus_procurement_network": [
+      "Surplus Procurement Network",
+      "ALB_surplus_procurement_network",
+      {
+        "income_growth_factor": 0.01,
+        "business_value_factor": 0.02,
+        "industrial_capacity_factory": 0.02
+      }
+    ],
+    "ALB_armed_albania": [
+      "Armed Albania",
+      "ALB_armed_albania_spirit",
+      {
+        "army_defence_factor": 0.05,
+        "army_org_factor": 0.05,
+        "mobilization_speed": 0.05
+      }
+    ],
+    "ALB_workshop_expansion": [
+      "Military Workshop Expansion",
+      "ALB_surplus_procurement_network",
+      {
+        "production_speed_arms_factory_factor": 0.05
+      }
+    ],
+    "ALB_domestic_ammunition": [
+      "Domestic Ammunition",
+      "ALB_surplus_procurement_network",
+      {
+        "industrial_capacity_factory": 0.05
+      }
+    ],
+    "ALB_battalion_readiness": [
+      "Weapons for Every Battalion",
+      "ALB_armed_albania_spirit",
+      {
+        "army_org_factor": 0.05,
+        "land_reinforce_rate": 0.05
+      }
+    ],
+    "CRO_business_confidence": [
+      "Business Confidence",
+      "CRO_croatian_arms_exports",
+      {
+        "income_growth_factor": 0.01
+      }
+    ],
+    "CRO_hs_produkt_support": [
+      "Support for HS Produkt",
+      "CRO_croatian_arms_exports",
+      {
+        "industrial_capacity_factory": 0.02
+      }
+    ],
+    "CRO_arms_exports": [
+      "Croatian Arms Exports",
+      "CRO_croatian_arms_exports",
+      {
+        "industrial_capacity_factory": 0.03,
+        "income_growth_factor": 0.02,
+        "business_value_factor": 0.05
+      }
+    ],
+    "CRO_training_readiness": [
+      "Training Readiness",
+      "CRO_croatia_rearmed_spirit",
+      {
+        "training_time_army_factor": -0.05
+      }
+    ],
+    "CRO_stable_industry": [
+      "A Stable Croatia",
+      "CRO_croatian_arms_exports",
+      {
+        "industrial_capacity_factory": 0.03
+      }
+    ],
+    "CRO_emergency_construction": [
+      "Emergency Defence Construction",
+      "CRO_croatian_arms_exports",
+      {
+        "production_speed_arms_factory_factor": 0.05
+      }
+    ],
+    "CRO_western_procurement_support": [
+      "Western Procurement Support",
+      "CRO_croatian_arms_exports",
+      {
+        "income_growth_factor": 0.01
+      }
+    ],
+    "CRO_reserve_preparation": [
+      "Reserve Preparation",
+      "CRO_croatia_rearmed_spirit",
+      {
+        "recruitable_population_factor": 0.05,
+        "mobilization_speed": 0.1
+      }
+    ],
+    "CRO_rearmed": [
+      "Croatia Rearmed",
+      "CRO_croatia_rearmed_spirit",
+      {
+        "industrial_capacity_factory": 0.075,
+        "army_org_factor": 0.05,
+        "army_defence_factor": 0.05,
+        "production_factory_max_efficiency_factor": 0.05
+      }
+    ]
+  },
+  "AI_target_research_slots": {
+    "SLV": 4,
+    "CRO": 4,
+    "BOS": 3,
+    "MNT": 3,
+    "KOS": 3,
+    "ALB": 3,
+    "MAC": 3
+  },
+  "AI_native_trigger_addition": "\t\ttag = SLV\n\t\ttag = CRO\n\t\ttag = BOS\n\t\ttag = MNT\n\t\ttag = KOS\n\t\ttag = ALB\n\t\ttag = MAC",
+  "Croatia_Proper_state": 109,
+  "native_factory_in_Croatia_Proper": 0,
+  "new_factories_in_Croatia_Proper": 2,
+  "national_starting_factories": 3,
+  "Slavonia_fort_province": 3627,
+  "Slavonia_geometry": [
+    {
+      "province": 6672,
+      "centre_xy": [
+        3063.4,
+        603.0
+      ]
+    },
+    {
+      "province": 624,
+      "centre_xy": [
+        3066.7,
+        618.4
+      ]
+    },
+    {
+      "province": 3592,
+      "centre_xy": [
+        3052.4,
+        618.5
+      ]
+    },
+    {
+      "province": 3596,
+      "centre_xy": [
+        3060.0,
+        623.1
+      ]
+    },
+    {
+      "province": 3627,
+      "centre_xy": [
+        3086.1,
+        617.9
+      ]
+    },
+    {
+      "province": 9595,
+      "centre_xy": [
+        3079.5,
+        623.9
+      ]
+    },
+    {
+      "province": 9611,
+      "centre_xy": [
+        3056.3,
+        606.3
+      ]
+    },
+    {
+      "province": 11581,
+      "centre_xy": [
+        3055.4,
+        611.6
+      ]
+    },
+    {
+      "province": 11594,
+      "centre_xy": [
+        3074.3,
+        613.4
+      ]
+    },
+    {
+      "province": 13258,
+      "centre_xy": [
+        3065.1,
+        608.4
+      ]
+    }
+  ],
+  "CRO_template": {
+    "internal_name": "Croatian Light Infantry",
+    "localisation_key": "MSGA_CRO_light_infantry",
+    "definition": "division_template = { name = \"Croatian Light Infantry\" regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } artillery_brigade = { x = 1 y = 0 } } support = { } }",
+    "free_divisions_spawned": 0
+  },
+  "contract_NSBack_armour": {
+    "type": "modern_tank_chassis_1",
+    "variant_name": "Leopard 2A5",
+    "producer": "GER",
+    "amount": 40
+  },
+  "native_API_adaptations": {
+    "Treasury": "income_var_temp / add_income",
+    "Monthly_income": "income_growth_factor",
+    "Business_value": "business_value_factor",
+    "purchase_discount": "fixed negotiated contract prices; no unsupported generic discount",
+    "specific_production": "modest general output rather than unproven equipment-specific modifiers"
+  },
+  "actual_engine_validation": "NOT RUN: game/saves reserved by user. Static/model smoke checks only."
 }

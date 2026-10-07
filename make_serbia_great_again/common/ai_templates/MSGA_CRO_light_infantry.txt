@@ -1,0 +1,1 @@
+MSGA_CRO_light_infantry = { available_for = { CRO } role = infantry upgrade_prio = { factor = 5 modifier = { factor = 2 num_of_military_factories < 8 } } MSGA_CRO_light_infantry_target = { upgrade_prio = { factor = 5 } can_upgrade_in_field = { always = no } target_template = { regiments = { infantry = 2 artillery_brigade = 1 } support = { } } target_min_match = 0.9 } }
