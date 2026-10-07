@@ -3,12 +3,12 @@ MSGA_kosovo_integration = {
   icon = MSGA_integrate_kosovo_serb_militias
   allowed = { tag = SER }
   visible = { has_country_flag = MSGA_kosovo_fully_integrated NOT = { has_country_flag = MSGA_kosovo_brigade_raised } }
-  available = { country_exists = SER has_country_flag = MSGA_kosovo_resolution_done NOT = { has_country_flag = MSGA_kosovo_war_active } 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER } 785 = { is_core_of = SER } 1305 = { is_core_of = SER } }
+  available = { custom_trigger_tooltip = { tooltip = MSGA_integrate_kosovo_serb_militias_ux_requirements_tt hidden_trigger = {  country_exists = SER has_country_flag = MSGA_kosovo_resolution_done NOT = { has_country_flag = MSGA_kosovo_war_active } 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER } 785 = { is_core_of = SER } 1305 = { is_core_of = SER }  } } }
   cost = 0
   custom_cost_text = MSGA_cost_2B
-  custom_cost_trigger = { check_variable = { var = income_var value = 2 compare = greater_than_or_equals } }
+  custom_cost_trigger = { hidden_trigger = {  check_variable = { var = income_var value = 2 compare = greater_than_or_equals }  } }
   fire_only_once = yes
-  complete_effect = { MSGA_raise_kosovo_brigade = yes }
+  complete_effect = { custom_effect_tooltip = MSGA_integrate_kosovo_serb_militias_ux_complete_effect_tt hidden_effect = {  MSGA_raise_kosovo_brigade = yes  } }
   ai_will_do = { factor = 5 }
  }
 
@@ -16,11 +16,11 @@ MSGA_kosovo_integration = {
   icon = generic_construction
   allowed = { tag = SER }
   visible = { has_country_flag = MSGA_kosovo_reconstruction_done has_country_flag = MSGA_pristina_investment_done NOT = { has_country_flag = MSGA_kosovo_rebuilt } }
-  available = { 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER } }
+  available = { custom_trigger_tooltip = { tooltip = MSGA_finish_kosovo_reconstruction_ux_requirements_tt hidden_trigger = {  785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER }  } } }
   cost = 50 custom_cost_text = MSGA_cost_1B
-  custom_cost_trigger = { check_variable = { var = income_var value = 1 compare = greater_than_or_equals } }
+  custom_cost_trigger = { hidden_trigger = {  check_variable = { var = income_var value = 1 compare = greater_than_or_equals }  } }
   fire_only_once = yes
-  complete_effect = { MSGA_complete_kosovo_reconstruction = yes }
+  complete_effect = { custom_effect_tooltip = MSGA_finish_kosovo_reconstruction_ux_complete_effect_tt hidden_effect = {  MSGA_complete_kosovo_reconstruction = yes  } }
   ai_will_do = { factor = 5 }
  }
 }

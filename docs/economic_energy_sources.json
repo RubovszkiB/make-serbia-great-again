@@ -665,7 +665,7 @@
   },
   "assets": {
     "gfx/interface/decisions/MSGA_expand_bor_mining_complex.dds": {
-      "sha256": "a255c78b6b2334c51a660473c428f2fbed0ec679f94507875e7aa6ece21ffd26",
+      "sha256": "ea9c05b6ba3d897bf8e6655dd322db8ac8e202c7c4c2fac099e5f3b8e322e00c",
       "size": [
         52,
         45
@@ -680,7 +680,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_develop_jadar_mining_project.dds": {
-      "sha256": "a255c78b6b2334c51a660473c428f2fbed0ec679f94507875e7aa6ece21ffd26",
+      "sha256": "ea9c05b6ba3d897bf8e6655dd322db8ac8e202c7c4c2fac099e5f3b8e322e00c",
       "size": [
         52,
         45
@@ -695,7 +695,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_serbian_mineral_processing_expansion.dds": {
-      "sha256": "932eac121a2405d19787c2429ffae4d99ea77ba16901277093b07f12cb297d11",
+      "sha256": "bde9489aa3a227df317032606b1d56c838db91acce9bfeeb04bd02c4c324cfb5",
       "size": [
         52,
         45
@@ -710,7 +710,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_central_serbian_industrial_park.dds": {
-      "sha256": "fdd8c7c8fdc1bd289131088bb43bc7635aff444f6232c2a4088f1645cc1be675",
+      "sha256": "14f1dc65c81ad0d11ea694271f581fc6852dba24d6dead59ad1fb1f4e43a1ed8",
       "size": [
         52,
         45
@@ -725,7 +725,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_southern_serbian_industrial_development.dds": {
-      "sha256": "797d05529935be5f0b29da973226bd4b24130eba30e8f742f7c7ff7538289627",
+      "sha256": "89835cd4aa929f8bfc5fd92b231b1c4355f206063f0f0b1dd338ac60ee3f5d84",
       "size": [
         52,
         45
@@ -740,7 +740,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_morava_logistics_development.dds": {
-      "sha256": "949e758ae8172658fb91afd0183f0b3a73f4289f711ac1f3d2bb32f766571cf8",
+      "sha256": "0f7de57522a7e12b1f3a20d8291dc1aa7ee01f06572e6d70f6aa43e299aa59da",
       "size": [
         52,
         45
@@ -755,7 +755,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_modernise_serbian_power_grid.dds": {
-      "sha256": "fcb65b2f77b52fc33893df39bb7bf5b14c19cdeda3e3302276450db0f387f254",
+      "sha256": "c180e6fd2521f3082a4563737d77c8fb9e926470d7269284eec29f8ba777d768",
       "size": [
         52,
         45
@@ -770,7 +770,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_modernise_nikola_tesla_complex.dds": {
-      "sha256": "7a53356dca2921e1c159af2c1eaf5cd3f3842e5a423ca027e1779641a4992ed0",
+      "sha256": "f65e87548b373101250469f172fe9e54bbb7c8e049906a0445b6acabf3646b6e",
       "size": [
         52,
         45
@@ -785,7 +785,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_expand_kostolac_energy_complex.dds": {
-      "sha256": "0c59b6b572ff7cca4ae15586d6b1254aaedfdd56a1d3c55f85fb297be74dfda1",
+      "sha256": "4d11c94f33e9d1d2248181dec7421cbd7cf2b791ac5af749b7a01c41ea6353a8",
       "size": [
         52,
         45
@@ -800,7 +800,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_upgrade_djerdap_power_system.dds": {
-      "sha256": "40dcbf51d3c8d7860c4fa85a75fa96d6664d2e0deae368f9d30eef5d5d1312aa",
+      "sha256": "1a882d2aad3b025dd6656e3deb1871cb78ae5938b4d06468b0aa6c19a3a3dc54",
       "size": [
         52,
         45
@@ -815,7 +815,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_develop_bor_renewable_complex.dds": {
-      "sha256": "dc2275951c288785a9ad45732c183325c26daf590a14ba7e31ff40ddc120c0b2",
+      "sha256": "f9e5aec302fc538f7486f250d4b0c3d84605f09eb413f25f4b3b6269a5829811",
       "size": [
         52,
         45
@@ -830,7 +830,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_expand_bor_renewable_complex.dds": {
-      "sha256": "b101808fdd7fa7982bbda1fca33b657b9bbd4c02cc5f1dd7145a2303093271e5",
+      "sha256": "4efcf38ed34ba31bfbfd4d0d64fa9e1197e90fbd0660d05a8008017c5439643d",
       "size": [
         52,
         45
@@ -845,7 +845,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_establish_serbian_solar_manufacturing.dds": {
-      "sha256": "7ee8f6f5a9ac840b020ac44050d1c7f189fce302e92e52f3edad43bcaf193e99",
+      "sha256": "9c7ef47766b904d5fe21dc47928d97a3909478be9f2bd60a5c48861b6ec2a3f8",
       "size": [
         52,
         45
@@ -860,7 +860,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_develop_grid_scale_storage.dds": {
-      "sha256": "732bf92c31abbfa1b233791aa81c56b9c1a9b0ff320518a69e2a11852bb818b5",
+      "sha256": "e74aae67e198dcae38891f2416335944aa3e2c9bbbe395c6a6a177882d1515d4",
       "size": [
         52,
         45
@@ -875,7 +875,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_seek_russian_nuclear_expertise.dds": {
-      "sha256": "0042b73ee660408fe73e816f26899ddd2c4a677b8498ad3856d2b5a4d05bc09b",
+      "sha256": "ae1bdf2a674a04f35c8e2ee56e93c3babb8f47df0a8726af4f7f60aacae5c773",
       "size": [
         52,
         45
@@ -890,7 +890,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_establish_serbian_nuclear_programme.dds": {
-      "sha256": "24820cc446f7ff2a09d5fe4d1ba06b6978d87e7db7a5f7c170314c214c12c3d7",
+      "sha256": "491116f070ad50163bd4e192bb0e7654898456202be54a6906f54740e792ec7a",
       "size": [
         52,
         45
@@ -905,7 +905,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_train_serbian_nuclear_workforce.dds": {
-      "sha256": "46be8162d56d69c9fae4069312b90065c636e7f944cf3eb06ce14b107dd24f19",
+      "sha256": "f6bbb2623bd81b50b16d1c4650d8eecc1c2ab98f1e4e3d1e0c081d9cea949f11",
       "size": [
         52,
         45
@@ -920,7 +920,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_first_serbian_nuclear_power_plant.dds": {
-      "sha256": "372c425957f3d8995d33dae7afeb3c5935a828f9aafd32dab0109c5131bcee0a",
+      "sha256": "cbe1940974419306a6feb7b58e69cdd8d0ae1504a09a346ec35ad57dea501a9c",
       "size": [
         52,
         45
@@ -935,7 +935,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_expand_serbian_nuclear_programme.dds": {
-      "sha256": "0dfc69404e32af60bb6361afa7c7a88427efbcac78b6c2c365b5cd28085005e3",
+      "sha256": "98b872c0f55689123040dbb871817440866f793e4b2833631be928fc8d486dfe",
       "size": [
         52,
         45
@@ -950,7 +950,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_industrial_efficiency_programme.dds": {
-      "sha256": "4d86005bc4156f3baead4ae95db13c95ce2908e9507a3226427cba5f0efa77c2",
+      "sha256": "a40020f100e17081b4a21da260fc9c6cacfd57ea60f57766b55ff07a93b951bf",
       "size": [
         52,
         45
@@ -965,7 +965,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_subsidise_serbian_manufacturers.dds": {
-      "sha256": "932eac121a2405d19787c2429ffae4d99ea77ba16901277093b07f12cb297d11",
+      "sha256": "bde9489aa3a227df317032606b1d56c838db91acce9bfeeb04bd02c4c324cfb5",
       "size": [
         52,
         45
@@ -980,7 +980,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_infrastructure_investment_programme.dds": {
-      "sha256": "949e758ae8172658fb91afd0183f0b3a73f4289f711ac1f3d2bb32f766571cf8",
+      "sha256": "0f7de57522a7e12b1f3a20d8291dc1aa7ee01f06572e6d70f6aa43e299aa59da",
       "size": [
         52,
         45
@@ -995,7 +995,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_support_serbian_businesses.dds": {
-      "sha256": "6bae79a8e099d8960b3edc6b7318935b1cf657dbe53693be5abb5a978b28dbea",
+      "sha256": "1641cc51d47be190e08b12646e22c2f6b1bde6aa79e9025504bdf6ed131e3752",
       "size": [
         52,
         45
@@ -1010,7 +1010,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_chinese_industrial_cooperation.dds": {
-      "sha256": "76106e179458e89277df3b65ce905d07f4bfc8142925f6d716fd95afd6e6c7b5",
+      "sha256": "6ffbc214cb22166f24f699d399e35520def76b32256da4160bd0ba942d316615",
       "size": [
         52,
         45
@@ -1025,7 +1025,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_chinese_mining_expertise.dds": {
-      "sha256": "939f33b68a22f098d150e8bbfc409f770dc7a47439b1c3dac046c45df2f72d49",
+      "sha256": "e4f19f2f14b88610137406cab0cb2a23630e9c0120e1c75601d05c4f12c1927e",
       "size": [
         52,
         45
@@ -1040,7 +1040,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_chinese_infrastructure_cooperation.dds": {
-      "sha256": "5ca46ffce16af98d2d8c625b729c4ab120364ef9dddb8e676fff0a61e1c5b420",
+      "sha256": "2f62e164ceddd07878770b388d58adbd27fbf3d80e4e0d3ed9934693a31ff9d1",
       "size": [
         52,
         45
@@ -1055,7 +1055,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_chinese_technology_transfer.dds": {
-      "sha256": "c55c4ec878902b8e4ccdefb99a5f733ffe1dc643dcd1727215c5b499e745df26",
+      "sha256": "af6fa0a702db47367addf180c3ec3eb9f66bbefc256447a2eef74b395eb6d01e",
       "size": [
         52,
         45
@@ -1070,7 +1070,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_russian_energy_cooperation.dds": {
-      "sha256": "dacd33cd51909e67e29756bad8cdbf5ebe8be4ff3fc6ecd305e6c3dd854f312a",
+      "sha256": "71a8095cd338bbd213fb4161ab3de38b9309be6534f4f52d65cf1c1ed9c92f51",
       "size": [
         52,
         45
@@ -1085,7 +1085,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_russian_heavy_industry_cooperation.dds": {
-      "sha256": "2936343773c84d66d2ed81f92f98633ab88eda864dfb3d477ac8ed64e44e8e27",
+      "sha256": "9dc065cf1bf11fef0da4bceb16d2a61cb08221ef62dd9e4091c5533ebfdd8044",
       "size": [
         52,
         45
@@ -1100,7 +1100,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_russian_technological_assistance.dds": {
-      "sha256": "6ab465b1eb8e9b611098c57fedc7500aa6155a08349df5c697786560e53788aa",
+      "sha256": "31fefe552fa45bc8598e4acd938c5d112321024425833cfdc77271b5e04c27d3",
       "size": [
         52,
         45
@@ -1115,7 +1115,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_european_development_grants.dds": {
-      "sha256": "80c15782d357659229dc28eb0cd1f2992ea4f0cb955cd0ae4a7e9dd46fcd9081",
+      "sha256": "ebbc1f58dab61721f2c5a37318e107c2922d4913d154d9a064e868ebd6d7b0dd",
       "size": [
         52,
         45
@@ -1130,7 +1130,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_european_industrial_standards.dds": {
-      "sha256": "5a9cebabe5b3151b4ed084084b835153ff1a299a98d128c09f28b50960f63bf3",
+      "sha256": "9e208a102a709c5603539da7244e904dddf5d7642c0ca76a70df2dc8cc8b2159",
       "size": [
         52,
         45
@@ -1145,7 +1145,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_european_technology_partnership.dds": {
-      "sha256": "176d2a51401fe6e48f5e039ffa6f5cb3e64427a7be5559b5a74bd22ee9edbbbb",
+      "sha256": "c54b5952544fc0b21b025ae3afc9614340cafac6de0d8146178cbc330323bee7",
       "size": [
         52,
         45
@@ -1160,7 +1160,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_european_business_cooperation.dds": {
-      "sha256": "efbb0bf758a35b58b4a98b019037926c4fceee0ae3827a3cb2e52b0c80ba2ca0",
+      "sha256": "fa974d433e1898255ff9a30aefe7a41f70b11237f2f00c39a35e8dc18912f813",
       "size": [
         52,
         45
@@ -1175,7 +1175,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_chinese_renewable_technology_transfer.dds": {
-      "sha256": "b57698f26d58a606707a26c2fc7c6e68373d1e873632a1f8235b498c5eef17c2",
+      "sha256": "5558c78d5cb0b561fed5528d350e88ac257021ac111d19fa4c43647040a83d0c",
       "size": [
         52,
         45
@@ -1190,7 +1190,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_renewable_energy_subsidies.dds": {
-      "sha256": "27e8257de218276c700994c381876810628b470d2b5f6816446df0223cf14cb1",
+      "sha256": "f0e8e2b607c7fb50a564296a45d161dad281bf1a461c68e76e37b1eb6a8073e2",
       "size": [
         52,
         45
@@ -1205,7 +1205,7 @@
       ]
     },
     "gfx/interface/decisions/MSGA_russian_nuclear_technical_assistance.dds": {
-      "sha256": "34ec855a432ecca088412ca4812ba51f509779c643727d2c61750c749105f39f",
+      "sha256": "f763658c1b16445dfd6f4f372dd2fc7c431a4ba536cd2acdd720e7f0d8232166",
       "size": [
         52,
         45

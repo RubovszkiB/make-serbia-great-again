@@ -1,66 +1,66 @@
 MSGA_consolidate_the_serbian_sphere = {
  MSGA_regularise_croatia = { icon = GFX_MSGA_decision_consolidate_the_serbian_sphere allowed = { tag = SER }
   visible = { has_country_flag = MSGA_completed_begin_reconstruction CRO = { exists = yes is_subject_of = SER } NOT = { has_country_flag = MSGA_croatia_regularised } }
-  available = { has_country_flag = MSGA_balkan_war_victory MSGA_regularisation_free = yes CRO = { exists = yes is_subject_of = SER } NOT = { has_country_flag = MSGA_croatia_regularised } }
+  available = { custom_trigger_tooltip = { tooltip = MSGA_regularise_croatia_ux_requirements_tt hidden_trigger = {  has_country_flag = MSGA_balkan_war_victory MSGA_regularisation_free = yes CRO = { exists = yes is_subject_of = SER } NOT = { has_country_flag = MSGA_croatia_regularised }  } } }
   cost = 25 days_remove = 10
-  complete_effect = { set_country_flag = { flag = MSGA_regularisation_active days = 11 } set_country_flag = { flag = MSGA_regularising_croatia days = 11 } custom_effect_tooltip = MSGA_regularisation_duration_tt }
-  cancel_trigger = { NOT = { CRO = { exists = yes is_subject_of = SER } } } cancel_effect = { MSGA_release_regularisation_croatia = yes MSGA_schedule_belgrade_conference = yes }
-  remove_effect = { MSGA_finish_regularising_croatia = yes } ai_will_do = { factor = 10 }
+  complete_effect = { custom_effect_tooltip = MSGA_regularise_croatia_ux_complete_effect_tt hidden_effect = {  set_country_flag = { flag = MSGA_regularisation_active days = 11 } set_country_flag = { flag = MSGA_regularising_croatia days = 11 } custom_effect_tooltip = MSGA_regularisation_duration_tt  } }
+  cancel_trigger = { NOT = { CRO = { exists = yes is_subject_of = SER } } } cancel_effect = { custom_effect_tooltip = MSGA_regularise_croatia_ux_cancel_effect_tt hidden_effect = {  MSGA_release_regularisation_croatia = yes MSGA_schedule_belgrade_conference = yes  } }
+  remove_effect = { custom_effect_tooltip = MSGA_regularise_croatia_ux_remove_effect_tt hidden_effect = {  MSGA_finish_regularising_croatia = yes  } } ai_will_do = { factor = 10 }
  }
  MSGA_regularise_slovenia = { icon = GFX_MSGA_decision_consolidate_the_serbian_sphere allowed = { tag = SER }
   visible = { has_country_flag = MSGA_completed_begin_reconstruction SLV = { exists = yes is_subject_of = SER } NOT = { has_country_flag = MSGA_slovenia_regularised } }
-  available = { has_country_flag = MSGA_balkan_war_victory MSGA_regularisation_free = yes SLV = { exists = yes is_subject_of = SER } NOT = { has_country_flag = MSGA_slovenia_regularised } }
+  available = { custom_trigger_tooltip = { tooltip = MSGA_regularise_slovenia_ux_requirements_tt hidden_trigger = {  has_country_flag = MSGA_balkan_war_victory MSGA_regularisation_free = yes SLV = { exists = yes is_subject_of = SER } NOT = { has_country_flag = MSGA_slovenia_regularised }  } } }
   cost = 25 days_remove = 10
-  complete_effect = { set_country_flag = { flag = MSGA_regularisation_active days = 11 } set_country_flag = { flag = MSGA_regularising_slovenia days = 11 } custom_effect_tooltip = MSGA_regularisation_duration_tt }
-  cancel_trigger = { NOT = { SLV = { exists = yes is_subject_of = SER } } } cancel_effect = { MSGA_release_regularisation_slovenia = yes MSGA_schedule_belgrade_conference = yes }
-  remove_effect = { MSGA_finish_regularising_slovenia = yes } ai_will_do = { factor = 10 }
+  complete_effect = { custom_effect_tooltip = MSGA_regularise_slovenia_ux_complete_effect_tt hidden_effect = {  set_country_flag = { flag = MSGA_regularisation_active days = 11 } set_country_flag = { flag = MSGA_regularising_slovenia days = 11 } custom_effect_tooltip = MSGA_regularisation_duration_tt  } }
+  cancel_trigger = { NOT = { SLV = { exists = yes is_subject_of = SER } } } cancel_effect = { custom_effect_tooltip = MSGA_regularise_slovenia_ux_cancel_effect_tt hidden_effect = {  MSGA_release_regularisation_slovenia = yes MSGA_schedule_belgrade_conference = yes  } }
+  remove_effect = { custom_effect_tooltip = MSGA_regularise_slovenia_ux_remove_effect_tt hidden_effect = {  MSGA_finish_regularising_slovenia = yes  } } ai_will_do = { factor = 10 }
  }
  MSGA_regularise_montenegro = { icon = GFX_MSGA_decision_consolidate_the_serbian_sphere allowed = { tag = SER }
   visible = { has_country_flag = MSGA_completed_begin_reconstruction MNT = { exists = yes is_subject_of = SER } NOT = { has_country_flag = MSGA_montenegro_regularised } }
-  available = { has_country_flag = MSGA_balkan_war_victory MSGA_regularisation_free = yes MNT = { exists = yes is_subject_of = SER } NOT = { has_country_flag = MSGA_montenegro_regularised } }
+  available = { custom_trigger_tooltip = { tooltip = MSGA_regularise_montenegro_ux_requirements_tt hidden_trigger = {  has_country_flag = MSGA_balkan_war_victory MSGA_regularisation_free = yes MNT = { exists = yes is_subject_of = SER } NOT = { has_country_flag = MSGA_montenegro_regularised }  } } }
   cost = 25 days_remove = 10
-  complete_effect = { set_country_flag = { flag = MSGA_regularisation_active days = 11 } set_country_flag = { flag = MSGA_regularising_montenegro days = 11 } custom_effect_tooltip = MSGA_regularisation_duration_tt }
-  cancel_trigger = { NOT = { MNT = { exists = yes is_subject_of = SER } } } cancel_effect = { MSGA_release_regularisation_montenegro = yes MSGA_schedule_belgrade_conference = yes }
-  remove_effect = { MSGA_finish_regularising_montenegro = yes } ai_will_do = { factor = 10 }
+  complete_effect = { custom_effect_tooltip = MSGA_regularise_montenegro_ux_complete_effect_tt hidden_effect = {  set_country_flag = { flag = MSGA_regularisation_active days = 11 } set_country_flag = { flag = MSGA_regularising_montenegro days = 11 } custom_effect_tooltip = MSGA_regularisation_duration_tt  } }
+  cancel_trigger = { NOT = { MNT = { exists = yes is_subject_of = SER } } } cancel_effect = { custom_effect_tooltip = MSGA_regularise_montenegro_ux_cancel_effect_tt hidden_effect = {  MSGA_release_regularisation_montenegro = yes MSGA_schedule_belgrade_conference = yes  } }
+  remove_effect = { custom_effect_tooltip = MSGA_regularise_montenegro_ux_remove_effect_tt hidden_effect = {  MSGA_finish_regularising_montenegro = yes  } } ai_will_do = { factor = 10 }
  }
  MSGA_regularise_macedonia = { icon = GFX_MSGA_decision_consolidate_the_serbian_sphere allowed = { tag = SER }
   visible = { has_country_flag = MSGA_completed_begin_reconstruction MAC = { exists = yes is_subject_of = SER } NOT = { has_country_flag = MSGA_macedonia_regularised } }
-  available = { has_country_flag = MSGA_balkan_war_victory MSGA_regularisation_free = yes MAC = { exists = yes is_subject_of = SER } NOT = { has_country_flag = MSGA_macedonia_regularised } }
+  available = { custom_trigger_tooltip = { tooltip = MSGA_regularise_macedonia_ux_requirements_tt hidden_trigger = {  has_country_flag = MSGA_balkan_war_victory MSGA_regularisation_free = yes MAC = { exists = yes is_subject_of = SER } NOT = { has_country_flag = MSGA_macedonia_regularised }  } } }
   cost = 25 days_remove = 10
-  complete_effect = { set_country_flag = { flag = MSGA_regularisation_active days = 11 } set_country_flag = { flag = MSGA_regularising_macedonia days = 11 } custom_effect_tooltip = MSGA_regularisation_duration_tt }
-  cancel_trigger = { NOT = { MAC = { exists = yes is_subject_of = SER } } } cancel_effect = { MSGA_release_regularisation_macedonia = yes MSGA_schedule_belgrade_conference = yes }
-  remove_effect = { MSGA_finish_regularising_macedonia = yes } ai_will_do = { factor = 10 }
+  complete_effect = { custom_effect_tooltip = MSGA_regularise_macedonia_ux_complete_effect_tt hidden_effect = {  set_country_flag = { flag = MSGA_regularisation_active days = 11 } set_country_flag = { flag = MSGA_regularising_macedonia days = 11 } custom_effect_tooltip = MSGA_regularisation_duration_tt  } }
+  cancel_trigger = { NOT = { MAC = { exists = yes is_subject_of = SER } } } cancel_effect = { custom_effect_tooltip = MSGA_regularise_macedonia_ux_cancel_effect_tt hidden_effect = {  MSGA_release_regularisation_macedonia = yes MSGA_schedule_belgrade_conference = yes  } }
+  remove_effect = { custom_effect_tooltip = MSGA_regularise_macedonia_ux_remove_effect_tt hidden_effect = {  MSGA_finish_regularising_macedonia = yes  } } ai_will_do = { factor = 10 }
  }
  MSGA_regularise_albania = { icon = GFX_MSGA_decision_consolidate_the_serbian_sphere allowed = { tag = SER }
   visible = { has_country_flag = MSGA_completed_begin_reconstruction ALB = { exists = yes is_subject_of = SER } NOT = { has_country_flag = MSGA_albania_regularised } }
-  available = { has_country_flag = MSGA_balkan_war_victory MSGA_regularisation_free = yes ALB = { exists = yes is_subject_of = SER } NOT = { has_country_flag = MSGA_albania_regularised } }
+  available = { custom_trigger_tooltip = { tooltip = MSGA_regularise_albania_ux_requirements_tt hidden_trigger = {  has_country_flag = MSGA_balkan_war_victory MSGA_regularisation_free = yes ALB = { exists = yes is_subject_of = SER } NOT = { has_country_flag = MSGA_albania_regularised }  } } }
   cost = 25 days_remove = 10
-  complete_effect = { set_country_flag = { flag = MSGA_regularisation_active days = 11 } set_country_flag = { flag = MSGA_regularising_albania days = 11 } custom_effect_tooltip = MSGA_regularisation_duration_tt }
-  cancel_trigger = { NOT = { ALB = { exists = yes is_subject_of = SER } } } cancel_effect = { MSGA_release_regularisation_albania = yes MSGA_schedule_belgrade_conference = yes }
-  remove_effect = { MSGA_finish_regularising_albania = yes } ai_will_do = { factor = 10 }
+  complete_effect = { custom_effect_tooltip = MSGA_regularise_albania_ux_complete_effect_tt hidden_effect = {  set_country_flag = { flag = MSGA_regularisation_active days = 11 } set_country_flag = { flag = MSGA_regularising_albania days = 11 } custom_effect_tooltip = MSGA_regularisation_duration_tt  } }
+  cancel_trigger = { NOT = { ALB = { exists = yes is_subject_of = SER } } } cancel_effect = { custom_effect_tooltip = MSGA_regularise_albania_ux_cancel_effect_tt hidden_effect = {  MSGA_release_regularisation_albania = yes MSGA_schedule_belgrade_conference = yes  } }
+  remove_effect = { custom_effect_tooltip = MSGA_regularise_albania_ux_remove_effect_tt hidden_effect = {  MSGA_finish_regularising_albania = yes  } } ai_will_do = { factor = 10 }
  }
  MSGA_regularise_bosnia = { icon = GFX_MSGA_decision_consolidate_the_serbian_sphere allowed = { tag = SER }
   visible = { has_country_flag = MSGA_completed_begin_reconstruction BOS = { exists = yes is_subject_of = SER } NOT = { has_country_flag = MSGA_bosnia_regularised } }
-  available = { has_country_flag = MSGA_balkan_war_victory MSGA_regularisation_free = yes BOS = { exists = yes is_subject_of = SER } NOT = { has_country_flag = MSGA_bosnia_regularised } }
+  available = { custom_trigger_tooltip = { tooltip = MSGA_regularise_bosnia_ux_requirements_tt hidden_trigger = {  has_country_flag = MSGA_balkan_war_victory MSGA_regularisation_free = yes BOS = { exists = yes is_subject_of = SER } NOT = { has_country_flag = MSGA_bosnia_regularised }  } } }
   cost = 25 days_remove = 10
-  complete_effect = { set_country_flag = { flag = MSGA_regularisation_active days = 11 } set_country_flag = { flag = MSGA_regularising_bosnia days = 11 } custom_effect_tooltip = MSGA_regularisation_duration_tt }
-  cancel_trigger = { NOT = { BOS = { exists = yes is_subject_of = SER } } } cancel_effect = { MSGA_release_regularisation_bosnia = yes MSGA_schedule_belgrade_conference = yes }
-  remove_effect = { MSGA_finish_regularising_bosnia = yes } ai_will_do = { factor = 10 }
+  complete_effect = { custom_effect_tooltip = MSGA_regularise_bosnia_ux_complete_effect_tt hidden_effect = {  set_country_flag = { flag = MSGA_regularisation_active days = 11 } set_country_flag = { flag = MSGA_regularising_bosnia days = 11 } custom_effect_tooltip = MSGA_regularisation_duration_tt  } }
+  cancel_trigger = { NOT = { BOS = { exists = yes is_subject_of = SER } } } cancel_effect = { custom_effect_tooltip = MSGA_regularise_bosnia_ux_cancel_effect_tt hidden_effect = {  MSGA_release_regularisation_bosnia = yes MSGA_schedule_belgrade_conference = yes  } }
+  remove_effect = { custom_effect_tooltip = MSGA_regularise_bosnia_ux_remove_effect_tt hidden_effect = {  MSGA_finish_regularising_bosnia = yes  } } ai_will_do = { factor = 10 }
  }
  MSGA_regularise_herzegovina = { icon = GFX_MSGA_decision_consolidate_the_serbian_sphere allowed = { tag = SER }
   visible = { has_country_flag = MSGA_completed_begin_reconstruction HRZ = { exists = yes is_subject_of = SER } NOT = { has_country_flag = MSGA_herzegovina_regularised } }
-  available = { has_country_flag = MSGA_balkan_war_victory MSGA_regularisation_free = yes HRZ = { exists = yes is_subject_of = SER } NOT = { has_country_flag = MSGA_herzegovina_regularised } }
+  available = { custom_trigger_tooltip = { tooltip = MSGA_regularise_herzegovina_ux_requirements_tt hidden_trigger = {  has_country_flag = MSGA_balkan_war_victory MSGA_regularisation_free = yes HRZ = { exists = yes is_subject_of = SER } NOT = { has_country_flag = MSGA_herzegovina_regularised }  } } }
   cost = 25 days_remove = 10
-  complete_effect = { set_country_flag = { flag = MSGA_regularisation_active days = 11 } set_country_flag = { flag = MSGA_regularising_herzegovina days = 11 } custom_effect_tooltip = MSGA_regularisation_duration_tt }
-  cancel_trigger = { NOT = { HRZ = { exists = yes is_subject_of = SER } } } cancel_effect = { MSGA_release_regularisation_herzegovina = yes MSGA_schedule_belgrade_conference = yes }
-  remove_effect = { MSGA_finish_regularising_herzegovina = yes } ai_will_do = { factor = 10 }
+  complete_effect = { custom_effect_tooltip = MSGA_regularise_herzegovina_ux_complete_effect_tt hidden_effect = {  set_country_flag = { flag = MSGA_regularisation_active days = 11 } set_country_flag = { flag = MSGA_regularising_herzegovina days = 11 } custom_effect_tooltip = MSGA_regularisation_duration_tt  } }
+  cancel_trigger = { NOT = { HRZ = { exists = yes is_subject_of = SER } } } cancel_effect = { custom_effect_tooltip = MSGA_regularise_herzegovina_ux_cancel_effect_tt hidden_effect = {  MSGA_release_regularisation_herzegovina = yes MSGA_schedule_belgrade_conference = yes  } }
+  remove_effect = { custom_effect_tooltip = MSGA_regularise_herzegovina_ux_remove_effect_tt hidden_effect = {  MSGA_finish_regularising_herzegovina = yes  } } ai_will_do = { factor = 10 }
  }
  MSGA_regularise_srpska = { icon = GFX_MSGA_decision_consolidate_the_serbian_sphere allowed = { tag = SER }
   visible = { has_country_flag = MSGA_completed_begin_reconstruction SRP = { exists = yes is_subject_of = SER } NOT = { has_country_flag = MSGA_srpska_regularised } }
-  available = { has_country_flag = MSGA_balkan_war_victory MSGA_regularisation_free = yes SRP = { exists = yes is_subject_of = SER } NOT = { has_country_flag = MSGA_srpska_regularised } }
+  available = { custom_trigger_tooltip = { tooltip = MSGA_regularise_srpska_ux_requirements_tt hidden_trigger = {  has_country_flag = MSGA_balkan_war_victory MSGA_regularisation_free = yes SRP = { exists = yes is_subject_of = SER } NOT = { has_country_flag = MSGA_srpska_regularised }  } } }
   cost = 25 days_remove = 10
-  complete_effect = { set_country_flag = { flag = MSGA_regularisation_active days = 11 } set_country_flag = { flag = MSGA_regularising_srpska days = 11 } custom_effect_tooltip = MSGA_regularisation_duration_tt }
-  cancel_trigger = { NOT = { SRP = { exists = yes is_subject_of = SER } } } cancel_effect = { MSGA_release_regularisation_srpska = yes MSGA_schedule_belgrade_conference = yes }
-  remove_effect = { MSGA_finish_regularising_srpska = yes } ai_will_do = { factor = 10 }
+  complete_effect = { custom_effect_tooltip = MSGA_regularise_srpska_ux_complete_effect_tt hidden_effect = {  set_country_flag = { flag = MSGA_regularisation_active days = 11 } set_country_flag = { flag = MSGA_regularising_srpska days = 11 } custom_effect_tooltip = MSGA_regularisation_duration_tt  } }
+  cancel_trigger = { NOT = { SRP = { exists = yes is_subject_of = SER } } } cancel_effect = { custom_effect_tooltip = MSGA_regularise_srpska_ux_cancel_effect_tt hidden_effect = {  MSGA_release_regularisation_srpska = yes MSGA_schedule_belgrade_conference = yes  } }
+  remove_effect = { custom_effect_tooltip = MSGA_regularise_srpska_ux_remove_effect_tt hidden_effect = {  MSGA_finish_regularising_srpska = yes  } } ai_will_do = { factor = 10 }
  }
 }

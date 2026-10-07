@@ -107,7 +107,6 @@ focus_tree = {
 			country_event = {
 				id = MSGA.5
 			}
-			unlock_decision_tooltip = MSGA_foreign_priority
 			custom_effect_tooltip = MSGA_unlock_capital_tt
 			set_country_flag = MSGA_completed_attract_productive_capital
 		}
@@ -129,7 +128,6 @@ focus_tree = {
 			country_event = {
 				id = MSGA_economy.2
 			}
-			unlock_decision_tooltip = MSGA_belgrade_business
 			custom_effect_tooltip = MSGA_unlock_belgrade_tt
 			set_country_flag = MSGA_completed_upgrade_belgrade_services
 		}
@@ -151,7 +149,6 @@ focus_tree = {
 			country_event = {
 				id = MSGA_economy.3
 			}
-			unlock_decision_tooltip = MSGA_morava_works
 			custom_effect_tooltip = MSGA_unlock_morava_tt
 			set_country_flag = MSGA_completed_develop_the_morava_corridor
 		}
@@ -204,9 +201,6 @@ focus_tree = {
 				add_income_with_inflation = yes
 			}
 			set_country_flag = MSGA_resource_independence
-			unlock_decision_tooltip = MSGA_bor_modernisation
-			unlock_decision_tooltip = MSGA_lignite_modernisation
-			unlock_decision_tooltip = MSGA_jadar_survey
 			custom_effect_tooltip = MSGA_unlock_resources_tt
 			set_country_flag = MSGA_completed_independent_resource_policy
 		}
@@ -230,7 +224,6 @@ focus_tree = {
 			country_event = {
 				id = MSGA_economy.4
 			}
-			unlock_decision_tooltip = MSGA_support_enterprise
 			custom_effect_tooltip = MSGA_recovery_capstone_tt
 			set_country_flag = MSGA_completed_serbian_recovery
 		}
@@ -517,7 +510,6 @@ focus_tree = {
 		completion_reward = {
 			MSGA_internal_investment = yes
 			add_ideas = MSGA_internal_investment_campaign
-			unlock_decision_tooltip = MSGA_invest_southern_serbia
 			set_country_flag = MSGA_completed_internal_investment_drive
 		}
 	}

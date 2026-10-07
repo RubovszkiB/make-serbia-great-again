@@ -1,40 +1,4 @@
-MSGA_economic_development = {
-	MSGA_invest_southern_serbia = {
-		icon = generic_construction
-		allowed = { tag = SER }
-		visible = {
-			OR = { has_completed_focus = MSGA_internal_investment_drive has_country_flag = MSGA_completed_internal_investment_drive }
-			NOT = { has_country_flag = MSGA_southern_investment_started }
-		}
-		available = { 108 = { is_owned_by = ROOT is_fully_controlled_by = ROOT } }
-		cost = 20
-		days_remove = 30
-		fire_only_once = yes
-		complete_effect = {
-			set_country_flag = MSGA_southern_investment_started
-			set_temp_variable = { var = debt_var_temp value = 1.0 }
-			add_debt = yes
-		}
-		remove_effect = {
-			if = {
-				limit = { 108 = { is_owned_by = ROOT is_fully_controlled_by = ROOT } }
-				108 = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
-				}
-				set_country_flag = MSGA_southern_investment_complete
-			}
-			else = {
-				# A lost state receives no factory; refund the exact nominal debt once.
-				set_temp_variable = { var = debt_var_temp value = -1.0 }
-				add_debt = yes
-				add_political_power = 20
-				custom_effect_tooltip = MSGA_southern_investment_refund_tt
-			}
-		}
-		ai_will_do = { factor = 5 }
-	}
-}
+
 MSGA_rearmament = {
 	MSGA_raise_scorpions = {
 		icon = generic_propaganda_campaigns
@@ -43,14 +7,14 @@ MSGA_rearmament = {
 			OR = { has_completed_focus = MSGA_reconstitute_serbian_volunteer_guard has_country_flag = MSGA_completed_reconstitute_serbian_volunteer_guard }
 			NOT = { has_country_flag = MSGA_scorpions_recruitment_started }
 		}
-		available = { any_owned_state = { is_core_of = ROOT is_fully_controlled_by = ROOT } }
+		available = { custom_trigger_tooltip = { tooltip = MSGA_raise_scorpions_ux_requirements_tt hidden_trigger = {  any_owned_state = { is_core_of = ROOT is_fully_controlled_by = ROOT }  } } }
 		cost = 0
         custom_cost_text = MSGA_cost_2B
-        custom_cost_trigger = { check_variable = { var = income_var value = 2 compare = greater_than_or_equals } }
+        custom_cost_trigger = { hidden_trigger = {  check_variable = { var = income_var value = 2 compare = greater_than_or_equals }  } }
 		days_remove = 20
 		fire_only_once = yes
-		complete_effect = { set_temp_variable = { var = income_var_temp value = -2 } add_income = yes set_country_flag = MSGA_scorpions_recruitment_started }
-		remove_effect = { MSGA_raise_scorpions = yes }
+		complete_effect = { custom_effect_tooltip = MSGA_raise_scorpions_ux_complete_effect_tt hidden_effect = {  set_temp_variable = { var = income_var_temp value = -2 } add_income = yes set_country_flag = MSGA_scorpions_recruitment_started  } }
+		remove_effect = { custom_effect_tooltip = MSGA_raise_scorpions_ux_remove_effect_tt hidden_effect = {  MSGA_raise_scorpions = yes  } }
 		ai_will_do = { factor = 5 }
 	}
 	MSGA_raise_white_eagles = {
@@ -60,14 +24,14 @@ MSGA_rearmament = {
 			OR = { has_completed_focus = MSGA_reconstitute_serbian_volunteer_guard has_country_flag = MSGA_completed_reconstitute_serbian_volunteer_guard }
 			NOT = { has_country_flag = MSGA_white_eagles_recruitment_started }
 		}
-		available = { any_owned_state = { is_core_of = ROOT is_fully_controlled_by = ROOT } }
+		available = { custom_trigger_tooltip = { tooltip = MSGA_raise_white_eagles_ux_requirements_tt hidden_trigger = {  any_owned_state = { is_core_of = ROOT is_fully_controlled_by = ROOT }  } } }
 		cost = 0
         custom_cost_text = MSGA_cost_2B
-        custom_cost_trigger = { check_variable = { var = income_var value = 2 compare = greater_than_or_equals } }
+        custom_cost_trigger = { hidden_trigger = {  check_variable = { var = income_var value = 2 compare = greater_than_or_equals }  } }
 		days_remove = 20
 		fire_only_once = yes
-		complete_effect = { set_temp_variable = { var = income_var_temp value = -2 } add_income = yes set_country_flag = MSGA_white_eagles_recruitment_started }
-		remove_effect = { MSGA_raise_white_eagles = yes }
+		complete_effect = { custom_effect_tooltip = MSGA_raise_white_eagles_ux_complete_effect_tt hidden_effect = {  set_temp_variable = { var = income_var_temp value = -2 } add_income = yes set_country_flag = MSGA_white_eagles_recruitment_started  } }
+		remove_effect = { custom_effect_tooltip = MSGA_raise_white_eagles_ux_remove_effect_tt hidden_effect = {  MSGA_raise_white_eagles = yes  } }
 		ai_will_do = { factor = 5 }
 	}
 	MSGA_raise_serbian_guard = {
@@ -77,14 +41,14 @@ MSGA_rearmament = {
 			OR = { has_completed_focus = MSGA_reconstitute_serbian_volunteer_guard has_country_flag = MSGA_completed_reconstitute_serbian_volunteer_guard }
 			NOT = { has_country_flag = MSGA_serbian_guard_recruitment_started }
 		}
-		available = { any_owned_state = { is_core_of = ROOT is_fully_controlled_by = ROOT } }
+		available = { custom_trigger_tooltip = { tooltip = MSGA_raise_serbian_guard_ux_requirements_tt hidden_trigger = {  any_owned_state = { is_core_of = ROOT is_fully_controlled_by = ROOT }  } } }
 		cost = 0
         custom_cost_text = MSGA_cost_2B
-        custom_cost_trigger = { check_variable = { var = income_var value = 2 compare = greater_than_or_equals } }
+        custom_cost_trigger = { hidden_trigger = {  check_variable = { var = income_var value = 2 compare = greater_than_or_equals }  } }
 		days_remove = 20
 		fire_only_once = yes
-		complete_effect = { set_temp_variable = { var = income_var_temp value = -2 } add_income = yes set_country_flag = MSGA_serbian_guard_recruitment_started }
-		remove_effect = { MSGA_raise_serbian_guard = yes }
+		complete_effect = { custom_effect_tooltip = MSGA_raise_serbian_guard_ux_complete_effect_tt hidden_effect = {  set_temp_variable = { var = income_var_temp value = -2 } add_income = yes set_country_flag = MSGA_serbian_guard_recruitment_started  } }
+		remove_effect = { custom_effect_tooltip = MSGA_raise_serbian_guard_ux_remove_effect_tt hidden_effect = {  MSGA_raise_serbian_guard = yes  } }
 		ai_will_do = { factor = 5 }
 	}
 }

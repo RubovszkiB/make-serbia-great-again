@@ -13,13 +13,13 @@ MSGA_kosovo_operations = {
   visible = { has_country_flag = MSGA_kosovo_war_active 785 = { has_dynamic_modifier = { modifier = MSGA_unprepared_sector } } }
   available = { has_war_with = KOS }
   complete_effect = { add_command_power = -25 }
-  remove_effect = {
+  remove_effect = { custom_effect_tooltip = MSGA_prepare_offensive_785_ux_remove_effect_tt hidden_effect = {
    if = {
     limit = { has_country_flag = MSGA_kosovo_war_active }
     785 = { remove_dynamic_modifier = { modifier = MSGA_unprepared_sector } }
     country_event = { id = MSGA_kosovo.21 }
    }
-  }
+   } }
  }
  MSGA_prepare_offensive_1305 = {
   icon = MSGA_prepare_offensive
@@ -35,12 +35,12 @@ MSGA_kosovo_operations = {
   visible = { has_country_flag = MSGA_kosovo_war_active 1305 = { has_dynamic_modifier = { modifier = MSGA_unprepared_sector } } }
   available = { has_war_with = KOS }
   complete_effect = { add_command_power = -25 }
-  remove_effect = {
+  remove_effect = { custom_effect_tooltip = MSGA_prepare_offensive_1305_ux_remove_effect_tt hidden_effect = {
    if = {
     limit = { has_country_flag = MSGA_kosovo_war_active }
     1305 = { remove_dynamic_modifier = { modifier = MSGA_unprepared_sector } }
     country_event = { id = MSGA_kosovo.21 }
    }
-  }
+   } }
  }
 }

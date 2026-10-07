@@ -20,16 +20,7 @@ MSGA_public_health = {
 	}
 	priority = 30
 }
-MSGA_economic_development = {
-	icon = GFX_decision_category_generic_industry
-	allowed = {
-		tag = SER
-	}
-	visible = {
-		OR = { has_completed_focus = MSGA_attract_productive_capital has_country_flag = MSGA_completed_attract_productive_capital }
-	}
-	priority = 15
-}
+
 MSGA_rearmament = {
 	icon = GFX_decision_category_generic_political_actions
 	allowed = {

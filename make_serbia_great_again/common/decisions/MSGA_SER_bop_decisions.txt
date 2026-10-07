@@ -7,17 +7,17 @@ MSGA_SER_streets_presidency_category = {
 		visible = {
 			OR = { has_completed_focus = MSGA_consolidate_the_state has_country_flag = MSGA_completed_consolidate_the_state }
 		}
-		available = {
+		available = { custom_trigger_tooltip = { tooltip = MSGA_SER_reaffirm_presidential_authority_ux_requirements_tt hidden_trigger = {
 			check_variable = {
 				MSGA_authority_uses < 3
 			}
-		}
+		 } } }
 		cost = 35
 		days_re_enable = 120
 		ai_will_do = {
 			factor = 2
 		}
-		complete_effect = {
+		complete_effect = { custom_effect_tooltip = MSGA_SER_reaffirm_presidential_authority_ux_complete_effect_tt hidden_effect = {
 			add_to_variable = {
 				MSGA_authority_uses = 1
 			}
@@ -25,7 +25,7 @@ MSGA_SER_streets_presidency_category = {
 				id = MSGA_SER_streets_presidency
 				value = 0.04
 			}
-		}
+		 } }
 	}
 	MSGA_SER_address_public_grievances = {
 		icon = generic_propaganda_campaigns
@@ -35,7 +35,7 @@ MSGA_SER_streets_presidency_category = {
 		visible = {
 			OR = { has_completed_focus = MSGA_manage_the_streets has_country_flag = MSGA_completed_manage_the_streets }
 		}
-		available = {
+		available = { custom_trigger_tooltip = { tooltip = MSGA_SER_address_public_grievances_ux_requirements_tt hidden_trigger = {
 			check_variable = {
 				MSGA_concession_uses < 2
 			}
@@ -44,13 +44,13 @@ MSGA_SER_streets_presidency_category = {
 				value = MSGA_quote_concessions
 				compare = greater_than_or_equals
 			}
-		}
+		 } } }
 		cost = 40
 		days_re_enable = 120
 		ai_will_do = {
 			factor = 1
 		}
-		complete_effect = {
+		complete_effect = { custom_effect_tooltip = MSGA_SER_address_public_grievances_ux_complete_effect_tt hidden_effect = {
 			add_to_variable = {
 				MSGA_concession_uses = 1
 			}
@@ -64,7 +64,7 @@ MSGA_SER_streets_presidency_category = {
 				value = -0.02
 			}
 			add_stability = 0.01
-		}
+		 } }
 	}
 	MSGA_public_order = {
 		icon = generic_propaganda_campaigns
@@ -74,20 +74,20 @@ MSGA_SER_streets_presidency_category = {
 		visible = {
 			OR = { has_completed_focus = MSGA_presidential_mandate has_country_flag = MSGA_completed_presidential_mandate }
 		}
-		available = {
+		available = { custom_trigger_tooltip = { tooltip = MSGA_public_order_ux_requirements_tt hidden_trigger = {
 			check_variable = {
 				MSGA_order_uses < 2
 			}
 			NOT = {
 				has_country_flag = MSGA_public_order_backlash
 			}
-		}
+		 } } }
 		cost = 25
 		days_re_enable = 180
 		ai_will_do = {
 			factor = 0.5
 		}
-		complete_effect = {
+		complete_effect = { custom_effect_tooltip = MSGA_public_order_ux_complete_effect_tt hidden_effect = {
 			add_to_variable = {
 				MSGA_order_uses = 1
 			}
@@ -102,7 +102,7 @@ MSGA_SER_streets_presidency_category = {
 				days = 30
 			}
 			custom_effect_tooltip = MSGA_order_backlash_tt
-		}
+		 } }
 	}
 	MSGA_assess_world = {
 		icon = generic_propaganda_campaigns
@@ -120,8 +120,8 @@ MSGA_SER_streets_presidency_category = {
 		ai_will_do = {
 			factor = 10
 		}
-		complete_effect = {
+		complete_effect = { custom_effect_tooltip = MSGA_assess_world_ux_complete_effect_tt hidden_effect = {
 			MSGA_check_world = yes
-		}
+		 } }
 	}
 }

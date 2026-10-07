@@ -1,0 +1,115 @@
+{
+  "runtime": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
+  "files": {
+    "common/decisions/MSGA_bosnia_decisions.txt": {
+      "before_sha256": "bb6c3e00a4f3fc3920101907ce4e88bc40f981facdb9b251462b95472bd05013",
+      "after_sha256": "f106c220f3db783c871df4d7dd29804ed196e52a5e193497e974a4a9258ad03c"
+    },
+    "common/decisions/MSGA_new_order_decisions.txt": {
+      "before_sha256": "049a00eacb688d9ccf7e43546328ac3990980941547dd1f8c8d5d1534363b3b8",
+      "after_sha256": "be33c79ccf62bb054dc603571cadfa25c562baa8b1e5409809a2d97763463152"
+    },
+    "common/decisions/MSGA_post_bosnia_decisions.txt": {
+      "before_sha256": "b2f6d7013f7a601f4675ae1e18688a1b75e60ef38dc7e5236a6ed99ac58558a2",
+      "after_sha256": "77260039dc9198c23583c8d076c73669acea10dcb7ac95b8411ca73cbfd148d2"
+    },
+    "common/decisions/MSGA_SER_bop_decisions.txt": {
+      "before_sha256": "1ff895b97add7ee873710f01efe06fb7b93e4f2e3cda220979c1009359e989ee",
+      "after_sha256": "8c6fd9bebf25f18a9aaba3293def4f39284e3d39ff1ce9dd0570824717515272"
+    },
+    "common/decisions/MSGA_SER_covid.txt": {
+      "before_sha256": "50cf9b6401c2fbc7ebcbfe066ff8f200409c750fc151775539a484ffa383bea5",
+      "after_sha256": "89ca4a9f712b1a46164e36d5a7d883289aec16e228d62733c68d17cc1165883f"
+    },
+    "common/decisions/MSGA_SER_expansion.txt": {
+      "before_sha256": "01646609604360b45ba164d9f413d4349652bc8ca20fd97c0e0d57e0bda5d469",
+      "after_sha256": "d5ef368464e757a5d494e8056075dae7cd3ee4ef3c9da6775b44217fd26f3fff"
+    },
+    "common/decisions/MSGA_SER_kosovo_operations.txt": {
+      "before_sha256": "ea18f30462da2b8a3b528c4528f0403410636bf1eaf527ddef436f60f6add075",
+      "after_sha256": "4827979e5891db6051128c71d458d284808e8af9d4c0f80096b92e5e3151c2a4"
+    },
+    "common/decisions/MSGA_SER_phase1.txt": {
+      "before_sha256": "2f38ec4df0cf48f233a8192cf3d92f62ee59b56b211b074b3a0af167a4cc0312",
+      "after_sha256": "a72d29e6d7d67c3c56e8b34ee3f237101b68503ff8cef17c5b42c0216a7cce58"
+    },
+    "common/decisions/MSGA_SER_post_kosovo.txt": {
+      "before_sha256": "3a317eb40b5f7784eb258aba76bbc80e5fb143f031a97481674ea1d7207a9fce",
+      "after_sha256": "32b869be95f8979f576f21c09aab827ae94a70fb13b41c5f5daebceeb4ae909c"
+    },
+    "common/decisions/MSGA_SER_strategic_review.txt": {
+      "before_sha256": "eedb9cb60e2db7a6857186fb6cadd9918e115213ffeeffebae8a6a78bad1405b",
+      "after_sha256": "068e62ea6a7ac8a9c5300885a21ecd43006f2633cf4b52b9db2265c48f4877bc"
+    },
+    "common/decisions/categories/MSGA_SER_categories.txt": {
+      "before_sha256": "0b9f4b3669083f28039dd76710f69845a5a5c65fd816358a12e76508f8bc2101",
+      "after_sha256": "1d203e74796d123d49dc2711183a236c1608ebcb8d8dff9b60d0e04a0a2069f8"
+    },
+    "common/national_focus/MSGA_SER_phase1.txt": {
+      "before_sha256": "2dfeac7d43a82539cf94b633526b806f5354b5b41655a14365f7ec28910c692d",
+      "after_sha256": "e4a3d1cad4f7b8732bd98332414b75994829a70f89469f103e3042210ce73353"
+    },
+    "localisation/english/MSGA_decision_ux_l_english.yml": {
+      "before_sha256": null,
+      "after_sha256": "21d6cd25119658ee293bedbee7a556c29b71d7f13f9da8143ddf1d80cd472304"
+    },
+    "localisation/english/MSGA_l_english.yml": {
+      "before_sha256": "7c1f1fc37bc7210da2a91d456a82a837bf0455a3c7a424a4b5ab019c9521c14e",
+      "after_sha256": "77c5d4f3a8e5823a661c2fb0b29af23beefa3aefa7f084b304f2af458f750486"
+    }
+  },
+  "obsolete_category": "MSGA_economic_development",
+  "removed_decisions": [
+    "MSGA_belgrade_business",
+    "MSGA_bor_modernisation",
+    "MSGA_foreign_priority",
+    "MSGA_invest_southern_serbia",
+    "MSGA_jadar_feasibility",
+    "MSGA_jadar_survey",
+    "MSGA_lignite_modernisation",
+    "MSGA_morava_works",
+    "MSGA_support_enterprise"
+  ],
+  "global_cleaned_decisions": [
+    "MSGA_form_territorial_45",
+    "MSGA_form_territorial_108",
+    "MSGA_form_territorial_1296",
+    "MSGA_form_territorial_785",
+    "MSGA_form_territorial_1305",
+    "MSGA_reopen_air_procurement",
+    "MSGA_regularise_croatia",
+    "MSGA_regularise_slovenia",
+    "MSGA_regularise_montenegro",
+    "MSGA_regularise_macedonia",
+    "MSGA_regularise_albania",
+    "MSGA_regularise_bosnia",
+    "MSGA_regularise_herzegovina",
+    "MSGA_regularise_srpska",
+    "MSGA_organise_bosnian_territorial_militias",
+    "MSGA_organise_herzegovinian_territorial_militias",
+    "MSGA_form_srpska_territorial_defence",
+    "MSGA_SER_reaffirm_presidential_authority",
+    "MSGA_SER_address_public_grievances",
+    "MSGA_public_order",
+    "MSGA_assess_world",
+    "MSGA_pending_outbreak",
+    "MSGA_restrict_border_traffic",
+    "MSGA_emergency_screening",
+    "MSGA_public_health_controls",
+    "MSGA_mass_vaccination",
+    "MSGA_raise_scorpions",
+    "MSGA_raise_white_eagles",
+    "MSGA_raise_serbian_guard",
+    "MSGA_prepare_offensive_785",
+    "MSGA_prepare_offensive_1305",
+    "MSGA_expand_defence",
+    "MSGA_procure_equipment",
+    "MSGA_integrate_kosovo_serb_militias",
+    "MSGA_finish_kosovo_reconstruction",
+    "MSGA_assess_nato_readiness",
+    "MSGA_strengthen_border_intelligence"
+  ],
+  "economic_cleaned_decisions": 37,
+  "gameplay_preservation": "Parsed executable conditions/effects are identical after removing presentation-only wrappers; only obsolete category decisions and eight dangling focus previews were removed.",
+  "baseline_commit": "06fe028fd2d6c048056a9735857cb7ccdc9d27dd"
+}

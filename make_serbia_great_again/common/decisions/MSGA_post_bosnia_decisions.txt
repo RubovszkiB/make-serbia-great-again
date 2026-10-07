@@ -3,33 +3,33 @@ MSGA_post_bosnia_auxiliaries = {
   icon = GFX_MSGA_decision_organise_bosnian_territorial_militias
   allowed = { tag = SER }
   visible = { has_country_flag = MSGA_protectorate_militias_unlocked NOT = { has_country_flag = MSGA_bosnian_militias_raised } }
-  available = { country_exists = BOS BOS = { is_subject_of = SER } 107 = { is_owned_by = SER } SER = { controls_province = 11586 } }
+  available = { custom_trigger_tooltip = { tooltip = MSGA_organise_bosnian_territorial_militias_ux_requirements_tt hidden_trigger = {  country_exists = BOS BOS = { is_subject_of = SER } 107 = { is_owned_by = SER } SER = { controls_province = 11586 }  } } }
   cost = 25 custom_cost_text = MSGA_cost_quarter_billion
-  custom_cost_trigger = { check_variable = { var = income_var value = 0.25 compare = greater_than_or_equals } }
+  custom_cost_trigger = { hidden_trigger = {  check_variable = { var = income_var value = 0.25 compare = greater_than_or_equals }  } }
   fire_only_once = yes
-  complete_effect = { MSGA_raise_bosnian_militias = yes }
+  complete_effect = { custom_effect_tooltip = MSGA_organise_bosnian_territorial_militias_ux_complete_effect_tt hidden_effect = {  MSGA_raise_bosnian_militias = yes  } }
   ai_will_do = { factor = 5 }
  }
  MSGA_organise_herzegovinian_territorial_militias = {
   icon = GFX_MSGA_decision_organise_herzegovinian_territorial_militias
   allowed = { tag = SER }
   visible = { has_country_flag = MSGA_protectorate_militias_unlocked NOT = { has_country_flag = MSGA_herzegovinian_militias_raised } }
-  available = { country_exists = HRZ HRZ = { is_subject_of = SER } 107 = { is_owned_by = SER } SER = { controls_province = 11586 } }
+  available = { custom_trigger_tooltip = { tooltip = MSGA_organise_herzegovinian_territorial_militias_ux_requirements_tt hidden_trigger = {  country_exists = HRZ HRZ = { is_subject_of = SER } 107 = { is_owned_by = SER } SER = { controls_province = 11586 }  } } }
   cost = 25 custom_cost_text = MSGA_cost_quarter_billion
-  custom_cost_trigger = { check_variable = { var = income_var value = 0.25 compare = greater_than_or_equals } }
+  custom_cost_trigger = { hidden_trigger = {  check_variable = { var = income_var value = 0.25 compare = greater_than_or_equals }  } }
   fire_only_once = yes
-  complete_effect = { MSGA_raise_herzegovinian_militias = yes }
+  complete_effect = { custom_effect_tooltip = MSGA_organise_herzegovinian_territorial_militias_ux_complete_effect_tt hidden_effect = {  MSGA_raise_herzegovinian_militias = yes  } }
   ai_will_do = { factor = 5 }
  }
  MSGA_form_srpska_territorial_defence = {
   icon = GFX_MSGA_decision_form_srpska_territorial_defence
   allowed = { tag = SER }
   visible = { has_country_flag = MSGA_srpska_td_unlocked NOT = { has_country_flag = MSGA_srpska_td_raised } }
-  available = { OR = { AND = { country_exists = SRP SRP = { is_subject_of = SER } } has_country_flag = MSGA_srpska_united } 107 = { is_owned_by = SER } SER = { controls_province = 11586 } }
+  available = { custom_trigger_tooltip = { tooltip = MSGA_form_srpska_territorial_defence_ux_requirements_tt hidden_trigger = {  OR = { AND = { country_exists = SRP SRP = { is_subject_of = SER } } has_country_flag = MSGA_srpska_united } 107 = { is_owned_by = SER } SER = { controls_province = 11586 }  } } }
   cost = 0 custom_cost_text = MSGA_cost_half_billion
-  custom_cost_trigger = { check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals } }
+  custom_cost_trigger = { hidden_trigger = {  check_variable = { var = income_var value = 0.5 compare = greater_than_or_equals }  } }
   fire_only_once = yes
-  complete_effect = { MSGA_raise_srpska_territorial_defence = yes }
+  complete_effect = { custom_effect_tooltip = MSGA_form_srpska_territorial_defence_ux_complete_effect_tt hidden_effect = {  MSGA_raise_srpska_territorial_defence = yes  } }
   ai_will_do = { factor = 5 }
  }
 }

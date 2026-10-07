@@ -4,6 +4,10 @@ The active HOI4 mod contains 19 permanent projects, 18 repeatable programmes and
 
 The two exact category IDs are `MSGA_serbian_economic_cooperation` and `MSGA_serbian_energy_development`. Programme names identify domestic, Chinese, Russian or European cooperation. No additional currency, focus tree, GUI, influence system or diplomatic minigame was introduced.
 
+The corrective pass of 2026-10-07 replaces raw prerequisites/effects with compact Cost/Duration/On completion text for all 37 economic decisions and cleans 37 campaign decision tooltips. The superseded Serbian Economic Development category and all nine decisions are removed, while its supporting early-focus effects remain. Thirty-seven existing decision DDS receive a 3px dark frame; other artwork is untouched. Exact paths and hashes are recorded in `decision_ux_sync.json`.
+
+Physical construction now measures the native state building counter before and after instant construction (and native energy accounting). Only an exact increase of one permits secondary rewards and completion. Failed construction rolls back its added shared slot, refunds the payment and releases the reservation for retry. Both 180-day reactor callbacks are reachable and produce model levels 0 → 1 → 2; this is not a performed HOI4 engine test. No game window or save was touched. Current targeted results are in `economic_energy_validation.json`, `decision_ux_validation.json` and `decision_ux_phase1_validation.json`; older reports describe historical revisions.
+
 ## Permanent projects
 
 Each completes once. Costs are paid on activation; ownership/control loss or an invalid native building condition cancels and refunds the paid cost exactly once. **The targeted 2026-10-06 bugfix replaced expiring project reservations with persistent pending/busy flags, explicitly released on completion or cancellation.** Completion uses separate final safety triggers, grants rewards before setting done, and logs building commands with `[MSGA ECON]`. Cancelled projects may be retried. Only native 2020 Serbian states **45, 107, 108 and 1296** qualify; later conquests and subjects never expand that whitelist.

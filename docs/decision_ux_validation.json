@@ -1,0 +1,30 @@
+{
+  "validation": "passed",
+  "runtime": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
+  "economic_energy_decisions_cleaned": 37,
+  "other_campaign_decisions_cleaned": 37,
+  "total_decisions_cleaned": 74,
+  "obsolete_decisions_removed": 9,
+  "obsolete_category_absent": true,
+  "focus_layout_and_gameplay": "Unchanged; eight obsolete decision preview hints removed",
+  "campaign_gates_and_effects": "Exactly preserved after presentation normalization",
+  "physical_reward_paths_checked": [
+    "MSGA_expand_bor_mining_complex",
+    "MSGA_serbian_mineral_processing_expansion",
+    "MSGA_central_serbian_industrial_park",
+    "MSGA_morava_logistics_development",
+    "MSGA_modernise_serbian_power_grid",
+    "MSGA_modernise_nikola_tesla_complex",
+    "MSGA_expand_kostolac_energy_complex",
+    "MSGA_upgrade_djerdap_power_system",
+    "MSGA_develop_bor_renewable_complex",
+    "MSGA_expand_bor_renewable_complex",
+    "MSGA_establish_serbian_solar_manufacturing",
+    "MSGA_first_serbian_nuclear_power_plant",
+    "MSGA_expand_serbian_nuclear_programme"
+  ],
+  "framed_decision_DDS": 37,
+  "non_decision_art": "Unchanged; checked by economic validator and whole-installation diff",
+  "nuclear": "180-day reachable callbacks and 0 -> 1 -> 2 counters checked in the deterministic model only",
+  "engine_validation": "NOT RUN: no game window or save was touched. Actual reactor increase, tooltips and icon appearance still require the user test."
+}

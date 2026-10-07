@@ -25,15 +25,24 @@ class DevelopmentModel:
         self.owners={s:'SER' for s in START|{785,1305,104,851,848,105,106,44}}
         self.controllers=self.owners.copy(); self.slots=Counter(); self.resources={s:Counter() for s in self.owners}
         self.buildings={s:Counter(infrastructure=2) for s in self.owners}
-        self.buildings[45]['infrastructure']=5;self.buildings[107].update(infrastructure=3,power_plant=2);self.buildings[1296]['infrastructure']=4
-        self.research=[]; self.industrial=0.; self.academic=0.; self.energy_balance=-1
+        # Represent the approved early investments, with native Belgrade
+        # values assigned (Counter.update would add to the default level).
+        self.buildings[45]['infrastructure']=5;self.buildings[107]['infrastructure']=3;self.buildings[107]['power_plant']=2;self.buildings[1296]['infrastructure']=4
+        self.research=[]; self.industrial=0.; self.academic=0.; self.energy_balance=-1; self.reject_buildings=False
         self.run(self.effects['MSGA_unlock_economic_energy'])
+
+    def value(self, token, scope='SER'):
+        if token.startswith('building_level@'):return self.buildings[scope][token.split('@',1)[1]]
+        if token=='income_var':return self.money
+        try:return float(token)
+        except ValueError:return self.temp.get(token,self.variables.get(token,0))
 
     def condition(self, ast, scope='SER'):
         for k,o,v in ast:
             if k=='AND': ok=all(self.condition([a],scope) for a in v)
             elif k=='OR': ok=any(self.condition([a],scope) for a in v)
             elif k=='NOT': ok=not any(self.condition([a],scope) for a in v)
+            elif k=='hidden_trigger':ok=self.condition(v,scope)
             elif k in self.triggers: ok=self.condition(self.triggers[k],scope)==(v=='yes')
             elif k in self.flags:ok=self.condition(v,k)
             elif k.isdigit():ok=self.condition(v,int(k))
@@ -49,9 +58,12 @@ class DevelopmentModel:
             elif k=='is_owned_by':ok=self.owners[scope]==v
             elif k=='is_fully_controlled_by':ok=self.controllers[scope]==v
             elif k=='check_variable':
-                value=self.money if get(v,'var')=='income_var' else self.variables.get(get(v,'var'),0)
-                compare=get(v,'compare');target=float(get(v,'value'));ok=value>=target if compare=='greater_than_or_equals' else value>target
+                value=self.value(get(v,'var'),scope);target=self.value(get(v,'value'),scope)
+                compare=get(v,'compare');ok={'greater_than_or_equals':value>=target,'greater_than':value>target,'equals':value==target}[compare]
             elif k=='custom_trigger_tooltip':ok=self.condition([a for a in v if a[0]!='tooltip'],scope)
+            elif k=='free_building_slots':
+                kind=get(v,'building');cap=ENERGY.get(kind,20)
+                ok=self.slots[scope]>0 and self.buildings[scope][kind]<cap
             elif k in ['infrastructure','industrial_complex',*ENERGY]:
                 assert o=='<';ok=self.buildings[scope][k]<float(v)
             elif k=='always':ok=v=='yes'
@@ -69,13 +81,15 @@ class DevelopmentModel:
                 if not branch and (k=='else' or self.condition(get(v,'limit'),scope)):
                     self.run([a for a in v if a[0]!='limit'],scope);branch=True
             elif k in self.effects:self.run(self.effects[k],scope)
+            elif k=='hidden_effect':self.run(v,scope)
             elif k.isdigit():self.run(v,int(k))
             elif k in self.flags:self.run(v,k)
             elif k=='set_country_flag':
                 name=get(v,'flag') if isinstance(v,list) else v
                 self.flags[scope][name]=self.day+int(get(v,'days')) if isinstance(v,list) else None
             elif k=='clr_country_flag':self.flags[scope].pop(v,None)
-            elif k=='set_temp_variable':self.temp[get(v,'var')]=float(get(v,'value'))
+            elif k=='set_temp_variable':self.temp[get(v,'var')]=self.value(get(v,'value'),scope)
+            elif k=='add_to_temp_variable':self.temp[get(v,'var')]=self.temp.get(get(v,'var'),0)+self.value(get(v,'value'),scope)
             elif k=='set_variable':self.variables[get(v,'var')]=float(get(v,'value'))
             elif k=='add_to_variable':self.variables[get(v,'var')]=self.variables.get(get(v,'var'),0)+float(get(v,'value'))
             elif k=='add_income':self.money+=self.temp['income_var_temp']
@@ -89,7 +103,7 @@ class DevelopmentModel:
                 cap=5 if kind=='infrastructure' else ENERGY.get(kind,20)
                 assert self.buildings[scope][kind]+amount<=cap
                 if kind in ENERGY:assert not any(self.buildings[scope][other] for other in ENERGY if other!=kind)
-                self.buildings[scope][kind]+=amount
+                if not self.reject_buildings:self.buildings[scope][kind]+=amount
             elif k=='add_timed_idea':
                 name=get(v,'idea');assert name not in self.ideas,'Self stacking';self.ideas[name]=self.day+int(get(v,'days'))
             elif k=='add_ideas':assert v not in self.ideas;self.ideas[v]=None
@@ -138,7 +152,9 @@ def main():
     cli=argparse.ArgumentParser(description=__doc__);cli.add_argument('--mod-root',type=Path,required=True);cli.add_argument('--report',type=Path,default=ROOT/'docs/economic_energy_validation.json');args=cli.parse_args();mod=args.mod_root.resolve(strict=True)
     source=json.loads((ROOT/'docs/economic_energy_sources.json').read_text())
     scripts={p.relative_to(mod).as_posix():parse(p.read_text(encoding='utf-8-sig')) for p in mod.rglob('*') if p.suffix in ('.txt','.gfx')}
-    for path,digest in source['baseline_sha256'].items():assert hashlib.sha256((mod/path).read_bytes()).hexdigest()==digest,('Existing campaign changed',path)
+    ux=json.loads((ROOT/'docs/decision_ux_sources.json').read_text()) if (ROOT/'docs/decision_ux_sources.json').exists() else {'files':{}}
+    for path,digest in source['baseline_sha256'].items():
+        assert hashlib.sha256((mod/path).read_bytes()).hexdigest()==ux['files'].get(path,{}).get('after_sha256',digest),('Existing campaign changed',path)
     for path,digest in source['native_sources_sha256'].items():assert hashlib.sha256((TFR/path).read_bytes()).hexdigest()==digest,('Native TFR changed',path)
     all_decisions=[k for p,a in scripts.items() if p.startswith('common/decisions/') and '/categories/' not in p for c,o,b in a for k,o,v in b if isinstance(v,list)]
     all_ideas=[k for p,a in scripts.items() if p.startswith('common/ideas/') for c,o,b in a for t,o,d in b for k,o,v in d]
@@ -173,7 +189,7 @@ def main():
     conditions_allowed=known['triggers']|declarations|{'state','infrastructure','industrial_complex',*ENERGY}
     def conditions(a):
         for k,o,v in a:
-            if k in ['AND','OR','NOT','SER','PRC','SOV','GER','ITA','HUN'] or k.isdigit():conditions(v)
+            if k in ['AND','OR','NOT','hidden_trigger','SER','PRC','SOV','GER','ITA','HUN'] or k.isdigit():conditions(v)
             elif k=='custom_trigger_tooltip':conditions([x for x in v if x[0]!='tooltip'])
             else:assert k in conditions_allowed,('Invalid trigger',k)
     for p,a in scripts.items():
@@ -200,7 +216,7 @@ def main():
     for p in source['projects']:
         stem=p['stem'];pending='MSGA_pending_'+stem;done='MSGA_done_'+stem
         decision=get(get(scripts['common/decisions/MSGA_economic_energy_decisions.txt'], 'MSGA_serbian_energy_development' if p['energy'] else 'MSGA_serbian_economic_cooperation'),'MSGA_'+stem)
-        start=get(decision,'complete_effect')
+        start=get(get(decision,'complete_effect'),'hidden_effect')
         assert ('set_country_flag','=',pending) in start
         if p['state']:assert ('set_country_flag','=','MSGA_development_state_'+str(p['state'])+'_busy') in start
         assert not any(k=='set_country_flag' and isinstance(v,list) for k,o,v in descend(start)),stem
@@ -209,14 +225,26 @@ def main():
         assert not any(k.startswith('MSGA_eligible_') for k,o,v in descend(finish)),stem
         assert not any(k in ['has_tech','has_country_flag','check_variable','has_war'] for k,o,v in descend(get(scripts['common/scripted_triggers/MSGA_economic_energy_triggers.txt'],safety))),stem
         for release in [pending]+(['MSGA_development_state_'+str(p['state'])+'_busy'] if p['state'] else []):
-            assert ('clr_country_flag','=',release) in success
+            assert ('clr_country_flag','=',release) in descend(success)
             assert ('clr_country_flag','=',release) in descend(get(new_effects,'MSGA_cancel_'+stem))
         grants=[i for i,(k,o,v) in enumerate(success) if k==str(p['state']) and any(x[0]=='add_building_construction' for x in descend(v))]
         if grants:
             building_projects.append('MSGA_'+stem)
-            assert grants[-1]<success.index(('set_country_flag','=',done)),stem
+            delivery=next(v for k,o,v in success if k=='if')
+            assert ('has_country_flag','=','MSGA_building_delivered_'+stem) in get(delivery,'limit')
+            assert ('set_country_flag','=',done) in delivery
+            assert grants[-1]<success.index(('if','=',delivery)),stem
             assert any(k=='log' and 'completion fired' in v for k,o,v in finish),stem
-            assert any(k=='log' and 'granted' in v for k,o,v in descend(success)),stem
+            assert any(k=='log' and 'verified' in v for k,o,v in descend(success)),stem
+            rejected=DevelopmentModel(scripts);rejected.prerequisites(p)
+            # Exercise the physical construction branch, not the valid
+            # maximum-infrastructure slot fallback.
+            if p['reward'] in ('mining','grid','hydro'):rejected.buildings[p['state']]['infrastructure']=4
+            rejected.reject_buildings=True;assert rejected.start(stem);rejected.advance(p['days'])
+            assert math.isclose(rejected.money,10) and rejected.pp==300 and done not in rejected.flags['SER'],(stem,rejected.money,rejected.pp,rejected.flags['SER'])
+            assert pending not in rejected.flags['SER'] and rejected.slots[p['state']]==0
+            assert rejected.industrial==0 and rejected.academic==0 and not any(rejected.resources[p['state']].values())
+            assert rejected.start(stem);cases.append('Rejected native construction refunds without completion: '+stem)
         m=DevelopmentModel(scripts);m.prerequisites(p);cash=m.money;pp=m.pp;before=copy.deepcopy(m.buildings)
         assert m.start(p['stem']);assert math.isclose(m.money,cash-p['cash']) and m.pp==pp-p['pp']
         assert not m.start(p['stem']);m.advance(p['days']-1);assert 'MSGA_done_'+p['stem'] not in m.flags['SER']
@@ -250,10 +278,19 @@ def main():
     for first,blocked in [('expand_kostolac_energy_complex','develop_bor_renewable_complex'),('develop_bor_renewable_complex','expand_kostolac_energy_complex')]:
         m=DevelopmentModel(scripts);assert m.start(first);assert not m.start(blocked);m.advance(next(p['days'] for p in source['projects'] if p['stem']==first));assert not m.start(blocked)
     for first,second,building,state in [('develop_bor_renewable_complex','expand_bor_renewable_complex','energy_farm',108),('first_serbian_nuclear_power_plant','expand_serbian_nuclear_programme','nuclear_reactor',45)]:
-        m=DevelopmentModel(scripts)
+        m=DevelopmentModel(scripts);levels=[m.buildings[state][building]]
         for stem in [first,second]:
-            p=next(p for p in source['projects'] if p['stem']==stem);m.prerequisites(p);assert m.start(stem);m.advance(p['days'])
-        assert m.buildings[state][building]==2 and not m.start(first) and not m.start(second)
+            p=next(p for p in source['projects'] if p['stem']==stem);m.prerequisites(p);assert m.start(stem)
+            m.advance(p['days']-1);assert m.buildings[state][building]==levels[-1]
+            m.advance(1);levels.append(m.buildings[state][building])
+        assert levels==[0,1,2] and not m.start(first) and not m.start(second)
+        cases.append('Timed building counter sequence 0 -> 1 -> 2: '+building)
+    for p in source['projects']:
+        if p['reward'] in ('mining','grid','hydro'):
+            m=DevelopmentModel(scripts);m.buildings[p['state']]['infrastructure']=5
+            assert m.start(p['stem']);m.advance(p['days'])
+            assert m.buildings[p['state']]['infrastructure']==5 and m.slots[p['state']]==1
+            assert 'MSGA_done_'+p['stem'] in m.flags['SER'];cases.append('Capped infrastructure slot fallback: '+p['stem'])
     grants=Counter(get(v,'type') for k,o,v in descend(new_effects) if k=='add_building_construction')
     assert all(grants[b]==2 for b in ENERGY),grants
     # Eight separate queued milestones are idempotent, with rewards only in decisions.
@@ -269,8 +306,8 @@ def main():
     for stem in ['develop_jadar_mining_project','serbian_mineral_processing_expansion','central_serbian_industrial_park']:
         p=next(p for p in source['projects'] if p['stem']==stem);assert m.start(stem);m.advance(p['days'])
     m.advance(1);assert Counter(m.delivered)['MSGA_econ.4']==1 and m.variables['MSGA_permanent_economic_projects']==3
-    report={'validation':'passed','validated_mod_root':str(mod),'categories':['MSGA_serbian_economic_cooperation','MSGA_serbian_energy_development'],'projects':19,'repeatable_programmes':18,'milestones':8,'provided_art_DDS':len(source['assets']),'repeatable_timing_days':[180,70,250],'starting_states':sorted(START),'mining_rewards_each':{'steel':3,'tungsten':2},'maximum_scripted_energy_buildings':{b:grants[b] for b in ENERGY},'existing_campaign_hashes_preserved':len(source['baseline_sha256']),'modeled_cases':cases,'native_exclusivity':'Kostolac/Bor alternatives tested in both orders','cancellation':'Ownership/control loss returns costs without rewards; permits retry','engine_acceptance':'NOT RUN: user reserved the game test; no game window or save was touched.'}
-    report.update(static_model_validation='passed',actual_engine_validation='NOT RUN: user performs the HOI4 test; building counters model script commands only.',project_lifecycle='Persistent pending/busy flags; explicitly released on success/cancellation; reward before done; separate final safety triggers.',delayed_callback_cases=19,building_projects_verified=building_projects,decision_icon_composition='Tight foreground crop, aspect preserved, centred within 52x45 DXT5 canvas; categories/spirits/events unchanged.')
+    report={'validation':'passed','validated_mod_root':str(mod),'categories':['MSGA_serbian_economic_cooperation','MSGA_serbian_energy_development'],'projects':19,'repeatable_programmes':18,'milestones':8,'provided_art_DDS':len(source['assets']),'repeatable_timing_days':[180,70,250],'starting_states':sorted(START),'mining_rewards_each':{'steel':3,'tungsten':2},'maximum_scripted_energy_buildings':{b:grants[b] for b in ENERGY},'existing_campaign_hashes_preserved':len(set(source['baseline_sha256'])-ux['files'].keys()),'approved_presentation_and_category_cleanup':sorted(set(source['baseline_sha256'])&ux['files'].keys()),'modeled_cases':cases,'native_exclusivity':'Kostolac/Bor alternatives tested in both orders','cancellation':'Ownership/control loss or rejected native construction returns costs without rewards; permits retry','engine_acceptance':'NOT RUN: user reserved the game test; no game window or save was touched.'}
+    report.update(static_model_validation='passed',actual_engine_validation='NOT RUN: user performs the HOI4 test; building counters model script commands only.',project_lifecycle='Persistent pending/busy flags; explicit release/refund. Native before/after building counters must increase by exactly 1 before secondary rewards and completion; rejected construction rolls back its introduced shared slot.',delayed_callback_cases=19,building_projects_checked_in_model=building_projects,nuclear_model_levels=[0,1,2],decision_icon_composition='Tight foreground crop, aspect preserved, centred within a 3px dark frame on 52x45 DXT5; categories/spirits/events unchanged.')
     args.report.write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({k:v for k,v in report.items() if k!='modeled_cases'},indent=2))
 
 if __name__=='__main__':main()
