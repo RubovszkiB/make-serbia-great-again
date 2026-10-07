@@ -1,0 +1,648 @@
+MSGA_try_start_endgame = {
+ if = { limit = { MSGA_eg_entry_ready = yes NOT = { has_country_flag = MSGA_endgame_choice_active } }
+ set_country_flag = MSGA_endgame_choice_active clr_country_flag = MSGA_new_balkan_order_active
+ load_focus_tree = { tree = MSGA_SER_endgame keep_completed = yes }
+ }
+}
+MSGA_eg_check_obligations = {
+ if = { limit = { tag = SER check_variable = { var = MSGA_endgame_integration_obligations value = 5 compare = greater_than_or_equals } NOT = { has_country_flag = MSGA_eg_price_notified } }
+ set_country_flag = MSGA_eg_price_notified country_event = { id = MSGA_endgame.14 }
+ }
+}
+MSGA_eg_bosnian_progress = {
+ 104 = { if = { limit = { is_owned_by = BOS is_fully_controlled_by = BOS } add_compliance = 10 add_resistance = -5 } }
+848 = { if = { limit = { is_owned_by = BOS is_fully_controlled_by = BOS } add_compliance = 10 add_resistance = -5 } }
+849 = { if = { limit = { is_owned_by = BOS is_fully_controlled_by = BOS } add_compliance = 10 add_resistance = -5 } }
+850 = { if = { limit = { is_owned_by = BOS is_fully_controlled_by = BOS } add_compliance = 10 add_resistance = -5 } }
+BOS = { add_autonomy_score = { value = -50 localization = MSGA_eg_autonomy_tt } add_timed_idea = { idea = MSGA_endgame_reconciliation days = 365 } } if = { limit = { HRZ = { exists = yes is_subject_of = SER } } 851 = { if = { limit = { is_owned_by = HRZ is_fully_controlled_by = HRZ } add_compliance = 10 add_resistance = -5 } }
+HRZ = { add_autonomy_score = { value = -50 localization = MSGA_eg_autonomy_tt } add_timed_idea = { idea = MSGA_endgame_reconciliation days = 365 } } }
+}
+MSGA_eg_strengthen_subjects = {
+ every_country = { limit = { is_subject_of = SER OR = { tag = CRO tag = SLV tag = ALB tag = BOS tag = HRZ } }
+ remove_ideas = MSGA_stabilised_client_order add_ideas = MSGA_endgame_subject_coordination
+ add_autonomy_score = { value = -100 localization = MSGA_eg_autonomy_tt }
+ }
+}
+MSGA_eg_focus_future_of_the_south_slavs = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_future_of_the_south_slavs }   } add_political_power = 50 add_stability = 0.05 country_event = { id = MSGA_endgame.1 } set_country_flag = MSGA_eg_focus_future_of_the_south_slavs }
+}
+MSGA_eg_focus_a_serbian_century = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_a_serbian_century }  NOT = { has_country_flag = MSGA_yugoslavia_path } } set_country_flag = MSGA_greater_serbia_path add_political_power = 100 add_war_support = 0.10 add_stability = 0.05 add_timed_idea = { idea = MSGA_serbian_national_project_spirit days = 365 } country_event = { id = MSGA_endgame.2 } set_country_flag = MSGA_eg_focus_a_serbian_century }
+}
+MSGA_eg_focus_one_serbian_state = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_one_serbian_state } has_country_flag = MSGA_greater_serbia_path  }  set_country_flag = MSGA_eg_focus_one_serbian_state }
+}
+MSGA_eg_focus_montenegrin_question = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_montenegrin_question } has_country_flag = MSGA_greater_serbia_path  }  set_country_flag = MSGA_eg_focus_montenegrin_question }
+}
+MSGA_eg_focus_one_people_one_state = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_one_people_one_state } has_country_flag = MSGA_greater_serbia_path  } if = { limit = { MSGA_eg_safe_MNT = yes } 105 = { if = { limit = { is_owned_by = MNT is_fully_controlled_by = MNT } add_compliance = 10 add_resistance = -5 } }
+MNT = { add_autonomy_score = { value = -50 localization = MSGA_eg_autonomy_tt } add_timed_idea = { idea = MSGA_endgame_reconciliation days = 365 } } } country_event = { id = MSGA_endgame.30 } set_country_flag = MSGA_eg_focus_one_people_one_state }
+}
+MSGA_eg_focus_integrate_montenegro = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_integrate_montenegro } has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_montenegro_integrated } add_stability = 0.03 set_country_flag = MSGA_eg_focus_integrate_montenegro }
+}
+MSGA_eg_focus_macedonian_question = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_macedonian_question } has_country_flag = MSGA_greater_serbia_path  }  set_country_flag = MSGA_eg_focus_macedonian_question }
+}
+MSGA_eg_focus_secure_the_vardar = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_secure_the_vardar } has_country_flag = MSGA_greater_serbia_path  } 106 = { if = { limit = { is_owned_by = MAC is_fully_controlled_by = MAC } if = { limit = { infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } } } 106 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } } } 106 = { if = { limit = { is_owned_by = MAC is_fully_controlled_by = MAC } add_extra_state_shared_building_slots = 1 } } 106 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } add_extra_state_shared_building_slots = 1 } } set_temp_variable = { var = industrial_development_var_temp value = 0.02 } add_industrial_development = yes set_country_flag = MSGA_eg_focus_secure_the_vardar }
+}
+MSGA_eg_focus_integrate_macedonia = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_integrate_macedonia } has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_macedonia_integrated } add_stability = 0.03 set_country_flag = MSGA_eg_focus_integrate_macedonia }
+}
+MSGA_eg_focus_consolidate_serbian_lands = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_consolidate_serbian_lands } has_country_flag = MSGA_greater_serbia_path MSGA_eg_serbian_lands_ready = yes } remove_ideas = MSGA_serbian_national_project_spirit add_ideas = MSGA_unified_serbian_state country_event = { id = MSGA_endgame.12 } set_country_flag = MSGA_eg_focus_consolidate_serbian_lands }
+}
+MSGA_eg_focus_the_greater_serbian_state = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_the_greater_serbian_state } has_country_flag = MSGA_greater_serbia_path MSGA_eg_serbian_lands_ready = yes } set_cosmetic_tag = SER_MSGA_GREATER_SERBIA remove_ideas = MSGA_unified_serbian_state add_ideas = MSGA_serbian_state_reborn set_country_flag = MSGA_greater_serbian_state_proclaimed country_event = { id = MSGA_endgame.13 } set_country_flag = MSGA_eg_focus_the_greater_serbian_state }
+}
+MSGA_eg_focus_belgrades_sphere = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_belgrades_sphere } has_country_flag = MSGA_greater_serbia_path  } add_ideas = MSGA_belgrades_sphere_spirit MSGA_eg_strengthen_subjects = yes set_country_flag = MSGA_eg_focus_belgrades_sphere }
+}
+MSGA_eg_focus_serbian_hegemony = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_serbian_hegemony } has_country_flag = MSGA_greater_serbia_path  } remove_ideas = MSGA_serbian_state_reborn remove_ideas = MSGA_belgrades_sphere_spirit remove_ideas = MSGA_a_stabilised_balkan_order add_ideas = MSGA_hegemon_balkans MSGA_eg_strengthen_subjects = yes set_country_flag = MSGA_endgame_greater_serbia_complete set_country_flag = MSGA_eg_focus_serbian_hegemony }
+}
+MSGA_eg_focus_the_yugoslav_idea = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_the_yugoslav_idea }  NOT = { has_country_flag = MSGA_greater_serbia_path } } set_country_flag = MSGA_yugoslavia_path add_political_power = 75 add_stability = 0.05 add_war_support = 0.05 add_timed_idea = { idea = MSGA_yugoslav_project days = 365 } country_event = { id = MSGA_endgame.15 } set_country_flag = MSGA_eg_focus_the_yugoslav_idea }
+}
+MSGA_eg_focus_a_common_homeland = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_a_common_homeland } has_country_flag = MSGA_yugoslavia_path  }  set_country_flag = MSGA_eg_focus_a_common_homeland }
+}
+MSGA_eg_focus_reconcile_the_republics = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_reconcile_the_republics } has_country_flag = MSGA_yugoslavia_path  } if = { limit = { MSGA_eg_safe_CRO = yes } 103 = { if = { limit = { is_owned_by = CRO is_fully_controlled_by = CRO } add_compliance = 5 add_resistance = -5 } }
+109 = { if = { limit = { is_owned_by = CRO is_fully_controlled_by = CRO } add_compliance = 5 add_resistance = -5 } }
+1306 = { if = { limit = { is_owned_by = CRO is_fully_controlled_by = CRO } add_compliance = 5 add_resistance = -5 } }
+163 = { if = { limit = { is_owned_by = CRO is_fully_controlled_by = CRO } add_compliance = 5 add_resistance = -5 } }
+736 = { if = { limit = { is_owned_by = CRO is_fully_controlled_by = CRO } add_compliance = 5 add_resistance = -5 } }
+CRO = { add_autonomy_score = { value = -50 localization = MSGA_eg_autonomy_tt } add_timed_idea = { idea = MSGA_endgame_reconciliation days = 365 } } } if = { limit = { MSGA_eg_safe_SLV = yes } 102 = { if = { limit = { is_owned_by = SLV is_fully_controlled_by = SLV } add_compliance = 5 add_resistance = -5 } }
+900 = { if = { limit = { is_owned_by = SLV is_fully_controlled_by = SLV } add_compliance = 5 add_resistance = -5 } }
+SLV = { add_autonomy_score = { value = -50 localization = MSGA_eg_autonomy_tt } add_timed_idea = { idea = MSGA_endgame_reconciliation days = 365 } } } if = { limit = { MSGA_eg_safe_bosnian_framework = yes } MSGA_eg_bosnian_progress = yes } set_country_flag = MSGA_eg_focus_reconcile_the_republics }
+}
+MSGA_eg_focus_conference_of_belgrade = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_conference_of_belgrade } has_country_flag = MSGA_yugoslavia_path MSGA_eg_republics_ready = yes } country_event = { id = MSGA_endgame.22 } set_country_flag = MSGA_eg_focus_conference_of_belgrade }
+}
+MSGA_eg_focus_draft_a_federal_model = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_draft_a_federal_model } has_country_flag = MSGA_yugoslavia_path  } add_timed_idea = { idea = MSGA_federal_transition days = 365 } set_country_flag = MSGA_eg_focus_draft_a_federal_model }
+}
+MSGA_eg_focus_the_federal_constitution = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_the_federal_constitution } has_country_flag = MSGA_yugoslavia_path MSGA_eg_republics_ready = yes has_country_flag = MSGA_eg_conference_finished }  set_country_flag = MSGA_eg_focus_the_federal_constitution }
+}
+MSGA_eg_focus_proclaim_the_federation = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_proclaim_the_federation } has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_yugoslav_constitution_ready MSGA_eg_federal_territory_ready = yes }  set_country_flag = MSGA_eg_focus_proclaim_the_federation }
+}
+MSGA_eg_focus_federal_yugoslavia = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_federal_yugoslavia } has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_yugoslav_federation_proclaimed } remove_ideas = MSGA_yugoslav_project remove_ideas = MSGA_federal_transition remove_ideas = MSGA_serbian_sphere_spirit remove_ideas = MSGA_a_stabilised_balkan_order add_ideas = MSGA_yugoslav_federation set_country_flag = MSGA_eg_focus_federal_yugoslavia }
+}
+MSGA_eg_focus_one_yugoslav_army = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_one_yugoslav_army } has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_federal_army_agreed } add_ideas = MSGA_unified_federal_command army_experience = 15 country_event = { id = MSGA_endgame.31 } set_country_flag = MSGA_eg_focus_one_yugoslav_army }
+}
+MSGA_eg_focus_integrate_the_commands = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_integrate_the_commands } has_country_flag = MSGA_yugoslavia_path  } army_experience = 25 set_country_flag = MSGA_eg_focus_integrate_the_commands }
+}
+MSGA_eg_focus_arsenal_of_yugoslavia = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_arsenal_of_yugoslavia } has_country_flag = MSGA_yugoslavia_path  } 107 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { arms_factory < 20 }
+ set_temp_variable = { var = MSGA_eg_before value = building_level@arms_factory }
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+ set_temp_variable = { var = MSGA_eg_after value = building_level@arms_factory }
+ if = { limit = { check_variable = { var = MSGA_eg_after value = MSGA_eg_before compare = greater_than } } log = "[MSGA ENDGAME] arms_factory granted in state 107" }
+ else = { add_extra_state_shared_building_slots = -1 log = "[MSGA ENDGAME] native arms_factory grant rejected in state 107" }
+ } } } 109 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { arms_factory < 20 }
+ set_temp_variable = { var = MSGA_eg_before value = building_level@arms_factory }
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+ set_temp_variable = { var = MSGA_eg_after value = building_level@arms_factory }
+ if = { limit = { check_variable = { var = MSGA_eg_after value = MSGA_eg_before compare = greater_than } } log = "[MSGA ENDGAME] arms_factory granted in state 109" }
+ else = { add_extra_state_shared_building_slots = -1 log = "[MSGA ENDGAME] native arms_factory grant rejected in state 109" }
+ } } } add_ideas = MSGA_federal_arsenal set_country_flag = MSGA_eg_focus_arsenal_of_yugoslavia }
+}
+MSGA_eg_focus_one_yugoslav_economy = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_one_yugoslav_economy } has_country_flag = MSGA_yugoslavia_path  } add_ideas = MSGA_federal_market set_country_flag = MSGA_eg_focus_one_yugoslav_economy }
+}
+MSGA_eg_focus_rebuild_the_common_market = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_rebuild_the_common_market } has_country_flag = MSGA_yugoslavia_path  } 102 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } } } 104 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } } } 106 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } } } add_stability = 0.03 set_country_flag = MSGA_eg_focus_rebuild_the_common_market }
+}
+MSGA_eg_focus_yugoslav_development_plan = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_yugoslav_development_plan } has_country_flag = MSGA_yugoslavia_path  } 102 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { office_park < 20 }
+ set_temp_variable = { var = MSGA_eg_before value = building_level@office_park }
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = { type = office_park level = 1 instant_build = yes }
+ set_temp_variable = { var = MSGA_eg_after value = building_level@office_park }
+ if = { limit = { check_variable = { var = MSGA_eg_after value = MSGA_eg_before compare = greater_than } } log = "[MSGA ENDGAME] office_park granted in state 102" }
+ else = { add_extra_state_shared_building_slots = -1 log = "[MSGA ENDGAME] native office_park grant rejected in state 102" }
+ } } } 109 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { industrial_complex < 20 }
+ set_temp_variable = { var = MSGA_eg_before value = building_level@industrial_complex }
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+ set_temp_variable = { var = MSGA_eg_after value = building_level@industrial_complex }
+ if = { limit = { check_variable = { var = MSGA_eg_after value = MSGA_eg_before compare = greater_than } } log = "[MSGA ENDGAME] industrial_complex granted in state 109" }
+ else = { add_extra_state_shared_building_slots = -1 log = "[MSGA ENDGAME] native industrial_complex grant rejected in state 109" }
+ } } } 104 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { industrial_complex < 20 }
+ set_temp_variable = { var = MSGA_eg_before value = building_level@industrial_complex }
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+ set_temp_variable = { var = MSGA_eg_after value = building_level@industrial_complex }
+ if = { limit = { check_variable = { var = MSGA_eg_after value = MSGA_eg_before compare = greater_than } } log = "[MSGA ENDGAME] industrial_complex granted in state 104" }
+ else = { add_extra_state_shared_building_slots = -1 log = "[MSGA ENDGAME] native industrial_complex grant rejected in state 104" }
+ } } } 106 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { arms_factory < 20 }
+ set_temp_variable = { var = MSGA_eg_before value = building_level@arms_factory }
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+ set_temp_variable = { var = MSGA_eg_after value = building_level@arms_factory }
+ if = { limit = { check_variable = { var = MSGA_eg_after value = MSGA_eg_before compare = greater_than } } log = "[MSGA ENDGAME] arms_factory granted in state 106" }
+ else = { add_extra_state_shared_building_slots = -1 log = "[MSGA ENDGAME] native arms_factory grant rejected in state 106" }
+ } } } 102 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } } }
+109 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } } }
+104 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } } }
+105 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } } }
+106 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } } } set_temp_variable = { var = industrial_development_var_temp value = 0.05 } add_industrial_development = yes set_country_flag = MSGA_eg_focus_yugoslav_development_plan }
+}
+MSGA_eg_focus_brotherhood_reforged = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_brotherhood_reforged } has_country_flag = MSGA_yugoslavia_path  } add_stability = 0.10 45 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } add_compliance = 10 add_resistance = -10 } }
+102 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } add_compliance = 10 add_resistance = -10 } }
+103 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } add_compliance = 10 add_resistance = -10 } }
+104 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } add_compliance = 10 add_resistance = -10 } }
+105 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } add_compliance = 10 add_resistance = -10 } }
+106 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } add_compliance = 10 add_resistance = -10 } }
+107 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } add_compliance = 10 add_resistance = -10 } }
+108 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } add_compliance = 10 add_resistance = -10 } }
+109 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } add_compliance = 10 add_resistance = -10 } }
+163 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } add_compliance = 10 add_resistance = -10 } }
+736 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } add_compliance = 10 add_resistance = -10 } }
+785 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } add_compliance = 10 add_resistance = -10 } }
+848 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } add_compliance = 10 add_resistance = -10 } }
+849 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } add_compliance = 10 add_resistance = -10 } }
+850 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } add_compliance = 10 add_resistance = -10 } }
+851 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } add_compliance = 10 add_resistance = -10 } }
+900 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } add_compliance = 10 add_resistance = -10 } }
+1296 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } add_compliance = 10 add_resistance = -10 } }
+1305 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } add_compliance = 10 add_resistance = -10 } }
+1306 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } add_compliance = 10 add_resistance = -10 } } country_event = { id = MSGA_endgame.28 } set_country_flag = MSGA_eg_focus_brotherhood_reforged }
+}
+MSGA_eg_focus_a_new_yugoslavia = {
+ if = { limit = { tag = SER has_country_flag = MSGA_endgame_choice_active NOT = { has_country_flag = MSGA_eg_focus_a_new_yugoslavia } has_country_flag = MSGA_yugoslavia_path  } remove_ideas = MSGA_yugoslav_federation remove_ideas = MSGA_federal_market remove_ideas = MSGA_federal_arsenal add_ideas = MSGA_federation_reborn set_country_flag = MSGA_endgame_yugoslavia_complete country_event = { id = MSGA_endgame.29 } set_country_flag = MSGA_eg_focus_a_new_yugoslavia }
+}
+MSGA_eg_start_begin_montenegrin_integration = {
+ if = { limit = { MSGA_eg_conditions_begin_montenegrin_integration = yes NOT = { has_country_flag = MSGA_eg_begin_montenegrin_integration_pending } NOT = { has_country_flag = MSGA_eg_busy_MNT } } set_country_flag = MSGA_eg_begin_montenegrin_integration_pending set_country_flag = MSGA_eg_busy_MNT set_temp_variable = { var = debt_var_temp value = 0.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.5 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_begin_montenegrin_integration = {
+ if = { limit = { has_country_flag = MSGA_eg_begin_montenegrin_integration_pending } clr_country_flag = MSGA_eg_begin_montenegrin_integration_pending clr_country_flag = MSGA_eg_busy_MNT }
+}
+MSGA_eg_cancel_begin_montenegrin_integration = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_begin_montenegrin_integration_pending NOT = { has_country_flag = MSGA_eg_begin_montenegrin_integration_done } } add_political_power = 25 set_temp_variable = { var = debt_var_temp value = -0.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.5 } MSGA_eg_release_begin_montenegrin_integration = yes log = "[MSGA ENDGAME] begin_montenegrin_integration cancelled and refunded" }
+}
+MSGA_eg_finish_begin_montenegrin_integration = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_begin_montenegrin_integration_pending MSGA_eg_conditions_begin_montenegrin_integration = yes } 105 = { if = { limit = { is_owned_by = MNT is_fully_controlled_by = MNT } add_compliance = 10 add_resistance = -5 } }
+MNT = { add_autonomy_score = { value = -50 localization = MSGA_eg_autonomy_tt } add_timed_idea = { idea = MSGA_endgame_reconciliation days = 365 } } country_event = { id = MSGA_endgame.3 } set_country_flag = MSGA_eg_begin_montenegrin_integration_done MSGA_eg_release_begin_montenegrin_integration = yes log = "[MSGA ENDGAME] begin_montenegrin_integration completed" } else = { MSGA_eg_cancel_begin_montenegrin_integration = yes }
+}
+MSGA_eg_start_merge_state_administrations = {
+ if = { limit = { MSGA_eg_conditions_merge_state_administrations = yes NOT = { has_country_flag = MSGA_eg_merge_state_administrations_pending } NOT = { has_country_flag = MSGA_eg_busy_MNT } } set_country_flag = MSGA_eg_merge_state_administrations_pending set_country_flag = MSGA_eg_busy_MNT set_temp_variable = { var = debt_var_temp value = 0.75 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.75 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_merge_state_administrations = {
+ if = { limit = { has_country_flag = MSGA_eg_merge_state_administrations_pending } clr_country_flag = MSGA_eg_merge_state_administrations_pending clr_country_flag = MSGA_eg_busy_MNT }
+}
+MSGA_eg_cancel_merge_state_administrations = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_merge_state_administrations_pending NOT = { has_country_flag = MSGA_eg_merge_state_administrations_done } } add_political_power = 30 set_temp_variable = { var = debt_var_temp value = -0.75 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.75 } MSGA_eg_release_merge_state_administrations = yes log = "[MSGA ENDGAME] merge_state_administrations cancelled and refunded" }
+}
+MSGA_eg_finish_merge_state_administrations = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_merge_state_administrations_pending MSGA_eg_conditions_merge_state_administrations = yes } 105 = { if = { limit = { is_owned_by = MNT is_fully_controlled_by = MNT } add_compliance = 10 add_resistance = -5 } }
+MNT = { add_autonomy_score = { value = -50 localization = MSGA_eg_autonomy_tt } add_timed_idea = { idea = MSGA_endgame_reconciliation days = 365 } } country_event = { id = MSGA_endgame.4 } set_country_flag = MSGA_eg_merge_state_administrations_done MSGA_eg_release_merge_state_administrations = yes log = "[MSGA ENDGAME] merge_state_administrations completed" } else = { MSGA_eg_cancel_merge_state_administrations = yes }
+}
+MSGA_eg_start_unify_montenegrin_armed_forces = {
+ if = { limit = { MSGA_eg_conditions_unify_montenegrin_armed_forces = yes NOT = { has_country_flag = MSGA_eg_unify_montenegrin_armed_forces_pending } NOT = { has_country_flag = MSGA_eg_busy_MNT } } set_country_flag = MSGA_eg_unify_montenegrin_armed_forces_pending set_country_flag = MSGA_eg_busy_MNT set_temp_variable = { var = debt_var_temp value = 0.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.5 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_unify_montenegrin_armed_forces = {
+ if = { limit = { has_country_flag = MSGA_eg_unify_montenegrin_armed_forces_pending } clr_country_flag = MSGA_eg_unify_montenegrin_armed_forces_pending clr_country_flag = MSGA_eg_busy_MNT }
+}
+MSGA_eg_cancel_unify_montenegrin_armed_forces = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_unify_montenegrin_armed_forces_pending NOT = { has_country_flag = MSGA_eg_unify_montenegrin_armed_forces_done } } add_political_power = 25 set_temp_variable = { var = debt_var_temp value = -0.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.5 } MSGA_eg_release_unify_montenegrin_armed_forces = yes log = "[MSGA ENDGAME] unify_montenegrin_armed_forces cancelled and refunded" }
+}
+MSGA_eg_finish_unify_montenegrin_armed_forces = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_unify_montenegrin_armed_forces_pending MSGA_eg_conditions_unify_montenegrin_armed_forces = yes } army_experience = 15 MNT = { add_autonomy_score = { value = -50 localization = MSGA_eg_autonomy_tt } } country_event = { id = MSGA_endgame.5 } set_country_flag = MSGA_eg_unify_montenegrin_armed_forces_done MSGA_eg_release_unify_montenegrin_armed_forces = yes log = "[MSGA ENDGAME] unify_montenegrin_armed_forces completed" } else = { MSGA_eg_cancel_unify_montenegrin_armed_forces = yes }
+}
+MSGA_eg_start_complete_union_montenegro = {
+ if = { limit = { MSGA_eg_conditions_complete_union_montenegro = yes NOT = { has_country_flag = MSGA_eg_complete_union_montenegro_pending } NOT = { has_country_flag = MSGA_eg_busy_MNT } } set_country_flag = MSGA_eg_complete_union_montenegro_pending set_country_flag = MSGA_eg_busy_MNT set_temp_variable = { var = debt_var_temp value = 1.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 1.5 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_complete_union_montenegro = {
+ if = { limit = { has_country_flag = MSGA_eg_complete_union_montenegro_pending } clr_country_flag = MSGA_eg_complete_union_montenegro_pending clr_country_flag = MSGA_eg_busy_MNT }
+}
+MSGA_eg_cancel_complete_union_montenegro = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_complete_union_montenegro_pending NOT = { has_country_flag = MSGA_eg_complete_union_montenegro_done } } add_political_power = 50 set_temp_variable = { var = debt_var_temp value = -1.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -1.5 } MSGA_eg_release_complete_union_montenegro = yes log = "[MSGA ENDGAME] complete_union_montenegro cancelled and refunded" }
+}
+MSGA_eg_finish_complete_union_montenegro = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_complete_union_montenegro_pending MSGA_eg_conditions_complete_union_montenegro = yes } if = { limit = { country_exists = MNT } MNT = { remove_ideas = MSGA_endgame_reconciliation remove_ideas = MSGA_bound_protectorate remove_ideas = MSGA_integrated_protectorate remove_ideas = MSGA_stabilised_client_order remove_ideas = MSGA_campaign_isolation remove_ideas = MSGA_montenegro_postwar_recovery  } annex_country = { target = MNT transfer_troops = yes } }
+ 105 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } } 105 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } add_extra_state_shared_building_slots = 1 } } 105 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { industrial_complex < 20 }
+ set_temp_variable = { var = MSGA_eg_before value = building_level@industrial_complex }
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+ set_temp_variable = { var = MSGA_eg_after value = building_level@industrial_complex }
+ if = { limit = { check_variable = { var = MSGA_eg_after value = MSGA_eg_before compare = greater_than } } log = "[MSGA ENDGAME] industrial_complex granted in state 105" }
+ else = { add_extra_state_shared_building_slots = -1 log = "[MSGA ENDGAME] native industrial_complex grant rejected in state 105" }
+ } } } 105 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { arms_factory < 20 }
+ set_temp_variable = { var = MSGA_eg_before value = building_level@arms_factory }
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+ set_temp_variable = { var = MSGA_eg_after value = building_level@arms_factory }
+ if = { limit = { check_variable = { var = MSGA_eg_after value = MSGA_eg_before compare = greater_than } } log = "[MSGA ENDGAME] arms_factory granted in state 105" }
+ else = { add_extra_state_shared_building_slots = -1 log = "[MSGA ENDGAME] native arms_factory grant rejected in state 105" }
+ } } } set_country_flag = MSGA_montenegro_integrated country_event = { id = MSGA_endgame.6 } set_country_flag = MSGA_eg_complete_union_montenegro_done MSGA_eg_release_complete_union_montenegro = yes log = "[MSGA ENDGAME] complete_union_montenegro completed" } else = { MSGA_eg_cancel_complete_union_montenegro = yes }
+}
+MSGA_eg_start_establish_vardar_administration = {
+ if = { limit = { MSGA_eg_conditions_establish_vardar_administration = yes NOT = { has_country_flag = MSGA_eg_establish_vardar_administration_pending } NOT = { has_country_flag = MSGA_eg_busy_MAC } } set_country_flag = MSGA_eg_establish_vardar_administration_pending set_country_flag = MSGA_eg_busy_MAC set_temp_variable = { var = debt_var_temp value = 0.75 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.75 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_establish_vardar_administration = {
+ if = { limit = { has_country_flag = MSGA_eg_establish_vardar_administration_pending } clr_country_flag = MSGA_eg_establish_vardar_administration_pending clr_country_flag = MSGA_eg_busy_MAC }
+}
+MSGA_eg_cancel_establish_vardar_administration = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_establish_vardar_administration_pending NOT = { has_country_flag = MSGA_eg_establish_vardar_administration_done } } add_political_power = 30 set_temp_variable = { var = debt_var_temp value = -0.75 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.75 } MSGA_eg_release_establish_vardar_administration = yes log = "[MSGA ENDGAME] establish_vardar_administration cancelled and refunded" }
+}
+MSGA_eg_finish_establish_vardar_administration = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_establish_vardar_administration_pending MSGA_eg_conditions_establish_vardar_administration = yes } 106 = { if = { limit = { is_owned_by = MAC is_fully_controlled_by = MAC } add_compliance = 10 add_resistance = -5 } }
+MAC = { add_autonomy_score = { value = -50 localization = MSGA_eg_autonomy_tt } add_timed_idea = { idea = MSGA_endgame_reconciliation days = 365 } } country_event = { id = MSGA_endgame.7 } set_country_flag = MSGA_eg_establish_vardar_administration_done MSGA_eg_release_establish_vardar_administration = yes log = "[MSGA ENDGAME] establish_vardar_administration completed" } else = { MSGA_eg_cancel_establish_vardar_administration = yes }
+}
+MSGA_eg_start_connect_macedonian_economy = {
+ if = { limit = { MSGA_eg_conditions_connect_macedonian_economy = yes NOT = { has_country_flag = MSGA_eg_connect_macedonian_economy_pending } NOT = { has_country_flag = MSGA_eg_busy_MAC } } set_country_flag = MSGA_eg_connect_macedonian_economy_pending set_country_flag = MSGA_eg_busy_MAC set_temp_variable = { var = debt_var_temp value = 1 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 1 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_connect_macedonian_economy = {
+ if = { limit = { has_country_flag = MSGA_eg_connect_macedonian_economy_pending } clr_country_flag = MSGA_eg_connect_macedonian_economy_pending clr_country_flag = MSGA_eg_busy_MAC }
+}
+MSGA_eg_cancel_connect_macedonian_economy = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_connect_macedonian_economy_pending NOT = { has_country_flag = MSGA_eg_connect_macedonian_economy_done } } add_political_power = 35 set_temp_variable = { var = debt_var_temp value = -1 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -1 } MSGA_eg_release_connect_macedonian_economy = yes log = "[MSGA ENDGAME] connect_macedonian_economy cancelled and refunded" }
+}
+MSGA_eg_finish_connect_macedonian_economy = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_connect_macedonian_economy_pending MSGA_eg_conditions_connect_macedonian_economy = yes } 106 = { if = { limit = { is_owned_by = MAC is_fully_controlled_by = MAC } if = { limit = { infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } } } 106 = { if = { limit = { is_owned_by = MAC is_fully_controlled_by = MAC } if = { limit = { industrial_complex < 20 }
+ set_temp_variable = { var = MSGA_eg_before value = building_level@industrial_complex }
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+ set_temp_variable = { var = MSGA_eg_after value = building_level@industrial_complex }
+ if = { limit = { check_variable = { var = MSGA_eg_after value = MSGA_eg_before compare = greater_than } } log = "[MSGA ENDGAME] industrial_complex granted in state 106" }
+ else = { add_extra_state_shared_building_slots = -1 log = "[MSGA ENDGAME] native industrial_complex grant rejected in state 106" }
+ } } } set_temp_variable = { var = industrial_development_var_temp value = 0.02 } add_industrial_development = yes country_event = { id = MSGA_endgame.8 } set_country_flag = MSGA_eg_connect_macedonian_economy_done MSGA_eg_release_connect_macedonian_economy = yes log = "[MSGA ENDGAME] connect_macedonian_economy completed" } else = { MSGA_eg_cancel_connect_macedonian_economy = yes }
+}
+MSGA_eg_start_integrate_macedonian_security = {
+ if = { limit = { MSGA_eg_conditions_integrate_macedonian_security = yes NOT = { has_country_flag = MSGA_eg_integrate_macedonian_security_pending } NOT = { has_country_flag = MSGA_eg_busy_MAC } } set_country_flag = MSGA_eg_integrate_macedonian_security_pending set_country_flag = MSGA_eg_busy_MAC set_temp_variable = { var = debt_var_temp value = 0.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.5 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_integrate_macedonian_security = {
+ if = { limit = { has_country_flag = MSGA_eg_integrate_macedonian_security_pending } clr_country_flag = MSGA_eg_integrate_macedonian_security_pending clr_country_flag = MSGA_eg_busy_MAC }
+}
+MSGA_eg_cancel_integrate_macedonian_security = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_integrate_macedonian_security_pending NOT = { has_country_flag = MSGA_eg_integrate_macedonian_security_done } } add_political_power = 30 set_temp_variable = { var = debt_var_temp value = -0.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.5 } MSGA_eg_release_integrate_macedonian_security = yes log = "[MSGA ENDGAME] integrate_macedonian_security cancelled and refunded" }
+}
+MSGA_eg_finish_integrate_macedonian_security = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_integrate_macedonian_security_pending MSGA_eg_conditions_integrate_macedonian_security = yes } 106 = { if = { limit = { is_owned_by = MAC is_fully_controlled_by = MAC } add_compliance = 10 add_resistance = -5 } }
+MAC = { add_autonomy_score = { value = -50 localization = MSGA_eg_autonomy_tt } add_timed_idea = { idea = MSGA_endgame_reconciliation days = 365 } } add_stability = 0.02 country_event = { id = MSGA_endgame.9 } set_country_flag = MSGA_eg_integrate_macedonian_security_done MSGA_eg_release_integrate_macedonian_security = yes log = "[MSGA ENDGAME] integrate_macedonian_security completed" } else = { MSGA_eg_cancel_integrate_macedonian_security = yes }
+}
+MSGA_eg_start_place_macedonian_army_under_serbian_command = {
+ if = { limit = { MSGA_eg_conditions_place_macedonian_army_under_serbian_command = yes NOT = { has_country_flag = MSGA_eg_place_macedonian_army_under_serbian_command_pending } NOT = { has_country_flag = MSGA_eg_busy_MAC } } set_country_flag = MSGA_eg_place_macedonian_army_under_serbian_command_pending set_country_flag = MSGA_eg_busy_MAC set_temp_variable = { var = debt_var_temp value = 0.75 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.75 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_place_macedonian_army_under_serbian_command = {
+ if = { limit = { has_country_flag = MSGA_eg_place_macedonian_army_under_serbian_command_pending } clr_country_flag = MSGA_eg_place_macedonian_army_under_serbian_command_pending clr_country_flag = MSGA_eg_busy_MAC }
+}
+MSGA_eg_cancel_place_macedonian_army_under_serbian_command = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_place_macedonian_army_under_serbian_command_pending NOT = { has_country_flag = MSGA_eg_place_macedonian_army_under_serbian_command_done } } add_political_power = 35 set_temp_variable = { var = debt_var_temp value = -0.75 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.75 } MSGA_eg_release_place_macedonian_army_under_serbian_command = yes log = "[MSGA ENDGAME] place_macedonian_army_under_serbian_command cancelled and refunded" }
+}
+MSGA_eg_finish_place_macedonian_army_under_serbian_command = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_place_macedonian_army_under_serbian_command_pending MSGA_eg_conditions_place_macedonian_army_under_serbian_command = yes } army_experience = 20 MAC = { add_autonomy_score = { value = -75 localization = MSGA_eg_autonomy_tt } } country_event = { id = MSGA_endgame.10 } set_country_flag = MSGA_eg_place_macedonian_army_under_serbian_command_done MSGA_eg_release_place_macedonian_army_under_serbian_command = yes log = "[MSGA ENDGAME] place_macedonian_army_under_serbian_command completed" } else = { MSGA_eg_cancel_place_macedonian_army_under_serbian_command = yes }
+}
+MSGA_eg_start_integrate_macedonia_decision = {
+ if = { limit = { MSGA_eg_conditions_integrate_macedonia_decision = yes NOT = { has_country_flag = MSGA_eg_integrate_macedonia_decision_pending } NOT = { has_country_flag = MSGA_eg_busy_MAC } } set_country_flag = MSGA_eg_integrate_macedonia_decision_pending set_country_flag = MSGA_eg_busy_MAC set_temp_variable = { var = debt_var_temp value = 2 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 2 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_integrate_macedonia_decision = {
+ if = { limit = { has_country_flag = MSGA_eg_integrate_macedonia_decision_pending } clr_country_flag = MSGA_eg_integrate_macedonia_decision_pending clr_country_flag = MSGA_eg_busy_MAC }
+}
+MSGA_eg_cancel_integrate_macedonia_decision = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_integrate_macedonia_decision_pending NOT = { has_country_flag = MSGA_eg_integrate_macedonia_decision_done } } add_political_power = 60 set_temp_variable = { var = debt_var_temp value = -2 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -2 } MSGA_eg_release_integrate_macedonia_decision = yes log = "[MSGA ENDGAME] integrate_macedonia_decision cancelled and refunded" }
+}
+MSGA_eg_finish_integrate_macedonia_decision = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_integrate_macedonia_decision_pending MSGA_eg_conditions_integrate_macedonia_decision = yes } if = { limit = { country_exists = MAC } MAC = { remove_ideas = MSGA_endgame_reconciliation remove_ideas = MSGA_bound_protectorate remove_ideas = MSGA_integrated_protectorate remove_ideas = MSGA_stabilised_client_order remove_ideas = MSGA_campaign_isolation remove_ideas = MSGA_macedonia_postwar_recovery  } annex_country = { target = MAC transfer_troops = yes } }
+ 106 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } } 106 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { arms_factory < 20 }
+ set_temp_variable = { var = MSGA_eg_before value = building_level@arms_factory }
+ add_extra_state_shared_building_slots = 1
+ add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+ set_temp_variable = { var = MSGA_eg_after value = building_level@arms_factory }
+ if = { limit = { check_variable = { var = MSGA_eg_after value = MSGA_eg_before compare = greater_than } } log = "[MSGA ENDGAME] arms_factory granted in state 106" }
+ else = { add_extra_state_shared_building_slots = -1 log = "[MSGA ENDGAME] native arms_factory grant rejected in state 106" }
+ } } } set_country_flag = MSGA_macedonia_integrated country_event = { id = MSGA_endgame.11 } set_country_flag = MSGA_eg_integrate_macedonia_decision_done MSGA_eg_release_integrate_macedonia_decision = yes log = "[MSGA ENDGAME] integrate_macedonia_decision completed" } else = { MSGA_eg_cancel_integrate_macedonia_decision = yes }
+}
+MSGA_eg_start_bind_croatia_to_belgrade = {
+ if = { limit = { MSGA_eg_conditions_bind_croatia_to_belgrade = yes NOT = { has_country_flag = MSGA_eg_bind_croatia_to_belgrade_pending } NOT = { has_country_flag = MSGA_eg_busy_CRO } } set_country_flag = MSGA_eg_bind_croatia_to_belgrade_pending set_country_flag = MSGA_eg_busy_CRO set_temp_variable = { var = debt_var_temp value = 0.25 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.25 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_bind_croatia_to_belgrade = {
+ if = { limit = { has_country_flag = MSGA_eg_bind_croatia_to_belgrade_pending } clr_country_flag = MSGA_eg_bind_croatia_to_belgrade_pending clr_country_flag = MSGA_eg_busy_CRO }
+}
+MSGA_eg_cancel_bind_croatia_to_belgrade = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_bind_croatia_to_belgrade_pending NOT = { has_country_flag = MSGA_eg_bind_croatia_to_belgrade_done } } add_political_power = 25 set_temp_variable = { var = debt_var_temp value = -0.25 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.25 } MSGA_eg_release_bind_croatia_to_belgrade = yes log = "[MSGA ENDGAME] bind_croatia_to_belgrade cancelled and refunded" }
+}
+MSGA_eg_finish_bind_croatia_to_belgrade = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_bind_croatia_to_belgrade_pending MSGA_eg_conditions_bind_croatia_to_belgrade = yes } CRO = { add_autonomy_score = { value = -100 localization = MSGA_eg_autonomy_tt } add_ideas = MSGA_endgame_subject_coordination } add_ideas = MSGA_endgame_croatian_access set_country_flag = MSGA_eg_bind_croatia_to_belgrade_done MSGA_eg_release_bind_croatia_to_belgrade = yes log = "[MSGA ENDGAME] bind_croatia_to_belgrade completed" } else = { MSGA_eg_cancel_bind_croatia_to_belgrade = yes }
+}
+MSGA_eg_start_integrate_slovenian_market = {
+ if = { limit = { MSGA_eg_conditions_integrate_slovenian_market = yes NOT = { has_country_flag = MSGA_eg_integrate_slovenian_market_pending } NOT = { has_country_flag = MSGA_eg_busy_SLV } } set_country_flag = MSGA_eg_integrate_slovenian_market_pending set_country_flag = MSGA_eg_busy_SLV set_temp_variable = { var = debt_var_temp value = 0.25 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.25 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_integrate_slovenian_market = {
+ if = { limit = { has_country_flag = MSGA_eg_integrate_slovenian_market_pending } clr_country_flag = MSGA_eg_integrate_slovenian_market_pending clr_country_flag = MSGA_eg_busy_SLV }
+}
+MSGA_eg_cancel_integrate_slovenian_market = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_integrate_slovenian_market_pending NOT = { has_country_flag = MSGA_eg_integrate_slovenian_market_done } } add_political_power = 25 set_temp_variable = { var = debt_var_temp value = -0.25 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.25 } MSGA_eg_release_integrate_slovenian_market = yes log = "[MSGA ENDGAME] integrate_slovenian_market cancelled and refunded" }
+}
+MSGA_eg_finish_integrate_slovenian_market = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_integrate_slovenian_market_pending MSGA_eg_conditions_integrate_slovenian_market = yes } SLV = { add_autonomy_score = { value = -100 localization = MSGA_eg_autonomy_tt } add_ideas = MSGA_endgame_subject_coordination } add_ideas = MSGA_endgame_slovenian_access set_country_flag = MSGA_eg_integrate_slovenian_market_done MSGA_eg_release_integrate_slovenian_market = yes log = "[MSGA ENDGAME] integrate_slovenian_market completed" } else = { MSGA_eg_cancel_integrate_slovenian_market = yes }
+}
+MSGA_eg_start_secure_albanias_loyalty = {
+ if = { limit = { MSGA_eg_conditions_secure_albanias_loyalty = yes NOT = { has_country_flag = MSGA_eg_secure_albanias_loyalty_pending } NOT = { has_country_flag = MSGA_eg_busy_ALB } } set_country_flag = MSGA_eg_secure_albanias_loyalty_pending set_country_flag = MSGA_eg_busy_ALB set_temp_variable = { var = debt_var_temp value = 0.25 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.25 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_secure_albanias_loyalty = {
+ if = { limit = { has_country_flag = MSGA_eg_secure_albanias_loyalty_pending } clr_country_flag = MSGA_eg_secure_albanias_loyalty_pending clr_country_flag = MSGA_eg_busy_ALB }
+}
+MSGA_eg_cancel_secure_albanias_loyalty = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_secure_albanias_loyalty_pending NOT = { has_country_flag = MSGA_eg_secure_albanias_loyalty_done } } add_political_power = 25 set_temp_variable = { var = debt_var_temp value = -0.25 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.25 } MSGA_eg_release_secure_albanias_loyalty = yes log = "[MSGA ENDGAME] secure_albanias_loyalty cancelled and refunded" }
+}
+MSGA_eg_finish_secure_albanias_loyalty = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_secure_albanias_loyalty_pending MSGA_eg_conditions_secure_albanias_loyalty = yes } ALB = { add_autonomy_score = { value = -100 localization = MSGA_eg_autonomy_tt } add_ideas = MSGA_endgame_subject_coordination } set_country_flag = MSGA_eg_secure_albanias_loyalty_done MSGA_eg_release_secure_albanias_loyalty = yes log = "[MSGA ENDGAME] secure_albanias_loyalty completed" } else = { MSGA_eg_cancel_secure_albanias_loyalty = yes }
+}
+MSGA_eg_start_coordinate_balkan_protectorates = {
+ if = { limit = { MSGA_eg_conditions_coordinate_balkan_protectorates = yes NOT = { has_country_flag = MSGA_eg_coordinate_balkan_protectorates_pending } NOT = { has_country_flag = MSGA_eg_busy_sphere } } set_country_flag = MSGA_eg_coordinate_balkan_protectorates_pending set_country_flag = MSGA_eg_busy_sphere set_temp_variable = { var = debt_var_temp value = 0.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.5 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_coordinate_balkan_protectorates = {
+ if = { limit = { has_country_flag = MSGA_eg_coordinate_balkan_protectorates_pending } clr_country_flag = MSGA_eg_coordinate_balkan_protectorates_pending clr_country_flag = MSGA_eg_busy_sphere }
+}
+MSGA_eg_cancel_coordinate_balkan_protectorates = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_coordinate_balkan_protectorates_pending NOT = { has_country_flag = MSGA_eg_coordinate_balkan_protectorates_done } } add_political_power = 50 set_temp_variable = { var = debt_var_temp value = -0.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.5 } MSGA_eg_release_coordinate_balkan_protectorates = yes log = "[MSGA ENDGAME] coordinate_balkan_protectorates cancelled and refunded" }
+}
+MSGA_eg_finish_coordinate_balkan_protectorates = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_coordinate_balkan_protectorates_pending MSGA_eg_conditions_coordinate_balkan_protectorates = yes } MSGA_eg_strengthen_subjects = yes set_country_flag = MSGA_eg_coordinate_balkan_protectorates_done MSGA_eg_release_coordinate_balkan_protectorates = yes log = "[MSGA ENDGAME] coordinate_balkan_protectorates completed" } else = { MSGA_eg_cancel_coordinate_balkan_protectorates = yes }
+}
+MSGA_eg_start_open_federal_talks_zagreb = {
+ if = { limit = { MSGA_eg_conditions_open_federal_talks_zagreb = yes NOT = { has_country_flag = MSGA_eg_open_federal_talks_zagreb_pending } NOT = { has_country_flag = MSGA_eg_busy_CRO } } set_country_flag = MSGA_eg_open_federal_talks_zagreb_pending set_country_flag = MSGA_eg_busy_CRO set_temp_variable = { var = debt_var_temp value = 0.25 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.25 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_open_federal_talks_zagreb = {
+ if = { limit = { has_country_flag = MSGA_eg_open_federal_talks_zagreb_pending } clr_country_flag = MSGA_eg_open_federal_talks_zagreb_pending clr_country_flag = MSGA_eg_busy_CRO }
+}
+MSGA_eg_cancel_open_federal_talks_zagreb = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_open_federal_talks_zagreb_pending NOT = { has_country_flag = MSGA_eg_open_federal_talks_zagreb_done } } add_political_power = 25 set_temp_variable = { var = debt_var_temp value = -0.25 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.25 } MSGA_eg_release_open_federal_talks_zagreb = yes log = "[MSGA ENDGAME] open_federal_talks_zagreb cancelled and refunded" }
+}
+MSGA_eg_finish_open_federal_talks_zagreb = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_open_federal_talks_zagreb_pending MSGA_eg_conditions_open_federal_talks_zagreb = yes } 103 = { if = { limit = { is_owned_by = CRO is_fully_controlled_by = CRO } add_compliance = 10 add_resistance = -5 } }
+109 = { if = { limit = { is_owned_by = CRO is_fully_controlled_by = CRO } add_compliance = 10 add_resistance = -5 } }
+1306 = { if = { limit = { is_owned_by = CRO is_fully_controlled_by = CRO } add_compliance = 10 add_resistance = -5 } }
+163 = { if = { limit = { is_owned_by = CRO is_fully_controlled_by = CRO } add_compliance = 10 add_resistance = -5 } }
+736 = { if = { limit = { is_owned_by = CRO is_fully_controlled_by = CRO } add_compliance = 10 add_resistance = -5 } }
+CRO = { add_autonomy_score = { value = -50 localization = MSGA_eg_autonomy_tt } add_timed_idea = { idea = MSGA_endgame_reconciliation days = 365 } } country_event = { id = MSGA_endgame.16 } set_country_flag = MSGA_eg_open_federal_talks_zagreb_done MSGA_eg_release_open_federal_talks_zagreb = yes log = "[MSGA ENDGAME] open_federal_talks_zagreb completed" } else = { MSGA_eg_cancel_open_federal_talks_zagreb = yes }
+}
+MSGA_eg_start_restore_croatian_civil_administration = {
+ if = { limit = { MSGA_eg_conditions_restore_croatian_civil_administration = yes NOT = { has_country_flag = MSGA_eg_restore_croatian_civil_administration_pending } NOT = { has_country_flag = MSGA_eg_busy_CRO } } set_country_flag = MSGA_eg_restore_croatian_civil_administration_pending set_country_flag = MSGA_eg_busy_CRO set_temp_variable = { var = debt_var_temp value = 0.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.5 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_restore_croatian_civil_administration = {
+ if = { limit = { has_country_flag = MSGA_eg_restore_croatian_civil_administration_pending } clr_country_flag = MSGA_eg_restore_croatian_civil_administration_pending clr_country_flag = MSGA_eg_busy_CRO }
+}
+MSGA_eg_cancel_restore_croatian_civil_administration = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_restore_croatian_civil_administration_pending NOT = { has_country_flag = MSGA_eg_restore_croatian_civil_administration_done } } add_political_power = 30 set_temp_variable = { var = debt_var_temp value = -0.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.5 } MSGA_eg_release_restore_croatian_civil_administration = yes log = "[MSGA ENDGAME] restore_croatian_civil_administration cancelled and refunded" }
+}
+MSGA_eg_finish_restore_croatian_civil_administration = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_restore_croatian_civil_administration_pending MSGA_eg_conditions_restore_croatian_civil_administration = yes } 103 = { if = { limit = { is_owned_by = CRO is_fully_controlled_by = CRO } add_compliance = 10 add_resistance = -5 } }
+109 = { if = { limit = { is_owned_by = CRO is_fully_controlled_by = CRO } add_compliance = 10 add_resistance = -5 } }
+1306 = { if = { limit = { is_owned_by = CRO is_fully_controlled_by = CRO } add_compliance = 10 add_resistance = -5 } }
+163 = { if = { limit = { is_owned_by = CRO is_fully_controlled_by = CRO } add_compliance = 10 add_resistance = -5 } }
+736 = { if = { limit = { is_owned_by = CRO is_fully_controlled_by = CRO } add_compliance = 10 add_resistance = -5 } }
+CRO = { add_autonomy_score = { value = -50 localization = MSGA_eg_autonomy_tt } add_timed_idea = { idea = MSGA_endgame_reconciliation days = 365 } } country_event = { id = MSGA_endgame.17 } set_country_flag = MSGA_eg_restore_croatian_civil_administration_done MSGA_eg_release_restore_croatian_civil_administration = yes log = "[MSGA ENDGAME] restore_croatian_civil_administration completed" } else = { MSGA_eg_cancel_restore_croatian_civil_administration = yes }
+}
+MSGA_eg_start_recognise_republic_croatia = {
+ if = { limit = { MSGA_eg_conditions_recognise_republic_croatia = yes NOT = { has_country_flag = MSGA_eg_recognise_republic_croatia_pending } NOT = { has_country_flag = MSGA_eg_busy_CRO } } set_country_flag = MSGA_eg_recognise_republic_croatia_pending set_country_flag = MSGA_eg_busy_CRO set_temp_variable = { var = debt_var_temp value = 0.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.5 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_recognise_republic_croatia = {
+ if = { limit = { has_country_flag = MSGA_eg_recognise_republic_croatia_pending } clr_country_flag = MSGA_eg_recognise_republic_croatia_pending clr_country_flag = MSGA_eg_busy_CRO }
+}
+MSGA_eg_cancel_recognise_republic_croatia = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_recognise_republic_croatia_pending NOT = { has_country_flag = MSGA_eg_recognise_republic_croatia_done } } add_political_power = 40 set_temp_variable = { var = debt_var_temp value = -0.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.5 } MSGA_eg_release_recognise_republic_croatia = yes log = "[MSGA ENDGAME] recognise_republic_croatia cancelled and refunded" }
+}
+MSGA_eg_finish_recognise_republic_croatia = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_recognise_republic_croatia_pending MSGA_eg_conditions_recognise_republic_croatia = yes } set_country_flag = MSGA_croatia_federal_ready 103 = { if = { limit = { is_owned_by = CRO is_fully_controlled_by = CRO } add_compliance = 10 add_resistance = -5 } }
+109 = { if = { limit = { is_owned_by = CRO is_fully_controlled_by = CRO } add_compliance = 10 add_resistance = -5 } }
+1306 = { if = { limit = { is_owned_by = CRO is_fully_controlled_by = CRO } add_compliance = 10 add_resistance = -5 } }
+163 = { if = { limit = { is_owned_by = CRO is_fully_controlled_by = CRO } add_compliance = 10 add_resistance = -5 } }
+736 = { if = { limit = { is_owned_by = CRO is_fully_controlled_by = CRO } add_compliance = 10 add_resistance = -5 } }
+CRO = { add_autonomy_score = { value = -50 localization = MSGA_eg_autonomy_tt } add_timed_idea = { idea = MSGA_endgame_reconciliation days = 365 } } set_country_flag = MSGA_eg_recognise_republic_croatia_done MSGA_eg_release_recognise_republic_croatia = yes log = "[MSGA ENDGAME] recognise_republic_croatia completed" } else = { MSGA_eg_cancel_recognise_republic_croatia = yes }
+}
+MSGA_eg_start_ljubljana_federal_talks = {
+ if = { limit = { MSGA_eg_conditions_ljubljana_federal_talks = yes NOT = { has_country_flag = MSGA_eg_ljubljana_federal_talks_pending } NOT = { has_country_flag = MSGA_eg_busy_SLV } } set_country_flag = MSGA_eg_ljubljana_federal_talks_pending set_country_flag = MSGA_eg_busy_SLV set_temp_variable = { var = debt_var_temp value = 0.25 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.25 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_ljubljana_federal_talks = {
+ if = { limit = { has_country_flag = MSGA_eg_ljubljana_federal_talks_pending } clr_country_flag = MSGA_eg_ljubljana_federal_talks_pending clr_country_flag = MSGA_eg_busy_SLV }
+}
+MSGA_eg_cancel_ljubljana_federal_talks = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_ljubljana_federal_talks_pending NOT = { has_country_flag = MSGA_eg_ljubljana_federal_talks_done } } add_political_power = 25 set_temp_variable = { var = debt_var_temp value = -0.25 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.25 } MSGA_eg_release_ljubljana_federal_talks = yes log = "[MSGA ENDGAME] ljubljana_federal_talks cancelled and refunded" }
+}
+MSGA_eg_finish_ljubljana_federal_talks = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_ljubljana_federal_talks_pending MSGA_eg_conditions_ljubljana_federal_talks = yes } 102 = { if = { limit = { is_owned_by = SLV is_fully_controlled_by = SLV } add_compliance = 10 add_resistance = -5 } }
+900 = { if = { limit = { is_owned_by = SLV is_fully_controlled_by = SLV } add_compliance = 10 add_resistance = -5 } }
+SLV = { add_autonomy_score = { value = -50 localization = MSGA_eg_autonomy_tt } add_timed_idea = { idea = MSGA_endgame_reconciliation days = 365 } } set_country_flag = MSGA_eg_ljubljana_federal_talks_done MSGA_eg_release_ljubljana_federal_talks = yes log = "[MSGA ENDGAME] ljubljana_federal_talks completed" } else = { MSGA_eg_cancel_ljubljana_federal_talks = yes }
+}
+MSGA_eg_start_guarantee_slovenian_economic_autonomy = {
+ if = { limit = { MSGA_eg_conditions_guarantee_slovenian_economic_autonomy = yes NOT = { has_country_flag = MSGA_eg_guarantee_slovenian_economic_autonomy_pending } NOT = { has_country_flag = MSGA_eg_busy_SLV } } set_country_flag = MSGA_eg_guarantee_slovenian_economic_autonomy_pending set_country_flag = MSGA_eg_busy_SLV set_temp_variable = { var = debt_var_temp value = 0.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.5 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_guarantee_slovenian_economic_autonomy = {
+ if = { limit = { has_country_flag = MSGA_eg_guarantee_slovenian_economic_autonomy_pending } clr_country_flag = MSGA_eg_guarantee_slovenian_economic_autonomy_pending clr_country_flag = MSGA_eg_busy_SLV }
+}
+MSGA_eg_cancel_guarantee_slovenian_economic_autonomy = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_guarantee_slovenian_economic_autonomy_pending NOT = { has_country_flag = MSGA_eg_guarantee_slovenian_economic_autonomy_done } } add_political_power = 25 set_temp_variable = { var = debt_var_temp value = -0.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.5 } MSGA_eg_release_guarantee_slovenian_economic_autonomy = yes log = "[MSGA ENDGAME] guarantee_slovenian_economic_autonomy cancelled and refunded" }
+}
+MSGA_eg_finish_guarantee_slovenian_economic_autonomy = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_guarantee_slovenian_economic_autonomy_pending MSGA_eg_conditions_guarantee_slovenian_economic_autonomy = yes } 102 = { if = { limit = { is_owned_by = SLV is_fully_controlled_by = SLV } add_compliance = 10 add_resistance = -5 } }
+900 = { if = { limit = { is_owned_by = SLV is_fully_controlled_by = SLV } add_compliance = 10 add_resistance = -5 } }
+SLV = { add_autonomy_score = { value = -50 localization = MSGA_eg_autonomy_tt } add_timed_idea = { idea = MSGA_endgame_reconciliation days = 365 } } SLV = { add_timed_idea = { idea = MSGA_slovenian_federal_guarantee days = 365 } } set_country_flag = MSGA_eg_guarantee_slovenian_economic_autonomy_done MSGA_eg_release_guarantee_slovenian_economic_autonomy = yes log = "[MSGA ENDGAME] guarantee_slovenian_economic_autonomy completed" } else = { MSGA_eg_cancel_guarantee_slovenian_economic_autonomy = yes }
+}
+MSGA_eg_start_recognise_republic_slovenia = {
+ if = { limit = { MSGA_eg_conditions_recognise_republic_slovenia = yes NOT = { has_country_flag = MSGA_eg_recognise_republic_slovenia_pending } NOT = { has_country_flag = MSGA_eg_busy_SLV } } set_country_flag = MSGA_eg_recognise_republic_slovenia_pending set_country_flag = MSGA_eg_busy_SLV set_temp_variable = { var = debt_var_temp value = 0.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.5 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_recognise_republic_slovenia = {
+ if = { limit = { has_country_flag = MSGA_eg_recognise_republic_slovenia_pending } clr_country_flag = MSGA_eg_recognise_republic_slovenia_pending clr_country_flag = MSGA_eg_busy_SLV }
+}
+MSGA_eg_cancel_recognise_republic_slovenia = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_recognise_republic_slovenia_pending NOT = { has_country_flag = MSGA_eg_recognise_republic_slovenia_done } } add_political_power = 35 set_temp_variable = { var = debt_var_temp value = -0.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.5 } MSGA_eg_release_recognise_republic_slovenia = yes log = "[MSGA ENDGAME] recognise_republic_slovenia cancelled and refunded" }
+}
+MSGA_eg_finish_recognise_republic_slovenia = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_recognise_republic_slovenia_pending MSGA_eg_conditions_recognise_republic_slovenia = yes } set_country_flag = MSGA_slovenia_federal_ready country_event = { id = MSGA_endgame.18 } set_country_flag = MSGA_eg_recognise_republic_slovenia_done MSGA_eg_release_recognise_republic_slovenia = yes log = "[MSGA ENDGAME] recognise_republic_slovenia completed" } else = { MSGA_eg_cancel_recognise_republic_slovenia = yes }
+}
+MSGA_eg_start_open_sarajevo_question = {
+ if = { limit = { MSGA_eg_conditions_open_sarajevo_question = yes NOT = { has_country_flag = MSGA_eg_open_sarajevo_question_pending } NOT = { has_country_flag = MSGA_eg_busy_BOS } } set_country_flag = MSGA_eg_open_sarajevo_question_pending set_country_flag = MSGA_eg_busy_BOS set_temp_variable = { var = debt_var_temp value = 0.25 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.25 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_open_sarajevo_question = {
+ if = { limit = { has_country_flag = MSGA_eg_open_sarajevo_question_pending } clr_country_flag = MSGA_eg_open_sarajevo_question_pending clr_country_flag = MSGA_eg_busy_BOS }
+}
+MSGA_eg_cancel_open_sarajevo_question = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_open_sarajevo_question_pending NOT = { has_country_flag = MSGA_eg_open_sarajevo_question_done } } add_political_power = 25 set_temp_variable = { var = debt_var_temp value = -0.25 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.25 } MSGA_eg_release_open_sarajevo_question = yes log = "[MSGA ENDGAME] open_sarajevo_question cancelled and refunded" }
+}
+MSGA_eg_finish_open_sarajevo_question = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_open_sarajevo_question_pending MSGA_eg_conditions_open_sarajevo_question = yes } country_event = { id = MSGA_endgame.19 } set_country_flag = MSGA_eg_open_sarajevo_question_done MSGA_eg_release_open_sarajevo_question = yes log = "[MSGA ENDGAME] open_sarajevo_question completed" } else = { MSGA_eg_cancel_open_sarajevo_question = yes }
+}
+MSGA_eg_start_guarantee_bosnia_federal_status = {
+ if = { limit = { MSGA_eg_conditions_guarantee_bosnia_federal_status = yes NOT = { has_country_flag = MSGA_eg_guarantee_bosnia_federal_status_pending } NOT = { has_country_flag = MSGA_eg_busy_BOS } } set_country_flag = MSGA_eg_guarantee_bosnia_federal_status_pending set_country_flag = MSGA_eg_busy_BOS set_temp_variable = { var = debt_var_temp value = 0.75 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.75 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_guarantee_bosnia_federal_status = {
+ if = { limit = { has_country_flag = MSGA_eg_guarantee_bosnia_federal_status_pending } clr_country_flag = MSGA_eg_guarantee_bosnia_federal_status_pending clr_country_flag = MSGA_eg_busy_BOS }
+}
+MSGA_eg_cancel_guarantee_bosnia_federal_status = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_guarantee_bosnia_federal_status_pending NOT = { has_country_flag = MSGA_eg_guarantee_bosnia_federal_status_done } } add_political_power = 35 set_temp_variable = { var = debt_var_temp value = -0.75 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.75 } MSGA_eg_release_guarantee_bosnia_federal_status = yes log = "[MSGA ENDGAME] guarantee_bosnia_federal_status cancelled and refunded" }
+}
+MSGA_eg_finish_guarantee_bosnia_federal_status = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_guarantee_bosnia_federal_status_pending MSGA_eg_conditions_guarantee_bosnia_federal_status = yes } MSGA_eg_bosnian_progress = yes set_country_flag = MSGA_eg_guarantee_bosnia_federal_status_done MSGA_eg_release_guarantee_bosnia_federal_status = yes log = "[MSGA ENDGAME] guarantee_bosnia_federal_status completed" } else = { MSGA_eg_cancel_guarantee_bosnia_federal_status = yes }
+}
+MSGA_eg_start_recognise_republic_bosnia_herzegovina = {
+ if = { limit = { MSGA_eg_conditions_recognise_republic_bosnia_herzegovina = yes NOT = { has_country_flag = MSGA_eg_recognise_republic_bosnia_herzegovina_pending } NOT = { has_country_flag = MSGA_eg_busy_BOS } } set_country_flag = MSGA_eg_recognise_republic_bosnia_herzegovina_pending set_country_flag = MSGA_eg_busy_BOS set_temp_variable = { var = debt_var_temp value = 0.75 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.75 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_recognise_republic_bosnia_herzegovina = {
+ if = { limit = { has_country_flag = MSGA_eg_recognise_republic_bosnia_herzegovina_pending } clr_country_flag = MSGA_eg_recognise_republic_bosnia_herzegovina_pending clr_country_flag = MSGA_eg_busy_BOS }
+}
+MSGA_eg_cancel_recognise_republic_bosnia_herzegovina = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_recognise_republic_bosnia_herzegovina_pending NOT = { has_country_flag = MSGA_eg_recognise_republic_bosnia_herzegovina_done } } add_political_power = 40 set_temp_variable = { var = debt_var_temp value = -0.75 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.75 } MSGA_eg_release_recognise_republic_bosnia_herzegovina = yes log = "[MSGA ENDGAME] recognise_republic_bosnia_herzegovina cancelled and refunded" }
+}
+MSGA_eg_finish_recognise_republic_bosnia_herzegovina = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_recognise_republic_bosnia_herzegovina_pending MSGA_eg_conditions_recognise_republic_bosnia_herzegovina = yes } set_country_flag = MSGA_bosnia_federal_ready MSGA_eg_bosnian_progress = yes set_country_flag = MSGA_eg_recognise_republic_bosnia_herzegovina_done MSGA_eg_release_recognise_republic_bosnia_herzegovina = yes log = "[MSGA ENDGAME] recognise_republic_bosnia_herzegovina completed" } else = { MSGA_eg_cancel_recognise_republic_bosnia_herzegovina = yes }
+}
+MSGA_eg_start_invite_podgorica_federation = {
+ if = { limit = { MSGA_eg_conditions_invite_podgorica_federation = yes NOT = { has_country_flag = MSGA_eg_invite_podgorica_federation_pending } NOT = { has_country_flag = MSGA_eg_busy_MNT } } set_country_flag = MSGA_eg_invite_podgorica_federation_pending set_country_flag = MSGA_eg_busy_MNT set_temp_variable = { var = debt_var_temp value = 0.25 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.25 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_invite_podgorica_federation = {
+ if = { limit = { has_country_flag = MSGA_eg_invite_podgorica_federation_pending } clr_country_flag = MSGA_eg_invite_podgorica_federation_pending clr_country_flag = MSGA_eg_busy_MNT }
+}
+MSGA_eg_cancel_invite_podgorica_federation = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_invite_podgorica_federation_pending NOT = { has_country_flag = MSGA_eg_invite_podgorica_federation_done } } add_political_power = 20 set_temp_variable = { var = debt_var_temp value = -0.25 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.25 } MSGA_eg_release_invite_podgorica_federation = yes log = "[MSGA ENDGAME] invite_podgorica_federation cancelled and refunded" }
+}
+MSGA_eg_finish_invite_podgorica_federation = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_invite_podgorica_federation_pending MSGA_eg_conditions_invite_podgorica_federation = yes } 105 = { if = { limit = { is_owned_by = MNT is_fully_controlled_by = MNT } add_compliance = 10 add_resistance = -5 } }
+MNT = { add_autonomy_score = { value = -50 localization = MSGA_eg_autonomy_tt } add_timed_idea = { idea = MSGA_endgame_reconciliation days = 365 } } set_country_flag = MSGA_eg_invite_podgorica_federation_done MSGA_eg_release_invite_podgorica_federation = yes log = "[MSGA ENDGAME] invite_podgorica_federation completed" } else = { MSGA_eg_cancel_invite_podgorica_federation = yes }
+}
+MSGA_eg_start_guarantee_montenegrin_statehood = {
+ if = { limit = { MSGA_eg_conditions_guarantee_montenegrin_statehood = yes NOT = { has_country_flag = MSGA_eg_guarantee_montenegrin_statehood_pending } NOT = { has_country_flag = MSGA_eg_busy_MNT } } set_country_flag = MSGA_eg_guarantee_montenegrin_statehood_pending set_country_flag = MSGA_eg_busy_MNT set_temp_variable = { var = debt_var_temp value = 0.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.5 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_guarantee_montenegrin_statehood = {
+ if = { limit = { has_country_flag = MSGA_eg_guarantee_montenegrin_statehood_pending } clr_country_flag = MSGA_eg_guarantee_montenegrin_statehood_pending clr_country_flag = MSGA_eg_busy_MNT }
+}
+MSGA_eg_cancel_guarantee_montenegrin_statehood = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_guarantee_montenegrin_statehood_pending NOT = { has_country_flag = MSGA_eg_guarantee_montenegrin_statehood_done } } add_political_power = 25 set_temp_variable = { var = debt_var_temp value = -0.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.5 } MSGA_eg_release_guarantee_montenegrin_statehood = yes log = "[MSGA ENDGAME] guarantee_montenegrin_statehood cancelled and refunded" }
+}
+MSGA_eg_finish_guarantee_montenegrin_statehood = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_guarantee_montenegrin_statehood_pending MSGA_eg_conditions_guarantee_montenegrin_statehood = yes } 105 = { if = { limit = { is_owned_by = MNT is_fully_controlled_by = MNT } add_compliance = 10 add_resistance = -5 } }
+MNT = { add_autonomy_score = { value = -50 localization = MSGA_eg_autonomy_tt } add_timed_idea = { idea = MSGA_endgame_reconciliation days = 365 } } set_country_flag = MSGA_eg_guarantee_montenegrin_statehood_done MSGA_eg_release_guarantee_montenegrin_statehood = yes log = "[MSGA ENDGAME] guarantee_montenegrin_statehood completed" } else = { MSGA_eg_cancel_guarantee_montenegrin_statehood = yes }
+}
+MSGA_eg_start_recognise_republic_montenegro = {
+ if = { limit = { MSGA_eg_conditions_recognise_republic_montenegro = yes NOT = { has_country_flag = MSGA_eg_recognise_republic_montenegro_pending } NOT = { has_country_flag = MSGA_eg_busy_MNT } } set_country_flag = MSGA_eg_recognise_republic_montenegro_pending set_country_flag = MSGA_eg_busy_MNT set_temp_variable = { var = debt_var_temp value = 0.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.5 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_recognise_republic_montenegro = {
+ if = { limit = { has_country_flag = MSGA_eg_recognise_republic_montenegro_pending } clr_country_flag = MSGA_eg_recognise_republic_montenegro_pending clr_country_flag = MSGA_eg_busy_MNT }
+}
+MSGA_eg_cancel_recognise_republic_montenegro = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_recognise_republic_montenegro_pending NOT = { has_country_flag = MSGA_eg_recognise_republic_montenegro_done } } add_political_power = 30 set_temp_variable = { var = debt_var_temp value = -0.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.5 } MSGA_eg_release_recognise_republic_montenegro = yes log = "[MSGA ENDGAME] recognise_republic_montenegro cancelled and refunded" }
+}
+MSGA_eg_finish_recognise_republic_montenegro = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_recognise_republic_montenegro_pending MSGA_eg_conditions_recognise_republic_montenegro = yes } set_country_flag = MSGA_montenegro_federal_ready country_event = { id = MSGA_endgame.20 } set_country_flag = MSGA_eg_recognise_republic_montenegro_done MSGA_eg_release_recognise_republic_montenegro = yes log = "[MSGA ENDGAME] recognise_republic_montenegro completed" } else = { MSGA_eg_cancel_recognise_republic_montenegro = yes }
+}
+MSGA_eg_start_open_federal_talks_skopje = {
+ if = { limit = { MSGA_eg_conditions_open_federal_talks_skopje = yes NOT = { has_country_flag = MSGA_eg_open_federal_talks_skopje_pending } NOT = { has_country_flag = MSGA_eg_busy_MAC } } set_country_flag = MSGA_eg_open_federal_talks_skopje_pending set_country_flag = MSGA_eg_busy_MAC set_temp_variable = { var = debt_var_temp value = 0.25 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.25 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_open_federal_talks_skopje = {
+ if = { limit = { has_country_flag = MSGA_eg_open_federal_talks_skopje_pending } clr_country_flag = MSGA_eg_open_federal_talks_skopje_pending clr_country_flag = MSGA_eg_busy_MAC }
+}
+MSGA_eg_cancel_open_federal_talks_skopje = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_open_federal_talks_skopje_pending NOT = { has_country_flag = MSGA_eg_open_federal_talks_skopje_done } } add_political_power = 25 set_temp_variable = { var = debt_var_temp value = -0.25 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.25 } MSGA_eg_release_open_federal_talks_skopje = yes log = "[MSGA ENDGAME] open_federal_talks_skopje cancelled and refunded" }
+}
+MSGA_eg_finish_open_federal_talks_skopje = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_open_federal_talks_skopje_pending MSGA_eg_conditions_open_federal_talks_skopje = yes } 106 = { if = { limit = { is_owned_by = MAC is_fully_controlled_by = MAC } add_compliance = 10 add_resistance = -5 } }
+MAC = { add_autonomy_score = { value = -50 localization = MSGA_eg_autonomy_tt } add_timed_idea = { idea = MSGA_endgame_reconciliation days = 365 } } set_country_flag = MSGA_eg_open_federal_talks_skopje_done MSGA_eg_release_open_federal_talks_skopje = yes log = "[MSGA ENDGAME] open_federal_talks_skopje completed" } else = { MSGA_eg_cancel_open_federal_talks_skopje = yes }
+}
+MSGA_eg_start_guarantee_macedonian_identity = {
+ if = { limit = { MSGA_eg_conditions_guarantee_macedonian_identity = yes NOT = { has_country_flag = MSGA_eg_guarantee_macedonian_identity_pending } NOT = { has_country_flag = MSGA_eg_busy_MAC } } set_country_flag = MSGA_eg_guarantee_macedonian_identity_pending set_country_flag = MSGA_eg_busy_MAC set_temp_variable = { var = debt_var_temp value = 0.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.5 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_guarantee_macedonian_identity = {
+ if = { limit = { has_country_flag = MSGA_eg_guarantee_macedonian_identity_pending } clr_country_flag = MSGA_eg_guarantee_macedonian_identity_pending clr_country_flag = MSGA_eg_busy_MAC }
+}
+MSGA_eg_cancel_guarantee_macedonian_identity = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_guarantee_macedonian_identity_pending NOT = { has_country_flag = MSGA_eg_guarantee_macedonian_identity_done } } add_political_power = 30 set_temp_variable = { var = debt_var_temp value = -0.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.5 } MSGA_eg_release_guarantee_macedonian_identity = yes log = "[MSGA ENDGAME] guarantee_macedonian_identity cancelled and refunded" }
+}
+MSGA_eg_finish_guarantee_macedonian_identity = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_guarantee_macedonian_identity_pending MSGA_eg_conditions_guarantee_macedonian_identity = yes } 106 = { if = { limit = { is_owned_by = MAC is_fully_controlled_by = MAC } add_compliance = 10 add_resistance = -5 } }
+MAC = { add_autonomy_score = { value = -50 localization = MSGA_eg_autonomy_tt } add_timed_idea = { idea = MSGA_endgame_reconciliation days = 365 } } set_country_flag = MSGA_eg_guarantee_macedonian_identity_done MSGA_eg_release_guarantee_macedonian_identity = yes log = "[MSGA ENDGAME] guarantee_macedonian_identity completed" } else = { MSGA_eg_cancel_guarantee_macedonian_identity = yes }
+}
+MSGA_eg_start_guarantee_macedonian_republic = {
+ if = { limit = { MSGA_eg_conditions_guarantee_macedonian_republic = yes NOT = { has_country_flag = MSGA_eg_guarantee_macedonian_republic_pending } NOT = { has_country_flag = MSGA_eg_busy_MAC } } set_country_flag = MSGA_eg_guarantee_macedonian_republic_pending set_country_flag = MSGA_eg_busy_MAC set_temp_variable = { var = debt_var_temp value = 0.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.5 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_guarantee_macedonian_republic = {
+ if = { limit = { has_country_flag = MSGA_eg_guarantee_macedonian_republic_pending } clr_country_flag = MSGA_eg_guarantee_macedonian_republic_pending clr_country_flag = MSGA_eg_busy_MAC }
+}
+MSGA_eg_cancel_guarantee_macedonian_republic = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_guarantee_macedonian_republic_pending NOT = { has_country_flag = MSGA_eg_guarantee_macedonian_republic_done } } add_political_power = 35 set_temp_variable = { var = debt_var_temp value = -0.5 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.5 } MSGA_eg_release_guarantee_macedonian_republic = yes log = "[MSGA ENDGAME] guarantee_macedonian_republic cancelled and refunded" }
+}
+MSGA_eg_finish_guarantee_macedonian_republic = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_guarantee_macedonian_republic_pending MSGA_eg_conditions_guarantee_macedonian_republic = yes } 106 = { if = { limit = { is_owned_by = MAC is_fully_controlled_by = MAC } add_compliance = 10 add_resistance = -5 } }
+MAC = { add_autonomy_score = { value = -50 localization = MSGA_eg_autonomy_tt } add_timed_idea = { idea = MSGA_endgame_reconciliation days = 365 } } set_country_flag = MSGA_eg_guarantee_macedonian_republic_done MSGA_eg_release_guarantee_macedonian_republic = yes log = "[MSGA ENDGAME] guarantee_macedonian_republic completed" } else = { MSGA_eg_cancel_guarantee_macedonian_republic = yes }
+}
+MSGA_eg_start_recognise_republic_macedonia = {
+ if = { limit = { MSGA_eg_conditions_recognise_republic_macedonia = yes NOT = { has_country_flag = MSGA_eg_recognise_republic_macedonia_pending } NOT = { has_country_flag = MSGA_eg_busy_MAC } } set_country_flag = MSGA_eg_recognise_republic_macedonia_pending set_country_flag = MSGA_eg_busy_MAC set_temp_variable = { var = debt_var_temp value = 0.75 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 0.75 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_recognise_republic_macedonia = {
+ if = { limit = { has_country_flag = MSGA_eg_recognise_republic_macedonia_pending } clr_country_flag = MSGA_eg_recognise_republic_macedonia_pending clr_country_flag = MSGA_eg_busy_MAC }
+}
+MSGA_eg_cancel_recognise_republic_macedonia = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_recognise_republic_macedonia_pending NOT = { has_country_flag = MSGA_eg_recognise_republic_macedonia_done } } add_political_power = 40 set_temp_variable = { var = debt_var_temp value = -0.75 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -0.75 } MSGA_eg_release_recognise_republic_macedonia = yes log = "[MSGA ENDGAME] recognise_republic_macedonia cancelled and refunded" }
+}
+MSGA_eg_finish_recognise_republic_macedonia = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_recognise_republic_macedonia_pending MSGA_eg_conditions_recognise_republic_macedonia = yes } set_country_flag = MSGA_macedonia_federal_ready country_event = { id = MSGA_endgame.21 } set_country_flag = MSGA_eg_recognise_republic_macedonia_done MSGA_eg_release_recognise_republic_macedonia = yes log = "[MSGA ENDGAME] recognise_republic_macedonia completed" } else = { MSGA_eg_cancel_recognise_republic_macedonia = yes }
+}
+MSGA_eg_start_ratify_federal_constitution = {
+ if = { limit = { MSGA_eg_conditions_ratify_federal_constitution = yes NOT = { has_country_flag = MSGA_eg_ratify_federal_constitution_pending } NOT = { has_country_flag = MSGA_eg_busy_federal } } set_country_flag = MSGA_eg_ratify_federal_constitution_pending set_country_flag = MSGA_eg_busy_federal set_temp_variable = { var = debt_var_temp value = 1 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 1 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_ratify_federal_constitution = {
+ if = { limit = { has_country_flag = MSGA_eg_ratify_federal_constitution_pending } clr_country_flag = MSGA_eg_ratify_federal_constitution_pending clr_country_flag = MSGA_eg_busy_federal }
+}
+MSGA_eg_cancel_ratify_federal_constitution = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_ratify_federal_constitution_pending NOT = { has_country_flag = MSGA_eg_ratify_federal_constitution_done } } add_political_power = 75 set_temp_variable = { var = debt_var_temp value = -1 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -1 } MSGA_eg_release_ratify_federal_constitution = yes log = "[MSGA ENDGAME] ratify_federal_constitution cancelled and refunded" }
+}
+MSGA_eg_finish_ratify_federal_constitution = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_ratify_federal_constitution_pending MSGA_eg_conditions_ratify_federal_constitution = yes } set_country_flag = MSGA_yugoslav_constitution_ready country_event = { id = MSGA_endgame.26 } set_country_flag = MSGA_eg_ratify_federal_constitution_done MSGA_eg_release_ratify_federal_constitution = yes log = "[MSGA ENDGAME] ratify_federal_constitution completed" } else = { MSGA_eg_cancel_ratify_federal_constitution = yes }
+}
+MSGA_eg_start_proclaim_federal_republic_yugoslavia = {
+ if = { limit = { MSGA_eg_conditions_proclaim_federal_republic_yugoslavia = yes NOT = { has_country_flag = MSGA_eg_proclaim_federal_republic_yugoslavia_pending } NOT = { has_country_flag = MSGA_eg_busy_federal } } set_country_flag = MSGA_eg_proclaim_federal_republic_yugoslavia_pending set_country_flag = MSGA_eg_busy_federal set_temp_variable = { var = debt_var_temp value = 3 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = 3 } MSGA_eg_check_obligations = yes }
+}
+MSGA_eg_release_proclaim_federal_republic_yugoslavia = {
+ if = { limit = { has_country_flag = MSGA_eg_proclaim_federal_republic_yugoslavia_pending } clr_country_flag = MSGA_eg_proclaim_federal_republic_yugoslavia_pending clr_country_flag = MSGA_eg_busy_federal }
+}
+MSGA_eg_cancel_proclaim_federal_republic_yugoslavia = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_proclaim_federal_republic_yugoslavia_pending NOT = { has_country_flag = MSGA_eg_proclaim_federal_republic_yugoslavia_done } } add_political_power = 100 set_temp_variable = { var = debt_var_temp value = -3 } add_debt = yes add_to_variable = { var = MSGA_endgame_integration_obligations value = -3 } MSGA_eg_release_proclaim_federal_republic_yugoslavia = yes log = "[MSGA ENDGAME] proclaim_federal_republic_yugoslavia cancelled and refunded" }
+}
+MSGA_eg_finish_proclaim_federal_republic_yugoslavia = {
+ if = { limit = { tag = SER has_country_flag = MSGA_eg_proclaim_federal_republic_yugoslavia_pending MSGA_eg_conditions_proclaim_federal_republic_yugoslavia = yes } if = { limit = { country_exists = CRO } CRO = { remove_ideas = MSGA_endgame_reconciliation remove_ideas = MSGA_bound_protectorate remove_ideas = MSGA_integrated_protectorate remove_ideas = MSGA_stabilised_client_order remove_ideas = MSGA_campaign_isolation remove_ideas = MSGA_croatia_postwar_recovery  } annex_country = { target = CRO transfer_troops = yes } }
+ 103 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+109 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+1306 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+163 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+736 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } } if = { limit = { country_exists = SLV } SLV = { remove_ideas = MSGA_endgame_reconciliation remove_ideas = MSGA_bound_protectorate remove_ideas = MSGA_integrated_protectorate remove_ideas = MSGA_stabilised_client_order remove_ideas = MSGA_campaign_isolation remove_ideas = MSGA_slovenia_postwar_recovery remove_ideas = MSGA_slovenian_federal_guarantee } annex_country = { target = SLV transfer_troops = yes } }
+ 102 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+900 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } } if = { limit = { country_exists = BOS } BOS = { remove_ideas = MSGA_endgame_reconciliation remove_ideas = MSGA_bound_protectorate remove_ideas = MSGA_integrated_protectorate remove_ideas = MSGA_stabilised_client_order remove_ideas = MSGA_campaign_isolation   } annex_country = { target = BOS transfer_troops = yes } }
+ 104 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+848 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+849 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+850 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } } if = { limit = { country_exists = HRZ } HRZ = { remove_ideas = MSGA_endgame_reconciliation remove_ideas = MSGA_bound_protectorate remove_ideas = MSGA_integrated_protectorate remove_ideas = MSGA_stabilised_client_order remove_ideas = MSGA_campaign_isolation   } annex_country = { target = HRZ transfer_troops = yes } }
+ 851 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } } if = { limit = { country_exists = MNT } MNT = { remove_ideas = MSGA_endgame_reconciliation remove_ideas = MSGA_bound_protectorate remove_ideas = MSGA_integrated_protectorate remove_ideas = MSGA_stabilised_client_order remove_ideas = MSGA_campaign_isolation remove_ideas = MSGA_montenegro_postwar_recovery  } annex_country = { target = MNT transfer_troops = yes } }
+ 105 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } } if = { limit = { country_exists = MAC } MAC = { remove_ideas = MSGA_endgame_reconciliation remove_ideas = MSGA_bound_protectorate remove_ideas = MSGA_integrated_protectorate remove_ideas = MSGA_stabilised_client_order remove_ideas = MSGA_campaign_isolation remove_ideas = MSGA_macedonia_postwar_recovery  } annex_country = { target = MAC transfer_troops = yes } }
+ 106 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } } 45 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+102 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+103 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+104 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+105 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+106 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+107 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+108 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+109 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+163 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+736 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+785 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+848 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+849 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+850 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+851 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+900 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+1296 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+1305 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } }
+1306 = { if = { limit = { is_owned_by = SER is_fully_controlled_by = SER } if = { limit = { NOT = { is_core_of = SER } } add_core_of = SER } } } set_cosmetic_tag = SER_MSGA_YUGOSLAV_FEDERATION set_capital = { state = 107 } set_country_flag = MSGA_yugoslav_federation_proclaimed country_event = { id = MSGA_endgame.27 } set_country_flag = MSGA_eg_proclaim_federal_republic_yugoslavia_done MSGA_eg_release_proclaim_federal_republic_yugoslavia = yes log = "[MSGA ENDGAME] proclaim_federal_republic_yugoslavia completed" } else = { MSGA_eg_cancel_proclaim_federal_republic_yugoslavia = yes }
+}

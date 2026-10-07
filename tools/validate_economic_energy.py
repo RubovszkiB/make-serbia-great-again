@@ -8,6 +8,7 @@ from PIL import Image
 import argparse, copy, hashlib, json, math, re, struct
 from validate_phase1 import ROOT, parse, get, descend, unique
 from validate_bosnia import TFR, GAME
+from validation_history import expected_hash
 
 START = {45, 107, 108, 1296}
 ENERGY = {'power_plant':4, 'energy_farm':4, 'nuclear_reactor':2}
@@ -154,7 +155,7 @@ def main():
     scripts={p.relative_to(mod).as_posix():parse(p.read_text(encoding='utf-8-sig')) for p in mod.rglob('*') if p.suffix in ('.txt','.gfx')}
     ux=json.loads((ROOT/'docs/decision_ux_sources.json').read_text()) if (ROOT/'docs/decision_ux_sources.json').exists() else {'files':{}}
     for path,digest in source['baseline_sha256'].items():
-        assert hashlib.sha256((mod/path).read_bytes()).hexdigest()==ux['files'].get(path,{}).get('after_sha256',digest),('Existing campaign changed',path)
+        assert hashlib.sha256((mod/path).read_bytes()).hexdigest()==expected_hash(path,digest),('Existing campaign changed outside approved revisions',path)
     for path,digest in source['native_sources_sha256'].items():assert hashlib.sha256((TFR/path).read_bytes()).hexdigest()==digest,('Native TFR changed',path)
     all_decisions=[k for p,a in scripts.items() if p.startswith('common/decisions/') and '/categories/' not in p for c,o,b in a for k,o,v in b if isinstance(v,list)]
     all_ideas=[k for p,a in scripts.items() if p.startswith('common/ideas/') for c,o,b in a for t,o,d in b for k,o,v in d]
@@ -308,6 +309,7 @@ def main():
     m.advance(1);assert Counter(m.delivered)['MSGA_econ.4']==1 and m.variables['MSGA_permanent_economic_projects']==3
     report={'validation':'passed','validated_mod_root':str(mod),'categories':['MSGA_serbian_economic_cooperation','MSGA_serbian_energy_development'],'projects':19,'repeatable_programmes':18,'milestones':8,'provided_art_DDS':len(source['assets']),'repeatable_timing_days':[180,70,250],'starting_states':sorted(START),'mining_rewards_each':{'steel':3,'tungsten':2},'maximum_scripted_energy_buildings':{b:grants[b] for b in ENERGY},'existing_campaign_hashes_preserved':len(set(source['baseline_sha256'])-ux['files'].keys()),'approved_presentation_and_category_cleanup':sorted(set(source['baseline_sha256'])&ux['files'].keys()),'modeled_cases':cases,'native_exclusivity':'Kostolac/Bor alternatives tested in both orders','cancellation':'Ownership/control loss or rejected native construction returns costs without rewards; permits retry','engine_acceptance':'NOT RUN: user reserved the game test; no game window or save was touched.'}
     report.update(static_model_validation='passed',actual_engine_validation='NOT RUN: user performs the HOI4 test; building counters model script commands only.',project_lifecycle='Persistent pending/busy flags; explicit release/refund. Native before/after building counters must increase by exactly 1 before secondary rewards and completion; rejected construction rolls back its introduced shared slot.',delayed_callback_cases=19,building_projects_checked_in_model=building_projects,nuclear_model_levels=[0,1,2],decision_icon_composition='Tight foreground crop, aspect preserved, centred within a 3px dark frame on 52x45 DXT5; categories/spirits/events unchanged.')
+    report['existing_campaign_hashes_preserved']=sum(hashlib.sha256((mod/p).read_bytes()).hexdigest()==d for p,d in source['baseline_sha256'].items())
     args.report.write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({k:v for k,v in report.items() if k!='modeled_cases'},indent=2))
 
 if __name__=='__main__':main()

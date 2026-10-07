@@ -1,0 +1,1 @@
+opinion_modifiers = { MSGA_endgame_dialogue = { value = 25 decay = 0 } }

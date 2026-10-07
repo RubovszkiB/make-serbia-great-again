@@ -1,0 +1,1 @@
+on_actions = { on_startup = { effect = { SER = { MSGA_try_start_endgame = yes } } } on_weekly = { effect = { if = { limit = { tag = SER } MSGA_try_start_endgame = yes } } } }

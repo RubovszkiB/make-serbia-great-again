@@ -1,0 +1,1088 @@
+{
+  "static_and_model_validation": "passed",
+  "validated_mod_root": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
+  "version": "0.14.0",
+  "focus_count": 8,
+  "focus_days": 105,
+  "scenarios": [
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": false,
+      "politics_first": false,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": false,
+      "politics_first": false,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": false,
+      "politics_first": true,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": false,
+      "politics_first": true,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": true,
+      "politics_first": false,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": true,
+      "politics_first": false,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": true,
+      "politics_first": true,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": true,
+      "politics_first": true,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": false,
+      "politics_first": false,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": false,
+      "politics_first": false,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": false,
+      "politics_first": true,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": false,
+      "politics_first": true,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": true,
+      "politics_first": false,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": true,
+      "politics_first": false,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": true,
+      "politics_first": true,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": true,
+      "politics_first": true,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": false,
+      "politics_first": false,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": false,
+      "politics_first": false,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": false,
+      "politics_first": true,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": false,
+      "politics_first": true,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": true,
+      "politics_first": false,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": true,
+      "politics_first": false,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": true,
+      "politics_first": true,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": true,
+      "politics_first": true,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": false,
+      "politics_first": false,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": false,
+      "politics_first": false,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": false,
+      "politics_first": true,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": false,
+      "politics_first": true,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": true,
+      "politics_first": false,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": true,
+      "politics_first": false,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": true,
+      "politics_first": true,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": true,
+      "politics_first": true,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": false,
+      "politics_first": false,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": false,
+      "politics_first": false,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": false,
+      "politics_first": true,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": false,
+      "politics_first": true,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": true,
+      "politics_first": false,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": true,
+      "politics_first": false,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": true,
+      "politics_first": true,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": true,
+      "politics_first": true,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": false,
+      "politics_first": false,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": false,
+      "politics_first": false,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": false,
+      "politics_first": true,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": false,
+      "politics_first": true,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": true,
+      "politics_first": false,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": true,
+      "politics_first": false,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": true,
+      "politics_first": true,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways",
+        "restart_serbian_commerce"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": true,
+      "politics_first": true,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": false,
+      "politics_first": false,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": false,
+      "politics_first": false,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": false,
+      "politics_first": true,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": false,
+      "politics_first": true,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": true,
+      "politics_first": false,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": true,
+      "politics_first": false,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": true,
+      "politics_first": true,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": true,
+      "politics_first": true,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": false,
+      "politics_first": false,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": false,
+      "politics_first": false,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": false,
+      "politics_first": true,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": false,
+      "politics_first": true,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": true,
+      "politics_first": false,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": true,
+      "politics_first": false,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": true,
+      "politics_first": true,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restore_serbian_industry",
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": true,
+      "politics_first": true,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": false,
+      "politics_first": false,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": false,
+      "politics_first": false,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": false,
+      "politics_first": true,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": false,
+      "politics_first": true,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": true,
+      "politics_first": false,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": true,
+      "politics_first": false,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": true,
+      "politics_first": true,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": true,
+      "politics_first": true,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": false,
+      "politics_first": false,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": false,
+      "politics_first": false,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": false,
+      "politics_first": true,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": false,
+      "politics_first": true,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": true,
+      "politics_first": false,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": true,
+      "politics_first": false,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": true,
+      "politics_first": true,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "repair_the_roads_and_railways",
+        "restore_serbian_industry"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": true,
+      "politics_first": true,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": false,
+      "politics_first": false,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": false,
+      "politics_first": false,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": false,
+      "politics_first": true,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": false,
+      "politics_first": true,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": true,
+      "politics_first": false,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": true,
+      "politics_first": false,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": true,
+      "politics_first": true,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": false,
+      "separate_SRP": true,
+      "politics_first": true,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": false,
+      "politics_first": false,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": false,
+      "politics_first": false,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": false,
+      "politics_first": true,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": false,
+      "politics_first": true,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": true,
+      "politics_first": false,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": true,
+      "politics_first": false,
+      "reverse_clients": true
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": true,
+      "politics_first": true,
+      "reverse_clients": false
+    },
+    {
+      "order": [
+        "restart_serbian_commerce",
+        "restore_serbian_industry",
+        "repair_the_roads_and_railways"
+      ],
+      "separate_HRZ": true,
+      "separate_SRP": true,
+      "politics_first": true,
+      "reverse_clients": true
+    }
+  ],
+  "additional_negative_cases": 49,
+  "debt_B": 15,
+  "treasury_cost_B": 0,
+  "native_industrial_progress_total": 0.2,
+  "decision_cost_PP": 25,
+  "decision_days": 10,
+  "simultaneous_client_decisions": 1,
+  "regularisation_flags": [
+    "MSGA_croatia_regularised",
+    "MSGA_slovenia_regularised",
+    "MSGA_montenegro_regularised",
+    "MSGA_macedonia_regularised",
+    "MSGA_albania_regularised",
+    "MSGA_bosnia_regularised",
+    "MSGA_herzegovina_regularised",
+    "MSGA_srpska_regularised"
+  ],
+  "assets": 30,
+  "conference": "2 days after all current clients regularised; independent economic gate retained",
+  "territory_subjects_armies_preserved": true,
+  "Albania_outside_South_Slavic_question": true,
+  "engine_validation": "Pending user; AST models do not certify UI, native timer order, AI, save reload or engine economy ticks",
+  "chapter_version": "0.13.0"
+}

@@ -1,0 +1,226 @@
+MSGA_serbian_national_project = {
+MSGA_begin_montenegrin_integration = { icon = MSGA_endgame_decision_begin_montenegrin_integration cost = 25 days_remove = 20
+ visible = { tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_montenegrin_question NOT = { has_country_flag = MSGA_eg_begin_montenegrin_integration_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_begin_montenegrin_integration_requirements_tt MSGA_eg_conditions_begin_montenegrin_integration = yes NOT = { has_country_flag = MSGA_eg_begin_montenegrin_integration_pending } NOT = { has_country_flag = MSGA_eg_busy_MNT } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_begin_montenegrin_integration = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_begin_montenegrin_integration_start_tt hidden_effect = { MSGA_eg_start_begin_montenegrin_integration = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_begin_montenegrin_integration = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_begin_montenegrin_integration = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_merge_state_administrations = { icon = MSGA_endgame_decision_merge_state_administrations cost = 30 days_remove = 25
+ visible = { tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_montenegrin_question NOT = { has_country_flag = MSGA_eg_merge_state_administrations_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_merge_state_administrations_requirements_tt MSGA_eg_conditions_merge_state_administrations = yes NOT = { has_country_flag = MSGA_eg_merge_state_administrations_pending } NOT = { has_country_flag = MSGA_eg_busy_MNT } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_merge_state_administrations = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_merge_state_administrations_start_tt hidden_effect = { MSGA_eg_start_merge_state_administrations = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_merge_state_administrations = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_merge_state_administrations = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_unify_montenegrin_armed_forces = { icon = MSGA_endgame_decision_unify_montenegrin_armed_forces cost = 25 days_remove = 20
+ visible = { tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_montenegrin_question NOT = { has_country_flag = MSGA_eg_unify_montenegrin_armed_forces_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_unify_montenegrin_armed_forces_requirements_tt MSGA_eg_conditions_unify_montenegrin_armed_forces = yes NOT = { has_country_flag = MSGA_eg_unify_montenegrin_armed_forces_pending } NOT = { has_country_flag = MSGA_eg_busy_MNT } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_unify_montenegrin_armed_forces = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_unify_montenegrin_armed_forces_start_tt hidden_effect = { MSGA_eg_start_unify_montenegrin_armed_forces = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_unify_montenegrin_armed_forces = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_unify_montenegrin_armed_forces = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_complete_union_montenegro = { icon = MSGA_endgame_decision_complete_union_montenegro cost = 50 days_remove = 30
+ visible = { tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_montenegrin_question NOT = { has_country_flag = MSGA_eg_complete_union_montenegro_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_complete_union_montenegro_requirements_tt MSGA_eg_conditions_complete_union_montenegro = yes NOT = { has_country_flag = MSGA_eg_complete_union_montenegro_pending } NOT = { has_country_flag = MSGA_eg_busy_MNT } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_complete_union_montenegro = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_complete_union_montenegro_start_tt hidden_effect = { MSGA_eg_start_complete_union_montenegro = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_complete_union_montenegro = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_complete_union_montenegro = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_establish_vardar_administration = { icon = MSGA_endgame_decision_establish_vardar_administration cost = 30 days_remove = 25
+ visible = { tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_macedonian_question NOT = { has_country_flag = MSGA_eg_establish_vardar_administration_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_establish_vardar_administration_requirements_tt MSGA_eg_conditions_establish_vardar_administration = yes NOT = { has_country_flag = MSGA_eg_establish_vardar_administration_pending } NOT = { has_country_flag = MSGA_eg_busy_MAC } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_establish_vardar_administration = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_establish_vardar_administration_start_tt hidden_effect = { MSGA_eg_start_establish_vardar_administration = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_establish_vardar_administration = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_establish_vardar_administration = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_connect_macedonian_economy = { icon = MSGA_endgame_decision_connect_macedonian_economy cost = 35 days_remove = 30
+ visible = { tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_macedonian_question NOT = { has_country_flag = MSGA_eg_connect_macedonian_economy_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_connect_macedonian_economy_requirements_tt MSGA_eg_conditions_connect_macedonian_economy = yes NOT = { has_country_flag = MSGA_eg_connect_macedonian_economy_pending } NOT = { has_country_flag = MSGA_eg_busy_MAC } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_connect_macedonian_economy = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_connect_macedonian_economy_start_tt hidden_effect = { MSGA_eg_start_connect_macedonian_economy = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_connect_macedonian_economy = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_connect_macedonian_economy = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_integrate_macedonian_security = { icon = MSGA_endgame_decision_integrate_macedonian_security cost = 30 days_remove = 25
+ visible = { tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_macedonian_question NOT = { has_country_flag = MSGA_eg_integrate_macedonian_security_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_integrate_macedonian_security_requirements_tt MSGA_eg_conditions_integrate_macedonian_security = yes NOT = { has_country_flag = MSGA_eg_integrate_macedonian_security_pending } NOT = { has_country_flag = MSGA_eg_busy_MAC } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_integrate_macedonian_security = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_integrate_macedonian_security_start_tt hidden_effect = { MSGA_eg_start_integrate_macedonian_security = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_integrate_macedonian_security = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_integrate_macedonian_security = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_place_macedonian_army_under_serbian_command = { icon = MSGA_endgame_decision_place_macedonian_army_under_serbian_command cost = 35 days_remove = 25
+ visible = { tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_macedonian_question NOT = { has_country_flag = MSGA_eg_place_macedonian_army_under_serbian_command_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_place_macedonian_army_under_serbian_command_requirements_tt MSGA_eg_conditions_place_macedonian_army_under_serbian_command = yes NOT = { has_country_flag = MSGA_eg_place_macedonian_army_under_serbian_command_pending } NOT = { has_country_flag = MSGA_eg_busy_MAC } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_place_macedonian_army_under_serbian_command = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_place_macedonian_army_under_serbian_command_start_tt hidden_effect = { MSGA_eg_start_place_macedonian_army_under_serbian_command = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_place_macedonian_army_under_serbian_command = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_place_macedonian_army_under_serbian_command = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_integrate_macedonia_decision = { icon = MSGA_endgame_decision_integrate_macedonia_decision cost = 60 days_remove = 35
+ visible = { tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_macedonian_question NOT = { has_country_flag = MSGA_eg_integrate_macedonia_decision_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_integrate_macedonia_decision_requirements_tt MSGA_eg_conditions_integrate_macedonia_decision = yes NOT = { has_country_flag = MSGA_eg_integrate_macedonia_decision_pending } NOT = { has_country_flag = MSGA_eg_busy_MAC } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_integrate_macedonia_decision = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_integrate_macedonia_decision_start_tt hidden_effect = { MSGA_eg_start_integrate_macedonia_decision = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_integrate_macedonia_decision = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_integrate_macedonia_decision = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_bind_croatia_to_belgrade = { icon = MSGA_endgame_decision_bind_croatia_to_belgrade cost = 25 days_remove = 20
+ visible = { tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_belgrades_sphere NOT = { has_country_flag = MSGA_eg_bind_croatia_to_belgrade_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_bind_croatia_to_belgrade_requirements_tt MSGA_eg_conditions_bind_croatia_to_belgrade = yes NOT = { has_country_flag = MSGA_eg_bind_croatia_to_belgrade_pending } NOT = { has_country_flag = MSGA_eg_busy_CRO } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_bind_croatia_to_belgrade = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_bind_croatia_to_belgrade_start_tt hidden_effect = { MSGA_eg_start_bind_croatia_to_belgrade = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_bind_croatia_to_belgrade = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_bind_croatia_to_belgrade = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_integrate_slovenian_market = { icon = MSGA_endgame_decision_integrate_slovenian_market cost = 25 days_remove = 20
+ visible = { tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_belgrades_sphere NOT = { has_country_flag = MSGA_eg_integrate_slovenian_market_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_integrate_slovenian_market_requirements_tt MSGA_eg_conditions_integrate_slovenian_market = yes NOT = { has_country_flag = MSGA_eg_integrate_slovenian_market_pending } NOT = { has_country_flag = MSGA_eg_busy_SLV } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_integrate_slovenian_market = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_integrate_slovenian_market_start_tt hidden_effect = { MSGA_eg_start_integrate_slovenian_market = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_integrate_slovenian_market = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_integrate_slovenian_market = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_secure_albanias_loyalty = { icon = MSGA_endgame_decision_secure_albanias_loyalty cost = 25 days_remove = 20
+ visible = { tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_belgrades_sphere NOT = { has_country_flag = MSGA_eg_secure_albanias_loyalty_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_secure_albanias_loyalty_requirements_tt MSGA_eg_conditions_secure_albanias_loyalty = yes NOT = { has_country_flag = MSGA_eg_secure_albanias_loyalty_pending } NOT = { has_country_flag = MSGA_eg_busy_ALB } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_secure_albanias_loyalty = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_secure_albanias_loyalty_start_tt hidden_effect = { MSGA_eg_start_secure_albanias_loyalty = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_secure_albanias_loyalty = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_secure_albanias_loyalty = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_coordinate_balkan_protectorates = { icon = MSGA_endgame_decision_coordinate_balkan_protectorates cost = 50 days_remove = 30
+ visible = { tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_belgrades_sphere NOT = { has_country_flag = MSGA_eg_coordinate_balkan_protectorates_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_coordinate_balkan_protectorates_requirements_tt MSGA_eg_conditions_coordinate_balkan_protectorates = yes NOT = { has_country_flag = MSGA_eg_coordinate_balkan_protectorates_pending } NOT = { has_country_flag = MSGA_eg_busy_sphere } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_coordinate_balkan_protectorates = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_coordinate_balkan_protectorates_start_tt hidden_effect = { MSGA_eg_start_coordinate_balkan_protectorates = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_coordinate_balkan_protectorates = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_coordinate_balkan_protectorates = yes } }
+ ai_will_do = { factor = 10 } }
+}
+MSGA_building_yugoslav_federation = {
+MSGA_open_federal_talks_zagreb = { icon = MSGA_endgame_decision_open_federal_talks_zagreb cost = 25 days_remove = 20
+ visible = { tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics NOT = { has_country_flag = MSGA_eg_open_federal_talks_zagreb_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_open_federal_talks_zagreb_requirements_tt MSGA_eg_conditions_open_federal_talks_zagreb = yes NOT = { has_country_flag = MSGA_eg_open_federal_talks_zagreb_pending } NOT = { has_country_flag = MSGA_eg_busy_CRO } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_open_federal_talks_zagreb = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_open_federal_talks_zagreb_start_tt hidden_effect = { MSGA_eg_start_open_federal_talks_zagreb = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_open_federal_talks_zagreb = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_open_federal_talks_zagreb = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_restore_croatian_civil_administration = { icon = MSGA_endgame_decision_restore_croatian_civil_administration cost = 30 days_remove = 25
+ visible = { tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics NOT = { has_country_flag = MSGA_eg_restore_croatian_civil_administration_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_restore_croatian_civil_administration_requirements_tt MSGA_eg_conditions_restore_croatian_civil_administration = yes NOT = { has_country_flag = MSGA_eg_restore_croatian_civil_administration_pending } NOT = { has_country_flag = MSGA_eg_busy_CRO } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_restore_croatian_civil_administration = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_restore_croatian_civil_administration_start_tt hidden_effect = { MSGA_eg_start_restore_croatian_civil_administration = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_restore_croatian_civil_administration = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_restore_croatian_civil_administration = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_recognise_republic_croatia = { icon = MSGA_endgame_decision_recognise_republic_croatia cost = 40 days_remove = 25
+ visible = { tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics NOT = { has_country_flag = MSGA_eg_recognise_republic_croatia_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_recognise_republic_croatia_requirements_tt MSGA_eg_conditions_recognise_republic_croatia = yes NOT = { has_country_flag = MSGA_eg_recognise_republic_croatia_pending } NOT = { has_country_flag = MSGA_eg_busy_CRO } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_recognise_republic_croatia = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_recognise_republic_croatia_start_tt hidden_effect = { MSGA_eg_start_recognise_republic_croatia = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_recognise_republic_croatia = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_recognise_republic_croatia = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_ljubljana_federal_talks = { icon = MSGA_endgame_decision_ljubljana_federal_talks cost = 25 days_remove = 20
+ visible = { tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics NOT = { has_country_flag = MSGA_eg_ljubljana_federal_talks_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_ljubljana_federal_talks_requirements_tt MSGA_eg_conditions_ljubljana_federal_talks = yes NOT = { has_country_flag = MSGA_eg_ljubljana_federal_talks_pending } NOT = { has_country_flag = MSGA_eg_busy_SLV } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_ljubljana_federal_talks = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_ljubljana_federal_talks_start_tt hidden_effect = { MSGA_eg_start_ljubljana_federal_talks = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_ljubljana_federal_talks = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_ljubljana_federal_talks = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_guarantee_slovenian_economic_autonomy = { icon = MSGA_endgame_decision_guarantee_slovenian_economic_autonomy cost = 25 days_remove = 20
+ visible = { tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics NOT = { has_country_flag = MSGA_eg_guarantee_slovenian_economic_autonomy_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_guarantee_slovenian_economic_autonomy_requirements_tt MSGA_eg_conditions_guarantee_slovenian_economic_autonomy = yes NOT = { has_country_flag = MSGA_eg_guarantee_slovenian_economic_autonomy_pending } NOT = { has_country_flag = MSGA_eg_busy_SLV } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_guarantee_slovenian_economic_autonomy = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_guarantee_slovenian_economic_autonomy_start_tt hidden_effect = { MSGA_eg_start_guarantee_slovenian_economic_autonomy = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_guarantee_slovenian_economic_autonomy = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_guarantee_slovenian_economic_autonomy = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_recognise_republic_slovenia = { icon = MSGA_endgame_decision_recognise_republic_slovenia cost = 35 days_remove = 20
+ visible = { tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics NOT = { has_country_flag = MSGA_eg_recognise_republic_slovenia_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_recognise_republic_slovenia_requirements_tt MSGA_eg_conditions_recognise_republic_slovenia = yes NOT = { has_country_flag = MSGA_eg_recognise_republic_slovenia_pending } NOT = { has_country_flag = MSGA_eg_busy_SLV } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_recognise_republic_slovenia = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_recognise_republic_slovenia_start_tt hidden_effect = { MSGA_eg_start_recognise_republic_slovenia = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_recognise_republic_slovenia = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_recognise_republic_slovenia = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_open_sarajevo_question = { icon = MSGA_endgame_decision_open_sarajevo_question cost = 25 days_remove = 20
+ visible = { tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics NOT = { has_country_flag = MSGA_eg_open_sarajevo_question_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_open_sarajevo_question_requirements_tt MSGA_eg_conditions_open_sarajevo_question = yes NOT = { has_country_flag = MSGA_eg_open_sarajevo_question_pending } NOT = { has_country_flag = MSGA_eg_busy_BOS } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_open_sarajevo_question = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_open_sarajevo_question_start_tt hidden_effect = { MSGA_eg_start_open_sarajevo_question = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_open_sarajevo_question = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_open_sarajevo_question = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_guarantee_bosnia_federal_status = { icon = MSGA_endgame_decision_guarantee_bosnia_federal_status cost = 35 days_remove = 30
+ visible = { tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics NOT = { has_country_flag = MSGA_eg_guarantee_bosnia_federal_status_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_guarantee_bosnia_federal_status_requirements_tt MSGA_eg_conditions_guarantee_bosnia_federal_status = yes NOT = { has_country_flag = MSGA_eg_guarantee_bosnia_federal_status_pending } NOT = { has_country_flag = MSGA_eg_busy_BOS } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_guarantee_bosnia_federal_status = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_guarantee_bosnia_federal_status_start_tt hidden_effect = { MSGA_eg_start_guarantee_bosnia_federal_status = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_guarantee_bosnia_federal_status = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_guarantee_bosnia_federal_status = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_recognise_republic_bosnia_herzegovina = { icon = MSGA_endgame_decision_recognise_republic_bosnia_herzegovina cost = 40 days_remove = 30
+ visible = { tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics NOT = { has_country_flag = MSGA_eg_recognise_republic_bosnia_herzegovina_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_recognise_republic_bosnia_herzegovina_requirements_tt MSGA_eg_conditions_recognise_republic_bosnia_herzegovina = yes NOT = { has_country_flag = MSGA_eg_recognise_republic_bosnia_herzegovina_pending } NOT = { has_country_flag = MSGA_eg_busy_BOS } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_recognise_republic_bosnia_herzegovina = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_recognise_republic_bosnia_herzegovina_start_tt hidden_effect = { MSGA_eg_start_recognise_republic_bosnia_herzegovina = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_recognise_republic_bosnia_herzegovina = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_recognise_republic_bosnia_herzegovina = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_invite_podgorica_federation = { icon = MSGA_endgame_decision_invite_podgorica_federation cost = 20 days_remove = 15
+ visible = { tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics NOT = { has_country_flag = MSGA_eg_invite_podgorica_federation_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_invite_podgorica_federation_requirements_tt MSGA_eg_conditions_invite_podgorica_federation = yes NOT = { has_country_flag = MSGA_eg_invite_podgorica_federation_pending } NOT = { has_country_flag = MSGA_eg_busy_MNT } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_invite_podgorica_federation = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_invite_podgorica_federation_start_tt hidden_effect = { MSGA_eg_start_invite_podgorica_federation = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_invite_podgorica_federation = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_invite_podgorica_federation = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_guarantee_montenegrin_statehood = { icon = MSGA_endgame_decision_guarantee_montenegrin_statehood cost = 25 days_remove = 20
+ visible = { tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics NOT = { has_country_flag = MSGA_eg_guarantee_montenegrin_statehood_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_guarantee_montenegrin_statehood_requirements_tt MSGA_eg_conditions_guarantee_montenegrin_statehood = yes NOT = { has_country_flag = MSGA_eg_guarantee_montenegrin_statehood_pending } NOT = { has_country_flag = MSGA_eg_busy_MNT } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_guarantee_montenegrin_statehood = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_guarantee_montenegrin_statehood_start_tt hidden_effect = { MSGA_eg_start_guarantee_montenegrin_statehood = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_guarantee_montenegrin_statehood = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_guarantee_montenegrin_statehood = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_recognise_republic_montenegro = { icon = MSGA_endgame_decision_recognise_republic_montenegro cost = 30 days_remove = 20
+ visible = { tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics NOT = { has_country_flag = MSGA_eg_recognise_republic_montenegro_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_recognise_republic_montenegro_requirements_tt MSGA_eg_conditions_recognise_republic_montenegro = yes NOT = { has_country_flag = MSGA_eg_recognise_republic_montenegro_pending } NOT = { has_country_flag = MSGA_eg_busy_MNT } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_recognise_republic_montenegro = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_recognise_republic_montenegro_start_tt hidden_effect = { MSGA_eg_start_recognise_republic_montenegro = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_recognise_republic_montenegro = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_recognise_republic_montenegro = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_open_federal_talks_skopje = { icon = MSGA_endgame_decision_open_federal_talks_skopje cost = 25 days_remove = 20
+ visible = { tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics NOT = { has_country_flag = MSGA_eg_open_federal_talks_skopje_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_open_federal_talks_skopje_requirements_tt MSGA_eg_conditions_open_federal_talks_skopje = yes NOT = { has_country_flag = MSGA_eg_open_federal_talks_skopje_pending } NOT = { has_country_flag = MSGA_eg_busy_MAC } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_open_federal_talks_skopje = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_open_federal_talks_skopje_start_tt hidden_effect = { MSGA_eg_start_open_federal_talks_skopje = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_open_federal_talks_skopje = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_open_federal_talks_skopje = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_guarantee_macedonian_identity = { icon = MSGA_endgame_decision_guarantee_macedonian_identity cost = 30 days_remove = 25
+ visible = { tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics NOT = { has_country_flag = MSGA_eg_guarantee_macedonian_identity_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_guarantee_macedonian_identity_requirements_tt MSGA_eg_conditions_guarantee_macedonian_identity = yes NOT = { has_country_flag = MSGA_eg_guarantee_macedonian_identity_pending } NOT = { has_country_flag = MSGA_eg_busy_MAC } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_guarantee_macedonian_identity = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_guarantee_macedonian_identity_start_tt hidden_effect = { MSGA_eg_start_guarantee_macedonian_identity = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_guarantee_macedonian_identity = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_guarantee_macedonian_identity = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_guarantee_macedonian_republic = { icon = MSGA_endgame_decision_guarantee_macedonian_republic cost = 35 days_remove = 25
+ visible = { tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics NOT = { has_country_flag = MSGA_eg_guarantee_macedonian_republic_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_guarantee_macedonian_republic_requirements_tt MSGA_eg_conditions_guarantee_macedonian_republic = yes NOT = { has_country_flag = MSGA_eg_guarantee_macedonian_republic_pending } NOT = { has_country_flag = MSGA_eg_busy_MAC } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_guarantee_macedonian_republic = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_guarantee_macedonian_republic_start_tt hidden_effect = { MSGA_eg_start_guarantee_macedonian_republic = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_guarantee_macedonian_republic = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_guarantee_macedonian_republic = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_recognise_republic_macedonia = { icon = MSGA_endgame_decision_recognise_republic_macedonia cost = 40 days_remove = 30
+ visible = { tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics NOT = { has_country_flag = MSGA_eg_recognise_republic_macedonia_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_recognise_republic_macedonia_requirements_tt MSGA_eg_conditions_recognise_republic_macedonia = yes NOT = { has_country_flag = MSGA_eg_recognise_republic_macedonia_pending } NOT = { has_country_flag = MSGA_eg_busy_MAC } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_recognise_republic_macedonia = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_recognise_republic_macedonia_start_tt hidden_effect = { MSGA_eg_start_recognise_republic_macedonia = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_recognise_republic_macedonia = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_recognise_republic_macedonia = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_ratify_federal_constitution = { icon = MSGA_endgame_decision_ratify_federal_constitution cost = 75 days_remove = 30
+ visible = { tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_the_federal_constitution NOT = { has_country_flag = MSGA_eg_ratify_federal_constitution_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_ratify_federal_constitution_requirements_tt MSGA_eg_conditions_ratify_federal_constitution = yes NOT = { has_country_flag = MSGA_eg_ratify_federal_constitution_pending } NOT = { has_country_flag = MSGA_eg_busy_federal } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_ratify_federal_constitution = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_ratify_federal_constitution_start_tt hidden_effect = { MSGA_eg_start_ratify_federal_constitution = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_ratify_federal_constitution = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_ratify_federal_constitution = yes } }
+ ai_will_do = { factor = 10 } }
+MSGA_proclaim_federal_republic_yugoslavia = { icon = MSGA_endgame_decision_proclaim_federal_republic_yugoslavia cost = 100 days_remove = 35
+ visible = { tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_proclaim_the_federation NOT = { has_country_flag = MSGA_eg_proclaim_federal_republic_yugoslavia_done } }
+ available = { custom_trigger_tooltip = { tooltip = MSGA_eg_proclaim_federal_republic_yugoslavia_requirements_tt MSGA_eg_conditions_proclaim_federal_republic_yugoslavia = yes NOT = { has_country_flag = MSGA_eg_proclaim_federal_republic_yugoslavia_pending } NOT = { has_country_flag = MSGA_eg_busy_federal } } }
+ cancel_trigger = { NOT = { MSGA_eg_conditions_proclaim_federal_republic_yugoslavia = yes } }
+ complete_effect = { custom_effect_tooltip = MSGA_eg_proclaim_federal_republic_yugoslavia_start_tt hidden_effect = { MSGA_eg_start_proclaim_federal_republic_yugoslavia = yes } }
+ remove_effect = { hidden_effect = { MSGA_eg_finish_proclaim_federal_republic_yugoslavia = yes } } cancel_effect = { hidden_effect = { MSGA_eg_cancel_proclaim_federal_republic_yugoslavia = yes } }
+ ai_will_do = { factor = 10 } }
+}
+MSGA_future_regional_influence = {
+MSGA_open_endgame_dialogue_bul = { icon = MSGA_endgame_decision_coordinate_balkan_protectorates cost = 25 visible = { country_exists = BUL NOT = { has_country_flag = MSGA_eg_open_endgame_dialogue_bul_done } } available = { custom_trigger_tooltip = { tooltip = MSGA_eg_dialogue_tt has_war = no BUL = { has_war = no } } } complete_effect = { hidden_effect = { set_country_flag = MSGA_eg_open_endgame_dialogue_bul_done BUL = { add_opinion_modifier = { target = SER modifier = MSGA_endgame_dialogue } } } } ai_will_do = { factor = 1 } }
+MSGA_open_endgame_dialogue_rom = { icon = MSGA_endgame_decision_coordinate_balkan_protectorates cost = 25 visible = { country_exists = ROM NOT = { has_country_flag = MSGA_eg_open_endgame_dialogue_rom_done } } available = { custom_trigger_tooltip = { tooltip = MSGA_eg_dialogue_tt has_war = no ROM = { has_war = no } } } complete_effect = { hidden_effect = { set_country_flag = MSGA_eg_open_endgame_dialogue_rom_done ROM = { add_opinion_modifier = { target = SER modifier = MSGA_endgame_dialogue } } } } ai_will_do = { factor = 1 } }
+MSGA_open_endgame_dialogue_gre = { icon = MSGA_endgame_decision_coordinate_balkan_protectorates cost = 25 visible = { country_exists = GRE NOT = { has_country_flag = MSGA_eg_open_endgame_dialogue_gre_done } } available = { custom_trigger_tooltip = { tooltip = MSGA_eg_dialogue_tt has_war = no GRE = { has_war = no } } } complete_effect = { hidden_effect = { set_country_flag = MSGA_eg_open_endgame_dialogue_gre_done GRE = { add_opinion_modifier = { target = SER modifier = MSGA_endgame_dialogue } } } } ai_will_do = { factor = 1 } }
+}

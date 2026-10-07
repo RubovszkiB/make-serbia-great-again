@@ -1,0 +1,126 @@
+MSGA_eg_entry_ready = {
+ tag = SER has_country_flag = MSGA_south_slavic_unity_open has_country_flag = MSGA_new_balkan_order_stabilised has_country_flag = MSGA_balkan_war_victory
+}
+MSGA_eg_safe_MNT = {
+ tag = SER has_war = no MNT = { exists = yes is_subject_of = SER has_war = no NOT = { any_owned_state = { NOT = { OR = { state = 105 } } } } } 105 = { OR = { AND = { is_owned_by = MNT is_fully_controlled_by = MNT } AND = { is_owned_by = SER is_fully_controlled_by = SER } } }
+}
+MSGA_eg_safe_MAC = {
+ tag = SER has_war = no MAC = { exists = yes is_subject_of = SER has_war = no NOT = { any_owned_state = { NOT = { OR = { state = 106 } } } } } 106 = { OR = { AND = { is_owned_by = MAC is_fully_controlled_by = MAC } AND = { is_owned_by = SER is_fully_controlled_by = SER } } }
+}
+MSGA_eg_safe_CRO = {
+ tag = SER has_war = no CRO = { exists = yes is_subject_of = SER has_war = no NOT = { any_owned_state = { NOT = { OR = { state = 103 state = 109 state = 1306 state = 163 state = 736 } } } } } 103 = { OR = { AND = { is_owned_by = CRO is_fully_controlled_by = CRO } AND = { is_owned_by = SER is_fully_controlled_by = SER } } } 109 = { OR = { AND = { is_owned_by = CRO is_fully_controlled_by = CRO } AND = { is_owned_by = SER is_fully_controlled_by = SER } } } 1306 = { OR = { AND = { is_owned_by = CRO is_fully_controlled_by = CRO } AND = { is_owned_by = SER is_fully_controlled_by = SER } } } 163 = { OR = { AND = { is_owned_by = CRO is_fully_controlled_by = CRO } AND = { is_owned_by = SER is_fully_controlled_by = SER } } } 736 = { OR = { AND = { is_owned_by = CRO is_fully_controlled_by = CRO } AND = { is_owned_by = SER is_fully_controlled_by = SER } } }
+}
+MSGA_eg_safe_SLV = {
+ tag = SER has_war = no SLV = { exists = yes is_subject_of = SER has_war = no NOT = { any_owned_state = { NOT = { OR = { state = 102 state = 900 } } } } } 102 = { OR = { AND = { is_owned_by = SLV is_fully_controlled_by = SLV } AND = { is_owned_by = SER is_fully_controlled_by = SER } } } 900 = { OR = { AND = { is_owned_by = SLV is_fully_controlled_by = SLV } AND = { is_owned_by = SER is_fully_controlled_by = SER } } }
+}
+MSGA_eg_safe_BOS = {
+ tag = SER has_war = no BOS = { exists = yes is_subject_of = SER has_war = no NOT = { any_owned_state = { NOT = { OR = { state = 104 state = 848 state = 849 state = 850 } } } } } 104 = { is_owned_by = BOS is_fully_controlled_by = BOS } 848 = { OR = { AND = { is_owned_by = BOS is_fully_controlled_by = BOS } AND = { is_owned_by = SER is_fully_controlled_by = SER } } } 849 = { OR = { AND = { is_owned_by = BOS is_fully_controlled_by = BOS } AND = { is_owned_by = SER is_fully_controlled_by = SER } } } 850 = { OR = { AND = { is_owned_by = BOS is_fully_controlled_by = BOS } AND = { is_owned_by = SER is_fully_controlled_by = SER } } }
+}
+MSGA_eg_safe_HRZ = {
+ tag = SER has_war = no HRZ = { exists = yes is_subject_of = SER has_war = no NOT = { any_owned_state = { NOT = { OR = { state = 851 } } } } } 851 = { OR = { AND = { is_owned_by = HRZ is_fully_controlled_by = HRZ } AND = { is_owned_by = SER is_fully_controlled_by = SER } } }
+}
+MSGA_eg_safe_bosnian_framework = {
+ MSGA_eg_safe_BOS = yes OR = { AND = { country_exists = HRZ MSGA_eg_safe_HRZ = yes } AND = { NOT = { country_exists = HRZ } 851 = { is_owned_by = SER is_fully_controlled_by = SER } } }
+}
+MSGA_eg_serbian_lands_ready = {
+ has_country_flag = MSGA_montenegro_integrated has_country_flag = MSGA_macedonia_integrated has_country_flag = MSGA_srpska_united NOT = { country_exists = SRP } 105 = { is_owned_by = SER is_fully_controlled_by = SER } 106 = { is_owned_by = SER is_fully_controlled_by = SER } 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER } 848 = { is_owned_by = SER is_fully_controlled_by = SER } 849 = { is_owned_by = SER is_fully_controlled_by = SER } 850 = { is_owned_by = SER is_fully_controlled_by = SER }
+}
+MSGA_eg_republics_ready = {
+ has_country_flag = MSGA_croatia_federal_ready has_country_flag = MSGA_slovenia_federal_ready has_country_flag = MSGA_bosnia_federal_ready has_country_flag = MSGA_montenegro_federal_ready has_country_flag = MSGA_macedonia_federal_ready
+}
+MSGA_eg_federal_territory_ready = {
+ tag = SER has_war = no MSGA_eg_republics_ready = yes has_country_flag = MSGA_srpska_united NOT = { country_exists = SRP } MSGA_eg_safe_CRO = yes MSGA_eg_safe_SLV = yes MSGA_eg_safe_MNT = yes MSGA_eg_safe_MAC = yes MSGA_eg_safe_bosnian_framework = yes 107 = { is_owned_by = SER is_fully_controlled_by = SER } 785 = { is_owned_by = SER is_fully_controlled_by = SER } 1305 = { is_owned_by = SER is_fully_controlled_by = SER }
+}
+MSGA_eg_conditions_begin_montenegrin_integration = {
+ tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_montenegrin_question  MSGA_eg_safe_MNT = yes  NOT = { has_country_flag = MSGA_eg_begin_montenegrin_integration_done }
+}
+MSGA_eg_conditions_merge_state_administrations = {
+ tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_montenegrin_question has_country_flag = MSGA_eg_begin_montenegrin_integration_done MSGA_eg_safe_MNT = yes  NOT = { has_country_flag = MSGA_eg_merge_state_administrations_done }
+}
+MSGA_eg_conditions_unify_montenegrin_armed_forces = {
+ tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_montenegrin_question has_country_flag = MSGA_eg_merge_state_administrations_done MSGA_eg_safe_MNT = yes has_country_flag = MSGA_eg_event_4_resolved NOT = { has_country_flag = MSGA_eg_unify_montenegrin_armed_forces_done }
+}
+MSGA_eg_conditions_complete_union_montenegro = {
+ tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_montenegrin_question has_country_flag = MSGA_eg_unify_montenegrin_armed_forces_done MSGA_eg_safe_MNT = yes  NOT = { has_country_flag = MSGA_eg_complete_union_montenegro_done }
+}
+MSGA_eg_conditions_establish_vardar_administration = {
+ tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_macedonian_question  MSGA_eg_safe_MAC = yes  NOT = { has_country_flag = MSGA_eg_establish_vardar_administration_done }
+}
+MSGA_eg_conditions_connect_macedonian_economy = {
+ tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_macedonian_question has_country_flag = MSGA_eg_establish_vardar_administration_done MSGA_eg_safe_MAC = yes  NOT = { has_country_flag = MSGA_eg_connect_macedonian_economy_done }
+}
+MSGA_eg_conditions_integrate_macedonian_security = {
+ tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_macedonian_question has_country_flag = MSGA_eg_connect_macedonian_economy_done MSGA_eg_safe_MAC = yes has_country_flag = MSGA_eg_event_8_resolved NOT = { has_country_flag = MSGA_eg_integrate_macedonian_security_done }
+}
+MSGA_eg_conditions_place_macedonian_army_under_serbian_command = {
+ tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_macedonian_question has_country_flag = MSGA_eg_integrate_macedonian_security_done MSGA_eg_safe_MAC = yes  NOT = { has_country_flag = MSGA_eg_place_macedonian_army_under_serbian_command_done }
+}
+MSGA_eg_conditions_integrate_macedonia_decision = {
+ tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_macedonian_question has_country_flag = MSGA_eg_place_macedonian_army_under_serbian_command_done MSGA_eg_safe_MAC = yes  NOT = { has_country_flag = MSGA_eg_integrate_macedonia_decision_done }
+}
+MSGA_eg_conditions_bind_croatia_to_belgrade = {
+ tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_belgrades_sphere  MSGA_eg_safe_CRO = yes  NOT = { has_country_flag = MSGA_eg_bind_croatia_to_belgrade_done }
+}
+MSGA_eg_conditions_integrate_slovenian_market = {
+ tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_belgrades_sphere  MSGA_eg_safe_SLV = yes  NOT = { has_country_flag = MSGA_eg_integrate_slovenian_market_done }
+}
+MSGA_eg_conditions_secure_albanias_loyalty = {
+ tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_belgrades_sphere  ALB = { exists = yes is_subject_of = SER has_war = no } has_war = no  NOT = { has_country_flag = MSGA_eg_secure_albanias_loyalty_done }
+}
+MSGA_eg_conditions_coordinate_balkan_protectorates = {
+ tag = SER has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_belgrades_sphere  has_war = no  NOT = { has_country_flag = MSGA_eg_coordinate_balkan_protectorates_done }
+}
+MSGA_eg_conditions_open_federal_talks_zagreb = {
+ tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics  MSGA_eg_safe_CRO = yes  NOT = { has_country_flag = MSGA_eg_open_federal_talks_zagreb_done }
+}
+MSGA_eg_conditions_restore_croatian_civil_administration = {
+ tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics has_country_flag = MSGA_eg_open_federal_talks_zagreb_done MSGA_eg_safe_CRO = yes has_country_flag = MSGA_eg_event_16_resolved NOT = { has_country_flag = MSGA_eg_restore_croatian_civil_administration_done }
+}
+MSGA_eg_conditions_recognise_republic_croatia = {
+ tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics has_country_flag = MSGA_eg_restore_croatian_civil_administration_done MSGA_eg_safe_CRO = yes has_country_flag = MSGA_eg_croatian_rights_guaranteed NOT = { has_country_flag = MSGA_eg_recognise_republic_croatia_done }
+}
+MSGA_eg_conditions_ljubljana_federal_talks = {
+ tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics  MSGA_eg_safe_SLV = yes  NOT = { has_country_flag = MSGA_eg_ljubljana_federal_talks_done }
+}
+MSGA_eg_conditions_guarantee_slovenian_economic_autonomy = {
+ tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics has_country_flag = MSGA_eg_ljubljana_federal_talks_done MSGA_eg_safe_SLV = yes  NOT = { has_country_flag = MSGA_eg_guarantee_slovenian_economic_autonomy_done }
+}
+MSGA_eg_conditions_recognise_republic_slovenia = {
+ tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics has_country_flag = MSGA_eg_guarantee_slovenian_economic_autonomy_done MSGA_eg_safe_SLV = yes  NOT = { has_country_flag = MSGA_eg_recognise_republic_slovenia_done }
+}
+MSGA_eg_conditions_open_sarajevo_question = {
+ tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics  MSGA_eg_safe_bosnian_framework = yes  NOT = { has_country_flag = MSGA_eg_open_sarajevo_question_done }
+}
+MSGA_eg_conditions_guarantee_bosnia_federal_status = {
+ tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics has_country_flag = MSGA_eg_open_sarajevo_question_done MSGA_eg_safe_bosnian_framework = yes has_country_flag = MSGA_eg_event_19_resolved NOT = { has_country_flag = MSGA_eg_guarantee_bosnia_federal_status_done }
+}
+MSGA_eg_conditions_recognise_republic_bosnia_herzegovina = {
+ tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics has_country_flag = MSGA_eg_guarantee_bosnia_federal_status_done MSGA_eg_safe_bosnian_framework = yes  NOT = { has_country_flag = MSGA_eg_recognise_republic_bosnia_herzegovina_done }
+}
+MSGA_eg_conditions_invite_podgorica_federation = {
+ tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics  MSGA_eg_safe_MNT = yes  NOT = { has_country_flag = MSGA_eg_invite_podgorica_federation_done }
+}
+MSGA_eg_conditions_guarantee_montenegrin_statehood = {
+ tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics has_country_flag = MSGA_eg_invite_podgorica_federation_done MSGA_eg_safe_MNT = yes  NOT = { has_country_flag = MSGA_eg_guarantee_montenegrin_statehood_done }
+}
+MSGA_eg_conditions_recognise_republic_montenegro = {
+ tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics has_country_flag = MSGA_eg_guarantee_montenegrin_statehood_done MSGA_eg_safe_MNT = yes  NOT = { has_country_flag = MSGA_eg_recognise_republic_montenegro_done }
+}
+MSGA_eg_conditions_open_federal_talks_skopje = {
+ tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics  MSGA_eg_safe_MAC = yes  NOT = { has_country_flag = MSGA_eg_open_federal_talks_skopje_done }
+}
+MSGA_eg_conditions_guarantee_macedonian_identity = {
+ tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics has_country_flag = MSGA_eg_open_federal_talks_skopje_done MSGA_eg_safe_MAC = yes  NOT = { has_country_flag = MSGA_eg_guarantee_macedonian_identity_done }
+}
+MSGA_eg_conditions_guarantee_macedonian_republic = {
+ tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics has_country_flag = MSGA_eg_guarantee_macedonian_identity_done MSGA_eg_safe_MAC = yes  NOT = { has_country_flag = MSGA_eg_guarantee_macedonian_republic_done }
+}
+MSGA_eg_conditions_recognise_republic_macedonia = {
+ tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_reconcile_the_republics has_country_flag = MSGA_eg_guarantee_macedonian_republic_done MSGA_eg_safe_MAC = yes  NOT = { has_country_flag = MSGA_eg_recognise_republic_macedonia_done }
+}
+MSGA_eg_conditions_ratify_federal_constitution = {
+ tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_the_federal_constitution  MSGA_eg_federal_territory_ready = yes MSGA_eg_republics_ready = yes has_country_flag = MSGA_eg_conference_finished NOT = { has_country_flag = MSGA_eg_ratify_federal_constitution_done }
+}
+MSGA_eg_conditions_proclaim_federal_republic_yugoslavia = {
+ tag = SER has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_proclaim_the_federation has_country_flag = MSGA_eg_ratify_federal_constitution_done MSGA_eg_federal_territory_ready = yes has_country_flag = MSGA_eg_constitution_ratified MSGA_eg_federal_territory_ready = yes NOT = { has_country_flag = MSGA_eg_proclaim_federal_republic_yugoslavia_done }
+}

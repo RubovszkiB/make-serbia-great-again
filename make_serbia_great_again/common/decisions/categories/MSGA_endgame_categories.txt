@@ -1,0 +1,3 @@
+MSGA_serbian_national_project = { icon = MSGA_endgame_category_serbian_national_project allowed = { tag = SER } visible = { has_country_flag = MSGA_greater_serbia_path has_country_flag = MSGA_eg_focus_one_serbian_state } }
+MSGA_building_yugoslav_federation = { icon = MSGA_endgame_category_building_yugoslav_federation allowed = { tag = SER } visible = { has_country_flag = MSGA_yugoslavia_path has_country_flag = MSGA_eg_focus_a_common_homeland } }
+MSGA_future_regional_influence = { icon = MSGA_endgame_category_future_regional_influence allowed = { tag = SER } visible = { has_country_flag = MSGA_endgame_greater_serbia_complete } }

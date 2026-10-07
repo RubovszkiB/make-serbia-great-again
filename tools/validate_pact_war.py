@@ -9,7 +9,7 @@ import argparse,copy,hashlib,itertools,json,math,re,subprocess,zipfile
 from PIL import Image
 from validation_history import expected_hash
 from validate_bosnia import strip_guards
-from validate_phase1 import ROOT,parse,get,descend,unique
+from validate_phase1 import ROOT,parse,get,descend,unique,decision_presentation
 from validate_bosnia import TFR,GAME
 from validate_encirclement import EncirclementModel
 from implement_pact_war import COUNTRIES,SIDE,PEACE,wrap_native
@@ -119,6 +119,7 @@ class WarModel(EncirclementModel):
 def main():
  cli=argparse.ArgumentParser(description=__doc__);cli.add_argument('--mod-root',type=Path,required=True);cli.add_argument('--report',type=Path,default=ROOT/'docs/pact_war_validation.json');args=cli.parse_args();mod=args.mod_root.resolve(strict=True)
  scripts={p.relative_to(mod).as_posix():parse(p.read_text(encoding='utf-8-sig')) for p in mod.rglob('*') if p.suffix in ('.txt','.gfx')}
+ scripts={p:decision_presentation(a) if p.startswith('common/decisions/') else a for p,a in scripts.items()}
  sources=json.loads((ROOT/'docs/pact_war_sources.json').read_text())
  original=subprocess.check_output(['git','show','d87f5c9:make_serbia_great_again/'+PEACE],cwd=ROOT).decode('utf-8-sig')
  assert strip_guards(scripts[PEACE])==strip_guards(parse(original)),'Native peace handler changed outside approved callback wrappers'
@@ -134,7 +135,8 @@ def main():
  for path,digest in sources['baseline_sha256'].items():
   if path=='common/decisions/categories/MSGA_SER_categories.txt' and 'common/scripted_triggers/MSGA_new_order_triggers.txt' in scripts:
    old=parse(subprocess.check_output(['git','show','26a1e41:make_serbia_great_again/'+path],cwd=ROOT).decode('utf-8-sig'))
-   assert scripts[path][:-1]==old and scripts[path][-1][0]=='MSGA_consolidate_the_serbian_sphere'
+   assert scripts[path][:-1]==[t for t in old if t[0]!='MSGA_economic_development'] and scripts[path][-1][0]=='MSGA_consolidate_the_serbian_sphere'
+   assert hashlib.sha256((mod/path).read_bytes()).hexdigest()==expected_hash(path,'')
   elif path not in allowed:assert hashlib.sha256((mod/path).read_bytes()).hexdigest()==expected_hash(path,digest),path
  before_effect=parse(subprocess.check_output(['git','show','d87f5c9:make_serbia_great_again/common/scripted_effects/MSGA_encirclement_effects.txt'],cwd=ROOT).decode('utf-8-sig'))
  new_effect=copy.deepcopy(scripts['common/scripted_effects/MSGA_encirclement_effects.txt'])

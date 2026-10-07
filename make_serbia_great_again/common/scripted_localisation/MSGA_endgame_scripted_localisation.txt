@@ -1,0 +1,6 @@
+defined_text = { name = MSGA_eg_croatia_progress text = { trigger = { has_country_flag = MSGA_croatia_federal_ready } localization_key = MSGA_eg_ready } text = { localization_key = MSGA_eg_pending } }
+defined_text = { name = MSGA_eg_slovenia_progress text = { trigger = { has_country_flag = MSGA_slovenia_federal_ready } localization_key = MSGA_eg_ready } text = { localization_key = MSGA_eg_pending } }
+defined_text = { name = MSGA_eg_bosnia_progress text = { trigger = { has_country_flag = MSGA_bosnia_federal_ready } localization_key = MSGA_eg_ready } text = { localization_key = MSGA_eg_pending } }
+defined_text = { name = MSGA_eg_montenegro_progress text = { trigger = { has_country_flag = MSGA_montenegro_federal_ready } localization_key = MSGA_eg_ready } text = { localization_key = MSGA_eg_pending } }
+defined_text = { name = MSGA_eg_macedonia_progress text = { trigger = { has_country_flag = MSGA_macedonia_federal_ready } localization_key = MSGA_eg_ready } text = { localization_key = MSGA_eg_pending } }
+defined_text = { name = MSGA_eg_constitution_progress text = { trigger = { has_country_flag = MSGA_yugoslav_constitution_ready } localization_key = MSGA_eg_ready } text = { localization_key = MSGA_eg_pending } }

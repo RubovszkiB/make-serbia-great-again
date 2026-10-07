@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,copy,hashlib,itertools,json,math,re,subprocess,zipfile
 from PIL import Image
 from validation_history import expected_hash, check_current_art, approved_script
-from validate_phase1 import ROOT,parse,get,descend
+from validate_phase1 import ROOT,parse,get,descend,decision_presentation
 from validate_pact_war import WarModel,COUNTRIES
 from validate_encirclement import EncirclementModel
 from validate_bosnia import TFR,GAME
@@ -116,13 +116,15 @@ class NewOrderModel(WarModel):
 def main():
  cli=argparse.ArgumentParser(description=__doc__);cli.add_argument('--mod-root',type=Path,required=True);cli.add_argument('--report',type=Path,default=ROOT/'docs/new_order_validation.json');args=cli.parse_args();mod=args.mod_root.resolve(strict=True)
  scripts={p.relative_to(mod).as_posix():parse(p.read_text(encoding='utf-8-sig')) for p in mod.rglob('*') if p.suffix in ('.txt','.gfx')}
+ scripts={p:decision_presentation(a) if p.startswith('common/decisions/') else a for p,a in scripts.items()}
  sources=json.loads((ROOT/'docs/new_order_sources.json').read_text());changed=set(sources['changed_relative_paths'])
  for path,digest in sources['baseline_sha256'].items():
   if path not in changed:assert hashlib.sha256((mod/path).read_bytes()).hexdigest()==expected_hash(path,digest),path
  for path,digest in sources['native_sources_sha256'].items():assert hashlib.sha256((TFR/path).read_bytes()).hexdigest()==digest,path
  cats='common/decisions/categories/MSGA_SER_categories.txt';pact='common/scripted_effects/MSGA_pact_war_effects.txt'
  prior=lambda p:parse(subprocess.check_output(['git','show','26a1e41:make_serbia_great_again/'+p],cwd=ROOT).decode('utf-8-sig'))
- assert scripts[cats][:-1]==prior(cats) and scripts[cats][-1][0]=='MSGA_consolidate_the_serbian_sphere'
+ assert scripts[cats][:-1]==[t for t in prior(cats) if t[0]!='MSGA_economic_development'] and scripts[cats][-1][0]=='MSGA_consolidate_the_serbian_sphere'
+ assert hashlib.sha256((mod/cats).read_bytes()).hexdigest()==expected_hash(cats,'')
  def unhook(body):return [(k,o,unhook(v) if isinstance(v,list) else v) for k,o,v in body if k!='MSGA_schedule_new_order_victory']
  if approved_script(pact):
   assert hashlib.sha256((mod/pact).read_bytes()).hexdigest()==expected_hash(pact,'')
@@ -277,6 +279,7 @@ def main():
   assert not gate.focus_available('stabilise_the_new_order');gate.flags['SER'].add(flag)
  report={'static_and_model_validation':'passed','validated_mod_root':str(mod),'version':'0.13.0','focus_count':8,'focus_days':105,'scenarios':cases,'additional_negative_cases':36,'debt_B':15,'treasury_cost_B':0,'native_industrial_progress_total':.20,'decision_cost_PP':25,'decision_days':10,'simultaneous_client_decisions':1,'regularisation_flags':['MSGA_'+s+'_regularised' for t,s,*_ in CLIENTS],'assets':30,'conference':'2 days after all current clients regularised; independent economic gate retained','territory_subjects_armies_preserved':True,'Albania_outside_South_Slavic_question':True,'engine_validation':'Pending user; AST models do not certify UI, native timer order, AI, save reload or engine economy ticks'}
  report['additional_negative_cases']=49
+ report['chapter_version']=report['version'];report['version']=re.search(r'^version="([^"]+)"',(mod/'descriptor.mod').read_text(),re.M)[1]
  args.report.parent.mkdir(parents=True,exist_ok=True);args.report.write_text(json.dumps(report,indent=2)+'\n');print(f'LIVE New Balkan Order validated: {len(cases)} progression cases plus {report["additional_negative_cases"]} negative/cancellation/timing cases. Engine test pending user.')
 
 if __name__=='__main__':main()

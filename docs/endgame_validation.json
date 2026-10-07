@@ -1,0 +1,91 @@
+{
+  "static_and_model_validation": "passed",
+  "validated_mod_root": "C:\\Users\\Balazs\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\make_serbia_great_again",
+  "prepared_overlay_only": false,
+  "version": "0.14.0",
+  "focus_count": 29,
+  "timed_decisions": 31,
+  "optional_peaceful_dialogues": 3,
+  "events": 31,
+  "DDS_assets": 112,
+  "flags": 6,
+  "scenarios": [
+    {
+      "route": "gs",
+      "restore_Bosnian_borders": false,
+      "balanced_federation": false,
+      "new_native_debt_B": 10.0,
+      "treasury_cost_B": 0,
+      "subjects_remaining": [
+        "ALB",
+        "BOS",
+        "CRO",
+        "HRZ",
+        "SLV"
+      ],
+      "army_stockpile_totals_preserved": true
+    },
+    {
+      "route": "yug",
+      "restore_Bosnian_borders": false,
+      "balanced_federation": false,
+      "new_native_debt_B": 11.75,
+      "treasury_cost_B": 0,
+      "subjects_remaining": [
+        "ALB"
+      ],
+      "army_stockpile_totals_preserved": true
+    },
+    {
+      "route": "yug",
+      "restore_Bosnian_borders": false,
+      "balanced_federation": true,
+      "new_native_debt_B": 11.75,
+      "treasury_cost_B": 0,
+      "subjects_remaining": [
+        "ALB"
+      ],
+      "army_stockpile_totals_preserved": true
+    },
+    {
+      "route": "yug",
+      "restore_Bosnian_borders": true,
+      "balanced_federation": false,
+      "new_native_debt_B": 11.75,
+      "treasury_cost_B": 0,
+      "subjects_remaining": [
+        "ALB"
+      ],
+      "army_stockpile_totals_preserved": true
+    },
+    {
+      "route": "yug",
+      "restore_Bosnian_borders": true,
+      "balanced_federation": true,
+      "new_native_debt_B": 11.75,
+      "treasury_cost_B": 0,
+      "subjects_remaining": [
+        "ALB"
+      ],
+      "army_stockpile_totals_preserved": true
+    }
+  ],
+  "negative_cases": [
+    "independent",
+    "missing",
+    "foreign_control",
+    "war",
+    "extra_conquest",
+    "atomic_federation_departing_MAC",
+    "atomic_federation_occupied_HRZ",
+    "atomic_federation_foreign_CRO_conquest",
+    "parallel_country_processes",
+    "premature_tree_entry",
+    "wrong_country",
+    "pending_save_model",
+    "native_build_rejection"
+  ],
+  "native_debt_API": "debt_var_temp + add_debt; no treasury change, no inflation multiplier",
+  "baseline_preserved_except": "one New Balkan Order hand-off and two version descriptors",
+  "actual_engine_validation": "NOT RUN: user reserved game testing. Models do not certify timers, annexation transfer, UI, native construction ticks or engine save/load."
+}

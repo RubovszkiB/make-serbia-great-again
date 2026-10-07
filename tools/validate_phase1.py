@@ -490,6 +490,10 @@ def main():
     required = focus_ids + [f + '_desc' for f in focus_ids] + ideas + dynamic + categories + decisions
     required += [k + '_desc' for k in ideas + categories + decisions]
     required += [v for k, _, v in all_pairs if k in ('custom_effect_tooltip', 'custom_cost_text', 'title', 'desc', 'name') and isinstance(v, str) and v.startswith('MSGA')]
+    # Native defined_text names are callable script identifiers, not locale keys.
+    scripted_texts={get(b,'name') for p,a in scripts.items() if p.startswith('common/scripted_localisation/') for k,o,b in a if k=='defined_text'}
+    required=[k for k in required if k not in scripted_texts]
+    required += [v for p,a in scripts.items() if p.startswith('common/scripted_localisation/') for k,o,v in descend(a) if k=='localization_key']
     assert not set(required) - set(locale_keys), f'Missing localisation {set(required) - set(locale_keys)}'
     import os
     native_roots = [Path(os.environ.get('MSGA_TFR_ROOT', r'C:\Program Files (x86)\Steam\steamapps\workshop\content\394360\3350890356')),

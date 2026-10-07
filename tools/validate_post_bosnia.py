@@ -14,8 +14,8 @@ import re
 import subprocess
 import zipfile
 from PIL import Image
-from validation_history import check_current_art
-from validate_phase1 import ROOT, parse, get, descend, unique
+from validation_history import check_current_art,approved_script,expected_hash
+from validate_phase1 import ROOT, parse, get, descend, unique,decision_presentation
 from validate_bosnia import BosniaModel, TFR, GAME
 
 class PostBosniaModel(BosniaModel):
@@ -101,6 +101,7 @@ def main():
     cli.add_argument('--report',type=Path,default=ROOT/'docs/post_bosnia_validation.json')
     args=cli.parse_args();mod=args.mod_root.resolve()
     scripts={p.relative_to(mod).as_posix():parse(p.read_text(encoding='utf-8-sig')) for p in mod.rglob('*') if p.suffix in ('.txt','.gfx')}
+    scripts={p:decision_presentation(a) if p.startswith('common/decisions/') else a for p,a in scripts.items()}
     tree=scripts['common/national_focus/MSGA_SER_post_bosnia.txt'][0][2]
     focuses={get(b,'id'):b for k,_,b in tree if k=='focus'}
     assert len(focuses)==12 and all(get(b,'cost')=='2' for b in focuses.values())
@@ -114,7 +115,8 @@ def main():
     # Earlier approved tree topology and reward data remain unchanged.
     for path in ['common/national_focus/MSGA_SER_phase1.txt','common/national_focus/MSGA_SER_kosovo_war.txt','common/national_focus/MSGA_SER_post_kosovo.txt','common/national_focus/MSGA_SER_bosnian_crisis.txt','common/bop/MSGA_SER_bop.txt','common/scripted_effects/MSGA_SER_vehicle_effects.txt']:
         before=subprocess.check_output(['git','show','b4d79a4:make_serbia_great_again/'+path],cwd=ROOT).decode('utf-8-sig')
-        assert scripts[path]==parse(before),f'Unrelated earlier content changed: {path}'
+        if approved_script(path):assert hashlib.sha256((mod/path).read_bytes()).hexdigest()==expected_hash(path,''),path
+        else:assert scripts[path]==parse(before),f'Unrelated earlier content changed: {path}'
     tags='\n'.join(p.read_text(encoding='utf-8-sig') for p in (TFR/'common/country_tags').glob('*.txt'))
     assert all(re.search(r'^'+t+r'\s*=\s*"countries/',tags,re.M) for t in ['BOS','HRZ','SRP'])
     sources=json.loads((ROOT/'docs/post_bosnia_sources.json').read_text())

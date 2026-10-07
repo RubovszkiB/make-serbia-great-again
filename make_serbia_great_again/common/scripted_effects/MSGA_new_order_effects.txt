@@ -115,6 +115,7 @@ MSGA_new_order_the_south_slavic_question = {
 MSGA_new_order_south_slavic_unity = {
  if = { limit = { tag = SER has_country_flag = MSGA_south_slavic_question_opened NOT = { has_country_flag = MSGA_completed_south_slavic_unity } } set_country_flag = MSGA_completed_south_slavic_unity
   add_stability = 0.05 add_political_power = 50 set_country_flag = MSGA_south_slavic_unity_open country_event = { id = MSGA_neworder.16 }
+  MSGA_try_start_endgame = yes
  }
 }
 MSGA_open_south_slavic_question = {
